@@ -1,0 +1,25 @@
+Logo for an app, and logo for our group.
+the app logo: 
+Any logo created, we create an stratigy  and archeticture.
+
+Strategy is about: 
+You want to create an app: 
+Bench marking (is there any similar apps. You search for the best similars.)
+Are you creating a trend or not?
+
+Estahdef the people that want to use the app, without looking at the app.
+
+
+You can integrate your app with something like coursera.
+
+
+You can add an idea:
+if you want to study python, you should study kaza wa kaza, blablabla.
+
+
+
+
+Arch 
+Add the change request document
+Scope of work document (sow) created after creating the brd
+Use the scope of work, and brd, to build the business architecture
