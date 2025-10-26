@@ -1,0 +1,268 @@
+.side-bar {
+  width: 350px;
+  flex: 0 0 280px;
+  transition: width 100ms ease;
+  height: 100%;
+  background-color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
+nav {
+  margin-top: 1rem;
+}
+.Account {
+  width: 100%;
+  height: 70px;
+  background-color: #1e1e1e;
+  border-top: #464646 solid 1px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+
+  padding: 1rem;
+  color: white;
+  cursor: pointer;
+}
+.Account img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.top-of-side-bar {
+  position: relative;
+  left: 0px;
+  top: 0px;
+
+  border-bottom: #464646 solid 1px;
+
+  margin-top: 0.8rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+}
+.side-bar-body {
+  padding-top: 2rem;
+  width: 100%;
+  background-color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.Logo {
+  margin-left: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: white;
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  width: 80%;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.1s ease;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.15s ease, transform 0.08s ease,
+    box-shadow 0.12s ease;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 0.8rem;
+}
+
+li:hover {
+  background-color: #333333;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+.shrink:hover {
+  cursor: ew-resize;
+}
+
+.side-bar-icons {
+  color: white;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.shrink-icon {
+  margin-bottom: 0.3rem;
+  padding: 0.8rem;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.15s ease, transform 0.08s ease,
+    box-shadow 0.12s ease;
+  background-repeat: no-repeat;
+  background-position: left center;
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.shrink-icon:hover {
+  background-color: #333333;
+}
+
+.Quizzes {
+  padding: 0.5rem 0.6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: transparent;
+  color: #9aa0a6;
+  font-weight: 700;
+  font-size: 18px;
+  min-height: 0;
+}
+
+.Quizzes details {
+  width: 100%;
+}
+.Quizzes summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.12s ease, box-shadow 0.12s ease,
+    transform 0.08s ease;
+  background: transparent;
+}
+.Quizzes summary::-webkit-details-marker {
+  display: none;
+}
+
+.Quizzes summary .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+}
+.Quizzes summary .label .icon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  font-size: 18px;
+}
+
+.Quizzes summary::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M8 6l8 6-8 6' stroke='%239aa0a6' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center;
+  transition: transform 0.16s ease;
+  margin-left: 0.4rem;
+  color: #9aa0a6;
+  font-size: 14px;
+  transition: transform 0.16s ease;
+  margin-left: 0.4rem;
+}
+.Quizzes details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.Quizzes .submenu {
+  margin-top: 0.4rem;
+  padding-left: 0.6rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.Quizzes details[open] .submenu {
+  display: flex;
+}
+.Quizzes .submenu li {
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  .quizzes-list {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.quizzes-list {
+  max-height: none;
+  overflow-y: visible;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+.collapsed {
+  width: 100px;
+  max-width: 100px;
+  flex: 0 0 100px;
+  transition: width 100ms ease;
+}
