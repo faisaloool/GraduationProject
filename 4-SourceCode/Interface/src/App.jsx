@@ -23,10 +23,11 @@ function App() {
   }, []);
   return (
     <>
-      <main className="layout">
+      {/* <main className="layout">
         <Side_bar />
         <Quiz_main_page exames={exames} />
-      </main>
+      </main> */}
+      <Authform />
     </>
   );
 }
