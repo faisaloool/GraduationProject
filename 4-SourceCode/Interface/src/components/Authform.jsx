@@ -117,12 +117,10 @@ function Form({ isLogin }) {
         />
       </div>
 
-      {isLogin && (
-        <div className="inputs remember">
-          <input id="keepSigned" type="checkbox" name="keepSigned" />
-          <label htmlFor="keepSigned">Keep me signed in</label>
-        </div>
-      )}
+      <div className="inputs remember">
+        <input id="keepSigned" type="checkbox" name="keepSigned" />
+        <label htmlFor="keepSigned">Keep me signed in</label>
+      </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
       <button className="submit_btn" disabled={loading}>

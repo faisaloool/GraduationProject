@@ -1,4 +1,4 @@
-const API_URL = "https://your-api.com"; // change this to your backend URL
+const API_URL = "https://quizai";
 
 export async function loginUser(email, password) {
   const res = await fetch(`${API_URL}/login`, {
