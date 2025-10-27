@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../style/AuthForm.css";
 import { loginUser, registerUser } from "../util/service.js";
 
-export default function AuthForms() {
-  const [isLogin, setLogin] = useState(true);
+export default function AuthForms({ login }) {
+  const [isLogin, setLogin] = useState(login);
 
   return (
     <div className="auth-container">

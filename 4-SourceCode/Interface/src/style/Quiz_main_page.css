@@ -5,16 +5,16 @@
 }
 
 /* header fixed height, not positioned absolute/relative so it doesn't overlap content */
-.header {
+/* .header {
   width: 100%;
-  height: 60px;
+  height: 80px;
   background-color: #121212;
   border-bottom: #464646 solid 1px;
   flex: 0 0 60px;
   display: flex;
   align-items: center;
   z-index: 10;
-}
+} */
 
 /* page becomes the flexible quiz area (takes remaining horizontal space) */
 .page {
