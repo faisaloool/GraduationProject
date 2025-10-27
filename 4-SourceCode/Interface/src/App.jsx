@@ -7,22 +7,6 @@ import { Library } from "./components/Library.jsx";
 import "./style/App.css";
 function App() {
   const [exam, setExam] = useState([]);
-  /* useEffect(() => {
-    exames.push({
-      id: 1,
-      question: "What is the capital of Jordan?",
-      options: ["Amman", "Madin", "Egypt", "Mu'tah"],
-      type: "mcq",
-      marks: 2,
-    });
-    exames.push({
-      id: 2,
-      question: "Is the capital of Jordan Amman?",
-      options: ["True", "False"],
-      type: "true-false",
-      marks: 1,
-    });
-  }, []); */
   return (
     <Router>
       <Routes>
