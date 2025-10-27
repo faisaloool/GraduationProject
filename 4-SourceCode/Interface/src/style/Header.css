@@ -1,0 +1,129 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 82px;
+  width: 100%;
+  padding: 0 16px;
+
+  background: rgba(15, 15, 15, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.ai-version {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  margin-left: 0;
+}
+
+.header-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-btns button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  color: #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.header-btns .log-in:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.header-btns .sign-up {
+  background: #10a37f;
+  color: #ffffff;
+  border-color: #10a37f;
+  box-shadow: 0 0 0 1px rgba(16, 163, 127, 0.2) inset;
+}
+.header-btns .sign-up:hover {
+  background: #0e8e70;
+  border-color: #0e8e70;
+  box-shadow: 0 4px 18px rgba(16, 163, 127, 0.35);
+}
+
+.header-btns button:focus-visible {
+  outline: 2px solid #10a37f;
+  outline-offset: 2px;
+}
+
+.header-btns button:active {
+  transform: translateY(1px);
+}
+
+.menu-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 9999px;
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.05s ease;
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.menu-btn:focus-visible {
+  outline: 2px solid #10a37f;
+  outline-offset: 2px;
+}
+
+.menu-btn:active {
+  transform: translateY(1px);
+}
+
+/* icon size inside the button */
+.menu-btn svg {
+  width: 20px;
+  height: 20px;
+  color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 56px;
+    padding: 0 12px;
+  }
+  .ai-version {
+    font-size: 16px;
+  }
+  .header-btns {
+    gap: 8px;
+  }
+  .header-btns button {
+    padding: 7px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+}

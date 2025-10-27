@@ -266,3 +266,20 @@ a:focus {
   flex: 0 0 100px;
   transition: width 100ms ease;
 }
+
+.quiz-card-item {
+  border-radius: 8px;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Active quiz item */
+.quiz-card-item.active {
+  border: 2px solid #5b7cfa;
+  background: rgba(91, 124, 250, 0.08);
+  box-shadow: 0 0 10px rgba(91, 124, 250, 0.15);
+}
+
+/* Optional hover to align with theme */
+.quiz-card-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
