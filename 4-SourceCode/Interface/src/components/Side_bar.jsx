@@ -18,68 +18,6 @@ export const Side_bar = ({ setExam, exam }) => {
   const [exams, setExams] = useState([]);
   const navigate = useNavigate();
 
-  /* const mockUserExams = [
-    {
-      examId: 1,
-      title: "General Knowledge Test",
-      totalMarks: 10,
-      questions: [
-        {
-          id: 1,
-          question: "What is the capital of Jordan?",
-          options: ["Amman", "Madin", "Egypt", "Mu'tah"],
-          type: "mcq",
-          marks: 2,
-        },
-        {
-          id: 2,
-          question: "Which language is used for web styling?",
-          options: ["HTML", "CSS", "Python", "C++"],
-          type: "mcq",
-          marks: 3,
-        },
-      ],
-    },
-    {
-      examId: 2,
-      title: "Programming Basics",
-      totalMarks: 12,
-      questions: [
-        {
-          id: 1,
-          question: "Who developed JavaScript?",
-          options: [
-            "Brendan Eich",
-            "Tim Berners-Lee",
-            "Guido van Rossum",
-            "James Gosling",
-          ],
-          type: "mcq",
-          marks: 2,
-        },
-        {
-          id: 2,
-          question: "What does HTTP stand for?",
-          options: [
-            "HyperText Transfer Protocol",
-            "HighText Transmission Process",
-            "Hyper Transfer Text Protocol",
-            "None",
-          ],
-          type: "mcq",
-          marks: 2,
-        },
-        {
-          id: 3,
-          question: "What is 5 + 7?",
-          options: ["10", "11", "12", "13"],
-          type: "mcq",
-          marks: 1,
-        },
-      ],
-    },
-  ]; */
-
   useEffect(() => {
     if (user) {
       const loadExams = async () => {
@@ -89,13 +27,6 @@ export const Side_bar = ({ setExam, exam }) => {
       loadExams();
     }
   }, [user]);
-
-  /* useEffect(() => {
-    if (user) {
-      // Directly set mock data
-      setExams(mockUserExams);
-    }
-  }, [user]); */
 
   return (
     <>
