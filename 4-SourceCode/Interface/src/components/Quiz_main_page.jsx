@@ -1,11 +1,15 @@
-import React from "react";
+import React, { use } from "react";
+import { useEffect } from "react";
 import "../style/Quiz_main_page.css";
 import { Input } from "./Input";
 import { Header } from "./Header";
 
-export const Quiz_main_page = ({ exames }) => {
-  const getExamResponse = (exames) => {
-    if (!exames || exames.length === 0) {
+export const Quiz_main_page = (exames) => {
+  useEffect(() => {
+    getExamResponse(exames.exam.questions);
+  }, [exames]);
+  const getExamResponse = (questions) => {
+    if (!questions || questions.length === 0) {
       return (
         <div className="exam-response">
           <h1 className="wellcome">Wellcome to Quiz AI</h1>
@@ -17,7 +21,7 @@ export const Quiz_main_page = ({ exames }) => {
       );
     }
 
-    return exames.map(({ id, question, options, type }) => {
+    return exames.exam.questions.map(({ id, question, options, type }) => {
       switch (String(type).toLowerCase()) {
         case "mcq":
           return (
@@ -64,7 +68,9 @@ export const Quiz_main_page = ({ exames }) => {
           <Header />
         </div>
         <main>
-          <div className="exam-space">{getExamResponse(exames)}</div>
+          <div className="exam-space">
+            {getExamResponse(exames.exam.questions)}
+          </div>
         </main>
       </div>
     </>

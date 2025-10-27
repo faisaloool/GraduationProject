@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: space-between;
 
-  margin: 0.5rem;
+  margin: 0.1rem;
+  margin-bottom: 0.6rem;
   padding: 1rem;
   border-radius: 12px;
 
@@ -20,15 +21,28 @@
   transition: transform 100ms ease, box-shadow 200ms ease, background 100ms ease;
 }
 
-.quiz-card {
+.active-card {
   display: flex;
+  flex-direction: row;
   align-items: center;
-}
+  justify-content: space-between;
 
-.quiz-card h2 {
+  margin: 0.1rem;
+  margin-bottom: 0.6rem;
+  padding: 1rem;
+  border-radius: 12px;
+
+  color: white;
+
+  height: 40px;
+  width: 100%;
+  background-color: #10a37f;
+}
+h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 0;
   flex: 1;
+  font-size: 18px;
 }

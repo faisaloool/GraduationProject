@@ -25,6 +25,16 @@ export function AuthProvider({ children }) {
     setLoading(false);
   }, []);
 
+  // Login function
+  const login = (userData, tokenData, remember = false) => {
+    setUser(userData);
+    setToken(tokenData);
+
+    // Save in localStorage or sessionStorage depending on "remember me"
+    const storage = remember ? localStorage : sessionStorage;
+    storage.setItem("user", JSON.stringify(userData));
+    storage.setItem("token", tokenData);
+  };
   // Logout function
   const logout = () => {
     localStorage.removeItem("token");
@@ -42,6 +52,7 @@ export function AuthProvider({ children }) {
         token,
         isLoggedIn: !!token,
         loading,
+        login,
         logout,
       }}
     >

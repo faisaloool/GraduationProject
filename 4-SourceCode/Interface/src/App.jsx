@@ -6,7 +6,7 @@ import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
 function App() {
-  const [exames, setExames] = useState([]);
+  const [exam, setExam] = useState([]);
   /* useEffect(() => {
     exames.push({
       id: 1,
@@ -23,15 +23,6 @@ function App() {
       marks: 1,
     });
   }, []); */
-
-  /* return (
-    <>
-      <main className="layout">
-        <Side_bar />
-        <Quiz_main_page exames={exames} />
-      </main>
-    </>
-  ); */
   return (
     <Router>
       <Routes>
@@ -42,8 +33,8 @@ function App() {
           path="/"
           element={
             <main className="layout">
-              <Side_bar />
-              <Quiz_main_page exames={exames} />
+              <Side_bar setExam={setExam} exam={exam} />
+              <Quiz_main_page exam={exam} />
             </main>
           }
         />
@@ -51,8 +42,8 @@ function App() {
           path="/exam/:id"
           element={
             <main className="layout">
-              <Side_bar />
-              <Quiz_main_page exames={exames} />
+              <Side_bar setExam={setExam} exam={exam} />
+              <Quiz_main_page exam={exam} />
             </main>
           }
         />

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/AuthForm.css";
 import { loginUser, registerUser } from "../util/service.js";
+import { useAuth } from "../context/AuthContext.jsx";
 
 export default function AuthForms({ login }) {
   const [isLogin, setLogin] = useState(login);
@@ -35,6 +37,9 @@ export default function AuthForms({ login }) {
 }
 
 function Form({ isLogin }) {
+  const navigate = useNavigate();
+  const { login } = useAuth();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -57,23 +62,17 @@ function Form({ isLogin }) {
       if (data.error) {
         setError(data.error);
       } else {
-        // Get the "Keep me signed in" checkbox
-        const keepSignedIn = document.getElementById("keepSigned")?.checked;
+        const keepSignedIn =
+          document.getElementById("keepSigned")?.checked || false;
 
-        // Decide where to save the data
-        const storage = keepSignedIn ? localStorage : sessionStorage;
+        // ✅ Use the new login function from context
+        login(data.user, data.token, keepSignedIn);
 
-        // Store token and user
-        storage.setItem("token", data.token);
-        storage.setItem("user", JSON.stringify(data.user));
-
-        alert(
-          "✅ " + (isLogin ? "Logged in" : "Registered") + " successfully!"
-        );
-        // Redirect or reload
-        //window.location.href = "/dashboard"; // change this to your route
+        // Navigate to home immediately
+        navigate("/");
       }
     } catch (err) {
+      console.error(err);
       setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -123,6 +122,7 @@ function Form({ isLogin }) {
       </div>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
+
       <button className="submit_btn" disabled={loading}>
         {loading ? "Loading..." : isLogin ? "Log In" : "Sign Up"}
       </button>
