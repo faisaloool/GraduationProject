@@ -1,32 +1,29 @@
-# import whisper
-# # If Whisper doesn't work, run in CMD:
-# # pip install --upgrade openai-whisper
-# # pip install ffmpeg-python
-# import torch
+import whisper              # pip install openai-whisper
+import torch                # pip install torch
+# Whisper requires ffmpeg to be installed in the system PATH:
+# Windows: https://ffmpeg.org/download.html
 
+from Extractors.docx_extractor import extract_text_from_docx
+from Extractors.pptx_extractor import extract_text_from_pptx
+from Extractors.audio_extractor import extract_text_from_audio
+from Extractors.doc_extractor import extract_text_from_doc
+from Extractors.pdf_extractor import extract_text_from_pdf
+from Extractors.ppt_extractor import extract_text_from_ppt
 
-# import win32com.client
-# # if the import doesn't work, run this command in the command prompt: pip install pywin32
+import os
+import win32com.client  # if this isn't working, run: pip install pywin32
 
-# import os
+from docx import Document  # if this isn't working, run: pip install python-docx
 
-# import fitz  # PyMuPDF
-# #to enable filtz from working, you should write this line in the command prompt: pip install PyMuPDF
+import fitz  # if this isn't working, run: pip install PyMuPDF
 
-# from Extractors.docx_extractor import extract_text_from_docx
-# from Extractors.pptx_extractor import extract_text_from_pptx
-# from Extractors.audio_extractor import extract_text_from_audio
-# from Extractors.doc_extractor import extract_text_from_doc
-# from Extractors.pdf_extractor import extract_text_from_pdf
-# from Extractors.ppt_extractor import extract_text_from_ppt
-# # the existing functions
+import comtypes.client  # if this isn't working, run: pip install comtypes
+from pptx import Presentation  # if this isn't working, run: pip install python-pptx
 
-# from docx import Document
-# # if the import doesn't work, run this command in the command prompt: pip install python-docx
+from fastapi import FastAPI, UploadFile, File, HTTPException  # if this isn't working, run: pip install fastapi
+from Extractors.content_extractor_all import extract_file_text
+import content_creation_json
 
-# import comtypes.client  # pip install comtypes
-
-# from pptx import Presentation
-# # if the import doesn't work, run this command in the command prompt: pip install python-pptx
-
-# from fastapi import FastAPI, UploadFile, File, HTTPException
+import json
+import re
+from openai import OpenAI  # if this isn't working, run: pip install openai

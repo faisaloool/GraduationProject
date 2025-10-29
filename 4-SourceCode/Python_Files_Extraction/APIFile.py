@@ -18,8 +18,8 @@ async def generate_quiz(file: UploadFile = File(...)):
         # Extract text from the uploaded file
         try:
             extracted_text = extract_file_text(temp_path, file.filename)
-            if len(extracted_text) > 5000:
-                extracted_text = extracted_text[:5000]
+            # if len(extracted_text) > 5000:
+            #     extracted_text = extracted_text[:5000]
         except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))
 
