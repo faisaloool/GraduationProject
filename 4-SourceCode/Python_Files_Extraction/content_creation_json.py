@@ -1,61 +1,72 @@
+import aiohttp
+import asyncio
 import json
 import re
-import requests
-import math
 
-API_KEY = "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"
+API_KEY = "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"
 BASE_URL = "https://openrouter.ai/api/v1"
 
-def call_deepseek_api_for_questions(extracted_text: str) -> dict:
-    # Calculate number of questions: 1 per 50 characters (minimum 1)
-    num_questions = max(1, math.ceil(len(extracted_text) / 50))
+def clean_json_like_text(text: str) -> str:
+    text = re.sub(r'```json', '', text)
+    text = re.sub(r'```', '', text)
+    text = re.sub(r',\s*([}\]])', r'\1', text)
+    text = re.sub(r'\\(?!["\\/bfnrtu])', r'', text)
+    text = re.sub(r'[\x00-\x1f\x7f]', '', text)
+    return text.strip()
 
-    prompt = f"""
-    Create exactly {num_questions} quiz questions based on the following content.
-   Return strictly valid JSON only, no extra text, no comments, only json, no introductions, no endings, no any other things. strictly json only:
-    {{
-        "questions": [
-            {{
-                "question": "question text",
-                "options": ["option1", "option2", "option3", "option4"],
-                "answer": "correct option"
-            }}
-        ]
-    }}
-    Content: {extracted_text}
-    """
-
+async def get_clean_question(session: aiohttp.ClientSession, content: str):
     headers = {
         "Authorization": f"Bearer {API_KEY}",
-        "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost",
-        "X-Title": "Quiz AI Generator"
+        "Content-Type": "application/json"
     }
 
-    data = {
+    json_schema = {
+        "question": "Your question text here",
+        "type": "mcq",
+        "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+        "answer": "Correct option",
+        "section": "Relevant section",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+    }
+
+    payload = {
         "model": "deepseek/deepseek-chat",
         "messages": [
-            {"role": "system", "content": "You are a quiz generator AI."},
-            {"role": "user", "content": prompt}
+            {
+                "role": "system",
+                "content": (
+                    "You are a quiz generator AI. Respond ONLY with a single JSON object matching this format exactly, "
+                    "without any extra fields, headers, or footers:\n" + json.dumps(json_schema, indent=2)
+                )
+            },
+            {"role": "user", "content": f"Generate THREE quiz question from the following content:\n{content}"}
         ],
-        "temperature": 0.7,
-        "max_tokens": 1500
+        "temperature": 0.3,
+        "max_tokens": 1200
     }
 
-    try:
-        response = requests.post(f"{BASE_URL}/chat/completions", headers=headers, json=data)
-        response.raise_for_status()
+    async with session.post(f"{BASE_URL}/chat/completions", headers=headers, json=payload) as resp:
+        resp_json = await resp.json()
+        try:
+            assistant_text = resp_json['choices'][0]['message']['content']
+        except (KeyError, IndexError):
+            return {"error": "Unexpected API response structure", "raw_response": resp_json}
 
-        response_json = response.json()
-        content = response_json["choices"][0]["message"]["content"]
+        cleaned = clean_json_like_text(assistant_text)
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            return {"error": "Could not parse JSON", "raw_response": cleaned}
 
-        json_match = re.search(r"\{.*\}", content, re.DOTALL)
-        if not json_match:
-            raise ValueError(f"No JSON found in response:\n{content}")
+# Split by characters
+def chunk_text(text: str, max_chars: int = 500):
+    return [text[i:i+max_chars] for i in range(0, len(text), max_chars)]
 
-        return json.loads(json_match.group())
-
-    except requests.exceptions.HTTPError as http_err:
-        raise ValueError(f"HTTP error: {response.status_code} - {response.text}")
-    except Exception as e:
-        raise ValueError(f"DeepSeek API error: {e}")
+async def generate_quiz_from_text(text: str):
+    chunks = chunk_text(text)
+    async with aiohttp.ClientSession() as session:
+        tasks = [get_clean_question(session, chunk) for chunk in chunks]
+        quiz_results = await asyncio.gather(*tasks)
+    # Only return the list of questions
+    return quiz_results
