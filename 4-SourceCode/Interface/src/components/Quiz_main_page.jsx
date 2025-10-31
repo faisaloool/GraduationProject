@@ -12,8 +12,8 @@ export const Quiz_main_page = (exames) => {
     if (!questions || questions.length === 0) {
       return (
         <div className="exam-response">
-          <h1 className="wellcome">Wellcome to Quiz AI</h1>
-          <p>Get ready for the endless lernning!</p>
+          <h1 className="wellcome"><span className="wlc">Welcome to </span> <span className="quiz">Quiz AI</span> </h1>
+          <p className="subtitle">Get ready for the endless lernning!</p>
           <div className="input">
             <Input />
           </div>

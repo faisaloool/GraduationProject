@@ -11,7 +11,7 @@ export default function AuthForms({ login }) {
     <div className="auth-container">
       <div className="auth_box">
         <h2 className="title">
-          Welcome to <span className="highlight">QUIZ AI</span>
+        <span className="welcom"> Welcome to </span> <span className="highlight">Quiz AI</span>
         </h2>
         <p className="subtitle">Log in to your account to continue</p>
 

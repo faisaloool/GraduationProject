@@ -59,15 +59,48 @@
 }
 
 .title {
+  display: flex;
+  
   font-size: 30px;
+  align-content: center;
   font-weight: 600;
   margin-bottom: 6px;
   color: white;
+   white-space: nowrap;
+}
+.welcom{
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .highlight {
+  display: inline-block;
   color: #46eaff;
+  font-family: monospace;
+   font-size: 30px;
+  overflow: hidden;
+  border-right: 5px solid #46eaff;
+   animation: 
+    typeDelete 6s steps(13) infinite, /* هنا صرنا أبطأ */
+    blink 0.75s step-end infinite;
 }
+@keyframes typeDelete {
+  0%, 25% { width: 0; }
+  50%, 75% { width: 7.4ch; } /* يشمل الفراغات داخل عدد الأحرف */
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+.subtitle {
+  color: #ffffff;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+
 
 .subtitle {
   color: #ffffff;
