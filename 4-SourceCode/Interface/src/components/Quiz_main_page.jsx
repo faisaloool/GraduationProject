@@ -1,35 +1,79 @@
-import React, { use } from "react";
-import { useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "../style/Quiz_main_page.css";
 import { Input } from "./Input";
 import { Header } from "./Header";
 
-export const Quiz_main_page = (exames) => {
+export const Quiz_main_page = ({ exam }) => {
+  const quizRef = useRef(null);
+  const [questionNumber, setQuestionNumber] = React.useState(0);
+  const [totalMarks, setTotalMarks] = React.useState(0);
+  const [myMap, setMyMap] = useState(new Map());
+  const [showScrollArrow, setShowScrollArrow] = useState(false);
+
   useEffect(() => {
-    getExamResponse(exames.exam.questions);
-  }, [exames]);
-  const getExamResponse = (questions) => {
-    if (!questions || questions.length === 0) {
-      return (
-        <div className="exam-response">
-          <h1 className="wellcome"><span className="wlc">Welcome to </span> <span className="quiz">Quiz AI</span> </h1>
-          <p className="subtitle">Get ready for the endless lernning!</p>
-          <div className="input">
-            <Input />
-          </div>
-        </div>
-      );
+    if (quizRef.current) {
+      quizRef.current.scrollTo({ top: 0, behavior: "instant" });
+      setQuestionNumber(0);
     }
 
-    return exames.exam.questions.map(({ id, question, options, type }) => {
+    setTotalMarks(exam.totalMarks);
+    setMyMap(new Map());
+  }, [exam]);
+
+  useEffect(() => {
+    const el = quizRef.current;
+    if (!el) return;
+
+    const check = () => {
+      const canScroll = el.scrollHeight > el.clientHeight + 1;
+      const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
+      setShowScrollArrow(canScroll && !atBottom);
+    };
+
+    check();
+    el.addEventListener("scroll", check);
+    window.addEventListener("resize", check);
+    const obs = new MutationObserver(check);
+    obs.observe(el, { childList: true, subtree: true });
+
+    return () => {
+      el.removeEventListener("scroll", check);
+      window.removeEventListener("resize", check);
+      obs.disconnect();
+    };
+  }, [exam]);
+
+  // Smoothly scroll the main container to the bottom when the arrow is clicked
+  const scrollToBottom = () => {
+    const el = quizRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+  };
+  // here we display the exam questions and options
+  const getExamResponse = (questions) => {
+    return questions.map(({ id, question, options, type, marks }) => {
       switch (String(type).toLowerCase()) {
         case "mcq":
           return (
             <div className="exam-response" key={id}>
-              <h1 className="QuestionTitle Question">{question}</h1>
+              <h1 className="QuestionTitle Question">
+                {questionNumber + id}.{question}
+              </h1>
               <div className="Option-list">
                 {options?.map((option, index) => (
-                  <p className="Option" key={index}>
+                  <p
+                    className={`Option ${
+                      String.fromCharCode(97 + index) == myMap.get(id)
+                        ? "selected-option"
+                        : ""
+                    }`}
+                    onClick={() => {
+                      const newMap = new Map(myMap);
+                      newMap.set(id, String.fromCharCode(97 + index));
+                      setMyMap(newMap);
+                    }}
+                    key={index}
+                  >
                     {String.fromCharCode(97 + index)}. {option}
                   </p>
                 ))}
@@ -62,17 +106,73 @@ export const Quiz_main_page = (exames) => {
   };
 
   return (
-    <>
-      <div className="page">
-        <div className="header">
-          <Header />
-        </div>
-        <main>
-          <div className="exam-space">
-            {getExamResponse(exames.exam.questions)}
-          </div>
-        </main>
+    <div className="page">
+      <div className="header">
+        <Header />
       </div>
-    </>
+
+      <main ref={quizRef}>
+        <div className="exam-space">
+          {!exam?.questions || exam.questions.length === 0 ? (
+            <div className="wellcome-page">
+              <h1 className="wellcome">
+                <span className="wlc">Welcome to </span>
+                <span className="quiz">Quiz AI</span>
+              </h1>
+              <p className="subtitle">Get ready for endless learning!</p>
+              <div className="input">
+                <Input />
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="userMessage">
+                <div className="message">generate an exam for {exam.title}</div>
+              </div>
+              {getExamResponse(exam.questions)}
+              <div
+                className="submitExamBtn"
+                onClick={() => {
+                  console.log(totalMarks);
+                }}
+              >
+                submit
+              </div>
+              {/* fixed bottom-center scroll indicator */}
+              <div
+                className={`scroll-indicator ${
+                  showScrollArrow ? "" : "hidden"
+                }`}
+                role="button"
+                tabIndex={showScrollArrow ? 0 : -1}
+                onClick={showScrollArrow ? scrollToBottom : undefined}
+                onKeyDown={(e) => {
+                  if (!showScrollArrow) return;
+                  if (e.key === "Enter" || e.key === " ") scrollToBottom();
+                }}
+                aria-label="Scroll to bottom"
+                title="Scroll to bottom"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="none"
+                  aria-hidden
+                >
+                  <path
+                    d="M6 9l6 6 6-6"
+                    stroke="white"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+            </>
+          )}
+        </div>
+      </main>
+    </div>
   );
 };

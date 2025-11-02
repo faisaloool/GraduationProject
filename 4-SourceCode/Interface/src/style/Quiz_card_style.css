@@ -13,10 +13,10 @@
 
   height: 40px;
   width: 100%;
+  cursor: pointer;
 }
 
 .quiz-card:hover {
-  cursor: pointer;
   background: rgba(255, 255, 255, 0.06);
   transition: transform 100ms ease, box-shadow 200ms ease, background 100ms ease;
 }
@@ -37,6 +37,8 @@
   height: 40px;
   width: 100%;
   background-color: #10a37f;
+
+  cursor: pointer;
 }
 h2 {
   overflow: hidden;
@@ -45,4 +47,7 @@ h2 {
   margin: 0;
   flex: 1;
   font-size: 18px;
+}
+.threeDots {
+  font-size: 24px;
 }

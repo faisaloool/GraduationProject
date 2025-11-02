@@ -5,6 +5,8 @@ import { BsThreeDots } from "react-icons/bs";
 
 export const Quiz_card = ({ exam, setExam, e }) => {
   const navigate = useNavigate();
+  const [hover, setHover] = React.useState(false);
+
   return (
     <>
       <div
@@ -13,9 +15,16 @@ export const Quiz_card = ({ exam, setExam, e }) => {
           setExam(e);
           navigate(`/exam/${e.examId}`);
         }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
       >
         <h2>{e.title}</h2>
-        <BsThreeDots />
+        <div
+          className="threeDots"
+          style={{ display: hover ? "block" : "none" }}
+        >
+          <BsThreeDots />
+        </div>
       </div>
     </>
   );
