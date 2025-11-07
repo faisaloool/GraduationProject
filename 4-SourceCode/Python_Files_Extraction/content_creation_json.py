@@ -3,7 +3,7 @@ import asyncio
 import json
 import re
 
-API_KEY = "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"
+API_KEY = "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"
 BASE_URL = "https://openrouter.ai/api/v1"
 
 def clean_json_like_text(text: str) -> str:
@@ -69,4 +69,78 @@ async def generate_quiz_from_text(text: str):
         tasks = [get_clean_question(session, chunk) for chunk in chunks]
         quiz_results = await asyncio.gather(*tasks)
     # Only return the list of questions
+    return quiz_results
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+async def get_tf_question(session: aiohttp.ClientSession, content: str):
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json"
+    }
+
+    json_schema = {
+        "question": "Your question text here",
+        "type": "tf",
+        "options": ["True", "False"],
+        "answer": "Correct option",
+        "section": "Relevant section",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+    }
+
+    payload = {
+        "model": "deepseek/deepseek-chat",
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You are a quiz generator AI. Respond ONLY with a single JSON object matching this format exactly, "
+                    "without any extra fields, headers, or footers:\n" + json.dumps(json_schema, indent=2)
+                )
+            },
+            {"role": "user", "content": f"Generate THREE true/false questions from the following content:\n{content}"}
+        ],
+        "temperature": 0.3,
+        "max_tokens": 1200
+    }
+
+    async with session.post(f"{BASE_URL}/chat/completions", headers=headers, json=payload) as resp:
+        resp_json = await resp.json()
+        try:
+            assistant_text = resp_json['choices'][0]['message']['content']
+        except (KeyError, IndexError):
+            return {"error": "Unexpected API response structure", "raw_response": resp_json}
+
+        cleaned = clean_json_like_text(assistant_text)
+        try:
+            return json.loads(cleaned)
+        except json.JSONDecodeError:
+            return {"error": "Could not parse JSON", "raw_response": cleaned}
+
+async def generate_tf_quiz_from_text(text: str):
+    chunks = chunk_text(text)
+    async with aiohttp.ClientSession() as session:
+        tasks = [get_tf_question(session, chunk) for chunk in chunks]
+        quiz_results = await asyncio.gather(*tasks)
     return quiz_results
