@@ -13,7 +13,7 @@ export const Quiz_card = ({ exam, setExam, e }) => {
         className={` ${exam.examId === e.examId ? "active-card" : "quiz-card"}`}
         onClick={() => {
           setExam(e);
-          navigate(`/exam/${e.examId}`);
+          navigate(`/exam/${e.examId || e.quizId}`);
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

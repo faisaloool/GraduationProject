@@ -18,7 +18,7 @@ function App() {
           element={
             <main className="layout">
               <Side_bar setExam={setExam} exam={exam} />
-              <Quiz_main_page exam={exam} />
+              <Quiz_main_page exam={exam} setExam={setExam} />
             </main>
           }
         />
@@ -27,7 +27,7 @@ function App() {
           element={
             <main className="layout">
               <Side_bar setExam={setExam} exam={exam} />
-              <Quiz_main_page exam={exam} />
+              <Quiz_main_page exam={exam} setExam={setExam} />
             </main>
           }
         />

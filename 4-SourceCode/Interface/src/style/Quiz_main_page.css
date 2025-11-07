@@ -28,8 +28,7 @@
 /* main is the scrollable content area under the header, single scrollbar only here */
 main {
   width: 100%;
-  flex: 1 1 auto;
-  min-height: 0;
+  /* flex: 1 1 auto; */
   background-color: #151515;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -38,23 +37,15 @@ main {
 
 /* content inside the scrolling area must be able to shrink */
 .exam-space {
-  min-height: 0;
+  max-width: 1000px;
+  min-width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0px 12rem;
+  margin: 0px auto;
 }
 
-/* ===== Base Layout ===== */
-.exam-response {
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  height: 50vh;
-  width: 100%;
-}
 /* ===== Welcome Section ===== */
 /* .wellcome-page:has(.input) {
   display: flex;
@@ -82,6 +73,14 @@ main {
   z-index: 1;
   width: 800px;
   position: relative; /* مهم جدا لتعمل ::before و ::after */
+}
+
+.wellcome-page .input {
+  position: relative;
+  bottom: -300px;
+  width: 90%;
+  max-width: 400px;
+  margin-right: 70px;
 }
 
 .wellcome-page:has(.input)::before {
@@ -175,29 +174,6 @@ main {
   }
 }
 
-.exam-response .QuestionTitle {
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #00a67d;
-}
-
-.exam-response .subtitle {
-  color: #ccc;
-  font-size: 15px;
-  margin-top: 10px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.exam-response .input {
-  position: absolute;
-  bottom: -300px;
-  width: 90%;
-  max-width: 400px;
-  margin-right: 70px;
-}
 .file-form {
   padding-left: 30px;
 
@@ -305,6 +281,29 @@ main {
 }
 
 /* ===== Question Styles ===== */
+.exam-response {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  height: 50vh;
+  width: 100%;
+}
+.exam-response .QuestionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #00a67d;
+}
+
+.exam-response .subtitle {
+  color: #ccc;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
 .Question {
   font-size: 1.3rem;
   font-weight: 600;

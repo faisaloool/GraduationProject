@@ -3,7 +3,7 @@ import "../style/Quiz_main_page.css";
 import { Input } from "./Input";
 import { Header } from "./Header";
 
-export const Quiz_main_page = ({ exam }) => {
+export const Quiz_main_page = ({ exam, setExam }) => {
   const quizRef = useRef(null);
   const [questionNumber, setQuestionNumber] = React.useState(0);
   const [totalMarks, setTotalMarks] = React.useState(0);
@@ -81,16 +81,41 @@ export const Quiz_main_page = ({ exam }) => {
             </div>
           );
 
-        case "true-false":
+        case "truefalse":
           return (
             <div className="exam-response" key={id}>
               <h1 className="QuestionTitle Question">{question}</h1>
               <div className="Option-list">
-                {options?.map((option, index) => (
-                  <p className="Option" key={index}>
-                    {option}
-                  </p>
-                ))}
+                <p
+                  className={`Option ${
+                    String.fromCharCode(97 + 0) === myMap.get(id)
+                      ? "selected-option"
+                      : ""
+                  }`}
+                  onClick={() => {
+                    const newMap = new Map(myMap);
+                    newMap.set(id, String.fromCharCode(97 + 0));
+                    setMyMap(newMap);
+                  }}
+                  key={0}
+                >
+                  {String.fromCharCode(97 + 0)}. True
+                </p>
+                <p
+                  className={`Option ${
+                    String.fromCharCode(97 + 1) === myMap.get(id)
+                      ? "selected-option"
+                      : ""
+                  }`}
+                  onClick={() => {
+                    const newMap = new Map(myMap);
+                    newMap.set(id, String.fromCharCode(97 + 1));
+                    setMyMap(newMap);
+                  }}
+                  key={1}
+                >
+                  {String.fromCharCode(97 + 1)}. False
+                </p>
               </div>
             </div>
           );
@@ -113,15 +138,17 @@ export const Quiz_main_page = ({ exam }) => {
 
       <main ref={quizRef}>
         <div className="exam-space">
-          {!exam?.questions || exam.questions.length === 0 ? (
+          {exam.title === "Main-page" || !exam.title ? (
             <div className="wellcome-page">
-              <h1 className="wellcome">
-                <span className="wlc">Welcome to </span>
-                <span className="quiz">Quiz AI</span>
-              </h1>
-              <p className="subtitle">Get ready for endless learning!</p>
+              <div>
+                <h1 className="wellcome">
+                  <span className="wlc">Welcome to </span>
+                  <span className="quiz">Quiz AI</span>
+                </h1>
+                <p className="subtitle">Get ready for endless learning!</p>
+              </div>
               <div className="input">
-                <Input />
+                <Input setExam={setExam} />
               </div>
             </div>
           ) : (

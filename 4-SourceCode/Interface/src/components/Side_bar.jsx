@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Quiz_card } from "./Quiz_card";
 import { useAuth } from "../context/AuthContext.jsx";
-import { fetchUserExams } from "../util/service.js";
+import { useExams } from "../context/ExamsProvider.jsx";
 
 import { BsReverseLayoutSidebarReverse } from "react-icons/bs";
 import { IoCreateOutline } from "react-icons/io5";
@@ -13,20 +13,31 @@ import { IoLibraryOutline } from "react-icons/io5";
 import "../style/Side_bar.css";
 
 export const Side_bar = ({ setExam, exam }) => {
-  const [collaps, setCollaps] = React.useState(false);
-  const { user, isLoggedIn, logout, token } = useAuth();
-  const [exams, setExams] = useState([]);
   const navigate = useNavigate();
 
+  const [collaps, setCollaps] = React.useState(false);
+  const { user, isLoggedIn, logout, token } = useAuth();
+  const { exams, loading, loadExams, deleteExam } = useExams();
   useEffect(() => {
-    if (user) {
-      const loadExams = async () => {
-        const data = await fetchUserExams(user.id, token);
-        setExams(data);
-      };
-      loadExams();
+    if (isLoggedIn) {
+      console.log("Exams loaded in Side_bar");
+      renderQuizzes();
     }
-  }, [user]);
+  }, [isLoggedIn, exams, exam]);
+  const renderQuizzes = () => {
+    return (
+      <div>
+        {exams.map((e) => (
+          <Quiz_card
+            key={e.examId || e.quizId}
+            e={e}
+            setExam={setExam}
+            exam={exam}
+          />
+        ))}
+      </div>
+    );
+  };
 
   return (
     <>
@@ -56,7 +67,7 @@ export const Side_bar = ({ setExam, exam }) => {
               <ul>
                 <li
                   onClick={() => {
-                    setExam({ questions: [] });
+                    setExam({ title: "Main-page" });
                     navigate("/");
                   }}
                 >
@@ -88,16 +99,7 @@ export const Side_bar = ({ setExam, exam }) => {
               <div className="Quizzes">
                 <details>
                   <summary>Quizzes</summary>
-                  <div className="quizzes-list">
-                    {exams.map((e) => (
-                      <Quiz_card
-                        key={e.examId}
-                        e={e}
-                        setExam={setExam}
-                        exam={exam}
-                      />
-                    ))}
-                  </div>
+                  <div className="quizzes-list">{renderQuizzes()}</div>
                 </details>
               </div>
             )}
