@@ -20,6 +20,7 @@ def extract_text_from_ppt(file_path):
     powerpoint = comtypes.client.CreateObject("PowerPoint.Application")
     #powerpoint.Visible = 0
 
+    file_path = os.path.abspath(file_path)
     presentation = powerpoint.Presentations.Open(file_path)
     temp_pptx = file_path + "_temp.pptx"
     presentation.SaveAs(temp_pptx, 24)  # 24 = pptx format
