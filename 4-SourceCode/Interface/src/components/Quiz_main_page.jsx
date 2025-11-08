@@ -8,15 +8,27 @@ export const Quiz_main_page = ({ exam, setExam }) => {
   const [questionNumber, setQuestionNumber] = React.useState(0);
   const [totalMarks, setTotalMarks] = React.useState(0);
   const [myMap, setMyMap] = useState(new Map());
+  const [submitedMap, setSubmitedMap] = useState(new Map());
   const [showScrollArrow, setShowScrollArrow] = useState(false);
 
+  // stable key for current exam
+  const examKey = exam.examId || exam.quizId;
+  const currentScore = submitedMap.get(examKey);
+  const isSubmitted = typeof currentScore === "number";
+
   useEffect(() => {
+    // scroll to top when a new exam is loaded
     if (quizRef.current) {
       quizRef.current.scrollTo({ top: 0, behavior: "instant" });
-      setQuestionNumber(0);
     }
-
-    setTotalMarks(exam.totalMarks);
+    // calculating total marks of the exam
+    let marks = 0;
+    exam.questions?.forEach(({ marks: m }) => {
+      marks += m;
+    });
+    setTotalMarks(marks);
+    //resting user answers and the quetsion counter when a new exam is loaded
+    setQuestionNumber(0);
     setMyMap(new Map());
   }, [exam]);
 
@@ -48,6 +60,45 @@ export const Quiz_main_page = ({ exam, setExam }) => {
     const el = quizRef.current;
     if (!el) return;
     el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
+  };
+
+  // Reset current exam submission and answers
+  const handleRetry = () => {
+    const next = new Map(submitedMap);
+    next.delete(examKey);
+    setSubmitedMap(next);
+    setMyMap(new Map());
+    if (quizRef.current) {
+      quizRef.current.scrollTo({ top: 0, behavior: "instant" });
+    }
+  };
+
+  // After a submission is recorded, auto-scroll to bottom to reveal the result
+  useEffect(() => {
+    if (isSubmitted) {
+      // allow DOM to render the result first
+      requestAnimationFrame(scrollToBottom);
+    }
+  }, [isSubmitted]);
+
+  const examResult = () => {
+    let score = 0;
+    exam.questions.forEach(({ id, marks }) => {
+      const userAnswer = myMap.get(id);
+      const correctAnswer = exam.questions.find(
+        (q) => q.id === id
+      ).correctAnswer;
+      if (
+        userAnswer === correctAnswer ||
+        (userAnswer == "a" && correctAnswer == "true") ||
+        (userAnswer == "b" && correctAnswer == "false")
+      ) {
+        score += marks;
+      }
+    });
+    const next = new Map(submitedMap);
+    next.set(examKey, score);
+    setSubmitedMap(next);
   };
   // here we display the exam questions and options
   const getExamResponse = (questions) => {
@@ -157,14 +208,21 @@ export const Quiz_main_page = ({ exam, setExam }) => {
                 <div className="message">generate an exam for {exam.title}</div>
               </div>
               {getExamResponse(exam.questions)}
-              <div
-                className="submitExamBtn"
-                onClick={() => {
-                  console.log(totalMarks);
-                }}
-              >
-                submit
-              </div>
+
+              {!isSubmitted && (
+                <div className="submitExamBtn" onClick={examResult}>
+                  submit
+                </div>
+              )}
+
+              {isSubmitted && (
+                <div className="exam-result-row">
+                  <div className="exam-result">{`You scored ${currentScore} / ${totalMarks}`}</div>
+                  <button className="retry-btn" onClick={handleRetry}>
+                    Retry
+                  </button>
+                </div>
+              )}
               {/* fixed bottom-center scroll indicator */}
               <div
                 className={`scroll-indicator ${

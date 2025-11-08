@@ -453,3 +453,114 @@ main {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+.exam-result {
+  margin: 2rem auto 6rem;
+  padding: 16px 22px;
+  width: 100%;
+  max-width: 520px;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  color: #e6fffb;
+  background: linear-gradient(
+    305deg,
+    rgba(30, 146, 155, 0.25) 20%,
+    rgba(15, 15, 15, 0.9) 100%
+  );
+  border: 1px solid rgba(70, 234, 255, 0.35);
+  border-radius: 14px;
+
+  box-shadow: 0 8px 30px rgba(0, 242, 255, 0.12),
+    inset 0 0 22px rgba(0, 166, 125, 0.08);
+  backdrop-filter: blur(4px);
+
+  animation: result-pop 260ms ease-out both,
+    glow-pulse 2400ms ease-in-out infinite;
+}
+
+/* Pop-in animation */
+@keyframes result-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Gentle glow pulse to match the app's theme */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.12),
+      inset 0 0 22px rgba(0, 166, 125, 0.08);
+  }
+  50% {
+    box-shadow: 0 10px 36px rgba(0, 242, 255, 0.22),
+      inset 0 0 28px rgba(0, 166, 125, 0.16);
+  }
+}
+
+.exam-result-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem auto 6rem;
+}
+
+.exam-result-row .exam-result {
+  margin: 0; /* override inner margin for row layout */
+  flex: 1 1 auto;
+}
+
+.retry-btn {
+  flex: 0 0 auto;
+  align-self: center;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 12px;
+  border: 1px solid #00a67d;
+  background: transparent;
+  color: #00a67d;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.05s ease;
+}
+
+.retry-btn:hover {
+  background: #00a67d;
+  color: #0f0f0f;
+  box-shadow: 0 0 16px rgba(0, 166, 125, 0.35);
+}
+
+.retry-btn:focus-visible {
+  outline: 2px solid #46eaff;
+  outline-offset: 3px;
+}
+
+.retry-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 600px) {
+  .exam-result-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 520px;
+  }
+  .retry-btn {
+    width: 160px;
+  }
+}

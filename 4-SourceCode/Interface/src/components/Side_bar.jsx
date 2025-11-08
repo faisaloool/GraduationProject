@@ -20,7 +20,6 @@ export const Side_bar = ({ setExam, exam }) => {
   const { exams, loading, loadExams, deleteExam } = useExams();
   useEffect(() => {
     if (isLoggedIn) {
-      console.log("Exams loaded in Side_bar");
       renderQuizzes();
     }
   }, [isLoggedIn, exams, exam]);
