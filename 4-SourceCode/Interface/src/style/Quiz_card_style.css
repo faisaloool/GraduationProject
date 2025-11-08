@@ -22,6 +22,7 @@
 }
 
 .active-card {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,10 +37,29 @@
 
   height: 40px;
   width: 100%;
-  background-color: #10a37f;
-
+  background-color: #067e8b5e;
+margin-bottom: 1rem;
   cursor: pointer;
 }
+
+.active-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #06d1e75e;
+  transition: transform 0.3s ease;
+}
+
+/* عند المرور بالماوس */
+.active-card:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 h2 {
   overflow: hidden;
   text-overflow: ellipsis;

@@ -105,47 +105,70 @@ ul {
   padding: 0;
   justify-content: center;
   align-items: center;
+ 
   display: flex;
   flex-direction: column;
 }
 
 li {
+  position: relative;
+ 
   width: 95%;
-  margin-bottom: 0.3rem;
-  padding: 0.5rem;
+  margin-bottom: 12px;
+  padding: 0.8rem;
   color: white;
   font-size: 22px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.1s ease;
+  display: inline-block; /* مهم حتى يلف فقط حول النص */
+  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.12s ease;
   border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.15s ease, transform 0.08s ease,
-    box-shadow 0.12s ease;
   background-repeat: no-repeat;
   background-position: left center;
-  padding: 0.8rem;
+  overflow: hidden;
 }
 
+/* اللون عند المرور */
 li:hover {
-  background-color: #333333;
+  background-color: #067e8b5e;
   cursor: pointer;
+  font-size: 23px;
 }
+
+/* الخط المتحرك تحت النص */
+li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: 2px;
+  background-color: #06d1e75e;
+  transition: transform 0.3s ease;
+}
+
+/* عند المرور بالماوس */
+li:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 
 a {
+ 
   text-decoration: none;
   color: inherit;
   background: none;
   border: none;
   outline: none;
+  text-align: center;
 }
 
 a:hover,
 a:focus {
   text-decoration: none;
   color: inherit;
+ 
 }
 
 .shrink:hover {
@@ -294,4 +317,22 @@ a:focus {
 /* Optional hover to align with theme */
 .quiz-card-item:hover {
   background: rgba(255, 255, 255, 0.04);
+}
+/* لكروم، إيدج، وسفاري */
+::-webkit-scrollbar {
+  width: 10px; /* عرض العمود */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* لون الخلفية (المسار) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #034b55; /* لون العمود نفسه */
+  border-radius: 10px;
+}
+
+/* لما المستخدم يعمل hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #06d5f0af; /* اللون عند السحب */
 }
