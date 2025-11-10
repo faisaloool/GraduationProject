@@ -24,6 +24,23 @@
   min-height: 0;
   min-width: 0;
 }
+::-webkit-scrollbar {
+  width: 10px; /* عرض العمود */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* لون الخلفية (المسار) */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #034b55; /* لون العمود نفسه */
+  border-radius: 10px;
+}
+
+/* لما المستخدم يعمل hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #06d5f0af; /* اللون عند السحب */
+}
 
 /* main is the scrollable content area under the header, single scrollbar only here */
 main {
@@ -58,12 +75,13 @@ main {
   box-shadow: none;
 } */
 .wellcome-page:has(.input) {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  height: calc(100vh - 130px);
+  height: calc(100vh - 22vh);
   background: linear-gradient(305deg, #1e929b 20%, #0f0f0f 100%);
   border-radius: 20px;
   padding: 30px;
@@ -77,7 +95,7 @@ main {
 
 .wellcome-page .input {
   position: relative;
-  bottom: -300px;
+  bottom: -40%;
   width: 90%;
   max-width: 400px;
   margin-right: 70px;
