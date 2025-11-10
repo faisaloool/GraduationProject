@@ -51,3 +51,7 @@ h2 {
 .threeDots {
   font-size: 24px;
 }
+.threeDotsSpace {
+  display: flex;
+  align-items: center;
+}

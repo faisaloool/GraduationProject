@@ -9,6 +9,7 @@ export const Quiz_main_page = ({ exam, setExam }) => {
   const [totalMarks, setTotalMarks] = React.useState(0);
   const [myMap, setMyMap] = useState(new Map());
   const [submitedMap, setSubmitedMap] = useState(new Map());
+  /* const [RightOrWrong, setRightOrWrong] = useState(new Map()); */
   const [showScrollArrow, setShowScrollArrow] = useState(false);
 
   // stable key for current exam
@@ -184,7 +185,7 @@ export const Quiz_main_page = ({ exam, setExam }) => {
   return (
     <div className="page">
       <div className="header">
-        <Header />
+        <Header title={exam.title} />
       </div>
 
       <main ref={quizRef}>
