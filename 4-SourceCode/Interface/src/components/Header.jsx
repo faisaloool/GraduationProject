@@ -95,9 +95,9 @@ export const Header = ({ title }) => {
       {menuOpen && (
         <div ref={menuRef}>
           <Options_menu
-            className="options-menu"
             position={menuPosition}
             onClose={() => setMenuOpen(false)}
+            where={"header"}
           />
         </div>
       )}

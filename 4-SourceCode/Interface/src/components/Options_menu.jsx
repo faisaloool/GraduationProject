@@ -6,7 +6,7 @@ import { MdDeleteForever } from "react-icons/md";
 import { FiShare } from "react-icons/fi";
 import "../style/Options_menu_style.css";
 
-export const Options_menu = ({ position }) => {
+export const Options_menu = ({ position, quiz, setIsEditing, where }) => {
   const menu = (
     <div
       className="options_list"
@@ -21,10 +21,17 @@ export const Options_menu = ({ position }) => {
         Share
         <FiShare />
       </p>
-      <p className="option_item">
-        Rename
-        <MdDriveFileRenameOutline />
-      </p>
+      {where === "quiz" && (
+        <p
+          className="option_item"
+          onClick={() => {
+            setIsEditing(quiz.examId);
+          }}
+        >
+          Rename
+          <MdDriveFileRenameOutline />
+        </p>
+      )}
       <p className="option_item delete">
         Delete
         <MdDeleteForever />

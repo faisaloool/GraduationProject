@@ -4,7 +4,7 @@ import { useExams } from "../context/ExamsProvider.jsx";
 import { useNavigate } from "react-router-dom";
 import "../style/Input.css";
 
-export const Input = ({ setExam }) => {
+export const Input = () => {
   const navigate = useNavigate();
   const { exams, loading, loadExams, deleteExam, addExam } = useExams();
   const [erorr, setErorr] = React.useState(false);
@@ -14,10 +14,10 @@ export const Input = ({ setExam }) => {
     const file = input && input.files[0];
     if (file) {
       const response = await generateQuizFromFile(file, "your-auth-token");
-      setErorr(false); // remove error message if any
-      addExam(response.quizzes[0]); // setting the first quiz as current exam
-      setExam(response.quizzes[0]);
-      navigate(`/exam/${response.quizzes[0].quizId}`);
+      setErorr(false);
+      addExam(response);
+      console.log(response);
+      navigate(`/exam/${response.quizId}`);
     } else {
       setErorr(true);
     }

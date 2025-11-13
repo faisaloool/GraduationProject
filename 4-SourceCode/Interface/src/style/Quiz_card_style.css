@@ -38,7 +38,7 @@
   height: 40px;
   width: 100%;
   background-color: #067e8b5e;
-margin-bottom: 1rem;
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
@@ -60,7 +60,8 @@ margin-bottom: 1rem;
   transform: translateX(-50%) scaleX(1);
 }
 
-h2 {
+h2,
+input {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -74,4 +75,54 @@ h2 {
 .threeDotsSpace {
   display: flex;
   align-items: center;
+}
+
+.quiz-card.editing,
+.active-card.editing {
+  background: rgba(6, 126, 139, 0.35);
+  box-shadow: 0 0 0 1px rgba(6, 209, 231, 0.25);
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+.quiz-title-input {
+  flex: 1 1 auto;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(70, 234, 255, 0.35);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e9feff;
+  outline: none;
+  letter-spacing: 0.2px;
+  box-shadow: inset 0 0 6px rgba(0, 242, 255, 0.25);
+  transition: border-color 160ms ease, background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.quiz-title-input::placeholder {
+  color: #8abfc7;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.quiz-title-input:focus {
+  background: rgba(6, 126, 139, 0.25);
+  border-color: #06d1e7;
+  box-shadow: 0 0 0 1px #06d1e7, 0 6px 16px -4px rgba(6, 209, 231, 0.35),
+    inset 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+.quiz-title-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ensure ellipsis behavior only on non-edit state */
+.quiz-card:not(.editing) h2,
+.active-card:not(.editing) h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
