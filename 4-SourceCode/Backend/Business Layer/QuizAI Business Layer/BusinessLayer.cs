@@ -15,11 +15,16 @@ namespace QuizAI_Business_Layer
     {
         public static async Task<UserDTO> RegisterNewUser(QuizAI_DataBack_Layer.UserDTO NewUser)
         {
+
             return await DataBack.CreateNewAccountAsync(NewUser);
         }
-        public static async Task<bool> Login(UserLoginDTO LoginInfo)
+        public static async Task<string> Login(UserLoginDTO LoginInfo)//2
         {
-            return await DataBack.LoginAsync(LoginInfo);
+            if(await DataBack.LoginAsync(LoginInfo) == true)
+            {
+                return JwtService.GenerateJwt(LoginInfo.Email, "User");
+            }
+            return null;
         }
 
     }

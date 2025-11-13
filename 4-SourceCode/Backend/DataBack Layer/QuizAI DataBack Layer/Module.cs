@@ -12,6 +12,7 @@ namespace QuizAI_DataBack_Layer
 {
     public class Module
     {
+        //Don't forget to move this to a secure location like environment variables or a secure vault in production
         public static string _connectionString = "Server = localhost; Database=QuizAI;User Id = sa; Password=sa123456;Encrypt=False;TrustServerCertificate=True;Connection Timeout = 30";
 
         public static byte[] GenerateSalt(int size = 16)
@@ -21,7 +22,7 @@ namespace QuizAI_DataBack_Layer
             return salt;
         }
 
-        public static byte[] HashData(string input, byte[] salt, int iterations = 100_000, int hashSize = 32)
+        public static byte[] HashData(string input, byte[] salt, int iterations = 100_000, int hashSize = 32)//6
         {
             using (var pbkdf2 = new Rfc2898DeriveBytes(input, salt, iterations, HashAlgorithmName.SHA256))
             {

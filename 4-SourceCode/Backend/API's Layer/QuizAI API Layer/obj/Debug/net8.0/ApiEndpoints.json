@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "Login",
+    "RelativePath": "api/v1/quiz-ai/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserLoginInfo",
+        "Type": "QuizAI_DataBack_Layer.UserLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAI_DataBack_Layer.UserDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "CreateNewUser",
     "RelativePath": "api/v1/quiz-ai/register",
     "HttpMethod": "POST",

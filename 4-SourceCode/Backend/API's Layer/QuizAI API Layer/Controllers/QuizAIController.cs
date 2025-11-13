@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
 using QuizAI_Business_Layer;
@@ -19,7 +20,7 @@ namespace QuizAI_API_Layer.Controllers
         {
             try
             {
-                if (QuizAI_DataBack_Layer.Module.ValidateRegistration(UserInfo.Email, UserInfo.Password, UserInfo.FullName, UserInfo.UserRole, ModelState))
+                if (!QuizAI_DataBack_Layer.Module.ValidateRegistration(UserInfo.Email, UserInfo.Password, UserInfo.FullName, UserInfo.UserRole, ModelState))
                 {
                     return BadRequest(ModelState); // returns all validation errors, including password, full name, and role
                 }
@@ -42,13 +43,21 @@ namespace QuizAI_API_Layer.Controllers
         }
 
         [HttpPost("Login")]
-        public static async Task<ActionResult<QuizAI_DataBack_Layer.UserDTO>> Login(QuizAI_DataBack_Layer.UserLoginDTO UserLoginInfo)
+        public async Task<ActionResult<QuizAI_DataBack_Layer.UserDTO>> Login(QuizAI_DataBack_Layer.UserLoginDTO UserLoginInfo)//1
         {
-            await QuizAI_Business_Layer.QuizAIBL.Login(UserLoginInfo);
+            try
+            {
+                var jwt = await QuizAI_Business_Layer.QuizAIBL.Login(UserLoginInfo);
 
+                if (jwt == null)
+                    return Unauthorized("Invalid credentials.");
 
+                return Ok(jwt);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
-
-
 }

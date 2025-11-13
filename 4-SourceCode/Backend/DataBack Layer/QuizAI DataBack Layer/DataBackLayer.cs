@@ -81,44 +81,53 @@ namespace QuizAI_DataBack_Layer
             return UserInfo;
         }
         
-        public static async Task<bool> LoginAsync(UserLoginDTO loginInfo)
-        {
-            using (SqlConnection con = new SqlConnection(Module._connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SP_HandleLogin", con))
-                {
-                    cmd.Parameters.AddWithValue("@Email", loginInfo.Email);
-                    byte[] salt = await GetSaltAsync(loginInfo.Email);
-
-                    if (salt != null)
-                    {
-                        cmd.Parameters.AddWithValue("Password_Hashed", Module.HashData(loginInfo.Password, salt));
-                    }
-                    await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
-
-                    if(Convert.ToInt32(result) == 1)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private static async Task<byte[]> GetSaltAsync(string Email)
+        public static async Task<bool> LoginAsync(UserLoginDTO loginInfo)//3//5//7
         {
             using (SqlConnection con = new SqlConnection(Module._connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_HandleLogin", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Email", loginInfo.Email);
+                    byte[] salt = await GetSaltAsync(loginInfo.Email);
+
+                    if (salt != null)
+                    {
+                        string Password_Hashed = Convert.ToBase64String(Module.HashData(loginInfo.Password, salt));
+
+                        cmd.Parameters.AddWithValue("@Password_Hashed", Password_Hashed);
+                    }
+                    await con.OpenAsync();
+                    object result = await cmd.ExecuteScalarAsync();
+                    if(result != null)
+                    {
+                        int intResult = Convert.ToInt32(result);
+                        if (intResult == 1)
+                        {
+                            return true;
+                        }
+                    }
+                    
+                }
+            }
+            return false;
+        }
+
+        private static async Task<byte[]> GetSaltAsync(string Email)//4
+        {
+            using (SqlConnection con = new SqlConnection(Module._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetUserSaltViaEmail", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@Email", Email);
                     await con.OpenAsync();
                     object result = await cmd.ExecuteScalarAsync();
-                    return (byte[])result;
-
+                    if(result != null)
+                        return (byte[])result;
+                    
+                    return null;
                 }
 
             }
