@@ -1,0 +1,14 @@
+To restore the database to your device, use this query: 💻
+
+RESTORE DATABASE YourDatabaseName
+FROM DISK = 'C:\Path\To\QuizAi.bak'
+WITH REPLACE;
+
+
+Replace the 'C:\Path\To\QuizAi.bak' with the actual path in your device. 🛠️
+
+To download the SQL Server Management Studio, follow this tutorial: 🎥
+
+https://youtu.be/PkrfTxWhERM?si=r4VCB2q1DbNP2YQE
+
+You should follow exactly that tutorial, nothing added, nothing missing. ✅📌

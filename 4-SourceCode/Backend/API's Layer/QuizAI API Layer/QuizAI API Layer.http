@@ -1,0 +1,6 @@
+@QuizAI_API_Layer_HostAddress = http://localhost:5037
+
+GET {{QuizAI_API_Layer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
