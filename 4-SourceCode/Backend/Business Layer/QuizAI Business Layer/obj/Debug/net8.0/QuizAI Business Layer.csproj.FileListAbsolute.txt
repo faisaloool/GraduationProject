@@ -1,0 +1,16 @@
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\bin\Debug\net8.0\QuizAI Business Layer.deps.json
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\bin\Debug\net8.0\QuizAI Business Layer.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\bin\Debug\net8.0\QuizAI Business Layer.pdb
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\bin\Debug\net8.0\QuizAI DataBack Layer.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\bin\Debug\net8.0\QuizAI DataBack Layer.pdb
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.csproj.AssemblyReference.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.AssemblyInfoInputs.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.AssemblyInfo.cs
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.csproj.CoreCompileInputs.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.sourcelink.json
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI B.52FF6CB7.Up2Date
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\refint\QuizAI Business Layer.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\QuizAI Business Layer.pdb
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\Business Layer\QuizAI Business Layer\obj\Debug\net8.0\ref\QuizAI Business Layer.dll
