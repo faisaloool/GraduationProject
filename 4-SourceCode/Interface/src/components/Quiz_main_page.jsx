@@ -1,9 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import "../style/Quiz_main_page.css";
+
 import { Input } from "./Input";
 import { Header } from "./Header";
 
-export const Quiz_main_page = ({ exam, setExam }) => {
+import { useExams } from "../context/ExamsProvider.jsx";
+
+export const Quiz_main_page = () => {
+  const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
+
   const quizRef = useRef(null);
   const [questionNumber, setQuestionNumber] = React.useState(0);
   const [totalMarks, setTotalMarks] = React.useState(0);

@@ -6,7 +6,6 @@ import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
 function App() {
-  const [exam, setExam] = useState([]);
   return (
     <Router>
       <Routes>
@@ -17,8 +16,8 @@ function App() {
           path="/"
           element={
             <main className="layout">
-              <Side_bar setExam={setExam} exam={exam} />
-              <Quiz_main_page exam={exam} setExam={setExam} />
+              <Side_bar />
+              <Quiz_main_page />
             </main>
           }
         />
@@ -26,8 +25,8 @@ function App() {
           path="/exam/:id"
           element={
             <main className="layout">
-              <Side_bar setExam={setExam} exam={exam} />
-              <Quiz_main_page exam={exam} setExam={setExam} />
+              <Side_bar />
+              <Quiz_main_page />
             </main>
           }
         />

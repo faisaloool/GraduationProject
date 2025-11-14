@@ -1,15 +1,15 @@
 import React from "react";
 import { useState, useRef, useEffect } from "react";
 
-import { Options_menu } from "./Options_menu";
-
 import { useNavigate } from "react-router-dom";
+
 import "../style/Quiz_card_style.css";
+
 import { BsThreeDots } from "react-icons/bs";
 
+import { useExams } from "../context/ExamsProvider.jsx";
+
 export const Quiz_card = ({
-  exam,
-  setExam,
   e,
   editing,
   setIsEditing,
@@ -21,6 +21,9 @@ export const Quiz_card = ({
   const [hover, setHover] = React.useState(false);
   const [title, setTitle] = useState(e.title);
 
+  const { exam, setExam, exams, loading, loadExams, deleteExam, renameExam } =
+    useExams();
+
   const handleThreeDotsClick = (event) => {
     event.stopPropagation();
     const rect = event.currentTarget.getBoundingClientRect();
@@ -29,9 +32,9 @@ export const Quiz_card = ({
     setMenuQuiz(e);
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     console.log("editing changed in Quiz_card:", editing);
-  }, [editing]);
+  }, [editing]); */
 
   return (
     <>
@@ -52,12 +55,13 @@ export const Quiz_card = ({
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             onBlur={() => {
-              setIsEditing(null);
+              setIsEditing(-999);
             }}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 e.title = title;
-                setIsEditing(false);
+                renameExam(e.examId, title);
+                setIsEditing(-999);
               }
             }}
             placeholder="Rename quiz..."

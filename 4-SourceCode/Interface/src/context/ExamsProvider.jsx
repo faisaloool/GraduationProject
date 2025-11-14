@@ -6,6 +6,7 @@ const ExamsContext = createContext();
 
 export function ExamsProvider({ children }) {
   const { user, token } = useAuth();
+  const [exam, setExam] = useState({ title: "Main-page", examId: null });
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -48,9 +49,28 @@ export function ExamsProvider({ children }) {
     setExams((prev) => [newExam, ...prev]);
   };
 
+  // rename exam
+  const renameExam = (examId, newName) => {
+    setExams((prev) =>
+      prev.map((exam) =>
+        exam.examId === examId ? { ...exam, name: newName } : exam
+      )
+    );
+  };
+
   return (
     <ExamsContext.Provider
-      value={{ exams, loading, loadExams, updateExam, deleteExam, addExam }}
+      value={{
+        exam,
+        setExam,
+        exams,
+        loading,
+        loadExams,
+        updateExam,
+        deleteExam,
+        addExam,
+        renameExam,
+      }}
     >
       {children}
     </ExamsContext.Provider>

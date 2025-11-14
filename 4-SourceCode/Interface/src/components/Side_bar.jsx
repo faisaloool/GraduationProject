@@ -14,18 +14,18 @@ import { IoSearch } from "react-icons/io5";
 import { IoLibraryOutline } from "react-icons/io5";
 import "../style/Side_bar.css";
 
-export const Side_bar = ({ setExam, exam }) => {
+export const Side_bar = () => {
   const navigate = useNavigate();
 
   const [collaps, setCollaps] = React.useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState(null);
   const [menuQuiz, setMenuQuiz] = useState(null);
-  const [editing, setIsEditing] = useState(null);
+  const [editing, setIsEditing] = useState(-999);
   const menuRef = useRef(null);
 
   const { user, isLoggedIn, logout, token } = useAuth();
-  const { exams, loading, loadExams, deleteExam } = useExams();
+  const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -51,8 +51,6 @@ export const Side_bar = ({ setExam, exam }) => {
           <Quiz_card
             key={e.examId || e.quizId}
             e={e}
-            setExam={setExam}
-            exam={exam}
             editing={editing}
             setIsEditing={setIsEditing}
             setMenuPosition={setMenuPosition}
