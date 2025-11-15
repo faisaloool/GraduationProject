@@ -118,19 +118,3 @@
 .options_list::-webkit-scrollbar-thumb:hover {
   background: rgba(70, 234, 255, 0.35);
 }
-
-/* Responsive */
-@media (max-width: 480px) {
-  .options_list {
-    min-width: 170px;
-    padding: 6px;
-  }
-  .option_item {
-    padding: 9px 10px;
-    font-size: 13px;
-  }
-  .option_item svg {
-    width: 16px;
-    height: 16px;
-  }
-}

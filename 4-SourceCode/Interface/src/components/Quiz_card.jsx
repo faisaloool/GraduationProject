@@ -12,7 +12,7 @@ import { useExams } from "../context/ExamsProvider.jsx";
 export const Quiz_card = ({
   e,
   editing,
-  setIsEditing,
+  setEditing,
   setMenuPosition,
   setMenuOpen,
   setMenuQuiz,
@@ -40,7 +40,7 @@ export const Quiz_card = ({
     <>
       <div
         className={`${exam.examId === e.examId ? "active-card" : "quiz-card"} ${
-          editing == e.examId ? "editing" : ""
+          editing.id == e.examId ? "editing" : ""
         }`}
         onClick={() => {
           setExam(e);
@@ -49,19 +49,19 @@ export const Quiz_card = ({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        {editing == e.examId ? (
+        {editing.id == e.examId && editing.action === "rename" ? (
           <input
             className="quiz-title-input"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             onBlur={() => {
-              setIsEditing(-999);
+              setEditing({ id: -999 });
             }}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 e.title = title;
                 renameExam(e.examId, title);
-                setIsEditing(-999);
+                setEditing({ id: -999 });
               }
             }}
             placeholder="Rename quiz..."
@@ -71,7 +71,7 @@ export const Quiz_card = ({
           <h2>{title}</h2>
         )}
 
-        {editing != e.examId && (
+        {editing.id != e.examId && (
           <div
             className="threeDots"
             style={{ display: hover ? "block" : "none" }}

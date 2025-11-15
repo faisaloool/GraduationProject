@@ -1,4 +1,5 @@
-import React from "react";
+import { React } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 
 import { MdDriveFileRenameOutline } from "react-icons/md";
@@ -6,7 +7,8 @@ import { MdDeleteForever } from "react-icons/md";
 import { FiShare } from "react-icons/fi";
 import "../style/Options_menu_style.css";
 
-export const Options_menu = ({ position, quiz, setIsEditing, where }) => {
+export const Options_menu = ({ position, quiz, setEditing, where }) => {
+  const [id, setId] = useState(quiz.examId || quiz.quizId);
   const menu = (
     <div
       className="options_list"
@@ -25,14 +27,19 @@ export const Options_menu = ({ position, quiz, setIsEditing, where }) => {
         <p
           className="option_item"
           onClick={() => {
-            setIsEditing(quiz.examId);
+            setEditing({ id: `${id}`, action: "rename" });
           }}
         >
           Rename
           <MdDriveFileRenameOutline />
         </p>
       )}
-      <p className="option_item delete">
+      <p
+        className="option_item delete"
+        onClick={() => {
+          setEditing({ id: `${id}`, action: "delete" });
+        }}
+      >
         Delete
         <MdDeleteForever />
       </p>
