@@ -117,7 +117,7 @@ function Form({ isLogin }) {
       </div>
 
       <div className="inputs remember">
-        <input id="keepSigned" type="checkbox" name="keepSigned"  className="keep" />
+        <input id="keepSigned" type="checkbox" name="keepSigned"   />
         <label htmlFor="keepSigned">Keep me signed in</label>
       </div>
 

@@ -184,8 +184,9 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
+
   transition: 0.3s;
+  margin-bottom: 5px;
 }
 
 .submit_btn:hover {
@@ -193,13 +194,14 @@
 }
 
 .forgot {
-  margin-top: 10px;
-  font-size: 12px;
+
+  font-size: 11px;
   color: #8fe3ec;
   cursor: pointer;
   text-decoration: underline;
 }
 .google-btn {
+ 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,6 +233,7 @@
 
 /* Remember (Keep me signed in) row */
 .inputs.remember {
+  width: 46%;
   flex-direction: row;
   align-items: center;
   gap: 10px;
@@ -241,8 +244,8 @@
 .inputs.remember input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
+  width: 20px;     
+  height: 20px;     
   border: 2px solid #46eaff;
   border-radius: 6px;
   background: transparent;
@@ -290,7 +293,7 @@
 /* Label alignment/color */
 .inputs.remember label {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #d3f3f5;
   cursor: pointer;
 }
