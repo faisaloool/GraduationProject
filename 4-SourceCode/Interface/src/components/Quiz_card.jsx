@@ -32,15 +32,18 @@ export const Quiz_card = ({
     setMenuQuiz(e);
   };
 
-  /* useEffect(() => {
-    console.log("editing changed in Quiz_card:", editing);
-  }, [editing]); */
+  const editingId = typeof editing === "object" ? editing?.id : editing;
+  const isRenamingThis =
+    typeof editing === "object" &&
+    editing?.action === "rename" &&
+    editing?.id == e.examId;
+  const canShowMenu = editingId === -999;
 
   return (
     <>
       <div
         className={`${exam.examId === e.examId ? "active-card" : "quiz-card"} ${
-          editing.id == e.examId ? "editing" : ""
+          isRenamingThis ? "editing" : ""
         }`}
         onClick={() => {
           setExam(e);
@@ -49,7 +52,7 @@ export const Quiz_card = ({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        {editing.id == e.examId && editing.action === "rename" ? (
+        {isRenamingThis ? (
           <input
             className="quiz-title-input"
             value={title}
@@ -60,7 +63,7 @@ export const Quiz_card = ({
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 e.title = title;
-                renameExam(e.examId, title);
+                renameExam(e.examId || e.quizId, title);
                 setEditing({ id: -999 });
               }
             }}
@@ -71,7 +74,7 @@ export const Quiz_card = ({
           <h2>{title}</h2>
         )}
 
-        {editing.id != e.examId && (
+        {canShowMenu && (
           <div
             className="threeDots"
             style={{ display: hover ? "block" : "none" }}

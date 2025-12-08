@@ -5,7 +5,7 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { BsThreeDots } from "react-icons/bs";
 import { Options_menu } from "./Options_menu.jsx";
 
-export const Header = ({ title }) => {
+export const Header = ({ quiz, setEditing }) => {
   const { user, isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,16 +19,26 @@ export const Header = ({ title }) => {
     setMenuOpen((prev) => !prev);
   };
 
-  //close menu when clicking outside
+  // close menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
+    if (!menuOpen) return;
+
+    const handleClickOutside = (e) => {
+      const target = e.target;
+      if (!target || !(target instanceof Element)) return;
+
+      // ignore clicks on the menu button or inside the menu
+      if (target.closest(".menu-btn")) return;
+      if (menuRef.current && menuRef.current.contains(target)) return;
+
+      setMenuOpen(false);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+
+    document.addEventListener("click", handleClickOutside, true);
+    return () => {
+      document.removeEventListener("click", handleClickOutside, true);
+    };
+  }, [menuOpen]);
 
   const hasStoredAuth = () => {
     try {
@@ -78,8 +88,8 @@ export const Header = ({ title }) => {
             </button>
           </div>
         ) : (
-          title !== "Main-page" &&
-          title && (
+          quiz.title !== "Main-page" &&
+          quiz.title && (
             <button
               className="menu-btn"
               aria-label="Menu"
@@ -92,12 +102,15 @@ export const Header = ({ title }) => {
           )
         )}
       </header>
+
       {menuOpen && (
         <div ref={menuRef}>
           <Options_menu
             position={menuPosition}
-            onClose={() => setMenuOpen(false)}
+            setEditing={setEditing}
+            quiz={quiz}
             where={"header"}
+            onClose={() => setMenuOpen(false)}
           />
         </div>
       )}

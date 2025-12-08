@@ -1,9 +1,12 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { createPortal } from "react-dom";
 
 import { Quiz_card } from "./Quiz_card";
 import { Options_menu } from "./Options_menu";
+import "../style/Side_bar.css";
+import { Account } from "./Account";
 
 import { useAuth } from "../context/AuthContext.jsx";
 import { useExams } from "../context/ExamsProvider.jsx";
@@ -12,39 +15,48 @@ import { BsReverseLayoutSidebarReverse } from "react-icons/bs";
 import { IoCreateOutline } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
 import { IoLibraryOutline } from "react-icons/io5";
-import "../style/Side_bar.css";
 
-export const Side_bar = () => {
+export const Side_bar = ({ editing, setEditing }) => {
   const navigate = useNavigate();
 
   const [collaps, setCollaps] = React.useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState(null);
   const [menuQuiz, setMenuQuiz] = useState(null);
-  const [editing, setEditing] = useState(-999);
-  const [popUp, setPopUp] = useState(-999);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
+
   const menuRef = useRef(null);
 
   const { user, isLoggedIn, logout, token } = useAuth();
   const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      renderQuizzes();
-    }
-  }, [isLoggedIn, exams, exam]);
+  const normalizedSearch = searchTerm.trim().toLowerCase();
+  const matchingExams = normalizedSearch
+    ? exams.filter(({ title }) =>
+        title?.toLowerCase().includes(normalizedSearch)
+      )
+    : [];
 
-  //close menu when clicking outside
+  const closeSearch = () => {
+    setShowSearch(false);
+    setSearchTerm("");
+  };
+
+  const handleSelectExam = (selected) => {
+    setExam(selected);
+    navigate(`/exam/${selected.examId || selected.quizId}`);
+    closeSearch();
+  };
+
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuOpen(false);
-      }
+    if (!showSearch) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") closeSearch();
     };
-    // Use 'click' instead of 'mousedown' so inner clicks can fire first
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [showSearch]);
 
   const renderQuizzes = () => {
     return (
@@ -64,13 +76,16 @@ export const Side_bar = () => {
     );
   };
 
-  const handleClosePopUp = () => setEditing({ id: -999 });
+  const handleClosePopUp = () => {
+    setEditing({ id: -999 });
+    setMenuQuiz(null);
+  };
+
   const handleConfirmDelete = async () => {
     try {
-      if (!editing.id) return handleClosePopUp();
-      const id = editing.id.examId || editing.id.quizId;
+      if (!menuQuiz) return handleClosePopUp();
+      const id = menuQuiz.examId || menuQuiz.quizId;
       await deleteExam(id);
-      // if the deleted quiz is currently selected, reset to main page
       if ((exam?.examId || exam?.quizId) === id) {
         setExam({ title: "Main-page" });
         navigate("/");
@@ -129,12 +144,12 @@ export const Side_bar = () => {
                   </div>
                 </li>
                 <li>
-                  <div className="Item">
+                  <div className="Item" onClick={() => setShowSearch(true)}>
                     <IoSearch className="side-bar-icons" />
                     {!collaps && <a>Search</a>}
                   </div>
                 </li>
-                <li>
+                {/* <li>
                   <div
                     className="Item"
                     onClick={() => {
@@ -144,7 +159,7 @@ export const Side_bar = () => {
                     <IoLibraryOutline className="side-bar-icons" />
                     {!collaps && <a>Library</a>}
                   </div>
-                </li>
+                </li> */}
               </ul>
             </nav>
             {!collaps && (
@@ -156,12 +171,74 @@ export const Side_bar = () => {
               </div>
             )}
           </div>
-          <div className="Account">
-            <img src="#"></img>
-            {!collaps && <h2>{user.name}</h2>}
-          </div>
+          {/* Replace old Account block */}
+          <Account collapsed={collaps} />
         </div>
       )}
+
+      {showSearch &&
+        createPortal(
+          <div
+            className="sidebar-search-overlay"
+            onClick={closeSearch}
+            role="dialog"
+            aria-modal="true"
+          >
+            <div
+              className="sidebar-search-modal"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="sidebar-search-header">
+                <div>
+                  <h3>Find a quiz</h3>
+                  <p>Search by quiz title and jump straight to it.</p>
+                </div>
+                <button
+                  type="button"
+                  className="sidebar-search-close"
+                  aria-label="Close search"
+                  onClick={closeSearch}
+                >
+                  ×
+                </button>
+              </div>
+
+              <input
+                type="search"
+                placeholder="Type a quiz name…"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                autoFocus
+              />
+
+              <div className="sidebar-search-results">
+                {!normalizedSearch && (
+                  <p className="sidebar-search-hint">
+                    Start typing to see matching quizzes.
+                  </p>
+                )}
+
+                {normalizedSearch && matchingExams.length === 0 && (
+                  <p className="sidebar-search-hint">
+                    No exam named “{searchTerm.trim()}”.
+                  </p>
+                )}
+
+                {matchingExams.map((examCard) => (
+                  <button
+                    key={examCard.examId || examCard.quizId}
+                    type="button"
+                    className="sidebar-search-result"
+                    onClick={() => handleSelectExam(examCard)}
+                  >
+                    {examCard.title || "Untitled exam"}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
 
       {/* menu option */}
       {menuOpen && (
@@ -176,9 +253,8 @@ export const Side_bar = () => {
             position={menuPosition}
             setEditing={setEditing}
             quiz={menuQuiz}
-            popUp={popUp}
-            setPopUp={setPopUp}
             where={"quiz"}
+            onClose={() => setMenuOpen(false)}
           />
         </div>
       )}

@@ -6,7 +6,7 @@ import { Header } from "./Header";
 
 import { useExams } from "../context/ExamsProvider.jsx";
 
-export const Quiz_main_page = () => {
+export const Quiz_main_page = ({ editing, setEditing }) => {
   const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
 
   const quizRef = useRef(null);
@@ -190,7 +190,7 @@ export const Quiz_main_page = () => {
   return (
     <div className="page">
       <div className="header">
-        <Header title={exam.title} />
+        <Header quiz={exam} setEditing={setEditing} />
       </div>
 
       <main ref={quizRef}>

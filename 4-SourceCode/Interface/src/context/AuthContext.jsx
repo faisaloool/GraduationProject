@@ -45,6 +45,9 @@ export function AuthProvider({ children }) {
     setToken(null);
   };
 
+  const changeName = () => {};
+  const changePassword = () => {};
+
   return (
     <AuthContext.Provider
       value={{

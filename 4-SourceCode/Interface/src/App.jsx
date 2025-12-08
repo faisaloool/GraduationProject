@@ -6,18 +6,19 @@ import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
 function App() {
+  const [editing, setEditing] = useState(-999);
   return (
     <Router>
       <Routes>
         <Route path="/Log-in" element={<Authform login={true} />} />
         <Route path="/Sign-up" element={<Authform login={false} />} />
-        <Route path="/library" element={<Library />} />
+        {/* <Route path="/library" element={<Library />} /> */}
         <Route
           path="/"
           element={
             <main className="layout">
-              <Side_bar />
-              <Quiz_main_page />
+              <Side_bar editing={editing} setEditing={setEditing} />
+              <Quiz_main_page editing={editing} setEditing={setEditing} />
             </main>
           }
         />
@@ -25,8 +26,8 @@ function App() {
           path="/exam/:id"
           element={
             <main className="layout">
-              <Side_bar />
-              <Quiz_main_page />
+              <Side_bar editing={editing} setEditing={setEditing} />
+              <Quiz_main_page editing={editing} setEditing={setEditing} />
             </main>
           }
         />
