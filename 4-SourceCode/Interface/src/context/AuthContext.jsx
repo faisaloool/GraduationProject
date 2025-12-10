@@ -8,21 +8,49 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Check localStorage and sessionStorage
-    const savedToken =
-      localStorage.getItem("token") || sessionStorage.getItem("token");
-    const savedUser =
-      JSON.parse(localStorage.getItem("user")) ||
-      JSON.parse(sessionStorage.getItem("user"));
+    const BOOT_DELAY = Number(import.meta.env.VITE_MIN_LOADING_MS); /* || 0 */
+    let timeoutId;
 
-    if (savedToken && savedUser) {
-      setToken(savedToken);
-      setUser(savedUser);
-    }
+    const boot = () => {
+      try {
+        const savedToken =
+          localStorage.getItem("token") || sessionStorage.getItem("token");
 
-    setLoading(false);
+        const savedUserStr =
+          localStorage.getItem("user") || sessionStorage.getItem("user");
+
+        let savedUser = null;
+        if (savedUserStr) {
+          try {
+            savedUser = JSON.parse(savedUserStr);
+          } catch (parseErr) {
+            console.error(
+              "AuthContext: failed to parse saved user JSON",
+              parseErr
+            );
+            savedUser = null;
+          }
+        }
+
+        if (savedToken && savedUser) {
+          setToken(savedToken);
+          setUser(savedUser);
+        }
+      } catch (err) {
+        setError(err);
+      } finally {
+        timeoutId = setTimeout(() => setLoading(false), BOOT_DELAY);
+      }
+    };
+
+    boot();
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   // Login function
@@ -57,6 +85,7 @@ export function AuthProvider({ children }) {
         loading,
         login,
         logout,
+        error,
       }}
     >
       {children}

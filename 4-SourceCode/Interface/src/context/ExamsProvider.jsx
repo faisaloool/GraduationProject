@@ -9,6 +9,7 @@ export function ExamsProvider({ children }) {
   const [exam, setExam] = useState({ title: "Main-page", examId: null });
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   // Load exams when user changes
   useEffect(() => {
@@ -20,11 +21,13 @@ export function ExamsProvider({ children }) {
   // Fetch exams from API
   const loadExams = async () => {
     setLoading(true);
+    const minLoadingMs = Number(import.meta.env.VITE_MIN_LOADING_MS) || 0;
+    await new Promise((resolve) => setTimeout(resolve, minLoadingMs));
     try {
       const data = await fetchUserExams(user.id, token);
       setExams(data.quizzes || []);
     } catch (error) {
-      console.error("Error loading exams:", error);
+      setError(error);
     } finally {
       setLoading(false);
     }
@@ -70,6 +73,7 @@ export function ExamsProvider({ children }) {
         deleteExam,
         addExam,
         renameExam,
+        error,
       }}
     >
       {children}

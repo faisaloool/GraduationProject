@@ -29,7 +29,8 @@ export const Side_bar = ({ editing, setEditing }) => {
   const menuRef = useRef(null);
 
   const { user, isLoggedIn, logout, token } = useAuth();
-  const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
+  const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
+    useExams();
 
   const normalizedSearch = searchTerm.trim().toLowerCase();
   const matchingExams = normalizedSearch
@@ -59,6 +60,27 @@ export const Side_bar = ({ editing, setEditing }) => {
   }, [showSearch]);
 
   const renderQuizzes = () => {
+    if (error) {
+      return (
+        <div className="error-message">
+          <p>Error loading quizzes: {error.message}</p>
+        </div>
+      );
+    }
+
+    if (loading) {
+      return (
+        <div>
+          {[...Array(4)].map((_, idx) => (
+            <div key={idx} className="quiz-card skeleton-card">
+              <div className="skeleton-title" />
+              <div className="skeleton-dot" />
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     return (
       <div>
         {exams.map((e) => (
@@ -149,29 +171,17 @@ export const Side_bar = ({ editing, setEditing }) => {
                     {!collaps && <a>Search</a>}
                   </div>
                 </li>
-                {/* <li>
-                  <div
-                    className="Item"
-                    onClick={() => {
-                      navigate("/library");
-                    }}
-                  >
-                    <IoLibraryOutline className="side-bar-icons" />
-                    {!collaps && <a>Library</a>}
-                  </div>
-                </li> */}
               </ul>
             </nav>
             {!collaps && (
               <div className="Quizzes">
-                <details>
+                <details open>
                   <summary>Quizzes</summary>
                   <div className="quizzes-list">{renderQuizzes()}</div>
                 </details>
               </div>
             )}
           </div>
-          {/* Replace old Account block */}
           <Account collapsed={collaps} />
         </div>
       )}

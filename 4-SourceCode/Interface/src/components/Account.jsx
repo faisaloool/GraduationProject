@@ -9,8 +9,16 @@ import "../style/Account_style.css";
 
 export const Account = ({ collapsed = false }) => {
   const navigate = useNavigate();
-  const { user, token, login, logout } = useAuth();
-  const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
+  const { user, token, login, logout, error, loading } = useAuth();
+  const {
+    exam,
+    setExam,
+    exams,
+    loading: examsLoading,
+    loadExams,
+    deleteExam,
+    error: examsError,
+  } = useExams();
   const name = user?.name || user?.username || "User";
   const email = user?.email || "";
   const avatarUrl = user?.avatar || user?.photoURL || user?.image || "";
@@ -111,6 +119,44 @@ export const Account = ({ collapsed = false }) => {
     setExam({ title: "Main-page" });
     navigate("/");
   };
+
+  const fatalError = examsError || error;
+  if (fatalError) {
+    return (
+      <div
+        className={`sb-account ${
+          collapsed ? "collapsed" : ""
+        } sb-account--error`}
+        role="alert"
+      >
+        <div className="sb-account__avatar skeleton-avatar">!</div>
+        {!collapsed && (
+          <div className="sb-account__info">
+            <p className="account-error-title">Unable to load account</p>
+            <p className="account-error-subtitle">{String(fatalError)}</p>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  if (examsLoading || !user) {
+    return (
+      <div
+        className={`sb-account ${
+          collapsed ? "collapsed" : ""
+        } sb-account--skeleton`}
+      >
+        <div className="sb-account__avatar skeleton-avatar" />
+        {!collapsed && (
+          <div className="sb-account__info">
+            <div className="skeleton-line skeleton-line--wide" />
+            <div className="skeleton-line skeleton-line--narrow" />
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <>

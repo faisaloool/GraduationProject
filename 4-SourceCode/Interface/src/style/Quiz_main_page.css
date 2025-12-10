@@ -571,6 +571,81 @@ main {
   transform: translateY(1px);
 }
 
+.exam-skeleton {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.skeleton-message {
+  margin-top: 5rem;
+  width: 240px;
+  height: 32px;
+  border-radius: 12px;
+  align-self: flex-end;
+}
+
+.exam-skeleton-question {
+  margin-top: 2rem;
+  width: 100%;
+  min-height: 50vh;
+  padding: 0;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.skeleton-question-title {
+  height: 30px;
+  width: 80%;
+  border-radius: 16px;
+  margin: 0 0 12px;
+}
+
+.skeleton-option-list {
+  gap: 12px;
+}
+
+.skeleton-option-line {
+  height: 48px;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.skeleton-submit {
+  width: 250px;
+  height: 58px;
+  border-radius: 12px;
+  margin: 0 auto 40px;
+}
+
+/* shimmer effect for loading state */
+.shimmer {
+  background: linear-gradient(
+    120deg,
+    rgba(70, 234, 255, 0.12) 25%,
+    rgba(70, 234, 255, 0.32) 50%,
+    rgba(70, 234, 255, 0.12) 75%
+  );
+  background-size: 200% 100%;
+  animation: quizSkeletonShimmer 1.4s linear infinite;
+}
+
+@keyframes quizSkeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 @media (max-width: 600px) {
   .exam-result-row {
     flex-direction: column;
@@ -581,4 +656,50 @@ main {
   .retry-btn {
     width: 160px;
   }
+}
+
+.exam-error-card {
+  width: min(520px, 90%);
+  border-radius: 20px;
+  padding: 28px 32px;
+  text-align: center;
+  background: linear-gradient(
+    150deg,
+    rgba(232, 69, 69, 0.25),
+    rgba(12, 18, 20, 0.92)
+  );
+  border: 1px solid rgba(232, 69, 69, 0.35);
+  color: #ffe0e0;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 30px rgba(232, 69, 69, 0.08);
+}
+
+.exam-error-card h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.exam-error-card p {
+  margin-bottom: 18px;
+  font-size: 14px;
+  color: #ffd0d0;
+}
+
+.exam-error-card button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #e84545;
+  color: #0f0f0f;
+  transition: box-shadow 0.2s ease, transform 0.05s ease;
+}
+
+.exam-error-card button:hover {
+  box-shadow: 0 10px 22px rgba(232, 69, 69, 0.4);
+}
+
+.exam-error-card button:active {
+  transform: translateY(1px);
 }

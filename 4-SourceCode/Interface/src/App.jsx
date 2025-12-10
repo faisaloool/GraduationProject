@@ -12,7 +12,6 @@ function App() {
       <Routes>
         <Route path="/Log-in" element={<Authform login={true} />} />
         <Route path="/Sign-up" element={<Authform login={false} />} />
-        {/* <Route path="/library" element={<Library />} /> */}
         <Route
           path="/"
           element={

@@ -23,6 +23,7 @@ export const Quiz_card = ({
 
   const { exam, setExam, exams, loading, loadExams, deleteExam, renameExam } =
     useExams();
+  const id = e.examId || e.quizId;
 
   const handleThreeDotsClick = (event) => {
     event.stopPropagation();
@@ -36,7 +37,7 @@ export const Quiz_card = ({
   const isRenamingThis =
     typeof editing === "object" &&
     editing?.action === "rename" &&
-    editing?.id == e.examId;
+    editing?.id == id;
   const canShowMenu = editingId === -999;
 
   return (

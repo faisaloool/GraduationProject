@@ -7,7 +7,8 @@ import { Header } from "./Header";
 import { useExams } from "../context/ExamsProvider.jsx";
 
 export const Quiz_main_page = ({ editing, setEditing }) => {
-  const { exam, setExam, exams, loading, loadExams, deleteExam } = useExams();
+  const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
+    useExams();
 
   const quizRef = useRef(null);
   const [questionNumber, setQuestionNumber] = React.useState(0);
@@ -16,11 +17,19 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   const [submitedMap, setSubmitedMap] = useState(new Map());
   /* const [RightOrWrong, setRightOrWrong] = useState(new Map()); */
   const [showScrollArrow, setShowScrollArrow] = useState(false);
+  const [examTransitioning, setExamTransitioning] = useState(false);
 
   // stable key for current exam
   const examKey = exam.examId || exam.quizId;
   const currentScore = submitedMap.get(examKey);
   const isSubmitted = typeof currentScore === "number";
+
+  useEffect(() => {
+    if (exam.title === "Main-page" || !exam.title) return;
+    setExamTransitioning(true);
+    const timer = setTimeout(() => setExamTransitioning(false), 350);
+    return () => clearTimeout(timer);
+  }, [exam.examId, exam.quizId, exam.title]);
 
   useEffect(() => {
     // scroll to top when a new exam is loaded
@@ -187,6 +196,24 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     });
   };
 
+  if (error) {
+    return (
+      <div className="page">
+        <div className="header">
+          <Header quiz={{ title: "Main-page" }} setEditing={setEditing} />
+        </div>
+        <main>
+          <div className="exam-space">
+            <div className="exam-error-card" role="alert">
+              <h2>Sorry somthing went wrong </h2>
+              <p>{String(error)}</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="page">
       <div className="header">
@@ -195,7 +222,27 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
       <main ref={quizRef}>
         <div className="exam-space">
-          {exam.title === "Main-page" || !exam.title ? (
+          {examTransitioning ? (
+            <div className="exam-skeleton">
+              <div className="skeleton-message shimmer" />
+              {[0, 1].map((idx) => (
+                <div className="exam-skeleton-question" key={idx}>
+                  <div className="skeleton-question-title shimmer" />
+                  <div className="skeleton-option-list">
+                    {Array.from({ length: idx === 0 ? 4 : 2 }).map(
+                      (_, optIdx) => (
+                        <div
+                          className="skeleton-option-line shimmer"
+                          key={optIdx}
+                        />
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}
+              <div className="skeleton-submit shimmer" />
+            </div>
+          ) : exam.title === "Main-page" || !exam.title ? (
             <div className="wellcome-page">
               <div>
                 <h1 className="wellcome">

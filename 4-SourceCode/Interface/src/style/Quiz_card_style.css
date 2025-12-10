@@ -126,3 +126,50 @@ input {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.skeleton-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-title {
+  width: 70%;
+  height: 12px;
+  border-radius: 6px;
+  background: linear-gradient(
+    120deg,
+    rgba(70, 234, 255, 0.08) 25%,
+    rgba(70, 234, 255, 0.22) 50%,
+    rgba(70, 234, 255, 0.08) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+.skeleton-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  50% {
+    border-color: rgba(70, 234, 255, 0.25);
+  }
+}

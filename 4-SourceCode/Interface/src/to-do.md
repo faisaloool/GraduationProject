@@ -2,11 +2,8 @@
 
 ### 🔧 Features & Improvements
 
-- [ ] **Add Search Feature**  
-       Implement a search functionality to allow users to easily find quizzes or questions.
-
-- [ ] **Add Library Feature**  
-       Create a library section where users can view and manage all their saved or created quizzes.
+- [✔] **Add Search Feature**  
+   Implement a search functionality to allow users to easily find quizzes or questions.
 
 - [✔] **Set Up Mock Server**  
    Build a mock server for uploading content and displaying results for testing purposes.
@@ -17,8 +14,8 @@
 - [✔] **Add Rename Quiz Functionality**  
    Allow users to rename existing quizzes directly from the interface.
 
-- [ ] **Add Share Quiz Option**  
-       Enable quiz sharing through links or other methods.
+- [✔] **Add Share Quiz Option**  
+   Enable quiz sharing through links or other methods.
 
 - [✔] **Add Delete Question Feature**  
    Provide the option to delete specific questions from a quiz.
@@ -32,11 +29,8 @@
 - [ ] **Unify Color Palette**  
        Ensure consistent color usage and theme across all pages.
 
-- [ ] **Add Loading Skeletons**  
-       Show loading skeletons when the page is first opened for smoother UX.
-
-- [ ] **Add Writing Animations**  
-       Animate the text as questions are being generated for a more interactive experience.
+- [✔] **Add Loading Skeletons**  
+   Show loading skeletons when the page is first opened for smoother UX.
 
 - [ ] **Make the website responsive**
       Making the website to work on both PCs and phones
