@@ -66,11 +66,53 @@
 **Method:GET**  
 **Description:getting the server helth status**
 
+### Request Body
+
+none
+
 ## 2. Log in
 
 **URL:quiz-ai/login**  
 **Method:POST**  
 **Description:Logining in users if they have an accouont**
+
+### Request Body
+
+{
+"email": ,
+"password":
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"user": {
+"id": 1,
+"name": "Qotiph khaled",
+"email": "qotiph@gmail.com"
+},
+"token": "mocked-jwt-token-123"
+}
+}
+
+### Response Body (Error)
+
+{
+"success": false,
+"status": ,
+"message": "",
+"timestamp": "2025-11-16T18:23:00Z",
+"error": {
+"code": "INVALID_INPUT",
+"details": "Email field cannot be empty."
+},
+"data": null
+}
 
 ## 3. Sign up
 
@@ -78,49 +120,288 @@
 **Method:POST**  
 **Description:Creating accounts for users**
 
-## 4. Quiz Generate
+### Request Body
+
+{
+"name": ,
+"email": ,
+"password":
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"user": {
+"id": 1,
+"name": "Qotiph khaled",
+"email": "qotiph@gmail.com"
+},
+"token": "mocked-jwt-token-123"
+}
+}
+
+### Response Body (Error)
+
+{
+"success": false,
+"status": ,
+"message": "",
+"timestamp": "2025-11-16T18:23:00Z",
+"error": {
+"code": "INVALID_INPUT",
+"details": "Email field cannot be empty."
+},
+"data": null
+}
+
+## 4. PassWord recovery
+
+**URL:quiz-ai/ ? ?**  
+**Method:POST**  
+**Description:reassigning the password after sending an email to the user email and verifiying the code to set the new password**
+
+## 5. Quiz Generate
 
 **URL:quiz-ai/quiz/create**  
 **Method:POST**  
 **Description:generating a Quiz based on the user data**
 
-## 5. Get exam based on User id
+### Request Body
+
+{
+"userId" : id,
+"settings" : {
+"mcq" : 8,
+"tf" : 2
+},
+"data":
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"examId": id,
+"title": "General Knowledge Test",
+"totalMarks": 10,
+"questions": [
+{
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+},
+], ....
+}
+}
+
+## 6. Get exam based on User id
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
 **Description: Getting user exames**
 
-## 6. Quiz delete
+### Request Body
+
+none
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"quizzes": [
+"examId": 1,
+"title": "General Knowledge Test",
+"totalMarks": 10,
+"questions": [
+{
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+},
+], ....
+]
+, ....
+}
+}
+
+## 7. Quiz delete
 
 **URL:quiz-ai/quiz/delete**  
 **Method:DEL**  
-**Description:Delete exames based on user request body**
+**Description:Delete exames based on (the id of the exam) in the request body**
+
+### Request Body
+
+{
+"quizId" : "1",
+}
 
 ## 7. Rename Quiz
 
-**URL:quiz-ai/quiz/rename**  
+**URL:quiz-ai/quiz/quizId/rename**  
 **Method:PUT**  
-**Description: Renaming quizes based on user request body**
+**Description: Renaming quizes based on (the id of the exam)**
 
-## 8. Quiz serach
+### Request Body
 
-**URL:quiz-ai/quiz/serach**  
-**Method:GET**  
-**Description: Getting exames based on the filters that the user will provide in the request body**
+{
+"name":"newName"
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"newName":"name"
+}
+}
+
+## 8. Quiz submit
+
+**URL:quiz-ai/quiz/submit**  
+**Method:POST**  
+**Description: Getting exames result after submiting exam answers in the request body**
+
+### Request Body
+
+{
+"examId": "exam_01",
+"answers": [
+{ "questionId": 101, "selectedOption": "a" },
+{ "questionId": 102, "selectedOption": "c" },
+{ "questionId": 103, "selectedOption": "b" }
+]
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"data": {
+"totalMark": 85,
+"results": [
+{
+"questionId": 101,
+"isCorrect": true,
+"userSelected": "a",
+"correctOption": "a",
+"explanation": null
+},
+{
+"questionId": 102,
+"isCorrect": false,
+"userSelected": "c",
+"correctOption": "d",
+"referenceSection": "Chapter 4: Advanced AI Models"
+}
+]
+}
+}
 
 ## 9. Question regenrate
 
-**URL:quiz-ai/quiz/:id/question/:questionNumber/regenrate**  
+**URL:quiz-ai/quiz/question/regenrate**  
 **Method:POST**  
-**Description:Regenrate question based on the exam id and question number provided in the parameters**
+**Description:Regenrate question based on the exam id and question number provided in the request body**
+
+### Request Body
+
+{
+"quizId" : "1",
+"questionId": "4"
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"data": {
+"question": {
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+}
+}
+}
 
 ## 10. Question delete
 
-**URL:quiz-ai/quiz/:id/question/:questionNumber/delete**  
+**URL:quiz-ai/quiz/question/delete**  
 **Method:DEL**  
-**Description:Deleting question based on the exam id and question number provided in the parameters**
+**Description:Deleting question based on the request body**
 
-## 11. Share quiz (don't know how yet!)
+### Request Body
+
+{
+"quizId" : "1",
+"questionId": "4"
+}
+
+## 11. Quiz regenrate
+
+**URL:quiz-ai/quiz/regenrate**  
+**Method:POST**  
+**Description:Regenrate quiz based on the exam id**
+
+### Request Body
+
+{
+"quizId" : "1",
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"examId": id,
+"title": "General Knowledge Test",
+"totalMarks": 10,
+"questions": [
+{
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+},
+], ....
+}
+}
+
+## 12. Share quiz (don't know how yet!)
 
 **URL:**  
 **Method:**  
