@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 .collapsed {
-  width: 80px;
+  width: 50px;
   max-width: 80px;
   min-width: 80px;
   flex: 0 0 80px;
@@ -95,7 +95,7 @@ nav {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-color: white;
+  
 }
 
 ul {
@@ -574,4 +574,97 @@ a:focus {
   background: rgba(70, 234, 255, 0.12);
   border-color: rgba(70, 234, 255, 0.25);
   transform: none;
+}
+.side-bar-base {
+  height: 100%;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.side-bar {
+  composes: side-bar-base;
+  width: 350px;
+  min-width: 350px;
+  transition: width 100ms ease;
+}
+
+.collapsed {
+  composes: side-bar-base;
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
+  transition: width 100ms ease;
+}
+li:hover {
+  font-size: 23px;
+}
+li:hover {
+  transform: scale(1.03);
+}
+li:hover {
+  background-color: var(--hover-bg);
+}
+li::after {
+  background-color: var(--line-color);
+}
+
+@media (max-width: 400px) {
+ .side-bar {
+  text-align: center;
+  
+    width: 219px;
+    min-width: 219px;
+    transition: width 100ms ease;
+    font-size: 10px;
+}
+li{
+  font-size: 16px;
+  text-align: center;
+}
+.side-bar-body h2{
+  font-size: 13px;
+  text-align: center;
+  overflow: hidden;
+}
+.quizss p{
+  width: 100px;
+  text-align: center;
+padding-left: 40px;
+}
+
+.side-bar-body {
+   text-align: center;
+  width: 300px;
+  background-color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+.collapsed {
+  align-self: center;
+  align-items: center;
+   justify-content: center;
+  width: 50px;
+  max-width: 40px;
+  min-width: 40px;
+  flex: 0 0 80px;
+
+  transition: width 100ms ease;
+  height: 100%;
+  background-color: #1e1e1e;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+}
 }

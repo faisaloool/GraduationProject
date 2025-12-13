@@ -138,7 +138,7 @@ export const Side_bar = ({ editing, setEditing }) => {
           }}
         >
           <div className="top-of-side-bar">
-            <div className="Logo">
+            <div className={collaps==true?"closlogo" :"Logo"}>
               <img src="#" alt="Quiz AI logo" />
             </div>
             <div onClick={() => setCollaps(!collaps)}>
@@ -176,7 +176,7 @@ export const Side_bar = ({ editing, setEditing }) => {
             {!collaps && (
               <div className="Quizzes">
                 <details open>
-                  <summary>Quizzes</summary>
+                  <summary className="quizss"><p>Quizzes</p></summary>
                   <div className="quizzes-list">{renderQuizzes()}</div>
                 </details>
               </div>

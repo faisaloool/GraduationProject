@@ -118,3 +118,15 @@
 .options_list::-webkit-scrollbar-thumb:hover {
   background: rgba(70, 234, 255, 0.35);
 }
+.options_list {
+  will-change: transform, opacity;
+}
+.option_item svg {
+  will-change: transform;
+}
+.options_list {
+  max-width: min(280px, 90vw);
+}
+.option_item {
+  padding: 11px 13px;
+}
