@@ -1,0 +1,5 @@
+command to enter the environment:
+source qlora-env/bin/activate
+
+command to exit the environment:
+deactivate
