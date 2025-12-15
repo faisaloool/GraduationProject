@@ -20,7 +20,7 @@
 .page {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 1 2 auto;
   min-height: 0;
   min-width: 0;
 }
@@ -75,13 +75,13 @@ main {
   box-shadow: none;
 } */
 .wellcome-page:has(.input) {
-  margin-top: 20px;
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  height: calc(100vh - 22vh);
+  height: calc(100vh - 13vh);
   background: linear-gradient(305deg, #1e929b 20%, #0f0f0f 100%);
   border-radius: 20px;
   padding: 30px;
@@ -89,7 +89,7 @@ main {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
   overflow: hidden;
   z-index: 1;
-  width: 800px;
+  width: 105%;
   position: relative; /* مهم جدا لتعمل ::before و ::after */
 }
 
@@ -101,7 +101,7 @@ main {
   margin-right: 70px;
 }
 
-.wellcome-page:has(.input)::before {
+/* .wellcome-page:has(.input)::before {
   content: "";
   position: absolute;
   inset: -3px;
@@ -132,8 +132,7 @@ main {
 @keyframes spin {
   to {
     transform: rotate(360deg);
-  }
-}
+  } */
 
 .wellcome-page:has(.input) * {
   position: relative;
@@ -158,6 +157,7 @@ main {
 }
 
 .quiz {
+
   display: inline-block;
   color: #46eaff;
   font-family: monospace;
@@ -193,16 +193,16 @@ main {
 }
 
 .file-form {
-  padding-left: 30px;
+
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 
-  padding: 8px;
+ 
   border-radius: 10px;
-  width: 120%;
+  width: 160%;
 }
 
 /* الزر الخاص برفع الملف */
@@ -218,7 +218,7 @@ main {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  width: 80%;
+  width: 100%;
   transition: background 0.3s ease;
 }
 
@@ -233,7 +233,7 @@ main {
 
 /* أيقونة المجلد */
 .folder-icon {
-  font-size: 15px;
+
   opacity: 0.9;
   text-align: center;
 }
@@ -242,6 +242,7 @@ main {
 .text {
   flex: 1;
   text-align: center;
+  font-size: 1rem;
 }
 
 /* الموجات الصوتية */
@@ -289,9 +290,10 @@ main {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  width: 30%;
+ min-width: 35%;
   transition: background 0.3s ease;
   height: 40px;
+   font-size: 1rem;
 }
 
 .generate-btn:hover {
@@ -702,4 +704,415 @@ main {
 
 .exam-error-card button:active {
   transform: translateY(1px);
+}
+/* ========================= */
+/*     RESPONSIVE DESIGN     */
+/* ========================= */
+
+/* مبايل صغير جدا */
+
+
+@media (max-width: 380px) {
+ .wellcome {
+
+
+  display: flex;
+  font-size: 18px;
+  color: white;
+ 
+ 
+  width: 400px;
+  }
+   
+    
+     .file-form {
+       display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+       
+      
+       
+       
+    }
+
+ .input-settings {
+ 
+   left: 0px;
+ }
+  
+.text {
+ 
+
+}
+  .wlc {
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .quiz {
+ font-size: 16px;
+ padding: 0;
+ margin: 0;
+  display: inline-block;
+  color: #46eaff;
+  font-family: monospace;
+  border-right: 3px solid #46eaff; /* مؤشر الكتابة */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; /* البداية */
+  animation: typeDelete 8s steps(15) infinite,
+    /* هنا صرنا أبطأ */ blink 1s step-end infinite;
+}
+
+
+
+
+
+
+
+.generate-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+   width: 100%;
+   
+    font-size: 0.2rem;
+
+}
+
+ .input-settings {
+ 
+   left: 0;
+ }
+  
+}
+
+
+@media (max-width: 420px) {
+  .wellcome {
+
+
+  display: flex;
+  font-size: 18px;
+  color: white;
+ 
+ 
+  width: 400px;
+  }
+   
+    
+     .file-form {
+       
+       
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+        
+        width:109%;
+       
+    }
+
+ .input-settings {
+ 
+font-size: 10px;
+width: 20px;
+height: 20px;      
+ }
+  
+.text {
+ 
+font-size: 10px;
+width: 60%;
+}
+  .wlc {
+    margin-left: 0;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .quiz {
+ font-size: 16px;
+ padding: 0;
+ margin: 0;
+  display: inline-block;
+  color: #46eaff;
+  font-family: monospace;
+  border-right: 3px solid #46eaff; /* مؤشر الكتابة */
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0; /* البداية */
+  animation: typeDelete 8s steps(15) infinite,
+    /* هنا صرنا أبطأ */ blink 1s step-end infinite;
+}
+
+
+
+  .wellcome-page {
+    width: 100%;
+    height: calc(100vh - 10vh);
+    padding: 20px;
+  }
+
+  .wellcome-page .input {
+    bottom: -20%;
+    left: -60px;
+    margin-right: 0;
+    width: 100%;
+  }
+  @keyframes typeDelete {
+  0% {
+    width: 1ch;
+  }
+  45% {
+    width: 7ch;
+  } /* كتابة الكلمة بالكامل */
+  55% {
+    width: 7ch;
+  } /* توقف قصير بعد الكتابة */
+  100% {
+    width: 0;
+  }
+}
+.generate-btn {
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    right: 10px;
+    width: 100%;
+    padding: 10px;
+   
+    font-size: 0.1rem;
+
+}
+}
+
+/* موبايل */
+@media (max-width: 600px) {
+  .wellcome {
+    font-size: 22px;
+    width: 100%;
+    justify-content: center;
+  }
+
+.text {
+ 
+font-size: 10px;
+
+}
+.add-file{
+width: 50px;
+}
+  .wlc {
+    margin-left: 0;
+    font-size: 22px;
+  }
+
+  .quiz {
+    font-size: 22px;
+  }
+
+
+  .add-file {
+    width: 100%;
+  }
+
+ 
+}
+
+/* تابلت */
+@media (max-width: 900px) {
+  .wellcome-page {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .add-file {
+    width:80%;
+    left: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .generate-btn {
+    width: 40%;
+    font-size: 15px;
+  
+  }
+.text {
+ 
+    flex: 1;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  
+
+}
+.file-form {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 120%;
+}
+/* .add-file{
+  right: -100px;
+} */
+  .wellcome {
+    font-size: 38px;
+  }
+
+  .file-form {
+    width:500px;
+    margin: 0;
+    padding: 0;
+  }
+
+ 
+}
+
+/* شاشة لابتوب */
+@media (max-width: 1200px) {
+  .wellcome-page {
+    width: 100%;
+  }
+
+  .wellcome {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .exam-space {
+    width: 95%;
+  }
+  .file-form {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 120%;
+}
+  
+  .add-file {
+    width:100%;
+    left: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+  .generate-btn {
+    left: 40px;
+    width: 47%;
+  }
+.text {
+ 
+    flex: 1;
+    text-align: center;
+  
+  
+
+}
+}
+
+/* شاشات كبيرة جدا */
+@media (min-width: 1600px) {
+  .wellcome-page {
+    max-width: 1500px;
+    margin: auto;
+  }
+
+  .exam-space {
+    max-width: 1200px;
+  }
+    .file-form {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 120%;
+}
+  
+  .add-file {
+    width:60%;
+    left: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+.generate-btn {
+    right: -60px;
+}
+.text {
+ 
+    flex: 1;
+    text-align: center;
+  
+  
+
+}
+ .input-settings {
+ 
+   left: -60px;
+ }
+  
+}
+@media (max-width: 1550px)
+{  
+  
+    .file-form {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    width: 120%;
+}
+  
+  .add-file {
+    width:60%;
+    left: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+
+.generate-btn {
+    right: -60px;
+}
+.text {
+ 
+    flex: 1;
+    text-align: center;
+  
+  
+
+}
+ .input-settings {
+ 
+   left: -60px;
+ }
+
 }

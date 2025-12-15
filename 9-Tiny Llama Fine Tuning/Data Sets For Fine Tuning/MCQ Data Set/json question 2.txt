@@ -1,0 +1,181 @@
+{
+  "filename": "Document 1.pdf",
+  "quiz": [
+    [
+      {
+        "question": "Which tool is mentioned for viewing network traffic flows and collecting metadata in NSM?",
+        "type": "mcq",
+        "options": [
+          "Zeek",
+          "tcpdump",
+          "Syslog",
+          "Security Onion"
+        ],
+        "answer": "Zeek",
+        "section": "Network Security Monitoring",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is used to correlate failed log entry attempts across systems in NSM?",
+        "type": "mcq",
+        "options": [
+          "Zeek",
+          "Suricata",
+          "Syslog",
+          "tcpdump"
+        ],
+        "answer": "Syslog",
+        "section": "Network Security Monitoring",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Which tool is specifically mentioned for full packet capture in NSM?",
+        "type": "mcq",
+        "options": [
+          "Zeek",
+          "Suricata",
+          "tcpdump",
+          "Syslog"
+        ],
+        "answer": "tcpdump",
+        "section": "Network Security Monitoring",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "Which tool is NOT mentioned for Threat Detection & Analysis in the content?",
+        "type": "mcq",
+        "options": [
+          "ELK Stack",
+          "Wazuh",
+          "Splunk",
+          "Nagios"
+        ],
+        "answer": "Nagios",
+        "section": "Threat Detection & Analysis",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is a possible reason for unauthorized data exfiltration mentioned in the content?",
+        "type": "mcq",
+        "options": [
+          "Phishing attack",
+          "Brute force attack",
+          "DDoS attack",
+          "SQL injection"
+        ],
+        "answer": "Brute force attack",
+        "section": "Unauthorized Data Exfiltration",
+        "rate": "bad",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is the primary purpose of Host Monitoring as described in the content?",
+        "type": "mcq",
+        "options": [
+          "To detect network intrusions",
+          "To determine if accounts were compromised",
+          "To analyze web traffic",
+          "To monitor server uptime"
+        ],
+        "answer": "To determine if accounts were compromised",
+        "section": "Host Monitoring",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is the first step in the NSM process as described?",
+        "type": "mcq",
+        "options": [
+          "Detection",
+          "Collection",
+          "Analysis",
+          "Response"
+        ],
+        "answer": "Collection",
+        "section": "NSM steps",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Which NSM step involves blocking the IPs of attackers and changing passwords?",
+        "type": "mcq",
+        "options": [
+          "Collection",
+          "Detection",
+          "Analysis",
+          "Response"
+        ],
+        "answer": "Response",
+        "section": "NSM steps",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is the final step in the NSM process?",
+        "type": "mcq",
+        "options": [
+          "Review",
+          "Collection",
+          "Analysis",
+          "Response"
+        ],
+        "answer": "Review",
+        "section": "NSM steps",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is the primary purpose of authorization in user access control?",
+        "type": "mcq",
+        "options": [
+          "To identify users",
+          "To grant or deny access to resources",
+          "To encrypt user data",
+          "To monitor user activity"
+        ],
+        "answer": "To grant or deny access to resources",
+        "section": "authorizations/access for users",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Which of the following is NOT typically part of user authorization logic?",
+        "type": "mcq",
+        "options": [
+          "Role-based access control",
+          "Password complexity rules",
+          "Permission levels",
+          "Access control lists"
+        ],
+        "answer": "Password complexity rules",
+        "section": "authorizations/access for users",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is a common method for implementing authorization in systems?",
+        "type": "mcq",
+        "options": [
+          "Using firewalls",
+          "Implementing access control lists",
+          "Encrypting all data",
+          "Monitoring user behavior"
+        ],
+        "answer": "Implementing access control lists",
+        "section": "authorizations/access for users",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ]
+  ]
+}

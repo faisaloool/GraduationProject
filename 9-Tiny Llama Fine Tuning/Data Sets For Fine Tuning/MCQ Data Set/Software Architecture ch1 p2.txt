@@ -1,0 +1,532 @@
+{
+  "filename": "Ch1 Architectural design - P2.pptx",
+  "quiz_type": "mcq",
+  "quiz": [
+    [
+      {
+        "question": "What is the benefit of using a rigorous notation for architectural description?",
+        "type": "mcq",
+        "options": [
+          "It reduces the need for documentation",
+          "It increases the scope for misunderstanding",
+          "It minimizes misunderstandings of architectural relationships",
+          "It simplifies the architectural design process"
+        ],
+        "answer": "It minimizes misunderstandings of architectural relationships",
+        "section": "Use of architectural models",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "What is architectural design primarily described as?",
+        "type": "mcq",
+        "options": [
+          "A technical process",
+          "A creative process",
+          "A routine process",
+          "A managerial process"
+        ],
+        "answer": "A creative process",
+        "section": "Architectural design decisions",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "Why is detailed documentation important in architectural design?",
+        "type": "mcq",
+        "options": [
+          "To increase the complexity of the design",
+          "To reduce the need for creative input",
+          "To ensure clear understanding of component relationships",
+          "To decrease the time required for design"
+        ],
+        "answer": "To ensure clear understanding of component relationships",
+        "section": "Use of architectural models",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      }
+    ],
+    [
+      {
+        "question": "What factors influence the architectural design process of a system?",
+        "type": "mcq",
+        "options": [
+          "Type of system being developed",
+          "Background and experience of the system architect",
+          "Specific requirements for the system",
+          "All of the above"
+        ],
+        "answer": "All of the above",
+        "section": "Architectural design decisions",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "How should architectural design be considered according to the content?",
+        "type": "mcq",
+        "options": [
+          "As a formulaic process",
+          "As a sequence of activities",
+          "As a series of decisions to be made",
+          "As a fixed set of steps"
+        ],
+        "answer": "As a series of decisions to be made",
+        "section": "Architectural design decisions",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "What is NOT mentioned as a factor in the architectural design process?",
+        "type": "mcq",
+        "options": [
+          "Type of system being developed",
+          "Background and experience of the system architect",
+          "Specific requirements for the system",
+          "Fixed architectural design formula"
+        ],
+        "answer": "Fixed architectural design formula",
+        "section": "Architectural design decisions",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      }
+    ],
+    [
+      {
+        "question": "What is a key responsibility of system architects during the architectural design process?",
+        "type": "mcq",
+        "options": [
+          "Writing code for the system",
+          "Making structural decisions",
+          "Managing project budgets",
+          "Testing the final product"
+        ],
+        "answer": "Making structural decisions",
+        "section": "Design decisions",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What do systems in the same application domain often share?",
+        "type": "mcq",
+        "options": [
+          "Identical codebases",
+          "The same development team",
+          "Similar architectures",
+          "Identical user interfaces"
+        ],
+        "answer": "Similar architectures",
+        "section": "Software product line",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What reflects the fundamental concepts of an application domain in software systems?",
+        "type": "mcq",
+        "options": [
+          "The programming language used",
+          "The development methodology",
+          "The architecture of the systems",
+          "The user interface design"
+        ],
+        "answer": "The architecture of the systems",
+        "section": "Software product line",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is a key decision that affects the performance and reliability of a distributed system?",
+        "type": "mcq",
+        "options": [
+          "Programming language",
+          "Choice of distribution architecture",
+          "Number of developers",
+          "User interface design"
+        ],
+        "answer": "Choice of distribution architecture",
+        "section": "Distributed Systems",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What term is used to describe the architecture of a software system based on a particular pattern or style?",
+        "type": "mcq",
+        "options": [
+          "Design pattern",
+          "Architectural pattern",
+          "Code structure",
+          "System layout"
+        ],
+        "answer": "Architectural pattern",
+        "section": "Software Architecture",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "In the context of distributed systems, what is distributed across many different computers?",
+        "type": "mcq",
+        "options": [
+          "User data",
+          "System software",
+          "Hardware components",
+          "Network cables"
+        ],
+        "answer": "System software",
+        "section": "Distributed Systems",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is an Architectural pattern according to Garlan and Shaw (1993)?",
+        "type": "mcq",
+        "options": [
+          "A description of a system organization",
+          "A programming language",
+          "A software development methodology",
+          "A type of computer hardware"
+        ],
+        "answer": "A description of a system organization",
+        "section": "Architectural Patterns",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Which of the following is an example of an Architectural pattern?",
+        "type": "mcq",
+        "options": [
+          "Client–server organization",
+          "Agile methodology",
+          "Waterfall model",
+          "Scrum framework"
+        ],
+        "answer": "Client–server organization",
+        "section": "Architectural Patterns",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Why is it important to be aware of common Architectural patterns?",
+        "type": "mcq",
+        "options": [
+          "To choose the right programming language",
+          "To make informed decisions about system architecture",
+          "To select the best hardware for the system",
+          "To improve coding skills"
+        ],
+        "answer": "To make informed decisions about system architecture",
+        "section": "Architectural Patterns",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is the primary focus of application product lines?",
+        "type": "mcq",
+        "options": [
+          "Building around a core architecture with variants",
+          "Creating entirely unique architectures for each customer",
+          "Focusing solely on user interface design",
+          "Ignoring customer requirements"
+        ],
+        "answer": "Building around a core architecture with variants",
+        "section": "Application product lines",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What does the architecture of a system typically revolve around?",
+        "type": "mcq",
+        "options": [
+          "One or more architectural patterns or styles",
+          "Only one architectural pattern",
+          "User interface design",
+          "Ignoring architectural patterns"
+        ],
+        "answer": "One or more architectural patterns or styles",
+        "section": "Architecture design",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What does the notion of an architectural style cover?",
+        "type": "mcq",
+        "options": [
+          "Some questions in the list of fundamental architectural questions",
+          "All questions in the list of fundamental architectural questions",
+          "Only user interface questions",
+          "No questions related to architecture"
+        ],
+        "answer": "Some questions in the list of fundamental architectural questions",
+        "section": "Architectural style",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    {
+      "question": "What is the first step in choosing an appropriate structure for a system?",
+      "type": "mcq",
+      "options": [
+        "Decide on a strategy for decomposing components into subcomponents",
+        "Choose the most appropriate structure like client-server or layered",
+        "Develop a general model of the control relationships",
+        "Make decisions about how the execution of components is controlled"
+      ],
+      "answer": "Choose the most appropriate structure like client-server or layered",
+      "section": "Architecture",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    [
+      {
+        "question": "Which non-functional system characteristic is most directly influenced by the localization of critical operations within a small number of components?",
+        "type": "mcq",
+        "options": [
+          "Security",
+          "Safety",
+          "Performance",
+          "Maintainability"
+        ],
+        "answer": "Performance",
+        "section": "Structure and system characteristics",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What should the choice of architectural style and structure depend on?",
+        "type": "mcq",
+        "options": [
+          "Functional requirements",
+          "Non-functional requirements",
+          "User interface design",
+          "Programming language"
+        ],
+        "answer": "Non-functional requirements",
+        "section": "Structure and system characteristics",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Which of the following is NOT typically considered a non-functional system characteristic?",
+        "type": "mcq",
+        "options": [
+          "Performance",
+          "Security",
+          "Safety",
+          "User interface design"
+        ],
+        "answer": "User interface design",
+        "section": "Structure and system characteristics",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    [
+      {
+        "question": "What is the recommended architectural approach for protecting critical assets?",
+        "type": "mcq",
+        "options": [
+          "Distribute assets evenly across all layers",
+          "Use a layered structure with critical assets in the innermost layers",
+          "Place critical assets in the outermost layers",
+          "Avoid using layers in the architecture"
+        ],
+        "answer": "Use a layered structure with critical assets in the innermost layers",
+        "section": "Security",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What should be done if safety is a critical requirement in system architecture?",
+        "type": "mcq",
+        "options": [
+          "Distribute safety-critical features across all components",
+          "Localise safety-critical features in a small number of sub-systems",
+          "Ignore safety requirements in the design",
+          "Place safety-critical features in the outermost layers"
+        ],
+        "answer": "Localise safety-critical features in a small number of sub-systems",
+        "section": "Safety",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Where should safety-related operations be co-located in a system architecture?",
+        "type": "mcq",
+        "options": [
+          "In multiple components spread across the system",
+          "In a single component",
+          "In the outermost layer of the system",
+          "In the database layer"
+        ],
+        "answer": "In a single component",
+        "section": "Safety",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    {
+      "question": "What is one way to reduce the costs and problems of safety validation in a system?",
+      "type": "mcq",
+      "options": [
+        "Increasing the number of components",
+        "Using a small number of components",
+        "Ignoring safety validation",
+        "Adding more features"
+      ],
+      "answer": "Using a small number of components",
+      "section": "Safety Validation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    [
+      {
+        "question": "What is a key design principle for maintainability in system architecture?",
+        "type": "mcq",
+        "options": [
+          "Use monolithic components",
+          "Use fine-grain, replaceable components",
+          "Combine producers and consumers of data",
+          "Use shared data structures extensively"
+        ],
+        "answer": "Use fine-grain, replaceable components",
+        "section": "Maintainability",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "Why should producers of data be separated from consumers in a maintainable system?",
+        "type": "mcq",
+        "options": [
+          "To increase system complexity",
+          "To reduce the need for component replacement",
+          "To avoid dependencies and simplify changes",
+          "To encourage the use of shared data structures"
+        ],
+        "answer": "To avoid dependencies and simplify changes",
+        "section": "Maintainability",
+        "rate": "good",
+        "suggestion": "None"
+      },
+      {
+        "question": "What is the recommended approach for shared data structures in maintainable system design?",
+        "type": "mcq",
+        "options": [
+          "Use them extensively",
+          "Avoid them whenever possible",
+          "Combine them with monolithic components",
+          "Integrate them with producers and consumers"
+        ],
+        "answer": "Avoid them whenever possible",
+        "section": "Maintainability",
+        "rate": "good",
+        "suggestion": "None"
+      }
+    ],
+    {
+      "question": "What is a potential conflict between using large components and small, fine-grain components in system architecture?",
+      "type": "mcq",
+      "options": [
+        "Large components improve maintainability, while small components improve performance",
+        "Large components improve performance, while small components improve maintainability",
+        "Both large and small components improve performance equally",
+        "There is no conflict between large and small components"
+      ],
+      "answer": "Large components improve performance, while small components improve maintainability",
+      "section": "System Architecture",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    [
+      {
+        "question": "What do architectural design decisions include?",
+        "type": "mcq",
+        "options": [
+          "Decisions on the type of application",
+          "Decisions on the distribution of the system",
+          "Decisions on the architectural styles to be used",
+          "All of the above"
+        ],
+        "answer": "All of the above",
+        "section": "Chapter 1 – Architectural Design",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "Which university is associated with Dr. Ra’Fat A. AL-Msie’Deen?",
+        "type": "mcq",
+        "options": [
+          "University of Jordan",
+          "Mutah University",
+          "Jordan University of Science and Technology",
+          "Yarmouk University"
+        ],
+        "answer": "Mutah University",
+        "section": "Chapter 1 – Architectural Design",
+        "rate": "bad",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "What can non-functional characteristics of architectural patterns help with?",
+        "type": "mcq",
+        "options": [
+          "Code optimization",
+          "Architectural evaluation",
+          "User interface design",
+          "Database management"
+        ],
+        "answer": "Architectural evaluation",
+        "section": "Chapter 1 – Architectural Design",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      }
+    ],
+    [
+      {
+        "question": "What is the primary focus of design thinking?",
+        "type": "mcq",
+        "options": [
+          "Aesthetic appeal",
+          "Problem-solving",
+          "Cost reduction",
+          "Market analysis"
+        ],
+        "answer": "Problem-solving",
+        "section": "Design Thinking",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "Which of the following is a key principle of user-centered design?",
+        "type": "mcq",
+        "options": [
+          "Maximizing profit",
+          "Focusing on user needs",
+          "Minimizing production time",
+          "Reducing material costs"
+        ],
+        "answer": "Focusing on user needs",
+        "section": "User-Centered Design",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      },
+      {
+        "question": "What does the term 'ergonomics' refer to in design?",
+        "type": "mcq",
+        "options": [
+          "The study of market trends",
+          "The optimization of products for human use",
+          "The reduction of production costs",
+          "The aesthetic enhancement of products"
+        ],
+        "answer": "The optimization of products for human use",
+        "section": "Ergonomics in Design",
+        "rate": "good",
+        "suggestion": "None if good; otherwise improved version"
+      }
+    ]
+  ]
+}

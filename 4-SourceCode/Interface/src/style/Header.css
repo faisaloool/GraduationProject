@@ -129,3 +129,70 @@ header {
     border-radius: 8px;
   }
 }
+/* ---------------- RESPONSIVE HEADER ---------------- */
+
+/* موبايل كبير (600px) */
+@media (max-width: 600px) {
+  .ai-version {
+    font-size: 14px;
+    padding-left: 4px;
+    margin-left: 4px;
+  }
+
+  .header-btns button {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .header-btns .sign-up {
+    margin-right: 0;
+  }
+}
+
+/* موبايل متوسط (480px) */
+@media (max-width: 480px) {
+  .header-btns {
+    gap: 6px;
+  }
+
+  .header-btns button {
+    padding: 6px 6px;
+    font-size: 11px;
+  }
+
+  header {
+    height: 54px;
+  }
+
+  .menu-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ai-version {
+    font-size: 13px;
+  }
+}
+
+/* موبايل صغير جداً (375px وتحت) */
+@media (max-width: 375px) {
+
+  /* إخفاء أزرار Login/Signup ووضع Menu فقط */
+  .header-btns button {
+    display: none;
+  }
+
+  .menu-btn {
+    border-radius: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .ai-version {
+    font-size: 12px;
+  }
+
+  header {
+    padding: 0 10px;
+  }
+}
