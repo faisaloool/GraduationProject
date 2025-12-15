@@ -1,0 +1,2 @@
+command to exit the environment:
+deactivate
