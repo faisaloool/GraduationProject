@@ -1,0 +1,12 @@
+﻿@model FirstWebApp.Models.Course
+<h1>My Course Details</h1>
+@if (Model != null)
+{
+	<p><strong>Course Name:</strong> @Model.CourseName</p>
+	<p><strong>Instructor:</strong> @Model.Instructor</p>
+	<p><strong>Credits:</strong> @Model.Credits</p>
+}
+else
+{
+	<p>Course not found.</p>
+}

@@ -3,7 +3,7 @@ import asyncio
 import json
 import re
 
-API_KEY = "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"
+API_KEY = "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"
 BASE_URL = "https://openrouter.ai/api/v1"
 
 def clean_json_like_text(text: str) -> str:
