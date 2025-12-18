@@ -1,0 +1,168 @@
+import os
+import torch
+from datasets import load_dataset
+from transformers import (
+    AutoTokenizer,
+    AutoModelForCausalLM,
+    TrainingArguments,
+    Trainer,
+    BitsAndBytesConfig
+)
+from peft import (
+    LoraConfig,
+    get_peft_model,
+    prepare_model_for_kbit_training
+)
+
+# =========================
+# CONFIG
+# =========================
+MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+DATA_PATH = "train.jsonl"
+OUTPUT_DIR = "./tinyllama-question-generator"
+MAX_LENGTH = 2048
+
+# =========================
+# TOKENIZER
+# =========================
+tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+tokenizer.pad_token = tokenizer.eos_token
+
+# =========================
+# MODEL (4-bit QLoRA)
+# =========================
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=True
+)
+
+model = AutoModelForCausalLM.from_pretrained(
+    MODEL_ID,
+    quantization_config=bnb_config,
+    device_map="auto"
+)
+
+model = prepare_model_for_kbit_training(model)
+
+# =========================
+# LoRA CONFIG
+# =========================
+lora_config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    lora_dropout=0.05,
+    bias="none",
+    task_type="CAUSAL_LM",
+    target_modules=["q_proj", "v_proj"]
+)
+
+model = get_peft_model(model, lora_config)
+
+# =========================
+# DATASET
+# =========================
+dataset = load_dataset("json", data_files=DATA_PATH)["train"]
+
+def format_prompt(example):
+    prompt = f"""
+You are an AI that generates exam questions from documents.
+
+DOCUMENT:
+{example['document']}
+
+QUESTION TYPE:
+{example['question_type']}
+
+INSTRUCTIONS:
+- Generate up to 25 questions
+- Output ONLY valid JSON
+- Follow this schema strictly
+
+SCHEMA:
+{{
+  "questions": [
+    {{
+      "question": "string",
+      "options": ["A", "B", "C", "D"],   // MCQ only
+      "answer": "string"
+    }}
+  ]
+}}
+
+OUTPUT:
+"""
+    response = str(example["output"])
+    return {"text": prompt + response}
+
+dataset = dataset.map(format_prompt)
+
+def tokenize(batch):
+    return tokenizer(
+        batch["text"],
+        truncation=True,
+        padding="max_length",
+        max_length=MAX_LENGTH
+    )
+
+dataset = dataset.map(tokenize, remove_columns=dataset.column_names)
+
+# =========================
+# TRAINING ARGUMENTS
+# (RESUME-SAFE)
+# =========================
+training_args = TrainingArguments(
+    output_dir=OUTPUT_DIR,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=8,
+    learning_rate=2e-4,
+    num_train_epochs=3,
+
+    # 🔁 CHECKPOINTING
+    save_strategy="steps",
+    save_steps=500,
+    save_total_limit=3,
+
+    logging_steps=10,
+    fp16=True,
+    optim="paged_adamw_8bit",
+    report_to="none",
+
+    # Important for resume
+    remove_unused_columns=False
+)
+
+# =========================
+# TRAINER
+# =========================
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset
+)
+
+# =========================
+# RESUME LOGIC
+# =========================
+checkpoint = None
+if os.path.isdir(OUTPUT_DIR):
+    checkpoints = [
+        os.path.join(OUTPUT_DIR, d)
+        for d in os.listdir(OUTPUT_DIR)
+        if d.startswith("checkpoint-")
+    ]
+    if checkpoints:
+        checkpoint = sorted(checkpoints, key=lambda x: int(x.split("-")[-1]))[-1]
+        print(f"🔁 Resuming from {checkpoint}")
+
+trainer.train(resume_from_checkpoint=checkpoint)
+
+# =========================
+# SAVE FINAL LoRA ADAPTER
+# =========================
+model.save_pretrained(OUTPUT_DIR)
+tokenizer.save_pretrained(OUTPUT_DIR)
+
+print("✅ Training complete and saved.")
+

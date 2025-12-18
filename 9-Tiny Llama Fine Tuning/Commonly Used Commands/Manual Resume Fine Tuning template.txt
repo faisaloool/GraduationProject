@@ -1,0 +1,3 @@
+trainer.train(
+    resume_from_checkpoint="./tinyllama-question-generator/checkpoint-1000"
+)
