@@ -1,6 +1,6 @@
 # API Specification
 
-## Last Updated: 2025/11/16
+## Last Update: 2025/12/13
 
 ## HTTP Status Codes
 
