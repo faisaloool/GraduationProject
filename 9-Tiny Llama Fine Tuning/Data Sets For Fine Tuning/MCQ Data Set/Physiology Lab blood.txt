@@ -1,0 +1,957 @@
+{
+  "filename": "blood.pdf",
+  "quiz": [
+    {
+      "question": "What are the two main components of blood?",
+      "type": "mcq",
+      "options": [
+        "Plasma and Platelets",
+        "Formed elements and Plasma",
+        "Red blood cells and White blood cells",
+        "Platelets and Red blood cells"
+      ],
+      "answer": "Formed elements and Plasma",
+      "section": "The blood",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary function of red blood cells (RBCs)?",
+      "type": "mcq",
+      "options": [
+        "Protect the body from pathogens",
+        "Transport oxygen from the lungs to body cells",
+        "Assist in blood clotting",
+        "Remove waste products from the body"
+      ],
+      "answer": "Transport oxygen from the lungs to body cells",
+      "section": "The blood",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which cells are responsible for protecting the body from invading pathogens?",
+      "type": "mcq",
+      "options": [
+        "Red blood cells",
+        "White blood cells",
+        "Platelets",
+        "Plasma cells"
+      ],
+      "answer": "White blood cells",
+      "section": "The blood",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a type of white blood cell?",
+      "type": "mcq",
+      "options": [
+        "Neutrophils",
+        "Basophils",
+        "Eosinophils",
+        "Platelets"
+      ],
+      "answer": "Platelets",
+      "section": "Types of WBCs",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary function of platelets?",
+      "type": "mcq",
+      "options": [
+        "Fight infections",
+        "Produce antibodies",
+        "Promote blood clotting",
+        "Transport oxygen"
+      ],
+      "answer": "Promote blood clotting",
+      "section": "Function of Platelets",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is a subtype of lymphocytes?",
+      "type": "mcq",
+      "options": [
+        "B cells",
+        "Neutrophils",
+        "Monocytes",
+        "Eosinophils"
+      ],
+      "answer": "B cells",
+      "section": "Subtypes of Lymphocytes",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What percentage of blood plasma is water?",
+      "type": "mcq",
+      "options": [
+        "85%",
+        "91.5%",
+        "75%",
+        "95%"
+      ],
+      "answer": "91.5%",
+      "section": "Blood Composition",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which protein constitutes the largest percentage of plasma proteins?",
+      "type": "mcq",
+      "options": [
+        "Globulins",
+        "Fibrinogen",
+        "Albumins",
+        "Hemoglobin"
+      ],
+      "answer": "Albumins",
+      "section": "Blood Composition",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a major function of blood?",
+      "type": "mcq",
+      "options": [
+        "Delivery of oxygen and nutrients",
+        "Regulation of body temperature",
+        "Production of hormones",
+        "Transport of waste products"
+      ],
+      "answer": "Production of hormones",
+      "section": "Blood Functions",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the process by which the formed elements of blood develop called?",
+      "type": "mcq",
+      "options": [
+        "Hemolysis",
+        "Hemopoiesis",
+        "Hemostasis",
+        "Hemorrhage"
+      ],
+      "answer": "Hemopoiesis",
+      "section": "Hemopoiesis",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What percentage of red bone marrow cells are pluripotent stem cells or hemocytoblasts?",
+      "type": "mcq",
+      "options": [
+        "0.01–0.05%",
+        "0.05–0.1%",
+        "0.1–0.2%",
+        "0.2–0.5%"
+      ],
+      "answer": "0.05–0.1%",
+      "section": "Red Bone Marrow",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What does a hematocrit (HCT) of 40 indicate?",
+      "type": "mcq",
+      "options": [
+        "40% of the blood volume is plasma",
+        "40% of the blood volume is white blood cells",
+        "40% of the blood volume is red blood cells",
+        "40% of the blood volume is platelets"
+      ],
+      "answer": "40% of the blood volume is red blood cells",
+      "section": "Hematological Blood Tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary function of red bone marrow after birth?",
+      "type": "mcq",
+      "options": [
+        "Producing hormones",
+        "Storing fat",
+        "Producing blood cells",
+        "Supporting bone structure"
+      ],
+      "answer": "Producing blood cells",
+      "section": "Red Bone Marrow",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the normal range of hematocrit for adult females?",
+      "type": "mcq",
+      "options": [
+        "30–40%",
+        "37–47%",
+        "42–52%",
+        "50–60%"
+      ],
+      "answer": "37–47%",
+      "section": "Blood Composition",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which hormone stimulates the synthesis of erythropoietin (EPO)?",
+      "type": "mcq",
+      "options": [
+        "Estrogen",
+        "Testosterone",
+        "Insulin",
+        "Thyroxine"
+      ],
+      "answer": "Testosterone",
+      "section": "Hormonal Influence on RBC Production",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How can hemoglobin concentration be estimated from hematocrit (Hct) level?",
+      "type": "mcq",
+      "options": [
+        "Hb = Hct * 3",
+        "Hb = Hct / 3",
+        "Hb = Hct + 3",
+        "Hb = Hct - 3"
+      ],
+      "answer": "Hb = Hct / 3",
+      "section": "Hemoglobin Estimation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the first step in determining the hematocrit of a blood sample?",
+      "type": "mcq",
+      "options": [
+        "Obtain a blood sample",
+        "Put on safety goggles and disposable gloves",
+        "Clean the fingertip with an alcohol wipe",
+        "Wipe away the first drop of blood"
+      ],
+      "answer": "Put on safety goggles and disposable gloves",
+      "section": "Hematocrit Determination",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which finger is typically used for obtaining a blood sample for hematocrit determination?",
+      "type": "mcq",
+      "options": [
+        "First finger",
+        "Second finger",
+        "Third finger",
+        "Fourth finger"
+      ],
+      "answer": "Third finger",
+      "section": "Hematocrit Determination",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Why is the first drop of blood wiped away when obtaining a blood sample for hematocrit determination?",
+      "type": "mcq",
+      "options": [
+        "To reduce contamination",
+        "To ensure a clean sample",
+        "To prevent clotting",
+        "To avoid excess blood"
+      ],
+      "answer": "To reduce contamination",
+      "section": "Hematocrit Determination",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of holding the tube at an angle when collecting a blood sample?",
+      "type": "mcq",
+      "options": [
+        "To prevent the blood from coagulating",
+        "To allow blood to enter the tube by capillary action",
+        "To stop the flow of blood",
+        "To immerse the tube in the blood sample"
+      ],
+      "answer": "To allow blood to enter the tube by capillary action",
+      "section": "Blood Sample Collection",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the correct method to seal the blood-containing end of a capillary tube?",
+      "type": "mcq",
+      "options": [
+        "By heating the end",
+        "By gently pushing it into sealing clay",
+        "By using adhesive tape",
+        "By twisting the end"
+      ],
+      "answer": "By gently pushing it into sealing clay",
+      "section": "Capillary Tube Sealing",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How should capillary tubes be placed in the microcentrifuge?",
+      "type": "mcq",
+      "options": [
+        "With the sealed end facing inward",
+        "With the sealed end against the outer lining on the rim",
+        "Randomly oriented",
+        "In a horizontal position"
+      ],
+      "answer": "With the sealed end against the outer lining on the rim",
+      "section": "Microcentrifuge Placement",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the recommended spinning time for capillary tubes in the centrifuge?",
+      "type": "mcq",
+      "options": [
+        "1-2 minutes",
+        "2-4 minutes",
+        "5-10 minutes",
+        "15-20 minutes"
+      ],
+      "answer": "2-4 minutes",
+      "section": "Centrifuge Spinning",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the buffy coat in a centrifuged blood sample composed of?",
+      "type": "mcq",
+      "options": [
+        "Erythrocytes and plasma",
+        "Leukocytes and platelets",
+        "Plasma only",
+        "Erythrocytes only"
+      ],
+      "answer": "Leukocytes and platelets",
+      "section": "Blood components",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Which of the following is NOT a cause of low RBC count (Anemia)?",
+      "type": "mcq",
+      "options": [
+        "Internal or external bleeding",
+        "Nutritional deficiencies",
+        "Smoking",
+        "Bone marrow failure"
+      ],
+      "answer": "Smoking",
+      "section": "Causes of low RBC count (Anemia)",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary purpose of a Hemocytometer (The Neubauer's Chamber)?",
+      "type": "mcq",
+      "options": [
+        "To measure blood pressure",
+        "To count blood cells",
+        "To measure blood glucose levels",
+        "To analyze DNA"
+      ],
+      "answer": "To count blood cells",
+      "section": "Hemocytometer",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following conditions is associated with an increased RBC count?",
+      "type": "mcq",
+      "options": [
+        "Anemia",
+        "Polycythemia Vera",
+        "Chronic Renal failure",
+        "Hemolysis of RBCs"
+      ],
+      "answer": "Polycythemia Vera",
+      "section": "Causes of low RBC count (Anemia)",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the total number of small squares to be counted for RBC count in the Central Square of a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "16",
+        "25",
+        "80",
+        "100"
+      ],
+      "answer": "80",
+      "section": "Hemocytometer Counting",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the distance between the bottom of the coverslip and the surface of the counting area in a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "0.01 mm",
+        "0.1 mm",
+        "1 mm",
+        "10 mm"
+      ],
+      "answer": "0.1 mm",
+      "section": "Hemocytometer Setup",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How should the blood sample be diluted for RBC counting using a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "Add 1 unit of blood to 9 units of diluent",
+        "Add 1 unit of blood to 10 units of diluent",
+        "Add 1 unit of blood to 19 units of diluent",
+        "Add 1 unit of blood to 20 units of diluent"
+      ],
+      "answer": "Add 1 unit of blood to 19 units of diluent",
+      "section": "Blood Sample Preparation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of letting the diluted blood stand for 3 minutes before completing the experiment?",
+      "type": "mcq",
+      "options": [
+        "To allow the RBCs to settle",
+        "To ensure proper mixing of the solvent",
+        "To prevent contamination",
+        "To increase the temperature of the sample"
+      ],
+      "answer": "To allow the RBCs to settle",
+      "section": "Experimental Procedure",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which lens is used to identify the center square in the hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "4X lens",
+        "10X lens",
+        "40X lens",
+        "100X lens"
+      ],
+      "answer": "10X lens",
+      "section": "Microscopy",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What shape do RBCs appear when viewed under the microscope?",
+      "type": "mcq",
+      "options": [
+        "Square",
+        "Circular",
+        "Triangular",
+        "Rectangular"
+      ],
+      "answer": "Circular",
+      "section": "Microscopy",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "When counting cells in a hemocytometer, which cells touching the boundaries should be counted?",
+      "type": "mcq",
+      "options": [
+        "Cells touching the top and left boundaries",
+        "Cells touching the bottom and right boundaries",
+        "All cells touching any boundary",
+        "No cells touching any boundary"
+      ],
+      "answer": "Cells touching the top and left boundaries",
+      "section": "Hemocytometer Counting Rules",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of counting cells in a zig-zag pattern in a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "To speed up the counting process",
+        "To ensure accurate cell counts by avoiding double-counting",
+        "To make the counting process more visually appealing",
+        "To follow a traditional counting method"
+      ],
+      "answer": "To ensure accurate cell counts by avoiding double-counting",
+      "section": "Hemocytometer Counting Rules",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How many small squares are typically counted to obtain an average cell count in a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "Three",
+        "Four",
+        "Five",
+        "Six"
+      ],
+      "answer": "Five",
+      "section": "Hemocytometer Counting Rules",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the maximum allowable variation in RBC count between the five squares before calculating the average?",
+      "type": "mcq",
+      "options": [
+        "10 cells",
+        "20 cells",
+        "30 cells",
+        "40 cells"
+      ],
+      "answer": "20 cells",
+      "section": "RBC count procedure",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the normal range for WBC count in adults?",
+      "type": "mcq",
+      "options": [
+        "2000 - 5000 cells/mm3",
+        "4000 - 11,000 cells/mm3",
+        "12,000 - 15,000 cells/mm3",
+        "5000 - 10,000 cells/mm3"
+      ],
+      "answer": "4000 - 11,000 cells/mm3",
+      "section": "Normal WBC count",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What does an increased number of WBCs indicate?",
+      "type": "mcq",
+      "options": [
+        "Leukopenia",
+        "Leukocytosis",
+        "Anemia",
+        "Thrombocytopenia"
+      ],
+      "answer": "Leukocytosis",
+      "section": "Medical applications",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following physiological conditions can cause an increased WBC count?",
+      "type": "mcq",
+      "options": [
+        "Old age",
+        "Newborn",
+        "Dehydration",
+        "Chronic disease"
+      ],
+      "answer": "Newborn",
+      "section": "Physiological Conditions",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is a significant change in old age compared to adult values?",
+      "type": "mcq",
+      "options": [
+        "Increased WBC count",
+        "Decreased WBC count",
+        "No change in WBC count",
+        "Increased RBC count"
+      ],
+      "answer": "Decreased WBC count",
+      "section": "Significant change in old age",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the effect of diurnal variation on WBC count?",
+      "type": "mcq",
+      "options": [
+        "Highest count in the morning",
+        "Lowest count in the evening",
+        "Highest count in the evening",
+        "No variation"
+      ],
+      "answer": "Highest count in the evening",
+      "section": "Diurnal variation",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the effect of acute pyogenic infections on WBC count?",
+      "type": "mcq",
+      "options": [
+        "Decreased WBC count",
+        "No change in WBC count",
+        "Increased WBC count",
+        "Decreased RBC count"
+      ],
+      "answer": "Increased WBC count",
+      "section": "Pathological Conditions",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the typical range of abnormal increase in immature cells in leukemia per cubic millimeter?",
+      "type": "mcq",
+      "options": [
+        "10,000 to 50,000",
+        "50,000 to 1,00,000",
+        "1,00,000 to 3,00,000",
+        "3,00,000 to 5,00,000"
+      ],
+      "answer": "1,00,000 to 3,00,000",
+      "section": "Leukemia",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a cause of low WBC count (Leukopenia)?",
+      "type": "mcq",
+      "options": [
+        "Bone marrow failure due to radiation or malignancy",
+        "Autoimmune diseases",
+        "Infections like HIV & tuberculosis",
+        "Acute hemorrhage"
+      ],
+      "answer": "Acute hemorrhage",
+      "section": "Leukopenia",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the first step in the procedure for using a hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "Place a cover slip",
+        "Clean the hemocytometer well",
+        "Add the sample to the chamber",
+        "Count the cells under the microscope"
+      ],
+      "answer": "Clean the hemocytometer well",
+      "section": "Hemocytometer Procedure",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of glacial acetic acid in Turk's diluting fluid?",
+      "type": "mcq",
+      "options": [
+        "To color the nuclei of WBC",
+        "To haemolyse RBCs",
+        "To dilute the blood sample",
+        "To sterilize the mixture"
+      ],
+      "answer": "To haemolyse RBCs",
+      "section": "Turk's diluting fluid composition",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the distance between the bottom of the coverslip and the surface of the counting area?",
+      "type": "mcq",
+      "options": [
+        "0.01 mm",
+        "0.1 mm",
+        "1 mm",
+        "10 mm"
+      ],
+      "answer": "0.1 mm",
+      "section": "Counting area setup",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the dilution ratio of blood to Turk's diluting fluid?",
+      "type": "mcq",
+      "options": [
+        "1:10",
+        "1:19",
+        "1:20",
+        "1:100"
+      ],
+      "answer": "1:19",
+      "section": "Blood sample dilution",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of glacial acetic acid in the dilution fluid used for WBC counting?",
+      "type": "mcq",
+      "options": [
+        "To stain the nuclei of WBCs",
+        "To lyse the red blood cells",
+        "To dilute the blood sample",
+        "To enhance capillary attraction"
+      ],
+      "answer": "To lyse the red blood cells",
+      "section": "Preparation of the coverslip and hemocytometer",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Which lens is used to count the WBCs in the four large corner squares of the hemocytometer?",
+      "type": "mcq",
+      "options": [
+        "4X lens",
+        "10X lens",
+        "40X lens",
+        "100X lens"
+      ],
+      "answer": "10X lens",
+      "section": "Preparation of the coverslip and hemocytometer",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "How long should the diluted blood stand in the hemocytometer chamber before counting the WBCs?",
+      "type": "mcq",
+      "options": [
+        "1 minute",
+        "2 minutes",
+        "3 minutes",
+        "5 minutes"
+      ],
+      "answer": "3 minutes",
+      "section": "Preparation of the coverslip and hemocytometer",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the formula used to calculate the count of WBCs per mm3?",
+      "type": "mcq",
+      "options": [
+        "Average cells X DF X VCF",
+        "Average cells + DF + VCF",
+        "Average cells / DF / VCF",
+        "Average cells X DF / VCF"
+      ],
+      "answer": "Average cells X DF X VCF",
+      "section": "WBC Count Calculation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the volume of fluid in the corner square?",
+      "type": "mcq",
+      "options": [
+        "0.01 mm3",
+        "0.1 mm3",
+        "1 mm3",
+        "10 mm3"
+      ],
+      "answer": "0.1 mm3",
+      "section": "Volume Calculation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the maximum allowed variation in cell count between the four squares?",
+      "type": "mcq",
+      "options": [
+        "5 cells",
+        "10 cells",
+        "15 cells",
+        "20 cells"
+      ],
+      "answer": "10 cells",
+      "section": "WBC Count Validation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a type of granulocyte?",
+      "type": "mcq",
+      "options": [
+        "Neutrophile",
+        "Eosinophile",
+        "Basophile",
+        "Monocyte"
+      ],
+      "answer": "Monocyte",
+      "section": "Cell types in a blood sample",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the purpose of fixing the blood film with methyl alcohol?",
+      "type": "mcq",
+      "options": [
+        "To dry the film",
+        "To enhance the color of the stain",
+        "To preserve the cellular structure",
+        "To remove excess stain"
+      ],
+      "answer": "To preserve the cellular structure",
+      "section": "The stain",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which stains are commonly used for blood film preparation?",
+      "type": "mcq",
+      "options": [
+        "Wright stain",
+        "Leishman stain",
+        "Giemsa stain",
+        "All of the above"
+      ],
+      "answer": "All of the above",
+      "section": "The stain",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the recommended dilution ratio for Giemsa stain with buffer?",
+      "type": "mcq",
+      "options": [
+        "1:5",
+        "1:7",
+        "1:9",
+        "1:11"
+      ],
+      "answer": "1:9",
+      "section": "The stain",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the recommended minimum number of cells to be counted for a differential leukocyte count?",
+      "type": "mcq",
+      "options": [
+        "50 cells",
+        "100 cells",
+        "150 cells",
+        "200 cells"
+      ],
+      "answer": "100 cells",
+      "section": "The Count",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which objective is used to examine the dry and stained film for differential leukocyte counts?",
+      "type": "mcq",
+      "options": [
+        "Low power objective",
+        "High power objective",
+        "Oil immersion objective",
+        "Scanning objective"
+      ],
+      "answer": "Oil immersion objective",
+      "section": "The Count",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What should be done after washing off with buffer in the differential leukocyte count process?",
+      "type": "mcq",
+      "options": [
+        "Stain the film",
+        "Dry the film",
+        "Count the cells immediately",
+        "Re-wash with buffer"
+      ],
+      "answer": "Dry the film",
+      "section": "The Count",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the correct order of white blood cells to find their percentage in a blood sample?",
+      "type": "mcq",
+      "options": [
+        "Eosinophile, Basophile, Lymphocyte, Monocyte",
+        "Basophile, Eosinophile, Lymphocyte, Monocyte",
+        "Lymphocyte, Monocyte, Eosinophile, Basophile",
+        "Monocyte, Lymphocyte, Basophile, Eosinophile"
+      ],
+      "answer": "Eosinophile, Basophile, Lymphocyte, Monocyte",
+      "section": "Lab 1 report",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Calculate the RBC count in the sample given the counts: 85, 91, 99, and 81.",
+      "type": "mcq",
+      "options": [
+        "356 RBCs",
+        "3560 RBCs",
+        "35600 RBCs",
+        "356000 RBCs"
+      ],
+      "answer": "356000 RBCs",
+      "section": "Lab 1 report",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "If the RBC count is abnormal, what condition is it called?",
+      "type": "mcq",
+      "options": [
+        "Anemia",
+        "Leukemia",
+        "Thrombocytopenia",
+        "Polycythemia"
+      ],
+      "answer": "Polycythemia",
+      "section": "Lab 1 report",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Calculate the WBC count in the sample given the counts in 3 WBC squares: 159, 173, and 169.",
+      "type": "mcq",
+      "options": [
+        "16,700 cells/μL",
+        "16,800 cells/μL",
+        "16,900 cells/μL",
+        "17,000 cells/μL"
+      ],
+      "answer": "16,700 cells/μL",
+      "section": "Hematology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Indicate if the WBC count of 16,700 cells/μL is normal and if not, what is the condition called.",
+      "type": "mcq",
+      "options": [
+        "Normal",
+        "Leukopenia",
+        "Leukocytosis",
+        "Anemia"
+      ],
+      "answer": "Normal",
+      "section": "Hematology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the volume of the sample used for WBC counting?",
+      "type": "mcq",
+      "options": [
+        "50 μL",
+        "100 μL",
+        "150 μL",
+        "200 μL"
+      ],
+      "answer": "100 μL",
+      "section": "Hematology",
+      "rate": "good",
+      "suggestion": "None"
+    }
+  ]
+}
