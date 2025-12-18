@@ -1,0 +1,662 @@
+{
+    "filename": "Ch1 Architectural design - P1.pptx",
+    "quiz_type": "mcq",
+    "quiz": [
+        [
+            {
+                "question": "What is the primary objective of Chapter 1 in the Architectural Design course?",
+                "type": "mcq",
+                "options": [
+                    "To introduce the concepts of software architecture and architectural design",
+                    "To teach advanced programming techniques",
+                    "To discuss hardware architecture",
+                    "To explore database management systems"
+                ],
+                "answer": "To introduce the concepts of software architecture and architectural design",
+                "section": "Chapter 1 – Architectural Design",
+                "rate": "bad",
+                "suggestion": "None"
+            },
+            {
+                "question": "Which book is referenced for the Software Architecture and Design course?",
+                "type": "mcq",
+                "options": [
+                    "Software Engineering by Ian Sommerville, 10th Edition",
+                    "Design Patterns by Erich Gamma",
+                    "Clean Code by Robert C. Martin",
+                    "The Pragmatic Programmer by Andrew Hunt and David Thomas"
+                ],
+                "answer": "Software Engineering by Ian Sommerville, 10th Edition",
+                "section": "Chapter 1 – Architectural Design",
+                "rate": "bad",
+                "suggestion": "None"
+            },
+            {
+                "question": "Which department offers the Software Architecture and Design course at Mutah University?",
+                "type": "mcq",
+                "options": [
+                    "Department of Software Engineering",
+                    "Department of Computer Science",
+                    "Department of Information Technology",
+                    "Department of Electrical Engineering"
+                ],
+                "answer": "Department of Software Engineering",
+                "section": "Chapter 1 – Architectural Design",
+                "rate": "bad",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "Why is the architectural design of software important?",
+                "type": "mcq",
+                "options": [
+                    "It ensures the software is visually appealing",
+                    "It defines the structure and behavior of the system",
+                    "It reduces the need for testing",
+                    "It eliminates the need for documentation"
+                ],
+                "answer": "It defines the structure and behavior of the system",
+                "section": "Architect",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What decisions are made during the architectural design process?",
+                "type": "mcq",
+                "options": [
+                    "Color schemes and fonts",
+                    "System structure and component interactions",
+                    "Marketing strategies",
+                    "User interface design"
+                ],
+                "answer": "System structure and component interactions",
+                "section": "Architect",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What are Architectural patterns?",
+                "type": "mcq",
+                "options": [
+                    "Designs for physical buildings",
+                    "Well-tried ways of organizing software architectures",
+                    "Methods for writing code",
+                    "Techniques for debugging software"
+                ],
+                "answer": "Well-tried ways of organizing software architectures",
+                "section": "Architect",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What is the primary focus of architectural design in software systems?",
+                "type": "mcq",
+                "options": [
+                    "Coding individual modules",
+                    "Designing user interfaces",
+                    "Organizing the overall structure of the system",
+                    "Testing the final product"
+                ],
+                "answer": "Organizing the overall structure of the system",
+                "section": "Architectural design",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "Which of the following is NOT typically considered an architectural view?",
+                "type": "mcq",
+                "options": [
+                    "Logical view",
+                    "Development view",
+                    "Physical view",
+                    "User interface view"
+                ],
+                "answer": "User interface view",
+                "section": "Architectural views",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What role do architectural patterns play in software design?",
+                "type": "mcq",
+                "options": [
+                    "They define specific coding standards",
+                    "They provide templates for solving common design problems",
+                    "They automate the testing process",
+                    "They manage project timelines"
+                ],
+                "answer": "They provide templates for solving common design problems",
+                "section": "Architectural patterns",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        {
+            "question": "What does the architectural model ESS describe?",
+            "type": "mcq",
+            "options": [
+                "How the system is organized as a set of communicating components",
+                "The programming languages used in the system",
+                "The user interface design of the system",
+                "The database schema of the system"
+            ],
+            "answer": "How the system is organized as a set of communicating components",
+            "section": "Architectural design",
+            "rate": "good",
+            "suggestion": "None if good; otherwise improved version"
+        },
+        [
+            {
+                "question": "Why is refactoring the system architecture considered expensive?",
+                "type": "mcq",
+                "options": [
+                    "It requires modifying most system components",
+                    "It is a quick and easy process",
+                    "It does not affect system components",
+                    "It only requires minor changes"
+                ],
+                "answer": "It requires modifying most system components",
+                "section": "System Architecture",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is the relationship between requirements engineering and architectural design?",
+                "type": "mcq",
+                "options": [
+                    "They are completely separate processes",
+                    "There is a significant overlap between them",
+                    "Requirements engineering is a subset of architectural design",
+                    "Architectural design is unrelated to requirements engineering"
+                ],
+                "answer": "There is a significant overlap between them",
+                "section": "Agility and Architecture",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is the ideal characteristic of a system specification?",
+                "type": "mcq",
+                "options": [
+                    "It should be incomplete",
+                    "It should not be detailed",
+                    "It should not be rigid",
+                    "It should be overly complex"
+                ],
+                "answer": "It should not be rigid",
+                "section": "System Specification",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "Why is the ideal of including any design information in requirements engineering unrealistic for large systems?",
+                "type": "mcq",
+                "options": [
+                    "It complicates the requirements engineering process",
+                    "It is only feasible for very small systems",
+                    "It leads to incomplete requirements",
+                    "It increases the cost of development"
+                ],
+                "answer": "It is only feasible for very small systems",
+                "section": "Requirements Engineering",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is the purpose of identifying main architectural components in the requirements engineering process?",
+                "type": "mcq",
+                "options": [
+                    "To simplify the design process",
+                    "To reflect the high-level features of the system",
+                    "To reduce development costs",
+                    "To ensure compatibility with existing systems"
+                ],
+                "answer": "To reflect the high-level features of the system",
+                "section": "Requirements Engineering",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is an abstract system architecture used for in the requirements engineering process?",
+                "type": "mcq",
+                "options": [
+                    "To finalize the system design",
+                    "To associate groups of system functions with large-scale components",
+                    "To document the detailed requirements",
+                    "To test the system components"
+                ],
+                "answer": "To associate groups of system functions with large-scale components",
+                "section": "Requirements Engineering",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What is the primary function of the vision component in the packing robot system?",
+                "type": "mcq",
+                "options": [
+                    "To move objects from the conveyor",
+                    "To identify the type of object and select the right packaging",
+                    "To control the conveyor speed",
+                    "To assemble the packaging"
+                ],
+                "answer": "To identify the type of object and select the right packaging",
+                "section": "The architecture of a packing robot control system",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What does Figure 1 in the content represent?",
+                "type": "mcq",
+                "options": [
+                    "A detailed blueprint of the packing robot",
+                    "An abstract model of the architecture for a packing robot system",
+                    "A flowchart of the packing process",
+                    "A list of features of the packing robot"
+                ],
+                "answer": "An abstract model of the architecture for a packing robot system",
+                "section": "The architecture of a packing robot control system",
+                "rate": "bad",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is the main capability of the packing robot system described in the content?",
+                "type": "mcq",
+                "options": [
+                    "To assemble objects from parts",
+                    "To pack different kinds of objects",
+                    "To repair faulty objects",
+                    "To sort objects by color"
+                ],
+                "answer": "To pack different kinds of objects",
+                "section": "The architecture of a packing robot control system",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What are the two levels of abstraction in software architecture design?",
+                "type": "mcq",
+                "options": [
+                    "Architecture in the small and architecture in the large",
+                    "Micro architecture and macro architecture",
+                    "Component architecture and system architecture",
+                    "Detailed architecture and high-level architecture"
+                ],
+                "answer": "Architecture in the small and architecture in the large",
+                "section": "Architectural abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is architecture in the small concerned with?",
+                "type": "mcq",
+                "options": [
+                    "The architecture of individual programs",
+                    "The architecture of entire systems",
+                    "The architecture of hardware components",
+                    "The architecture of network systems"
+                ],
+                "answer": "The architecture of individual programs",
+                "section": "Architectural abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What does the architectural model of a packing robot control system show?",
+                "type": "mcq",
+                "options": [
+                    "Components and links between them",
+                    "Only the components",
+                    "Only the links between components",
+                    "The physical layout of the robot"
+                ],
+                "answer": "Components and links between them",
+                "section": "Architecture of a packing robot control system",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        {
+            "question": "What is the primary focus of architecture in the small?",
+            "type": "mcq",
+            "options": [
+                "Decomposing an individual program into components",
+                "Designing complex enterprise systems",
+                "Including other systems and programs",
+                "Managing program architectures"
+            ],
+            "answer": "Decomposing an individual program into components",
+            "section": "Architectural abstraction",
+            "rate": "good",
+            "suggestion": "None"
+        },
+        [
+            {
+                "question": "Why is software architecture important in a system?",
+                "type": "mcq",
+                "options": [
+                    "It only affects the system's performance.",
+                    "It influences the system's robustness, distributability, and maintainability.",
+                    "It is solely responsible for implementing functional requirements.",
+                    "It has no impact on non-functional characteristics."
+                ],
+                "answer": "It influences the system's robustness, distributability, and maintainability.",
+                "section": "Architectural abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What do individual components in a system primarily implement?",
+                "type": "mcq",
+                "options": [
+                    "Non-functional system characteristics.",
+                    "The system's architecture.",
+                    "Functional system requirements.",
+                    "The system's distributability."
+                ],
+                "answer": "Functional system requirements.",
+                "section": "Architectural abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What did Chen et al. confirm in their study?",
+                "type": "mcq",
+                "options": [
+                    "Functional requirements are more important than non-functional requirements.",
+                    "Individual components have no role in system architecture.",
+                    "The dominant influence on non-functional system characteristics is the system’s architecture.",
+                    "Software architecture is irrelevant to system performance."
+                ],
+                "answer": "The dominant influence on non-functional system characteristics is the system’s architecture.",
+                "section": "Architectural abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        {
+            "question": "What is one advantage of explicitly designing and documenting software architecture according to Bass et al.?",
+            "type": "mcq",
+            "options": [
+                "Improved system performance",
+                "Stakeholder communication",
+                "Reduced development costs",
+                "Enhanced security features"
+            ],
+            "answer": "Stakeholder communication",
+            "section": "Advantages of explicit architecture",
+            "rate": "good",
+            "suggestion": "None"
+        },
+        {
+            "question": "What is one of the advantages of making the system architecture explicit at an early stage?",
+            "type": "mcq",
+            "options": [
+                "Reduces the need for testing",
+                "Enables large-scale reuse",
+                "Eliminates the need for documentation",
+                "Speeds up coding"
+            ],
+            "answer": "Enables large-scale reuse",
+            "section": "Advantages of explicit architecture",
+            "rate": "good",
+            "suggestion": "None"
+        },
+        {
+            "question": "What is the primary benefit of product-line architectures?",
+            "type": "mcq",
+            "options": [
+                "They reduce the need for testing",
+                "They allow the same architecture to be reused across related systems",
+                "They eliminate the need for documentation",
+                "They increase the cost of development"
+            ],
+            "answer": "They allow the same architecture to be reused across related systems",
+            "section": "Architectural representations",
+            "rate": "good",
+            "suggestion": "None"
+        },
+        [
+            {
+                "question": "What is a common criticism of block diagrams in documenting software architectures?",
+                "type": "mcq",
+                "options": [
+                    "They are too complex",
+                    "They lack semantics",
+                    "They are outdated",
+                    "They are too formal"
+                ],
+                "answer": "They lack semantics",
+                "section": "Method for documenting software architectures",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What does the use of architectural models depend on?",
+                "type": "mcq",
+                "options": [
+                    "The complexity of the system",
+                    "The programming language used",
+                    "How the models are used",
+                    "The size of the development team"
+                ],
+                "answer": "How the models are used",
+                "section": "Method for documenting software architectures",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What does each box in a block diagram typically represent?",
+                "type": "mcq",
+                "options": [
+                    "A programming language",
+                    "A development team",
+                    "An entity in the architecture",
+                    "A software bug"
+                ],
+                "answer": "An entity in the architecture",
+                "section": "Block diagram",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        {
+            "question": "What do boxes within boxes indicate in a block diagram?",
+            "type": "mcq",
+            "options": [
+                "The component has been decomposed to subcomponents",
+                "The component is the main system",
+                "The component is outdated",
+                "The component is optional"
+            ],
+            "answer": "The component has been decomposed to subcomponents",
+            "section": "Block diagram",
+            "rate": "good",
+            "suggestion": "None"
+        },
+        [
+            {
+                "question": "What is a major limitation of block diagrams in architectural representations?",
+                "type": "mcq",
+                "options": [
+                    "They are too detailed",
+                    "They do not show the type of relationships among system components",
+                    "They are difficult to understand",
+                    "They are not useful for communication"
+                ],
+                "answer": "They do not show the type of relationships among system components",
+                "section": "Block diagram limitations",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "Why are block diagrams considered very abstract?",
+                "type": "mcq",
+                "options": [
+                    "They show too many details",
+                    "They do not show the nature of component relationships",
+                    "They are color-coded",
+                    "They are used only in software development"
+                ],
+                "answer": "They do not show the nature of component relationships",
+                "section": "Block diagram abstraction",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is a primary use of block diagrams despite their limitations?",
+                "type": "mcq",
+                "options": [
+                    "Detailed technical documentation",
+                    "Communication with stakeholders",
+                    "Coding implementation",
+                    "Performance optimization"
+                ],
+                "answer": "Communication with stakeholders",
+                "section": "Block diagram utility",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What is a primary benefit of using block diagrams in software design?",
+                "type": "mcq",
+                "options": [
+                    "They reduce the need for documentation",
+                    "They support communication among stakeholders",
+                    "They automate the coding process",
+                    "They eliminate the need for project planning"
+                ],
+                "answer": "They support communication among stakeholders",
+                "section": "Block diagram … cont.",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "Who finds block diagrams particularly helpful in planning projects?",
+                "type": "mcq",
+                "options": [
+                    "Software engineers",
+                    "Domain experts",
+                    "Managers",
+                    "End users"
+                ],
+                "answer": "Managers",
+                "section": "Block diagram … cont.",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What role do block diagrams often play in many projects?",
+                "type": "mcq",
+                "options": [
+                    "They are the only architectural description",
+                    "They replace the need for testing",
+                    "They are used solely for coding",
+                    "They are optional and rarely used"
+                ],
+                "answer": "They are the only architectural description",
+                "section": "Block diagram … cont.",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What is one primary use of an architectural model in system design?",
+                "type": "mcq",
+                "options": [
+                    "To replace detailed system documentation",
+                    "To facilitate discussion about the system design",
+                    "To implement system functionalities",
+                    "To test system performance"
+                ],
+                "answer": "To facilitate discussion about the system design",
+                "section": "Use of architectural models",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "Why is a high-level architectural view useful for communication with stakeholders?",
+                "type": "mcq",
+                "options": [
+                    "It provides detailed technical specifications",
+                    "It simplifies complex system details for easier understanding",
+                    "It focuses on system performance metrics",
+                    "It replaces the need for project planning"
+                ],
+                "answer": "It simplifies complex system details for easier understanding",
+                "section": "Use of architectural models",
+                "rate": "good",
+                "suggestion": "None"
+            },
+            {
+                "question": "What is another key purpose of an architectural model besides facilitating discussion?",
+                "type": "mcq",
+                "options": [
+                    "To document an architecture that has been designed",
+                    "To serve as a user manual",
+                    "To replace stakeholder meetings",
+                    "To focus solely on coding practices"
+                ],
+                "answer": "To document an architecture that has been designed",
+                "section": "Use of architectural models",
+                "rate": "good",
+                "suggestion": "None"
+            }
+        ],
+        [
+            {
+                "question": "What is the primary focus of architecture?",
+                "type": "mcq",
+                "options": [
+                    "Creating functional spaces",
+                    "Designing furniture",
+                    "Painting landscapes",
+                    "Developing software"
+                ],
+                "answer": "Creating functional spaces",
+                "section": "Architecture and Design",
+                "rate": "good",
+                "suggestion": "None if good; otherwise improved version"
+            },
+            {
+                "question": "Which of the following is a key element in design?",
+                "type": "mcq",
+                "options": [
+                    "Aesthetics",
+                    "Coding",
+                    "Accounting",
+                    "Botany"
+                ],
+                "answer": "Aesthetics",
+                "section": "Architecture and Design",
+                "rate": "good",
+                "suggestion": "None if good; otherwise improved version"
+            },
+            {
+                "question": "What role does sustainability play in architecture?",
+                "type": "mcq",
+                "options": [
+                    "Minimizing environmental impact",
+                    "Maximizing profit",
+                    "Increasing construction speed",
+                    "Reducing aesthetic appeal"
+                ],
+                "answer": "Minimizing environmental impact",
+                "section": "Architecture and Design",
+                "rate": "good",
+                "suggestion": "None if good; otherwise improved version"
+            }
+        ]
+    ]
+}

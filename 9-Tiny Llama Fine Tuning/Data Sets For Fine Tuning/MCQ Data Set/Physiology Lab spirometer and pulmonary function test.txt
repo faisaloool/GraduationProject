@@ -1,0 +1,859 @@
+{
+  "filename": "spirometer and pulmonary function test.pdf",
+  "quiz": [
+    {
+      "question": "What is the primary function of the respiratory system?",
+      "type": "mcq",
+      "options": [
+        "To provide the body with oxygen and rid it of carbon dioxide",
+        "To digest food and absorb nutrients",
+        "To pump blood throughout the body",
+        "To regulate body temperature"
+      ],
+      "answer": "To provide the body with oxygen and rid it of carbon dioxide",
+      "section": "Introduction to mechanics of Breathing",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What are the two phases of pulmonary ventilation?",
+      "type": "mcq",
+      "options": [
+        "Inhalation and exhalation",
+        "Inspiration and expiration",
+        "Absorption and diffusion",
+        "Circulation and respiration"
+      ],
+      "answer": "Inspiration and expiration",
+      "section": "Pulmonary ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Where does external respiration occur?",
+      "type": "mcq",
+      "options": [
+        "In the bronchi",
+        "In the trachea",
+        "In the alveoli",
+        "In the diaphragm"
+      ],
+      "answer": "In the alveoli",
+      "section": "External respiration",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary function of gas transport in the cardiovascular system?",
+      "type": "mcq",
+      "options": [
+        "To transport nutrients to the cells",
+        "To transport oxygen from the lungs to the tissues and carbon dioxide from the tissues to the lungs",
+        "To regulate blood pressure",
+        "To remove waste products from the body"
+      ],
+      "answer": "To transport oxygen from the lungs to the tissues and carbon dioxide from the tissues to the lungs",
+      "section": "Gas transport",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary function of internal respiration?",
+      "type": "mcq",
+      "options": [
+        "Exchange of gases between the lungs and blood",
+        "Exchange of gases between the blood and cells of the tissues",
+        "Breakdown of glucose to produce ATP",
+        "Movement of air in and out of the lungs"
+      ],
+      "answer": "Exchange of gases between the blood and cells of the tissues",
+      "section": "Internal Respiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Where does cellular respiration occur within the cell?",
+      "type": "mcq",
+      "options": [
+        "Nucleus",
+        "Ribosomes",
+        "Mitochondria",
+        "Endoplasmic reticulum"
+      ],
+      "answer": "Mitochondria",
+      "section": "Cellular Respiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the waste product released during cellular respiration?",
+      "type": "mcq",
+      "options": [
+        "Oxygen",
+        "Glucose",
+        "Water",
+        "Carbon dioxide"
+      ],
+      "answer": "Carbon dioxide",
+      "section": "Cellular Respiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What drives pulmonary ventilation?",
+      "type": "mcq",
+      "options": [
+        "Gradients between air pressure in the atmosphere and lungs",
+        "The volume of the thoracic cavity",
+        "The actions of the respiratory muscles",
+        "Boyle's law"
+      ],
+      "answer": "Gradients between air pressure in the atmosphere and lungs",
+      "section": "Pulmonary ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What law explains the relationship between pressure and volume in pulmonary ventilation?",
+      "type": "mcq",
+      "options": [
+        "Newton's law",
+        "Boyle's law",
+        "Charles's law",
+        "Dalton's law"
+      ],
+      "answer": "Boyle's law",
+      "section": "Pulmonary ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How do respiratory muscles affect pulmonary ventilation?",
+      "type": "mcq",
+      "options": [
+        "By changing the volume of the thoracic cavity and lungs",
+        "By increasing atmospheric pressure",
+        "By decreasing intrapulmonary pressure",
+        "By altering Boyle's law"
+      ],
+      "answer": "By changing the volume of the thoracic cavity and lungs",
+      "section": "Pulmonary ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What happens to intrapulmonary pressure when lung volume increases during inspiration?",
+      "type": "mcq",
+      "options": [
+        "It increases above atmospheric pressure",
+        "It decreases below atmospheric pressure",
+        "It remains the same as atmospheric pressure",
+        "It fluctuates unpredictably"
+      ],
+      "answer": "It decreases below atmospheric pressure",
+      "section": "Pulmonary Ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What causes air to flow out of the lungs during expiration?",
+      "type": "mcq",
+      "options": [
+        "Intrapulmonary pressure decreases below atmospheric pressure",
+        "Intrapulmonary pressure increases above atmospheric pressure",
+        "Lung volume increases",
+        "Atmospheric pressure decreases"
+      ],
+      "answer": "Intrapulmonary pressure increases above atmospheric pressure",
+      "section": "Pulmonary Ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is responsible for changing the size of the thoracic cavity during pulmonary ventilation?",
+      "type": "mcq",
+      "options": [
+        "Cardiac muscles",
+        "Smooth muscles",
+        "Skeletal muscles",
+        "None of the above"
+      ],
+      "answer": "Skeletal muscles",
+      "section": "Pulmonary Ventilation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What happens to the diaphragm during quiet inspiration?",
+      "type": "mcq",
+      "options": [
+        "It relaxes into a dome shape",
+        "It flattens to increase super inferior volume",
+        "It contracts to decrease thoracic volume",
+        "It remains unchanged"
+      ],
+      "answer": "It flattens to increase super inferior volume",
+      "section": "Quiet Inspiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Which muscles are primarily involved in lifting the rib cage during quiet inspiration?",
+      "type": "mcq",
+      "options": [
+        "Scalene muscles",
+        "External intercostal muscles",
+        "Pectoralis major",
+        "Serratus anterior"
+      ],
+      "answer": "External intercostal muscles",
+      "section": "Quiet Inspiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Which of the following muscles is NOT involved in forced inspiration?",
+      "type": "mcq",
+      "options": [
+        "Scalene muscles",
+        "Sternocleidomastoid",
+        "Pectoralis major",
+        "Diaphragm"
+      ],
+      "answer": "Diaphragm",
+      "section": "Forced Inspiration",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What initiates normal (quiet) expiration?",
+      "type": "mcq",
+      "options": [
+        "Contraction of the diaphragm",
+        "Elastic recoil during relaxation of inspiratory muscles",
+        "Contraction of the internal intercostal muscles",
+        "Increased alveolar pressure"
+      ],
+      "answer": "Elastic recoil during relaxation of inspiratory muscles",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which muscles are involved in forced expiration?",
+      "type": "mcq",
+      "options": [
+        "External intercostal muscles",
+        "Diaphragm",
+        "Internal intercostal and abdominal muscles",
+        "Pectoralis major"
+      ],
+      "answer": "Internal intercostal and abdominal muscles",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What happens to thoracic volume during forced expiration?",
+      "type": "mcq",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Remains the same",
+        "Fluctuates rapidly"
+      ],
+      "answer": "Decreases",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What are bronchial sounds produced by?",
+      "type": "mcq",
+      "options": [
+        "Air filling the alveolar sacs",
+        "Air rushing through the trachea and bronchi",
+        "Swelling in the airways",
+        "Blockages in the airways"
+      ],
+      "answer": "Air rushing through the trachea and bronchi",
+      "section": "Respiratory Sounds",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What do vesicular breathing sounds resemble?",
+      "type": "mcq",
+      "options": [
+        "A loud whistle",
+        "A rustling or muffled breeze",
+        "A sharp crackling",
+        "A deep rumble"
+      ],
+      "answer": "A rustling or muffled breeze",
+      "section": "Respiratory Sounds",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What can cause abnormal lung sounds?",
+      "type": "mcq",
+      "options": [
+        "Air flowing smoothly through airways",
+        "Swelling, blockages, or mucus in airways",
+        "Normal vesicular lung sounds",
+        "Air filling the alveolar sacs"
+      ],
+      "answer": "Swelling, blockages, or mucus in airways",
+      "section": "Respiratory Sounds",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT considered an abnormal lung sound?",
+      "type": "mcq",
+      "options": [
+        "Rhonchi",
+        "Wheezing",
+        "Stridor",
+        "Normal breath sounds"
+      ],
+      "answer": "Normal breath sounds",
+      "section": "Abnormal lung sounds",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the primary use of a stethoscope?",
+      "type": "mcq",
+      "options": [
+        "Measuring blood pressure",
+        "Listening to internal body sounds",
+        "Administering medication",
+        "Monitoring heart rate"
+      ],
+      "answer": "Listening to internal body sounds",
+      "section": "The stethoscope",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "Which part of the stethoscope is used to hear low-pitched sounds?",
+      "type": "mcq",
+      "options": [
+        "Diaphragm",
+        "Bell",
+        "Tubing",
+        "Earpieces"
+      ],
+      "answer": "Bell",
+      "section": "The stethoscope",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What part of the stethoscope is used to hear high-pitched sounds?",
+      "type": "mcq",
+      "options": [
+        "Bell",
+        "Diaphragm",
+        "Rubber tubes",
+        "Earpieces"
+      ],
+      "answer": "Diaphragm",
+      "section": "Stethoscope Components",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary purpose of spirometry?",
+      "type": "mcq",
+      "options": [
+        "To measure blood pressure",
+        "To determine lung function by measuring air volume",
+        "To assess heart rate variability",
+        "To check for infections in the lungs"
+      ],
+      "answer": "To determine lung function by measuring air volume",
+      "section": "2.3 Spirometry",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a lung and airway disease?",
+      "type": "mcq",
+      "options": [
+        "Asthma",
+        "Chronic obstructive pulmonary disease (COPD)",
+        "Cystic fibrosis",
+        "Pulmonary hypertension"
+      ],
+      "answer": "Pulmonary hypertension",
+      "section": "Lung and airway diseases",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What are the two types of air amounts classified during inhalation and exhalation?",
+      "type": "mcq",
+      "options": [
+        "Lung volumes and lung capacities",
+        "Tidal volume and residual volume",
+        "Inspiratory capacity and expiratory capacity",
+        "Vital capacity and total lung capacity"
+      ],
+      "answer": "Lung volumes and lung capacities",
+      "section": "Lung volumes capacities and calculations",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "How can lung volumes be measured?",
+      "type": "mcq",
+      "options": [
+        "By use of a spirometer",
+        "By counting breaths per minute",
+        "By measuring blood oxygen levels",
+        "By observing chest movements"
+      ],
+      "answer": "By use of a spirometer",
+      "section": "Lung volumes capacities and calculations",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the average number of breaths per minute for a healthy adult at rest?",
+      "type": "mcq",
+      "options": [
+        "12 breaths",
+        "15 breaths",
+        "20 breaths",
+        "8 breaths"
+      ],
+      "answer": "12 breaths",
+      "section": "Lung volumes capacities and calculations",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the volume of air moved in and out of the lungs during normal breathing called?",
+      "type": "mcq",
+      "options": [
+        "Tidal volume",
+        "Inspiratory reserve volume",
+        "Expiratory reserve volume",
+        "Residual volume"
+      ],
+      "answer": "Tidal volume",
+      "section": "Respiratory System",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the expiratory reserve volume (ERV) in an average adult male?",
+      "type": "mcq",
+      "options": [
+        "500 mL",
+        "700 mL",
+        "1200 mL",
+        "1900 mL"
+      ],
+      "answer": "1200 mL",
+      "section": "Respiratory System",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the residual volume (RV) in males?",
+      "type": "mcq",
+      "options": [
+        "1100 mL",
+        "1200 mL",
+        "1300 mL",
+        "1400 mL"
+      ],
+      "answer": "1200 mL",
+      "section": "Lung Volumes",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the inspiratory capacity (IC) in females?",
+      "type": "mcq",
+      "options": [
+        "2400 mL",
+        "3600 mL",
+        "500 mL",
+        "1900 mL"
+      ],
+      "answer": "2400 mL",
+      "section": "Lung Capacities",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the functional residual capacity (FRC) in males?",
+      "type": "mcq",
+      "options": [
+        "2400 mL",
+        "3600 mL",
+        "1200 mL",
+        "1100 mL"
+      ],
+      "answer": "2400 mL",
+      "section": "Lung Capacities",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the vital capacity (VC) in males?",
+      "type": "mcq",
+      "options": [
+        "4800 mL",
+        "3100 mL",
+        "6000 mL",
+        "4200 mL"
+      ],
+      "answer": "4800 mL",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the total lung capacity (TLC) in females?",
+      "type": "mcq",
+      "options": [
+        "4800 mL",
+        "3100 mL",
+        "6000 mL",
+        "4200 mL"
+      ],
+      "answer": "4200 mL",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the formula for minute ventilation (V)?",
+      "type": "mcq",
+      "options": [
+        "V = IRV + VT + ERV",
+        "V = VT * respiratory rate",
+        "V = VC + RV",
+        "V = TLC - RV"
+      ],
+      "answer": "V = VT * respiratory rate",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the formula to calculate minute ventilation?",
+      "type": "mcq",
+      "options": [
+        "V = breaths per minute × tidal volume",
+        "V = breaths per minute × alveolar volume",
+        "V = tidal volume × alveolar volume",
+        "V = breaths per minute × forced vital capacity"
+      ],
+      "answer": "V = breaths per minute × tidal volume",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the typical alveolar ventilation per minute?",
+      "type": "mcq",
+      "options": [
+        "4200 mL/min",
+        "6000 mL/min",
+        "350 mL/min",
+        "500 mL/min"
+      ],
+      "answer": "4200 mL/min",
+      "section": "Respiratory Physiology",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What does Forced Vital Capacity (FVC) measure?",
+      "type": "mcq",
+      "options": [
+        "Total volume of air blown forcefully into the mouthpiece",
+        "Volume of air per minute reaching the respiratory zone",
+        "Volume of air inhaled during normal breathing",
+        "Volume of air exhaled during normal breathing"
+      ],
+      "answer": "Total volume of air blown forcefully into the mouthpiece",
+      "section": "Spirometry",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the approximate total lung capacity in an average adult male?",
+      "type": "mcq",
+      "options": [
+        "4500 mL",
+        "3700 mL",
+        "3250 mL",
+        "2500 mL"
+      ],
+      "answer": "4500 mL",
+      "section": "Lung Capacity",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What does the Forced Expiratory Volume (FEV1) in 1 Second parameter measure?",
+      "type": "mcq",
+      "options": [
+        "Total lung capacity",
+        "Volume of air exhaled in the first second after a full inhalation",
+        "Volume of air inhaled in the first second",
+        "Total volume exhaled during a full exhalation"
+      ],
+      "answer": "Volume of air exhaled in the first second after a full inhalation",
+      "section": "FEV1 Measurement",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What are the normal FEV1 values for an average adult female?",
+      "type": "mcq",
+      "options": [
+        "4500 to 3500 mL",
+        "3700 to 3250 mL",
+        "3250 to 2500 mL",
+        "2500 to 2000 mL"
+      ],
+      "answer": "3250 to 2500 mL",
+      "section": "Normal FEV1 Values",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What does the FEV1/FVC Ratio represent in a pulmonary function test?",
+      "type": "mcq",
+      "options": [
+        "The total lung capacity",
+        "The ratio of the volume breathed out in the first second to the total volume breathed out",
+        "The percentage of oxygen in the exhaled air",
+        "The average breathing rate"
+      ],
+      "answer": "The ratio of the volume breathed out in the first second to the total volume breathed out",
+      "section": "Pulmonary Function Test",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is considered a normal range for the FEV1 value in a pulmonary function test?",
+      "type": "mcq",
+      "options": [
+        "50%-70% of the predicted value",
+        "80%-120% of the predicted value",
+        "130%-150% of the predicted value",
+        "Less than 50% of the predicted value"
+      ],
+      "answer": "80%-120% of the predicted value",
+      "section": "Pulmonary Function Test",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "How is the FEV1/FVC Ratio calculated?",
+      "type": "mcq",
+      "options": [
+        "By multiplying FEV1 by FVC",
+        "By dividing FEV1 by FVC",
+        "By adding FEV1 and FVC",
+        "By subtracting FVC from FEV1"
+      ],
+      "answer": "By dividing FEV1 by FVC",
+      "section": "Pulmonary Function Test",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the normal Predicted percentage range for healthy adults of the same gender, height, and age?",
+      "type": "mcq",
+      "options": [
+        "50% to 65%",
+        "70% to 85%",
+        "85% to 100%",
+        "60% to 75%"
+      ],
+      "answer": "70% to 85%",
+      "section": "Health Measurements",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What percentage is considered abnormal for the Predicted column?",
+      "type": "mcq",
+      "options": [
+        "Below 50%",
+        "Below 60%",
+        "Below 70%",
+        "Below 80%"
+      ],
+      "answer": "Below 70%",
+      "section": "Health Measurements",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which diseases may result in Predicted percentages of 45% to 60%?",
+      "type": "mcq",
+      "options": [
+        "Restrictive diseases",
+        "Obstructive diseases",
+        "Cardiovascular diseases",
+        "Neurological diseases"
+      ],
+      "answer": "Obstructive diseases",
+      "section": "Health Measurements",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the impact of fibrosis on FEV1 and FVC values?",
+      "type": "mcq",
+      "options": [
+        "Increases both FEV1 and FVC",
+        "Reduces both FEV1 and FVC",
+        "Increases FEV1 but reduces FVC",
+        "Reduces FEV1 but increases FVC"
+      ],
+      "answer": "Reduces both FEV1 and FVC",
+      "section": "Respiratory Disease",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the first step in the 5-step approach to interpreting spirometry results?",
+      "type": "mcq",
+      "options": [
+        "Look at the FEV1 parameter",
+        "Look at the FVC parameter",
+        "Check the patient's symptoms",
+        "Review the patient's medical history"
+      ],
+      "answer": "Look at the FVC parameter",
+      "section": "Spirometry Interpretation",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What can happen to the percentage of FEV1/FVC in cases of fibrosis?",
+      "type": "mcq",
+      "options": [
+        "It always decreases",
+        "It always increases",
+        "It can remain within the normal range or even increase",
+        "It is not affected"
+      ],
+      "answer": "It can remain within the normal range or even increase",
+      "section": "Respiratory Disease",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What does it indicate if both FVC and FEV1 values are normal in a spirometry test?",
+      "type": "mcq",
+      "options": [
+        "The test results are likely normal",
+        "There is a possibility of lung disease",
+        "The FEV1/FVC Ratio is 69% or less",
+        "The predicted percentages for FVC are abnormal"
+      ],
+      "answer": "The test results are likely normal",
+      "section": "Spirometry Interpretation",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What should be done if either FVC or FEV1 values are below the predicted normal value?",
+      "type": "mcq",
+      "options": [
+        "Consider the test results normal",
+        "Proceed to step 5",
+        "Assume there is no lung disease",
+        "Ignore the results"
+      ],
+      "answer": "Proceed to step 5",
+      "section": "Spirometry Interpretation",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What does an FEV1/FVC Ratio of 69% or less suggest?",
+      "type": "mcq",
+      "options": [
+        "Normal lung function",
+        "Obstructive lung disease",
+        "Restrictive lung disease",
+        "No lung disease"
+      ],
+      "answer": "Obstructive lung disease",
+      "section": "Spirometry Interpretation",
+      "rate": "good",
+      "suggestion": "None if good; otherwise improved version"
+    },
+    {
+      "question": "What is the normal FEV1 percentage for healthy individuals?",
+      "type": "mcq",
+      "options": [
+        "Above 60%",
+        "Above 70%",
+        "Above 80%",
+        "Above 90%"
+      ],
+      "answer": "Above 80%",
+      "section": "Spirometry Results",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the classification of COPD when the FEV1 is 40%?",
+      "type": "mcq",
+      "options": [
+        "Moderate COPD",
+        "Severe COPD",
+        "Very severe COPD",
+        "Mild COPD"
+      ],
+      "answer": "Severe COPD",
+      "section": "COPD Classification",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Given VT = 400, IRV = 2900, ERV = 1100, and FRC = 2000, what is the Inspiratory Capacity (IC)?",
+      "type": "mcq",
+      "options": [
+        "3300 ml",
+        "2900 ml",
+        "400 ml",
+        "2000 ml"
+      ],
+      "answer": "3300 ml",
+      "section": "Spirometry Calculations",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "If FVC is 4000 ml and FEV1 is 4500 ml, what is the FEV1/FVC ratio and what does it indicate?",
+      "type": "mcq",
+      "options": [
+        "1.125, Normal",
+        "0.89, Obstructive",
+        "1.125, Obstructive",
+        "0.89, Normal"
+      ],
+      "answer": "1.125, Normal",
+      "section": "Spirometry Interpretation",
+      "rate": "good",
+      "suggestion": "None"
+    }
+  ]
+}

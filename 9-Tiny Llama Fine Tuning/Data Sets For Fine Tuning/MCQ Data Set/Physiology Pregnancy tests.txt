@@ -1,0 +1,355 @@
+{
+  "filename": "Pregnancy tests.pdf",
+  "quiz": [
+    {
+      "question": "What is the primary hormone tested in pregnancy tests?",
+      "type": "mcq",
+      "options": [
+        "Estrogen",
+        "Progesterone",
+        "Human chorionic gonadotropin (hCG)",
+        "Luteinizing hormone (LH)"
+      ],
+      "answer": "Human chorionic gonadotropin (hCG)",
+      "section": "Lab 7: Pregnancy tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "When does hCG typically reach its peak during pregnancy?",
+      "type": "mcq",
+      "options": [
+        "1-2 weeks",
+        "3-5 weeks",
+        "8-10 weeks",
+        "12-14 weeks"
+      ],
+      "answer": "8-10 weeks",
+      "section": "Lab 7: Pregnancy tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What produces human chorionic gonadotropin (hCG) during pregnancy?",
+      "type": "mcq",
+      "options": [
+        "The placenta",
+        "The ovaries",
+        "The pituitary gland",
+        "The adrenal glands"
+      ],
+      "answer": "The placenta",
+      "section": "Lab 7: Pregnancy tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the earliest time hCG can be detected in a blood sample following ovulation?",
+      "type": "mcq",
+      "options": [
+        "3 days",
+        "6 days",
+        "8–10 days",
+        "12 days"
+      ],
+      "answer": "6 days",
+      "section": "hCG Detection",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following samples can be used for hCG testing?",
+      "type": "mcq",
+      "options": [
+        "Blood only",
+        "Urine only",
+        "Both blood and urine",
+        "Saliva"
+      ],
+      "answer": "Both blood and urine",
+      "section": "hCG Testing Methods",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Where can urine-based hCG testing be performed?",
+      "type": "mcq",
+      "options": [
+        "Only in a medical facility",
+        "Only at home",
+        "Both in a medical facility and at home",
+        "Neither in a medical facility nor at home"
+      ],
+      "answer": "Both in a medical facility and at home",
+      "section": "hCG Testing Locations",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the primary source of Human Chorionic Gonadotropin (hCG) during pregnancy?",
+      "type": "mcq",
+      "options": [
+        "The placenta",
+        "The ovaries",
+        "The pituitary gland",
+        "The adrenal glands"
+      ],
+      "answer": "The placenta",
+      "section": "hCG Production",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the subunit of hCG that antibodies for immunoassays are generally produced against?",
+      "type": "mcq",
+      "options": [
+        "Alpha-subunit",
+        "Beta-subunit",
+        "Gamma-subunit",
+        "Delta-subunit"
+      ],
+      "answer": "Beta-subunit",
+      "section": "hCG immunoassays",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "At what gestational age does maternal serum hCG peak?",
+      "type": "mcq",
+      "options": [
+        "4–6 weeks",
+        "8–10 weeks",
+        "12–14 weeks",
+        "16–18 weeks"
+      ],
+      "answer": "8–10 weeks",
+      "section": "Maternal serum hCG levels",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which type of test detects the presence of the beta subunit of hCG in blood or urine?",
+      "type": "mcq",
+      "options": [
+        "Quantitative test",
+        "Qualitative test",
+        "Confirmatory test",
+        "Screening test"
+      ],
+      "answer": "Qualitative test",
+      "section": "hCG detection methods",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the range of hCG levels detected by high-sensitivity pregnancy tests?",
+      "type": "mcq",
+      "options": [
+        "20 to 50 mIU/mL",
+        "50 to 100 mIU/mL",
+        "1000 to 1500 mIU/mL",
+        "1500 to 2000 mIU/mL"
+      ],
+      "answer": "20 to 50 mIU/mL",
+      "section": "Pregnancy Test Sensitivity",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a cause of a false positive pregnancy test?",
+      "type": "mcq",
+      "options": [
+        "User error in performing and interpreting the test",
+        "Biochemical pregnancy",
+        "Non-pregnant production of hCG",
+        "High-sensitivity test detecting low hCG levels"
+      ],
+      "answer": "High-sensitivity test detecting low hCG levels",
+      "section": "False Positives in Pregnancy Tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the accuracy rate of cartridge pregnancy tests?",
+      "type": "mcq",
+      "options": [
+        "Up to 90%",
+        "Up to 95%",
+        "Up to 98%",
+        "Up to 99%"
+      ],
+      "answer": "Up to 98%",
+      "section": "Pregnancy Test Accuracy",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following can cause false-positive results in hCG tests?",
+      "type": "mcq",
+      "options": [
+        "Ectopic production of hCG by neoplasms",
+        "Bacterial contamination",
+        "Spurious evaporation lines",
+        "All of the above"
+      ],
+      "answer": "All of the above",
+      "section": "hCG Testing",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What neoplasms can produce hCG-like substances leading to false-positive hCG test results?",
+      "type": "mcq",
+      "options": [
+        "Ovarian cysts",
+        "Testicular tumors",
+        "Lung carcinomas",
+        "All of the above"
+      ],
+      "answer": "All of the above",
+      "section": "hCG Testing",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What can cause spurious evaporation lines on home pregnancy tests?",
+      "type": "mcq",
+      "options": [
+        "Reading the test after the suggested reaction time",
+        "Bacterial contamination",
+        "Blood in urine",
+        "Ectopic production of hCG"
+      ],
+      "answer": "Reading the test after the suggested reaction time",
+      "section": "Home Pregnancy Tests",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What can cause a false positive result in urine pregnancy tests due to medication?",
+      "type": "mcq",
+      "options": [
+        "Chlorpromazine",
+        "Promethazine",
+        "Phenothiazines",
+        "All of the above"
+      ],
+      "answer": "All of the above",
+      "section": "Medication-induced false positives",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is 'Phantom hCG' primarily caused by?",
+      "type": "mcq",
+      "options": [
+        "Expired test kits",
+        "Human antianimal antibodies",
+        "High urinary pH",
+        "Testing too early"
+      ],
+      "answer": "Human antianimal antibodies",
+      "section": "Phantom hCG",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which of the following is NOT a cause of false negative pregnancy test results?",
+      "type": "mcq",
+      "options": [
+        "Testing too early",
+        "Diluted sample",
+        "Use of choriomon",
+        "False negative results"
+      ],
+      "answer": "Use of choriomon",
+      "section": "False negative results",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the 'hook effect' in hCG testing?",
+      "type": "mcq",
+      "options": [
+        "A phenomenon where low hCG levels cause false negatives",
+        "A phenomenon where very high hCG levels cause false negatives",
+        "A phenomenon where incorrect sample collection causes false positives",
+        "A phenomenon where expired reagents cause false positives"
+      ],
+      "answer": "A phenomenon where very high hCG levels cause false negatives",
+      "section": "hCG Testing",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "Which sample type requires a specific buffer and is usually less sensitive in hCG testing?",
+      "type": "mcq",
+      "options": [
+        "Urine",
+        "Serum",
+        "Whole blood",
+        "Saliva"
+      ],
+      "answer": "Whole blood",
+      "section": "Sample Collection",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What should be done if the control line does not appear during an hCG test?",
+      "type": "mcq",
+      "options": [
+        "Proceed with the test results",
+        "Discard the test and repeat",
+        "Wait longer for the control line to appear",
+        "Use a different sample type"
+      ],
+      "answer": "Discard the test and repeat",
+      "section": "Test Interpretation",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the minimum hCG level typically required for clinicians to diagnose a positive pregnancy test?",
+      "type": "mcq",
+      "options": [
+        "1 mIU/mL",
+        "5 mIU/mL",
+        "10 mIU/mL",
+        "15 mIU/mL"
+      ],
+      "answer": "10 mIU/mL",
+      "section": "Pregnancy Diagnosis",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "What is the normal range of hCG levels for a non-pregnant premenopausal female?",
+      "type": "mcq",
+      "options": [
+        "Up to 2.6 mIU/mL",
+        "Up to 5.3 mIU/mL",
+        "Up to 8.3 mIU/mL",
+        "Up to 10 mIU/mL"
+      ],
+      "answer": "Up to 5.3 mIU/mL",
+      "section": "Normal hCG Levels",
+      "rate": "good",
+      "suggestion": "None"
+    },
+    {
+      "question": "How long can a serum sample be stored at -20 °C for hCG testing?",
+      "type": "mcq",
+      "options": [
+        "3 Days",
+        "1 Month",
+        "6 Months",
+        "12 Months"
+      ],
+      "answer": "12 Months",
+      "section": "Sample Stability",
+      "rate": "good",
+      "suggestion": "None"
+    }
+  ]
+}
