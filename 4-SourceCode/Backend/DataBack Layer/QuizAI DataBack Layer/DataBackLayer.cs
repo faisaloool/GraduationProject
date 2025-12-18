@@ -11,111 +11,93 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
 
-namespace QuizAI_DataBack_Layer
+namespace QuizAIDataBack
 {
-    public class UserDTO
-    {
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-
-        public string Password { get; set; }
-        [Required]
-
-        public string FullName { get; set; }
-        [Required]
-
-        public string UserRole { get; set; }
-        public UserDTO(string Email, string Password, string FullName, string UserRole)
-        {
-            this.Email = Email;
-            this.Password = Password;
-            this.FullName = FullName;
-            this.UserRole = UserRole;
-        }
-
-    }
-
-    public class UserLoginDTO
-    {
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-        [Required]
-        public string Password { get; set; }
-        public UserLoginDTO(string Email, string Password)
-        {
-            this.Email= Email;
-            this.Password= Password;
-        }
-    }
-
-
-    public class DataBack
+    public class UserDataBack
     {
         public static async Task<UserDTO> CreateNewAccountAsync(UserDTO UserInfo)
         {
-            using (SqlConnection con = new SqlConnection(Module._connectionString))
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_CreateNewUser", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    byte[] Salt = Module.GenerateSalt();
-                    byte[] hashedBytes = Module.HashData(UserInfo.Password, Salt);
+                    byte[] Salt = Security.GenerateSalt();
+                    byte[] hashedBytes = Security.HashData(UserInfo.Password, Salt);
                     string Password_Hashed = Convert.ToBase64String(hashedBytes);
-                    // Add parameters from your UserDTO object
                     cmd.Parameters.AddWithValue("@Email", UserInfo.Email);
                     cmd.Parameters.AddWithValue("@Password_Hashed", Password_Hashed);
                     cmd.Parameters.AddWithValue("@Name", UserInfo.FullName);
                     cmd.Parameters.AddWithValue("@Salt", Salt);
-                    cmd.Parameters.AddWithValue("@User_Role", UserInfo.UserRole);
+                    cmd.Parameters.AddWithValue("@User_Role", "Student");
 
                     await con.OpenAsync();
-                    await cmd.ExecuteNonQueryAsync(); // since the SP only inserts, no reader needed
+                    await cmd.ExecuteNonQueryAsync();
                 }
             }
-
-            // Optionally, return the same object or null depending on your logic
             return UserInfo;
         }
-        
-        public static async Task<bool> LoginAsync(UserLoginDTO loginInfo)//3//5//7
+
+        public static async Task<int> DeleteAccountAsync(int UserID)
         {
-            using (SqlConnection con = new SqlConnection(Module._connectionString))
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_DeleteUser", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@User_ID", UserID);
+
+                    await con.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+            return UserID;
+        }
+
+
+        public static async Task<UserDTO> LoginAsync(UserLoginDTO loginInfo)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_HandleLogin", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Email", loginInfo.Email);
+
+                    // Get the salt for the email
                     byte[] salt = await GetSaltAsync(loginInfo.Email);
 
                     if (salt != null)
                     {
-                        string Password_Hashed = Convert.ToBase64String(Module.HashData(loginInfo.Password, salt));
-
-                        cmd.Parameters.AddWithValue("@Password_Hashed", Password_Hashed);
+                        string passwordHashed = Convert.ToBase64String(Security.HashData(loginInfo.Password, salt));
+                        cmd.Parameters.AddWithValue("@Password_Hashed", passwordHashed);
                     }
-                    await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
-                    if(result != null)
+                    else
                     {
-                        int intResult = Convert.ToInt32(result);
-                        if (intResult == 1)
+                        return null; // email not found
+                    }
+
+                    await con.OpenAsync();
+
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
                         {
-                            return true;
+                            // return full user info
+                            return new UserDTO (reader.GetInt32(reader.GetOrdinal("User_Id")), reader.GetString(reader.GetOrdinal("Email")), reader.GetString(reader.GetOrdinal("Name")));
                         }
                     }
-                    
                 }
             }
-            return false;
+
+            return null; // login failed
         }
 
-        private static async Task<byte[]> GetSaltAsync(string Email)//4
+
+        private static async Task<byte[]> GetSaltAsync(string Email)
         {
-            using (SqlConnection con = new SqlConnection(Module._connectionString))
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_GetUserSaltViaEmail", con))
                 {
@@ -129,9 +111,61 @@ namespace QuizAI_DataBack_Layer
                     
                     return null;
                 }
-
             }
         }
+    }
+
+    public class ContentDataBack
+    {
+        private static Dictionary<int, string> _cachedExtensions;
+
+        public static async Task<Dictionary<int, string>> GetFileTypesAsync()
+        {
+            if (_cachedExtensions != null)
+                return _cachedExtensions;
+
+            Dictionary<int, string> ValidExtensions = new Dictionary<int, string>();
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            using (SqlCommand cmd = new SqlCommand("SP_GetExtensions", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                await con.OpenAsync();
+
+                using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (reader.Read())
+                    {
+                        int typeId = reader.GetInt32(reader.GetOrdinal("type_ID"));
+                        string typeName = reader.GetString(reader.GetOrdinal("Type_Name"));
+                        ValidExtensions.Add(typeId, typeName);
+                    }
+                }
+            }
+
+            _cachedExtensions = ValidExtensions;
+            return ValidExtensions;
+        }
+        public static async Task<ContentDTO> SaveContentAsync(ContentDTO ContentInfo)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_AddNewContent", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    await con.OpenAsync();
+
+                    cmd.Parameters.AddWithValue("@User_ID", ContentInfo.UserID);
+                    cmd.Parameters.AddWithValue("@File_Type", ContentInfo.FileType);
+                    cmd.Parameters.AddWithValue("@File_Path", ContentInfo.FilePath);
+                    cmd.Parameters.AddWithValue("@Extracted_Text", ContentInfo.ExtractedText);
+
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+            return ContentInfo;
+        }
+
 
 
 

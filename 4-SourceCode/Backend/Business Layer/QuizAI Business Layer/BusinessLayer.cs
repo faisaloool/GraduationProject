@@ -1,36 +1,58 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using QuizAI_DataBack_Layer;
-using QuizAI_DataBack_Layer;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.IdentityModel.Tokens;
+using QuizAIDataBack;
+using QuizAIDataBack;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace QuizAI_Business_Layer
 {
-    public class QuizAIBL
+    public class RegisterationBusinessLayer
     {
-        public static async Task<UserDTO> RegisterNewUser(QuizAI_DataBack_Layer.UserDTO NewUser)
+        public static async Task<UserDTO> RegisterNewUser(QuizAIDataBack.UserDTO NewUser)
         {
-
-            return await DataBack.CreateNewAccountAsync(NewUser);
+            return await QuizAIDataBack.UserDataBack.CreateNewAccountAsync(NewUser);
         }
-        public static async Task<string> Login(UserLoginDTO LoginInfo)//2
+
+
+        //    public static async Task<LoginResultDTO> Login(UserLoginDTO LoginInfo)
+        //    {
+        //        if(await QuizAIDataBack.UserDataBack.LoginAsync(LoginInfo) == true)
+        //        {
+        //            return JwtServiceBusinessLayer.GenerateJwt(LoginInfo.Email, "User");
+        //        }
+        //        return null;
+        //    }
+
+        //}
+
+        public static async Task<LoginResultDTO> Login(UserLoginDTO loginInfo)
         {
-            if(await DataBack.LoginAsync(LoginInfo) == true)
+            var user = await QuizAIDataBack.UserDataBack.LoginAsync(loginInfo);
+
+            if (user == null)
+                return null;
+
+            var token = JwtServiceBusinessLayer.GenerateJwt(user.Email, "User");
+
+            return new LoginResultDTO
             {
-                return JwtService.GenerateJwt(LoginInfo.Email, "User");
-            }
-            return null;
+                
+                User = user,
+                Token = token
+            };
         }
 
     }
 
-
-    public static class JwtService
+    public static class JwtServiceBusinessLayer
     {
         private static string secretKey = "17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==";
 
@@ -56,6 +78,53 @@ namespace QuizAI_Business_Layer
         }
     }
 
+    public class ContentBusinessLayer
+    {
+        public static async Task<Dictionary<int, string>> GetFileTypes()
+        {
+            return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
+        }
+
+        public static async Task<ContentDTO> SaveContent(ContentDTO ContentInfo, IFormFile file)
+        {
+            using (var stream = new FileStream(ContentInfo.FilePath, FileMode.Create))
+                await file.CopyToAsync(stream);
+
+            return await ContentDataBack.SaveContentAsync(ContentInfo);
+        }
+    }
+
+    public class ServerHealthBusinessLayer
+    {
+        public static async Task<bool> CheckDbConnection()
+        {
+            return await Database.IsDbConnectedAsync();
+        }
+
+        public static bool IsDiskSpaceOk(string driveLetter = "C")
+        {
+            try
+            {
+                DriveInfo drive = new DriveInfo(driveLetter);
+
+                long freeBytes = drive.AvailableFreeSpace;
+
+                // 250 MB in bytes
+                long requiredBytes = 250L * 1024 * 1024;
+
+                return freeBytes >= requiredBytes;
+            }
+            catch
+            {
+                // If drive not found or error occurs
+                return false;
+            }
+
+        }
+
+
+
+    }
+
 }
 
-//17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==

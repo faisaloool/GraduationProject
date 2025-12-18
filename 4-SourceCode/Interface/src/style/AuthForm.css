@@ -19,7 +19,7 @@
   z-index: 1;
 }
 
-.auth_box::before {
+/* .auth_box::before {
   content: "";
   position: absolute;
   inset: -3px;
@@ -51,7 +51,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 .auth_box * {
   position: relative;
@@ -319,5 +319,112 @@
 @media (min-width: 1200px) {
   .auth_box {
     max-width: 500px;
+  }
+}
+/* ----------- RESPONSIVE UPGRADE ----------- */
+
+/* موبايل صغير جداً  (عرض تحت 360px) */
+@media (max-width: 360px) {
+
+  .auth_box {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .title {
+    font-size: 22px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .highlight {
+    font-size: 22px;
+    border-right-width: 3px;
+  }
+
+  .inputs {
+    margin-left: 10px;
+  }
+
+  .inputs input {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .submit_btn,
+  .google-btn {
+    width: 90%;
+    margin-right: 0;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 120px;
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  .google-btn img {
+    width: 18px;
+  }
+}
+
+
+/* موبايل عادي (480px) */
+@media (max-width: 480px) {
+
+  .auth_box {
+    width: 92%;
+    padding: 22px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .highlight {
+    font-size: 25px;
+  }
+
+  .inputs input,
+  .submit_btn,
+  .google-btn {
+    width: 90%;
+    margin-right: 0;
+  }
+
+  .google-btn {
+    gap: 8px;
+    padding: 9px;
+  }
+
+  .buttons button {
+    width: 140px;
+  }
+}
+
+
+/* تابلت (768px) */
+@media (max-width: 768px) {
+  .auth_box {
+    width: 80%;
+    padding: 28px;
+  }
+
+  .inputs input,
+  .submit_btn,
+  .google-btn {
+    width: 85%;
+  }
+}
+
+
+/* شاشات كبيرة (1200px) */
+@media (min-width: 1200px) {
+  .auth_box {
+    max-width: 480px;
   }
 }

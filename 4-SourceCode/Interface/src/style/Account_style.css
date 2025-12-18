@@ -478,3 +478,83 @@
   max-width: 220px;
   word-break: break-word;
 }
+/* ============================= */
+/*      RESPONSIVE UPGRADE      */
+/* ============================= */
+
+/* موبايل صغير جداً */
+@media (max-width: 400px) {
+  .sb-account {
+    padding: 6px 8px;
+    gap: 6px;
+  }
+
+  .sb-account__avatar {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sb-account__name {
+    font-size: 15px;
+  }
+
+  .sb-account__email {
+    font-size: 12px;
+  }
+
+  .account-quick-menu {
+    width: 150px;
+    transform: translate(-60%, -110%);
+  }
+}
+
+/* موبايل */
+@media (max-width: 480px) {
+  .sb-account {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .account-quick-menu {
+    width: 160px;
+    transform: translate(-50%, -110%);
+  }
+
+  .account-settings-panel {
+    width: 100%;
+    padding: 18px;
+  }
+}
+
+/* تابلت */
+@media (max-width: 768px) {
+  .account-settings-panel {
+    width: 90%;
+  }
+
+  .account-password-row {
+    flex-direction: column;
+  }
+}
+
+/* لابتوب */
+@media (max-width: 1024px) {
+  .account-quick-menu {
+    transform: translate(-70%, -110%);
+  }
+}
+
+/* شاشات كبيرة */
+@media (min-width: 1600px) {
+  .sb-account {
+    padding: 12px 14px;
+  }
+
+  .sb-account__name {
+    font-size: 20px;
+  }
+
+  .sb-account__email {
+    font-size: 15px;
+  }
+}

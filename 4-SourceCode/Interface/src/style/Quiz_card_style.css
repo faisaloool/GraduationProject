@@ -173,3 +173,18 @@ input {
     border-color: rgba(70, 234, 255, 0.25);
   }
 }
+.active-card {
+  background-color: #067e8b5e;
+  margin-bottom: 1rem;
+}
+.quiz-card.editing,
+.active-card.editing {
+  background: rgba(6, 126, 139, 0.35);
+}
+.quiz-card,
+.active-card {
+  will-change: transform, background, box-shadow;
+}
+.skeleton-card {
+  backdrop-filter: blur(2px);
+}

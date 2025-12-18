@@ -14,3 +14,92 @@
   width: 100%;
   min-width: 0;
 }
+.closlogo{
+  
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+ left: -10px;
+   text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+}
+.closlogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute; /* حتى تشتغل left */
+  left: -10px;
+  top: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* موبايل صغير */
+@media (max-width: 480px) {
+  .closlogo {
+    width: 32px;
+    height: 32px;
+    left: -5px;
+    top: 8px;
+  }
+}
+
+/* موبايل كبير */
+@media (max-width: 600px) {
+  .closlogo {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* شاشات صغيرة جدًا - موبايلات صغيرة */
+@media only screen and (max-width: 320px) {
+.wlc h1{
+  font-size: 16px;
+}
+}
+
+/* موبايلات صغيرة إلى متوسطة */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* موبايلات كبيرة و small tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* تابلت متوسطة - landscape */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* لابتوبات صغيرة */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+/* شاشات كبيرة */
+@media only screen and (min-width: 1201px) {
+  body {
+    font-size: 22px;
+  }
+}

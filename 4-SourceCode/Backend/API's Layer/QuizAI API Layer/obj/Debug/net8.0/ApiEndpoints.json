@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "GetHealth",
+    "RelativePath": "api/v1/quiz-ai/health",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/v1/quiz-ai/Login",
     "HttpMethod": "POST",
@@ -9,39 +19,98 @@
     "Parameters": [
       {
         "Name": "UserLoginInfo",
-        "Type": "QuizAI_DataBack_Layer.UserLoginDTO",
+        "Type": "QuizAIDataBack.UserLoginDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuizAI_DataBack_Layer.UserDTO",
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
         "MediaTypes": [
           "text/plain",
           "application/json",
           "text/json"
         ],
-        "StatusCode": 200
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
       }
     ]
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "CreateNewUser",
-    "RelativePath": "api/v1/quiz-ai/register",
+    "RelativePath": "api/v1/quiz-ai/Signup",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "UserInfo",
-        "Type": "QuizAI_DataBack_Layer.UserDTO",
+        "Type": "QuizAIDataBack.RegisterationDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuizAI_DataBack_Layer.UserDTO",
+        "Type": "QuizAIDataBack.RegisterationDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "UploadFile",
+    "RelativePath": "api/v1/quiz-ai/Upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.String",
         "MediaTypes": [
           "text/plain",
           "application/json",

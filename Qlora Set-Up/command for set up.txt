@@ -1,3 +1,0 @@
-chmod +x qlora_setup.sh
-./qlora_setup.sh
-
