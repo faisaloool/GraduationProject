@@ -16,102 +16,102 @@ using System.Text.Json.Serialization;
 
 namespace QuizAIDataBack
 {
-    public class RegisterationDTO
-    {
-        public int id;
-        [Required]
-        [EmailAddress]
-        public string Email { get; set; }
-
-        [Required]
-        public string Password { get; set; }
-        [Required]
-
-        public string FullName { get; set; }
-
-
-        //public string UserRole { get; set; }
-        public RegisterationDTO(string Email, string Password, string FullName)
-        {
-            this.id = id;
-            this.Email = Email;
-            this.Password = Password;
-            this.FullName = FullName;
-        }
-        public RegisterationDTO(int id, string Email, string FullName)
-        {
-            this.id = id;
-            this.Email = Email;
-            this.FullName = FullName;
-        }
-    }
-
     public class UserDTO
     {
-        public int id;
-        [Required]
+        public int id { get; set; }
+        public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
-        
-        [Required]
-        [JsonIgnore]
-        public string Password { get; set; }
-        [Required]
 
-        public string FullName { get; set; }
-        
-
-        //public string UserRole { get; set; }
-        public UserDTO(string Email, string Password, string FullName)
+        public UserDTO(int id, string email, string name)
         {
             this.id = id;
-            this.Email = Email;
-            this.Password = Password;
-            this.FullName = FullName;
-        }
-        public UserDTO(int id, string Email, string FullName)
-        {
-            this.id = id;
-            this.Email = Email;
-            this.FullName = FullName;
+            this.Name = name;
+            this.Email = email;
         }
     }
 
-
-    public class UserLoginDTO
+    public class CreateNewUserResponseDTO
     {
-        [Required]
+        public UserDTO user { get; set; }
+        public string token { get; set; }
+
+        public CreateNewUserResponseDTO() { }
+        public CreateNewUserResponseDTO(UserDTO user)
+        {
+            this.user = user;
+        }
+    }
+
+    public class CreateNewUserRequestDTO
+    {
+        public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
+
         public string Password { get; set; }
-        public UserLoginDTO(string Email, string Password)
+
+        public CreateNewUserRequestDTO() { }
+        public CreateNewUserRequestDTO(string Email, string Password, string Name)
         {
             this.Email = Email;
             this.Password = Password;
+            this.Name = Name;
         }
     }
 
-    public class ContentDTO
+    public class UserLoginRequestDTO
     {
-        public int UserID { get; set; }
-        public int FileType { get; set; }
-        public string FilePath { get; set; }
-        public string ExtractedText { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
 
-        public ContentDTO(int UserID, int FileType, string FilePath, string ExtractedText)
+        public UserLoginRequestDTO() { }
+    }
+
+    public class UserLoginResponseDTO
+    {
+        public UserDTO user { get; set; }
+        public string token { get; set; }
+        public UserLoginResponseDTO() { }
+
+        public UserLoginResponseDTO(UserDTO user, string token)
         {
-            this.UserID = UserID;
-            this.FileType = FileType;
-            this.FilePath = FilePath;
-            this.ExtractedText = ExtractedText;
+            this.user = user;
+            this.token = token;
+        }
+
+        public UserLoginResponseDTO(int id, string email, string name)
+        {
+            this.user.id = id;
+            this.user.Email = email;
+            this.user.Name = name;
         }
     }
-    public class LoginResultDTO
+
+    public class HealthResponseDTO
     {
-        public UserDTO User { get; set; }
-        public string Token { get; set; }
+        public string message { get; set; }
+        public bool OverallStatus { get; set; }
+        public HealthResponseDTO(string message, bool overall)
+        {
+            this.message = message;
+            this.OverallStatus = overall;
+        }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public class Database
@@ -148,10 +148,8 @@ namespace QuizAIDataBack
         }
     }
 
-
     public class Security
     {
-
         public static byte[] GenerateSalt(int size = 16)
         {
             byte[] salt = new byte[size];
@@ -233,28 +231,152 @@ namespace QuizAIDataBack
                 modelState.AddModelError("FullName", "Full name must be at least 3 characters.");
                 isValid = false;
             }
-
-            //// UserRole validation
-            //if (!Security.IsValidUserRole(userRole))
-            //{
-            //    modelState.AddModelError("UserRole", "User role is invalid.");
-            //    isValid = false;
-            //}
-
             return isValid;
         }
-        public static bool ValidateLogin(UserLoginDTO userInfo)
-        {
-            bool IsValid = true;
+        //public static bool ValidateLogin(UserLoginDTO userInfo)
+        //{
+        //    bool IsValid = true;
 
-            if (string.IsNullOrEmpty(userInfo.Email) || string.IsNullOrEmpty(userInfo.Password))
-                IsValid = false;
+        //    if (string.IsNullOrEmpty(userInfo.Email) || string.IsNullOrEmpty(userInfo.Password))
+        //        IsValid = false;
 
 
-            return IsValid;
-        }
+        //    return IsValid;
+        //}
 
 
     }
 
+    public class ApiResponse<T>
+    {
+        public bool Success { get; set; }
+        public int Status { get; set; }
+        public string Message { get; set; }
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow;
+        public T Data { get; set; }
+        public ApiError Error { get; set; }
+    }
+
+    public class ApiError
+    {
+        public string Code { get; set; }
+        public string Details { get; set; }
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//public class RegisterationDTO
+//{
+//    public int id;
+//    [Required]
+//    [EmailAddress]
+//    public string Email { get; set; }
+
+//    [Required]
+//    public string Password { get; set; }
+//    [Required]
+
+//    public string Name { get; set; }
+
+
+//    //public string UserRole { get; set; }
+//    public RegisterationDTO(string Email, string Password, string FullName)
+//    {
+//        this.id = id;
+//        this.Email = Email;
+//        this.Password = Password;
+//        this.Name = FullName;
+//    }
+//    public RegisterationDTO(int id, string Email, string FullName)
+//    {
+//        this.id = id;
+//        this.Email = Email;
+//        this.Name = FullName;
+//    }
+//    public RegisterationDTO() { }
+//}
+
+//public class UserDTO
+//{
+//    public int id;
+//    [Required]
+//    [EmailAddress]
+//    public string Email { get; set; }
+
+//    [Required]
+//    [JsonIgnore]
+//    public string Password { get; set; }
+//    [Required]
+
+//    public string FullName { get; set; }
+
+
+//    //public string UserRole { get; set; }
+//    public UserDTO(string Email, string Password, string FullName)
+//    {
+//        this.id = id;
+//        this.Email = Email;
+//        this.Password = Password;
+//        this.FullName = FullName;
+//    }
+//    public UserDTO(int id, string Email, string FullName)
+//    {
+//        this.id = id;
+//        this.Email = Email;
+//        this.FullName = FullName;
+//    }
+//}
+
+
+
+
+//public class UserLoginDTO
+//{
+//    [Required]
+//    [EmailAddress]
+//    public string Email { get; set; }
+//    [Required]
+//    public string Password { get; set; }
+//    public UserLoginDTO(string Email, string Password)
+//    {
+//        this.Email = Email;
+//        this.Password = Password;
+//    }
+//}
+
+//public class ContentDTO
+//{
+//    public int UserID { get; set; }
+//    public int FileType { get; set; }
+//    public string FilePath { get; set; }
+//    public string ExtractedText { get; set; }
+
+//    public ContentDTO(int UserID, int FileType, string FilePath, string ExtractedText)
+//    {
+//        this.UserID = UserID;
+//        this.FileType = FileType;
+//        this.FilePath = FilePath;
+//        this.ExtractedText = ExtractedText;
+//    }
+//}
+//public class LoginResultDTO
+//{
+//    public UserDTO User { get; set; }
+//    public string Token { get; set; }
+//}

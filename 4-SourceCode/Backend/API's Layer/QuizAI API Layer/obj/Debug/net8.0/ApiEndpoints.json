@@ -7,7 +7,13 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
@@ -19,14 +25,18 @@
     "Parameters": [
       {
         "Name": "UserLoginInfo",
-        "Type": "QuizAIDataBack.UserLoginDTO",
+        "Type": "QuizAIDataBack.UserLoginRequestDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "System.Void",
-        "MediaTypes": [],
+        "Type": "QuizAIDataBack.UserLoginResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 200
       },
       {
@@ -55,13 +65,13 @@
     "Parameters": [
       {
         "Name": "UserInfo",
-        "Type": "QuizAIDataBack.RegisterationDTO",
+        "Type": "QuizAIDataBack.CreateNewUserRequestDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "QuizAIDataBack.RegisterationDTO",
+        "Type": "QuizAIDataBack.CreateNewUserResponseDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -77,46 +87,6 @@
           "text/json"
         ],
         "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
-    "Method": "UploadFile",
-    "RelativePath": "api/v1/quiz-ai/Upload",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "file",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
       },
       {
         "Type": "System.Void",

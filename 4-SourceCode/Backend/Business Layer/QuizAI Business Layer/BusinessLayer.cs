@@ -16,47 +16,34 @@ namespace QuizAI_Business_Layer
 {
     public class RegisterationBusinessLayer
     {
-        public static async Task<UserDTO> RegisterNewUser(QuizAIDataBack.UserDTO NewUser)
+        public static async Task<CreateNewUserResponseDTO> RegisterNewUser(CreateNewUserRequestDTO NewUser)
         {
-            return await QuizAIDataBack.UserDataBack.CreateNewAccountAsync(NewUser);
+            return await UserDataBack.CreateNewAccountAsync(NewUser);
         }
 
-
-        //    public static async Task<LoginResultDTO> Login(UserLoginDTO LoginInfo)
-        //    {
-        //        if(await QuizAIDataBack.UserDataBack.LoginAsync(LoginInfo) == true)
-        //        {
-        //            return JwtServiceBusinessLayer.GenerateJwt(LoginInfo.Email, "User");
-        //        }
-        //        return null;
-        //    }
-
-        //}
-
-        public static async Task<LoginResultDTO> Login(UserLoginDTO loginInfo)
+        public static async Task<UserLoginResponseDTO> Login(UserLoginRequestDTO loginInfo)
         {
-            var user = await QuizAIDataBack.UserDataBack.LoginAsync(loginInfo);
+            var userInfo = await UserDataBack.LoginAsync(loginInfo);
 
-            if (user == null)
+            if (userInfo == null)
                 return null;
 
-            var token = JwtServiceBusinessLayer.GenerateJwt(user.Email, "User");
+            var token = JwtServiceBusinessLayer.GenerateJwt(userInfo.Email);
 
-            return new LoginResultDTO
+            return new UserLoginResponseDTO
             {
-                
-                User = user,
-                Token = token
+
+                user = userInfo,
+                token = token
             };
         }
-
     }
 
     public static class JwtServiceBusinessLayer
     {
         private static string secretKey = "17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==";
 
-        public static string GenerateJwt(string email, string userRole, int expireMinutes = 60)
+        public static string GenerateJwt(string email, int expireMinutes = 60)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(secretKey);
@@ -65,8 +52,7 @@ namespace QuizAI_Business_Layer
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimTypes.Email, email),
-                    new Claim(ClaimTypes.Role, userRole)
+                    new Claim(ClaimTypes.Email, email)
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(expireMinutes),
                 SigningCredentials = new SigningCredentials(
@@ -78,21 +64,21 @@ namespace QuizAI_Business_Layer
         }
     }
 
-    public class ContentBusinessLayer
-    {
-        public static async Task<Dictionary<int, string>> GetFileTypes()
-        {
-            return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
-        }
+    //public class ContentBusinessLayer
+    //{
+    //    public static async Task<Dictionary<int, string>> GetFileTypes()
+    //    {
+    //        return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
+    //    }
 
-        public static async Task<ContentDTO> SaveContent(ContentDTO ContentInfo, IFormFile file)
-        {
-            using (var stream = new FileStream(ContentInfo.FilePath, FileMode.Create))
-                await file.CopyToAsync(stream);
+    //    public static async Task<ContentDTO> SaveContent(ContentDTO ContentInfo, IFormFile file)
+    //    {
+    //        using (var stream = new FileStream(ContentInfo.FilePath, FileMode.Create))
+    //            await file.CopyToAsync(stream);
 
-            return await ContentDataBack.SaveContentAsync(ContentInfo);
-        }
-    }
+    //        return await ContentDataBack.SaveContentAsync(ContentInfo);
+    //    }
+    //}
 
     public class ServerHealthBusinessLayer
     {
@@ -119,12 +105,7 @@ namespace QuizAI_Business_Layer
                 // If drive not found or error occurs
                 return false;
             }
-
         }
-
-
-
     }
-
 }
 
