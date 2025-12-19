@@ -26,9 +26,14 @@ export function ExamsProvider({ children }) {
     try {
       const data = await fetchUserExams(user.id, token);
       setExams(data.quizzes || []);
+      setLoading(false);
+      return data;
     } catch (error) {
       setError(error);
+      // Keep loading true on error and propagate the error
+      throw error;
     } finally {
+      // This runs whether it succeeded OR failed
       setLoading(false);
     }
   };

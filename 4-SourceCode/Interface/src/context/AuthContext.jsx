@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { verifyCode } from "../util/service.js";
 
 // Create the context
 const AuthContext = createContext();
@@ -63,6 +64,50 @@ export function AuthProvider({ children }) {
     storage.setItem("user", JSON.stringify(userData));
     storage.setItem("token", tokenData);
   };
+
+  const signup = (code) => {
+    setLoading(true);
+    setError(null);
+
+    const verify = async () => {
+      try {
+        console.log("Verifying code:", code, "for user:", user);
+        if (!user?.email) {
+          throw new Error("Missing email for verification");
+        }
+        const response = await verifyCode(code, user.email);
+
+        if (!response) {
+          throw new Error("Verification failed");
+        }
+
+        // Prefer explicit flags if present.
+        if (response?.success === true) return response;
+        if (response?.success === false) {
+          throw new Error(response?.message || "The code is wrong.");
+        }
+
+        // Fallback: treat presence of an error field as failure.
+        if (response?.error) {
+          throw new Error(
+            response?.message || response.error || "The code is wrong."
+          );
+        }
+
+        // If the backend doesn't send success/error, assume success.
+        return response;
+      } catch (err) {
+        setUser(null);
+        setError(err);
+        throw err;
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    return verify();
+  };
+
   // Logout function
   const logout = () => {
     localStorage.removeItem("token");
@@ -80,11 +125,13 @@ export function AuthProvider({ children }) {
     <AuthContext.Provider
       value={{
         user,
+        setUser,
         token,
         isLoggedIn: !!token,
         loading,
         login,
         logout,
+        signup,
         error,
       }}
     >

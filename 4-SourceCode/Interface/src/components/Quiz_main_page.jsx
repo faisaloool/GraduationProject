@@ -70,6 +70,14 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     };
   }, [exam]);
 
+  // After a submission is recorded, auto-scroll to bottom to reveal the result
+  useEffect(() => {
+    if (isSubmitted) {
+      // allow DOM to render the result first
+      requestAnimationFrame(scrollToBottom);
+    }
+  }, [isSubmitted]);
+
   // Smoothly scroll the main container to the bottom when the arrow is clicked
   const scrollToBottom = () => {
     const el = quizRef.current;
@@ -87,14 +95,6 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
       quizRef.current.scrollTo({ top: 0, behavior: "instant" });
     }
   };
-
-  // After a submission is recorded, auto-scroll to bottom to reveal the result
-  useEffect(() => {
-    if (isSubmitted) {
-      // allow DOM to render the result first
-      requestAnimationFrame(scrollToBottom);
-    }
-  }, [isSubmitted]);
 
   const examResult = () => {
     let score = 0;
