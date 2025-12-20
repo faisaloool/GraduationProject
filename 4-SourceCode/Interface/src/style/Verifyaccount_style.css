@@ -1,0 +1,135 @@
+.verify-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px;
+  background-color: #151515;
+  overflow-y: auto;
+}
+
+.verify_box {
+  position: relative;
+  width: min(760px, 92vw);
+  padding: 48px;
+  border-radius: 28px;
+  text-align: center;
+  color: white;
+
+  background: linear-gradient(
+    180deg,
+    rgba(15, 15, 15, 0.92),
+    rgba(15, 15, 15, 0.86)
+  );
+  border: 1px solid rgba(70, 234, 255, 0.22);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+}
+
+.verify-title {
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.verify-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 28px;
+}
+
+.verify-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+.verify-code {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.code-input {
+  width: 88px;
+  height: 100px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(70, 234, 255, 0.35);
+  border-radius: 22px;
+  outline: none;
+  transition: border-color 0.18s ease, background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.code-input:focus {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(0, 188, 212, 0.95);
+  box-shadow: 0 0 0 6px rgba(0, 188, 212, 0.18);
+}
+
+.verify-submit {
+  width: 100%;
+  padding: 20px;
+  background: #00bcd4;
+  border: none;
+  border-radius: 22px;
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, transform 0.12s ease,
+    opacity 0.18s ease;
+}
+
+.verify-submit:hover {
+  background: #03c9e6;
+}
+
+.verify-submit:active {
+  transform: translateY(1px);
+}
+
+.verify-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.verify-error {
+  width: 100%;
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 22px;
+  font-size: 21px;
+  color: red;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.25);
+}
+
+.verify-hint {
+  font-size: 19px;
+  color: #8fe3ec;
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .verify_box {
+    padding: 36px;
+  }
+
+  .verify-code {
+    gap: 12px;
+  }
+
+  .code-input {
+    width: 76px;
+    height: 88px;
+    font-size: 34px;
+  }
+}

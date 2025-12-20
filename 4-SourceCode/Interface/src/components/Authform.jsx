@@ -1,30 +1,43 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../style/AuthForm.css";
 import { loginUser, registerUser } from "../util/service.js";
 import { useAuth } from "../context/AuthContext.jsx";
 
-export default function AuthForms({ login }) {
-  const [isLogin, setLogin] = useState(login);
+export default function AuthForms({ isLogin, setIsLogin }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/Log-in") setIsLogin(true);
+    if (location.pathname === "/Sign-up") setIsLogin(false);
+  }, [location.pathname, setIsLogin]);
 
   return (
     <div className="auth-container">
       <div className="auth_box">
         <h2 className="title">
-        <span className="welcom"> Welcome to </span> <span className="highlight">Quiz AI</span>
+          <span className="welcom"> Welcome to </span>{" "}
+          <span className="highlight">Quiz AI</span>
         </h2>
         <p className="subtitle">Log in to your account to continue</p>
 
         <div className="buttons">
           <button
             className={isLogin ? "active" : ""}
-            onClick={() => setLogin(true)}
+            onClick={() => {
+              setIsLogin(true);
+              navigate("/Log-in");
+            }}
           >
             Log In
           </button>
           <button
             className={!isLogin ? "active" : ""}
-            onClick={() => setLogin(false)}
+            onClick={() => {
+              setIsLogin(false);
+              navigate("/Sign-up");
+            }}
           >
             Sign Up
           </button>
@@ -38,7 +51,7 @@ export default function AuthForms({ login }) {
 
 function Form({ isLogin }) {
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, setUser } = useAuth();
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -62,14 +75,16 @@ function Form({ isLogin }) {
       if (data.error) {
         setError(data.error);
       } else {
-        const keepSignedIn =
-          document.getElementById("keepSigned")?.checked || false;
-
-        // ✅ Use the new login function from context
-        login(data.user, data.token, keepSignedIn);
-
-        // Navigate to home immediately
-        navigate("/");
+        if (isLogin) {
+          const keepSignedIn =
+            document.getElementById("keepSigned")?.checked || false;
+          // Use the new login function from context
+          login(data.user, data.token, keepSignedIn);
+          navigate("/");
+        } else {
+          setUser(data.user);
+          navigate("/verifyaccount");
+        }
       }
     } catch (err) {
       console.error(err);
@@ -116,10 +131,12 @@ function Form({ isLogin }) {
         />
       </div>
 
-      <div className="inputs remember">
-        <input id="keepSigned" type="checkbox" name="keepSigned"   />
-        <label htmlFor="keepSigned">Keep me signed in</label>
-      </div>
+      {isLogin && (
+        <div className="inputs remember">
+          <input id="keepSigned" type="checkbox" name="keepSigned" />
+          <label htmlFor="keepSigned">Keep me signed in</label>
+        </div>
+      )}
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
@@ -128,14 +145,6 @@ function Form({ isLogin }) {
       </button>
 
       {isLogin && <p className="forget">Forget Password?</p>}
-
-      <button type="button" className="google-btn">
-        <img
-          src="https://www.svgrepo.com/show/475656/google-color.svg"
-          alt="Google"
-        />
-        {isLogin ? "Continue with Google" : "Sign up with Google"}
-      </button>
     </form>
   );
 }

@@ -5,13 +5,22 @@ import { Quiz_main_page } from "./components/Quiz_main_page";
 import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
+import { VerifyAccount } from "./components/verifyaccount.jsx";
 function App() {
   const [editing, setEditing] = useState(-999);
+  const [isLogin, setIsLogin] = useState(false);
   return (
     <Router>
       <Routes>
-        <Route path="/Log-in" element={<Authform login={true} />} />
-        <Route path="/Sign-up" element={<Authform login={false} />} />
+        <Route
+          path="/Log-in"
+          element={<Authform isLogin={isLogin} setIsLogin={setIsLogin} />}
+        />
+        <Route
+          path="/Sign-up"
+          element={<Authform isLogin={isLogin} setIsLogin={setIsLogin} />}
+        />
+        <Route path="/verifyaccount" element={<VerifyAccount />} />
         <Route
           path="/"
           element={
