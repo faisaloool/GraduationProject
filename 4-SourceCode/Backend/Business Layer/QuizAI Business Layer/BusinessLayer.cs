@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
@@ -14,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace QuizAI_Business_Layer
 {
-    public class RegisterationBusinessLayer
+    public class UserBusinessLayer
     {
         public static async Task<CreateNewUserResponseDTO> RegisterNewUser(CreateNewUserRequestDTO NewUser)
         {
@@ -32,11 +34,33 @@ namespace QuizAI_Business_Layer
 
             return new UserLoginResponseDTO
             {
-
                 user = userInfo,
                 token = token
             };
         }
+
+        public static async Task ForgotPassword(ForgotPasswordRequestDTO forgotPasswordInfo)
+        {
+            if (UserDataBack.CheckEmailExistsAsync(forgotPasswordInfo).Result)
+            {
+                string token = EmailServicesBusinessLayer.GenerateTokenForPasswordRecovery();
+                var u = await UserDataBack.GetUserByEmailAsync(forgotPasswordInfo.Email);
+                await UserDataBack.SaveForgetPasswordInfoAsync(u.id, token);
+                EmailServicesBusinessLayer.SendEmail(forgotPasswordInfo.Email, EmailServicesBusinessLayer.EmailMessageType.ForgotPassword, token);
+            }
+        }
+
+        public static async Task<int> UseForgotPasswordToken(string ForgotPasswordToken)
+        {
+            ResetPasswordTokenDTO tokenInfo = await UserDataBack.GetResetPasswordTokenInfoAsync(ForgotPasswordToken);
+            if(tokenInfo != null && !tokenInfo.isUsed && tokenInfo.ExpiresAt > DateTime.UtcNow)
+            {
+                await UserDataBack.MarkForgotPasswordTokenAsUsed(tokenInfo.Token);
+                return tokenInfo.UserID;
+            }
+            return -1;
+        }
+
     }
 
     public static class JwtServiceBusinessLayer
@@ -104,6 +128,73 @@ namespace QuizAI_Business_Layer
             {
                 // If drive not found or error occurs
                 return false;
+            }
+        }
+    }
+
+
+    public class EmailServicesBusinessLayer
+    {
+        public enum EmailMessageType
+        {
+            ForgotPassword,
+            VerifyEmail,
+            Notification
+        }
+
+        public static string GenerateTokenForPasswordRecovery(int length = 6)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+        public static void SendEmail(string emailTo, EmailMessageType messageType, string token = null)
+        {
+            try
+            {
+                MailMessage mail = new MailMessage();
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("legaledge81@gmail.com", "QuizAI");
+                mail.To.Add(emailTo);
+
+                switch (messageType)
+                {
+                    case EmailMessageType.ForgotPassword:
+                        mail.Subject = "Reset Your Password";
+                        mail.Body =
+                            $"We received a password reset request.\n\n" +
+                            $"Your reset code is: {token}\n\n" +
+                            $"If you didn’t request this, ignore this email.";
+                        break;
+
+                    case EmailMessageType.VerifyEmail:
+                        mail.Subject = "Verify Your Email";
+                        mail.Body =
+                            $"Welcome!\n\nYour verification code is: {token}";
+                        break;
+
+                    case EmailMessageType.Notification:
+                        mail.Subject = "Notification";
+                        mail.Body = token; // reuse token as message
+                        break;
+                }
+
+                smtp.Port = 587;
+                smtp.Credentials = new NetworkCredential(
+                    "legaledge81@gmail.com",
+                    "bqff aldw psaz jptl"
+                );
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+            }
+            catch
+            {
+                
             }
         }
     }

@@ -115,6 +115,97 @@ namespace QuizAIDataBack
                 }
             }
         }
+
+        public static async Task<bool> CheckEmailExistsAsync(ForgotPasswordRequestDTO ForgotPasswordInfo)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_CheckUserExists", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Email", ForgotPasswordInfo.Email);
+                    await con.OpenAsync();
+                    object result = await cmd.ExecuteScalarAsync();
+                    if (result != null)
+                        return Convert.ToBoolean(result);
+                    return false;
+                }
+            }
+        }
+
+        public static async Task SaveForgetPasswordInfoAsync(int id, string token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveResetPasswordToken", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    await con.OpenAsync();
+                    cmd.Parameters.AddWithValue("@User_ID", id);
+                    cmd.Parameters.AddWithValue("@Token", token);
+
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        public static async Task<UserDTO> GetUserByEmailAsync(string Email)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetUserByEmail", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    await con.OpenAsync();
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new UserDTO(reader.GetInt32(reader.GetOrdinal("User_Id")), reader.GetString(reader.GetOrdinal("Email")), reader.GetString(reader.GetOrdinal("Name")));
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public static async Task MarkForgotPasswordTokenAsUsed(string token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_UseResetPasswordToken", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Token", token);
+                    await con.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+
+        public static async Task<ResetPasswordTokenDTO> GetResetPasswordTokenInfoAsync(string token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetforgetPasswordTokenInfo", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Token", token);
+                    await con.OpenAsync();
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            return new ResetPasswordTokenDTO(reader.GetInt32(reader.GetOrdinal("Id")), reader.GetInt32(reader.GetOrdinal("User_ID")), reader.GetString(reader.GetOrdinal("Token")), reader.GetDateTime(reader.GetOrdinal("CreatedAt")), reader.GetDateTime(reader.GetOrdinal("ExpiresAt")), reader.GetBoolean(reader.GetOrdinal("IsUsed")));
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
     }
 
     //public class ContentDataBack

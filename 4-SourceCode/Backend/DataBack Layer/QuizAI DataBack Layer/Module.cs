@@ -99,9 +99,47 @@ namespace QuizAIDataBack
         }
     }
 
+    public class ForgotPasswordRequestDTO
+    {
+        [EmailAddress]
+        public string Email { get; set; }
+        public ForgotPasswordRequestDTO() { }
+        public ForgotPasswordRequestDTO(string email)
+        {
+            this.Email = email;
+        }
+    }
 
+    public class ForgotPasswordResponseDTO
+    {
+        public string Message { get; set; }
+        public ForgotPasswordResponseDTO() { }
+        public ForgotPasswordResponseDTO(string message)
+        {
+            this.Message = message;
+        }
+    }
 
+    public class ResetPasswordTokenDTO
+    {
+        public int ID { get; set; }
+        public int UserID { get; set; }
+        public string Token { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime ExpiresAt { get; set; }
+        public bool isUsed { get; set; }
 
+        public ResetPasswordTokenDTO() { }
+        public ResetPasswordTokenDTO(int ID, int UserID, string Token, DateTime CreatedAt, DateTime ExpiresAt, bool isUsed)
+        {
+            this.ID = ID;
+            this.UserID = UserID;
+            this.Token = Token;
+            this.CreatedAt = CreatedAt;
+            this.ExpiresAt = ExpiresAt;
+            this.isUsed = isUsed;
+        }
+    }
 
 
 

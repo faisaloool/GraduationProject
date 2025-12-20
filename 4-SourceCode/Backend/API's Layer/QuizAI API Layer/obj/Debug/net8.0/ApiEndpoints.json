@@ -1,6 +1,37 @@
 [
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "ForgotPassword",
+    "RelativePath": "api/v1/quiz-ai/Forgot-Password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ForgotPasswordInfo",
+        "Type": "QuizAIDataBack.ForgotPasswordRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ForgotPasswordResponseDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "GetHealth",
     "RelativePath": "api/v1/quiz-ai/health",
     "HttpMethod": "GET",
@@ -12,6 +43,11 @@
         "Type": "System.Void",
         "MediaTypes": [],
         "StatusCode": 200
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
       }
     ]
   },
@@ -94,5 +130,21 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/v1/quiz-ai/Verify-Token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

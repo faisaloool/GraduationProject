@@ -46,7 +46,7 @@ namespace QuizAI_API_Layer.Controllers
                     });
                 }
                 CreateNewUserRequestDTO userInfo = new CreateNewUserRequestDTO(UserInfo.Email, UserInfo.Password, UserInfo.Name);
-                CreateNewUserResponseDTO CreatedUser = await RegisterationBusinessLayer.RegisterNewUser(userInfo);
+                CreateNewUserResponseDTO CreatedUser = await UserBusinessLayer.RegisterNewUser(userInfo);
                 return Ok(new ApiResponse<CreateNewUserResponseDTO>
                 {
                     Success = true,
@@ -91,7 +91,7 @@ namespace QuizAI_API_Layer.Controllers
             try
             {
                 // Get token + user info from BL
-                var loginResult = await RegisterationBusinessLayer.Login(UserLoginInfo); //UserLoginResponseDTO
+                var loginResult = await UserBusinessLayer.Login(UserLoginInfo); //UserLoginResponseDTO
 
                 if (loginResult == null)
                 {
@@ -252,14 +252,87 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
+        [HttpPost("Forgot-Password")] 
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        //used when the user presses the forgot password button. it generates a token and sends it to his email.
+        public async Task<ActionResult<ForgotPasswordResponseDTO>> ForgotPassword(ForgotPasswordRequestDTO ForgotPasswordInfo)
+        {
+            try
+            {
+                await UserBusinessLayer.ForgotPassword(ForgotPasswordInfo);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
 
-
-
-
-
-
-
-
+        [HttpGet("Verify-Token")] //this function is used when the user clicks the link in his email. it verifies the token.
+        public async Task<ActionResult<object>> ResetPassword([FromQuery] string token)
+        {
+            try
+            {
+                int userID = await UserBusinessLayer.UseForgotPasswordToken(token);
+                if (userID != -1)
+                {
+                    return Ok(new ApiResponse<object>
+                    {
+                        Success = true,
+                        Status = 200,
+                        Message = "Request completed successfully.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = new 
+                        {
+                            TokenFound = true,
+                            UserID = userID
+                        }
+                    });
+                }
+                return BadRequest(new ApiResponse<bool>
+                {
+                    Success = false,
+                    Status = 400,
+                    Message = "Invalid or expired token",
+                    Timestamp = DateTime.UtcNow,
+                    Data = false
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
 
 
     }
