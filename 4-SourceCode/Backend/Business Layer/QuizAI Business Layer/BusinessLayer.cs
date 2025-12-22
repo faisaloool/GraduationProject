@@ -43,10 +43,14 @@ namespace QuizAI_Business_Layer
         {
             if (UserDataBack.CheckEmailExistsAsync(forgotPasswordInfo).Result)
             {
-                string token = EmailServicesBusinessLayer.GenerateTokenForPasswordRecovery();
-                var u = await UserDataBack.GetUserByEmailAsync(forgotPasswordInfo.Email);
-                await UserDataBack.SaveForgetPasswordInfoAsync(u.id, token);
-                EmailServicesBusinessLayer.SendEmail(forgotPasswordInfo.Email, EmailServicesBusinessLayer.EmailMessageType.ForgotPassword, token);
+                try
+                {
+                    string token = EmailServicesBusinessLayer.GenerateTokenForPasswordRecovery();
+                    var u = await UserDataBack.GetUserByEmailAsync(forgotPasswordInfo.Email);
+                    EmailServicesBusinessLayer.SendEmail(forgotPasswordInfo.Email, EmailServicesBusinessLayer.EmailMessageType.ForgotPassword, token);
+                    await UserDataBack.SaveForgetPasswordInfoAsync(u.id, token);
+                }
+                catch { }
             }
         }
 
