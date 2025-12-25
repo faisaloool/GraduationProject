@@ -1,0 +1,513 @@
+{
+  "document": "This document covers the Medium Access Control (MAC) sublayer (hubs, bridges, switches, and VLANs)  and the Network Layer, including store-and-forward packet switching, connectionless vs. connection-oriented services, routing algorithms (Shortest Path, Flooding, Distance Vector, Link State, Hierarchical, Broadcast, Multicast), congestion control, fragmentation, and IP addressing (IPv4, IPv6, and ICMP).",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "At which layer of the OSI model does a Hub operate?",
+        "options": ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
+        "answer": "Physical Layer"
+      },
+      {
+        "question": "A Hub is essentially a:",
+        "options": ["Multi-port repeater", "Multi-port bridge", "Multi-port router", "Multi-port switch"],
+        "answer": "Multi-port repeater"
+      },
+      {
+        "question": "What happens when a Hub receives a bit on one of its ports?",
+        "options": ["It filters the bit", "It sends it to the destination MAC", "It broadcasts it to all other ports", "It stores it for later"],
+        "answer": "It broadcasts it to all other ports"
+      },
+      {
+        "question": "How do all ports on a Hub share bandwidth?",
+        "options": ["Each port gets dedicated bandwidth", "Bandwidth is shared among all active ports", "Bandwidth is doubled for each port", "Ports do not share bandwidth"],
+        "answer": "Bandwidth is shared among all active ports"
+      },
+      {
+        "question": "At which layer of the OSI model does a Bridge operate?",
+        "options": ["Physical Layer", "Data Link Layer", "Network Layer", "Transport Layer"],
+        "answer": "Data Link Layer"
+      },
+      {
+        "question": "What is the primary function of a Bridge in a network?",
+        "options": ["Routing packets", "Filtering and forwarding frames based on MAC addresses", "Regenerating electrical signals only", "Managing end-to-end connections"],
+        "answer": "Filtering and forwarding frames based on MAC addresses"
+      },
+      {
+        "question": "How does a 'Learning Bridge' build its routing table?",
+        "options": ["By manual configuration", "By observing the source MAC addresses of incoming frames", "By querying a central server", "By using the ARP protocol"],
+        "answer": "By observing the source MAC addresses of incoming frames"
+      },
+      {
+        "question": "In a bridge, what is 'backward learning'?",
+        "options": ["Learning the path to the sender by looking at the source address", "Learning the path to the receiver by looking at the destination", "Learning from error packets", "Sending packets back to the source"],
+        "answer": "Learning the path to the sender by looking at the source address"
+      },
+      {
+        "question": "A Switch is often described as a:",
+        "options": ["Multi-port Hub", "Multi-port Bridge", "Multi-port Repeater", "Multi-port Router"],
+        "answer": "Multi-port Bridge"
+      },
+      {
+        "question": "Which device can provide dedicated bandwidth to each port?",
+        "options": ["Hub", "Switch", "Repeater", "Passive Star"],
+        "answer": "Switch"
+      },
+      {
+        "question": "What is the main benefit of using a Switch over a Hub?",
+        "options": ["Reduced collision domains", "Lower cost", "Simpler configuration", "Less cabling"],
+        "answer": "Reduced collision domains"
+      },
+      {
+        "question": "What does VLAN stand for?",
+        "options": ["Vertical Local Area Network", "Virtual Local Area Network", "Validated Local Area Network", "Vector Local Area Network"],
+        "answer": "Virtual Local Area Network"
+      },
+      {
+        "question": "How are VLANs typically formed on a switch?",
+        "options": ["By physical wiring", "By logically grouping ports", "By using different cables", "By changing the switch hardware"],
+        "answer": "By logically grouping ports"
+      },
+      {
+        "question": "Which of the following is a key advantage of VLANs?",
+        "options": ["Physical security", "Logical segmentation without physical changes", "Faster physical link speeds", "Elimination of the Network Layer"],
+        "answer": "Logical segmentation without physical changes"
+      },
+      {
+        "question": "What is the primary responsibility of the Network Layer?",
+        "options": ["Process-to-process delivery", "Node-to-node delivery", "Host-to-host delivery and routing", "Physical bit transmission"],
+        "answer": "Host-to-host delivery and routing"
+      },
+      {
+        "question": "What characterizes 'Store-and-Forward' packet switching?",
+        "options": ["Packets are forwarded bit by bit", "A router waits for the entire packet to arrive before forwarding", "Packets are stored permanently in the router", "Packets are only stored if the destination is busy"],
+        "answer": "A router waits for the entire packet to arrive before forwarding"
+      },
+      {
+        "question": "In a connectionless service, how are packets handled?",
+        "options": ["Each packet is routed independently", "All packets follow a pre-established path", "A setup phase is required", "Packets are never lost"],
+        "answer": "Each packet is routed independently"
+      },
+      {
+        "question": "What is a 'Datagram' in the context of the network layer?",
+        "options": ["A connection-oriented packet", "An independent packet in a connectionless service", "A physical layer signal", "A data link layer frame"],
+        "answer": "An independent packet in a connectionless service"
+      },
+      {
+        "question": "What is a 'Virtual Circuit'?",
+        "options": ["A physical dedicated line", "A pre-planned path for all packets in a session", "A routing algorithm", "A type of wireless signal"],
+        "answer": "A pre-planned path for all packets in a session"
+      },
+      {
+        "question": "Which service type requires a setup phase before data transmission?",
+        "options": ["Datagram", "Virtual Circuit", "Flooding", "Distance Vector"],
+        "answer": "Virtual Circuit"
+      },
+      {
+        "question": "In a Datagram network, where is the routing information stored?",
+        "options": ["Only in the first router", "In the packet header", "In the setup packet", "Only in the destination host"],
+        "answer": "In the packet header"
+      },
+      {
+        "question": "What is the 'Optimality Principle' in routing?",
+        "options": ["The shortest path is always the fastest", "If router J is on the optimal path from I to K, then the path from J to K is also optimal", "Routing tables should always be empty", "Every node must be connected to every other node"],
+        "answer": "If router J is on the optimal path from I to K, then the path from J to K is also optimal"
+      },
+      {
+        "question": "What is a 'Sink Tree'?",
+        "options": ["A tree of all nodes rooted at the source", "A tree of all paths from all sources to a single destination", "A loop in the network", "A type of firewall"],
+        "answer": "A tree of all paths from all sources to a single destination"
+      },
+      {
+        "question": "In Dijkstra's algorithm, what does each node represent?",
+        "options": ["A user", "A router", "A packet", "A protocol"],
+        "answer": "A router"
+      },
+      {
+        "question": "What is the simplest form of routing where every incoming packet is sent on every outgoing line?",
+        "options": ["Distance Vector", "Link State", "Flooding", "Shortest Path"],
+        "answer": "Flooding"
+      },
+      {
+        "question": "What is a major disadvantage of basic Flooding?",
+        "options": ["It is too slow", "It generates a large number of duplicate packets", "It requires complex tables", "It only works for small networks"],
+        "answer": "It generates a large number of duplicate packets"
+      },
+      {
+        "question": "How can flooding be made more efficient (Selective Flooding)?",
+        "options": ["By sending packets only in the general direction of the destination", "By sending packets only to the nearest neighbor", "By ignoring all duplicates", "By using a setup phase"],
+        "answer": "By sending packets only in the general direction of the destination"
+      },
+      {
+        "question": "Distance Vector Routing is also known as the:",
+        "options": ["Dijkstra algorithm", "Bellman-Ford algorithm", "Spanning Tree algorithm", "AODV algorithm"],
+        "answer": "Bellman-Ford algorithm"
+      },
+      {
+        "question": "What information does each router share in Distance Vector Routing?",
+        "options": ["Its entire routing table with its neighbors", "Its link states with all routers", "Only the best path with the source", "Nothing, it learns on its own"],
+        "answer": "Its entire routing table with its neighbors"
+      },
+      {
+        "question": "What is the 'Count-to-Infinity' problem?",
+        "options": ["A problem where routing loops cause distance metrics to increase indefinitely", "A problem where packets circulate forever", "A problem where bandwidth becomes infinite", "A problem where too many routers are added"],
+        "answer": "A problem where routing loops cause distance metrics to increase indefinitely"
+      },
+      {
+        "question": "In Distance Vector Routing, 'Good news travels fast, but bad news travels slowly' refers to:",
+        "options": ["Fast convergence when a link comes up, slow when it goes down", "Slow convergence when a link comes up", "Packets being delivered faster than error messages", "The speed of the Bellman-Ford equation"],
+        "answer": "Fast convergence when a link comes up, slow when it goes down"
+      },
+      {
+        "question": "What are the five steps of Link State Routing?",
+        "options": ["Learn neighbors, measure cost, build LSP, distribute LSP, compute shortest path", "Broadcast, filter, forward, drop, repeat", "Setup, transmit, teardown, ack, nak", "Discover, flooding, routing, switching, ending"],
+        "answer": "Learn neighbors, measure cost, build LSP, distribute LSP, compute shortest path"
+      },
+      {
+        "question": "What is an LSP in Link State Routing?",
+        "options": ["Local Service Provider", "Link State Packet", "Layer Switching Protocol", "Link Status Protocol"],
+        "answer": "Link State Packet"
+      },
+      {
+        "question": "How is the shortest path computed in Link State Routing after receiving all LSPs?",
+        "options": ["Using Bellman-Ford", "Using Dijkstra's algorithm", "Using Flooding", "Using Hierarchical routing"],
+        "answer": "Using Dijkstra's algorithm"
+      },
+      {
+        "question": "What is a key advantage of Link State Routing over Distance Vector?",
+        "options": ["Smaller packets", "Faster convergence and no count-to-infinity", "Less CPU intensive", "Requires less memory"],
+        "answer": "Faster convergence and no count-to-infinity"
+      },
+      {
+        "question": "Why is Hierarchical Routing used?",
+        "options": ["To increase the speed of packets", "To reduce the size of routing tables in large networks", "To provide better security", "To simplify the IP addressing scheme"],
+        "answer": "To reduce the size of routing tables in large networks"
+      },
+      {
+        "question": "In Hierarchical Routing, routers are divided into groups called:",
+        "options": ["Segments", "Regions", "Sectors", "Clusters"],
+        "answer": "Regions"
+      },
+      {
+        "question": "What is Broadcast Routing?",
+        "options": ["Sending a packet to a specific host", "Sending a packet to all nodes in the network", "Sending a packet to a group of nodes", "Sending a packet to the nearest router"],
+        "answer": "Sending a packet to all nodes in the network"
+      },
+      {
+        "question": "Which broadcast method involves the source sending a copy to every destination?",
+        "options": ["Multi-destination routing", "Flooding", "Reverse Path Forwarding", "Spanning Tree"],
+        "answer": "Multi-destination routing"
+      },
+      {
+        "question": "What is Reverse Path Forwarding (RPF)?",
+        "options": ["Forwarding a packet only if it arrived on the link that is the shortest path back to the source", "Sending packets in reverse order", "A method for link state updates", "A way to avoid fragmentation"],
+        "answer": "Forwarding a packet only if it arrived on the link that is the shortest path back to the source"
+      },
+      {
+        "question": "What is Multicast Routing?",
+        "options": ["Sending to all nodes", "Sending to a specific subset/group of nodes", "Sending to a single node", "Sending to the internet"],
+        "answer": "Sending to a specific subset/group of nodes"
+      },
+      {
+        "question": "What does IGMP stand for?",
+        "options": ["Internet Group Management Protocol", "Internal Gateway Message Protocol", "Internet Gateway Multicast Protocol", "Integrated Group Message Protocol"],
+        "answer": "Internet Group Management Protocol"
+      },
+      {
+        "question": "What is Network Congestion?",
+        "options": ["When the physical link is broken", "When there are too many packets in the network, causing performance degradation", "When a router is turned off", "When a user consumes too much CPU"],
+        "answer": "When there are too many packets in the network, causing performance degradation"
+      },
+      {
+        "question": "What is the difference between Congestion Control and Flow Control?",
+        "options": ["Congestion is global; Flow control is point-to-point", "Congestion is point-to-point; Flow control is global", "There is no difference", "Flow control is only at the physical layer"],
+        "answer": "Congestion is global; Flow control is point-to-point"
+      },
+      {
+        "question": "Which of the following is a congestion prevention policy at the network layer?",
+        "options": ["Packet discarding policy", "Admission control", "Retransmission policy", "Acknowledgment policy"],
+        "answer": "Admission control"
+      },
+      {
+        "question": "What is 'Load Shedding'?",
+        "options": ["Adding more routers", "Discarding packets when the network is congested", "Reducing the power of routers", "Increasing the link capacity"],
+        "answer": "Discarding packets when the network is congested"
+      },
+      {
+        "question": "In load shedding, which packets are usually dropped first for file transfers?",
+        "options": ["New packets", "Old packets", "Random packets", "Priority packets"],
+        "answer": "Old packets"
+      },
+      {
+        "question": "What is a 'Choke Packet'?",
+        "options": ["A packet used to block a user", "A packet sent back to the source to tell it to slow down", "A packet that causes congestion", "A corrupted packet"],
+        "answer": "A packet sent back to the source to tell it to slow down"
+      },
+      {
+        "question": "Why does fragmentation occur in internetworking?",
+        "options": ["Because routers are slow", "Because different networks have different Maximum Transmission Units (MTUs)", "To encrypt data", "To add more headers"],
+        "answer": "Because different networks have different Maximum Transmission Units (MTUs)"
+      },
+      {
+        "question": "In 'Non-transparent' fragmentation, where are fragments reassembled?",
+        "options": ["At the next router", "At the destination host", "At the source host", "In the cloud"],
+        "answer": "At the destination host"
+      },
+      {
+        "question": "What is the size of an IPv4 address?",
+        "options": ["16 bits", "32 bits", "64 bits", "128 bits"],
+        "answer": "32 bits"
+      },
+      {
+        "question": "What is the dotted-decimal notation for the IP address 10000000 00001011 00000011 00011111?",
+        "options": ["128.11.3.31", "192.168.1.1", "10.0.0.1", "172.16.0.1"],
+        "answer": "128.11.3.31"
+      },
+      {
+        "question": "Which IP class is used for large networks with many hosts?",
+        "options": ["Class A", "Class B", "Class C", "Class D"],
+        "answer": "Class A"
+      },
+      {
+        "question": "A Class C network can have up to how many hosts?",
+        "options": ["254", "65534", "16 million", "1024"],
+        "answer": "254"
+      },
+      {
+        "question": "Which IP address range is reserved for multicasting?",
+        "options": ["Class A", "Class B", "Class C", "Class D"],
+        "answer": "Class D"
+      },
+      {
+        "question": "What is the purpose of the IP address 127.0.0.1?",
+        "options": ["Broadcast", "Multicast", "Loopback testing", "Default gateway"],
+        "answer": "Loopback testing"
+      },
+      {
+        "question": "What does a '0.0.0.0' IP address represent?",
+        "options": ["The local host", "The broadcast address", "A private network", "A multicast group"],
+        "answer": "The local host"
+      },
+      {
+        "question": "In the IPv4 header, what does 'TTL' stand for?",
+        "options": ["Total Transfer Length", "Time To Live", "Transmission Type Limit", "Target Transit Level"],
+        "answer": "Time To Live"
+      },
+      {
+        "question": "What happens to a packet when its TTL reaches zero?",
+        "options": ["It is forwarded faster", "It is discarded and an ICMP message is sent", "It is stored in the router", "It is sent back to the source for retransmission"],
+        "answer": "It is discarded and an ICMP message is sent"
+      },
+      {
+        "question": "Which field in the IPv4 header indicates which upper-layer protocol (TCP/UDP) is being used?",
+        "options": ["Identification", "Protocol", "Version", "IHL"],
+        "answer": "Protocol"
+      },
+      {
+        "question": "What is the size of an IPv6 address?",
+        "options": ["32 bits", "64 bits", "128 bits", "256 bits"],
+        "answer": "128 bits"
+      },
+      {
+        "question": "Which of the following is a major improvement of IPv6 over IPv4?",
+        "options": ["Support for more addresses", "Smaller header size", "Built-in checksum at the IP layer", "Requires manual configuration only"],
+        "answer": "Support for more addresses"
+      },
+      {
+        "question": "What is 'Dual Stack' in the context of IPv6 transition?",
+        "options": ["Using two cables", "A device running both IPv4 and IPv6 protocols", "Connecting two routers together", "A method of fragmentation"],
+        "answer": "A device running both IPv4 and IPv6 protocols"
+      },
+      {
+        "question": "What is 'Tunneling' in IPv6 transition?",
+        "options": ["Wrapping an IPv6 packet inside an IPv4 packet", "Building physical tunnels for cables", "Bypassing the firewall", "Speeding up routing"],
+        "answer": "Wrapping an IPv6 packet inside an IPv4 packet"
+      },
+      {
+        "question": "What is the primary function of ICMP?",
+        "options": ["Data transmission", "Error reporting and network diagnostics", "Routing table calculation", "Port management"],
+        "answer": "Error reporting and network diagnostics"
+      },
+      {
+        "question": "Which ICMP message is used by the 'ping' command?",
+        "options": ["Destination Unreachable", "Echo Request/Reply", "Time Exceeded", "Redirect"],
+        "answer": "Echo Request/Reply"
+      },
+      {
+        "question": "What does 'IHL' in the IPv4 header represent?",
+        "options": ["Internet Header Length", "Internal Host Link", "Initial Hop Limit", "Internet Hop Length"],
+        "answer": "Internet Header Length"
+      },
+      {
+        "question": "In the IP header, which field is used for reassembling fragmented packets?",
+        "options": ["TTL", "Identification", "Version", "Checksum"],
+        "answer": "Identification"
+      },
+      {
+        "question": "Which protocol is used to dynamically assign IP addresses?",
+        "options": ["ICMP", "ARP", "DHCP", "DNS"],
+        "answer": "DHCP"
+      },
+      {
+        "question": "What is the standard notation for IPv6 addresses?",
+        "options": ["Dotted decimal", "Colon-hexadecimal", "Binary", "Octal"],
+        "answer": "Colon-hexadecimal"
+      },
+      {
+        "question": "A Hub divides which domain?",
+        "options": ["Collision domain", "Broadcast domain", "Both", "Neither"],
+        "answer": "Neither"
+      },
+      {
+        "question": "A Switch divides which domain?",
+        "options": ["Collision domain", "Broadcast domain", "Both", "Neither"],
+        "answer": "Collision domain"
+      },
+      {
+        "question": "A Router divides which domain?",
+        "options": ["Collision domain", "Broadcast domain", "Both", "Neither"],
+        "answer": "Both"
+      },
+      {
+        "question": "What is the maximum number of networks in Class B?",
+        "options": ["128", "16,384", "2 million", "65,536"],
+        "answer": "16,384"
+      },
+      {
+        "question": "In Distance Vector routing, the 'infinity' value is typically:",
+        "options": ["100", "16", "255", "Depends on the network diameter"],
+        "answer": "Depends on the network diameter"
+      },
+      {
+        "question": "Which routing algorithm is 'Non-adaptive'?",
+        "options": ["Distance Vector", "Link State", "Static Routing", "Hierarchical Routing"],
+        "answer": "Static Routing"
+      },
+      {
+        "question": "What does a 'Sink' refer to in the Optimality Principle?",
+        "options": ["A router that drops packets", "A destination node", "A source node", "A backup link"],
+        "answer": "A destination node"
+      },
+      {
+        "question": "The 'Source Routing' technique involves:",
+        "options": ["The source specifying the entire path", "The router choosing the path", "The destination specifying the path", "A random path"],
+        "answer": "The source specifying the entire path"
+      },
+      {
+        "question": "In the IPv4 header, the 'Total Length' field includes:",
+        "options": ["Header only", "Payload only", "Header and Payload", "Header, Payload, and Trailer"],
+        "answer": "Header and Payload"
+      },
+      {
+        "question": "What is the 'Fragment Offset' used for?",
+        "options": ["To identify the fragment", "To specify where in the original packet this fragment belongs", "To show the length of the fragment", "To indicate the priority"],
+        "answer": "To specify where in the original packet this fragment belongs"
+      },
+      {
+        "question": "What does 'MTU' stand for?",
+        "options": ["Maximum Transmission Unit", "Minimum Transmission Unit", "Main Transfer Unit", "Medium Transmission Unit"],
+        "answer": "Maximum Transmission Unit"
+      },
+      {
+        "question": "Which device is used to connect different types of physical networks?",
+        "options": ["Repeater", "Hub", "Router", "Bridge"],
+        "answer": "Router"
+      },
+      {
+        "question": "Which of the following is a valid Class A address?",
+        "options": ["192.168.1.1", "172.16.0.1", "10.5.5.5", "224.0.0.1"],
+        "answer": "10.5.5.5"
+      },
+      {
+        "question": "Which of the following is a valid Class C address?",
+        "options": ["8.8.8.8", "172.31.255.255", "193.1.1.1", "240.0.0.0"],
+        "answer": "193.1.1.1"
+      },
+      {
+        "question": "What is the default subnet mask for a Class B address?",
+        "options": ["255.0.0.0", "255.255.0.0", "255.255.255.0", "255.255.255.255"],
+        "answer": "255.255.0.0"
+      },
+      {
+        "question": "What happens if a router receives a packet for a network it doesn't know about?",
+        "options": ["It broadcasts it", "It drops it and sends 'Destination Unreachable'", "It stores it", "It sends it to the source"],
+        "answer": "It drops it and sends 'Destination Unreachable'"
+      },
+      {
+        "question": "Link State routing requires each router to have a copy of the:",
+        "options": ["Global network map", "Neighbor's table only", "Source host list", "Packet history"],
+        "answer": "Global network map"
+      },
+      {
+        "question": "Which routing algorithm is more robust against router failures?",
+        "options": ["Distance Vector", "Link State", "Both are equally robust", "Static Routing"],
+        "answer": "Link State"
+      },
+      {
+        "question": "Congestion occurs when the arrival rate of packets is:",
+        "options": ["Less than the departure rate", "Equal to the departure rate", "Greater than the departure rate", "Zero"],
+        "answer": "Greater than the departure rate"
+      },
+      {
+        "question": "A 'Flood' search is often used for:",
+        "options": ["Locating a host whose location is unknown", "Regular data transfer", "Streaming video", "Downloading files"],
+        "answer": "Locating a host whose location is unknown"
+      },
+      {
+        "question": "What is the header length of a basic IPv6 packet?",
+        "options": ["20 bytes", "40 bytes", "60 bytes", "variable"],
+        "answer": "40 bytes"
+      },
+      {
+        "question": "Does the IPv6 header have a checksum field?",
+        "options": ["Yes", "No", "Optional", "Only for fragments"],
+        "answer": "No"
+      },
+      {
+        "question": "In IPv6, fragmentation is handled only by:",
+        "options": ["Routers", "The source host", "The destination host", "Switching centers"],
+        "answer": "The source host"
+      },
+      {
+        "question": "Which protocol provides a way to map IP addresses to MAC addresses?",
+        "options": ["ICMP", "ARP", "DNS", "DHCP"],
+        "answer": "ARP"
+      },
+      {
+        "question": "What is the purpose of the 'Protocol' field in the IPv4 header?",
+        "options": ["To identify the version of IP", "To identify the transport layer protocol", "To specify the routing algorithm", "To count hops"],
+        "answer": "To identify the transport layer protocol"
+      },
+      {
+        "question": "The 'Version' field in an IP packet is located at:",
+        "options": ["The beginning of the header", "The end of the header", "In the payload", "In the trailer"],
+        "answer": "The beginning of the header"
+      },
+      {
+        "question": "What is 'Traffic Shaping'?",
+        "options": ["Controlling the rate at which packets are sent into the network", "Changing the routing path", "Adding headers", "Compressing data"],
+        "answer": "Controlling the rate at which packets are sent into the network"
+      },
+      {
+        "question": "A VLAN-aware switch uses what to distinguish between VLANs?",
+        "options": ["IP addresses", "Port numbers", "Tags (e.g., 802.1Q)", "Cable colors"],
+        "answer": "Tags (e.g., 802.1Q)"
+      },
+      {
+        "question": "Which device is primarily used to connect different LAN segments at the Physical layer?",
+        "options": ["Bridge", "Switch", "Hub", "Router"],
+        "answer": "Hub"
+      },
+      {
+        "question": "In Link State Routing, what is used to measure the 'cost' of a link?",
+        "options": ["Delay", "Bandwidth", "Distance", "All of the above"],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is a 'Routing Table'?",
+        "options": ["A table that stores data packets", "A database that maps destinations to next hops", "A list of all users", "A physical device"],
+        "answer": "A database that maps destinations to next hops"
+      }
+    ]
+  }
+}
