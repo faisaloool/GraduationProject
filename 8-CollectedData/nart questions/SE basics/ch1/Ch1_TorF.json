@@ -1,0 +1,421 @@
+{
+  "filename": "Ch1.pptx",
+  "quiz": [
+    {
+      "question": "Software engineering is only concerned with the technical process of software development.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering",
+      "rate": "easy",
+      "suggestion": "Review the definition and scope of software engineering."
+    },
+    {
+      "question": "Software costs often represent a significant fraction of GNP in all developed countries.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software engineering",
+      "rate": "easy",
+      "suggestion": "Refer to the economic importance of software."
+    },
+    {
+      "question": "Maintenance costs for software are typically lower than development costs.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software costs",
+      "rate": "easy",
+      "suggestion": "Review the section on software costs, especially long-term maintenance."
+    },
+    {
+      "question": "Generic products are owned by the customer who commissions them.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Product specification",
+      "rate": "easy",
+      "suggestion": "Distinguish between generic and customized products."
+    },
+    {
+      "question": "Customized products are developed for a specific customer to meet their own needs.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software products",
+      "rate": "easy",
+      "suggestion": "Review the definitions of software product types."
+    },
+    {
+      "question": "Software engineering ethics only require compliance with the law.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering ethics",
+      "rate": "easy",
+      "suggestion": "Review the principles of ethical behavior beyond legal requirements."
+    },
+    {
+      "question": "The IEEE/ACM Code of Ethics contains eight principles for software engineers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "IEEE/ACM Code of Ethics",
+      "rate": "easy",
+      "suggestion": "Refer to the ethical principles listed in the code."
+    },
+    {
+      "question": "Software reuse is not applicable to web-based systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Web software engineering",
+      "rate": "easy",
+      "suggestion": "Review the approaches to building web-based systems."
+    },
+    {
+      "question": "Incremental and agile development is recommended for web-based systems.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Web software engineering",
+      "rate": "easy",
+      "suggestion": "Check the development methodologies suitable for web-based systems."
+    },
+    {
+      "question": "Heterogeneity refers to systems operating uniformly on a single type of device.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "General issues that affect software",
+      "rate": "easy",
+      "suggestion": "Understand the meaning of heterogeneity in distributed systems."
+    },
+    {
+      "question": "Business and social change require software to be adaptable and rapidly developed.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "General issues that affect software",
+      "rate": "easy",
+      "suggestion": "Review the factors influencing software evolution."
+    },
+    {
+      "question": "Security and trust are not important for software that is not connected to the internet.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "General issues that affect software",
+      "rate": "easy",
+      "suggestion": "Consider the broad impact of software on daily life."
+    },
+    {
+      "question": "Embedded control systems are the least common type of software system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Review the prevalence of embedded systems."
+    },
+    {
+      "question": "Stand-alone applications do not require network connectivity to function.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check the definition of stand-alone applications."
+    },
+    {
+      "question": "Batch processing systems are designed for real-time user interaction.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Understand the purpose of batch processing systems."
+    },
+    {
+      "question": "Software engineering fundamentals include the importance of reusing existing software.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software engineering fundamentals",
+      "rate": "easy",
+      "suggestion": "Review the fundamental principles of software engineering."
+    },
+    {
+      "question": "Cloud computing requires users to purchase software licenses upfront.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Internet software engineering",
+      "rate": "easy",
+      "suggestion": "Review the pay-per-use model of cloud computing."
+    },
+    {
+      "question": "Web-based systems do not follow the fundamental principles of software engineering.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Web-based software engineering",
+      "rate": "easy",
+      "suggestion": "Check the applicability of software engineering principles to web systems."
+    },
+    {
+      "question": "Confidentiality is only required if a formal agreement is signed.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Issues of professional responsibility",
+      "rate": "easy",
+      "suggestion": "Review ethical responsibilities regarding confidentiality."
+    },
+    {
+      "question": "Software engineers should accept work outside their competence to gain experience.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Issues of professional responsibility",
+      "rate": "easy",
+      "suggestion": "Review the principle of competence in professional ethics."
+    },
+    {
+      "question": "The ACM/IEEE Code of Ethics is intended only for practicing engineers, not students.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IEEE/ACM Code of Ethics",
+      "rate": "easy",
+      "suggestion": "Check who the code applies to."
+    },
+    {
+      "question": "Ethical principles for software engineers include acting in the public interest.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Review the eight ethical principles."
+    },
+    {
+      "question": "Software engineers have no responsibility to their colleagues.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Review principle 7 regarding colleagues."
+    },
+    {
+      "question": "An ethical dilemma may arise when disagreeing with management policies.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Ethical dilemmas",
+      "rate": "easy",
+      "suggestion": "Consider examples of ethical conflicts in software engineering."
+    },
+    {
+      "question": "Case studies in the chapter include a wilderness weather station.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Case studies",
+      "rate": "easy",
+      "suggestion": "Review the list of case studies presented."
+    },
+    {
+      "question": "Software specification is not part of the software process activities.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software process activities",
+      "rate": "easy",
+      "suggestion": "Review the key activities in software processes."
+    },
+    {
+      "question": "Software evolution involves modifying software to meet changing requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software process activities",
+      "rate": "easy",
+      "suggestion": "Understand the purpose of software evolution."
+    },
+    {
+      "question": "Dependability is only important for safety-critical systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering fundamentals",
+      "rate": "easy",
+      "suggestion": "Review the universal importance of dependability."
+    },
+    {
+      "question": "Interactive transaction-based applications include e-commerce systems.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check examples of interactive transaction-based applications."
+    },
+    {
+      "question": "Entertainment systems are primarily designed for business use.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Review the purpose of entertainment systems."
+    },
+    {
+      "question": "Systems for modelling and simulation are used by scientists and engineers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check the description of modelling and simulation systems."
+    },
+    {
+      "question": "Data collection systems do not use sensors.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Review how data collection systems operate."
+    },
+    {
+      "question": "Systems of systems are composed of a single software system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Understand the definition of systems of systems."
+    },
+    {
+      "question": "Professional software development always requires the use of software engineering methods.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Professional software development",
+      "rate": "medium",
+      "suggestion": "Review the importance of using engineering methods."
+    },
+    {
+      "question": "Software project failure can result from not using software engineering methods.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software project failure",
+      "rate": "medium",
+      "suggestion": "Consider the consequences of neglecting engineering practices."
+    },
+    {
+      "question": "The software engineering code of ethics is only relevant in the United States.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IEEE/ACM Code of Ethics",
+      "rate": "medium",
+      "suggestion": "Review the global relevance of professional ethics."
+    },
+    {
+      "question": "Software engineers should protect the intellectual property of their employers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Issues of professional responsibility",
+      "rate": "medium",
+      "suggestion": "Review ethical responsibilities regarding intellectual property."
+    },
+    {
+      "question": "Computer misuse by software engineers is always considered a serious crime.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Issues of professional responsibility",
+      "rate": "medium",
+      "suggestion": "Understand the range of behaviors considered misuse."
+    },
+    {
+      "question": "The insulin pump case study is an example of an embedded system.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Case studies",
+      "rate": "medium",
+      "suggestion": "Review the description of the insulin pump case."
+    },
+    {
+      "question": "Mentcare is a system for managing financial records.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Case studies",
+      "rate": "medium",
+      "suggestion": "Check the purpose of the Mentcare system."
+    },
+    {
+      "question": "iLearn is a digital learning environment for military training.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Case studies",
+      "rate": "medium",
+      "suggestion": "Review the intended use of the iLearn system."
+    },
+    {
+      "question": "Software engineering diversity means one set of tools works for all systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering diversity",
+      "rate": "medium",
+      "suggestion": "Understand why different systems require different approaches."
+    },
+    {
+      "question": "Web services allow application functionality to be accessed over the internet.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Internet software engineering",
+      "rate": "medium",
+      "suggestion": "Review the definition and use of web services."
+    },
+    {
+      "question": "Rich interfaces in web systems can be created using technologies like AJAX.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Web software engineering",
+      "rate": "medium",
+      "suggestion": "Check the technologies mentioned for web interface development."
+    },
+    {
+      "question": "Software engineering is not necessary for small programming projects.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Importance of software engineering",
+      "rate": "medium",
+      "suggestion": "Consider the long-term benefits of engineering practices."
+    },
+    {
+      "question": "All software systems must be specified completely before development begins.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Web software engineering",
+      "rate": "medium",
+      "suggestion": "Review the incremental approach for web-based systems."
+    },
+    {
+      "question": "Professional societies do not set behavioral standards for software engineers.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Key points",
+      "rate": "medium",
+      "suggestion": "Review the role of professional codes of conduct."
+    },
+    {
+      "question": "Software engineers should only focus on technical issues, not social ones.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Key points",
+      "rate": "medium",
+      "suggestion": "Consider the broader responsibilities of software engineers."
+    },
+    {
+      "question": "The economies of developed nations are independent of software.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering",
+      "rate": "hard",
+      "suggestion": "Review the introductory statements on software's economic role."
+    },
+    {
+      "question": "Software engineering ethics are optional for professional practice.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software engineering ethics",
+      "rate": "hard",
+      "suggestion": "Understand the mandatory nature of ethical behavior in engineering."
+    },
+    {
+      "question": "The IEEE/ACM Code of Ethics is legally binding worldwide.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IEEE/ACM Code of Ethics",
+      "rate": "hard",
+      "suggestion": "Distinguish between ethical codes and legal requirements."
+    },
+    {
+      "question": "Service-oriented software engineering uses standalone web services as components.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Web software engineering",
+      "rate": "hard",
+      "suggestion": "Review the definition of service-oriented systems."
+    }
+  ]
+}

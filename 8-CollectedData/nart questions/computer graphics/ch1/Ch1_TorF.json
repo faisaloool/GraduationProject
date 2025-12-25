@@ -1,0 +1,355 @@
+{
+  "filename": "Chapter 1 - Introduction.ppt",
+  "quiz": [
+    {
+      "question": "The purpose of this course is to enable students to design, model, and generate 2D and 3D graphics.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PURPOSE OF THIS COURSE",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer graphics is only used in the entertainment industry.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WHAT IS COMPUTER GRAPHICS?",
+      "rate": "easy"
+    },
+    {
+      "question": "One of the recommended textbooks is 'Interactive Computer Graphics' by Edward Angle, 3rd edition.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TEXTBOOKS",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer graphics involves the production, manipulation, and display of images using computers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WHAT IS COMPUTER GRAPHICS?",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer graphics cannot be used in fields like art or education.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WHAT IS COMPUTER GRAPHICS?",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer Aided Design (CAD) is used only for designing buildings.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "COMPUTER AIDED DESIGN (CAD)",
+      "rate": "easy"
+    },
+    {
+      "question": "Presentation graphics are used to summarize financial, statistical, and scientific data.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PRESENTATION GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer art includes only fine art and excludes commercial art.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "COMPUTER ART",
+      "rate": "easy"
+    },
+    {
+      "question": "Morphing is a graphics method where one object is transformed into another.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COMPUTER ART",
+      "rate": "easy"
+    },
+    {
+      "question": "Simulation in computer graphics cannot be used for educational aids.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SIMULATION",
+      "rate": "easy"
+    },
+    {
+      "question": "The entertainment industry uses computer graphics only in video games.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "ENTERTAINMENT",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer graphics are not used in training applications like flight simulators.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "EDUCATION & TRAINING",
+      "rate": "easy"
+    },
+    {
+      "question": "Computer-Aided Surgery is a medical application of computer graphics.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "EDUCATION & TRAINING",
+      "rate": "easy"
+    },
+    {
+      "question": "Visualization in computer graphics is only used for scientific data.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "VISUALIZATION",
+      "rate": "easy"
+    },
+    {
+      "question": "Business visualization uses techniques like color coding, contour plots, and charts.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BUSINESS VISUALISATION",
+      "rate": "easy"
+    },
+    {
+      "question": "Image processing involves creating new pictures from scratch.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IMAGE PROCESSING",
+      "rate": "medium"
+    },
+    {
+      "question": "Image processing can be used to improve picture quality.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "IMAGE PROCESSING",
+      "rate": "medium"
+    },
+    {
+      "question": "Graphical User Interfaces (GUIs) do not use windows or icons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "GRAPHICAL USER INTERFACES",
+      "rate": "easy"
+    },
+    {
+      "question": "Icons in a GUI are designed to look like the processing option they represent.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GRAPHICAL USER INTERFACES",
+      "rate": "easy"
+    },
+    {
+      "question": "2D graphics are not important in modern computer graphics applications.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "TYPES OF GRAPHICS",
+      "rate": "medium"
+    },
+    {
+      "question": "Compositing in movies often uses 2D graphics layers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TYPES OF GRAPHICS",
+      "rate": "medium"
+    },
+    {
+      "question": "An image is information presented in a flat, 2D format.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "Video frames are displayed at a rate of 10-15 frames per second.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "2D GRAPHICS",
+      "rate": "medium"
+    },
+    {
+      "question": "GKS was the first graphics package accepted by ISO and ANSI.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GRAPHICS PACKAGES",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL is a hardware-dependent graphics library.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OPEN GL",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL allows programmers to produce color images of 3D objects.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPEN GL",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL includes built-in functions for user interaction and file I/O.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "HOW OPEN GL WORKS?",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL supports lighting, shading, and texture mapping.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HOW OPEN GL WORKS?",
+      "rate": "medium"
+    },
+    {
+      "question": "The GLU library is built over OpenGL and provides higher-level commands.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPEN GL DIVISION",
+      "rate": "medium"
+    },
+    {
+      "question": "GLUT is a window toolkit that is dependent on a specific window system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OPEN GL DIVISION",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL can only be used to draw 3D graphics, not 2D.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "HOW OPEN GL WORKS?",
+      "rate": "medium"
+    },
+    {
+      "question": "The provided OpenGL sample program draws a triangle.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PROGRAM SAMPLE",
+      "rate": "medium"
+    },
+    {
+      "question": "In the OpenGL sample, glClearColor sets the background color to white.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "PROGRAM SAMPLE",
+      "rate": "hard"
+    },
+    {
+      "question": "The OpenGL sample uses GLUT to create a window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PROGRAM SAMPLE",
+      "rate": "hard"
+    },
+    {
+      "question": "Computer graphics is used in the design of textiles.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COMPUTER AIDED DESIGN (CAD)",
+      "rate": "easy"
+    },
+    {
+      "question": "Wire frame outlines are never used in CAD applications.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "COMPUTER AIDED DESIGN (CAD)",
+      "rate": "easy"
+    },
+    {
+      "question": "Presentation graphics examples include bar charts and pie charts.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PRESENTATION GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "Electronic painting is done using a mouse, not a stylus.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "COMPUTER ART",
+      "rate": "medium"
+    },
+    {
+      "question": "Computer graphics in the movie industry is only used for live-action films.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "ENTERTAINMENT",
+      "rate": "medium"
+    },
+    {
+      "question": "Medical visualization can use data from X-Ray and Ultrasound.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VISUALIZATION",
+      "rate": "medium"
+    },
+    {
+      "question": "Image processing is the same as computer graphics.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IMAGE PROCESSING",
+      "rate": "medium"
+    },
+    {
+      "question": "GUIs use a window manager to handle multiple-window areas.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GRAPHICAL USER INTERFACES",
+      "rate": "easy"
+    },
+    {
+      "question": "2D graphics are only used in television and computer screens.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "2D GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "PHIGS is a graphics package accepted by ISO and ANSI.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GRAPHICS PACKAGES",
+      "rate": "medium"
+    },
+    {
+      "question": "OpenGL is divided into two libraries: OpenGL and GLUT.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OPEN GL DIVISION",
+      "rate": "medium"
+    },
+    {
+      "question": "The OpenGL sample program sets the window size to 500x500 pixels.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "PROGRAM SAMPLE",
+      "rate": "hard"
+    },
+    {
+      "question": "glOrtho in the sample program defines a 3D orthographic viewing volume.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PROGRAM SAMPLE",
+      "rate": "hard"
+    },
+    {
+      "question": "Computer graphics cannot be used in advertising.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WHAT IS COMPUTER GRAPHICS?",
+      "rate": "easy"
+    },
+    {
+      "question": "Virtual-reality systems can be used in architectural design walkthroughs.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COMPUTER AIDED DESIGN (CAD)",
+      "rate": "medium"
+    },
+    {
+      "question": "All graphics packages are platform-dependent.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "GRAPHICS PACKAGES",
+      "rate": "medium"
+    }
+  ]
+}
