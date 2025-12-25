@@ -1,0 +1,719 @@
+{
+  "filename": "Chapter 4 - Filling Area (2).ppt",
+  "quiz": [
+    {
+      "question": "What is a filled area in computer graphics?",
+      "type": "mcq",
+      "options": [
+        "A geometric object described with linear equations",
+        "A polygonal region filled with a color",
+        "A line segment with thickness",
+        "A curve defined by control points"
+      ],
+      "answer": "A polygonal region filled with a color",
+      "section": "Filled Area Primitives",
+      "rate": "easy",
+      "suggestion": "Review the definition of filled area primitives"
+    },
+    {
+      "question": "Which of the following is used to represent a polygon?",
+      "type": "mcq",
+      "options": [
+        "A set of disconnected points",
+        "A list of vertices in ordered sequence",
+        "A single coordinate point",
+        "A mathematical equation of a curve"
+      ],
+      "answer": "A list of vertices in ordered sequence",
+      "section": "Polygon",
+      "rate": "easy",
+      "suggestion": "Refer to polygon representation using vertices"
+    },
+    {
+      "question": "A convex polygon is defined as having:",
+      "type": "mcq",
+      "options": [
+        "All interior angles greater than 180 degrees",
+        "At least one interior angle greater than 180 degrees",
+        "All interior angles less than or equal to 180 degrees",
+        "Self-intersecting edges"
+      ],
+      "answer": "All interior angles less than or equal to 180 degrees",
+      "section": "Polygon Classification",
+      "rate": "easy",
+      "suggestion": "Review convex and concave polygon definitions"
+    },
+    {
+      "question": "What is used to identify a concave polygon?",
+      "type": "mcq",
+      "options": [
+        "All edges are parallel",
+        "Extension of an edge intersects another edge",
+        "All vertices lie on a circle",
+        "It has exactly three vertices"
+      ],
+      "answer": "Extension of an edge intersects another edge",
+      "section": "Identifying Concave Polygon",
+      "rate": "medium",
+      "suggestion": "Refer to methods for concave polygon identification"
+    },
+    {
+      "question": "In the cross product method for splitting concave polygons, if the z-component of the cross product is negative, the polygon is:",
+      "type": "mcq",
+      "options": [
+        "Convex",
+        "Concave",
+        "Self-intersecting",
+        "Regular"
+      ],
+      "answer": "Concave",
+      "section": "Splitting Concave Polygon",
+      "rate": "medium",
+      "suggestion": "Review cross product method for concave detection"
+    },
+    {
+      "question": "Which rule determines a point's inclusion in a polygon by counting edge intersections?",
+      "type": "mcq",
+      "options": [
+        "Winding number rule",
+        "Even-odd rule",
+        "Cross product rule",
+        "Rotation rule"
+      ],
+      "answer": "Even-odd rule",
+      "section": "Inside-Outside Tests",
+      "rate": "easy",
+      "suggestion": "Review odd-parity (even-odd) rule"
+    },
+    {
+      "question": "In the non-zero winding number test, a point is interior if the winding number is:",
+      "type": "mcq",
+      "options": [
+        "Zero",
+        "Positive",
+        "Negative",
+        "Non-zero"
+      ],
+      "answer": "Non-zero",
+      "section": "Non-zero Winding",
+      "rate": "easy",
+      "suggestion": "Review winding number test definition"
+    },
+    {
+      "question": "Which algorithm fills a polygon by intersecting scan lines with polygon edges?",
+      "type": "mcq",
+      "options": [
+        "Seed Fill",
+        "Boundary Fill",
+        "Flood Fill",
+        "Scan-Line Fill"
+      ],
+      "answer": "Scan-Line Fill",
+      "section": "Scan-Line Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review basic polygon filling algorithms"
+    },
+    {
+      "question": "What does GET stand for in the scan-line algorithm?",
+      "type": "mcq",
+      "options": [
+        "Global Edge Table",
+        "Graphical Element Table",
+        "General Edge Tracker",
+        "Geometric Entry Table"
+      ],
+      "answer": "Global Edge Table",
+      "section": "Edge Tables",
+      "rate": "easy",
+      "suggestion": "Review GET and AET in scan-line filling"
+    },
+    {
+      "question": "In the Active Edge Table (AET), entries are sorted by:",
+      "type": "mcq",
+      "options": [
+        "Y-max value",
+        "X value",
+        "Edge length",
+        "Color value"
+      ],
+      "answer": "X value",
+      "section": "Active Edge Table",
+      "rate": "medium",
+      "suggestion": "Review AET structure and sorting criteria"
+    },
+    {
+      "question": "Which algorithm starts from an interior point and fills outward until a boundary color is encountered?",
+      "type": "mcq",
+      "options": [
+        "Scan-Line Fill",
+        "Boundary Fill",
+        "Edge Fill",
+        "Vertex Fill"
+      ],
+      "answer": "Boundary Fill",
+      "section": "Boundary Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review boundary fill and flood fill algorithms"
+    },
+    {
+      "question": "In 4-connected boundary filling, which directions are considered?",
+      "type": "mcq",
+      "options": [
+        "Up, Down, Left, Right",
+        "Up, Down, Diagonals",
+        "Only horizontal",
+        "Only vertical"
+      ],
+      "answer": "Up, Down, Left, Right",
+      "section": "Boundary Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review 4-connected vs 8-connected filling"
+    },
+    {
+      "question": "Which algorithm is used when the boundary has multiple colors?",
+      "type": "mcq",
+      "options": [
+        "Boundary Fill",
+        "Scan-Line Fill",
+        "Flood Fill",
+        "Edge Fill"
+      ],
+      "answer": "Flood Fill",
+      "section": "Flood Fill Algorithm",
+      "rate": "medium",
+      "suggestion": "Review flood fill use case"
+    },
+    {
+      "question": "What does HSV stand for in color models?",
+      "type": "mcq",
+      "options": [
+        "Hue, Saturation, Value",
+        "High, Standard, Variable",
+        "Horizontal, Vertical, Spatial",
+        "Hue, Shade, Vividness"
+      ],
+      "answer": "Hue, Saturation, Value",
+      "section": "HSV Color Model",
+      "rate": "easy",
+      "suggestion": "Review common color models: RGB, CMY, HSV"
+    },
+    {
+      "question": "Which color model is additive?",
+      "type": "mcq",
+      "options": [
+        "CMY",
+        "RGB",
+        "HSV",
+        "CMYK"
+      ],
+      "answer": "RGB",
+      "section": "RGB Color Model",
+      "rate": "easy",
+      "suggestion": "Review additive vs subtractive color models"
+    },
+    {
+      "question": "What is the main advantage of the span flood-fill algorithm?",
+      "type": "mcq",
+      "options": [
+        "It uses recursion",
+        "It fills diagonally",
+        "It reduces stacking by filling spans",
+        "It works only for convex polygons"
+      ],
+      "answer": "It reduces stacking by filling spans",
+      "section": "Span Flood-Fill Algorithm",
+      "rate": "medium",
+      "suggestion": "Review span-based filling efficiency"
+    },
+    {
+      "question": "A polygon with a hole is classified as:",
+      "type": "mcq",
+      "options": [
+        "Convex",
+        "Concave",
+        "Self-intersecting",
+        "Complex"
+      ],
+      "answer": "Complex",
+      "section": "Polygon Classification",
+      "rate": "medium",
+      "suggestion": "Review polygon types: convex, concave, self-intersecting, with holes"
+    },
+    {
+      "question": "In the rotational method for splitting concave polygons, if Vk+2 is below the x-axis after rotation, the polygon is:",
+      "type": "mcq",
+      "options": [
+        "Convex",
+        "Concave",
+        "Regular",
+        "Self-intersecting"
+      ],
+      "answer": "Concave",
+      "section": "Splitting Concave Polygon",
+      "rate": "hard",
+      "suggestion": "Review rotational method steps"
+    },
+    {
+      "question": "Which filling style illuminates all pixels inside the polygon boundary?",
+      "type": "mcq",
+      "options": [
+        "Hollow",
+        "Solid-fill",
+        "Pattern-fill",
+        "Outline"
+      ],
+      "answer": "Solid-fill",
+      "section": "Polygon Filling Styles",
+      "rate": "easy",
+      "suggestion": "Review solid, pattern, and hollow fill styles"
+    },
+    {
+      "question": "What does 'saturation' refer to in the HSV model?",
+      "type": "mcq",
+      "options": [
+        "Brightness",
+        "Color purity",
+        "Hue angle",
+        "Light intensity"
+      ],
+      "answer": "Color purity",
+      "section": "HSV Color Model",
+      "rate": "medium",
+      "suggestion": "Review HSV components: Hue, Saturation, Value"
+    },
+    {
+      "question": "Which of the following is a subtractive color model?",
+      "type": "mcq",
+      "options": [
+        "RGB",
+        "HSV",
+        "CMY",
+        "HSL"
+      ],
+      "answer": "CMY",
+      "section": "CMY Color Model",
+      "rate": "easy",
+      "suggestion": "Review additive (RGB) vs subtractive (CMY) models"
+    },
+    {
+      "question": "In the odd-parity rule, if the number of intersections is even, the point is:",
+      "type": "mcq",
+      "options": [
+        "Interior",
+        "Exterior",
+        "On the boundary",
+        "Undefined"
+      ],
+      "answer": "Exterior",
+      "section": "Odd-Parity Rule",
+      "rate": "easy",
+      "suggestion": "Review odd-parity rule for point inclusion"
+    },
+    {
+      "question": "Which table stores all polygon edges in the scan-line algorithm?",
+      "type": "mcq",
+      "options": [
+        "AET",
+        "GET",
+        "PET",
+        "SET"
+      ],
+      "answer": "GET",
+      "section": "Edge Tables",
+      "rate": "easy",
+      "suggestion": "Review GET and AET roles"
+    },
+    {
+      "question": "What is the first step in the boundary fill algorithm?",
+      "type": "mcq",
+      "options": [
+        "Sort edges",
+        "Start from an interior point",
+        "Create edge table",
+        "Set scan line"
+      ],
+      "answer": "Start from an interior point",
+      "section": "Boundary Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review boundary fill steps"
+    },
+    {
+      "question": "Which color is represented by RGB values (1,1,0)?",
+      "type": "mcq",
+      "options": [
+        "Red",
+        "Green",
+        "Yellow",
+        "Cyan"
+      ],
+      "answer": "Yellow",
+      "section": "RGB Color Model",
+      "rate": "easy",
+      "suggestion": "Review RGB color combinations"
+    },
+    {
+      "question": "What is the purpose of surface tessellation?",
+      "type": "mcq",
+      "options": [
+        "To smooth surfaces",
+        "To approximate surfaces with polygons",
+        "To add texture",
+        "To reduce color depth"
+      ],
+      "answer": "To approximate surfaces with polygons",
+      "section": "Filled Area Primitives",
+      "rate": "medium",
+      "suggestion": "Review tessellation concept in graphics"
+    },
+    {
+      "question": "In 8-connected filling, how many directions are considered?",
+      "type": "mcq",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "answer": "8",
+      "section": "Boundary Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review 8-connected neighbor directions"
+    },
+    {
+      "question": "Which algorithm is recursive by nature?",
+      "type": "mcq",
+      "options": [
+        "Scan-Line Fill",
+        "Boundary Fill",
+        "Edge Fill",
+        "Span Fill"
+      ],
+      "answer": "Boundary Fill",
+      "section": "Boundary Fill Algorithm",
+      "rate": "medium",
+      "suggestion": "Review recursive vs iterative filling methods"
+    },
+    {
+      "question": "What is stored in the GET for each edge?",
+      "type": "mcq",
+      "options": [
+        "Y-min, X@Y-min, 1/m",
+        "Y-max, X@Y-max, color",
+        "Edge length, angle, color",
+        "Start point, end point, thickness"
+      ],
+      "answer": "Y-min, X@Y-min, 1/m",
+      "section": "Global Edge Table",
+      "rate": "medium",
+      "suggestion": "Review GET entry structure"
+    },
+    {
+      "question": "Which method uses edge vectors and cross products to split polygons?",
+      "type": "mcq",
+      "options": [
+        "Rotational method",
+        "Cross product method",
+        "Odd-even method",
+        "Winding method"
+      ],
+      "answer": "Cross product method",
+      "section": "Splitting Concave Polygon",
+      "rate": "medium",
+      "suggestion": "Review cross product splitting technique"
+    },
+    {
+      "question": "What is the primary use of the flood-fill algorithm?",
+      "type": "mcq",
+      "options": [
+        "Filling convex polygons",
+        "Replacing interior colors",
+        "Drawing polygon edges",
+        "Calculating winding numbers"
+      ],
+      "answer": "Replacing interior colors",
+      "section": "Flood Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review flood fill algorithm purpose"
+    },
+    {
+      "question": "Which color model is often used in printing?",
+      "type": "mcq",
+      "options": [
+        "RGB",
+        "HSV",
+        "CMY",
+        "YUV"
+      ],
+      "answer": "CMY",
+      "section": "CMY Color Model",
+      "rate": "easy",
+      "suggestion": "Review CMY usage in printing"
+    },
+    {
+      "question": "In the scan-line algorithm, intersections are sorted by:",
+      "type": "mcq",
+      "options": [
+        "Y value",
+        "X value",
+        "Edge slope",
+        "Color"
+      ],
+      "answer": "X value",
+      "section": "Scan-Line Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review scan-line intersection sorting"
+    },
+    {
+      "question": "What does 'Value' represent in the HSV model?",
+      "type": "mcq",
+      "options": [
+        "Hue intensity",
+        "Color purity",
+        "Brightness",
+        "Saturation level"
+      ],
+      "answer": "Brightness",
+      "section": "HSV Color Model",
+      "rate": "easy",
+      "suggestion": "Review HSV component definitions"
+    },
+    {
+      "question": "Which algorithm is more efficient for large areas by filling spans?",
+      "type": "mcq",
+      "options": [
+        "Boundary Fill",
+        "Flood Fill",
+        "Span Flood-Fill",
+        "Scan-Line Fill"
+      ],
+      "answer": "Span Flood-Fill",
+      "section": "Span Flood-Fill Algorithm",
+      "rate": "medium",
+      "suggestion": "Review span-based filling efficiency"
+    },
+    {
+      "question": "What is the output of the cross product of two 2D vectors?",
+      "type": "mcq",
+      "options": [
+        "A vector",
+        "A scalar",
+        "A matrix",
+        "A point"
+      ],
+      "answer": "A scalar",
+      "section": "Cross Product",
+      "rate": "medium",
+      "suggestion": "Review cross product in 2D"
+    },
+    {
+      "question": "Which rule counts the number of times the boundary winds around a point?",
+      "type": "mcq",
+      "options": [
+        "Odd-parity rule",
+        "Non-zero winding rule",
+        "Cross product rule",
+        "Rotation rule"
+      ],
+      "answer": "Non-zero winding rule",
+      "section": "Non-zero Winding",
+      "rate": "easy",
+      "suggestion": "Review winding number concept"
+    },
+    {
+      "question": "What is the first step in the scan-line algorithm?",
+      "type": "mcq",
+      "options": [
+        "Fill between intersections",
+        "Find intersections with edges",
+        "Sort edges by Y-min",
+        "Create GET"
+      ],
+      "answer": "Find intersections with edges",
+      "section": "Scan-Line Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review scan-line algorithm steps"
+    },
+    {
+      "question": "Which color is represented by CMY values (0,1,1)?",
+      "type": "mcq",
+      "options": [
+        "Red",
+        "Green",
+        "Blue",
+        "Cyan"
+      ],
+      "answer": "Red",
+      "section": "CMY Color Model",
+      "rate": "medium",
+      "suggestion": "Review CMY color combinations"
+    },
+    {
+      "question": "What is used to propagate filling in the flood-fill algorithm?",
+      "type": "mcq",
+      "options": [
+        "Edge tables",
+        "Interior color replacement",
+        "Boundary detection",
+        "Vertex sorting"
+      ],
+      "answer": "Interior color replacement",
+      "section": "Flood Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review flood fill propagation method"
+    },
+    {
+      "question": "Which polygon type is easier to fill?",
+      "type": "mcq",
+      "options": [
+        "Concave",
+        "Convex",
+        "Self-intersecting",
+        "With holes"
+      ],
+      "answer": "Convex",
+      "section": "Polygon Classification",
+      "rate": "easy",
+      "suggestion": "Review convex vs concave filling complexity"
+    },
+    {
+      "question": "In the GET, each bucket corresponds to a:",
+      "type": "mcq",
+      "options": [
+        "Polygon vertex",
+        "Scan line",
+        "Color value",
+        "Edge slope"
+      ],
+      "answer": "Scan line",
+      "section": "Global Edge Table",
+      "rate": "medium",
+      "suggestion": "Review GET bucket structure"
+    },
+    {
+      "question": "What is the primary input to the boundary fill algorithm?",
+      "type": "mcq",
+      "options": [
+        "Edge list",
+        "Interior point, fill color, boundary color",
+        "Vertex coordinates",
+        "Scan line range"
+      ],
+      "answer": "Interior point, fill color, boundary color",
+      "section": "Boundary Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review boundary fill input parameters"
+    },
+    {
+      "question": "Which algorithm is used in raster scan devices?",
+      "type": "mcq",
+      "options": [
+        "Boundary Fill",
+        "Flood Fill",
+        "Scan-Line Fill",
+        "Span Fill"
+      ],
+      "answer": "Scan-Line Fill",
+      "section": "Scan-Line Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review scan-line algorithm usage"
+    },
+    {
+      "question": "What is the main disadvantage of recursive boundary fill?",
+      "type": "mcq",
+      "options": [
+        "Slow for convex polygons",
+        "High memory usage due to stacking",
+        "Cannot fill concave polygons",
+        "Requires edge tables"
+      ],
+      "answer": "High memory usage due to stacking",
+      "section": "Boundary Fill Algorithm",
+      "rate": "medium",
+      "suggestion": "Review recursion drawbacks in filling"
+    },
+    {
+      "question": "Which method splits a polygon by rotating vertices to the origin?",
+      "type": "mcq",
+      "options": [
+        "Cross product method",
+        "Rotational method",
+        "Winding method",
+        "Odd-even method"
+      ],
+      "answer": "Rotational method",
+      "section": "Splitting Concave Polygon",
+      "rate": "medium",
+      "suggestion": "Review rotational splitting technique"
+    },
+    {
+      "question": "What does 'Hue' refer to in the HSV model?",
+      "type": "mcq",
+      "options": [
+        "Brightness",
+        "Color type",
+        "Purity",
+        "Intensity"
+      ],
+      "answer": "Color type",
+      "section": "HSV Color Model",
+      "rate": "easy",
+      "suggestion": "Review HSV component definitions"
+    },
+    {
+      "question": "Which algorithm fills polygons by replacing a specific interior color?",
+      "type": "mcq",
+      "options": [
+        "Boundary Fill",
+        "Flood Fill",
+        "Scan-Line Fill",
+        "Edge Fill"
+      ],
+      "answer": "Flood Fill",
+      "section": "Flood Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review flood fill mechanism"
+    },
+    {
+      "question": "In the odd-parity rule, the test line must:",
+      "type": "mcq",
+      "options": [
+        "Intersect at least one vertex",
+        "Avoid intersecting vertices",
+        "Be vertical",
+        "Be horizontal"
+      ],
+      "answer": "Avoid intersecting vertices",
+      "section": "Odd-Parity Rule",
+      "rate": "medium",
+      "suggestion": "Review odd-parity rule constraints"
+    },
+    {
+      "question": "Which table is updated during scan-line processing?",
+      "type": "mcq",
+      "options": [
+        "GET",
+        "AET",
+        "PET",
+        "SET"
+      ],
+      "answer": "AET",
+      "section": "Active Edge Table",
+      "rate": "easy",
+      "suggestion": "Review AET role in scan-line algorithm"
+    },
+    {
+      "question": "What is the final step in the scan-line algorithm?",
+      "type": "mcq",
+      "options": [
+        "Sort intersections",
+        "Fill between pairs",
+        "Update AET",
+        "Create GET"
+      ],
+      "answer": "Fill between pairs",
+      "section": "Scan-Line Fill Algorithm",
+      "rate": "easy",
+      "suggestion": "Review scan-line algorithm sequence"
+    }
+  ]
+}
