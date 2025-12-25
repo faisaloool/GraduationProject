@@ -1,0 +1,600 @@
+{
+  "document": "ch4__Register_Transfer_and_Microoperations_2.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "A microoperation is an elementary operation performed during one clock pulse on the information stored in one or more registers.",
+        "answer": "true"
+      },
+      {
+        "question": "Microoperations can include operations like shift, count, clear, load, and add.",
+        "answer": "true"
+      },
+      {
+        "question": "A microoperation takes more than one clock cycle to complete.",
+        "answer": "false"
+      },
+      {
+        "question": "Register Transfer Language (RTL) defines the set of registers and their functions.",
+        "answer": "true"
+      },
+      {
+        "question": "The set of allowable microoperations is not provided by the organization of the computer.",
+        "answer": "false"
+      },
+      {
+        "question": "Register transfer language is a symbolic language.",
+        "answer": "true"
+      },
+      {
+        "question": "Register transfer language cannot be used to describe the internal organization of digital computers.",
+        "answer": "false"
+      },
+      {
+        "question": "Register transfer language facilitates the design process of digital systems.",
+        "answer": "true"
+      },
+      {
+        "question": "A sequence of microoperations is used to describe any function of the computer.",
+        "answer": "true"
+      },
+      {
+        "question": "Register transfer language is not related to computer system architecture.",
+        "answer": "false"
+      },
+      {
+        "question": "A register can be a portion of another register.",
+        "answer": "true"
+      },
+      {
+        "question": "The transfer of bits from one register to another happens bit by bit over multiple clock pulses.",
+        "answer": "false"
+      },
+      {
+        "question": "The condition 'p=1' determines when a transfer between registers occurs.",
+        "answer": "true"
+      },
+      {
+        "question": "The numbering of bits in a register starts from 1.",
+        "answer": "false"
+      },
+      {
+        "question": "A register can only be represented as a single block in diagrams.",
+        "answer": "false"
+      },
+      {
+        "question": "Capital letters and numerals denote a register.",
+        "answer": "true"
+      },
+      {
+        "question": "Parentheses ( ) denote a part of a register.",
+        "answer": "true"
+      },
+      {
+        "question": "P: R2 ← R1 represents an unconditional transfer.",
+        "answer": "false"
+      },
+      {
+        "question": "A block diagram is used to represent a register transfer.",
+        "answer": "true"
+      },
+      {
+        "question": "A timing diagram is not used in register transfers.",
+        "answer": "false"
+      },
+      {
+        "question": "Controlled transfers are represented using basic symbols.",
+        "answer": "true"
+      },
+      {
+        "question": "The clock is not involved in register transfers.",
+        "answer": "false"
+      },
+      {
+        "question": "MAR is an example of a register.",
+        "answer": "true"
+      },
+      {
+        "question": "The arrow symbol denotes the transfer of information.",
+        "answer": "true"
+      },
+      {
+        "question": "The comma symbol separates two micro-operations.",
+        "answer": "true"
+      },
+      {
+        "question": "Data can move from register to register in digital logic.",
+        "answer": "true"
+      },
+      {
+        "question": "Digital Logic Circuits are used for processing data.",
+        "answer": "true"
+      },
+      {
+        "question": "C = A + B is an example of a digital logic operation.",
+        "answer": "true"
+      },
+      {
+        "question": "Building a computer requires processing, storage, and communication components.",
+        "answer": "true"
+      },
+      {
+        "question": "Mux 0 and Mux 1 are examples of multiplexers used in bus systems.",
+        "answer": "true"
+      },
+      {
+        "question": "Bus 0 and Bus 1 are used for transferring data between registers.",
+        "answer": "true"
+      },
+      {
+        "question": "S1 and S0 are control signals used in bus transfer operations.",
+        "answer": "true"
+      },
+      {
+        "question": "A 4-line common bus is used for transferring data between registers in a 4-bit system.",
+        "answer": "true"
+      },
+      {
+        "question": "Register D, Register C, Register B, and Register A are used in a 4-bit system.",
+        "answer": "true"
+      },
+      {
+        "question": "The highest bit from each register is used for bus transfer operations.",
+        "answer": "true"
+      },
+      {
+        "question": "The lowest bit from each register is used for bus transfer operations.",
+        "answer": "true"
+      },
+      {
+        "question": "The number of multiplexers needed to construct the bus is equal to the number of bits in each register.",
+        "answer": "true"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, the MUX size used is 64X1.",
+        "answer": "true"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, 16 MUXs are needed.",
+        "answer": "true"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, 6 select bits are required.",
+        "answer": "true"
+      },
+      {
+        "question": "A bus system can only be constructed with multiplexers, not with three-state gates.",
+        "answer": "false"
+      },
+      {
+        "question": "A tri-state buffer can output 0, 1, or high-impedance (open circuit).",
+        "answer": "true"
+      },
+      {
+        "question": "A buffer is used to match impedance between devices.",
+        "answer": "true"
+      },
+      {
+        "question": "When the control input C=1 in a tri-state buffer gate, the output Y equals the input A.",
+        "answer": "true"
+      },
+      {
+        "question": "When the control input C=0 in a tri-state buffer gate, the output Y equals the input A.",
+        "answer": "false"
+      },
+      {
+        "question": "A tri-state buffer gate can output a high-impedance state.",
+        "answer": "true"
+      },
+      {
+        "question": "The construction of a bus system does not involve tri-state buffers.",
+        "answer": "false"
+      },
+      {
+        "question": "The transfer of information from a memory word to the outside environment is called memory transfer.",
+        "answer": "true"
+      },
+      {
+        "question": "The transfer of new information to be stored into the memory is called a read operation.",
+        "answer": "false"
+      },
+      {
+        "question": "In memory operations, DR stands for data register.",
+        "answer": "true"
+      },
+      {
+        "question": "The operation 'DR  M[AR]' represents a write operation.",
+        "answer": "false"
+      },
+      {
+        "question": "The operation 'M[AR]  R1' represents a write operation.",
+        "answer": "true"
+      },
+      {
+        "question": "The operation 'AR  DR(AD)' transfers the content of the AD portion of register DR into register AR.",
+        "answer": "true"
+      },
+      {
+        "question": "The operation 'A  constant' transfers a binary constant into register B.",
+        "answer": "false"
+      },
+      {
+        "question": "R2 ← ABUS transfers the content of bus A into R2.",
+        "answer": "true"
+      },
+      {
+        "question": "M[R] refers to the memory word specified by register R.",
+        "answer": "true"
+      },
+      {
+        "question": "M is equivalent to M[DR].",
+        "answer": "false"
+      },
+      {
+        "question": "DR ← M is a memory write operation.",
+        "answer": "false"
+      },
+      {
+        "question": "M ← DR transfers the content of DR into the memory word specified by AR.",
+        "answer": "true"
+      },
+      {
+        "question": "Multiplication and division are basic arithmetic operations.",
+        "answer": "false"
+      },
+      {
+        "question": "A single circuit can perform both arithmetic addition and subtraction.",
+        "answer": "true"
+      },
+      {
+        "question": "Register transfer microoperations are a type of microoperation.",
+        "answer": "true"
+      },
+      {
+        "question": "Logic microoperations are not a type of microoperation.",
+        "answer": "false"
+      },
+      {
+        "question": "Shift microoperations are a type of microoperation.",
+        "answer": "true"
+      },
+      {
+        "question": "In the arithmetic addition operation R3 ← R1 + R2, the '+' symbol denotes logical OR.",
+        "answer": "false"
+      },
+      {
+        "question": "Arithmetic subtraction can be represented as R3 ← R1 + R2 + 1 where R2 is the 1’s complement of R2.",
+        "answer": "true"
+      },
+      {
+        "question": "Adding 1 to the one’s complement of R2 is equivalent to taking the 2’s complement of R2 and adding it to R1.",
+        "answer": "true"
+      },
+      {
+        "question": "The addition and subtraction operations can be combined into one common circuit by including an XOR gate.",
+        "answer": "true"
+      },
+      {
+        "question": "An XOR gate with each full-adder is used in binary adder-subtractor circuits.",
+        "answer": "true"
+      },
+      {
+        "question": "When M=0 in a binary adder-subtractor, the operation is equivalent to a binary adder with carry in C0=1.",
+        "answer": "false"
+      },
+      {
+        "question": "When M=1 in a binary adder-subtractor, the XOR gates output the 1's complement of B.",
+        "answer": "true"
+      },
+      {
+        "question": "For unsigned numbers, when M=1, the operation A + B + 1 always results in A-B.",
+        "answer": "false"
+      },
+      {
+        "question": "In a binary adder-subtractor, when M=1 and A<B, the result is the 2's complement of (B-A).",
+        "answer": "true"
+      },
+      {
+        "question": "A 4-bit Binary Incrementer adds one to a number in a register.",
+        "answer": "true"
+      },
+      {
+        "question": "A 4-bit Binary Incrementer can only be implemented as a sequential circuit.",
+        "answer": "false"
+      },
+      {
+        "question": "A combinational circuit implementation of a 4-bit Binary Incrementer uses Half Adders.",
+        "answer": "true"
+      },
+      {
+        "question": "The least significant Half Adder bit is connected to logic-0.",
+        "answer": "false"
+      },
+      {
+        "question": "The output carry from one Half Adder is connected to the input of the next-higher-order Half Adder.",
+        "answer": "true"
+      },
+      {
+        "question": "In a 4-bit Binary Incrementer, the value 1 is always added to the input.",
+        "answer": "true"
+      },
+      {
+        "question": "The output of a 4-bit Binary Incrementer includes a carry bit labeled C4.",
+        "answer": "true"
+      },
+      {
+        "question": "The outputs of a 4-bit Binary Incrementer are labeled S3, S2, S1, and S0.",
+        "answer": "true"
+      },
+      {
+        "question": "A binary adder can perform subtraction operations.",
+        "answer": "true"
+      },
+      {
+        "question": "The arithmetic microoperation D = A + Y + Cn is a standard addition operation.",
+        "answer": "true"
+      },
+      {
+        "question": "A 4x1 MUX is used in the arithmetic circuit to select between different arithmetic operations.",
+        "answer": "true"
+      },
+      {
+        "question": "The binary incrementer is not part of the arithmetic microoperations discussed.",
+        "answer": "false"
+      },
+      {
+        "question": "The carry-out (Cout) in the binary adder is generated only when all inputs are 1.",
+        "answer": "false"
+      },
+      {
+        "question": "The arithmetic circuit uses full adders (FA) to compute the results.",
+        "answer": "true"
+      },
+      {
+        "question": "S0 and S1 are control signals that determine the operation performed by the arithmetic circuit.",
+        "answer": "true"
+      },
+      {
+        "question": "The binary adder-subtractor cannot handle signed numbers.",
+        "answer": "false"
+      },
+      {
+        "question": "The arithmetic microoperations include only addition and subtraction.",
+        "answer": "false"
+      },
+      {
+        "question": "The inputs A0, B0, A1, B1, etc., are used to feed data into the arithmetic circuit.",
+        "answer": "true"
+      },
+      {
+        "question": "In the given table, when S0 is 0 and Cin is 0, the microoperation is 'D = A + B'.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 0 and Cin is 1, the microoperation is 'D = A + B + 1'.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 1 and Cin is 0, the microoperation is 'D = A + B''.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 1 and Cin is 1, the microoperation is 'D = A + B' + 1'.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 1, Cin is 0, and the operation is 'D = A', it is a transfer operation.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 1, Cin is 1, and the operation is 'D = A + 1', it is an increment operation.",
+        "answer": "false"
+      },
+      {
+        "question": "When S0 is 1, Cin is 0, and the operation is 'D = A - 1', it is a decrement operation.",
+        "answer": "true"
+      },
+      {
+        "question": "When S0 is 1, Cin is 1, and the operation is 'D = A', it is a transfer operation.",
+        "answer": "true"
+      },
+      {
+        "question": "AND operation is useful for masking out certain groups of bits.",
+        "answer": "true"
+      },
+      {
+        "question": "OR operation is used to merge binary or character data.",
+        "answer": "true"
+      },
+      {
+        "question": "Logic microoperations involve manipulating bits stored in a register.",
+        "answer": "true"
+      },
+      {
+        "question": "OR operation is useful for making logical decisions based on the bit value.",
+        "answer": "true"
+      },
+      {
+        "question": "Different bitwise logical operations are selected by select signals in microoperations.",
+        "answer": "true"
+      },
+      {
+        "question": "XNOR, NAND, NOR, and the complement of the second input cannot be accommodated in the extended logic circuit.",
+        "answer": "false"
+      },
+      {
+        "question": "The output F0 is always 1 when X=0 and Y=0.",
+        "answer": "false"
+      },
+      {
+        "question": "The truth table represents 16 functions of two variables.",
+        "answer": "true"
+      },
+      {
+        "question": "The truth table is used to represent Boolean functions.",
+        "answer": "true"
+      },
+      {
+        "question": "A multiplexer can select one of the 16 previous functions.",
+        "answer": "true"
+      },
+      {
+        "question": "Logic operations can clear a group of bit values.",
+        "answer": "true"
+      },
+      {
+        "question": "In the AND operation example, the result in R1 after applying the mask is 00000000 10101011.",
+        "answer": "true"
+      },
+      {
+        "question": "In the SET operation example, the mask used is 11111111 00000000.",
+        "answer": "true"
+      },
+      {
+        "question": "The INSERT operation involves masking the bits and then ORing them with the required value.",
+        "answer": "true"
+      },
+      {
+        "question": "In the AND operation example, the mask used is 00000000 11111111.",
+        "answer": "true"
+      },
+      {
+        "question": "In the SET operation example, the result in R1 after applying the mask is 11111111 10101011.",
+        "answer": "true"
+      },
+      {
+        "question": "The INSERT operation does not involve masking the bits before ORing them with the required value.",
+        "answer": "false"
+      },
+      {
+        "question": "In the OR operation example, the result of A before OR B mask is 0000 1010.",
+        "answer": "false"
+      },
+      {
+        "question": "The complement operation is performed using the XOR operation with a mask of ones.",
+        "answer": "true"
+      },
+      {
+        "question": "In the shift microoperations example, the binary number 11000 is shifted to the left by one position.",
+        "answer": "false"
+      },
+      {
+        "question": "The result of the OR operation between A before (0110 1010) and B mask (0000 1111) is 0000 1010.",
+        "answer": "false"
+      },
+      {
+        "question": "The complement operation example shows that XORing 10101101 10101011 with 11111111 00000000 results in 01010010 10101011.",
+        "answer": "true"
+      },
+      {
+        "question": "Shift microoperations are used for serial transfer of data.",
+        "answer": "true"
+      },
+      {
+        "question": "There are four types of shift microoperations.",
+        "answer": "false"
+      },
+      {
+        "question": "Logical, Circular, and Arithmetic are types of shift microoperations.",
+        "answer": "true"
+      },
+      {
+        "question": "R ← shl R represents a shift-right operation.",
+        "answer": "false"
+      },
+      {
+        "question": "R ← cil R represents a circular shift-left operation.",
+        "answer": "true"
+      },
+      {
+        "question": "A logical shift transfers 1 through the serial input.",
+        "answer": "false"
+      },
+      {
+        "question": "The bit transferred to the end position through the serial input is assumed to be 0 during a logical shift.",
+        "answer": "true"
+      },
+      {
+        "question": "Arithmetic shift-left operation is represented as R ← ashl R.",
+        "answer": "true"
+      },
+      {
+        "question": "Arithmetic shift-right operation is represented as R ← ashr R.",
+        "answer": "true"
+      },
+      {
+        "question": "A logical shift-right operation on the binary number 10100011 results in 01000110.",
+        "answer": "true"
+      },
+      {
+        "question": "A circular shift-left operation on the binary number 10100011 results in 01000111.",
+        "answer": "true"
+      },
+      {
+        "question": "An arithmetic shift-left operation multiplies a signed binary number by 2.",
+        "answer": "true"
+      },
+      {
+        "question": "A circular shift operation loses information from the register.",
+        "answer": "false"
+      },
+      {
+        "question": "An arithmetic shift-right operation divides a signed binary number by 2.",
+        "answer": "true"
+      },
+      {
+        "question": "In arithmetic shifts, the sign bit does not receive any special treatment.",
+        "answer": "false"
+      },
+      {
+        "question": "In an arithmetic right-shift, Rn-1 remains unchanged.",
+        "answer": "true"
+      },
+      {
+        "question": "For a negative number, 0 is shifted from the sign bit to the right.",
+        "answer": "false"
+      },
+      {
+        "question": "A negative number is represented by the 2’s complement.",
+        "answer": "true"
+      },
+      {
+        "question": "In Example 1, 0100 (4) shifted right becomes 0010 (2).",
+        "answer": "true"
+      },
+      {
+        "question": "In Example 2, 1010 (-6) shifted right becomes 1101.",
+        "answer": "true"
+      },
+      {
+        "question": "The operation of Arithmetic Shift Left is the same as Logic Shift Left.",
+        "answer": "true"
+      },
+      {
+        "question": "In Arithmetic Shift Left, you need to check for overflow problems.",
+        "answer": "true"
+      },
+      {
+        "question": "Arithmetic Shift Left inserts a 1 in the LSB.",
+        "answer": "false"
+      },
+      {
+        "question": "In Example 1, Arithmetic Shift Left of 0010 (2) results in 0100 (4).",
+        "answer": "true"
+      },
+      {
+        "question": "In Example 2, Arithmetic Shift Left of 1110 (-2) results in 1100 (-4).",
+        "answer": "true"
+      },
+      {
+        "question": "In Example 3, Arithmetic Shift Left of 0100 (4) results in 1000 (overflow).",
+        "answer": "true"
+      },
+      {
+        "question": "In Example 4, Arithmetic Shift Left of 1010 (-6) results in 0100 (overflow).",
+        "answer": "true"
+      }
+    ]
+  }
+}

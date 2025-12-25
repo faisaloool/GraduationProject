@@ -1,0 +1,458 @@
+{
+  "document": "ch5_Basic_Computer_Organization_Lect2_2.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the purpose of an instruction set in a computer?",
+        "options": [
+          "To allow the user to construct machine language programs for computable functions",
+          "To manage the computer's hardware resources",
+          "To provide a graphical user interface",
+          "To store data permanently"
+        ],
+        "answer": "To allow the user to construct machine language programs for computable functions"
+      },
+      {
+        "question": "What do transfer instructions primarily handle?",
+        "options": [
+          "Data transfers between main memory and CPU registers",
+          "Arithmetic operations",
+          "Logical operations",
+          "Control flow operations"
+        ],
+        "answer": "Data transfers between main memory and CPU registers"
+      },
+      {
+        "question": "Which of the following is an example of an arithmetic instruction?",
+        "options": [
+          "ADD",
+          "AND",
+          "CIR",
+          "CLA"
+        ],
+        "answer": "ADD"
+      },
+      {
+        "question": "What does the instruction 'CMA' stand for?",
+        "options": [
+          "Complement Accumulator",
+          "Compare Memory Address",
+          "Clear Memory Address",
+          "Copy Memory Address"
+        ],
+        "answer": "Complement Accumulator"
+      },
+      {
+        "question": "What type of instructions are BUN, BSA, and ISZ?",
+        "options": [
+          "Processor registers",
+          "Control Instructions",
+          "Input/Output Instructions",
+          "Hardwired Implementation"
+        ],
+        "answer": "Control Instructions"
+      },
+      {
+        "question": "Which instructions are related to input and output?",
+        "options": [
+          "LDA, STA",
+          "BUN, BSA",
+          "INP, OUT",
+          "IR, decoder"
+        ],
+        "answer": "INP, OUT"
+      },
+      {
+        "question": "What is the primary function of the Instruction Register (IR)?",
+        "options": [
+          "Store control instructions",
+          "Store input/output instructions",
+          "Store the current instruction",
+          "Decode instructions"
+        ],
+        "answer": "Store the current instruction"
+      },
+      {
+        "question": "What is the primary function of a control unit in a computer?",
+        "options": [
+          "To perform arithmetic operations",
+          "To manage and coordinate the operations of the CPU",
+          "To store data temporarily",
+          "To display output on the screen"
+        ],
+        "answer": "To manage and coordinate the operations of the CPU"
+      },
+      {
+        "question": "What does the IR (Instruction Register) store in a computer?",
+        "options": [
+          "The current instruction being executed",
+          "The result of arithmetic operations",
+          "The address of the next instruction",
+          "The data to be displayed"
+        ],
+        "answer": "The current instruction being executed"
+      },
+      {
+        "question": "Which of the following is NOT a typical input to a control unit?",
+        "options": [
+          "Clock signal",
+          "Instruction from IR",
+          "Output from ALU",
+          "Data from the keyboard"
+        ],
+        "answer": "Data from the keyboard"
+      },
+      {
+        "question": "What is the purpose of the timing signals in the described system?",
+        "options": [
+          "To control the sequence of operations in each clock cycle",
+          "To increase the clock speed of the system",
+          "To store data temporarily",
+          "To decode instructions"
+        ],
+        "answer": "To control the sequence of operations in each clock cycle"
+      },
+      {
+        "question": "Which of the following is NOT a step in the instruction cycle?",
+        "options": [
+          "Fetch an instruction from memory",
+          "Decode the instruction",
+          "Read the effective address from memory if the instruction has an indirect address",
+          "Write the result to memory"
+        ],
+        "answer": "Write the result to memory"
+      },
+      {
+        "question": "What is the first step in the instruction cycle?",
+        "options": [
+          "Decode the instruction",
+          "Execute the instruction",
+          "Fetch an instruction from memory",
+          "Read the effective address from memory"
+        ],
+        "answer": "Fetch an instruction from memory"
+      },
+      {
+        "question": "When does the instruction cycle stop?",
+        "options": [
+          "When a FETCH instruction is encountered",
+          "When a DECODE instruction is encountered",
+          "When a HALT instruction is encountered",
+          "When an EXECUTE instruction is encountered"
+        ],
+        "answer": "When a HALT instruction is encountered"
+      },
+      {
+        "question": "What is the purpose of enabling the LD input of IR?",
+        "options": [
+          "To load data from the bus into the IR",
+          "To increment the PC",
+          "To decode the instruction",
+          "To fetch the next instruction"
+        ],
+        "answer": "To load data from the bus into the IR"
+      },
+      {
+        "question": "What happens when the INR input of PC is enabled?",
+        "options": [
+          "The PC is incremented",
+          "The IR is loaded with data",
+          "The AR is updated",
+          "The instruction is decoded"
+        ],
+        "answer": "The PC is incremented"
+      },
+      {
+        "question": "What is the function of the Decode phase in the instruction cycle?",
+        "options": [
+          "To interpret the instruction in the IR",
+          "To fetch the next instruction",
+          "To increment the PC",
+          "To load data into the AR"
+        ],
+        "answer": "To interpret the instruction in the IR"
+      },
+      {
+        "question": "What is the purpose of incrementing the PC in this process?",
+        "options": [
+          "To enable ‘read input’ of the memory",
+          "To place the next instruction address in AR",
+          "To transfer the content of the bus to IR",
+          "To prepare for the next instruction"
+        ],
+        "answer": "To prepare for the next instruction"
+      },
+      {
+        "question": "Why can't the data stored in memory be processed directly?",
+        "options": [
+          "The memory unit is not connected to the ALU",
+          "The bus system is too slow",
+          "The Accumulator is full",
+          "The Input Register is disconnected"
+        ],
+        "answer": "The memory unit is not connected to the ALU"
+      },
+      {
+        "question": "What is the logical operation performed in 'AND to AC'?",
+        "options": [
+          "Addition",
+          "Subtraction",
+          "Logical AND",
+          "Logical OR"
+        ],
+        "answer": "Logical AND"
+      },
+      {
+        "question": "Which register is involved in the 'AND to AC' operation?",
+        "options": [
+          "AR",
+          "DR",
+          "AC",
+          "SC"
+        ],
+        "answer": "AC"
+      },
+      {
+        "question": "Which operation is performed in 'ADD to AC'?",
+        "options": [
+          "Logical AND",
+          "Arithmetic addition",
+          "Logical OR",
+          "Subtraction"
+        ],
+        "answer": "Arithmetic addition"
+      },
+      {
+        "question": "Which register is updated in the 'ADD to AC' operation?",
+        "options": [
+          "AR",
+          "DR",
+          "AC",
+          "SC"
+        ],
+        "answer": "AC"
+      },
+      {
+        "question": "What does the LDA instruction do?",
+        "options": [
+          "Loads data from memory to the AC",
+          "Stores data from AC to memory",
+          "Branches unconditionally",
+          "Increments the program counter"
+        ],
+        "answer": "Loads data from memory to the AC"
+      },
+      {
+        "question": "What does the STA instruction do?",
+        "options": [
+          "Loads data from memory to the AC",
+          "Stores data from AC to memory",
+          "Branches unconditionally",
+          "Increments the program counter"
+        ],
+        "answer": "Stores data from AC to memory"
+      },
+      {
+        "question": "What does the BUN instruction do?",
+        "options": [
+          "Loads data from memory to the AC",
+          "Stores data from AC to memory",
+          "Branches unconditionally",
+          "Increments the program counter"
+        ],
+        "answer": "Branches unconditionally"
+      },
+      {
+        "question": "What does the BSA instruction do?",
+        "options": [
+          "Branch to address AR and save PC address",
+          "Load data from memory",
+          "Perform arithmetic operations",
+          "Terminate the program"
+        ],
+        "answer": "Branch to address AR and save PC address"
+      },
+      {
+        "question": "What is the purpose of the BSA instruction?",
+        "options": [
+          "To implement a subroutine call",
+          "To perform arithmetic operations",
+          "To terminate the program",
+          "To load data from memory"
+        ],
+        "answer": "To implement a subroutine call"
+      },
+      {
+        "question": "What happens when the BSA instruction is executed?",
+        "options": [
+          "The PC address is saved and the program branches to address AR",
+          "The program terminates",
+          "Data is loaded from memory",
+          "Arithmetic operations are performed"
+        ],
+        "answer": "The PC address is saved and the program branches to address AR"
+      },
+      {
+        "question": "What does the indirect BUN instruction at the end of the subroutine do?",
+        "options": [
+          "Performs the subroutine return",
+          "Loads data from memory",
+          "Terminates the program",
+          "Performs arithmetic operations"
+        ],
+        "answer": "Performs the subroutine return"
+      },
+      {
+        "question": "What does ISZ stand for?",
+        "options": [
+          "Increment and skip if zero",
+          "Increment and store zero",
+          "Increment and set zero",
+          "Increment and shift zero"
+        ],
+        "answer": "Increment and skip if zero"
+      },
+      {
+        "question": "What does the ISZ instruction do if the result of the increment operation is zero?",
+        "options": [
+          "It skips the next instruction",
+          "It halts the computer",
+          "It resets the program counter",
+          "It continues to the next instruction"
+        ],
+        "answer": "It skips the next instruction"
+      },
+      {
+        "question": "What is the purpose of the ISZ instruction?",
+        "options": [
+          "To perform arithmetic operations",
+          "To implement a loop",
+          "To handle input/output operations",
+          "To manage memory allocation"
+        ],
+        "answer": "To implement a loop"
+      },
+      {
+        "question": "Which of the following is a register-reference instruction?",
+        "options": [
+          "INP",
+          "OUT",
+          "CLA",
+          "ION"
+        ],
+        "answer": "CLA"
+      },
+      {
+        "question": "What does the 'I' bit indicate in the instruction code format?",
+        "options": [
+          "Indirect or direct addressing",
+          "Input or output operation",
+          "Increment or decrement operation",
+          "Interrupt enable or disable"
+        ],
+        "answer": "Indirect or direct addressing"
+      },
+      {
+        "question": "What is the opcode range for memory-reference instructions?",
+        "options": [
+          "000 to 110",
+          "000 to 111",
+          "001 to 110",
+          "010 to 110"
+        ],
+        "answer": "000 to 110"
+      },
+      {
+        "question": "Which of the following is an input-output device?",
+        "options": [
+          "Printer",
+          "Computer registers",
+          "Flip-flops",
+          "Serial communication interface"
+        ],
+        "answer": "Printer"
+      },
+      {
+        "question": "Which register is used for output in the input-output configuration?",
+        "options": [
+          "INPR",
+          "OUTR",
+          "AC",
+          "FGI"
+        ],
+        "answer": "OUTR"
+      },
+      {
+        "question": "Which of the following is NOT a component of serial communication?",
+        "options": [
+          "Receiver interface",
+          "Transmitter interface",
+          "Parallel communications path",
+          "Serial communications path"
+        ],
+        "answer": "Parallel communications path"
+      },
+      {
+        "question": "What is the purpose of the Input Flag (FGI) in a communication interface?",
+        "options": [
+          "To indicate that INPR has information",
+          "To signal the start of an output operation",
+          "To clear the output buffer",
+          "To synchronize the clock transition"
+        ],
+        "answer": "To indicate that INPR has information"
+      },
+      {
+        "question": "When is the Output Flag (FGO) cleared?",
+        "options": [
+          "When INPR has information",
+          "When the output device is active",
+          "When the input buffer is full",
+          "When the clock transition occurs"
+        ],
+        "answer": "When the output device is active"
+      },
+      {
+        "question": "How many bits does each quantity of information have in the described alphanumeric code?",
+        "options": [
+          "4 bits",
+          "8 bits",
+          "16 bits",
+          "32 bits"
+        ],
+        "answer": "8 bits"
+      },
+      {
+        "question": "What does FGI stand for in the context of communication interfaces?",
+        "options": [
+          "Flag for General Input",
+          "Flag for Group Interrupt",
+          "Input Flag",
+          "Output Flag"
+        ],
+        "answer": "Input Flag"
+      },
+      {
+        "question": "Which of the following is NOT an I/O Transfer Mode?",
+        "options": [
+          "Programmed I/O",
+          "Interrupt-initiated I/O",
+          "Direct Memory Access (DMA)",
+          "FGI FGO"
+        ],
+        "answer": "Direct Memory Access (DMA)"
+      },
+      {
+        "question": "What does IEN stand for in the context of interrupt handling?",
+        "options": [
+          "Interrupt Enable Network",
+          "Interrupt Enable Flip-Flop",
+          "Interrupt Execution Node",
+          "Interrupt Enable Notification"
+        ],
+        "answer": "Interrupt Enable Flip-Flop"
+      }
+    ]
+  }
+}

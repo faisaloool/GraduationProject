@@ -1,0 +1,404 @@
+{
+  "document": "ch5_Basic_Computer_Organization_Lect1_2.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "A process is controlled by a program.",
+        "answer": "true"
+      },
+      {
+        "question": "A program is a set of instructions that specify the operations, data, and the control sequence.",
+        "answer": "true"
+      },
+      {
+        "question": "An instruction is stored in binary code that specifies a sequence of microoperations.",
+        "answer": "true"
+      },
+      {
+        "question": "Instruction codes together with data are stored in memory.",
+        "answer": "true"
+      },
+      {
+        "question": "The purpose of Chapter 5 is to introduce a basic computer and show how its operation can be specified with register transfer statements.",
+        "answer": "true"
+      },
+      {
+        "question": "Instruction Code is a group of bits that instructs the computer to perform a specific operation.",
+        "answer": "true"
+      },
+      {
+        "question": "The basic part of the Instruction Code is the address part.",
+        "answer": "false"
+      },
+      {
+        "question": "A group of bits in the Instruction Code can define operations such as add, subtract, multiply, shift, and complement.",
+        "answer": "true"
+      },
+      {
+        "question": "Instruction code format consists of three parts: Op. Code, Address, and Data.",
+        "answer": "false"
+      },
+      {
+        "question": "Op. Code specifies 16 possible operations.",
+        "answer": "true"
+      },
+      {
+        "question": "The address field in an instruction is always 12 bits.",
+        "answer": "false"
+      },
+      {
+        "question": "If an operation does not need an operand from memory, the address field can be used for other purposes.",
+        "answer": "true"
+      },
+      {
+        "question": "Immediate operand addressing specifies the operand directly in the instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "Direct operand addressing specifies the address of the operand in the instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction code always includes an address field.",
+        "answer": "false"
+      },
+      {
+        "question": "In indirect addressing, the bits in the second part of the instruction designate an address of a memory word where the operand's address is found.",
+        "answer": "true"
+      },
+      {
+        "question": "A direct address is indicated when I=1 in the instruction code.",
+        "answer": "false"
+      },
+      {
+        "question": "The effective address (EA) can be directly used without modification to access an operand.",
+        "answer": "true"
+      },
+      {
+        "question": "Indirect addressing is indicated when I=0 in the instruction code.",
+        "answer": "false"
+      },
+      {
+        "question": "The opcode for a branch-type instruction is always located at the beginning of the instruction format.",
+        "answer": "true"
+      },
+      {
+        "question": "The operand '457' in the instruction 'ADD 457' refers to a direct address.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction 'ADD R1, R2, R3' places the result of R2 + R3 into R1.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction 'ADD 300' uses an indirect address for the operand.",
+        "answer": "false"
+      },
+      {
+        "question": "The opcode 'ADD' specifies that the operation is to subtract values.",
+        "answer": "false"
+      },
+      {
+        "question": "The instruction format includes only the opcode and the address.",
+        "answer": "false"
+      },
+      {
+        "question": "The operand '1350' in the instruction 'ADD 1350' refers to an indirect address.",
+        "answer": "false"
+      },
+      {
+        "question": "The HALT instruction requires operands.",
+        "answer": "false"
+      },
+      {
+        "question": "The NOT R4 instruction uses one operand.",
+        "answer": "true"
+      },
+      {
+        "question": "The ADD R1, R2 instruction uses three operands.",
+        "answer": "false"
+      },
+      {
+        "question": "The ADD R1, R2, R3 instruction uses three operands.",
+        "answer": "true"
+      },
+      {
+        "question": "The MADD R4, R1, R2, R3 instruction uses more than three operands.",
+        "answer": "true"
+      },
+      {
+        "question": "An instruction can contain an opcode and immediate operand.",
+        "answer": "true"
+      },
+      {
+        "question": "An instruction can contain an opcode and the address of data using direct addressing.",
+        "answer": "true"
+      },
+      {
+        "question": "Indirect addressing involves an address where the address of the data is found.",
+        "answer": "true"
+      },
+      {
+        "question": "An opcode can be part of a register-reference or input/output instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "The basic computer instructions are stored in the Program Counter.",
+        "answer": "false"
+      },
+      {
+        "question": "The size of each memory word in the basic computer is 16 bits.",
+        "answer": "true"
+      },
+      {
+        "question": "Each instruction in the basic computer occupies one word.",
+        "answer": "true"
+      },
+      {
+        "question": "The address register is connected to the memory.",
+        "answer": "true"
+      },
+      {
+        "question": "The Program Counter increments by units of 2.",
+        "answer": "false"
+      },
+      {
+        "question": "Does the Program Counter point to the next address of the program?",
+        "answer": "true"
+      },
+      {
+        "question": "Does the Operand Part contain the address of needed data in direct addressing?",
+        "answer": "true"
+      },
+      {
+        "question": "Is the address part of IR placed on the bus and loaded back into the AR in indirect addressing?",
+        "answer": "true"
+      },
+      {
+        "question": "Indirect addressing occurs when the operand contains the address of the address of needed data.",
+        "answer": "true"
+      },
+      {
+        "question": "Direct addressing involves using the address of the address of needed data.",
+        "answer": "false"
+      },
+      {
+        "question": "The Data Register (DR) holds the operand read from memory.",
+        "answer": "true"
+      },
+      {
+        "question": "The Accumulator Register (AC) is a general-purpose processing register.",
+        "answer": "true"
+      },
+      {
+        "question": "The Instruction Register (IR) holds temporary data during processing.",
+        "answer": "false"
+      },
+      {
+        "question": "The Temporary Register (TR) holds a temporary data during processing.",
+        "answer": "true"
+      },
+      {
+        "question": "The Address Register (AR) holds a memory address and is 12 bits wide.",
+        "answer": "true"
+      },
+      {
+        "question": "The Program Counter (PC) holds the address of the current instruction being executed.",
+        "answer": "false"
+      },
+      {
+        "question": "Instruction words are always executed in sequence without any exceptions.",
+        "answer": "false"
+      },
+      {
+        "question": "A branch instruction causes a transfer to a nonconsecutive instruction in the program.",
+        "answer": "true"
+      },
+      {
+        "question": "The address part of a branch instruction is transferred to the Program Counter (PC).",
+        "answer": "true"
+      },
+      {
+        "question": "To read instruction, memory read cycle is initiated, and PC is incremented by one.",
+        "answer": "true"
+      },
+      {
+        "question": "The Input Register (INPR) holds an 8-bit character for an output device.",
+        "answer": "false"
+      },
+      {
+        "question": "The Output Register (OUTR) receives an 8-bit character from an input device.",
+        "answer": "false"
+      },
+      {
+        "question": "The Data Register (DR) holds memory operands.",
+        "answer": "true"
+      },
+      {
+        "question": "The Address Register (AR) holds data for memory operations.",
+        "answer": "false"
+      },
+      {
+        "question": "The Accumulator is a processor register.",
+        "answer": "true"
+      },
+      {
+        "question": "The Instruction Register (IR) holds temporary data.",
+        "answer": "false"
+      },
+      {
+        "question": "The Program Counter (PC) holds the address of the instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "The Temporary Register (TR) holds input characters.",
+        "answer": "false"
+      },
+      {
+        "question": "The Input Register (INPR) holds input characters.",
+        "answer": "true"
+      },
+      {
+        "question": "The Output Register (OUTR) holds output characters.",
+        "answer": "true"
+      },
+      {
+        "question": "Each instruction in Mano’s Computer occupies one Memory Word.",
+        "answer": "true"
+      },
+      {
+        "question": "The opcode in Mano’s Computer is 4 bits long.",
+        "answer": "true"
+      },
+      {
+        "question": "The address in Mano’s Computer is 12 bits long.",
+        "answer": "true"
+      },
+      {
+        "question": "Mano’s Computer can address 4K words of memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Mano's simple Computer uses instructions like AND, ADD, and LDA.",
+        "answer": "true"
+      },
+      {
+        "question": "The text mentions 4 Instruction Code Formats.",
+        "answer": "false"
+      },
+      {
+        "question": "Register-reference instructions include CLA and CMA.",
+        "answer": "true"
+      },
+      {
+        "question": "Input-Output instructions include INP, OUT, ION, and SKI.",
+        "answer": "true"
+      },
+      {
+        "question": "Paths must be provided to transfer information between memory and registers.",
+        "answer": "true"
+      },
+      {
+        "question": "The Common Bus System is not part of the basic computer.",
+        "answer": "false"
+      },
+      {
+        "question": "A common bus system is used to connect registers and memory in a computer architecture.",
+        "answer": "true"
+      },
+      {
+        "question": "The common bus system in the text is described as a 32-bit bus.",
+        "answer": "false"
+      },
+      {
+        "question": "The clock signal is not part of the common bus system.",
+        "answer": "false"
+      },
+      {
+        "question": "The memory unit in the text has a size of 4096x16.",
+        "answer": "true"
+      },
+      {
+        "question": "The common bus system includes connections to the Adder & Logic unit.",
+        "answer": "true"
+      },
+      {
+        "question": "When LD (Load Input) is enabled, the particular register sends data to the bus.",
+        "answer": "false"
+      },
+      {
+        "question": "Control Inputs include LD, INC, CLR, Write, and Read.",
+        "answer": "true"
+      },
+      {
+        "question": "The common bus system is controlled by selection switches and enable switches.",
+        "answer": "true"
+      },
+      {
+        "question": "Selection variables are used to select a register or memory whose output is used as an input to the common bus.",
+        "answer": "true"
+      },
+      {
+        "question": "To select one device out of 8, we need 4 select variables.",
+        "answer": "false"
+      },
+      {
+        "question": "Load input (LD) enables the input of a register to download bits from the common bus when LD = 0.",
+        "answer": "false"
+      },
+      {
+        "question": "When LD = 1 for a register, the data on the common bus is read into the register.",
+        "answer": "true"
+      },
+      {
+        "question": "The INR operation increments the content of a register.",
+        "answer": "true"
+      },
+      {
+        "question": "The CLR operation sets the content of a register to one.",
+        "answer": "false"
+      },
+      {
+        "question": "The IR register is mentioned to have 12 least significant bits.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction register (IR) can be incremented or cleared.",
+        "answer": "false"
+      },
+      {
+        "question": "The temporary register (TR) is accessible by external programs.",
+        "answer": "false"
+      },
+      {
+        "question": "The TR can be loaded, incremented, and cleared like other registers.",
+        "answer": "true"
+      },
+      {
+        "question": "The Accumulator (AC) can be shifted.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Register (DR) is not involved in any operations with the Accumulator (AC).",
+        "answer": "false"
+      },
+      {
+        "question": "INPR is an output device.",
+        "answer": "false"
+      },
+      {
+        "question": "Memory-reference instructions have opcodes in the range 000 to 110.",
+        "answer": "true"
+      },
+      {
+        "question": "When I=0 in Input-Output instructions, it indicates indirect addressing.",
+        "answer": "false"
+      },
+      {
+        "question": "When I=1 in Memory-reference instructions, the opcode range is 8xxx to Exxx.",
+        "answer": "true"
+      }
+    ]
+  }
+}
