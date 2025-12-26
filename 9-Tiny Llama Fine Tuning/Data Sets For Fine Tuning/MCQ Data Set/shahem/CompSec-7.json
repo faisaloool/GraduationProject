@@ -1,0 +1,208 @@
+{
+  "document": "CH09-CompSec4e.pptx - Chapter 9: Firewalls and Intrusion Prevention Systems",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary purpose of a firewall?",
+        "options": [
+          "To speed up internet connectivity",
+          "To establish a controlled link between premises network and the Internet",
+          "To encrypt all network traffic",
+          "To replace all authentication systems"
+        ],
+        "answer": "To establish a controlled link between premises network and the Internet"
+      },
+      {
+        "question": "What does a firewall access policy specify?",
+        "options": [
+          "Only which users can access the firewall",
+          "The types of traffic authorized to pass through the firewall",
+          "The physical location of the firewall",
+          "The encryption algorithms to use"
+        ],
+        "answer": "The types of traffic authorized to pass through the firewall"
+      },
+      {
+        "question": "What are the two default policies for packet filtering firewalls?",
+        "options": [
+          "Accept all or reject all",
+          "Discard (prohibit unless expressly permitted) or forward (permit unless expressly prohibited)",
+          "Encrypt or decrypt",
+          "Log or don't log"
+        ],
+        "answer": "Discard (prohibit unless expressly permitted) or forward (permit unless expressly prohibited)"
+      },
+      {
+        "question": "What is a major weakness of packet filtering firewalls?",
+        "options": [
+          "They are too expensive",
+          "They cannot prevent attacks that employ application-specific vulnerabilities",
+          "They require too much memory",
+          "They encrypt all traffic, slowing the network"
+        ],
+        "answer": "They cannot prevent attacks that employ application-specific vulnerabilities"
+      },
+      {
+        "question": "What is another name for an application-level gateway?",
+        "options": [
+          "Packet filter",
+          "Stateful inspection firewall",
+          "Application proxy",
+          "Circuit-level gateway"
+        ],
+        "answer": "Application proxy"
+      },
+      {
+        "question": "What must an application-level gateway have for each application?",
+        "options": [
+          "A different IP address",
+          "Proxy code",
+          "Separate hardware",
+          "Different default policies"
+        ],
+        "answer": "Proxy code"
+      },
+      {
+        "question": "What does SOCKS v5 provide?",
+        "options": [
+          "A framework for client-server applications to use firewall services",
+          "Hardware acceleration for firewalls",
+          "Automatic firewall configuration",
+          "Cloud-based firewall management"
+        ],
+        "answer": "A framework for client-server applications to use firewall services"
+      },
+      {
+        "question": "What is a bastion host?",
+        "options": [
+          "A weak point in network security",
+          "A critical strong point in network security",
+          "A backup firewall",
+          "A user workstation"
+        ],
+        "answer": "A critical strong point in network security"
+      },
+      {
+        "question": "Where are host-based firewalls commonly located?",
+        "options": [
+          "Only on routers",
+          "Only on user workstations",
+          "On servers",
+          "Only in cloud environments"
+        ],
+        "answer": "On servers"
+      },
+      {
+        "question": "What is the primary role of a personal firewall?",
+        "options": [
+          "To encrypt all email messages",
+          "To deny unauthorized remote access",
+          "To manage network routing",
+          "To authenticate all users"
+        ],
+        "answer": "To deny unauthorized remote access"
+      },
+      {
+        "question": "What does IPS stand for?",
+        "options": [
+          "Internet Protocol Security",
+          "Intrusion Prevention System",
+          "Internal Protection Service",
+          "Information Processing System"
+        ],
+        "answer": "Intrusion Prevention System"
+      },
+      {
+        "question": "What can an IPS do that an IDS typically cannot?",
+        "options": [
+          "Only monitor traffic",
+          "Block or prevent detected malicious activity",
+          "Only generate alerts",
+          "Only analyze logs"
+        ],
+        "answer": "Block or prevent detected malicious activity"
+      },
+      {
+        "question": "What are the two main detection techniques used by HIPS?",
+        "options": [
+          "Signature/heuristic and anomaly detection",
+          "Password and biometric detection",
+          "Encryption and decryption",
+          "Routing and switching analysis"
+        ],
+        "answer": "Signature/heuristic and anomaly detection"
+      },
+      {
+        "question": "What does HIPS look for in signature-based detection?",
+        "options": [
+          "General network patterns",
+          "Specific content or sequences identified as malicious",
+          "User authentication failures",
+          "Network speed variations"
+        ],
+        "answer": "Specific content or sequences identified as malicious"
+      },
+      {
+        "question": "What is a sandbox approach in HIPS?",
+        "options": [
+          "Running code in an isolated system area and monitoring its behavior",
+          "Blocking all unknown applications",
+          "Encrypting all mobile code",
+          "Storing backups in separate locations"
+        ],
+        "answer": "Running code in an isolated system area and monitoring its behavior"
+      },
+      {
+        "question": "What areas does HIPS typically offer desktop protection for?",
+        "options": [
+          "Only web browsing",
+          "System calls, file system access, registry settings, and host input/output",
+          "Only email attachments",
+          "Only network configuration"
+        ],
+        "answer": "System calls, file system access, registry settings, and host input/output"
+      },
+      {
+        "question": "What is a key advantage of integrated HIPS approach?",
+        "options": [
+          "Lower cost than separate products",
+          "Various tools work closely together providing more comprehensive protection",
+          "Faster internet speeds",
+          "Automatic software updates"
+        ],
+        "answer": "Various tools work closely together providing more comprehensive protection"
+      },
+      {
+        "question": "What authority does a Network-Based IPS have?",
+        "options": [
+          "Only to monitor traffic",
+          "To modify or discard packets and tear down TCP connections",
+          "Only to alert administrators",
+          "Only to log events"
+        ],
+        "answer": "To modify or discard packets and tear down TCP connections"
+      },
+      {
+        "question": "What does Snort Inline enable Snort to function as?",
+        "options": [
+          "A web server",
+          "An intrusion prevention system",
+          "A database server",
+          "A cloud service"
+        ],
+        "answer": "An intrusion prevention system"
+      },
+      {
+        "question": "What is the replace option in Snort Inline used for?",
+        "options": [
+          "Replacing the entire firewall",
+          "Modifying packets rather than dropping them",
+          "Replacing user passwords",
+          "Changing network topologies"
+        ],
+        "answer": "Modifying packets rather than dropping them"
+      }
+    ]
+  }
+}

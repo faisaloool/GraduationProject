@@ -1,0 +1,158 @@
+{
+  "document": "CH06-CompSec4e-modified.pdf - Chapter 6: Malicious Software",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "According to NIST 800-83, malware is defined as a program inserted into a system usually covertly with the intent of:",
+        "options": [
+          "Improving system performance",
+          "Compromising confidentiality, integrity, or availability of victim's data",
+          "Providing unauthorized system access only",
+          "Displaying advertisements legally"
+        ],
+        "answer": "Compromising confidentiality, integrity, or availability of victim's data"
+      },
+      {
+        "question": "Which of the following is NOT one of the four main phases of a virus lifecycle?",
+        "options": [
+          "Dormant phase",
+          "Propagation phase",
+          "Encryption phase",
+          "Execution phase"
+        ],
+        "answer": "Encryption phase"
+      },
+      {
+        "question": "What distinguishes a worm from a virus?",
+        "options": [
+          "Worms require user interaction to spread",
+          "Worms actively seek out more machines to infect",
+          "Worms only infect files, not systems",
+          "Worms cannot carry payloads"
+        ],
+        "answer": "Worms actively seek out more machines to infect"
+      },
+      {
+        "question": "In the context of worms, what is the 'topological' method of target discovery?",
+        "options": [
+          "Scanning random IP addresses in the address space",
+          "Using information contained on infected victim machines to find more hosts",
+          "Infected hosts probing their own local subnet behind firewalls",
+          "Compiling a list of vulnerable machines before infection"
+        ],
+        "answer": "Using information contained on infected victim machines to find more hosts"
+      },
+      {
+        "question": "What is a 'watering-hole attack'?",
+        "options": [
+          "An attack that compromises water treatment facilities",
+          "A method where attackers infect websites they know their targets visit",
+          "An attack that uses water damage to destroy computer hardware",
+          "A phishing attack sent via email about water conservation"
+        ],
+        "answer": "A method where attackers infect websites they know their targets visit"
+      },
+      {
+        "question": "Which malware type is characterized by encrypting user data and demanding payment for decryption?",
+        "options": [
+          "Spyware",
+          "Adware",
+          "Ransomware",
+          "Keylogger"
+        ],
+        "answer": "Ransomware"
+      },
+      {
+        "question": "What is the primary characteristic that distinguishes a bot from a worm?",
+        "options": [
+          "Bots can spread automatically",
+          "Bots are initially controlled from a central facility",
+          "Bots only infect Windows systems",
+          "Bots cannot carry payloads"
+        ],
+        "answer": "Bots are initially controlled from a central facility"
+      },
+      {
+        "question": "Which of the following is a key difference between phishing and spear-phishing?",
+        "options": [
+          "Phishing uses email while spear-phishing uses social media",
+          "Spear-phishing targets are carefully researched by the attacker",
+          "Phishing only targets banking information",
+          "Spear-phishing doesn't use social engineering"
+        ],
+        "answer": "Spear-phishing targets are carefully researched by the attacker"
+      },
+      {
+        "question": "What is the main purpose of a rootkit?",
+        "options": [
+          "To encrypt files for ransom",
+          "To send spam emails",
+          "To maintain covert access to a system by hiding programs",
+          "To create backdoors in web applications"
+        ],
+        "answer": "To maintain covert access to a system by hiding programs"
+      },
+      {
+        "question": "Which generation of anti-virus software uses heuristic rules to search for probable malware instances?",
+        "options": [
+          "First generation",
+          "Second generation",
+          "Third generation",
+          "Fourth generation"
+        ],
+        "answer": "Second generation"
+      },
+      {
+        "question": "What type of malware attack is also known as a 'user-interface (UI) redress attack'?",
+        "options": [
+          "Phishing",
+          "Clickjacking",
+          "Malvertising",
+          "Social engineering"
+        ],
+        "answer": "Clickjacking"
+      },
+      {
+        "question": "Which component of a virus is responsible for determining when the payload is activated?",
+        "options": [
+          "Infection mechanism",
+          "Trigger",
+          "Propagation module",
+          "Stealth component"
+        ],
+        "answer": "Trigger"
+      },
+      {
+        "question": "What was significant about the WannaCry ransomware attack in May 2017?",
+        "options": [
+          "It was the first ransomware ever created",
+          "It only affected personal computers",
+          "It infected a large number of systems in many countries",
+          "It used a novel encryption method never seen before"
+        ],
+        "answer": "It infected a large number of systems in many countries"
+      },
+      {
+        "question": "Which of the following is NOT listed as one of the four main elements of malware prevention?",
+        "options": [
+          "Policy",
+          "Awareness",
+          "Encryption",
+          "Threat mitigation"
+        ],
+        "answer": "Encryption"
+      },
+      {
+        "question": "What does the term 'malvertising' refer to?",
+        "options": [
+          "Advertising that encourages illegal activities",
+          "Placing malware on websites without actually compromising them through ads",
+          "Using malware to generate fraudulent advertising revenue",
+          "Advertising for antivirus software"
+        ],
+        "answer": "Placing malware on websites without actually compromising them through ads"
+      }
+    ]
+  }
+}
