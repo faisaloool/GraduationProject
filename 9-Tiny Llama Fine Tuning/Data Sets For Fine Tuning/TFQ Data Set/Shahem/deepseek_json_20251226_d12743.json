@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 9: Firewalls and Intrusion Prevention Systems - Computer Security: Principles and Practice, 4th Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A firewall is a single point of control between a trusted network and an untrusted network.",
+        "answer": "True"
+      },
+      {
+        "question": "Firewalls are only used to block outgoing traffic.",
+        "answer": "False"
+      },
+      {
+        "question": "A firewall's access policy is based on the organization's security risk assessment.",
+        "answer": "True"
+      },
+      {
+        "question": "Packet filtering firewalls inspect the content of application data.",
+        "answer": "False"
+      },
+      {
+        "question": "A default discard policy is more secure than a default forward policy.",
+        "answer": "True"
+      },
+      {
+        "question": "Stateful inspection firewalls track the state of active connections.",
+        "answer": "True"
+      },
+      {
+        "question": "Application-level gateways require proxy code for each application.",
+        "answer": "True"
+      },
+      {
+        "question": "Circuit-level gateways operate at the network layer.",
+        "answer": "False"
+      },
+      {
+        "question": "A bastion host is a hardened system used as a security platform.",
+        "answer": "True"
+      },
+      {
+        "question": "Host-based firewalls protect entire networks, not individual hosts.",
+        "answer": "False"
+      },
+      {
+        "question": "Personal firewalls are typically hardware devices.",
+        "answer": "False"
+      },
+      {
+        "question": "An IPS can block malicious traffic, while an IDS only detects it.",
+        "answer": "True"
+      },
+      {
+        "question": "HIPS stands for Host Intrusion Prevention System.",
+        "answer": "True"
+      },
+      {
+        "question": "HIPS can use signature-based and anomaly-based detection.",
+        "answer": "True"
+      },
+      {
+        "question": "A sandbox approach is used to run and monitor untrusted code.",
+        "answer": "True"
+      },
+      {
+        "question": "NIPS stands for Network Intrusion Prevention System.",
+        "answer": "True"
+      },
+      {
+        "question": "NIPS can modify or discard packets in real-time.",
+        "answer": "True"
+      },
+      {
+        "question": "The Digital Immune System was developed only by Microsoft.",
+        "answer": "False"
+      },
+      {
+        "question": "Snort Inline allows Snort to function as an IPS.",
+        "answer": "True"
+      },
+      {
+        "question": "A DMZ network is located behind the internal firewall only.",
+        "answer": "False"
+      },
+      {
+        "question": "Firewalls can prevent all types of malware attacks.",
+        "answer": "False"
+      },
+      {
+        "question": "Packet filters are vulnerable to IP spoofing attacks.",
+        "answer": "True"
+      },
+      {
+        "question": "Application gateways are transparent to end users.",
+        "answer": "False"
+      },
+      {
+        "question": "SOCKS is a circuit-level gateway protocol.",
+        "answer": "True"
+      },
+      {
+        "question": "A personal firewall cannot monitor outgoing traffic.",
+        "answer": "False"
+      },
+      {
+        "question": "An IPS uses only signature-based detection.",
+        "answer": "False"
+      },
+      {
+        "question": "HIPS can protect system calls and file system access.",
+        "answer": "True"
+      },
+      {
+        "question": "NIPS requires deep packet inspection.",
+        "answer": "True"
+      },
+      {
+        "question": "The Digital Immune System analyzes malware globally.",
+        "answer": "True"
+      },
+      {
+        "question": "Snort Inline can modify packets instead of dropping them.",
+        "answer": "True"
+      },
+      {
+        "question": "Firewalls are obsolete due to modern encryption.",
+        "answer": "False"
+      },
+      {
+        "question": "Stateful firewalls are slower than packet filters.",
+        "answer": "True"
+      },
+      {
+        "question": "A bastion host runs only essential services.",
+        "answer": "True"
+      },
+      {
+        "question": "HIPS is only effective for servers, not desktops.",
+        "answer": "False"
+      },
+      {
+        "question": "NIPS can reassemble application payloads.",
+        "answer": "True"
+      },
+      {
+        "question": "Unified Threat Management products combine multiple security functions.",
+        "answer": "True"
+      },
+      {
+        "question": "Firewalls are not needed if an organization uses VPNs.",
+        "answer": "False"
+      },
+      {
+        "question": "Anomaly detection looks for known attack patterns.",
+        "answer": "False"
+      },
+      {
+        "question": "A circuit-level gateway verifies the legitimacy of TCP handshakes.",
+        "answer": "True"
+      },
+      {
+        "question": "Personal firewalls are unnecessary on corporate networks.",
+        "answer": "False"
+      }
+    ]
+  }
+}
