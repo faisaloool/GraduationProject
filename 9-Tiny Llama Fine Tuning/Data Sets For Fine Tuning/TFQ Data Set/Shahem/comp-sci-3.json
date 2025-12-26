@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 3: Machine Learning - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Arthur Samuel defined machine learning as 'a field of study that gives computers the ability to learn without being explicitly programmed.'",
+        "answer": "True"
+      },
+      {
+        "question": "Machine learning is a subfield of artificial intelligence.",
+        "answer": "True"
+      },
+      {
+        "question": "Regression and classification are not important applications for data scientists.",
+        "answer": "False"
+      },
+      {
+        "question": "Machine learning can only be used in the data modeling phase of the data science process.",
+        "answer": "False"
+      },
+      {
+        "question": "Python has very few packages available for machine learning.",
+        "answer": "False"
+      },
+      {
+        "question": "SciPy integrates fundamental packages like NumPy, matplotlib, and Pandas.",
+        "answer": "True"
+      },
+      {
+        "question": "Pandas introduces dataframes to Python, similar to R.",
+        "answer": "True"
+      },
+      {
+        "question": "Scikit-learn is a library filled with machine learning algorithms.",
+        "answer": "True"
+      },
+      {
+        "question": "NLTK (Natural Language Toolkit) focuses on image processing.",
+        "answer": "False"
+      },
+      {
+        "question": "Numba uses just-in-time compilation to speed up Python applications.",
+        "answer": "True"
+      },
+      {
+        "question": "PyCUDA allows code execution on GPUs instead of CPUs.",
+        "answer": "True"
+      },
+      {
+        "question": "Cython brings the Java programming language to Python.",
+        "answer": "False"
+      },
+      {
+        "question": "Blaze enables working with data sets smaller than computer memory.",
+        "answer": "False"
+      },
+      {
+        "question": "PySpark connects Python and Spark, an in-memory big data framework.",
+        "answer": "True"
+      },
+      {
+        "question": "The modeling phase consists of two steps: training and validation.",
+        "answer": "False"
+      },
+      {
+        "question": "Feature engineering is one of the most important steps in the modeling process.",
+        "answer": "True"
+      },
+      {
+        "question": "In practice, features are always readily available in a single data set.",
+        "answer": "False"
+      },
+      {
+        "question": "Training a model involves presenting data from which it can learn.",
+        "answer": "True"
+      },
+      {
+        "question": "Model validation tests whether a model can be extrapolated to reality.",
+        "answer": "True"
+      },
+      {
+        "question": "Classification error rate is used for regression problems.",
+        "answer": "False"
+      },
+      {
+        "question": "Mean squared error measures the average error of predictions.",
+        "answer": "True"
+      },
+      {
+        "question": "Dividing data into training and holdout sets is an uncommon validation strategy.",
+        "answer": "False"
+      },
+      {
+        "question": "K-folds cross validation uses all data available in the data set.",
+        "answer": "True"
+      },
+      {
+        "question": "Leave-1 out validation is used only on small data sets.",
+        "answer": "True"
+      },
+      {
+        "question": "Applying a model to new data is called model scoring.",
+        "answer": "True"
+      },
+      {
+        "question": "Supervised learning techniques require labeled data.",
+        "answer": "True"
+      },
+      {
+        "question": "Unsupervised learning techniques rely on labeled data with human interaction.",
+        "answer": "False"
+      },
+      {
+        "question": "Semi-supervised learning can progress with both labeled and unlabeled data.",
+        "answer": "True"
+      },
+      {
+        "question": "Machine learning is not related to applied mathematics and statistics.",
+        "answer": "False"
+      },
+      {
+        "question": "As a phone user writes more text messages, the phone's autocomplete becomes less accurate.",
+        "answer": "False"
+      },
+      {
+        "question": "Finding oil fields based on existing sites is an example of classification or regression.",
+        "answer": "True"
+      },
+      {
+        "question": "Identifying people based on pictures or voice recordings is a classification problem.",
+        "answer": "True"
+      },
+      {
+        "question": "Predicting company revenue is a regression problem.",
+        "answer": "True"
+      },
+      {
+        "question": "Machine learning is useless during the data preparation phase.",
+        "answer": "False"
+      },
+      {
+        "question": "RPy2 allows calling Python functions from within R.",
+        "answer": "False"
+      },
+      {
+        "question": "StatsModels is a package for statistical methods and algorithms.",
+        "answer": "True"
+      },
+      {
+        "question": "SymPy is used for symbolic mathematics and computer algebra.",
+        "answer": "True"
+      },
+      {
+        "question": "Dispy and IPCluster allow distributing code over computer clusters.",
+        "answer": "True"
+      },
+      {
+        "question": "Pydoop connects Python to Hadoop.",
+        "answer": "True"
+      },
+      {
+        "question": "Feature engineering involves coming up with and creating possible predictors for the model.",
+        "answer": "True"
+      }
+    ]
+  }
+}

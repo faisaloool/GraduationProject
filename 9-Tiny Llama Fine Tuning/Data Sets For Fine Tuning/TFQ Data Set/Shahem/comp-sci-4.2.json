@@ -1,0 +1,164 @@
+{
+  "document": "Chapter 4: First Steps in Big Data - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Hadoop and Spark make it easier to work with and control a cluster of computers.",
+        "answer": "True"
+      },
+      {
+        "question": "Hadoop can scale up to thousands of computers with petabytes of storage.",
+        "answer": "True"
+      },
+      {
+        "question": "Apache Hadoop is not reliable and has no fault tolerance.",
+        "answer": "False"
+      },
+      {
+        "question": "Hadoop is portable and can be installed on various hardware and operating systems.",
+        "answer": "True"
+      },
+      {
+        "question": "The core Hadoop framework includes a distributed file system and resource manager.",
+        "answer": "True"
+      },
+      {
+        "question": "HDFS stands for Hadoop Distributed File System.",
+        "answer": "True"
+      },
+      {
+        "question": "MapReduce is a programming method used by Hadoop to achieve parallelism.",
+        "answer": "True"
+      },
+      {
+        "question": "YARN manages cluster resources in Hadoop.",
+        "answer": "True"
+      },
+      {
+        "question": "Hive and HBase are part of the Hadoop ecosystem.",
+        "answer": "True"
+      },
+      {
+        "question": "Hive uses a language based on Java to interact with data.",
+        "answer": "False"
+      },
+      {
+        "question": "MapReduce is well-suited for interactive analysis and iterative programs.",
+        "answer": "False"
+      },
+      {
+        "question": "The mapping phase in MapReduce splits documents into key-value pairs.",
+        "answer": "True"
+      },
+      {
+        "question": "The reduce phase is similar to a SQL 'group by' operation.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark replaces MapReduce for better performance on iterative tasks.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark handles file storage on distributed file systems itself.",
+        "answer": "False"
+      },
+      {
+        "question": "Spark can run on local systems for testing and development.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark creates shared RAM memory between cluster computers.",
+        "answer": "True"
+      },
+      {
+        "question": "RDD stands for Resilient Distributed Datasets in Spark.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark is an in-memory system that avoids costly disk operations.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark Core provides a NoSQL environment for interactive analysis.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark Streaming is used for real-time analysis.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark SQL provides a SQL interface to work with Spark.",
+        "answer": "True"
+      },
+      {
+        "question": "MLLib is a machine learning tool for the Spark framework.",
+        "answer": "True"
+      },
+      {
+        "question": "GraphX is a graph database for Spark.",
+        "answer": "True"
+      },
+      {
+        "question": "Hadoop and Spark are competing systems that cannot work together.",
+        "answer": "False"
+      },
+      {
+        "question": "MapReduce writes data to disk between computational steps.",
+        "answer": "True"
+      },
+      {
+        "question": "In the mapping phase of MapReduce, duplicates are eliminated immediately.",
+        "answer": "False"
+      },
+      {
+        "question": "Spark relies on systems like HDFS, YARN, or Apache Mesos for resource management.",
+        "answer": "True"
+      },
+      {
+        "question": "Spark's performance improvement over MapReduce is negligible.",
+        "answer": "False"
+      },
+      {
+        "question": "Mahout is a machine learning framework in the Hadoop ecosystem.",
+        "answer": "True"
+      },
+      {
+        "question": "Hadoop's fault tolerance detects faults and applies automatic recovery.",
+        "answer": "True"
+      },
+      {
+        "question": "Scalability in Hadoop refers to vertical scaling only.",
+        "answer": "False"
+      },
+      {
+        "question": "The MapReduce algorithm has only one phase: the mapping phase.",
+        "answer": "False"
+      },
+      {
+        "question": "Spark can be run only in batch mode, not interactively.",
+        "answer": "False"
+      },
+      {
+        "question": "Spark supports Python for writing big data jobs.",
+        "answer": "True"
+      },
+      {
+        "question": "Hadoop is not suitable for businesses that need to process large amounts of data.",
+        "answer": "False"
+      },
+      {
+        "question": "The reduce function in MapReduce always returns a count per key.",
+        "answer": "False"
+      },
+      {
+        "question": "Spark's ecosystem includes components for streaming, SQL, machine learning, and graphs.",
+        "answer": "True"
+      },
+      {
+        "question": "HDFS is an open-source implementation of the Google File System.",
+        "answer": "True"
+      }
+    ]
+  }
+}
