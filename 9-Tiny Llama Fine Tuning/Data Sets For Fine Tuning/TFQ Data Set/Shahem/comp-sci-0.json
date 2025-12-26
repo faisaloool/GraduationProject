@@ -1,0 +1,168 @@
+{
+  "document": "Data Mining Software: Introduction to Orange Data Mining",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Orange is a commercial data mining software that requires a license.",
+        "answer": "False"
+      },
+      {
+        "question": "IBM SPSS Modeler was formerly known as Clementine.",
+        "answer": "True"
+      },
+      {
+        "question": "R and RapidMiner are examples of commercial data mining software.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange is an open-source data visualization and machine learning toolkit.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange can only be used by people with advanced knowledge of mathematics and statistics.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange uses a drag-and-drop visual programming interface.",
+        "answer": "True"
+      },
+      {
+        "question": "In Orange, widgets are computational units with inputs and outputs.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange can only work with .ows files (workflows).",
+        "answer": "False"
+      },
+      {
+        "question": "Orange supports working with text files for text mining.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange files have a .orc extension.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange can work with tab, xls, csv files as well as SQL tables.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange cannot perform social media content scraping.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange's main interface is called a 'canvas' where you build workflows.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange widgets can be thought of as black boxes with defined functionality.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange requires programming knowledge to create data mining workflows.",
+        "answer": "False"
+      },
+      {
+        "question": "Weka is an example of commercial data mining software.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange provides tools for labeling, zooming, and pausing model flow.",
+        "answer": "True"
+      },
+      {
+        "question": "The Orange YouTube channel is not a recommended learning resource.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange can only be used for data exploration, not for making predictions.",
+        "answer": "False"
+      },
+      {
+        "question": "SAS Enterprise Miner is a free open-source data mining tool.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange has add-ons for bioinformatics and image analytics.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange cannot perform cluster or segmentation analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "In Orange, workflows are built by writing Python code.",
+        "answer": "False"
+      },
+      {
+        "question": "KDNuggets.com is mentioned as a source for data mining software information.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange cannot visualize data; it only performs data mining algorithms.",
+        "answer": "False"
+      },
+      {
+        "question": "StatSoft Statistica Data Miner is a commercial data mining software.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange's toolbox is not important for learning the software.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange cannot discover patterns in data.",
+        "answer": "False"
+      },
+      {
+        "question": "The Orange internet page is a good resource for learning.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange can perform text analysis.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange widgets cannot be placed on the canvas via drag and drop.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange is developed by Microsoft.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange can only handle numerical data, not text data.",
+        "answer": "False"
+      },
+      {
+        "question": "IBM Intelligent Miner is a free data mining tool.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange's canvas is where you write programming code.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange has geo tagging add-ons available.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange cannot perform exploratory data analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange's visual programming approach makes it user-friendly.",
+        "answer": "True"
+      },
+      {
+        "question": "Orange is only available for Windows operating systems.",
+        "answer": "False"
+      },
+      {
+        "question": "Orange can help scrape content from social media platforms.",
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "document": "Chapter 03 - Data Acquisition.ppt",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What are the three main formats for storing digital evidence in forensic acquisition tools?",
+        "options": [
+          "PDF, DOC, and TXT",
+          "JPEG, PNG, and BMP",
+          "Raw format, proprietary formats, and Advanced Forensics Format (AFF)",
+          "MP3, MP4, and AVI"
+        ],
+        "answer": "Raw format, proprietary formats, and Advanced Forensics Format (AFF)"
+      },
+      {
+        "question": "What is a major disadvantage of the raw format for data acquisition?",
+        "options": [
+          "It cannot be read by most forensic tools",
+          "It requires as much storage space as the original data",
+          "It automatically compresses all data",
+          "It only works on Windows systems"
+        ],
+        "answer": "It requires as much storage space as the original data"
+      },
+      {
+        "question": "What is a key disadvantage of proprietary formats in forensic tools?",
+        "options": [
+          "They are always slower than raw format",
+          "Inability to share images between different tools",
+          "They cannot compress data",
+          "They don't support metadata"
+        ],
+        "answer": "Inability to share images between different tools"
+      },
+      {
+        "question": "What does AFF stand for in digital forensics?",
+        "options": [
+          "Advanced File Format",
+          "Advanced Forensics Format",
+          "Automated Forensic Framework",
+          "Applied Forensics Format"
+        ],
+        "answer": "Advanced Forensics Format"
+      },
+      {
+        "question": "What is the most common method of data acquisition?",
+        "options": [
+          "Creating a disk-to-disk copy",
+          "Creating a logical acquisition",
+          "Creating a disk-to-image file",
+          "Creating a sparse data copy"
+        ],
+        "answer": "Creating a disk-to-image file"
+      },
+      {
+        "question": "When is a disk-to-disk acquisition method typically used?",
+        "options": [
+          "When you need the fastest possible copy",
+          "When disk-to-image copy is not possible",
+          "When only specific files are needed",
+          "When working with encrypted drives"
+        ],
+        "answer": "When disk-to-image copy is not possible"
+      },
+      {
+        "question": "What is logical acquisition used for?",
+        "options": [
+          "Copying entire disk sectors",
+          "Capturing only specific files of interest to the case",
+          "Making exact bit-for-bit copies",
+          "Bypassing encryption"
+        ],
+        "answer": "Capturing only specific files of interest to the case"
+      },
+      {
+        "question": "What is sparse acquisition?",
+        "options": [
+          "Copying entire hard drives",
+          "Collecting fragments of unallocated (deleted) data",
+          "Making compressed copies of active files",
+          "Acquiring only system files"
+        ],
+        "answer": "Collecting fragments of unallocated (deleted) data"
+      },
+      {
+        "question": "How many images of digital evidence should be made during acquisition?",
+        "options": [
+          "Only one is needed",
+          "At least two",
+          "Three to five",
+          "As many as possible"
+        ],
+        "answer": "At least two"
+      },
+      {
+        "question": "What feature in Windows makes static acquisitions more difficult?",
+        "options": [
+          "Windows Defender",
+          "BitLocker whole disk encryption",
+          "User Account Control",
+          "Windows Firewall"
+        ],
+        "answer": "BitLocker whole disk encryption"
+      },
+      {
+        "question": "What does Mini-WinFE enable you to do?",
+        "options": [
+          "Build a Linux forensic boot CD",
+          "Build a Windows forensic boot CD/DVD or USB drive",
+          "Encrypt forensic images",
+          "Analyze network traffic"
+        ],
+        "answer": "Build a Windows forensic boot CD/DVD or USB drive"
+      },
+      {
+        "question": "What is the main advantage of using Linux Live CDs for forensics?",
+        "options": [
+          "They are more expensive than Windows tools",
+          "They automatically mount all drives for easy access",
+          "They don't automatically mount storage media, eliminating need for write-blockers",
+          "They only work on Linux systems"
+        ],
+        "answer": "They don't automatically mount storage media, eliminating need for write-blockers"
+      },
+      {
+        "question": "What does RAID stand for?",
+        "options": [
+          "Redundant Array of Independent Disks",
+          "Random Access Integrated Drives",
+          "Rapid Array of Individual Disks",
+          "Redundant Access to Integrated Data"
+        ],
+        "answer": "Redundant Array of Independent Disks"
+      },
+      {
+        "question": "Which RAID level provides striping without redundancy?",
+        "options": [
+          "RAID 1",
+          "RAID 0",
+          "RAID 5",
+          "RAID 10"
+        ],
+        "answer": "RAID 0"
+      },
+      {
+        "question": "Which RAID level provides mirroring for data redundancy?",
+        "options": [
+          "RAID 0",
+          "RAID 1",
+          "RAID 5",
+          "RAID 6"
+        ],
+        "answer": "RAID 1"
+      },
+      {
+        "question": "Which is the most popular RAID level for balanced performance and redundancy?",
+        "options": [
+          "RAID 0",
+          "RAID 1",
+          "RAID 5",
+          "RAID 10"
+        ],
+        "answer": "RAID 5"
+      },
+      {
+        "question": "Which RAID level can tolerate two disk failures?",
+        "options": [
+          "RAID 0",
+          "RAID 1",
+          "RAID 5",
+          "RAID 6"
+        ],
+        "answer": "RAID 6"
+      },
+      {
+        "question": "What does PDServer do in ProDiscover?",
+        "options": [
+          "Analyzes image files",
+          "Serves as a remote agent for remote access",
+          "Compresses evidence files",
+          "Validates hash values"
+        ],
+        "answer": "Serves as a remote agent for remote access"
+      },
+      {
+        "question": "What is a major drawback of remote network acquisition tools?",
+        "options": [
+          "They are always slower than physical acquisitions",
+          "Antivirus and firewall tools can be configured to ignore them",
+          "They cannot acquire RAID systems",
+          "They only work on Windows systems"
+        ],
+        "answer": "Antivirus and firewall tools can be configured to ignore them"
+      },
+      {
+        "question": "What is F-Response designed to do?",
+        "options": [
+          "Only work with EnCase software",
+          "Set up security read-only connections for any forensic program",
+          "Analyze RAM data only",
+          "Compress forensic images"
+        ],
+        "answer": "Set up security read-only connections for any forensic program"
+      },
+      {
+        "question": "What is the purpose of validation in data acquisition?",
+        "options": [
+          "To speed up the acquisition process",
+          "To compress the evidence files",
+          "To verify the integrity of acquired data using hashing algorithms",
+          "To encrypt sensitive data"
+        ],
+        "answer": "To verify the integrity of acquired data using hashing algorithms"
+      },
+      {
+        "question": "What types of hashing algorithms are used for validation?",
+        "options": [
+          "Only MD5",
+          "Only SHA-1",
+          "CRC-32, MD5, and SHA-1 to SHA-512",
+          "Only proprietary algorithms"
+        ],
+        "answer": "CRC-32, MD5, and SHA-1 to SHA-512"
+      },
+      {
+        "question": "What should always be used with GUI acquisition tools on Windows systems?",
+        "options": [
+          "Antivirus software",
+          "Write-blocking devices or utilities",
+          "Network firewalls",
+          "Disk compression tools"
+        ],
+        "answer": "Write-blocking devices or utilities"
+      },
+      {
+        "question": "What is the first rule when dealing with RAID acquisitions?",
+        "options": [
+          "Always use the fastest acquisition method",
+          "Determine the type of RAID and appropriate acquisition tool",
+          "Only acquire logical copies",
+          "Always use remote acquisition"
+        ],
+        "answer": "Determine the type of RAID and appropriate acquisition tool"
+      },
+      {
+        "question": "What does IXimager work exclusively with?",
+        "options": [
+          "ProDiscover",
+          "EnCase",
+          "ILook Investigator",
+          "FTK"
+        ],
+        "answer": "ILook Investigator"
+      }
+    ]
+  }
+}
