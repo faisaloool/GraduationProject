@@ -1,0 +1,1088 @@
+{
+  "document": "ch5_Basic_Computer_Organization_Lect1_2.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What controls a process in a computer?",
+        "options": [
+          "A set of hardware components",
+          "A program",
+          "The operating system",
+          "The user interface"
+        ],
+        "answer": "A program"
+      },
+      {
+        "question": "What does a program consist of?",
+        "options": [
+          "A single instruction",
+          "A set of instructions specifying operations, data, and control sequence",
+          "Only data without any instructions",
+          "Hardware configurations"
+        ],
+        "answer": "A set of instructions specifying operations, data, and control sequence"
+      },
+      {
+        "question": "How is an instruction stored in a computer?",
+        "options": [
+          "In hexadecimal code",
+          "In binary code specifying a sequence of microoperations",
+          "In plain text format",
+          "In graphical format"
+        ],
+        "answer": "In binary code specifying a sequence of microoperations"
+      },
+      {
+        "question": "Where are instruction codes and data stored in a computer?",
+        "options": [
+          "In the CPU registers",
+          "In the cache memory",
+          "In the memory (Stored Program Concept)",
+          "In the external storage devices"
+        ],
+        "answer": "In the memory (Stored Program Concept)"
+      },
+      {
+        "question": "What is an Instruction Code?",
+        "options": [
+          "A group of bits that define operations like add, subtract, multiply, shift, and complement",
+          "A type of computer hardware",
+          "A programming language",
+          "A computer memory component"
+        ],
+        "answer": "A group of bits that define operations like add, subtract, multiply, shift, and complement"
+      },
+      {
+        "question": "What are the two parts of an Instruction Code format?",
+        "options": [
+          "Op. Code + Data",
+          "Op. Code + Address",
+          "Address + Data",
+          "Op. Code + Size"
+        ],
+        "answer": "Op. Code + Address"
+      },
+      {
+        "question": "What is the basic part of an Instruction Code?",
+        "options": [
+          "The address part",
+          "The operation part",
+          "The data part",
+          "The size part"
+        ],
+        "answer": "The operation part"
+      },
+      {
+        "question": "What is the purpose of the 'Address' field in an instruction code?",
+        "options": [
+          "To specify the address of an operand",
+          "To define the operation to be performed",
+          "To store temporary data",
+          "To indicate the end of the instruction"
+        ],
+        "answer": "To specify the address of an operand"
+      },
+      {
+        "question": "What can the rest of the bits in the instruction (address field) be used for if an operation does not need an operand from memory?",
+        "options": [
+          "They must be left unused",
+          "They can be used for other purposes",
+          "They are used to extend the operation code",
+          "They are reserved for future instructions"
+        ],
+        "answer": "They can be used for other purposes"
+      },
+      {
+        "question": "Which of the following operations does not need an operand from memory?",
+        "options": [
+          "Clear AC",
+          "Complement AC",
+          "Increment AC",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What does the 'Immediate operand address' specify in an instruction code?",
+        "options": [
+          "The address of the next instruction",
+          "The operand itself",
+          "The address of a memory location",
+          "The type of operation to be performed"
+        ],
+        "answer": "The operand itself"
+      },
+      {
+        "question": "What does the 'Direct operand address' specify in an instruction code?",
+        "options": [
+          "The operand itself",
+          "The address of a memory location where the operand is stored",
+          "The address of the next instruction",
+          "The type of operation to be performed"
+        ],
+        "answer": "The address of a memory location where the operand is stored"
+      },
+      {
+        "question": "What does the I bit in the instruction code distinguish?",
+        "options": [
+          "Direct and Indirect addresses",
+          "Operand and Address",
+          "Memory word and Operand",
+          "Effective Address and Operand"
+        ],
+        "answer": "Direct and Indirect addresses"
+      },
+      {
+        "question": "What is indicated by I=0 in the instruction code?",
+        "options": [
+          "Direct address",
+          "Indirect address",
+          "Effective address",
+          "Memory word address"
+        ],
+        "answer": "Direct address"
+      },
+      {
+        "question": "What is indicated by I=1 in the instruction code?",
+        "options": [
+          "Indirect address",
+          "Direct address",
+          "Effective address",
+          "Operand address"
+        ],
+        "answer": "Indirect address"
+      },
+      {
+        "question": "What does the second part of the instruction designate in an indirect operand address?",
+        "options": [
+          "Address of a memory word containing the operand address",
+          "Direct address of the operand",
+          "Effective address of the operand",
+          "Operand itself"
+        ],
+        "answer": "Address of a memory word containing the operand address"
+      },
+      {
+        "question": "What is the purpose of the opcode in an instruction?",
+        "options": [
+          "To specify the operation to be performed",
+          "To store the result of the operation",
+          "To indicate the number of operands",
+          "To provide the memory address"
+        ],
+        "answer": "To specify the operation to be performed"
+      },
+      {
+        "question": "In the instruction 'ADD R1, R2, R3', what does R1 represent?",
+        "options": [
+          "The first operand",
+          "The second operand",
+          "The destination register",
+          "The opcode"
+        ],
+        "answer": "The destination register"
+      },
+      {
+        "question": "What is the function of the address field in an instruction?",
+        "options": [
+          "To specify the operation code",
+          "To indicate the number of operands",
+          "To provide the memory location of the operand",
+          "To store the result of the operation"
+        ],
+        "answer": "To provide the memory location of the operand"
+      },
+      {
+        "question": "Which of the following is a component of an instruction?",
+        "options": [
+          "Opcode",
+          "Operand",
+          "Address",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What does the instruction 'ADD 457' imply?",
+        "options": [
+          "Add 457 to the accumulator",
+          "Add the value at memory location 457 to the accumulator",
+          "Store 457 in the accumulator",
+          "Jump to memory location 457"
+        ],
+        "answer": "Add the value at memory location 457 to the accumulator"
+      },
+      {
+        "question": "What does the instruction 'HALT' typically do in a computer program?",
+        "options": [
+          "Stops the execution of the program",
+          "Adds two numbers",
+          "Multiplies two numbers",
+          "Skips the next instruction"
+        ],
+        "answer": "Stops the execution of the program"
+      },
+      {
+        "question": "Which of the following instructions uses 1 operand?",
+        "options": [
+          "ADD R1, R2",
+          "NOT R4",
+          "ADD R1, R2, R3",
+          "MADD R4,R1,R2,R3"
+        ],
+        "answer": "NOT R4"
+      },
+      {
+        "question": "What is the result of the instruction 'ADD R1, R2'?",
+        "options": [
+          "R1 = R1 + R2",
+          "R1 = R2 + R3",
+          "R1 = R1 * R2",
+          "R1 = R2 * R3"
+        ],
+        "answer": "R1 = R1 + R2"
+      },
+      {
+        "question": "Which instruction uses more than 3 operands?",
+        "options": [
+          "NOT R4",
+          "ADD R1, R2",
+          "ADD R1, R2, R3",
+          "MADD R4,R1,R2,R3"
+        ],
+        "answer": "MADD R4,R1,R2,R3"
+      },
+      {
+        "question": "What does the instruction 'MADD R4,R1,R2,R3' do?",
+        "options": [
+          "R4 = R1 + R2",
+          "R4 = R2 + R3",
+          "R4 = R1 + (R2 * R3)",
+          "R4 = R1 * R2"
+        ],
+        "answer": "R4 = R1 + (R2 * R3)"
+      },
+      {
+        "question": "How are instructions typically read from memory?",
+        "options": [
+          "As bytes",
+          "As words",
+          "As bits",
+          "As characters"
+        ],
+        "answer": "As words"
+      },
+      {
+        "question": "What can an instruction contain?",
+        "options": [
+          "Only an opcode",
+          "Only data",
+          "An opcode + data (immediate operand)",
+          "Only the address of data"
+        ],
+        "answer": "An opcode + data (immediate operand)"
+      },
+      {
+        "question": "Which addressing mode uses an opcode + the address of data?",
+        "options": [
+          "Immediate addressing",
+          "Direct addressing",
+          "Indirect addressing",
+          "Register addressing"
+        ],
+        "answer": "Direct addressing"
+      },
+      {
+        "question": "What is the term for an address where the address of the data is found?",
+        "options": [
+          "Direct addressing",
+          "Indirect addressing",
+          "Immediate addressing",
+          "Register addressing"
+        ],
+        "answer": "Indirect addressing"
+      },
+      {
+        "question": "What does a location with data only contain?",
+        "options": [
+          "Instructions",
+          "Data",
+          "Opcode",
+          "Program Counter"
+        ],
+        "answer": "Data"
+      },
+      {
+        "question": "What does an opcode only represent in a computer?",
+        "options": [
+          "Memory address",
+          "Register-reference or input/output instruction",
+          "Data",
+          "Program Counter"
+        ],
+        "answer": "Register-reference or input/output instruction"
+      },
+      {
+        "question": "Where are the basic computer instructions stored?",
+        "options": [
+          "Program Counter",
+          "Instruction Register",
+          "Memory",
+          "Data Register"
+        ],
+        "answer": "Memory"
+      },
+      {
+        "question": "What is the size of each memory word in the basic computer?",
+        "options": [
+          "8 bits",
+          "16 bits",
+          "32 bits",
+          "64 bits"
+        ],
+        "answer": "16 bits"
+      },
+      {
+        "question": "How many words does each instruction occupy in the basic computer?",
+        "options": [
+          "One",
+          "Two",
+          "Three",
+          "Four"
+        ],
+        "answer": "One"
+      },
+      {
+        "question": "What is the function of the Address Register (AR) in a basic computer?",
+        "options": [
+          "To store the current instruction",
+          "To hold the address of the next instruction or data",
+          "To perform arithmetic operations",
+          "To control the clock speed"
+        ],
+        "answer": "To hold the address of the next instruction or data"
+      },
+      {
+        "question": "How does the Program Counter (PC) increment in a basic computer?",
+        "options": [
+          "By units of bits",
+          "By units of bytes",
+          "By units of addresses",
+          "By units of clock cycles"
+        ],
+        "answer": "By units of addresses"
+      },
+      {
+        "question": "What is the binary representation of the address '0000000000000010' in decimal?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2"
+      },
+      {
+        "question": "Where is the next address put before being loaded into the Address Register?",
+        "options": [
+          "On the data bus",
+          "On the address bus",
+          "On the control bus",
+          "On the clock line"
+        ],
+        "answer": "On the address bus"
+      },
+      {
+        "question": "How are the bits of the Address Register (AR) connected to the RAM?",
+        "options": [
+          "Through a decoder",
+          "Through a multiplexer",
+          "Directly wired to the RAM address lines",
+          "Through an arithmetic logic unit (ALU)"
+        ],
+        "answer": "Directly wired to the RAM address lines"
+      },
+      {
+        "question": "What does the Program Counter point to?",
+        "options": [
+          "The current address of the program",
+          "The next address of the program",
+          "The address of the Data Register",
+          "The address of the Instruction Register"
+        ],
+        "answer": "The next address of the program"
+      },
+      {
+        "question": "What occurs when the operand part contains the address of needed data?",
+        "options": [
+          "Direct access to Memory",
+          "Indirect address",
+          "Direct address",
+          "The Program Counter points to the next address"
+        ],
+        "answer": "Direct address"
+      },
+      {
+        "question": "What is placed on the bus and loaded back into the AR?",
+        "options": [
+          "The Data Register",
+          "The Program Counter",
+          "The address part of IR",
+          "The Instruction Register"
+        ],
+        "answer": "The address part of IR"
+      },
+      {
+        "question": "What happens in the indirect address process?",
+        "options": [
+          "The address is selected in memory and its data placed on the bus",
+          "The Program Counter points to the next address",
+          "A new address is selected",
+          "The address part of IR is placed on the bus"
+        ],
+        "answer": "A new address is selected"
+      },
+      {
+        "question": "What is placed on the bus to be loaded into the DR for later use?",
+        "options": [
+          "Address selected in memory",
+          "Operand",
+          "Effective address",
+          "Indirect address"
+        ],
+        "answer": "Address selected in memory"
+      },
+      {
+        "question": "What is loaded back into the AR when the address is selected in memory?",
+        "options": [
+          "Operand",
+          "Effective address",
+          "Address part of IR",
+          "Indirect address"
+        ],
+        "answer": "Address part of IR"
+      },
+      {
+        "question": "What occurs when the operand contains the address of the address of needed data?",
+        "options": [
+          "Direct addressing",
+          "Indirect addressing",
+          "Effective addressing",
+          "Memory addressing"
+        ],
+        "answer": "Indirect addressing"
+      },
+      {
+        "question": "What is the address where an operand is physically located called?",
+        "options": [
+          "Direct address",
+          "Indirect address",
+          "Effective address",
+          "Memory address"
+        ],
+        "answer": "Effective address"
+      },
+      {
+        "question": "Which of the following is an example of an effective address?",
+        "options": [
+          "457",
+          "1350",
+          "Both 457 and 1350",
+          "Neither 457 nor 1350"
+        ],
+        "answer": "Both 457 and 1350"
+      },
+      {
+        "question": "What is the size of the memory unit in the basic computer architecture?",
+        "options": [
+          "1024x16",
+          "2048x16",
+          "4096x16",
+          "8192x16"
+        ],
+        "answer": "4096x16"
+      },
+      {
+        "question": "Which register is used for arithmetic and logic operations in the basic computer?",
+        "options": [
+          "Accumulator (AC)",
+          "Program Counter (PC)",
+          "Instruction Register (IR)",
+          "Data Register (DR)"
+        ],
+        "answer": "Accumulator (AC)"
+      },
+      {
+        "question": "What is the function of the Program Counter (PC) in the basic computer?",
+        "options": [
+          "Stores the current instruction",
+          "Holds the address of the next instruction",
+          "Performs arithmetic operations",
+          "Manages memory access"
+        ],
+        "answer": "Holds the address of the next instruction"
+      },
+      {
+        "question": "Which operation is performed by the INR command in the basic computer?",
+        "options": [
+          "Increment",
+          "Decrement",
+          "Clear",
+          "Load"
+        ],
+        "answer": "Increment"
+      },
+      {
+        "question": "What is the primary function of the Instruction Register (IR)?",
+        "options": [
+          "Stores the current instruction",
+          "Manages memory access",
+          "Performs arithmetic operations",
+          "Holds the address of the next instruction"
+        ],
+        "answer": "Stores the current instruction"
+      },
+      {
+        "question": "What is the function of the Data Register (DR) in a computer system?",
+        "options": [
+          "Hold the operand (data) read from memory",
+          "Hold the instruction read from memory",
+          "General purpose processing register",
+          "Hold temporary data during processing"
+        ],
+        "answer": "Hold the operand (data) read from memory"
+      },
+      {
+        "question": "Which register is used as a general-purpose processing register?",
+        "options": [
+          "Data Register (DR)",
+          "Accumulator Register (AC)",
+          "Instruction Register (IR)",
+          "Temporary Register (TR)"
+        ],
+        "answer": "Accumulator Register (AC)"
+      },
+      {
+        "question": "What does the Instruction Register (IR) hold?",
+        "options": [
+          "Operand (data) read from memory",
+          "Temporary data during processing",
+          "Instruction read from memory",
+          "General purpose processing data"
+        ],
+        "answer": "Instruction read from memory"
+      },
+      {
+        "question": "Which register is used to hold temporary data during processing?",
+        "options": [
+          "Data Register (DR)",
+          "Accumulator Register (AC)",
+          "Instruction Register (IR)",
+          "Temporary Register (TR)"
+        ],
+        "answer": "Temporary Register (TR)"
+      },
+      {
+        "question": "Which component takes input from ALU?",
+        "options": [
+          "Data Register (DR)",
+          "Accumulator Register (AC)",
+          "Instruction Register (IR)",
+          "Temporary Register (TR)"
+        ],
+        "answer": "Accumulator Register (AC)"
+      },
+      {
+        "question": "What is the primary function of the Address Register (AR)?",
+        "options": [
+          "Hold data for processing",
+          "Hold a memory address",
+          "Store the result of arithmetic operations",
+          "Manage input/output operations"
+        ],
+        "answer": "Hold a memory address"
+      },
+      {
+        "question": "What is the bit width of the Address Register (AR)?",
+        "options": [
+          "8 bit",
+          "10 bit",
+          "12 bit",
+          "16 bit"
+        ],
+        "answer": "12 bit"
+      },
+      {
+        "question": "What does the Program Counter (PC) hold?",
+        "options": [
+          "The current instruction being executed",
+          "The address of the next instruction to be read from memory",
+          "The result of the last arithmetic operation",
+          "The address of the last executed instruction"
+        ],
+        "answer": "The address of the next instruction to be read from memory"
+      },
+      {
+        "question": "What happens when a branch instruction is encountered?",
+        "options": [
+          "The program terminates",
+          "The next instruction is skipped",
+          "A transfer to a nonconsecutive instruction occurs",
+          "The current instruction is repeated"
+        ],
+        "answer": "A transfer to a nonconsecutive instruction occurs"
+      },
+      {
+        "question": "What is transferred to the Program Counter (PC) in the case of a branch instruction?",
+        "options": [
+          "The current instruction",
+          "The address part of the branch instruction",
+          "The result of the last operation",
+          "The next instruction in sequence"
+        ],
+        "answer": "The address part of the branch instruction"
+      },
+      {
+        "question": "What happens when a memory read cycle is initiated?",
+        "options": [
+          "PC is decremented by one",
+          "PC is incremented by one",
+          "PC remains unchanged",
+          "PC is reset to zero"
+        ],
+        "answer": "PC is incremented by one"
+      },
+      {
+        "question": "What is the function of the Input Register (INPR)?",
+        "options": [
+          "Holds an 8-bit character for an output device",
+          "Receives an 8-bit character from an input device",
+          "Holds memory operands",
+          "Holds address for memory"
+        ],
+        "answer": "Receives an 8-bit character from an input device"
+      },
+      {
+        "question": "What is the function of the Output Register (OUTR)?",
+        "options": [
+          "Holds an 8-bit character for an output device",
+          "Receives an 8-bit character from an input device",
+          "Holds memory operands",
+          "Holds address for memory"
+        ],
+        "answer": "Holds an 8-bit character for an output device"
+      },
+      {
+        "question": "What is the function of the Data Register (DR)?",
+        "options": [
+          "Holds memory operands",
+          "Holds address for memory",
+          "Receives an 8-bit character from an input device",
+          "Holds an 8-bit character for an output device"
+        ],
+        "answer": "Holds memory operands"
+      },
+      {
+        "question": "What is the function of the Address Register (AR)?",
+        "options": [
+          "Holds memory operands",
+          "Holds address for memory",
+          "Receives an 8-bit character from an input device",
+          "Holds an 8-bit character for an output device"
+        ],
+        "answer": "Holds address for memory"
+      },
+      {
+        "question": "What is the size of the Accumulator register in Mano’s Computer?",
+        "options": [
+          "8 bits",
+          "12 bits",
+          "16 bits",
+          "4 bits"
+        ],
+        "answer": "16 bits"
+      },
+      {
+        "question": "Which register holds the instruction code in Mano’s Computer?",
+        "options": [
+          "Accumulator",
+          "Instruction Register (IR)",
+          "Program Counter (PC)",
+          "Temporary Register (TR)"
+        ],
+        "answer": "Instruction Register (IR)"
+      },
+      {
+        "question": "What is the size of the Program Counter (PC) register in Mano’s Computer?",
+        "options": [
+          "8 bits",
+          "12 bits",
+          "16 bits",
+          "4 bits"
+        ],
+        "answer": "12 bits"
+      },
+      {
+        "question": "Which register holds temporary data in Mano’s Computer?",
+        "options": [
+          "Accumulator",
+          "Instruction Register (IR)",
+          "Program Counter (PC)",
+          "Temporary Register (TR)"
+        ],
+        "answer": "Temporary Register (TR)"
+      },
+      {
+        "question": "What is the size of the Input Register (INPR) in Mano’s Computer?",
+        "options": [
+          "8 bits",
+          "12 bits",
+          "16 bits",
+          "4 bits"
+        ],
+        "answer": "8 bits"
+      },
+      {
+        "question": "How many bits are allocated for the opcode in Mano’s Computer instructions?",
+        "options": [
+          "4 bits",
+          "8 bits",
+          "12 bits",
+          "16 bits"
+        ],
+        "answer": "4 bits"
+      },
+      {
+        "question": "How many possible instructions can be represented with a 4-bit opcode?",
+        "options": [
+          "8",
+          "16",
+          "32",
+          "4"
+        ],
+        "answer": "16"
+      },
+      {
+        "question": "How many words of memory can be addressed with 12 bits in Mano’s Computer?",
+        "options": [
+          "1K",
+          "2K",
+          "4K",
+          "8K"
+        ],
+        "answer": "4K"
+      },
+      {
+        "question": "What is the size of the memory in Mano's simple computer?",
+        "options": [
+          "4096 8-bit words",
+          "4096 16-bit words",
+          "8192 16-bit words",
+          "2048 16-bit words"
+        ],
+        "answer": "4096 16-bit words"
+      },
+      {
+        "question": "Which instruction in Mano's simple computer is used for Branch Unconditional?",
+        "options": [
+          "AND",
+          "ADD",
+          "BUN",
+          "BSA"
+        ],
+        "answer": "BUN"
+      },
+      {
+        "question": "What does the instruction LDA stand for in Mano's simple computer?",
+        "options": [
+          "Load Accumulator",
+          "Load Address",
+          "Logical AND",
+          "Logical OR"
+        ],
+        "answer": "Load Accumulator"
+      },
+      {
+        "question": "What is the purpose of the ISZ instruction in Mano's simple computer?",
+        "options": [
+          "Increment and Skip if Zero",
+          "Increment and Store Zero",
+          "Increment and Skip if Negative",
+          "Increment and Skip if Positive"
+        ],
+        "answer": "Increment and Skip if Zero"
+      },
+      {
+        "question": "Which of the following is a register-reference instruction?",
+        "options": [
+          "CLA",
+          "INP",
+          "OUT",
+          "ION"
+        ],
+        "answer": "CLA"
+      },
+      {
+        "question": "What is the purpose of the Common Bus System in the basic computer?",
+        "options": [
+          "To store data permanently",
+          "To transfer information between registers and memory",
+          "To execute arithmetic operations",
+          "To display output"
+        ],
+        "answer": "To transfer information between registers and memory"
+      },
+      {
+        "question": "How many registers does the basic computer have?",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
+        "answer": "8"
+      },
+      {
+        "question": "Which of the following is NOT an Input-Output instruction?",
+        "options": [
+          "INP",
+          "OUT",
+          "ION",
+          "CLA"
+        ],
+        "answer": "CLA"
+      },
+      {
+        "question": "What does the instruction 'CMA' stand for?",
+        "options": [
+          "Clear Accumulator",
+          "Complement Accumulator",
+          "Copy Memory Address",
+          "Compare Memory Address"
+        ],
+        "answer": "Complement Accumulator"
+      },
+      {
+        "question": "Which instruction is used for skipping on input flag?",
+        "options": [
+          "INP",
+          "OUT",
+          "ION",
+          "SKI"
+        ],
+        "answer": "SKI"
+      },
+      {
+        "question": "What is the primary purpose of using a common bus in a computer system?",
+        "options": [
+          "To increase the speed of the CPU",
+          "To simplify the connection of registers and memory",
+          "To reduce the cost of the computer system",
+          "To enhance the security of the system"
+        ],
+        "answer": "To simplify the connection of registers and memory"
+      },
+      {
+        "question": "Which of the following registers is typically connected to a common bus system?",
+        "options": [
+          "Program Counter (PC)",
+          "Instruction Register (IR)",
+          "Accumulator (AC)",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is the width of the common bus in the described system?",
+        "options": [
+          "8-bit",
+          "16-bit",
+          "32-bit",
+          "64-bit"
+        ],
+        "answer": "16-bit"
+      },
+      {
+        "question": "What is the role of the Adder & Logic unit in the common bus system?",
+        "options": [
+          "To perform arithmetic operations",
+          "To manage memory access",
+          "To control the bus operations",
+          "To decode instructions"
+        ],
+        "answer": "To perform arithmetic operations"
+      },
+      {
+        "question": "What controls the selection of the specific output in the common bus system?",
+        "options": [
+          "LD, INC, CLR",
+          "S0, S1, S2",
+          "Write, Read",
+          "Memory, AR, PC"
+        ],
+        "answer": "S0, S1, S2"
+      },
+      {
+        "question": "What happens when the LD (Load Input) is enabled in the common bus system?",
+        "options": [
+          "The bus is cleared",
+          "The selected register receives data from the bus",
+          "The memory is written to",
+          "The bus is read from"
+        ],
+        "answer": "The selected register receives data from the bus"
+      },
+      {
+        "question": "Which of the following is NOT a control input in the common bus system?",
+        "options": [
+          "LD",
+          "INC",
+          "CLR",
+          "S0"
+        ],
+        "answer": "S0"
+      },
+      {
+        "question": "What are the two main types of control variables in the common bus system?",
+        "options": [
+          "Selection switches and Enable switches",
+          "Write and Read",
+          "LD and INC",
+          "Memory and Registers"
+        ],
+        "answer": "Selection switches and Enable switches"
+      },
+      {
+        "question": "How many select variables are needed to choose one device out of 8?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "3"
+      },
+      {
+        "question": "What does the load input (LD) enable when set to 1?",
+        "options": [
+          "The output of a register to be sent to the bus",
+          "The input of a register to download bits from the common bus",
+          "The bus to be reset",
+          "The selection variables to be cleared"
+        ],
+        "answer": "The input of a register to download bits from the common bus"
+      },
+      {
+        "question": "What happens when LD = 1 for a register?",
+        "options": [
+          "The register's output is disabled",
+          "The data on the common bus is read into the register",
+          "The register is cleared",
+          "The bus is disconnected from the register"
+        ],
+        "answer": "The data on the common bus is read into the register"
+      },
+      {
+        "question": "What happens when the contents of AR or PC (12 bits) are applied to the 16-bit common bus?",
+        "options": [
+          "The four most significant bits are set to one.",
+          "The four most significant bits are set to zero.",
+          "The four least significant bits are set to zero.",
+          "The four least significant bits are set to one."
+        ],
+        "answer": "The four most significant bits are set to zero."
+      },
+      {
+        "question": "What is the function of the INR input in a register?",
+        "options": [
+          "Decrements the content of the register.",
+          "Increments the content of the register.",
+          "Clears the content of the register to zero.",
+          "Sets all bits of the register to one."
+        ],
+        "answer": "Increments the content of the register."
+      },
+      {
+        "question": "What is the function of the CLR input in a register?",
+        "options": [
+          "Decrements the content of the register.",
+          "Increments the content of the register.",
+          "Clears the content of the register to zero.",
+          "Sets all bits of the register to one."
+        ],
+        "answer": "Clears the content of the register to zero."
+      },
+      {
+        "question": "When AR or PC receives information from the bus, which bits are transferred to the register?",
+        "options": [
+          "All 16 bits are transferred.",
+          "Only the 12 most significant bits are transferred.",
+          "Only the 12 least significant bits are transferred.",
+          "Only the 4 most significant bits are transferred."
+        ],
+        "answer": "Only the 12 least significant bits are transferred."
+      },
+      {
+        "question": "How many bits are in the AR or PC register?",
+        "options": [
+          "8 bits",
+          "12 bits",
+          "16 bits",
+          "32 bits"
+        ],
+        "answer": "12 bits"
+      },
+      {
+        "question": "What is the function of the Temporary Register (TR)?",
+        "options": [
+          "It is accessible by external programs.",
+          "It stores intermediate results of operations and is not accessible by external programs.",
+          "It is used to generate control signals.",
+          "It is a main register for microoperations."
+        ],
+        "answer": "It stores intermediate results of operations and is not accessible by external programs."
+      },
+      {
+        "question": "What does the instruction 'ADD DR to AC' perform?",
+        "options": [
+          "Adds the contents of DR to AC",
+          "Subtracts the contents of DR from AC",
+          "Multiplies the contents of DR with AC",
+          "Divides the contents of DR by AC"
+        ],
+        "answer": "Adds the contents of DR to AC"
+      },
+      {
+        "question": "Which instruction format is represented by '7xxx'?",
+        "options": [
+          "Register-reference instruction",
+          "Input-Output instruction",
+          "Memory-reference instruction",
+          "None of the above"
+        ],
+        "answer": "Register-reference instruction"
+      },
+      {
+        "question": "What does the instruction 'INP' stand for?",
+        "options": [
+          "Input",
+          "Output",
+          "Input Output",
+          "None of the above"
+        ],
+        "answer": "Input"
+      },
+      {
+        "question": "Which instruction format uses opcodes from '000' to '110'?",
+        "options": [
+          "Register-reference instruction",
+          "Input-Output instruction",
+          "Memory-reference instruction",
+          "None of the above"
+        ],
+        "answer": "Memory-reference instruction"
+      }
+    ]
+  }
+}
