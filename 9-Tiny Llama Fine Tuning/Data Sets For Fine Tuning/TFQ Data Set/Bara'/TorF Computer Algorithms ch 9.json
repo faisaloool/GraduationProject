@@ -1,0 +1,76 @@
+{
+  "document": "This file reviews key concepts of NP‑completeness, dynamic programming, greedy algorithms, and the P vs NP question.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Dynamic programming relies on optimal substructure.",
+        "answer": "True"
+      },
+      {
+        "question": "Greedy algorithms always guarantee a globally optimal solution for every problem.",
+        "answer": "False"
+      },
+      {
+        "question": "A Hamiltonian cycle is an example of an NP‑complete problem.",
+        "answer": "True"
+      },
+      {
+        "question": "The class P consists of problems that can be solved in exponential time.",
+        "answer": "False"
+      },
+      {
+        "question": "If any one NP‑complete problem could be solved in polynomial time, then every problem in NP could be solved in polynomial time.",
+        "answer": "True"
+      },
+      {
+        "question": "A nondeterministic computer can guess a solution and must verify it within polynomial time.",
+        "answer": "True"
+      },
+      {
+        "question": "The Halting Problem is in the class P.",
+        "answer": "False"
+      },
+      {
+        "question": "Reducibility means that one problem can be translated into another so that a solution to the latter yields a solution to the former.",
+        "answer": "True"
+      },
+      {
+        "question": "Traveling Salesman Problem is known to have a polynomial‑time algorithm for all graphs.",
+        "answer": "False"
+      },
+      {
+        "question": "Knapsack problem is one of the classic NP‑complete problems.",
+        "answer": "True"
+      },
+      {
+        "question": "Dynamic programming problems always involve overlapping subproblems.",
+        "answer": "True"
+      },
+      {
+        "question": "Greedy algorithms are usually harder to implement than dynamic programming solutions.",
+        "answer": "False"
+      },
+      {
+        "question": "The class NP contains problems that can be solved in polynomial time by a deterministic Turing machine.",
+        "answer": "False"
+      },
+      {
+        "question": "A solution found by a nondeterministic computer is guaranteed to be correct if it exists.",
+        "answer": "True"
+      },
+      {
+        "question": "Polynomial‑time algorithms are defined as running in O(n^k) for some constant k.",
+        "answer": "True"
+      },
+      {
+        "question": "An NP‑complete problem is always easier than an arbitrary NP problem.",
+        "answer": "False"
+      },
+      {
+        "question": "Dynamic programming solutions never use tables to store subproblem results.",
+        "answer": "False"
+      }
+    ]
+  }
+}
