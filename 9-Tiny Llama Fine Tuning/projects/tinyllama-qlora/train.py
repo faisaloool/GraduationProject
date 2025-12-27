@@ -35,27 +35,36 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
 
 # =========================
-# MODEL (4-bit QLoRA)
+# MODEL (4-bit or fallback 8-bit)
 # =========================
-bnb_config = BitsAndBytesConfig(
-    load_in_4bit=True,
-    bnb_4bit_quant_type="nf4",
-    bnb_4bit_compute_dtype=torch.float16,
-    bnb_4bit_use_double_quant=True
-)
-
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_ID,
-    quantization_config=bnb_config,
-    device_map="auto"
-)
+try:
+    print("🔹 Trying to load 4-bit model...")
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.float16,
+        bnb_4bit_use_double_quant=True
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_ID,
+        quantization_config=bnb_config,
+        device_map="auto"
+    )
+except Exception as e:
+    print(f"⚠️ 4-bit loading failed: {e}")
+    print("🔹 Falling back to 8-bit model...")
+    bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+    model = AutoModelForCausalLM.from_pretrained(
+        MODEL_ID,
+        quantization_config=bnb_config,
+        device_map="auto"
+    )
 
 model.config.use_cache = False
 model = prepare_model_for_kbit_training(model)
 
-# ✅ Gradient checkpointing enabled
+# ✅ Enable gradient checkpointing to reduce VRAM usage
 model.gradient_checkpointing_enable()
-
 
 # =========================
 # LoRA CONFIG
@@ -68,7 +77,6 @@ lora_config = LoraConfig(
     task_type="CAUSAL_LM",
     target_modules=["q_proj", "v_proj"]
 )
-
 model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
 
