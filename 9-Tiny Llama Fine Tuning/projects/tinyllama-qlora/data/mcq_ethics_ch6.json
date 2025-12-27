@@ -1,0 +1,648 @@
+{
+  "document": "Ch6_ Network Security.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is a virus in the context of computer security?",
+        "options": [
+          "A type of hardware malfunction",
+          "A piece of self-replicating code embedded within another program",
+          "A software used for enhancing computer performance",
+          "A tool for encrypting data"
+        ],
+        "answer": "A piece of self-replicating code embedded within another program"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a utility of computers?",
+        "options": ["Email", "Web surfing", "Shopping", "Hardware repair"],
+        "answer": "Hardware repair"
+      },
+      {
+        "question": "What is the primary reason for the growing importance of computer security?",
+        "options": [
+          "Decreasing use of computers",
+          "Increasing use of computers",
+          "Reduction in computer prices",
+          "Decrease in computer speed"
+        ],
+        "answer": "Increasing use of computers"
+      },
+      {
+        "question": "Which of the following is a type of cyber attack?",
+        "options": [
+          "Phishing",
+          "Denial-of-service attacks",
+          "Spyware",
+          "Adware"
+        ],
+        "answer": "Denial-of-service attacks"
+      },
+      {
+        "question": "What are some common ways viruses spread?",
+        "options": [
+          "Through hard disks, floppy disks, and CD-ROMs",
+          "Via email attachments",
+          "Through files downloaded from the Internet",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is a worm in the context of computer security?",
+        "options": [
+          "A type of virus that spreads through physical media",
+          "A self-contained program that spreads through a network",
+          "A hardware component that protects against malware",
+          "A software tool used for debugging"
+        ],
+        "answer": "A self-contained program that spreads through a network"
+      },
+      {
+        "question": "Which of the following is NOT a famous worm?",
+        "options": ["WANK", "Code Red", "Sapphire (Slammer)", "Firewall"],
+        "answer": "Firewall"
+      },
+      {
+        "question": "Who created the Internet Worm?",
+        "options": [
+          "Bill Gates",
+          "Robert Tappan Morris, Jr.",
+          "Steve Jobs",
+          "Linus Torvalds"
+        ],
+        "answer": "Robert Tappan Morris, Jr."
+      },
+      {
+        "question": "What do worms exploit to spread through networked computers?",
+        "options": [
+          "User passwords",
+          "Security holes in networked computers",
+          "Physical hardware vulnerabilities",
+          "Outdated antivirus software"
+        ],
+        "answer": "Security holes in networked computers"
+      },
+      {
+        "question": "What was the effect of the worm released by the graduate student?",
+        "options": [
+          "Spread to 6,000 Unix computers",
+          "Improved computer performance",
+          "Increased internet speed",
+          "Enhanced cybersecurity"
+        ],
+        "answer": "Spread to 6,000 Unix computers"
+      },
+      {
+        "question": "What happened to the infected computers?",
+        "options": [
+          "They became faster",
+          "They kept crashing or became unresponsive",
+          "They were permanently disabled",
+          "They were automatically fixed"
+        ],
+        "answer": "They kept crashing or became unresponsive"
+      },
+      {
+        "question": "How long did it take for fixes to be published?",
+        "options": ["A week", "A month", "A day", "A year"],
+        "answer": "A day"
+      },
+      {
+        "question": "What was the impact on Morris?",
+        "options": [
+          "Promoted at Cornell",
+          "Suspended from Cornell",
+          "Received a scholarship",
+          "No consequences"
+        ],
+        "answer": "Suspended from Cornell"
+      },
+      {
+        "question": "How much did Morris have to pay in legal fees and fines?",
+        "options": ["$50,000", "$100,000", "$150,000", "$200,000"],
+        "answer": "$150,000"
+      },
+      {
+        "question": "What did Morris violate by gaining access to computers without permission?",
+        "options": [
+          "Social contract",
+          "Property rights",
+          "Utilitarian principles",
+          "Benign capabilities"
+        ],
+        "answer": "Property rights"
+      },
+      {
+        "question": "According to utilitarian evaluation, what was a benefit of Morris's actions?",
+        "options": [
+          "Organizations learned of security errors",
+          "Morris was punished",
+          "Network traffic was disrupted",
+          "Computers became unavailable"
+        ],
+        "answer": "Organizations learned of security errors"
+      },
+      {
+        "question": "What is a Trojan horse in the context of computer programs?",
+        "options": [
+          "A program with malicious intent",
+          "A program with benign capabilities",
+          "A program that disrupts network traffic",
+          "A program that violates property rights"
+        ],
+        "answer": "A program with benign capabilities"
+      },
+      {
+        "question": "What was a harm caused by Morris's Internet worm?",
+        "options": [
+          "Organizations learned of security errors",
+          "Morris was punished",
+          "Network traffic was disrupted",
+          "Morris gained access to computers"
+        ],
+        "answer": "Network traffic was disrupted"
+      },
+      {
+        "question": "What is a Remote Access Trojan (RAT)?",
+        "options": [
+          "A virus that replicates itself",
+          "A Trojan horse that gives attackers access to a victim’s computer",
+          "A type of firewall",
+          "A software program that responds to commands"
+        ],
+        "answer": "A Trojan horse that gives attackers access to a victim’s computer"
+      },
+      {
+        "question": "Where are RAT servers often found?",
+        "options": [
+          "In official software updates",
+          "In files downloaded from Usenet sites",
+          "In antivirus programs",
+          "In email attachments"
+        ],
+        "answer": "In files downloaded from Usenet sites"
+      },
+      {
+        "question": "What do attackers usually hide Trojan horses in?",
+        "options": [
+          "Operating system files",
+          "Games and other small programs",
+          "Email signatures",
+          "Cloud storage services"
+        ],
+        "answer": "Games and other small programs"
+      },
+      {
+        "question": "What is a Bot in the context of cybersecurity?",
+        "options": [
+          "A hardware device for network security",
+          "A software program that responds to commands",
+          "A type of malware that replicates itself",
+          "A tool for encrypting files"
+        ],
+        "answer": "A software program that responds to commands"
+      },
+      {
+        "question": "Which of the following is a legitimate activity supported by bots?",
+        "options": [
+          "Distributing spam",
+          "Internet live Chat",
+          "Collecting personal information for ID theft",
+          "Distributed denial-of-service attacks"
+        ],
+        "answer": "Internet live Chat"
+      },
+      {
+        "question": "What is the role of system administrators in defensive measures?",
+        "options": [
+          "Creating bots",
+          "Distributing spam",
+          "Playing key roles in security",
+          "Collecting personal information"
+        ],
+        "answer": "Playing key roles in security"
+      },
+      {
+        "question": "What is the purpose of authentication?",
+        "options": [
+          "Determining user permissions",
+          "Verifying user identity",
+          "Distributing spam",
+          "Collecting personal information"
+        ],
+        "answer": "Verifying user identity"
+      },
+      {
+        "question": "Which of the following is an illegitimate activity supported by bots?",
+        "options": [
+          "Multiplayer Internet games",
+          "Internet live Chat",
+          "Distributing spam",
+          "Program on another computer"
+        ],
+        "answer": "Distributing spam"
+      },
+      {
+        "question": "What is the purpose of authorization?",
+        "options": [
+          "Verifying user identity",
+          "Determining user permissions",
+          "Distributing spam",
+          "Collecting personal information"
+        ],
+        "answer": "Determining user permissions"
+      },
+      {
+        "question": "What is a firewall?",
+        "options": [
+          "A device that connects multiple computers in a LAN",
+          "A computer monitoring packets entering and leaving a local area network",
+          "A type of virus that spreads through networks",
+          "A tool used to speed up internet connections"
+        ],
+        "answer": "A computer monitoring packets entering and leaving a local area network"
+      },
+      {
+        "question": "What is an example of a firewall function?",
+        "options": [
+          "Blocking all internet traffic",
+          "Accepting packets only from trusted computers on the Internet",
+          "Encrypting all outgoing emails",
+          "Increasing the bandwidth of the network"
+        ],
+        "answer": "Accepting packets only from trusted computers on the Internet"
+      },
+      {
+        "question": "What was the original meaning of the term 'hacker' in the 1950s?",
+        "options": [
+          "A criminal who steals data",
+          "An explorer and risk-taker",
+          "A person who spreads viruses",
+          "A government spy"
+        ],
+        "answer": "An explorer and risk-taker"
+      },
+      {
+        "question": "What is a key aspect of the Hacker Ethic?",
+        "options": [
+          "Restricting access to computers",
+          "Hands-on imperative and free exchange of information",
+          "Following strict authority and centralized control",
+          "Keeping knowledge secret"
+        ],
+        "answer": "Hands-on imperative and free exchange of information"
+      },
+      {
+        "question": "What does the Hacker Ethic promote regarding authority?",
+        "options": [
+          "Complete trust in authority",
+          "Mistrust of authority and promotion of decentralization",
+          "Blind obedience to authority",
+          "Creating a single centralized authority"
+        ],
+        "answer": "Mistrust of authority and promotion of decentralization"
+      },
+      {
+        "question": "What is the main focus when it comes to skills versus degrees or positions?",
+        "options": [
+          "Degrees are more important than skills",
+          "Skills are more important than degrees or positions",
+          "Positions determine skill level",
+          "Degrees and positions are equally important"
+        ],
+        "answer": "Skills are more important than degrees or positions"
+      },
+      {
+        "question": "What is the optimistic view of technology?",
+        "options": [
+          "Technology has no impact on life",
+          "Computers can make life worse",
+          "Computers can change your life for the better",
+          "Technology is only useful for entertainment"
+        ],
+        "answer": "Computers can change your life for the better"
+      },
+      {
+        "question": "What is the meaning of 'hacker' as described in the text?",
+        "options": [
+          "Someone who fixes computers",
+          "Someone who designs software",
+          "Someone who accesses corporate or government computers without authorization",
+          "Someone who sells computer parts"
+        ],
+        "answer": "Someone who accesses corporate or government computers without authorization"
+      },
+      {
+        "question": "What is 'dumpster diving' in the context of hacking?",
+        "options": [
+          "Driving recklessly",
+          "Looking through garbage for useful information",
+          "A type of social engineering",
+          "A method to repair computers"
+        ],
+        "answer": "Looking through garbage for useful information"
+      },
+      {
+        "question": "What is 'social engineering' in the context of hacking?",
+        "options": [
+          "Building social networks",
+          "Manipulating a person inside an organization to gain confidential information",
+          "A type of computer programming",
+          "A method to improve social skills"
+        ],
+        "answer": "Manipulating a person inside an organization to gain confidential information"
+      },
+      {
+        "question": "What does modern use of hacking typically involve?",
+        "options": [
+          "Improving system security",
+          "Malicious activities and theft",
+          "Creating new software",
+          "Providing free internet access"
+        ],
+        "answer": "Malicious activities and theft"
+      },
+      {
+        "question": "What is one of the malicious activities associated with hacking?",
+        "options": [
+          "Creating databases",
+          "Destroying databases",
+          "Improving databases",
+          "Sharing databases"
+        ],
+        "answer": "Destroying databases"
+      },
+      {
+        "question": "What does 'Phone Phreaking' involve?",
+        "options": [
+          "Making free calls by manipulating the phone system",
+          "Selling phone accessories",
+          "Repairing phones",
+          "Developing new phone models"
+        ],
+        "answer": "Making free calls by manipulating the phone system"
+      },
+      {
+        "question": "What is a 'Phone phreak'?",
+        "options": [
+          "Someone who repairs phones",
+          "Someone who sells phones",
+          "Someone who manipulates the phone system to make free calls",
+          "Someone who develops phone software"
+        ],
+        "answer": "Someone who manipulates the phone system to make free calls"
+      },
+      {
+        "question": "What is one of the most popular methods used by phone phreaks?",
+        "options": [
+          "Buying phone credits",
+          "Stealing long-distance telephone access codes",
+          "Selling phone numbers",
+          "Developing phone apps"
+        ],
+        "answer": "Stealing long-distance telephone access codes"
+      },
+      {
+        "question": "What do phreaks share on 'pirate boards'?",
+        "options": [
+          "Access codes and credit card numbers",
+          "Computer hardware",
+          "Software licenses",
+          "Music files"
+        ],
+        "answer": "Access codes and credit card numbers"
+      },
+      {
+        "question": "What is an example of an illegal activity related to computers?",
+        "options": [
+          "Accessing a computer without authorization",
+          "Creating a personal blog",
+          "Downloading free software",
+          "Using a computer at work"
+        ],
+        "answer": "Accessing a computer without authorization"
+      },
+      {
+        "question": "What is considered trafficking in the context of computer security?",
+        "options": [
+          "Selling computer hardware",
+          "Sharing software licenses",
+          "Trafficking in computer passwords",
+          "Distributing free software"
+        ],
+        "answer": "Trafficking in computer passwords"
+      },
+      {
+        "question": "What is an example of intercepting data?",
+        "options": [
+          "Reading a public blog post",
+          "Intercepting a telephone conversation",
+          "Watching a public webinar",
+          "Listening to a podcast"
+        ],
+        "answer": "Intercepting a telephone conversation"
+      },
+      {
+        "question": "What is the definition of a Denial-of-Service (DoS) attack?",
+        "options": [
+          "An attack designed to steal sensitive data",
+          "An attack designed to prevent legitimate users from accessing a service",
+          "An attack designed to encrypt files for ransom",
+          "An attack designed to spread malware"
+        ],
+        "answer": "An attack designed to prevent legitimate users from accessing a service"
+      },
+      {
+        "question": "What is the primary goal of a Denial-of-Service (DoS) attack?",
+        "options": [
+          "To gain unauthorized access to a system",
+          "To disrupt a server's ability to respond to clients",
+          "To infect systems with viruses",
+          "To spy on user activities"
+        ],
+        "answer": "To disrupt a server's ability to respond to clients"
+      },
+      {
+        "question": "What is an example of unauthorized access?",
+        "options": [
+          "Accessing stored email messages without authorization",
+          "Sending an email to a friend",
+          "Downloading a file from a public website",
+          "Using a licensed software"
+        ],
+        "answer": "Accessing stored email messages without authorization"
+      },
+      {
+        "question": "What is the term for adopting another identity to carry out an illegal activity?",
+        "options": ["Phishing", "Identity theft", "Spoofing", "Hacking"],
+        "answer": "Identity theft"
+      },
+      {
+        "question": "What is an example of an asymmetrical attack?",
+        "options": [
+          "Mafia Boy2000 attacking Amazon, Yahoo, CNN, eBay, Dell",
+          "A phishing email scam",
+          "A ransomware attack on a hospital",
+          "A DDoS attack on a government website"
+        ],
+        "answer": "Mafia Boy2000 attacking Amazon, Yahoo, CNN, eBay, Dell"
+      },
+      {
+        "question": "What was a key issue in the 2000 U.S. Presidential election?",
+        "options": [
+          "Voter fraud in multiple states",
+          "Voting irregularities in Florida due to keypunch machines",
+          "Low voter turnout",
+          "Foreign interference"
+        ],
+        "answer": "Voting irregularities in Florida due to keypunch machines"
+      },
+      {
+        "question": "Which state was pivotal in the 2000 U.S. Presidential election?",
+        "options": ["Texas", "California", "Florida", "Ohio"],
+        "answer": "Florida"
+      },
+      {
+        "question": "What type of voting machines were used in most Florida counties during the 2000 election?",
+        "options": [
+          "Electronic voting machines",
+          "Keypunch voting machines",
+          "Paper ballots",
+          "Touch-screen machines"
+        ],
+        "answer": "Keypunch voting machines"
+      },
+      {
+        "question": "What are the benefits of online voting?",
+        "options": [
+          "More people would vote",
+          "Votes would be counted more quickly",
+          "No ambiguity with electronic votes",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What issue can software prevent in online voting?",
+        "options": [
+          "Accidental over-voting",
+          "Under-voting caused by poor ballot design",
+          "Ballot box tampering",
+          "Both A and B"
+        ],
+        "answer": "Both A and B"
+      },
+      {
+        "question": "What is one advantage of electronic votes?",
+        "options": [
+          "They cost more money",
+          "They eliminate ambiguity",
+          "They are slower to count",
+          "They increase ballot box tampering"
+        ],
+        "answer": "They eliminate ambiguity"
+      },
+      {
+        "question": "What does software prevent in the context of voting?",
+        "options": [
+          "Accidental over-voting",
+          "Under-voting due to poor ballot design",
+          "Both A and B",
+          "None of the above"
+        ],
+        "answer": "Both A and B"
+      },
+      {
+        "question": "What is one risk of online voting?",
+        "options": [
+          "Increased voter turnout",
+          "Unfair advantage to those with home computers",
+          "Enhanced voter privacy",
+          "Reduced opportunities for vote-selling"
+        ],
+        "answer": "Unfair advantage to those with home computers"
+      },
+      {
+        "question": "What does the system record in online voting according to the text?",
+        "options": [
+          "Only the ballot",
+          "Only the identity of the voter",
+          "Both the ballot and the identity of the voter",
+          "Neither the ballot nor the identity of the voter"
+        ],
+        "answer": "Both the ballot and the identity of the voter"
+      },
+      {
+        "question": "What is a potential issue with the security of online voting?",
+        "options": [
+          "Security depends on the security of home computers",
+          "Security depends on the security of polling stations",
+          "Security depends on the security of government servers",
+          "Security depends on the security of voter IDs"
+        ],
+        "answer": "Security depends on the security of home computers"
+      },
+      {
+        "question": "What is a possible target for a DDoS attack in online voting?",
+        "options": [
+          "Polling stations",
+          "Home computers",
+          "Government servers",
+          "Voter registration systems"
+        ],
+        "answer": "Home computers"
+      },
+      {
+        "question": "What is a risk associated with fake vote servers in online voting?",
+        "options": [
+          "Increased voter turnout",
+          "Enhanced voter privacy",
+          "Redirected susceptible to fake vote servers",
+          "Reduced opportunities for vote-selling"
+        ],
+        "answer": "Redirected susceptible to fake vote servers"
+      },
+      {
+        "question": "What is the main risk described in the text regarding online voting?",
+        "options": [
+          "Slow internet speeds",
+          "Phishing attacks redirecting to fake servers",
+          "Incorrect vote counting",
+          "Lack of voter education"
+        ],
+        "answer": "Phishing attacks redirecting to fake servers"
+      },
+      {
+        "question": "What is a consequence of the attack?",
+        "options": [
+          "Votes are cast on behalf of the voter",
+          "Voters are unable to access the voting site",
+          "The voting server crashes",
+          "Votes are counted manually"
+        ],
+        "answer": "Votes are cast on behalf of the voter"
+      },
+      {
+        "question": "What is missing in the described voting system that could help with auditing or recounts?",
+        "options": [
+          "Digital backups",
+          "Paper copies of ballots",
+          "Blockchain technology",
+          "Voter ID verification"
+        ],
+        "answer": "Paper copies of ballots"
+      },
+      {
+        "question": "What is the purpose of the fake server in the described attack?",
+        "options": [
+          "To store voter data securely",
+          "To redirect voters and steal credentials",
+          "To speed up the voting process",
+          "To verify voter identities"
+        ],
+        "answer": "To redirect voters and steal credentials"
+      }
+    ]
+  }
+}

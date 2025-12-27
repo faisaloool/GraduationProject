@@ -1,0 +1,869 @@
+{
+  "document": "Ch1_Introduction.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What characterizes the current era?",
+        "options": [
+          "Limited access to information",
+          "Exceptional access to information",
+          "No access to information",
+          "Slow access to information"
+        ],
+        "answer": "Exceptional access to information"
+      },
+      {
+        "question": "Which of the following is mentioned as a catalyst?",
+        "options": [
+          "High-cost computers",
+          "Low-speed communication",
+          "Low-cost computers",
+          "No communication technology"
+        ],
+        "answer": "Low-cost computers"
+      },
+      {
+        "question": "What makes the products of the Information Age possible?",
+        "options": [
+          "High-cost computers and slow communication networks",
+          "Low-cost computers and high-speed communication networks",
+          "Manual labor and traditional methods",
+          "Expensive gadgets and limited internet access"
+        ],
+        "answer": "Low-cost computers and high-speed communication networks"
+      },
+      {
+        "question": "Which of the following is a product of the Information Age?",
+        "options": [
+          "Typewriter",
+          "Samsung Galaxy A2",
+          "Vinyl Record Player",
+          "Analog Camera"
+        ],
+        "answer": "Samsung Galaxy A2"
+      },
+      {
+        "question": "What functions does the Samsung Galaxy A2 serve?",
+        "options": [
+          "Only as a phone",
+          "Only as a camera",
+          "As a phone, email client, Web browser, camera, video recorder, and digital compass",
+          "Only as a Web browser"
+        ],
+        "answer": "As a phone, email client, Web browser, camera, video recorder, and digital compass"
+      },
+      {
+        "question": "Which of the following is NOT an advance in the past two decades?",
+        "options": [
+          "Smartphones",
+          "MP3 players",
+          "Digital photography",
+          "Telegraph"
+        ],
+        "answer": "Telegraph"
+      },
+      {
+        "question": "What is the dynamic between people and technology referred to as?",
+        "options": [
+          "Technology and Values",
+          "Manual Labor",
+          "Traditional Methods",
+          "Isolation"
+        ],
+        "answer": "Technology and Values"
+      },
+      {
+        "question": "What is one way technology affects society?",
+        "options": [
+          "Technology changes society",
+          "Technology remains static",
+          "Technology has no impact on society",
+          "Technology only affects individuals"
+        ],
+        "answer": "Technology changes society"
+      },
+      {
+        "question": "How can experiences with technology affect individuals?",
+        "options": [
+          "Physically change our brains",
+          "Have psychological effects",
+          "Both physically and psychologically",
+          "No effect at all"
+        ],
+        "answer": "Both physically and psychologically"
+      },
+      {
+        "question": "What is a potential downside of technology solving problems?",
+        "options": [
+          "It creates new problems",
+          "It eliminates all problems",
+          "It has no downsides",
+          "It reduces dependency on technology"
+        ],
+        "answer": "It creates new problems"
+      },
+      {
+        "question": "what distinguishes human behavior from animal behavior?",
+        "options": [
+          "The ability to build and design the world",
+          "The ability to follow instincts",
+          "The ability to live without goals",
+          "The ability to function like machines"
+        ],
+        "answer": "The ability to build and design the world"
+      },
+      {
+        "question": "What is one of the issues associated with cellphones?",
+        "options": [
+          "Rudeness",
+          "High cost",
+          "Limited functionality",
+          "Battery life"
+        ],
+        "answer": "Rudeness"
+      },
+      {
+        "question": "What is one concern related to cell phones?",
+        "options": [
+          "They improve concentration in public places",
+          "They can interfere with solitude, quiet, and concentration",
+          "They enhance privacy in non-public places",
+          "They are always safe to use while driving"
+        ],
+        "answer": "They can interfere with solitude, quiet, and concentration"
+      },
+      {
+        "question": "What issue is raised about location tracking",
+        "options": [
+          "It improves public safety",
+          "It raises privacy concerns",
+          "It is always accurate",
+          "It has no drawbacks"
+        ],
+        "answer": "It raises privacy concerns"
+      },
+      {
+        "question": "What is a 'kill switch'?",
+        "options": [
+          "A feature to improve battery life",
+          "A mechanism to suddenly shut down the device, especially in emergencies",
+          "A tool to enhance phone performance",
+          "A way to increase internet speed"
+        ],
+        "answer": "A mechanism to suddenly shut down the device, especially in emergencies"
+      },
+      {
+        "question": "What can a remote entity do with a kill switch?",
+        "options": [
+          "Improve device security",
+          "Disable applications and delete files",
+          "Increase storage capacity",
+          "Enhance camera quality"
+        ],
+        "answer": "Disable applications and delete files"
+      },
+      {
+        "question": "What are kill switches primarily used for in operating systems?",
+        "options": [
+          "Enhancing device performance",
+          "Improving battery life",
+          "Security purposes",
+          "Increasing storage capacity"
+        ],
+        "answer": "Security purposes"
+      },
+      {
+        "question": "Which of the following devices commonly use operating systems with kill switches?",
+        "options": [
+          "Smartphones only",
+          "Tablets only",
+          "Smartphones, tablets, and some computers",
+          "Desktop computers only"
+        ],
+        "answer": "Smartphones, tablets, and some computers"
+      },
+      {
+        "question": "What is a major concern regarding the use of kill switches?",
+        "options": [
+          "Device overheating",
+          "User autonomy",
+          "Increased cost",
+          "Reduced functionality"
+        ],
+        "answer": "User autonomy"
+      },
+      {
+        "question": "What potential risk is associated with kill switches if accessed by malicious hackers?",
+        "options": [
+          "Improved device performance",
+          "Unauthorized operation of kill switches",
+          "Automatic software updates",
+          "Enhanced security features"
+        ],
+        "answer": "Unauthorized operation of kill switches"
+      },
+      {
+        "question": "What might governments pressure companies to do regarding kill switches?",
+        "options": [
+          "Remove them entirely",
+          "Use them for security improvements",
+          "Limit their functionality",
+          "Make them optional"
+        ],
+        "answer": "Use them for security improvements"
+      },
+      {
+        "question": "When was the first online social networking site, www.classmates.com, launched?",
+        "options": ["1990", "1995", "2000", "2005"],
+        "answer": "1995"
+      },
+      {
+        "question": "Where was Facebook originally started?",
+        "options": ["Stanford", "Harvard", "MIT", "Yale"],
+        "answer": "Harvard"
+      },
+      {
+        "question": "What was Facebook initially created as?",
+        "options": [
+          "A photo-sharing app",
+          "An online version of student directories",
+          "A professional networking site",
+          "A gaming platform"
+        ],
+        "answer": "An online version of student directories"
+      },
+      {
+        "question": "What have social network companies developed to reduce problems?",
+        "options": [
+          "Sophisticated privacy controls",
+          "Feedback systems",
+          "Both sophisticated privacy controls and feedback systems",
+          "None of the above"
+        ],
+        "answer": "Both sophisticated privacy controls and feedback systems"
+      },
+      {
+        "question": "How do social networking sites affect people and relationships?",
+        "options": [
+          "They enhance the quality of in-person relationships",
+          "They replace in-person relationships with superficial digital ones",
+          "They have no impact on relationships",
+          "They reduce the number of friends a person can have"
+        ],
+        "answer": "They replace in-person relationships with superficial digital ones"
+      },
+      {
+        "question": "Who were the primary users of email when it was first introduced?",
+        "options": [
+          "Business professionals",
+          "Computer scientists",
+          "High-energy physicists",
+          "Ordinary people"
+        ],
+        "answer": "Computer scientists"
+      },
+      {
+        "question": "What was the original purpose of the World Wide Web when it was established in 1990?",
+        "options": [
+          "To share high-energy physics research",
+          "To facilitate online shopping",
+          "To create social media platforms",
+          "To replace email communication"
+        ],
+        "answer": "To share high-energy physics research"
+      },
+      {
+        "question": "Which group expanded the use of email after computer scientists?",
+        "options": [
+          "Ordinary people",
+          "Science researchers",
+          "Business professionals",
+          "High-energy physicists"
+        ],
+        "answer": "Science researchers"
+      },
+      {
+        "question": "What has the Web grown into from its original idea?",
+        "options": [
+          "A huge library and news source",
+          "A shopping mall and entertainment center",
+          "A multimedia platform",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What does the Web provide access to?",
+        "options": [
+          "Only information",
+          "Only audiences",
+          "Information and audiences",
+          "Neither information nor audiences"
+        ],
+        "answer": "Information and audiences"
+      },
+      {
+        "question": "How does the Web empower ordinary people?",
+        "options": [
+          "By making better decisions about bicycles",
+          "By making better decisions about medical treatments",
+          "By providing access to information",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What was the original purpose of the Web?",
+        "options": [
+          "A shopping mall",
+          "An entertainment center",
+          "An idea for communication",
+          "A multimedia platform"
+        ],
+        "answer": "An idea for communication"
+      },
+      {
+        "question": "What was the original purpose of blogs?",
+        "options": [
+          "To serve as a significant source of news and entertainment",
+          "To provide outlets for amateurs wanting to express ideas",
+          "To analyze the healthiness of our diet",
+          "To plan a budget"
+        ],
+        "answer": "To provide outlets for amateurs wanting to express ideas"
+      },
+      {
+        "question": "What has contributed to the rise of video content creation?",
+        "options": [
+          "Expensive video cameras",
+          "Inexpensive video cameras and video-manipulation tools",
+          "Blogs becoming a significant source of news",
+          "Software tools for diet analysis"
+        ],
+        "answer": "Inexpensive video cameras and video-manipulation tools"
+      },
+      {
+        "question": "What can software tools help us with?",
+        "options": [
+          "Analyzing the healthiness of our diet",
+          "Planning a budget",
+          "Finding references and forms for legal processes",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What can many videos on the Web potentially infringe?",
+        "options": [
+          "Privacy laws",
+          "Copyrights owned by entertainment companies",
+          "Trademark rights",
+          "Patent laws"
+        ],
+        "answer": "Copyrights owned by entertainment companies"
+      },
+      {
+        "question": "Who creates and maintains free software?",
+        "options": [
+          "Formal organizations",
+          "Government agencies",
+          "Informal communities of programmers",
+          "Private corporations"
+        ],
+        "answer": "Informal communities of programmers"
+      },
+      {
+        "question": "What do informal, decentralized groups of people help investigate on the Web?",
+        "options": [
+          "Stock market trends",
+          "Weather patterns",
+          "Crimes",
+          "Health issues"
+        ],
+        "answer": "Crimes"
+      },
+      {
+        "question": "What is a key concern associated with e-commerce as implied in the text?",
+        "options": [
+          "Lack of product variety",
+          "Trust concerns",
+          "High shipping costs",
+          "Limited customer base"
+        ],
+        "answer": "Trust concerns"
+      },
+      {
+        "question": "What was the primary reason for the growth of PayPal.com?",
+        "options": [
+          "To provide free online services",
+          "To act as a trusted intermediary for online payments",
+          "To compete with traditional stores",
+          "To offer encryption services"
+        ],
+        "answer": "To act as a trusted intermediary for online payments"
+      },
+      {
+        "question": "What technology made online payments safer?",
+        "options": [
+          "Blockchain",
+          "Encryption and secure servers",
+          "Artificial Intelligence",
+          "Cloud computing"
+        ],
+        "answer": "Encryption and secure servers"
+      },
+      {
+        "question": "What is the primary reason companies offer free services according to the text?",
+        "options": [
+          "To increase user satisfaction",
+          "To collect ad revenue",
+          "To reduce operational costs",
+          "To compete with other companies"
+        ],
+        "answer": "To collect ad revenue"
+      },
+      {
+        "question": "What is a branch of computer science that makes computers perform tasks normally requiring human intelligence?",
+        "options": [
+          "Machine Learning",
+          "Artificial Intelligence",
+          "Data Science",
+          "Computer Engineering"
+        ],
+        "answer": "Artificial Intelligence"
+      },
+      {
+        "question": "What characteristic is common in many AI programs?",
+        "options": ["Learning", "Sleeping", "Eating", "Running"],
+        "answer": "Learning"
+      },
+      {
+        "question": "What did researchers realize was easier for computers than what a five-year-old does?",
+        "options": [
+          "Recognizing people",
+          "Carrying on a conversation",
+          "Responding intelligently to the environment",
+          "Narrow, specialized skills"
+        ],
+        "answer": "Narrow, specialized skills"
+      },
+      {
+        "question": "What is a common application of artificial intelligence?",
+        "options": [
+          "Reading handwriting",
+          "Driving cars manually",
+          "Writing novels",
+          "Cooking food"
+        ],
+        "answer": "Reading handwriting"
+      },
+      {
+        "question": "What does the Turing Test determine?",
+        "options": [
+          "If a computer can solve complex math problems",
+          "If a computer can convince a human it is human",
+          "If a computer can outperform humans in chess",
+          "If a computer can recognize patterns"
+        ],
+        "answer": "If a computer can convince a human it is human"
+      },
+      {
+        "question": "What is a major concern about robots performing surgeries?",
+        "options": [
+          "They are too expensive",
+          "They lack human intuition and oversight",
+          "They are slower than human surgeons",
+          "They require too much maintenance"
+        ],
+        "answer": "They lack human intuition and oversight"
+      },
+      {
+        "question": "Which of the following tasks can motion-sensing devices perform?",
+        "options": [
+          "Writing software code",
+          "Triggering airbags in a crash",
+          "Generating electricity",
+          "Cooking food"
+        ],
+        "answer": "Triggering airbags in a crash"
+      },
+      {
+        "question": "What can sensors detect according to the text?",
+        "options": [
+          "Emotions and thoughts",
+          "Leaks, acceleration, position, temperature, and moisture",
+          "Future events",
+          "Sound and light only"
+        ],
+        "answer": "Leaks, acceleration, position, temperature, and moisture"
+      },
+      {
+        "question": "Which environment is most suitable for robots as mentioned in the text?",
+        "options": [
+          "Safe and controlled environments",
+          "Environments hazardous for people",
+          "Outer space only",
+          "Underwater exclusively"
+        ],
+        "answer": "Environments hazardous for people"
+      },
+      {
+        "question": "What is one application of motion-sensing devices in laptops?",
+        "options": [
+          "Increasing battery life",
+          "Protecting them when dropped",
+          "Enhancing screen brightness",
+          "Improving internet speed"
+        ],
+        "answer": "Protecting them when dropped"
+      },
+      {
+        "question": "What is the purpose of assistive technology?",
+        "options": [
+          "To entertain people with disabilities",
+          "To restore productivity and independence to people with disabilities",
+          "To replace medical treatments",
+          "To increase the cost of healthcare"
+        ],
+        "answer": "To restore productivity and independence to people with disabilities"
+      },
+      {
+        "question": "What are researchers experimenting with to help people with disabilities?",
+        "options": [
+          "Chips that convert brain signals to controls for leg and arm muscles",
+          "Virtual reality games",
+          "New types of wheelchairs",
+          "Advanced hearing aids"
+        ],
+        "answer": "Chips that convert brain signals to controls for leg and arm muscles"
+      },
+      {
+        "question": "What types of problems does cyberspace share with non-cyber life?",
+        "options": [
+          "Only technical issues",
+          "Crime, violent fiction and games, advertising, copyright",
+          "Weather-related problems",
+          "Transportation issues"
+        ],
+        "answer": "Crime, violent fiction and games, advertising, copyright"
+      },
+      {
+        "question": "What is required when there are changes in technology?",
+        "options": [
+          "Changes in laws",
+          "Changes in social institutions",
+          "Changes in business policies",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is a major impact of computers?",
+        "options": [
+          "Increased trust in online content",
+          "Decreased trust in online content",
+          "No impact on trust",
+          "Increased use of social media"
+        ],
+        "answer": "Decreased trust in online content"
+      },
+      {
+        "question": "What do we need to relearn?",
+        "options": [
+          "How to use computers",
+          "Standards for deciding when to trust what we read",
+          "How to write online content",
+          "How to advertise online"
+        ],
+        "answer": "Standards for deciding when to trust what we read"
+      },
+      {
+        "question": "What does the text suggest about the impact of computer technology on privacy?",
+        "options": [
+          "Privacy is no longer important in the digital age",
+          "We must rethink how to protect privacy in new ways",
+          "Technology has eliminated all privacy concerns",
+          "Privacy is only a concern for governments"
+        ],
+        "answer": "We must rethink how to protect privacy in new ways"
+      },
+      {
+        "question": "According to the text, where can solutions to problems caused by new technology come from?",
+        "options": [
+          "Only from improved technology",
+          "Only from government regulations",
+          "From technology, market, policies, education, volunteer efforts, and law",
+          "Only from consumer awareness"
+        ],
+        "answer": "From technology, market, policies, education, volunteer efforts, and law"
+      },
+      {
+        "question": "What challenge does the Net present to crime fighting and law enforcement?",
+        "options": [
+          "It makes it easier to catch criminals",
+          "It has no impact on crime fighting",
+          "Criminals can steal and disrupt services from out",
+          "It reduces the number of crimes"
+        ],
+        "answer": "Criminals can steal and disrupt services from out"
+      },
+      {
+        "question": "Why is combating crime and enforcing the law more difficult when criminals operate from outside the victim’s country?",
+        "options": [
+          "Because criminals can steal services and disrupt them from abroad",
+          "Because local laws are ineffective internationally",
+          "Because victims cannot report crimes abroad",
+          "Because international cooperation is impossible"
+        ],
+        "answer": "Because criminals can steal services and disrupt them from abroad"
+      },
+      {
+        "question": "How do laws in one country prohibiting certain content on the Web affect people and businesses in other countries?",
+        "options": [
+          "They restrict access globally because the Web is accessible worldwide",
+          "They have no effect outside the country where the laws are enacted",
+          "They only affect businesses operating in the country with the laws",
+          "They encourage international collaboration on content regulation"
+        ],
+        "answer": "They restrict access globally because the Web is accessible worldwide"
+      },
+      {
+        "question": "What does the phrase 'Perfection is a direction, not an option' imply when evaluating new technologies and applications?",
+        "options": [
+          "We should aim for improvement rather than expecting perfection",
+          "Perfection is the only acceptable outcome for new technologies",
+          "New technologies must achieve zero side effects to be viable",
+          "Evaluating technologies should focus on their flaws"
+        ],
+        "answer": "We should aim for improvement rather than expecting perfection"
+      },
+      {
+        "question": "What is impossible to achieve in most aspects of life?",
+        "options": [
+          "Perfection and zero risk",
+          "Complete understanding",
+          "Total control",
+          "Absolute freedom"
+        ],
+        "answer": "Perfection and zero risk"
+      },
+      {
+        "question": "What should we do instead of seeking perfection and zero risk?",
+        "options": [
+          "Compare them to alternatives and weigh problems against benefits",
+          "Ignore the problems",
+          "Focus solely on benefits",
+          "Avoid making decisions"
+        ],
+        "answer": "Compare them to alternatives and weigh problems against benefits"
+      },
+      {
+        "question": "What does the ideal show us?",
+        "options": [
+          "The direction to go as we seek improvements and solutions",
+          "The ultimate goal to achieve",
+          "The problems we should avoid",
+          "The benefits we should focus on"
+        ],
+        "answer": "The direction to go as we seek improvements and solutions"
+      },
+      {
+        "question": "What themes are mentioned in the text?",
+        "options": [
+          "Differences between personal choices, business policies, and law",
+          "The importance of perfection",
+          "The benefits of zero risk",
+          "The direction to go"
+        ],
+        "answer": "Differences between personal choices, business policies, and law"
+      },
+      {
+        "question": "What is the primary focus of ethics?",
+        "options": [
+          "Study of what it means to 'do the right thing'",
+          "Study of economic policies",
+          "Study of historical events",
+          "Study of scientific theories"
+        ],
+        "answer": "Study of what it means to 'do the right thing'"
+      },
+      {
+        "question": "What do most ethical theories aim to achieve?",
+        "options": [
+          "Enhance human dignity, peace, happiness, and well-being",
+          "Maximize profits for businesses",
+          "Increase political power",
+          "Promote technological advancements"
+        ],
+        "answer": "Enhance human dignity, peace, happiness, and well-being"
+      },
+      {
+        "question": "What assumption does ethics make about people?",
+        "options": [
+          "People are rational and make free choices",
+          "People are always selfish",
+          "People are controlled by external forces",
+          "People are inherently unethical"
+        ],
+        "answer": "People are rational and make free choices"
+      },
+      {
+        "question": "What do ethical rules apply to?",
+        "options": [
+          "Our interactions and actions that affect others",
+          "Only personal choices",
+          "Only business policies",
+          "Only legal systems"
+        ],
+        "answer": "Our interactions and actions that affect others"
+      },
+      {
+        "question": "What is the main purpose of ethics according to the text?",
+        "options": [
+          "To achieve good results for people in general",
+          "To focus only on personal benefits",
+          "To ignore general situations",
+          "To prioritize individual situations"
+        ],
+        "answer": "To achieve good results for people in general"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a type of ethical view?",
+        "options": [
+          "Deontological theories",
+          "Utilitarianism",
+          "Negative rights (liberties)",
+          "Positive rights (claim-rights)",
+          "Existentialism"
+        ],
+        "answer": "Existentialism"
+      },
+      {
+        "question": "What do negative rights (liberties) entail?",
+        "options": [
+          "The right to act without interference",
+          "An obligation to provide for others",
+          "A focus on personal gain",
+          "A disregard for general ethics"
+        ],
+        "answer": "The right to act without interference"
+      },
+      {
+        "question": "What is the key feature of positive rights (claim-rights)?",
+        "options": [
+          "An obligation to provide certain things for others",
+          "The freedom to act without restrictions",
+          "A focus on individual rights only",
+          "No responsibilities toward others"
+        ],
+        "answer": "An obligation to provide certain things for others"
+      },
+      {
+        "question": "What is the Golden Rule in ethics?",
+        "options": [
+          "Treat others as you would want them to treat you.",
+          "Doing one’s work honestly and responsibly.",
+          "Contributing to society.",
+          "Submitting to a common law."
+        ],
+        "answer": "Treat others as you would want them to treat you."
+      },
+      {
+        "question": "What is considered virtuous in ethics?",
+        "options": [
+          "Treating others as you would want to be treated.",
+          "Doing one’s work honestly, responsibly, ethically, creatively, and well.",
+          "Contributing to society.",
+          "Submitting to a common law."
+        ],
+        "answer": "Doing one’s work honestly, responsibly, ethically, creatively, and well."
+      },
+      {
+        "question": "Why do people willingly submit to a common law?",
+        "options": [
+          "To live in a civil and safe society.",
+          "To treat others as they would want to be treated.",
+          "To contribute to society.",
+          "To do their work ethically."
+        ],
+        "answer": "To live in a civil and safe society."
+      },
+      {
+        "question": "What is a characteristic of human behavior and real human situations?",
+        "options": [
+          "They are simple.",
+          "They are complex.",
+          "They are predictable.",
+          "They are easily understood."
+        ],
+        "answer": "They are complex."
+      },
+      {
+        "question": "What do ethical theories help to identify?",
+        "options": [
+          "Trade-offs",
+          "Important principles or guidelines",
+          "Organizational ethics",
+          "Individual decisions"
+        ],
+        "answer": "Important principles or guidelines"
+      },
+      {
+        "question": "Who ultimately makes decisions and takes actions in organizations?",
+        "options": [
+          "Organizations",
+          "Ethical theories",
+          "Individuals",
+          "Trade-offs"
+        ],
+        "answer": "Individuals"
+      },
+      {
+        "question": "What can be distinguished in ethical considerations?",
+        "options": [
+          "Right and wrong",
+          "Wrong and harm",
+          "Goals and constraints",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is separated in ethical considerations?",
+        "options": [
+          "Right from wrong",
+          "Wrong from harm",
+          "Goals from constraints",
+          "Individuals from organizations"
+        ],
+        "answer": "Goals from constraints"
+      },
+      {
+        "question": "What is the primary focus of ethics?",
+        "options": [
+          "Personal preferences",
+          "Legal systems",
+          "Moral principles",
+          "Economic policies"
+        ],
+        "answer": "Moral principles"
+      },
+      {
+        "question": "Which of the following is NOT typically associated with ethics?",
+        "options": ["Law", "Morality", "Personal preferences", "Justice"],
+        "answer": "Personal preferences"
+      },
+      {
+        "question": "How does ethics differ from law?",
+        "options": [
+          "Ethics is enforceable by the state",
+          "Law is based on moral principles",
+          "Ethics deals with personal preferences",
+          "Law is enforceable by the state"
+        ],
+        "answer": "Law is enforceable by the state"
+      }
+    ]
+  }
+}

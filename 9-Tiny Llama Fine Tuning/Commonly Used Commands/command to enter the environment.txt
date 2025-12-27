@@ -1,2 +1,7 @@
 command to enter the environment:
-source qlora-env/bin/activate
+
+cd /home/kat-iv/projects/tinyllama-qlora
+
+source /home/kat-iv/qlora-env/bin/activate
+
+python train.py

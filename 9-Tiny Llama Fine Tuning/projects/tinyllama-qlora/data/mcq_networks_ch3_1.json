@@ -1,0 +1,148 @@
+{
+  "document": "Chapter3-DataLinkLayer_PART1 (1).ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary focus of the Data Link Layer?",
+        "options": [
+          "Routing packets across multiple networks",
+          "Achieving reliable communication between adjacent machines",
+          "Providing end-to-end data encryption",
+          "Managing application-level session states"
+        ],
+        "answer": "Achieving reliable communication between adjacent machines"
+      },
+      {
+        "question": "Which of the following is NOT typically a design issue of the Data Link Layer?",
+        "options": [
+          "Error Detection and Correction",
+          "Framing and Flow Control",
+          "Sliding Window Protocols",
+          "Global Packet Routing Algorithms"
+        ],
+        "answer": "Global Packet Routing Algorithms"
+      },
+      {
+        "question": "What is a primary responsibility of the Data Link Layer regarding data flow?",
+        "options": [
+          "Assigning IP addresses to network interfaces",
+          "Regulating flow to prevent fast senders from overwhelming slow receivers",
+          "Compressing large data files for transmission",
+          "Managing DNS resolutions for local hosts"
+        ],
+        "answer": "Regulating flow to prevent fast senders from overwhelming slow receivers"
+      },
+      {
+        "question": "What is the primary function of framing in the Data Link Layer?",
+        "options": [
+          "To break the raw bit stream into discrete, manageable blocks",
+          "To encrypt individual bits for secure transmission",
+          "To determine the best physical path for a packet",
+          "To convert digital signals into analog waves"
+        ],
+        "answer": "To break the raw bit stream into discrete, manageable blocks"
+      },
+      {
+        "question": "What are the three main components that make up a standard frame?",
+        "options": [
+          "Header, Payload, Trailer",
+          "Source IP, Destination IP, Data",
+          "Sequence Number, Checksum, Acknowledgment",
+          "Start Bit, Stop Bit, Parity Bit"
+        ],
+        "answer": "Header, Payload, Trailer"
+      },
+      {
+        "question": "Which service type is appropriate for real-time traffic, such as voice, where recovery is left to higher layers?",
+        "options": [
+          "Acknowledged connection-oriented service",
+          "Unacknowledged connectionless service",
+          "Acknowledged connectionless service",
+          "Unacknowledged connection-oriented service"
+        ],
+        "answer": "Unacknowledged connectionless service"
+      },
+      {
+        "question": "In which type of service is a logical connection established between source and destination before any data is transferred?",
+        "options": [
+          "Unacknowledged connectionless service",
+          "Acknowledged connectionless service",
+          "Acknowledged connection-oriented service",
+          "Broadcast service"
+        ],
+        "answer": "Acknowledged connection-oriented service"
+      },
+      {
+        "question": "What does the Data Link Layer guarantee in an acknowledged connection-oriented service?",
+        "options": [
+          "The fastest possible transmission speed",
+          "That each frame is received exactly once and in the correct order",
+          "That data is encrypted before reaching the physical layer",
+          "That no routing loops occur in the network"
+        ],
+        "answer": "That each frame is received exactly once and in the correct order"
+      },
+      {
+        "question": "What happens when a frame arrives at the destination Data Link Layer?",
+        "options": [
+          "The checksum is ignored to save processing time",
+          "The checksum is recomputed and compared with the one in the frame",
+          "The frame is automatically acknowledged before checking for errors",
+          "The trailer is stripped and discarded without verification"
+        ],
+        "answer": "The checksum is recomputed and compared with the one in the frame"
+      },
+      {
+        "question": "What is a major disadvantage of the character count framing method?",
+        "options": [
+          "It uses too much bandwidth",
+          "A single-bit error in the count field makes resynchronization difficult",
+          "It is incompatible with copper-based transmission",
+          "It cannot handle fixed-length frames"
+        ],
+        "answer": "A single-bit error in the count field makes resynchronization difficult"
+      },
+      {
+        "question": "In byte stuffing, what occurs if a flag byte or an ESCAPE byte appears within the actual data payload?",
+        "options": [
+          "The frame is immediately terminated",
+          "The byte is ignored by the receiver",
+          "An ESCAPE byte is inserted before it (stuffed)",
+          "The entire frame is re-encrypted"
+        ],
+        "answer": "An ESCAPE byte is inserted before it (stuffed)"
+      },
+      {
+        "question": "In bit-oriented protocols using bit stuffing, what is inserted after every sequence of five consecutive 1s in the data?",
+        "options": ["A parity bit", "A 0 bit", "A 1 bit", "A flag sequence"],
+        "answer": "A 0 bit"
+      },
+      {
+        "question": "How does a receiver identify a frame boundary in a protocol using the bit sequence 01111110 as a flag?",
+        "options": [
+          "By counting exactly 8 bits per frame",
+          "By searching for the unique 01111110 bit pattern",
+          "By relying on the physical layer timing",
+          "By checking the character count in the header"
+        ],
+        "answer": "By searching for the unique 01111110 bit pattern"
+      },
+      {
+        "question": "Which of the following is a bit-oriented protocol mentioned as a standard user of bit stuffing?",
+        "options": ["PPP", "HDLC", "TCP", "HTTP"],
+        "answer": "HDLC"
+      },
+      {
+        "question": "What is the purpose of using 'non-data' symbols or coding violations for framing in the Physical Layer?",
+        "options": [
+          "To increase the bit rate of the medium",
+          "To easily identify start and end boundaries of frames",
+          "To provide error correction for the payload",
+          "To reduce the power consumption of the transceiver"
+        ],
+        "answer": "To easily identify start and end boundaries of frames"
+      }
+    ]
+  }
+}

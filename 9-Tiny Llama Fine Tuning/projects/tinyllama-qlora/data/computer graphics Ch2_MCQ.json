@@ -1,0 +1,719 @@
+{
+  "filename": "Chapter 2- Computer Graphics Hardware (1).ppt",
+  "quiz": [
+    {
+      "question": "What does CRT stand for?",
+      "type": "mcq",
+      "options": [
+        "Cathode Ray Tube",
+        "Color Rendering Technology",
+        "Computer Rendering Terminal",
+        "Central Ray Transmitter"
+      ],
+      "answer": "Cathode Ray Tube",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy",
+      "suggestion": "Review the definition of CRT in the video display devices section."
+    },
+    {
+      "question": "Which component of a CRT is responsible for emitting electrons?",
+      "type": "mcq",
+      "options": [
+        "Electron Gun",
+        "Focusing Anode",
+        "Deflection Plates",
+        "Phosphor-Coated Screen"
+      ],
+      "answer": "Electron Gun",
+      "section": "Component of CRT",
+      "rate": "easy",
+      "suggestion": "Recall the parts of a CRT and their functions."
+    },
+    {
+      "question": "In a color CRT, how many electron guns are typically used?",
+      "type": "mcq",
+      "options": [
+        "Three",
+        "One",
+        "Two",
+        "Four"
+      ],
+      "answer": "Three",
+      "section": "CATHODE-RAY TUBE (CRT)",
+      "rate": "easy",
+      "suggestion": "Review the description of color CRT monitors."
+    },
+    {
+      "question": "What are the two main types of display models in CRT systems?",
+      "type": "mcq",
+      "options": [
+        "Raster and Vector",
+        "Analog and Digital",
+        "LCD and Plasma",
+        "Monochrome and Color"
+      ],
+      "answer": "Raster and Vector",
+      "section": "CRTS - DISPLAY MODELS",
+      "rate": "easy",
+      "suggestion": "Check the section on CRT display models."
+    },
+    {
+      "question": "In a raster scan system, how is the electron beam moved across the screen?",
+      "type": "mcq",
+      "options": [
+        "Row by row from top to bottom",
+        "Randomly to parts of the screen",
+        "In circular patterns",
+        "Only when an image changes"
+      ],
+      "answer": "Row by row from top to bottom",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium",
+      "suggestion": "Recall the operation of a raster scan display."
+    },
+    {
+      "question": "What is stored in the refresh buffer (frame buffer)?",
+      "type": "mcq",
+      "options": [
+        "Picture description as pixel values",
+        "Operating system instructions",
+        "Color palette information",
+        "Geometric primitives"
+      ],
+      "answer": "Picture description as pixel values",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium",
+      "suggestion": "Review the purpose of the refresh buffer in raster systems."
+    },
+    {
+      "question": "What is the typical refresh rate range for raster scan displays?",
+      "type": "mcq",
+      "options": [
+        "60 to 80 frames per second",
+        "24 to 30 frames per second",
+        "100 to 120 frames per second",
+        "10 to 20 frames per second"
+      ],
+      "answer": "60 to 80 frames per second",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy",
+      "suggestion": "Check the refreshing rate mentioned in the raster scan section."
+    },
+    {
+      "question": "What does pixel depth refer to?",
+      "type": "mcq",
+      "options": [
+        "Number of bits used to represent a pixel value",
+        "Physical thickness of a pixel on screen",
+        "Distance between pixels",
+        "Brightness level of a pixel"
+      ],
+      "answer": "Number of bits used to represent a pixel value",
+      "section": "PIXEL DEPTH",
+      "rate": "medium",
+      "suggestion": "Review the definition of pixel depth."
+    },
+    {
+      "question": "If the pixel depth is 8 bits, how many intensity levels are possible?",
+      "type": "mcq",
+      "options": [
+        "256",
+        "64",
+        "128",
+        "512"
+      ],
+      "answer": "256",
+      "section": "PIXEL DEPTH",
+      "rate": "medium",
+      "suggestion": "Recall the formula 2^n for pixel depth."
+    },
+    {
+      "question": "What is the main function of the video controller in a raster-scan system?",
+      "type": "mcq",
+      "options": [
+        "To control the operation of the display device",
+        "To store the operating system",
+        "To generate 3D graphics",
+        "To manage user input"
+      ],
+      "answer": "To control the operation of the display device",
+      "section": "RASTER-SCAN DISPLAY PROCESSOR",
+      "rate": "medium",
+      "suggestion": "Review the role of the video controller."
+    },
+    {
+      "question": "How is memory requirement for a frame buffer calculated?",
+      "type": "mcq",
+      "options": [
+        "(X-resolution × Y-resolution × bits-per-pixel) / (8 × 1024 × 1024)",
+        "(X-resolution + Y-resolution) × bits-per-pixel",
+        "X-resolution × Y-resolution / bits-per-pixel",
+        "Number of pixels × refresh rate"
+      ],
+      "answer": "(X-resolution × Y-resolution × bits-per-pixel) / (8 × 1024 × 1024)",
+      "section": "FRAME BUFFER",
+      "rate": "hard",
+      "suggestion": "Check the formula for frame buffer memory."
+    },
+    {
+      "question": "In a random-scan (vector) display, how is the electron beam directed?",
+      "type": "mcq",
+      "options": [
+        "Only to parts of the screen where a picture is to be drawn",
+        "Row by row across the entire screen",
+        "In a continuous circular motion",
+        "Randomly across the screen"
+      ],
+      "answer": "Only to parts of the screen where a picture is to be drawn",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "medium",
+      "suggestion": "Recall how vector displays operate."
+    },
+    {
+      "question": "Which type of graphics is resolution independent?",
+      "type": "mcq",
+      "options": [
+        "Vector graphics",
+        "Raster graphics",
+        "Bitmap images",
+        "Indexed images"
+      ],
+      "answer": "Vector graphics",
+      "section": "VECTORS",
+      "rate": "easy",
+      "suggestion": "Review the characteristics of vector graphics."
+    },
+    {
+      "question": "Which file format is commonly associated with vector graphics?",
+      "type": "mcq",
+      "options": [
+        "SVG",
+        "JPG",
+        "PNG",
+        "BMP"
+      ],
+      "answer": "SVG",
+      "section": "VECTORS",
+      "rate": "easy",
+      "suggestion": "Recall the file structures mentioned for vector graphics."
+    },
+    {
+      "question": "What is a key disadvantage of raster images?",
+      "type": "mcq",
+      "options": [
+        "They do not scale up optimally and become blurry",
+        "They are resolution independent",
+        "They have small file sizes",
+        "They are best for logos and illustrations"
+      ],
+      "answer": "They do not scale up optimally and become blurry",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "medium",
+      "suggestion": "Review the limitations of raster graphics."
+    },
+    {
+      "question": "Which software is typically used for editing raster images?",
+      "type": "mcq",
+      "options": [
+        "Adobe Photoshop",
+        "Adobe Illustrator",
+        "Inkscape",
+        "CorelDRAW"
+      ],
+      "answer": "Adobe Photoshop",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy",
+      "suggestion": "Recall the common raster programs mentioned."
+    },
+    {
+      "question": "What is an indexed image composed of?",
+      "type": "mcq",
+      "options": [
+        "A data matrix and a colormap matrix",
+        "Only RGB values",
+        "Binary pixel values",
+        "Grayscale intensities"
+      ],
+      "answer": "A data matrix and a colormap matrix",
+      "section": "RASTER TYPES - INDEXED IMAGES",
+      "rate": "hard",
+      "suggestion": "Review the description of indexed images."
+    },
+    {
+      "question": "What is another name for an intensity image?",
+      "type": "mcq",
+      "options": [
+        "Grayscale image",
+        "True-color image",
+        "Binary image",
+        "Indexed image"
+      ],
+      "answer": "Grayscale image",
+      "section": "RASTER TYPES – INTENSITY IMAGES",
+      "rate": "easy",
+      "suggestion": "Check the alternative name for intensity images."
+    },
+    {
+      "question": "How many color components are used in an RGB image?",
+      "type": "mcq",
+      "options": [
+        "Three",
+        "One",
+        "Two",
+        "Four"
+      ],
+      "answer": "Three",
+      "section": "RASTER TYPES – RGB IMAGES",
+      "rate": "easy",
+      "suggestion": "Recall the structure of RGB images."
+    },
+    {
+      "question": "What values can pixels take in a binary image?",
+      "type": "mcq",
+      "options": [
+        "Only two values: on (white) and off (black)",
+        "0 to 255",
+        "RGB triplets",
+        "Indexed color values"
+      ],
+      "answer": "Only two values: on (white) and off (black)",
+      "section": "RASTER TYPES – BINARY IMAGES",
+      "rate": "easy",
+      "suggestion": "Review the definition of binary images."
+    },
+    {
+      "question": "What is the purpose of the phosphor coating on a CRT screen?",
+      "type": "mcq",
+      "options": [
+        "To produce bright spots when hit by the electron beam",
+        "To focus the electron beam",
+        "To deflect the electron beam",
+        "To emit electrons"
+      ],
+      "answer": "To produce bright spots when hit by the electron beam",
+      "section": "Component of CRT",
+      "rate": "medium",
+      "suggestion": "Recall the role of the phosphor-coated screen."
+    },
+    {
+      "question": "What is the aspect ratio in raster graphics?",
+      "type": "mcq",
+      "options": [
+        "The ratio of X pixels to Y pixels",
+        "The ratio of refresh rate to resolution",
+        "The ratio of pixel depth to color depth",
+        "The ratio of screen size to viewing distance"
+      ],
+      "answer": "The ratio of X pixels to Y pixels",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium",
+      "suggestion": "Check the definition of aspect ratio."
+    },
+    {
+      "question": "Which display type is best for creating logos and technical drawings?",
+      "type": "mcq",
+      "options": [
+        "Vector graphics",
+        "Raster graphics",
+        "Bitmap images",
+        "Indexed images"
+      ],
+      "answer": "Vector graphics",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy",
+      "suggestion": "Review the preferred uses for vector graphics."
+    },
+    {
+      "question": "What does horizontal retracing refer to in a raster scan?",
+      "type": "mcq",
+      "options": [
+        "Return of the beam to the leftmost position one line down",
+        "Beam moving from top to bottom",
+        "Beam starting from the top left corner",
+        "Beam refreshing the entire screen at once"
+      ],
+      "answer": "Return of the beam to the leftmost position one line down",
+      "section": "RASTER SCAN",
+      "rate": "hard",
+      "suggestion": "Recall the two types of beam refreshing."
+    },
+    {
+      "question": "Which of the following is a hard-copy device?",
+      "type": "mcq",
+      "options": [
+        "Laser printer",
+        "CRT monitor",
+        "LCD screen",
+        "Plasma panel"
+      ],
+      "answer": "Laser printer",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy",
+      "suggestion": "Review the list of hard-copy devices."
+    },
+    {
+      "question": "Which technology is NOT a video display device?",
+      "type": "mcq",
+      "options": [
+        "Ink-jet printer",
+        "CRT",
+        "LCD",
+        "Plasma panel"
+      ],
+      "answer": "Ink-jet printer",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy",
+      "suggestion": "Distinguish between display devices and hard-copy devices."
+    },
+    {
+      "question": "What is the primary reason for refreshing a CRT screen?",
+      "type": "mcq",
+      "options": [
+        "To avoid flicker and maintain a stable image",
+        "To change the image content",
+        "To adjust the screen brightness",
+        "To save power"
+      ],
+      "answer": "To avoid flicker and maintain a stable image",
+      "section": "REFRESH RATE",
+      "rate": "medium",
+      "suggestion": "Recall why refreshing is necessary in CRT displays."
+    },
+    {
+      "question": "In a monochrome CRT, how many electron guns are present?",
+      "type": "mcq",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "None"
+      ],
+      "answer": "One",
+      "section": "CATHODE-RAY TUBE (CRT)",
+      "rate": "easy",
+      "suggestion": "Review the difference between monochrome and color CRTs."
+    },
+    {
+      "question": "What is a key advantage of vector graphics over raster graphics?",
+      "type": "mcq",
+      "options": [
+        "Can be scaled without losing quality",
+        "Better for photo editing",
+        "Smaller file sizes for complex photos",
+        "Easier to create continuous tone blends"
+      ],
+      "answer": "Can be scaled without losing quality",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy",
+      "suggestion": "Recall the scaling property of vector graphics."
+    },
+    {
+      "question": "Which component in a CRT is used to bend the electron beam?",
+      "type": "mcq",
+      "options": [
+        "Deflection plates",
+        "Electron gun",
+        "Phosphor screen",
+        "Heating filament"
+      ],
+      "answer": "Deflection plates",
+      "section": "Component of CRT",
+      "rate": "medium",
+      "suggestion": "Review the function of deflection plates."
+    },
+    {
+      "question": "What type of image is defined by mathematical equations?",
+      "type": "mcq",
+      "options": [
+        "Vector image",
+        "Raster image",
+        "Bitmap image",
+        "Indexed image"
+      ],
+      "answer": "Vector image",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "easy",
+      "suggestion": "Recall how vector images are represented."
+    },
+    {
+      "question": "What is measured in Hertz (Hz) in display technology?",
+      "type": "mcq",
+      "options": [
+        "Refresh rate",
+        "Pixel depth",
+        "Aspect ratio",
+        "Resolution"
+      ],
+      "answer": "Refresh rate",
+      "section": "REFRESH RATE",
+      "rate": "easy",
+      "suggestion": "Check the unit for refresh rate."
+    },
+    {
+      "question": "Which of the following is true about raster images?",
+      "type": "mcq",
+      "options": [
+        "They are resolution dependent",
+        "They are defined by mathematical equations",
+        "They are best for logos",
+        "They scale perfectly"
+      ],
+      "answer": "They are resolution dependent",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium",
+      "suggestion": "Review the characteristics of raster images."
+    },
+    {
+      "question": "What is the role of the focusing anode in a CRT?",
+      "type": "mcq",
+      "options": [
+        "To produce a narrow and sharply focused beam of electrons",
+        "To emit electrons",
+        "To deflect the electron beam",
+        "To produce colored light"
+      ],
+      "answer": "To produce a narrow and sharply focused beam of electrons",
+      "section": "Component of CRT",
+      "rate": "medium",
+      "suggestion": "Recall the function of focusing and accelerating anodes."
+    },
+    {
+      "question": "Which type of display uses geometrical primitives like points and lines?",
+      "type": "mcq",
+      "options": [
+        "Random-scan (vector) display",
+        "Raster-scan display",
+        "CRT display",
+        "LCD display"
+      ],
+      "answer": "Random-scan (vector) display",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "medium",
+      "suggestion": "Review the description of random-scan displays."
+    },
+    {
+      "question": "What does the term 'pixel' stand for?",
+      "type": "mcq",
+      "options": [
+        "Picture element",
+        "Pixel element",
+        "Picture index",
+        "Pixel intensity"
+      ],
+      "answer": "Picture element",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy",
+      "suggestion": "Recall the definition of a pixel."
+    },
+    {
+      "question": "Which display technology uses a beam that strikes a phosphor coating?",
+      "type": "mcq",
+      "options": [
+        "CRT",
+        "LCD",
+        "LED",
+        "Plasma"
+      ],
+      "answer": "CRT",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy",
+      "suggestion": "Review the working principle of CRT."
+    },
+    {
+      "question": "What is a common use of vector graphics?",
+      "type": "mcq",
+      "options": [
+        "Logos and technical drawings",
+        "Editing photographs",
+        "Continuous tone images",
+        "Video displays"
+      ],
+      "answer": "Logos and technical drawings",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy",
+      "suggestion": "Recall the typical applications of vector graphics."
+    },
+    {
+      "question": "What is the main disadvantage of vector graphics?",
+      "type": "mcq",
+      "options": [
+        "Not best for continuous tone images with blends of color",
+        "Large file size for simple images",
+        "Resolution dependent",
+        "Cannot be printed"
+      ],
+      "answer": "Not best for continuous tone images with blends of color",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "medium",
+      "suggestion": "Review the limitations of vector graphics."
+    },
+    {
+      "question": "Which color production method is used in color CRT monitors?",
+      "type": "mcq",
+      "options": [
+        "Shadow-Mask Method",
+        "Beam-Penetration Method",
+        "LCD Method",
+        "Plasma Method"
+      ],
+      "answer": "Shadow-Mask Method",
+      "section": "COLOR CRT MONITOR",
+      "rate": "hard",
+      "suggestion": "Recall the two basic color display techniques for CRT."
+    },
+    {
+      "question": "What does the frame buffer free the CPU from?",
+      "type": "mcq",
+      "options": [
+        "Graphics work",
+        "User input processing",
+        "Operating system tasks",
+        "Memory management"
+      ],
+      "answer": "Graphics work",
+      "section": "RASTER-SCAN DISPLAY PROCESSOR",
+      "rate": "medium",
+      "suggestion": "Review the purpose of the display processor."
+    },
+    {
+      "question": "Which of the following is a characteristic of plasma panels?",
+      "type": "mcq",
+      "options": [
+        "They use ionized gases to produce light",
+        "They use liquid crystals",
+        "They use electron beams",
+        "They are hard-copy devices"
+      ],
+      "answer": "They use ionized gases to produce light",
+      "section": "DISPLAY HARDWARE",
+      "rate": "hard",
+      "suggestion": "Recall basic knowledge of plasma display technology."
+    },
+    {
+      "question": "What is the main advantage of LCD over CRT?",
+      "type": "mcq",
+      "options": [
+        "Thinner and lighter",
+        "Higher refresh rates",
+        "Better color accuracy",
+        "No need for refreshing"
+      ],
+      "answer": "Thinner and lighter",
+      "section": "DISPLAY HARDWARE",
+      "rate": "medium",
+      "suggestion": "Recall general advantages of LCD technology."
+    },
+    {
+      "question": "Which device is an example of a random-scan display?",
+      "type": "mcq",
+      "options": [
+        "Plotter",
+        "TV",
+        "Computer monitor",
+        "Printer"
+      ],
+      "answer": "Plotter",
+      "section": "VECTORS",
+      "rate": "medium",
+      "suggestion": "Recall examples of random-scan displays."
+    },
+    {
+      "question": "What is the primary use of a pen plotter?",
+      "type": "mcq",
+      "options": [
+        "Producing vector graphics on paper",
+        "Displaying raster images on screen",
+        "Printing photographs",
+        "Scanning documents"
+      ],
+      "answer": "Producing vector graphics on paper",
+      "section": "Hard-Copy Devices",
+      "rate": "medium",
+      "suggestion": "Recall the function of a pen plotter."
+    },
+    {
+      "question": "What does LED stand for in display technology?",
+      "type": "mcq",
+      "options": [
+        "Light-Emitting Diode",
+        "Liquid Emitting Display",
+        "Light Enhancing Device",
+        "Laser Emitting Diode"
+      ],
+      "answer": "Light-Emitting Diode",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy",
+      "suggestion": "Check the abbreviation for LED."
+    },
+    {
+      "question": "Which type of image uses a colormap matrix?",
+      "type": "mcq",
+      "options": [
+        "Indexed image",
+        "RGB image",
+        "Binary image",
+        "Grayscale image"
+      ],
+      "answer": "Indexed image",
+      "section": "RASTER TYPES - INDEXED IMAGES",
+      "rate": "hard",
+      "suggestion": "Review the structure of indexed images."
+    },
+    {
+      "question": "What is the range of pixel values in an 8-bit grayscale image?",
+      "type": "mcq",
+      "options": [
+        "0 to 255",
+        "0 to 1",
+        "0 to 128",
+        "0 to 512"
+      ],
+      "answer": "0 to 255",
+      "section": "RASTER TYPES – INTENSITY IMAGES",
+      "rate": "medium",
+      "suggestion": "Recall the intensity range for 8-bit grayscale."
+    },
+    {
+      "question": "Which of the following is a vector file format?",
+      "type": "mcq",
+      "options": [
+        "PDF",
+        "JPG",
+        "PNG",
+        "BMP"
+      ],
+      "answer": "PDF",
+      "section": "VECTORS",
+      "rate": "easy",
+      "suggestion": "Recall the file formats associated with vector graphics."
+    },
+    {
+      "question": "What is the main purpose of the vertical retrace in a raster scan?",
+      "type": "mcq",
+      "options": [
+        "To return the beam to the top left corner after reaching the bottom right",
+        "To move the beam horizontally across the screen",
+        "To focus the electron beam",
+        "To change the pixel intensity"
+      ],
+      "answer": "To return the beam to the top left corner after reaching the bottom right",
+      "section": "RASTER SCAN",
+      "rate": "hard",
+      "suggestion": "Review the definition of vertical retracing."
+    },
+    {
+      "question": "Which of the following best describes a raster image?",
+      "type": "mcq",
+      "options": [
+        "Composed of pixels arranged in a grid",
+        "Defined by mathematical equations",
+        "Resolution independent",
+        "Best for scaling to any size"
+      ],
+      "answer": "Composed of pixels arranged in a grid",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy",
+      "suggestion": "Recall the basic nature of raster images."
+    }
+  ]
+}

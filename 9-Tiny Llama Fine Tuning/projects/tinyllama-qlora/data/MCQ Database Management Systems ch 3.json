@@ -1,0 +1,208 @@
+{
+  "document": "Relational Algebra is a procedural query language used in DBMS to create new relations from existing ones using a set of well-defined operators such as select, project, union, set difference, Cartesian product, and rename.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is Relational Algebra primarily used for?",
+        "options": [
+          "Storing database records",
+          "Designing user interfaces",
+          "Formulating database queries procedurally",
+          "Encrypting database data"
+        ],
+        "answer": "Formulating database queries procedurally"
+      },
+      {
+        "question": "Which type of query language is Relational Algebra?",
+        "options": [
+          "Declarative",
+          "Procedural",
+          "Object-oriented",
+          "Functional"
+        ],
+        "answer": "Procedural"
+      },
+      {
+        "question": "What is the domain of Relational Algebra?",
+        "options": [
+          "Numbers",
+          "Strings",
+          "Sets of relations",
+          "Files"
+        ],
+        "answer": "Sets of relations"
+      },
+      {
+        "question": "Which of the following is a basic Relational Algebra operator?",
+        "options": [
+          "Join",
+          "Intersection",
+          "Select",
+          "Division"
+        ],
+        "answer": "Select"
+      },
+      {
+        "question": "What symbol represents the SELECT operation in Relational Algebra?",
+        "options": [
+          "π",
+          "σ",
+          "ρ",
+          "×"
+        ],
+        "answer": "σ"
+      },
+      {
+        "question": "The SELECT operation is used to:",
+        "options": [
+          "Choose specific attributes",
+          "Rename relations",
+          "Filter tuples based on a condition",
+          "Combine two relations"
+        ],
+        "answer": "Filter tuples based on a condition"
+      },
+      {
+        "question": "Which symbol represents the PROJECT operation?",
+        "options": [
+          "σ",
+          "π",
+          "∪",
+          "−"
+        ],
+        "answer": "π"
+      },
+      {
+        "question": "What does the PROJECT operation do?",
+        "options": [
+          "Removes duplicate relations",
+          "Selects specific rows",
+          "Selects specific columns",
+          "Joins relations"
+        ],
+        "answer": "Selects specific columns"
+      },
+      {
+        "question": "Why are duplicate rows removed in the PROJECT operation?",
+        "options": [
+          "Because relations are ordered",
+          "Because relations are sets",
+          "To improve performance",
+          "To simplify queries"
+        ],
+        "answer": "Because relations are sets"
+      },
+      {
+        "question": "Which condition must be satisfied for UNION operation?",
+        "options": [
+          "Relations must have different attributes",
+          "Relations must be union compatible",
+          "Relations must have primary keys",
+          "Relations must be sorted"
+        ],
+        "answer": "Relations must be union compatible"
+      },
+      {
+        "question": "Union compatible relations must:",
+        "options": [
+          "Have the same number of tuples",
+          "Have compatible attribute domains",
+          "Contain the same data",
+          "Have foreign keys"
+        ],
+        "answer": "Have compatible attribute domains"
+      },
+      {
+        "question": "What does the SET DIFFERENCE operation return?",
+        "options": [
+          "Common tuples",
+          "All tuples from both relations",
+          "Tuples in one relation but not the other",
+          "Cartesian pairs"
+        ],
+        "answer": "Tuples in one relation but not the other"
+      },
+      {
+        "question": "Which symbol denotes the Cartesian Product?",
+        "options": [
+          "×",
+          "∩",
+          "∪",
+          "ρ"
+        ],
+        "answer": "×"
+      },
+      {
+        "question": "What is the result of a Cartesian Product?",
+        "options": [
+          "Filtered tuples",
+          "All possible tuple combinations",
+          "Only matching tuples",
+          "Union-compatible tuples"
+        ],
+        "answer": "All possible tuple combinations"
+      },
+      {
+        "question": "Why is the RENAME operation used?",
+        "options": [
+          "To delete attributes",
+          "To change attribute values",
+          "To avoid ambiguity in queries",
+          "To enforce constraints"
+        ],
+        "answer": "To avoid ambiguity in queries"
+      },
+      {
+        "question": "Which symbol represents the RENAME operation?",
+        "options": [
+          "σ",
+          "π",
+          "ρ",
+          "∩"
+        ],
+        "answer": "ρ"
+      },
+      {
+        "question": "Natural Join is based on:",
+        "options": [
+          "All attributes",
+          "Common attributes with the same name",
+          "Primary keys only",
+          "Foreign keys only"
+        ],
+        "answer": "Common attributes with the same name"
+      },
+      {
+        "question": "Which join returns all tuples from the left relation?",
+        "options": [
+          "Right outer join",
+          "Full outer join",
+          "Left outer join",
+          "Natural join"
+        ],
+        "answer": "Left outer join"
+      },
+      {
+        "question": "What value is used when no matching tuple exists in an outer join?",
+        "options": [
+          "0",
+          "Empty string",
+          "NULL",
+          "Undefined"
+        ],
+        "answer": "NULL"
+      },
+      {
+        "question": "Which operation is derived and not basic?",
+        "options": [
+          "Select",
+          "Project",
+          "Intersection",
+          "Cartesian product"
+        ],
+        "answer": "Intersection"
+      }
+    ]
+  }
+}

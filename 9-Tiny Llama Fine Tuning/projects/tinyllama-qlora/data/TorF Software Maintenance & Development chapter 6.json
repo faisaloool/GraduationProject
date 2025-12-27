@@ -1,0 +1,88 @@
+{
+  "document": "Software Evolution and Maintenance (Chapter 6: Impact Analysis) by Tripathy & Naik",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The maintenance process is started by performing impact analysis. [cite: 29]",
+        "answer": "True"
+      },
+      {
+        "question": "Impact analysis is only used to analyze source code and does not affect requirements or design documentation. [cite: 43]",
+        "answer": "False"
+      },
+      {
+        "question": "The Starting Impact Set (SIS) is the initial set of objects presumed to be impacted by a software Change Request. [cite: 58]",
+        "answer": "True"
+      },
+      {
+        "question": "Traceability refers to tracing dependent artifacts within the same model is known as external traceability. [cite: 50]",
+        "answer": "False"
+      },
+      {
+        "question": "The Candidate Impact Set (CIS) is the set of objects estimated to be impacted according to a certain impact analysis approach. [cite: 59]",
+        "answer": "True"
+      },
+      {
+        "question": "The Discovered Impact Set (DIS) contains objects that were already identified in the Candidate Impact Set. [cite: 60]",
+        "answer": "False"
+      },
+      {
+        "question": "The Actual Impact Set (AIS) represents the set of objects actually changed as a result of performing a Change Request. [cite: 61]",
+        "answer": "True"
+      },
+      {
+        "question": "The False Positive Impact Set (FPIS) is defined as (CIS U DIS) \\ AIS. [cite: 63]",
+        "answer": "True"
+      },
+      {
+        "question": "Recall is computed as the ratio of (CIS ∩ AIS) to |AIS|. [cite: 83]",
+        "answer": "True"
+      },
+      {
+        "question": "If the Discovered Impact Set (DIS) is empty, the value of recall is 1. [cite: 84]",
+        "answer": "True"
+      },
+      {
+        "question": "Precision is computed as the ratio of (CIS ∩ AIS) to |CIS|. [cite: 85, 86]",
+        "answer": "True"
+      },
+      {
+        "question": "For an empty False Positive Impact Set (FPIS), the value of precision is 0. [cite: 87]",
+        "answer": "False"
+      },
+      {
+        "question": "If the Actual Impact Set is equal to the Candidate Impact Set, both recall and precision are 1. [cite: 88]",
+        "answer": "True"
+      },
+      {
+        "question": "Adequacy of an impact analysis approach is its ability to identify all affected elements to be modified. [cite: 97]",
+        "answer": "True"
+      },
+      {
+        "question": "Ideally, the Candidate Impact Set should be a subset of the Actual Impact Set (CIS ⊆ AIS). [cite: 98]",
+        "answer": "False"
+      },
+      {
+        "question": "Inclusiveness is a performance metric used to express adequacy. [cite: 100]",
+        "answer": "True"
+      },
+      {
+        "question": "Sharpness is the ability of an approach to produce a CIS that is as close to AIS as possible. [cite: 119]",
+        "answer": "False"
+      },
+      {
+        "question": "Adherence is the ability of an approach to produce a CIS which is as close to AIS as possible. [cite: 119]",
+        "answer": "True"
+      },
+      {
+        "question": "It is easy to fully automate the concept assignment problem because programs and concepts occur at identical levels of abstraction. [cite: 130]",
+        "answer": "False"
+      },
+      {
+        "question": "Horizontal traceability helps developers understand the relationships among software artifacts in a project. [cite: 46, 137]",
+        "answer": "True"
+      }
+    ]
+  }
+}

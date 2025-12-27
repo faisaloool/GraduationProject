@@ -1,0 +1,88 @@
+{
+  "document": "Relational Algebra is a procedural query language used in database systems to define queries by applying a sequence of operations on relations.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Relational Algebra is a procedural query language.",
+        "answer": "True"
+      },
+      {
+        "question": "Relational Algebra is primarily used as a user-level query language.",
+        "answer": "False"
+      },
+      {
+        "question": "The domain of Relational Algebra consists of a set of relations.",
+        "answer": "True"
+      },
+      {
+        "question": "SQL is an example of a procedural query language like Relational Algebra.",
+        "answer": "False"
+      },
+      {
+        "question": "Relational Algebra expressions produce relations as results.",
+        "answer": "True"
+      },
+      {
+        "question": "The SELECT operation filters tuples based on a predicate.",
+        "answer": "True"
+      },
+      {
+        "question": "The PROJECT operation selects specific rows from a relation.",
+        "answer": "False"
+      },
+      {
+        "question": "Duplicate tuples are removed in the result of a PROJECT operation.",
+        "answer": "True"
+      },
+      {
+        "question": "Union operations can only be applied to union-compatible relations.",
+        "answer": "True"
+      },
+      {
+        "question": "Two relations with different numbers of attributes can be union compatible.",
+        "answer": "False"
+      },
+      {
+        "question": "Set difference returns tuples that are present in both relations.",
+        "answer": "False"
+      },
+      {
+        "question": "Cartesian product combines every tuple of one relation with every tuple of another relation.",
+        "answer": "True"
+      },
+      {
+        "question": "Rename operation is represented by the symbol ρ.",
+        "answer": "True"
+      },
+      {
+        "question": "Rename operation is mainly used to change attribute values.",
+        "answer": "False"
+      },
+      {
+        "question": "Natural join joins relations based on common attribute names.",
+        "answer": "True"
+      },
+      {
+        "question": "Equi-join is a special case of theta join using only equality conditions.",
+        "answer": "True"
+      },
+      {
+        "question": "Outer joins exclude tuples with no matching values.",
+        "answer": "False"
+      },
+      {
+        "question": "Left outer join returns all tuples from the left relation.",
+        "answer": "True"
+      },
+      {
+        "question": "Full outer join includes all tuples from both participating relations.",
+        "answer": "True"
+      },
+      {
+        "question": "Intersection is considered a derived operation in Relational Algebra.",
+        "answer": "True"
+      }
+    ]
+  }
+}

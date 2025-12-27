@@ -1,0 +1,210 @@
+{
+  "document": "Software Evolution and Maintenance: Chapter 7 - Refactoring by Tripathy & Naik",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "According to the document, what are the three consequences of software evolving away from its original design?",
+        "options": [
+          "Increased complexity, increased cost, and increased reliability",
+          "Decreased understandability, decreased reliability, and increased maintenance cost",
+          "Decreased cost, increased understandability, and decreased reliability",
+          "Decreased documentation, increased speed, and decreased cost"
+        ],
+        "answer": "Decreased understandability, decreased reliability, and increased maintenance cost"
+      },
+      {
+        "question": "Which of the following is cited as a reason for decreased understandability in software?",
+        "options": [
+          "Low maintenance costs",
+          "Code conforming to standards",
+          "Out-of-date documentation",
+          "Simplified code logic"
+        ],
+        "answer": "Out-of-date documentation"
+      },
+      {
+        "question": "What is the informal definition of software restructuring?",
+        "options": [
+          "Adding new features to the software",
+          "Modifying software to make it easier to understand and change",
+          "Rewriting software in a more modern programming language",
+          "Increasing the hardware requirements of the software"
+        ],
+        "answer": "Modifying software to make it easier to understand and change"
+      },
+      {
+        "question": "Restructuring aims to increase 'internal software value.' What does this mean?",
+        "options": [
+          "The software has fewer faults for the customer",
+          "The software is more expensive to purchase",
+          "The system is less expensive to maintain",
+          "The software has a better user interface"
+        ],
+        "answer": "The system is less expensive to maintain"
+      },
+      {
+        "question": "Which of these is provided as a simple example of restructuring?",
+        "options": [
+          "Deleting unused features",
+          "Pretty printing",
+          "Upgrading the database",
+          "Changing the software license"
+        ],
+        "answer": "Pretty printing"
+      },
+      {
+        "question": "What is a key characteristic of the restructuring process regarding external behavior?",
+        "options": [
+          "It must add at least one new requirement",
+          "It changes the external behavior to improve performance",
+          "It preserves the external behavior of the original program",
+          "It requires a complete rewrite in a new language"
+        ],
+        "answer": "It preserves the external behavior of the original program"
+      },
+      {
+        "question": "In terms of programming languages, what usually happens during restructuring?",
+        "output": {
+          "options": [
+            "A program is converted from C to Java",
+            "A program is restructured into the same language",
+            "The program is converted into machine code",
+            "The language is irrelevant to the process"
+          ],
+          "answer": "A program is restructured into the same language"
+        }
+      },
+      {
+        "question": "What is the first activity in a refactoring process?",
+        "options": [
+          "Maintain consistency",
+          "Evaluate impacts",
+          "Identify what to refactor",
+          "Apply the refactoring"
+        ],
+        "answer": "Identify what to refactor"
+      },
+      {
+        "question": "Which artifacts can a programmer use to identify what to refactor?",
+        "options": [
+          "Only source code",
+          "Source code, design documents, and requirements documents",
+          "Marketing materials and user manuals",
+          "Financial reports and project timelines"
+        ],
+        "answer": "Source code, design documents, and requirements documents"
+      },
+      {
+        "question": "What is defined as 'any symptom in source code that possibly indicates a deeper problem'?",
+        "options": [
+          "Software bug",
+          "Code smell",
+          "Structural fault",
+          "Design pattern"
+        ],
+        "answer": "Code smell"
+      },
+      {
+        "question": "Which of the following is NOT listed as an example of a code smell?",
+        "options": [
+          "Duplicate code",
+          "Long parameter list",
+          "Short methods",
+          "Large classes"
+        ],
+        "answer": "Short methods"
+      },
+      {
+        "question": "In the LAN simulator example, what does refactoring R1 involve?",
+        "options": [
+          "Creating a superclass",
+          "Renaming method 'print' to 'process' in class PrintServer",
+          "Moving a method to the Packet class",
+          "Encapsulating a field"
+        ],
+        "answer": "Renaming method 'print' to 'process' in class PrintServer"
+      },
+      {
+        "question": "According to the document, why must R1 and R2 be applied together?",
+        "options": [
+          "To save time during compilation",
+          "They are mutually exclusive",
+          "They are related renames across different classes (PrintServer and FileServer)",
+          "They both involve the Packet class"
+        ],
+        "answer": "They are related renames across different classes (PrintServer and FileServer)"
+      },
+      {
+        "question": "What does refactoring R7 (Encapsulate field receiver in Packet) aim to prevent?",
+        "options": [
+          "The method from being renamed",
+          "Direct access to the field by another class",
+          "The field from being deleted",
+          "The class from being inherited"
+        ],
+        "answer": "Direct access to the field by another class"
+      },
+      {
+        "question": "In the refactoring process, why is a subset of refactorings carefully chosen?",
+        "options": [
+          "Because refactoring is too expensive",
+          "To ensure the software becomes faster",
+          "Because some refactorings must be applied in a specific order or are mutually exclusive",
+          "Because the compiler can only handle a few changes at a time"
+        ],
+        "answer": "Because some refactorings must be applied in a specific order or are mutually exclusive"
+      },
+      {
+        "question": "Which refactorings from the example are noted as being mutually exclusive?",
+        "options": [
+          "R1 and R2",
+          "R4 and R6",
+          "R1 and R8",
+          "R3 and R5"
+        ],
+        "answer": "R4 and R6"
+      },
+      {
+        "question": "What is the required order if both R1 and R8 are to be applied?",
+        "options": [
+          "R8 must occur before R1",
+          "They must be applied simultaneously",
+          "R1 must occur before R8",
+          "The order does not matter"
+        ],
+        "answer": "R1 must occur before R8"
+      },
+      {
+        "question": "According to the LAN simulator class diagram (Figure 7.1), which class contains the 'originate()' method?",
+        "options": [
+          "Node",
+          "PrintServer",
+          "Workstation",
+          "FileServer"
+        ],
+        "answer": "Workstation"
+      },
+      {
+        "question": "Which activity in the refactoring process ensures the code still works as intended after changes?",
+        "options": [
+          "Identify what to refactor",
+          "Ensure that refactoring preserves the software's behavior",
+          "Determine which refactoring to apply",
+          "Maintain consistency"
+        ],
+        "answer": "Ensure that refactoring preserves the software's behavior"
+      },
+      {
+        "question": "What is the ultimate higher-level goal of restructuring mentioned in the text?",
+        "options": [
+          "To reduce the number of developers needed",
+          "To increase the software value (internal and external)",
+          "To transition to cloud-based architecture",
+          "To eliminate the need for documentation"
+        ],
+        "answer": "To increase the software value (internal and external)"
+      }
+    ]
+  }
+}

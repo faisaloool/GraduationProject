@@ -1,0 +1,158 @@
+{
+  "document": "CH02-CompSec4e_-_Modefied.pptx - Chapter 2: Cryptographic Tools",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is symmetric encryption also referred to as?",
+        "options": [
+          "Public-key encryption",
+          "Conventional encryption or single-key encryption",
+          "Hash encryption",
+          "Asymmetric encryption"
+        ],
+        "answer": "Conventional encryption or single-key encryption"
+      },
+      {
+        "question": "What are the two requirements for secure use of symmetric encryption?",
+        "options": [
+          "A strong algorithm and secure key distribution",
+          "Large key size and frequent key changes",
+          "Public key infrastructure and digital certificates",
+          "Hardware acceleration and network security"
+        ],
+        "answer": "A strong algorithm and secure key distribution"
+      },
+      {
+        "question": "What is cryptanalysis also known as?",
+        "options": [
+          "Cryptography",
+          "Cryptology",
+          "Codebreaking",
+          "Encryption"
+        ],
+        "answer": "Codebreaking"
+      },
+      {
+        "question": "Which cipher replaces each letter by the third letter after it in the alphabet?",
+        "options": [
+          "Playfair cipher",
+          "Vigenère cipher",
+          "Caesar cipher",
+          "Rail fence cipher"
+        ],
+        "answer": "Caesar cipher"
+      },
+      {
+        "question": "How many possible keys does the Caesar cipher have?",
+        "options": [
+          "26",
+          "52",
+          "256",
+          "676"
+        ],
+        "answer": "26"
+      },
+      {
+        "question": "What is a key weakness of monoalphabetic substitution ciphers?",
+        "options": [
+          "They change letter frequencies",
+          "They don't change relative letter frequencies",
+          "They require too much memory",
+          "They are too slow to compute"
+        ],
+        "answer": "They don't change relative letter frequencies"
+      },
+      {
+        "question": "The Playfair cipher encrypts how many letters at a time?",
+        "options": [
+          "One letter",
+          "Two letters",
+          "Three letters",
+          "Four letters"
+        ],
+        "answer": "Two letters"
+      },
+      {
+        "question": "What is the main advantage of Triple DES (3DES) over DES?",
+        "options": [
+          "It uses a different encryption algorithm",
+          "It is faster in software",
+          "It uses a larger block size",
+          "It has a longer effective key length"
+        ],
+        "answer": "It has a longer effective key length"
+      },
+      {
+        "question": "What is a weakness of Electronic Codebook (ECB) mode?",
+        "options": [
+          "It requires too much memory",
+          "It is too slow",
+          "It reveals patterns in plaintext",
+          "It uses too short keys"
+        ],
+        "answer": "It reveals patterns in plaintext"
+      },
+      {
+        "question": "What does message authentication without confidentiality allow?",
+        "options": [
+          "Verifying sender identity without hiding message content",
+          "Hiding message content without verifying sender identity",
+          "Both hiding content and verifying identity",
+          "Neither hiding content nor verifying identity"
+        ],
+        "answer": "Verifying sender identity without hiding message content"
+      },
+      {
+        "question": "In public-key encryption, what key does the sender use to encrypt data?",
+        "options": [
+          "Their own private key",
+          "The receiver's public key",
+          "Their own public key",
+          "A shared symmetric key"
+        ],
+        "answer": "The receiver's public key"
+      },
+      {
+        "question": "What are the three properties provided by a properly implemented digital signature?",
+        "options": [
+          "Confidentiality, integrity, and availability",
+          "Origin authentication, data integrity, and non-repudiation",
+          "Encryption, decryption, and key exchange",
+          "Speed, efficiency, and scalability"
+        ],
+        "answer": "Origin authentication, data integrity, and non-repudiation"
+      },
+      {
+        "question": "What is one common use of random numbers in cryptography?",
+        "options": [
+          "Generating public-private key pairs",
+          "Creating digital certificates",
+          "Building firewalls",
+          "Configuring routers"
+        ],
+        "answer": "Generating public-private key pairs"
+      },
+      {
+        "question": "What are the two main criteria for random numbers?",
+        "options": [
+          "Speed and efficiency",
+          "Uniform distribution and independence",
+          "Large size and complexity",
+          "Predictability and pattern"
+        ],
+        "answer": "Uniform distribution and independence"
+      },
+      {
+        "question": "When the same block of plaintext always encrypts to the same ciphertext block, what mode is being used?",
+        "options": [
+          "Cipher Block Chaining (CBC) mode",
+          "Electronic Codebook (ECB) mode",
+          "Cipher Feedback (CFB) mode",
+          "Output Feedback (OFB) mode"
+        ],
+        "answer": "Electronic Codebook (ECB) mode"
+      }
+    ]
+  }
+}

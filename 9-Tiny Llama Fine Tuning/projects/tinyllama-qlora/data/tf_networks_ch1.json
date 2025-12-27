@@ -1,0 +1,129 @@
+{
+  "document": "Chapter_1_Introduction.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "The concept of internetworking was initially developed by the US Dept of Defense Advanced Research Project Agency (ARPA).",
+        "answer": "true"
+      },
+      {
+        "question": "The primary reason for the development of internetworking was to allow researchers to share information and access remote data.",
+        "answer": "true"
+      },
+      {
+        "question": "Internetworking evolved after the creation of individual networks.",
+        "answer": "true"
+      },
+      {
+        "question": "A computer network is defined as a collection of autonomous devices interconnected to exchange data.",
+        "answer": "true"
+      },
+      {
+        "question": "Logical resources in a network include software-based assets such as databases.",
+        "answer": "true"
+      },
+      {
+        "question": "Peer computers in a network can both use and provide network resources simultaneously.",
+        "answer": "true"
+      },
+      {
+        "question": "Server computers are designed to primarily provide network resources to other machines.",
+        "answer": "true"
+      },
+      {
+        "question": "Peer-to-Peer Networks allow computers to communicate directly with each other without a central server.",
+        "answer": "true"
+      },
+      {
+        "question": "Peer-to-Peer Networks are generally considered to have a simpler configuration than client-server networks.",
+        "answer": "true"
+      },
+      {
+        "question": "Workstations in a client-server network often require less local memory and storage because they rely on the server.",
+        "answer": "true"
+      },
+      {
+        "question": "Computer networks and distributed systems are fundamentally the same thing.",
+        "answer": "false"
+      },
+      {
+        "question": "PAN stands for Personal Area Network.",
+        "answer": "true"
+      },
+      {
+        "question": "Bluetooth is a standard example of a Personal Area Network (PAN) technology.",
+        "answer": "true"
+      },
+      {
+        "question": "Local Area Networks (LANs) are used to connect devices over a large geographic area, such as a country.",
+        "answer": "false"
+      },
+      {
+        "question": "Wireless LANs typically utilize the IEEE 802.11 standards.",
+        "answer": "true"
+      },
+      {
+        "question": "Metropolitan Area Networks (MANs) are designed to connect devices within a single city or campus area.",
+        "answer": "true"
+      },
+      {
+        "question": "An Internet Service Provider (ISP) network is typically classified as a Wide Area Network (WAN).",
+        "answer": "true"
+      },
+      {
+        "question": "Protocol layering is the primary structuring method used to divide network functionality into manageable modules.",
+        "answer": "true"
+      },
+      {
+        "question": "In a layered protocol stack, each layer communicates only by using the services of the layer immediately below it.",
+        "answer": "true"
+      },
+      {
+        "question": "Lower layers in a protocol stack add a header containing control information to the message before transmission.",
+        "answer": "true"
+      },
+      {
+        "question": "The Open Systems Interconnection (OSI) reference model consists of seven layers.",
+        "answer": "true"
+      },
+      {
+        "question": "The OSI model's layered approach is intended to increase the complexity of network design.",
+        "answer": "false"
+      },
+      {
+        "question": "The lower four layers of the OSI model are Transport, Network, Data Link, and Physical.",
+        "answer": "true"
+      },
+      {
+        "question": "Data is encapsulated with new protocol information as it moves up from the physical layer to the application layer.",
+        "answer": "false"
+      },
+      {
+        "question": "A network message begins at the Application layer and moves down the OSI layers to the Physical layer for transmission.",
+        "answer": "true"
+      },
+
+      {
+        "question": "A header is layer-specific information that defines the functions carried out by that specific layer.",
+        "answer": "true"
+      },
+      {
+        "question": "Connection-oriented communication requires establishing a session before any data transfer occurs.",
+        "answer": "true"
+      },
+      {
+        "question": "In connection-oriented communication, the system can acknowledge receipt and request retransmission of corrupted data.",
+        "answer": "true"
+      },
+      {
+        "question": "Connectionless communication typically has higher overhead than connection-oriented communication.",
+        "answer": "false"
+      },
+      {
+        "question": "Connection-oriented communication is generally considered more reliable than connectionless communication.",
+        "answer": "true"
+      }
+    ]
+  }
+}
