@@ -2,7 +2,7 @@ import os
 import glob
 import json
 import torch
-from datasets import load_dataset
+from datasets import Dataset
 from transformers import (
     AutoTokenizer,
     AutoModelForCausalLM,
@@ -21,7 +21,7 @@ from peft import (
 # CONFIG
 # =========================
 MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-DATA_DIR = "./data"       # folder containing all your JSON files
+DATA_DIR = "./data"       # Folder containing all JSON files
 OUTPUT_DIR = "./output"
 MAX_LENGTH = 2048
 
@@ -67,14 +67,21 @@ model = get_peft_model(model, lora_config)
 model.print_trainable_parameters()
 
 # =========================
-# LOAD DATASET (MULTIPLE JSON FILES)
+# LOAD MULTIPLE JSON FILES AS RAW TEXT
 # =========================
 json_files = glob.glob(f"{DATA_DIR}/*.json")
-dataset = load_dataset("json", data_files=json_files, split="train")
+all_examples = []
+
+for json_file in json_files:
+    with open(json_file, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        all_examples.extend(data)
+
+dataset = Dataset.from_list(all_examples)
 
 # Optional: shuffle and split train/validation
 dataset = dataset.shuffle(seed=42)
-dataset = dataset.train_test_split(test_size=0.05, seed=42)
+dataset = dataset.train_test_split(test_size=0.05)
 train_dataset = dataset["train"]
 eval_dataset = dataset["test"]
 
@@ -108,6 +115,7 @@ SCHEMA:
 
 OUTPUT:
 """
+    # Convert the nested questions array to JSON string
     response = json.dumps(example["output"], ensure_ascii=False)
     return {"text": prompt + response}
 
@@ -194,4 +202,3 @@ model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
 
 print("✅ Training complete. LoRA adapter saved.")
-
