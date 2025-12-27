@@ -558,3 +558,9 @@
     font-size: 15px;
   }
 }
+
+/* Collapsed sidebar: open the quick-menu to the right of the sidebar.
+   This overrides the default negative translateX used for the expanded layout. */
+.account-quick-menu.account-quick-menu--collapsed {
+  transform: translate(12px, calc(-100% - 12px));
+}

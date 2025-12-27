@@ -145,8 +145,17 @@ export const Side_bar = ({ editing, setEditing }) => {
       {isLoggedIn && (
         <div
           className={`side-bar ${collaps ? "collapsed" : ""}`}
-          onClick={() => {
-            if (collaps) setCollaps(false);
+          onClick={(e) => {
+            if (!collaps) return;
+            // Don't auto-expand when clicking interactive items (nav/account).
+            if (
+              e.target.closest("li") ||
+              e.target.closest(".sb-account") ||
+              e.target.closest(".Account")
+            ) {
+              return;
+            }
+            setCollaps(false);
           }}
         >
           <div className="top-of-side-bar">
@@ -167,7 +176,8 @@ export const Side_bar = ({ editing, setEditing }) => {
             <nav>
               <ul>
                 <li
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.stopPropagation();
                     setExam({ title: "Main-page" });
                     navigate("/");
                   }}
@@ -180,7 +190,8 @@ export const Side_bar = ({ editing, setEditing }) => {
                 <li>
                   <div
                     className="Item"
-                    onClick={() => {
+                    onClick={(e) => {
+                      e.stopPropagation();
                       if (!error) {
                         setShowSearch(true);
                       }

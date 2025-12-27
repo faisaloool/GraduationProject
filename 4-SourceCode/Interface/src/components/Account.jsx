@@ -201,7 +201,9 @@ export const Account = ({ collapsed = false }) => {
       {menuOpen &&
         createPortal(
           <div
-            className="account-quick-menu"
+            className={`account-quick-menu ${
+              collapsed ? "account-quick-menu--collapsed" : ""
+            }`}
             style={{ top: menuCoords.top, left: menuCoords.left }}
           >
             <button
