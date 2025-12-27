@@ -1,0 +1,691 @@
+{
+  "filename": "Chapter 3 - Graphics Primitives (4).ppt",
+  "quiz": [
+    {
+      "question": "What is scan conversion also known as?",
+      "type": "mcq",
+      "options": [
+        "Rasterization",
+        "Vectorization",
+        "Pixelation",
+        "Sampling"
+      ],
+      "answer": "Rasterization",
+      "section": "SCAN CONVERSION",
+      "rate": "easy",
+      "suggestion": "Review the definition of scan conversion in the chapter."
+    },
+    {
+      "question": "Which of the following is NOT a graphics output primitive?",
+      "type": "mcq",
+      "options": [
+        "Audio clip",
+        "Point",
+        "Line",
+        "Circle"
+      ],
+      "answer": "Audio clip",
+      "section": "GRAPHICS OUTPUT PRIMITIVES",
+      "rate": "easy",
+      "suggestion": "Recall the list of graphics primitives mentioned."
+    },
+    {
+      "question": "In OpenGL, where is the coordinate origin typically located by default for 2D?",
+      "type": "mcq",
+      "options": [
+        "Lower-left screen corner",
+        "Upper-left screen corner",
+        "Center of the screen",
+        "Upper-right screen corner"
+      ],
+      "answer": "Lower-left screen corner",
+      "section": "2D CARTESIAN REFERENCE SYSTEM",
+      "rate": "easy",
+      "suggestion": "Check the 2D coordinate reference system described."
+    },
+    {
+      "question": "What OpenGL function is used to specify vertex coordinates?",
+      "type": "mcq",
+      "options": [
+        "glVertex*()",
+        "glBegin()",
+        "glEnd()",
+        "glPoint()"
+      ],
+      "answer": "glVertex*()",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy",
+      "suggestion": "Review the OpenGL point functions section."
+    },
+    {
+      "question": "Which line drawing algorithm is also known as the 'Integer DDA'?",
+      "type": "mcq",
+      "options": [
+        "Bresenham's algorithm",
+        "DDA algorithm",
+        "Midpoint algorithm",
+        "Square root method"
+      ],
+      "answer": "Bresenham's algorithm",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy",
+      "suggestion": "Recall the alternative name for Bresenham's algorithm."
+    },
+    {
+      "question": "What is a major disadvantage of the DDA algorithm?",
+      "type": "mcq",
+      "options": [
+        "Floating point arithmetic is slower",
+        "It uses only integer calculations",
+        "It is too accurate",
+        "It cannot draw vertical lines"
+      ],
+      "answer": "Floating point arithmetic is slower",
+      "section": "DDA",
+      "rate": "medium",
+      "suggestion": "Review the disadvantages of DDA."
+    },
+    {
+      "question": "In DDA, if |m| ≤ 1 and drawing left to right, what is xInc?",
+      "type": "mcq",
+      "options": [
+        "1",
+        "m",
+        "1/m",
+        "-1"
+      ],
+      "answer": "1",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium",
+      "suggestion": "Recall the DDA increment rules for slopes."
+    },
+    {
+      "question": "What is the initial decision parameter P0 in Bresenham's line algorithm?",
+      "type": "mcq",
+      "options": [
+        "2ΔY - ΔX",
+        "ΔY - ΔX",
+        "2ΔX - ΔY",
+        "ΔX - ΔY"
+      ],
+      "answer": "2ΔY - ΔX",
+      "section": "BRESENHAM’S LINE ALGORITHM (1)",
+      "rate": "medium",
+      "suggestion": "Check the formula for the starting decision parameter."
+    },
+    {
+      "question": "For a line with endpoints (2,4) and (8,9), what is ΔX?",
+      "type": "mcq",
+      "options": [
+        "6",
+        "5",
+        "4",
+        "7"
+      ],
+      "answer": "6",
+      "section": "EXAMPLE: BRESENHAM’S LINE ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Calculate ΔX from the given endpoints."
+    },
+    {
+      "question": "Which algorithm uses a circle function f_circle(x,y) = x² + y² - r²?",
+      "type": "mcq",
+      "options": [
+        "Midpoint circle algorithm",
+        "Bresenham's circle algorithm",
+        "Square root method",
+        "DDA for circles"
+      ],
+      "answer": "Midpoint circle algorithm",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the circle function used in the midpoint algorithm."
+    },
+    {
+      "question": "How many octants are used to take advantage of circle symmetry?",
+      "type": "mcq",
+      "options": [
+        "8",
+        "4",
+        "2",
+        "6"
+      ],
+      "answer": "8",
+      "section": "CIRCLE DRAWING BY SYMMETRY",
+      "rate": "easy",
+      "suggestion": "Review the symmetry property of circles."
+    },
+    {
+      "question": "What is the initial decision parameter P0 in the midpoint circle algorithm for integer radius r?",
+      "type": "mcq",
+      "options": [
+        "1 - r",
+        "5/4 - r",
+        "3 - 2r",
+        "r - 1"
+      ],
+      "answer": "1 - r",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Check the formula for P0 in the midpoint circle algorithm."
+    },
+    {
+      "question": "In Bresenham's circle algorithm, what is P0 when radius r is an integer?",
+      "type": "mcq",
+      "options": [
+        "3 - 2r",
+        "1 - r",
+        "5/4 - r",
+        "2 - r"
+      ],
+      "answer": "3 - 2r",
+      "section": "BRESENHAM’S CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the initial parameter for Bresenham's circle algorithm."
+    },
+    {
+      "question": "Which of the following is a key advantage of Bresenham's line algorithm over DDA?",
+      "type": "mcq",
+      "options": [
+        "Uses only integer calculations",
+        "Faster for floating point operations",
+        "Less accurate",
+        "Requires more memory"
+      ],
+      "answer": "Uses only integer calculations",
+      "section": "BRESENHAM",
+      "rate": "easy",
+      "suggestion": "Review the advantages of Bresenham's algorithm."
+    },
+    {
+      "question": "What is the slope-intercept form of a line equation?",
+      "type": "mcq",
+      "options": [
+        "y = mx + b",
+        "x = my + b",
+        "y = ax² + bx + c",
+        "Ax + By = C"
+      ],
+      "answer": "y = mx + b",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy",
+      "suggestion": "Recall the standard line equation."
+    },
+    {
+      "question": "For a line with slope m > 1, which coordinate increments faster in DDA?",
+      "type": "mcq",
+      "options": [
+        "y",
+        "x",
+        "Both at same rate",
+        "Neither"
+      ],
+      "answer": "y",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium",
+      "suggestion": "Recall the DDA cases for different slopes."
+    },
+    {
+      "question": "In Bresenham's algorithm, if Pk < 0, what is the next pixel plotted?",
+      "type": "mcq",
+      "options": [
+        "(Xk+1, Yk)",
+        "(Xk, Yk+1)",
+        "(Xk+1, Yk+1)",
+        "(Xk, Yk)"
+      ],
+      "answer": "(Xk+1, Yk)",
+      "section": "BRESENHAM’S LINE ALGORITHM (1)",
+      "rate": "medium",
+      "suggestion": "Check the decision rule in Bresenham's algorithm."
+    },
+    {
+      "question": "What is the purpose of the eight-way symmetry in circle drawing?",
+      "type": "mcq",
+      "options": [
+        "To reduce calculations",
+        "To increase resolution",
+        "To add color",
+        "To enable animation"
+      ],
+      "answer": "To reduce calculations",
+      "section": "CIRCLE DRAWING BY SYMMETRY",
+      "rate": "easy",
+      "suggestion": "Recall the benefit of using symmetry in circle algorithms."
+    },
+    {
+      "question": "Which algorithm is described as 'the simplest line drawing algorithm'?",
+      "type": "mcq",
+      "options": [
+        "DDA",
+        "Bresenham's",
+        "Midpoint",
+        "Square root"
+      ],
+      "answer": "DDA",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy",
+      "suggestion": "Review the description of DDA in the chapter."
+    },
+    {
+      "question": "In the midpoint circle algorithm, if pk < 0, what is the next pixel chosen?",
+      "type": "mcq",
+      "options": [
+        "(xk+1, yk)",
+        "(xk, yk-1)",
+        "(xk+1, yk-1)",
+        "(xk, yk+1)"
+      ],
+      "answer": "(xk+1, yk)",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Check the decision rule for the midpoint circle algorithm."
+    },
+    {
+      "question": "What does DDA stand for?",
+      "type": "mcq",
+      "options": [
+        "Digital Differential Analyzer",
+        "Digital Drawing Algorithm",
+        "Direct Data Access",
+        "Dynamic Display Analyzer"
+      ],
+      "answer": "Digital Differential Analyzer",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "easy",
+      "suggestion": "Recall the full form of DDA."
+    },
+    {
+      "question": "For a line with negative slope in DDA, if |m| ≤ 1 and drawing left to right, what is yInc?",
+      "type": "mcq",
+      "options": [
+        "-m",
+        "m",
+        "1",
+        "-1"
+      ],
+      "answer": "-m",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "hard",
+      "suggestion": "Recall the DDA rules for negative slopes."
+    },
+    {
+      "question": "What is the main problem with the square root method for circle drawing?",
+      "type": "mcq",
+      "options": [
+        "It has gaps where slope is near vertical",
+        "It is too fast",
+        "It uses only integers",
+        "It cannot draw full circles"
+      ],
+      "answer": "It has gaps where slope is near vertical",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Review the disadvantages of the square root method."
+    },
+    {
+      "question": "In Bresenham's circle algorithm, what is the update for pk+1 when pk < 0?",
+      "type": "mcq",
+      "options": [
+        "pk + 4xk+1 + 6",
+        "pk + 4(xk+1 - yk+1) + 10",
+        "pk + 2xk+1 + 1",
+        "pk + 2(xk+1 - yk+1) + 1"
+      ],
+      "answer": "pk + 4xk+1 + 6",
+      "section": "BRESENHAM’S CIRCLE DRAWING ALGORITHM",
+      "rate": "hard",
+      "suggestion": "Check the update rules in Bresenham's circle algorithm."
+    },
+    {
+      "question": "Which OpenGL primitive type is used to draw a set of points?",
+      "type": "mcq",
+      "options": [
+        "GL_POINTS",
+        "GL_LINES",
+        "GL_POLYGON",
+        "GL_CIRCLE"
+      ],
+      "answer": "GL_POINTS",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy",
+      "suggestion": "Recall the OpenGL primitive for points."
+    },
+    {
+      "question": "What is the slope of the line from (6,9) to (11,12)?",
+      "type": "mcq",
+      "options": [
+        "0.6",
+        "1.0",
+        "0.5",
+        "0.8"
+      ],
+      "answer": "0.6",
+      "section": "DDA EXAMPLE",
+      "rate": "easy",
+      "suggestion": "Calculate the slope using Δy/Δx."
+    },
+    {
+      "question": "In the midpoint circle algorithm, what does f_circle(x,y) = 0 indicate?",
+      "type": "mcq",
+      "options": [
+        "Point is on the circle",
+        "Point is inside the circle",
+        "Point is outside the circle",
+        "Point is at the center"
+      ],
+      "answer": "Point is on the circle",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the meaning of the circle function values."
+    },
+    {
+      "question": "Which algorithm is more efficient for drawing lines with integer-only calculations?",
+      "type": "mcq",
+      "options": [
+        "Bresenham's algorithm",
+        "DDA algorithm",
+        "Midpoint algorithm",
+        "All are equal"
+      ],
+      "answer": "Bresenham's algorithm",
+      "section": "BRESENHAM’S LINE DRAWING ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Review the efficiency comparison between DDA and Bresenham."
+    },
+    {
+      "question": "What is the first octant in circle drawing defined by?",
+      "type": "mcq",
+      "options": [
+        "x from 0 to x >= y",
+        "x from 0 to y",
+        "y from 0 to x",
+        "x from 0 to r"
+      ],
+      "answer": "x from 0 to x >= y",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the range for the first octant."
+    },
+    {
+      "question": "In DDA, what is step calculated as?",
+      "type": "mcq",
+      "options": [
+        "Max(|Δx|, |Δy|)",
+        "Min(|Δx|, |Δy|)",
+        "Δx + Δy",
+        "|Δx| + |Δy|"
+      ],
+      "answer": "Max(|Δx|, |Δy|)",
+      "section": "DDA EXAMPLE",
+      "rate": "medium",
+      "suggestion": "Recall how the number of steps is determined in DDA."
+    },
+    {
+      "question": "What is the update for pk+1 in Bresenham's line algorithm when pk >= 0?",
+      "type": "mcq",
+      "options": [
+        "pk + 2ΔY - 2ΔX",
+        "pk + 2ΔY",
+        "pk - 2ΔX",
+        "pk + ΔY - ΔX"
+      ],
+      "answer": "pk + 2ΔY - 2ΔX",
+      "section": "BRESENHAM’S LINE ALGORITHM (1)",
+      "rate": "medium",
+      "suggestion": "Check the update rule for positive decision parameter."
+    },
+    {
+      "question": "Which of the following is a disadvantage of the simple square root circle drawing method?",
+      "type": "mcq",
+      "options": [
+        "It uses square root operations",
+        "It uses only integer math",
+        "It is too fast",
+        "It has no gaps"
+      ],
+      "answer": "It uses square root operations",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Recall the inefficiencies of the square root method."
+    },
+    {
+      "question": "In the midpoint circle algorithm, if pk >= 0, what is the next y value?",
+      "type": "mcq",
+      "options": [
+        "yk - 1",
+        "yk",
+        "yk + 1",
+        "yk - 2"
+      ],
+      "answer": "yk - 1",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Check the decision rule for the midpoint circle algorithm."
+    },
+    {
+      "question": "What is the primary reason for using incremental algorithms in graphics?",
+      "type": "mcq",
+      "options": [
+        "To use previous calculations for efficiency",
+        "To increase color depth",
+        "To enable 3D rendering",
+        "To reduce memory usage"
+      ],
+      "answer": "To use previous calculations for efficiency",
+      "section": "BRESENHAM’S LINE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the benefit of incremental calculations."
+    },
+    {
+      "question": "Which function is used in OpenGL to set up a 2D orthographic projection?",
+      "type": "mcq",
+      "options": [
+        "gluOrtho2D()",
+        "glVertex2D()",
+        "glBegin2D()",
+        "glProject2D()"
+      ],
+      "answer": "gluOrtho2D()",
+      "section": "TWO-DIMENSIONAL WORLD COORDINATE REFERENCE FRAME IN OPENGL",
+      "rate": "medium",
+      "suggestion": "Review the OpenGL 2D coordinate setup."
+    },
+    {
+      "question": "For a circle centered at (xc, yc), how are calculated positions transformed?",
+      "type": "mcq",
+      "options": [
+        "Add xc to x and yc to y",
+        "Subtract xc from x and yc from y",
+        "Multiply by xc and yc",
+        "Divide by xc and yc"
+      ],
+      "answer": "Add xc to x and yc to y",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Recall how to move circle points to the correct center."
+    },
+    {
+      "question": "What is the main advantage of the midpoint circle algorithm over the square root method?",
+      "type": "mcq",
+      "options": [
+        "Avoids square root and multiplication",
+        "Uses floating point numbers",
+        "Draws circles faster with gaps",
+        "Requires more memory"
+      ],
+      "answer": "Avoids square root and multiplication",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Recall the efficiency improvements of the midpoint algorithm."
+    },
+    {
+      "question": "In DDA, for a line with positive slope and |m| > 1, what is xInc?",
+      "type": "mcq",
+      "options": [
+        "1/m",
+        "1",
+        "m",
+        "-1/m"
+      ],
+      "answer": "1/m",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium",
+      "suggestion": "Recall the DDA increment rules for steep slopes."
+    },
+    {
+      "question": "What is the condition to stop the while loop in the midpoint circle algorithm?",
+      "type": "mcq",
+      "options": [
+        "x < y",
+        "x > y",
+        "x == y",
+        "x == 0"
+      ],
+      "answer": "x < y",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Check the loop condition in the algorithm."
+    },
+    {
+      "question": "Which algorithm is used to draw lines in most graphics packages due to its efficiency?",
+      "type": "mcq",
+      "options": [
+        "Bresenham's algorithm",
+        "DDA algorithm",
+        "Midpoint algorithm",
+        "Square root method"
+      ],
+      "answer": "Bresenham's algorithm",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy",
+      "suggestion": "Recall the preferred algorithm for line drawing."
+    },
+    {
+      "question": "What does the decision parameter in Bresenham's line algorithm represent?",
+      "type": "mcq",
+      "options": [
+        "The difference between distances to two candidate pixels",
+        "The slope of the line",
+        "The length of the line",
+        "The color of the pixel"
+      ],
+      "answer": "The difference between distances to two candidate pixels",
+      "section": "BRESENHAM’S LINE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Review the geometric interpretation of the decision parameter."
+    },
+    {
+      "question": "In circle drawing, why is only one octant calculated?",
+      "type": "mcq",
+      "options": [
+        "Symmetry allows derivation of other points",
+        "It is too complex to compute all",
+        "Only one octant is visible",
+        "Hardware limitation"
+      ],
+      "answer": "Symmetry allows derivation of other points",
+      "section": "CIRCLE DRAWING BY SYMMETRY",
+      "rate": "easy",
+      "suggestion": "Recall the reason for using symmetry."
+    },
+    {
+      "question": "What is the initial point (x0, y0) in the midpoint circle algorithm for a circle centered at origin?",
+      "type": "mcq",
+      "options": [
+        "(0, r)",
+        "(r, 0)",
+        "(r, r)",
+        "(0, 0)"
+      ],
+      "answer": "(0, r)",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Recall the starting point for the algorithm."
+    },
+    {
+      "question": "Which of the following is a characteristic of Bresenham's circle algorithm?",
+      "type": "mcq",
+      "options": [
+        "Uses integer arithmetic only",
+        "Requires floating point calculations",
+        "Uses square root operations",
+        "Is slower than DDA"
+      ],
+      "answer": "Uses integer arithmetic only",
+      "section": "BRESENHAM’S CIRCLE DRAWING ALGORITHM",
+      "rate": "medium",
+      "suggestion": "Review the characteristics of Bresenham's circle algorithm."
+    },
+    {
+      "question": "In the context of line drawing, what are 'jaggies'?",
+      "type": "mcq",
+      "options": [
+        "Staircase effect due to pixel rounding",
+        "Smooth curves",
+        "Vertical lines",
+        "Color gradients"
+      ],
+      "answer": "Staircase effect due to pixel rounding",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy",
+      "suggestion": "Recall the term used for the staircase effect."
+    },
+    {
+      "question": "What is the update for pk+1 in the midpoint circle algorithm when pk < 0?",
+      "type": "mcq",
+      "options": [
+        "pk + 2xk+1 + 1",
+        "pk + 2(xk+1 - yk+1) + 1",
+        "pk + 4xk+1 + 6",
+        "pk + 4(xk+1 - yk+1) + 10"
+      ],
+      "answer": "pk + 2xk+1 + 1",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "hard",
+      "suggestion": "Check the update rule for negative pk in the midpoint algorithm."
+    },
+    {
+      "question": "Which algorithm is described as 'accurate, efficient, and uses only incremental integer calculations'?",
+      "type": "mcq",
+      "options": [
+        "Bresenham's line algorithm",
+        "DDA algorithm",
+        "Midpoint circle algorithm",
+        "Square root method"
+      ],
+      "answer": "Bresenham's line algorithm",
+      "section": "BRESENHAM’S LINE DRAWING ALGORITHM",
+      "rate": "easy",
+      "suggestion": "Recall the description of Bresenham's algorithm."
+    },
+    {
+      "question": "For a circle radius r=10, what is P0 in the midpoint algorithm?",
+      "type": "mcq",
+      "options": [
+        "-9",
+        "1",
+        "0",
+        "10"
+      ],
+      "answer": "-9",
+      "section": "EXAMPLE (1)",
+      "rate": "medium",
+      "suggestion": "Calculate P0 using the formula 1 - r."
+    },
+    {
+      "question": "In OpenGL, what must be placed between glBegin() and glEnd()?",
+      "type": "mcq",
+      "options": [
+        "glVertex*() calls",
+        "glColor() calls",
+        "glClear() calls",
+        "glMatrixMode() calls"
+      ],
+      "answer": "glVertex*() calls",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy",
+      "suggestion": "Recall the structure of OpenGL primitive drawing."
+    }
+  ]
+}

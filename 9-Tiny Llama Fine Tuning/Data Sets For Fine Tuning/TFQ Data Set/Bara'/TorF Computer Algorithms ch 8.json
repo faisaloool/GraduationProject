@@ -1,0 +1,88 @@
+{
+  "document": "This document summarizes the main points covered in Lecture 8 on Dynamic Programming.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Dynamic programming is an algorithm design technique for optimization problems such as minimizing or maximizing a value.",
+        "answer": "True"
+      },
+      {
+        "question": "Sub‑problems in dynamic programming are always independent of each other.",
+        "answer": "False"
+      },
+      {
+        "question": "Memoization can be used with a top‑down (recursion + caching) approach to dynamic programming.",
+        "answer": "True"
+      },
+      {
+        "question": "A bottom‑up dynamic programming algorithm requires storing the results of subproblems in a table.",
+        "answer": "True"
+      },
+      {
+        "question": "The memoized factorial function has a time complexity of Θ(n).",
+        "answer": "True"
+      },
+      {
+        "question": "Computing Fibonacci recursively without dynamic programming has an exponential time complexity O(2ⁿ).",
+        "answer": "True"
+      },
+      {
+        "question": "The bottom‑up Fibonacci algorithm runs in linear time and uses O(n) space.",
+        "answer": "True"
+      },
+      {
+        "question": "A binomial coefficient C(n,k) can be computed by filling a table using the recurrence C(n,k)=C(n−1,k)+C(n−1,k−1).",
+        "answer": "True"
+      },
+      {
+        "question": "The base cases for computing binomial coefficients are C(n,0)=1 and C(n,n)=1.",
+        "answer": "True"
+      },
+      {
+        "question": "Dynamic programming solves problems by combining solutions to sub‑problems.",
+        "answer": "True"
+      },
+      {
+        "question": "Dynamic programming reduces computation by solving sub‑problems in a bottom‑up fashion.",
+        "answer": "True"
+      },
+      {
+        "question": "In dynamic programming, the solution to one subproblem may affect solutions to other subproblems of the same problem.",
+        "answer": "False"
+      },
+      {
+        "question": "The recurrence relation for Fibonacci numbers is F(n)=F(n−1)+F(n−2).",
+        "answer": "True"
+      },
+      {
+        "question": "Levenshtein distance is a method used to compare two strings.",
+        "answer": "True"
+      },
+      {
+        "question": "The brute‑force factorial algorithm has a time complexity of O(n²).",
+        "answer": "False"
+      },
+      {
+        "question": "The memoized factorial implementation uses a lookup table to store intermediate results.",
+        "answer": "True"
+      },
+      {
+        "question": "The bottom‑up Fibonacci dynamic programming algorithm requires re‑computing subproblems each time it is called.",
+        "answer": "False"
+      },
+      {
+        "question": "Computing C(n,k) by dynamic programming has a time efficiency of O(nk).",
+        "answer": "True"
+      },
+      {
+        "question": "The space efficiency for the binomial coefficient dynamic programming solution is O(1).",
+        "answer": "False"
+      },
+      {
+        "question": "Sub‑problems in dynamic programming may share sub‑sub‑problems.",
+        "answer": "True"
+      }
+    ]
+  }
+}

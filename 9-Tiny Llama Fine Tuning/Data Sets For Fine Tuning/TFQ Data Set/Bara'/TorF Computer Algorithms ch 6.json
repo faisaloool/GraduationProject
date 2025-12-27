@@ -1,0 +1,88 @@
+{
+  "document": "Lecture 6 covers divide‑and‑conquer techniques such as merge sort, quicksort, binary search and the closest–pair problem.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Merge sort divides the array into two halves recursively.",
+        "answer": "True"
+      },
+      {
+        "question": "Quicksort's best‑case time complexity is O(n log n).",
+        "answer": "True"
+      },
+      {
+        "question": "Binary search can be applied directly to a linked list.",
+        "answer": "False"
+      },
+      {
+        "question": "The closest‑pair divide‑and‑conquer algorithm runs in Θ(n²) time without sorting.",
+        "answer": "False"
+      },
+      {
+        "question": "In merge sort, the temporary array is allocated only once for all merges.",
+        "answer": "False"
+      },
+      {
+        "question": "Quicksort can have a worst‑case O(n²) running time when the input is already sorted and the first element is chosen as pivot.",
+        "answer": "True"
+      },
+      {
+        "question": "Binary search has a recurrence T(n)=1+T(n/2) for its worst case.",
+        "answer": "True"
+      },
+      {
+        "question": "The closest‑pair problem can be solved in Θ(n log n) time using divide‑and‑conquer.",
+        "answer": "True"
+      },
+      {
+        "question": "Merge sort's merge step takes linear time Θ(n).",
+        "answer": "True"
+      },
+      {
+        "question": "Quicksort uses median‑of‑three pivot selection to improve performance.",
+        "answer": "True"
+      },
+      {
+        "question": "Binary search requires the array to be sorted before searching.",
+        "answer": "True"
+      },
+      {
+        "question": "Divide‑and‑conquer can also be applied for multiplication of large integers.",
+        "answer": "True"
+      },
+      {
+        "question": "In the closest‑pair algorithm, points are sorted by y‑coordinate in the strip step.",
+        "answer": "True"
+      },
+      {
+        "question": "Merge sort's time complexity is Θ(n²) if implemented poorly.",
+        "answer": "False"
+      },
+      {
+        "question": "Quicksort eliminates recursion to improve performance.",
+        "answer": "True"
+      },
+      {
+        "question": "Binary search stops when l > r condition fails.",
+        "answer": "True"
+      },
+      {
+        "question": "The closest‑pair problem cannot be solved faster than O(n log n).",
+        "answer": "True"
+      },
+      {
+        "question": "In merge sort, the array is split into halves of equal size.",
+        "answer": "True"
+      },
+      {
+        "question": "Quicksort's partition step ensures all elements less than pivot are left of pivot in final position.",
+        "answer": "True"
+      },
+      {
+        "question": "Binary search has optimal worst‑case time complexity for searching a sorted array.",
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "document": "Photosynthesis is the process by which plants convert sunlight into chemical energy stored in glucose molecules.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the main purpose of photosynthesis?",
+        "options": [
+          "A process of respiration",
+          "A process of energy storage",
+          "A process by which plants make food",
+          "A process of transpiration"
+        ],
+        "answer": "A process by which plants make food"
+      },
+      {
+        "question": "Which molecule stores energy during photosynthesis?",
+        "options": [
+          "ATP",
+          "Glucose",
+          "Carbon dioxide",
+          "Water"
+        ],
+        "answer": "Glucose"
+      }
+    ]
+  }
+}

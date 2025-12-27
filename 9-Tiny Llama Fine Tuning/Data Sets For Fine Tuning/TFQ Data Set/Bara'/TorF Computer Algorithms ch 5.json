@@ -1,0 +1,88 @@
+{
+  "document": "Lecture 5 covered brute‑force algorithms for problems such as string matching, polynomial evaluation, closest‑pair, travelling salesman problem, knapsack, and assignment problem.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The brute‑force string matching algorithm compares each character of the pattern to the text until a mismatch is detected.",
+        "answer": "True"
+      },
+      {
+        "question": "Brute‑force polynomial evaluation can be improved using Horner’s rule, reducing multiplications from O(n²) to O(n).",
+        "answer": "True"
+      },
+      {
+        "question": "The closest‑pair problem has a brute‑force solution that runs in Θ(n log n) time.",
+        "answer": "False"
+      },
+      {
+        "question": "The travelling salesman problem brute‑force algorithm examines all possible tours, taking factorial time.",
+        "answer": "True"
+      },
+      {
+        "question": "The knapsack problem can be solved by exhaustive search with O(2ⁿ) complexity.",
+        "answer": "True"
+      },
+      {
+        "question": "The assignment problem brute‑force method requires generating all n! permutations to find the minimum cost assignment.",
+        "answer": "True"
+      },
+      {
+        "question": "In the closest‑pair brute‑force algorithm you need only compute distances between each pair of points once.",
+        "answer": "True"
+      },
+      {
+        "question": "The Hungarian method runs in O(n³) time for the assignment problem.",
+        "answer": "True"
+      },
+      {
+        "question": "Exhaustive search is efficient on large instances with many variables.",
+        "answer": "False"
+      },
+      {
+        "question": "Brute‑force string matching algorithm can find a pattern in Θ(mn) comparisons in the worst case.",
+        "answer": "True"
+      },
+      {
+        "question": "Polynomial evaluation using Horner’s rule still requires O(n²) multiplications.",
+        "answer": "False"
+      },
+      {
+        "question": "The closest‑pair problem can be made faster by divide‑and‑conquer to run in Θ(n²).",
+        "answer": "False"
+      },
+      {
+        "question": "Knapsack exhaustive search examines all 2ⁿ subsets of items.",
+        "answer": "True"
+      },
+      {
+        "question": "Assignment brute force can be represented using a binary vector for each assignment.",
+        "answer": "False"
+      },
+      {
+        "question": "Brute‑force algorithms often produce reasonable solutions for some problems such as sorting and searching.",
+        "answer": "True"
+      },
+      {
+        "question": "The brute‑force polynomial evaluation algorithm described uses nested loops to compute powers of x.",
+        "answer": "True"
+      },
+      {
+        "question": "Travelling salesman problem brute force algorithm runs in Θ((n–1)!) time).",
+        "answer": "True"
+      },
+      {
+        "question": "In the assignment problem, each person can be assigned to only one job but jobs can have multiple persons.",
+        "answer": "False"
+      },
+      {
+        "question": "Brute‑force algorithms are rarely constructive as other design techniques.",
+        "answer": "True"
+      },
+      {
+        "question": "Exhaustive search is also known as backtracking.",
+        "answer": "False"
+      }
+    ]
+  }
+}

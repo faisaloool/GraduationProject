@@ -1,0 +1,88 @@
+{
+  "document": "The Relational Model explains how data is organized in relational databases using relations, schemas, tuples, attributes, domains, and integrity constraints such as key, entity, and referential integrity.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A relational database is defined as a set of relations.",
+        "answer": "True"
+      },
+      {
+        "question": "In the relational model, rows are formally called attributes.",
+        "answer": "False"
+      },
+      {
+        "question": "The schema of a relation describes the structure and data types of its attributes.",
+        "answer": "True"
+      },
+      {
+        "question": "The cardinality of a relation refers to the number of attributes.",
+        "answer": "False"
+      },
+      {
+        "question": "A domain defines the set of valid values for an attribute.",
+        "answer": "True"
+      },
+      {
+        "question": "Tuples in a relation are considered ordered.",
+        "answer": "False"
+      },
+      {
+        "question": "All tuples in a relation must be distinct.",
+        "answer": "True"
+      },
+      {
+        "question": "A key is an attribute or set of attributes that uniquely identifies a tuple.",
+        "answer": "True"
+      },
+      {
+        "question": "Every superkey is a candidate key.",
+        "answer": "False"
+      },
+      {
+        "question": "A primary key is selected from the set of candidate keys.",
+        "answer": "True"
+      },
+      {
+        "question": "Primary key attributes are allowed to have NULL values.",
+        "answer": "False"
+      },
+      {
+        "question": "Entity integrity ensures that primary key values are not NULL.",
+        "answer": "True"
+      },
+      {
+        "question": "A foreign key references the primary key of another relation.",
+        "answer": "True"
+      },
+      {
+        "question": "Referential integrity allows foreign key values that do not exist in the referenced table.",
+        "answer": "False"
+      },
+      {
+        "question": "Domain constraints ensure attribute values come from a predefined set of valid values.",
+        "answer": "True"
+      },
+      {
+        "question": "The DROP TABLE command removes only the data but keeps the table schema.",
+        "answer": "False"
+      },
+      {
+        "question": "ALTER TABLE can be used to add a new attribute to an existing relation.",
+        "answer": "True"
+      },
+      {
+        "question": "A view stores data physically in the database.",
+        "answer": "False"
+      },
+      {
+        "question": "CASCADE in referential integrity propagates changes to related tuples.",
+        "answer": "True"
+      },
+      {
+        "question": "The relational database state represents the current contents of all relations.",
+        "answer": "True"
+      }
+    ]
+  }
+}

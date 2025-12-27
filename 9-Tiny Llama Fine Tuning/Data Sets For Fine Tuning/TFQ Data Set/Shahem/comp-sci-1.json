@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 1: Data Science in a Big Data World - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Data science is an evolutionary extension of statistics that can handle massive amounts of data.",
+        "answer": "True"
+      },
+      {
+        "question": "The main difference between data scientists and statisticians is that statisticians work with big data.",
+        "answer": "False"
+      },
+      {
+        "question": "Big data is defined by three Vs: Volume, Variety, and Velocity.",
+        "answer": "True"
+      },
+      {
+        "question": "RDBMS (relational database management systems) are ideal for handling all types of big data.",
+        "answer": "False"
+      },
+      {
+        "question": "Data science is only used in commercial settings, not in noncommercial ones.",
+        "answer": "False"
+      },
+      {
+        "question": "Governmental organizations never share their data with the public.",
+        "answer": "False"
+      },
+      {
+        "question": "MOOCs (massive open online courses) do not produce significant amounts of data.",
+        "answer": "False"
+      },
+      {
+        "question": "Structured data resides in fixed fields within records and is easy to store in tables.",
+        "answer": "True"
+      },
+      {
+        "question": "Unstructured data is always easy to fit into a data model.",
+        "answer": "False"
+      },
+      {
+        "question": "Natural language processing has achieved perfect understanding of all text.",
+        "answer": "False"
+      },
+      {
+        "question": "Machine-generated data is created without human intervention.",
+        "answer": "True"
+      },
+      {
+        "question": "Graph-based data focuses on the relationship or adjacency of objects.",
+        "answer": "True"
+      },
+      {
+        "question": "Tasks like recognizing objects in pictures are easy for computers but difficult for humans.",
+        "answer": "False"
+      },
+      {
+        "question": "Streaming data flows into the system in batches rather than when events happen.",
+        "answer": "False"
+      },
+      {
+        "question": "The data science process typically consists of six steps.",
+        "answer": "True"
+      },
+      {
+        "question": "Distributed file systems can only store files smaller than a single computer disk.",
+        "answer": "False"
+      },
+      {
+        "question": "HDFS (Hadoop File System) is a closed-source distributed file system.",
+        "answer": "False"
+      },
+      {
+        "question": "In distributed systems, you move your data to your program rather than moving your program to the data.",
+        "answer": "False"
+      },
+      {
+        "question": "Data integration frameworks are similar to ETL processes in traditional data warehouses.",
+        "answer": "True"
+      },
+      {
+        "question": "Machine learning frameworks are used to extract insights from data.",
+        "answer": "True"
+      },
+      {
+        "question": "NoSQL stands for 'No SQL' meaning these databases don't use SQL at all.",
+        "answer": "False"
+      },
+      {
+        "question": "Traditional relational databases can easily handle streaming, graph, and unstructured data.",
+        "answer": "False"
+      },
+      {
+        "question": "Data scientists need experience in machine learning, computing, and algorithm building.",
+        "answer": "True"
+      },
+      {
+        "question": "Volume refers to how diverse different types of data are.",
+        "answer": "False"
+      },
+      {
+        "question": "NGOs (non-governmental organizations) do not use data science.",
+        "answer": "False"
+      },
+      {
+        "question": "Structured data is typically managed using SQL.",
+        "answer": "True"
+      },
+      {
+        "question": "Email is an example of structured data because it has sender, title, and body fields.",
+        "answer": "False"
+      },
+      {
+        "question": "Web server logs are an example of machine-generated data.",
+        "answer": "True"
+      },
+      {
+        "question": "Graph theory uses nodes, edges, and properties to represent graphical data.",
+        "answer": "True"
+      },
+      {
+        "question": "DeepMind created an algorithm that learns to play video games by taking video screen as input.",
+        "answer": "True"
+      },
+      {
+        "question": "The 'What's trending' on Twitter is an example of streaming data.",
+        "answer": "True"
+      },
+      {
+        "question": "Distributed file systems automatically replicate files across multiple servers.",
+        "answer": "True"
+      },
+      {
+        "question": "HDFS is an implementation of the Microsoft File System.",
+        "answer": "False"
+      },
+      {
+        "question": "The big data ecosystem includes technologies with similar goals and functionalities.",
+        "answer": "True"
+      },
+      {
+        "question": "NoSQL databases cannot scale beyond a single node.",
+        "answer": "False"
+      },
+      {
+        "question": "Data science adds methods from computer science to the repertoire of statistics.",
+        "answer": "True"
+      },
+      {
+        "question": "Velocity in big data refers to how much data there is.",
+        "answer": "False"
+      },
+      {
+        "question": "Commercial companies use data science mainly for customer insights and personalization.",
+        "answer": "True"
+      },
+      {
+        "question": "Natural language is a type of structured data.",
+        "answer": "False"
+      },
+      {
+        "question": "Graph-based data is a natural way to represent social networks.",
+        "answer": "True"
+      }
+    ]
+  }
+}

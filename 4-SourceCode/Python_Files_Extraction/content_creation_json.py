@@ -4,7 +4,7 @@ import json
 import re
 
 # ---------------- CONFIG ---------------- #
-API_KEY = "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"
+API_KEY = "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"
 BASE_URL = "https://openrouter.ai/api/v1"
 
 # ---------------- CLEAN JSON ---------------- #
@@ -61,13 +61,28 @@ async def get_mcq_questions(session: aiohttp.ClientSession, content: str):
             json=payload
         ) as resp:
             data = await resp.json()
+
+            if "error" in data:
+                raise Exception(data["error"]["message"])
+
+            if "choices" not in data:
+                raise Exception(f"Unexpected response: {data}")
+
+            raw = data["choices"][0]["message"]["content"]
+
+
             raw = data["choices"][0]["message"]["content"]
             cleaned = clean_json_like_text(raw)
             parsed = json.loads(cleaned)
 
             return parsed if isinstance(parsed, list) else []
 
-    except Exception:
+    # except Exception:
+    #     return []
+
+    except Exception as e:
+        print("MODEL ERROR:", e)
+        print("RAW:", raw if 'raw' in locals() else "NO RAW")
         return []
 
 # ---------------- TF (CHUNK LEVEL) ---------------- #
@@ -113,6 +128,15 @@ async def get_tf_questions(session: aiohttp.ClientSession, content: str):
             json=payload
         ) as resp:
             data = await resp.json()
+
+            if "error" in data:
+                raise Exception(data["error"]["message"])
+
+            if "choices" not in data:
+                raise Exception(f"Unexpected response: {data}")
+
+            raw = data["choices"][0]["message"]["content"]
+
             raw = data["choices"][0]["message"]["content"]
             cleaned = clean_json_like_text(raw)
             parsed = json.loads(cleaned)

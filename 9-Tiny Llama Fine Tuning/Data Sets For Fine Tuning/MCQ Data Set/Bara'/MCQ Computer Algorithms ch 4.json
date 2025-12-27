@@ -1,0 +1,208 @@
+{
+  "document": "The provided file covers binary trees and binary search trees, their traversals (inorder, preorder, postorder), time complexity of operations on BSTs, and basic graph concepts such as directed vs undirected graphs and adjacency list representation.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which node in a binary tree has no children?",
+        "options": [
+          "Root node",
+          "Leaf node",
+          "Internal node",
+          "Subroot node"
+        ],
+        "answer": "Leaf node"
+      },
+      {
+        "question": "In a binary search tree, the value of any node's right child is:",
+        "options": [
+          "Greater than or equal to its parent",
+          "Less than its parent",
+          "Equal to its parent",
+          "Always greater than its parent"
+        ],
+        "answer": "Always greater than its parent"
+      },
+      {
+        "question": "Which traversal prints the values of a binary search tree in ascending order?",
+        "options": [
+          "Preorder",
+          "Postorder",
+          "Inorder",
+          "Level-order"
+        ],
+        "answer": "Inorder"
+      },
+      {
+        "question": "During an inorder traversal, which node is processed first for a node with left subtree only?",
+        "options": [
+          "Node itself",
+          "Left child",
+          "Right child",
+          "Root after children"
+        ],
+        "answer": "Left child"
+      },
+      {
+        "question": "What is the time complexity of inserting an item into a balanced binary search tree?",
+        "options": [
+          "O(1)",
+          "O(log n)",
+          "O(n)",
+          "O(n log n)"
+        ],
+        "answer": "O(log n)"
+      },
+      {
+        "question": "Which operation on a BST has worst-case time complexity of O(n) in an unbalanced tree?",
+        "options": [
+          "InsertItem",
+          "DeleteItem",
+          "RetrieveItem",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "In an undirected graph, an edge (u,v) is represented as:",
+        "options": [
+          "(u,v)",
+          "(v,u)",
+          "Both (u,v) and (v,u)",
+          "Neither"
+        ],
+        "answer": "Both (u,v) and (v,u)"
+      },
+      {
+        "question": "Which of the following is NOT a characteristic of a binary tree?",
+        "options": [
+          "Each node has at most two children",
+          "Each node may have zero, one, or two children",
+          "All nodes contain two links",
+          "The root node contains no data"
+        ],
+        "answer": "The root node contains no data"
+      },
+      {
+        "question": "Which of the following is a property of a binary search tree?",
+        "options": [
+          "Duplicates are eliminated",
+          "Duplicates may be stored anywhere",
+          "Left subtree values are always greater than parent",
+          "Right subtree values are always less than parent"
+        ],
+        "answer": "Duplicates are eliminated"
+      },
+      {
+        "question": "What is the correct sequence of a preorder traversal for the tree in the example file?",
+        "options": [
+          "7 0 6 1 8 14 13",
+          "0 1 6 7 8 13 14",
+          "1 6 0 13 14 8 7",
+          "7 8 0 6 1 14 13"
+        ],
+        "answer": "7 0 6 1 8 14 13"
+      },
+      {
+        "question": "In a binary tree, the root node is:",
+        "options": [
+          "The last node inserted",
+          "The first node in the tree",
+          "A leaf node",
+          "The deepest node"
+        ],
+        "answer": "The first node in the tree"
+      },
+      {
+        "question": "Which traversal processes the node itself before its children?",
+        "options": [
+          "Inorder",
+          "Preorder",
+          "Postorder",
+          "Level-order"
+        ],
+        "answer": "Preorder"
+      },
+      {
+        "question": "An array-based linear list supports which of the following operations in O(1) time?",
+        "options": [
+          "Constructor",
+          "Destructor",
+          "MakeEmpty",
+          "GetLength"
+        ],
+        "answer": "Constructor"
+      },
+      {
+        "question": "Which of the following is a correct description of an adjacency list for a graph with n vertices and e edges?",
+        "options": [
+          "n head nodes and 2e list nodes",
+          "n head nodes and e list nodes",
+          "2n head nodes and e list nodes",
+          "n+e head nodes and e list nodes"
+        ],
+        "answer": "n head nodes and 2e list nodes"
+      },
+      {
+        "question": "In a binary search tree, which node value is guaranteed to be the smallest?",
+        "options": [
+          "Root node",
+          "Leftmost leaf node",
+          "Rightmost leaf node",
+          "Any node with no left child"
+        ],
+        "answer": "Leftmost leaf node"
+      },
+      {
+        "question": "Which traversal visits a node after its two children in a binary tree?",
+        "options": [
+          "Preorder",
+          "Inorder",
+          "Postorder",
+          "Level-order"
+        ],
+        "answer": "Postorder"
+      },
+      {
+        "question": "A graph G = (V,E) is composed of:",
+        "options": [
+          "Vertices only",
+          "Edges only",
+          "Both vertices and edges",
+          "Neither vertices nor edges"
+        ],
+        "answer": "Both vertices and edges"
+      },
+      {
+        "question": "Which of the following statements about a binary search tree's depth is correct?",
+        "options": [
+          "Depth equals number of nodes",
+          "Depth is at most log₂n",
+          "Depth is always equal to log₂n",
+          "Depth is the sum of left and right subtree depths"
+        ],
+        "answer": "Depth is at most log₂n"
+      },
+      {
+        "question": "In a binary tree, what is the maximum number of nodes that can be stored in a level?",
+        "options": [
+          "2ⁿ",
+          "2ⁿ⁻¹",
+          "n²",
+          "n+1"
+        ],
+        "answer": "2ⁿ⁻¹"
+      },
+      {
+        "question": "Which of the following is NOT an operation that can be performed on a linked list?",
+        "options": [
+          "Insert at head",
+          "Delete at tail",
+          "Insert at arbitrary position",
+          "Random access by index"
+        ],
+        "answer": "Random access by index"
+      }
+    ]
+  }
+}

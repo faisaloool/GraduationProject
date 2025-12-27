@@ -1,0 +1,16 @@
+{
+  "document": "The Earth revolves around the Sun, completing one orbit every 365 days.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The Earth revolves around the Sun.",
+        "answer": "True"
+      },
+      {
+        "question": "The Earth completes its orbit in 400 days.",
+        "answer": "False"
+      }
+    ]
+  }
+}

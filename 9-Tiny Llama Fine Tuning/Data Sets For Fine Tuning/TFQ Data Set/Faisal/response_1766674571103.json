@@ -1,0 +1,320 @@
+{
+  "document": "chap1_intro.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Large-scale data growth has occurred in both commercial and scientific databases.",
+        "answer": "true"
+      },
+      {
+        "question": "Advances in data generation and collection technologies have not contributed to data growth.",
+        "answer": "false"
+      },
+      {
+        "question": "The text emphasizes gathering whatever data you can whenever and wherever possible.",
+        "answer": "true"
+      },
+      {
+        "question": "Computational Simulations can have value either for the purpose collected or for a purpose not envisioned.",
+        "answer": "true"
+      },
+      {
+        "question": "The book 'Introduction to Data Mining, 2nd Edition' discusses the commercial viewpoint of data mining.",
+        "answer": "true"
+      },
+      {
+        "question": "Facebook has billions of active users.",
+        "answer": "true"
+      },
+      {
+        "question": "Amazon handles millions of visits per day.",
+        "answer": "true"
+      },
+      {
+        "question": "Computers have become cheaper and more powerful over time.",
+        "answer": "true"
+      },
+      {
+        "question": "Providing better, customized services can give a competitive edge.",
+        "answer": "true"
+      },
+      {
+        "question": "Remote sensors on a satellite are used for data collection.",
+        "answer": "true"
+      },
+      {
+        "question": "The text mentions that telescopes scan the skies.",
+        "answer": "true"
+      },
+      {
+        "question": "Scientific simulations are referred to as 'المحاكاة العلمبه' in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "The text states that terabytes of data are generated in a few hours.",
+        "answer": "true"
+      },
+      {
+        "question": "Data mining does not assist in automated analysis of massive datasets.",
+        "answer": "false"
+      },
+      {
+        "question": "The text references 'Introduction to Data Mining, 2nd Edition' by Tan, Steinbach, Karpatne, Kumar.",
+        "answer": "true"
+      },
+      {
+        "question": "Sky survey data is explicitly mentioned in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "Gene Expression Data is a type of data.",
+        "answer": "true"
+      },
+      {
+        "question": "Data mining can discover meaningful patterns from large quantities of data.",
+        "answer": "true"
+      },
+      {
+        "question": "Introduction to Data Mining, 2nd Edition is authored by Tan, Steinbach, Karpatne, Kumar.",
+        "answer": "true"
+      },
+      {
+        "question": "Data mining is a key component of the emerging field of data science and data-driven discovery.",
+        "answer": "true"
+      },
+      {
+        "question": "Prediction methods in data mining use some variables to predict unknown or future values.",
+        "answer": "true"
+      },
+      {
+        "question": "The text mentions that data mining tasks include prediction methods.",
+        "answer": "true"
+      },
+      {
+        "question": "Description Methods aim to find human-interpretable patterns that describe the data.",
+        "answer": "true"
+      },
+      {
+        "question": "The text mentions that certain names are more prevalent in certain US locations, such as O’Brien, O’Rurke, and O’Reilly in the Boston area.",
+        "answer": "true"
+      },
+      {
+        "question": "The book 'Introduction to Data Mining, 2nd Edition' was published on 09/09/2020.",
+        "answer": "false"
+      },
+      {
+        "question": "The text states that 'What is (not) Data Mining?' is a chapter in the book 'Introduction to Data Mining, 2nd Edition'.",
+        "answer": "false"
+      },
+      {
+        "question": "Search engines return similar documents based on their context.",
+        "answer": "true"
+      },
+      {
+        "question": "Predictive Modeling is a Data Mining task.",
+        "answer": "true"
+      },
+      {
+        "question": "Association is a Data Mining task.",
+        "answer": "true"
+      },
+      {
+        "question": "Data Mining involves extracting useful patterns from data.",
+        "answer": "true"
+      },
+      {
+        "question": "Introduction to Data Mining, 2nd Edition is authored by Tan, Steinbach, Karpatne, Kumar.",
+        "answer": "true"
+      },
+      {
+        "question": "Dividing the customers of a company according to their profitability is a data mining task.",
+        "answer": "true"
+      },
+      {
+        "question": "Sorting a student database based on student identification numbers is a data mining task.",
+        "answer": "false"
+      },
+      {
+        "question": "Predicting the outcomes of tossing a (fair) pair of dice is a data mining task.",
+        "answer": "false"
+      },
+      {
+        "question": "Predicting the future stock price of a company using historical records is a data mining task.",
+        "answer": "true"
+      },
+      {
+        "question": "Monitoring the heart rate of a patient for abnormalities is a data mining task.",
+        "answer": "false"
+      },
+      {
+        "question": "Monitoring seismic waves is a method used for earthquake activities.",
+        "answer": "true"
+      },
+      {
+        "question": "Extracting the frequencies of a sound wave is not related to data mining.",
+        "answer": "false"
+      },
+      {
+        "question": "Dividing the customers of a company according to their gender is considered a simple database query.",
+        "answer": "true"
+      },
+      {
+        "question": "Data mining involves computing the total sales of a company.",
+        "answer": "false"
+      },
+      {
+        "question": "If a die is not fair and we need to estimate the probabilities of each outcome from the data, it can be considered a data mining problem.",
+        "answer": "true"
+      },
+      {
+        "question": "Predicting the future stock price of a company using historical records is an example of data mining.",
+        "answer": "true"
+      },
+      {
+        "question": "Monitoring heart rate for abnormalities involves anomaly detection.",
+        "answer": "true"
+      },
+      {
+        "question": "Anomaly detection cannot be considered a classification problem.",
+        "answer": "false"
+      },
+      {
+        "question": "Researchers have developed a wide variety of techniques for predicting time series.",
+        "answer": "true"
+      },
+      {
+        "question": "Monitoring seismic waves for earthquake activities is an example of classification in data mining.",
+        "answer": "true"
+      },
+      {
+        "question": "Extracting the frequencies of a sound wave is an example of data mining.",
+        "answer": "false"
+      },
+      {
+        "question": "Building a model of different types of seismic wave behavior associated with earthquake activities is an example of classification.",
+        "answer": "true"
+      },
+      {
+        "question": "Signal processing involves extracting the frequencies of a sound wave.",
+        "answer": "true"
+      },
+      {
+        "question": "Data Mining, 2nd Edition is authored by Tan, Steinbach, Karpatne, and Kumar.",
+        "answer": "true"
+      },
+      {
+        "question": "Predictive Modeling: Classification is used to predict credit worthiness.",
+        "answer": "true"
+      },
+      {
+        "question": "The training set is used to learn a classifier.",
+        "answer": "true"
+      },
+      {
+        "question": "Classification involves predicting a categorical class attribute.",
+        "answer": "true"
+      },
+      {
+        "question": "Classifying credit card transactions as legitimate or fraudulent is an example of classification.",
+        "answer": "true"
+      },
+      {
+        "question": "Categorizing news stories into finance, entertainment, weather, and sports is an example of classification.",
+        "answer": "true"
+      },
+      {
+        "question": "Predicting tumor cells as benign or malignant is an example of classification.",
+        "answer": "true"
+      },
+      {
+        "question": "The goal of fraud detection in credit card transactions is to predict fraudulent cases.",
+        "answer": "true"
+      },
+      {
+        "question": "Past transactions are labeled as fraud or fair transactions to form the class attribute.",
+        "answer": "true"
+      },
+      {
+        "question": "The approach to fraud detection involves learning a model for the class of the transaction.",
+        "answer": "true"
+      },
+      {
+        "question": "Fraud detection can be achieved by observing credit card transactions on an account.",
+        "answer": "true"
+      },
+      {
+        "question": "Regression is used to predict a value of a given continuous valued variable based on the values of other variables.",
+        "answer": "true"
+      },
+      {
+        "question": "Predicting sales amounts of a new product based on advertising expenditure is an example of regression.",
+        "answer": "true"
+      },
+      {
+        "question": "Regression is not studied in the fields of statistics and neural networks.",
+        "answer": "false"
+      },
+      {
+        "question": "Velocities can be a function of temperature, humidity, and air pressure.",
+        "answer": "true"
+      },
+      {
+        "question": "Time series prediction is used for stock market indices.",
+        "answer": "true"
+      },
+      {
+        "question": "Clustering involves finding groups of objects that are similar to each other and different from objects in other groups.",
+        "answer": "true"
+      },
+      {
+        "question": "Filing for targeted marketing is an application of cluster analysis.",
+        "answer": "true"
+      },
+      {
+        "question": "Grouping genes and proteins with similar functionality is an example of cluster analysis.",
+        "answer": "true"
+      },
+      {
+        "question": "Summarization is a task that can be achieved using cluster analysis.",
+        "answer": "true"
+      },
+      {
+        "question": "K-means can be used to partition Sea Surface Temperature (SST) and Net Primary Production (NPP) into clusters.",
+        "answer": "true"
+      },
+      {
+        "question": "Association Rule Discovery predicts the occurrence of an item based on occurrences of other items.",
+        "answer": "true"
+      },
+      {
+        "question": "The rule {Diaper, Milk} --> {Beer} means that the occurrence of Diaper and Milk predicts the occurrence of Beer.",
+        "answer": "true"
+      },
+      {
+        "question": "Rules discovered in Association Rule Discovery are used for sales.",
+        "answer": "true"
+      },
+      {
+        "question": "Rules in telecommunication alarm diagnosis are used to find combinations of alarms that occur together frequently in the same time period.",
+        "answer": "true"
+      },
+      {
+        "question": "Medical Informatics uses rules to find combinations of patient symptoms and test results associated with certain diseases.",
+        "answer": "true"
+      },
+      {
+        "question": "Anomaly detection involves identifying significant deviations from normal behavior.",
+        "answer": "true"
+      },
+      {
+        "question": "Network intrusion detection is an application of anomaly detection.",
+        "answer": "true"
+      },
+      {
+        "question": "Detecting changes in global forest cover is an application of anomaly detection.",
+        "answer": "true"
+      }
+    ]
+  }
+}

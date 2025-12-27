@@ -1,0 +1,228 @@
+{
+  "document": "Brute Force Algorithms and related combinatorial problems, including string matching, polynomial evaluation, closest‑pair, traveling salesman, knapsack, assignment problem, and the strengths/weaknesses of exhaustive search.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the time complexity of a brute‑force string matching algorithm in the worst case?",
+        "options": [
+          "Θ(n + m)",
+          "Θ(mn)",
+          "Θ(nm²)",
+          "Θ(n log m)"
+        ],
+        "answer": "Θ(mn)"
+      },
+      {
+        "question": "During a brute‑force string search, what is the first step?",
+        "options": [
+          "Align the pattern at the beginning of the text",
+          "Compare the last character of the pattern to the text",
+          "Compute the length of the text",
+          "Slide the pattern one position to the right"
+        ],
+        "answer": "Align the pattern at the beginning of the text"
+      },
+      {
+        "question": "In a brute‑force polynomial evaluation, how many multiplications does the simple nested loop algorithm perform?",
+        "options": [
+          "Θ(n)",
+          "Θ(n²)",
+          "Θ(log n)",
+          "Θ(n³)"
+        ],
+        "answer": "Θ(n²)"
+      },
+      {
+        "question": "Which method reduces the polynomial evaluation from Θ(n²) to Θ(n)?",
+        "options": [
+          "Horner’s Rule",
+          "Divide‑and‑conquer",
+          "Dynamic programming",
+          "Greedy algorithm"
+        ],
+        "answer": "Horner’s Rule"
+      },
+      {
+        "question": "What is the time complexity of a brute‑force closest‑pair algorithm?",
+        "options": [
+          "Θ(n log n)",
+          "Θ(n²)",
+          "Θ(n³)",
+          "Θ(log n)"
+        ],
+        "answer": "Θ(n²)"
+      },
+      {
+        "question": "Which strategy is suggested to make the closest‑pair problem faster than brute force?",
+        "options": [
+          "Divide‑and‑conquer",
+          "Greedy search",
+          "Randomized sampling",
+          "Brute‑force with pruning"
+        ],
+        "answer": "Divide‑and‑conquer"
+      },
+      {
+        "question": "A main strength of brute‑force algorithms is that they are:",
+        "options": [
+          "Very fast for large data sets",
+          "Simple to design and implement",
+          "Always optimal",
+          "Never require any extra memory"
+        ],
+        "answer": "Simple to design and implement"
+      },
+      {
+        "question": "A typical weakness of brute‑force algorithms is that they:",
+        "options": [
+          "are too simple for students",
+          "rarely yield efficient solutions",
+          "work only on sorted data",
+          "require advanced hardware"
+        ],
+        "answer": "rarely yield efficient solutions"
+      },
+      {
+        "question": "In exhaustive search, the first step is to:",
+        "options": [
+          "Generate all potential solutions systematically",
+          "Compute a heuristic estimate",
+          "Sort the candidate set by cost",
+          "Apply a greedy rule"
+        ],
+        "answer": "Generate all potential solutions systematically"
+      },
+      {
+        "question": "The traveling salesman problem has how many possible tours?",
+        "options": [
+          "(n‑1)!",
+          "n!",
+          "2^n",
+          "n²"
+        ],
+        "answer": "(n‑1)!"
+      },
+      {
+        "question": "What is the time complexity of exhaustively searching all subsets in a knapsack problem?",
+        "options": [
+          "Θ(n log n)",
+          "Θ(2ⁿ)",
+          "Θ(n³)",
+          "Θ(n²)"
+        ],
+        "answer": "Θ(2ⁿ)"
+      },
+      {
+        "question": "An item subset can be represented by a binary string of length ___ in the knapsack exhaustive search?",
+        "options": [
+          "n",
+          "log n",
+          "n²",
+          "√n"
+        ],
+        "answer": "n"
+      },
+      {
+        "question": "The assignment problem has how many possible assignments for n people and n jobs?",
+        "options": [
+          "n!",
+          "2ⁿ",
+          "(n‑1)!",
+          "n²"
+        ],
+        "answer": "n!"
+      },
+      {
+        "question": "Which algorithm solves the assignment problem in O(n³) time?",
+        "options": [
+          "Dijkstra’s algorithm",
+          "Hungarian method",
+          "Bellman–Ford algorithm",
+          "Kadane’s algorithm"
+        ],
+        "answer": "Hungarian method"
+      },
+      {
+        "question": "Exhaustive search is realistically feasible only when the instance size:",
+        "options": [
+          "is very small",
+          "is huge",
+          "the data are sorted",
+          "has a special structure"
+        ],
+        "answer": "is very small"
+      },
+      {
+        "question": "In brute‑force polynomial evaluation, which step computes powers of x from right to left?",
+        "options": [
+          "The outer loop only",
+          "Using Horner’s Rule inner multiplication",
+          "A separate power table precomputation",
+          "Recursive calculation"
+        ],
+        "answer": "Using Horner’s Rule inner multiplication"
+      },
+      {
+        "question": "Which distance metric is typically used in the closest‑pair brute‑force algorithm?",
+        "options": [
+          "Manhattan distance",
+          "Euclidean distance",
+          "Chebyshev distance",
+          "Cosine similarity"
+        ],
+        "answer": "Euclidean distance"
+      },
+      {
+        "question": "In a brute‑force string matching, what happens when a mismatch is detected?",
+        "options": [
+          "The algorithm terminates immediately",
+          "The pattern is realigned one position to the right and searching continues",
+          "All comparisons are restarted from scratch",
+          "The text is shifted left by one"
+        ],
+        "answer": "The pattern is realigned one position to the right and searching continues"
+      },
+      {
+        "question": "What kind of search does a brute‑force algorithm perform when looking for an element with a special property?",
+        "options": [
+          "Heuristic search",
+          "Depth‑first search",
+          "Exhaustive search",
+          "A* search"
+        ],
+        "answer": "Exhaustive search"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a strength of brute‑force algorithms?",
+        "options": [
+          "Wide applicability",
+          "Simplicity",
+          "Reasonable performance on large data sets",
+          "Yields reasonable algorithms for some important problems"
+        ],
+        "answer": "Reasonable performance on large data sets"
+      },
+      {
+        "question": "Which technique is mentioned in the lecture as a better alternative to exhaustive search?",
+        "options": [
+          "Divide‑and‑conquer",
+          "Branch‑and‑bound",
+          "Randomized sampling",
+          "Gradient descent"
+        ],
+        "answer": "Divide‑and‑conquer"
+      },
+      {
+        "question": "In the brute‑force string matching algorithm, how many comparisons are done for a text of length n and pattern of length m?",
+        "options": [
+          "Θ(n + m)",
+          "Θ(mn)",
+          "Θ(n²)",
+          "Θ(n log m)"
+        ],
+        "answer": "Θ(mn)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "filename": "Chapter 4 – Requirements Engineering",
+  "quiz": [
+    {
+      "question": "Requirements engineering is the process of establishing system services and constraints.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Engineering",
+      "rate": "easy",
+      "suggestion": "Review the definition of requirements engineering"
+    },
+    {
+      "question": "System requirements describe how the system will be implemented internally.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Requirements Engineering",
+      "rate": "easy",
+      "suggestion": "Differentiate between requirements and design"
+    },
+    {
+      "question": "User requirements are written primarily for customers and end users.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Types of Requirement",
+      "rate": "easy",
+      "suggestion": "Review user vs system requirements"
+    },
+    {
+      "question": "System requirements are always informal and written in natural language only.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Types of Requirement",
+      "rate": "easy",
+      "suggestion": "Review system requirements characteristics"
+    },
+    {
+      "question": "Functional requirements describe the services a system should provide.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Functional Requirements",
+      "rate": "easy",
+      "suggestion": "Review functional requirement definitions"
+    },
+    {
+      "question": "Non-functional requirements define specific system behaviors for user inputs.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Non-functional Requirements",
+      "rate": "easy",
+      "suggestion": "Review non-functional requirement scope"
+    },
+    {
+      "question": "Non-functional requirements often apply to the system as a whole.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Non-functional Requirements",
+      "rate": "easy",
+      "suggestion": "Understand system-wide constraints"
+    },
+    {
+      "question": "Domain requirements originate from the system’s operational environment.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Functional and Non-functional Requirements",
+      "rate": "medium",
+      "suggestion": "Review domain constraints"
+    },
+    {
+      "question": "Ambiguous requirements can lead to different interpretations by users and developers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Imprecision",
+      "rate": "easy",
+      "suggestion": "Understand ambiguity risks"
+    },
+    {
+      "question": "A complete requirements document is always achievable in practice.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Requirements Completeness and Consistency",
+      "rate": "medium",
+      "suggestion": "Review practical limitations of RE"
+    },
+    {
+      "question": "Stakeholders include any individuals or organizations affected by the system.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "System Stakeholders",
+      "rate": "easy",
+      "suggestion": "Review stakeholder definition"
+    },
+    {
+      "question": "End users are the only stakeholders considered in requirements engineering.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "System Stakeholders",
+      "rate": "easy",
+      "suggestion": "Review stakeholder categories"
+    },
+    {
+      "question": "Agile methods often avoid detailed system requirements documentation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Agile Methods and Requirements",
+      "rate": "medium",
+      "suggestion": "Understand agile RE approach"
+    },
+    {
+      "question": "User stories are commonly used in agile requirements engineering.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Agile Methods and Requirements",
+      "rate": "easy",
+      "suggestion": "Review agile requirement practices"
+    },
+    {
+      "question": "Non-functional requirements are always less important than functional requirements.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Non-functional Requirements",
+      "rate": "medium",
+      "suggestion": "Understand system constraints importance"
+    },
+    {
+      "question": "A single non-functional requirement may generate multiple functional requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Non-functional Requirements Implementation",
+      "rate": "medium",
+      "suggestion": "Review NFR impact"
+    },
+    {
+      "question": "Product requirements specify constraints such as reliability and performance.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Non-functional Classifications",
+      "rate": "easy",
+      "suggestion": "Review NFR classifications"
+    },
+    {
+      "question": "Organizational requirements come from laws and external regulations.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Non-functional Classifications",
+      "rate": "medium",
+      "suggestion": "Differentiate organizational and external requirements"
+    },
+    {
+      "question": "Goals describe general intentions that may not be directly testable.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Goals and Requirements",
+      "rate": "easy",
+      "suggestion": "Review goals vs verifiable requirements"
+    },
+    {
+      "question": "Verifiable non-functional requirements must be measurable.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Goals and Requirements",
+      "rate": "easy",
+      "suggestion": "Understand testability"
+    },
+    {
+      "question": "Requirements engineering is an iterative process.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Engineering Processes",
+      "rate": "easy",
+      "suggestion": "Review RE process model"
+    },
+    {
+      "question": "Requirements elicitation involves working with stakeholders.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Elicitation",
+      "rate": "easy",
+      "suggestion": "Understand elicitation purpose"
+    },
+    {
+      "question": "Requirements prioritization helps resolve conflicts between stakeholders.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Elicitation",
+      "rate": "medium",
+      "suggestion": "Review prioritization role"
+    },
+    {
+      "question": "Interviews are ineffective for understanding stakeholder perspectives.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Interviewing",
+      "rate": "easy",
+      "suggestion": "Review interview benefits"
+    },
+    {
+      "question": "Closed interviews rely on pre-determined questions.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Interviewing",
+      "rate": "easy",
+      "suggestion": "Understand interview types"
+    },
+    {
+      "question": "Ethnography requires users to clearly explain their work processes.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Ethnography",
+      "rate": "medium",
+      "suggestion": "Review ethnographic method"
+    },
+    {
+      "question": "Ethnography is effective for understanding existing work practices.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Ethnography",
+      "rate": "easy",
+      "suggestion": "Understand ethnography scope"
+    },
+    {
+      "question": "Scenarios describe how a system may be used in real situations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Scenarios",
+      "rate": "easy",
+      "suggestion": "Review scenario purpose"
+    },
+    {
+      "question": "Scenarios must include information about what can go wrong.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Scenarios",
+      "rate": "medium",
+      "suggestion": "Review scenario structure"
+    },
+    {
+      "question": "Requirements specification focuses on writing user and system requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Specification",
+      "rate": "easy",
+      "suggestion": "Understand specification goals"
+    },
+    {
+      "question": "System requirements should always describe how the system is designed.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Requirements and Design",
+      "rate": "medium",
+      "suggestion": "Review requirement vs design distinction"
+    },
+    {
+      "question": "Natural language is commonly used to write requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Natural Language Specification",
+      "rate": "easy",
+      "suggestion": "Review specification techniques"
+    },
+    {
+      "question": "Using the word 'shall' indicates a mandatory requirement.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Guidelines for Writing Requirements",
+      "rate": "easy",
+      "suggestion": "Review requirement language rules"
+    },
+    {
+      "question": "Structured specifications allow unlimited freedom in writing requirements.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Structured Specifications",
+      "rate": "medium",
+      "suggestion": "Understand structured approach"
+    },
+    {
+      "question": "Use cases identify actors and their interactions with the system.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Use Cases",
+      "rate": "easy",
+      "suggestion": "Review use case definition"
+    },
+    {
+      "question": "A software requirements document is a design document.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software Requirements Document",
+      "rate": "easy",
+      "suggestion": "Understand document purpose"
+    },
+    {
+      "question": "Requirements validation ensures the system meets customer needs.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Validation",
+      "rate": "easy",
+      "suggestion": "Review validation goals"
+    },
+    {
+      "question": "Fixing requirement errors after delivery is inexpensive.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Requirements Validation",
+      "rate": "medium",
+      "suggestion": "Understand cost implications"
+    },
+    {
+      "question": "Prototyping can be used as a requirements validation technique.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Validation Techniques",
+      "rate": "easy",
+      "suggestion": "Review validation methods"
+    },
+    {
+      "question": "Requirements reviews should involve both clients and developers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Reviews",
+      "rate": "easy",
+      "suggestion": "Understand review participants"
+    },
+    {
+      "question": "Changing requirements are uncommon after system installation.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Changing Requirements",
+      "rate": "easy",
+      "suggestion": "Review requirements evolution"
+    },
+    {
+      "question": "Requirements management tracks changes and dependencies between requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Management",
+      "rate": "easy",
+      "suggestion": "Understand management role"
+    },
+    {
+      "question": "Each requirement should have a unique identifier.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Management Planning",
+      "rate": "easy",
+      "suggestion": "Review identification practices"
+    },
+    {
+      "question": "Traceability helps assess the impact of requirement changes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Management Planning",
+      "rate": "easy",
+      "suggestion": "Understand traceability benefits"
+    },
+    {
+      "question": "Requirements change management includes analysis and costing.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Change Management",
+      "rate": "medium",
+      "suggestion": "Review change management steps"
+    },
+    {
+      "question": "Requirements change implementation may affect system design.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Requirements Change Management",
+      "rate": "medium",
+      "suggestion": "Understand change consequences"
+    }
+  ]
+}

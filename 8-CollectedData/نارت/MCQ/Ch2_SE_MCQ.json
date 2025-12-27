@@ -1,0 +1,775 @@
+{
+  "filename": "Ch2.pptx",
+  "quiz": [
+    {
+      "question": "What is a software process?",
+      "type": "mcq",
+      "options": [
+        "A structured set of activities required to develop a software system",
+        "A programming language used for software development",
+        "A tool used for debugging software",
+        "A type of software testing methodology"
+      ],
+      "answer": "A structured set of activities required to develop a software system",
+      "section": "The software process",
+      "rate": "easy",
+      "suggestion": "Review the definition of software process in the chapter introduction"
+    },
+    {
+      "question": "Which of the following is NOT a core activity in a software process?",
+      "type": "mcq",
+      "options": [
+        "Specification",
+        "Marketing",
+        "Validation",
+        "Evolution"
+      ],
+      "answer": "Marketing",
+      "section": "The software process",
+      "rate": "easy",
+      "suggestion": "Recall the four basic process activities"
+    },
+    {
+      "question": "What does a software process model represent?",
+      "type": "mcq",
+      "options": [
+        "An abstract representation of a process from a certain perspective",
+        "A detailed programming flowchart",
+        "A hardware configuration diagram",
+        "A user interface mockup"
+      ],
+      "answer": "An abstract representation of a process from a certain perspective",
+      "section": "A software process model",
+      "rate": "easy",
+      "suggestion": "Review the definition of software process model"
+    },
+    {
+      "question": "Which element is NOT typically included in a process description?",
+      "type": "mcq",
+      "options": [
+        "Weather conditions",
+        "Products",
+        "Roles",
+        "Pre- and post-conditions"
+      ],
+      "answer": "Weather conditions",
+      "section": "Software process descriptions",
+      "rate": "easy",
+      "suggestion": "Check the elements of process descriptions in the chapter"
+    },
+    {
+      "question": "In plan-driven processes, how is progress measured?",
+      "type": "mcq",
+      "options": [
+        "Against a predefined plan",
+        "By customer feedback only",
+        "Based on the number of bugs fixed",
+        "Using agile metrics"
+      ],
+      "answer": "Against a predefined plan",
+      "section": "Plan-driven and agile processes",
+      "rate": "easy",
+      "suggestion": "Review the characteristics of plan-driven processes"
+    },
+    {
+      "question": "Which software process model is known for its separate and distinct phases?",
+      "type": "mcq",
+      "options": [
+        "Waterfall model",
+        "Incremental development",
+        "Integration and configuration",
+        "Agile model"
+      ],
+      "answer": "Waterfall model",
+      "section": "Software process models",
+      "rate": "easy",
+      "suggestion": "Recall the key features of the waterfall model"
+    },
+    {
+      "question": "What is the main drawback of the waterfall model?",
+      "type": "mcq",
+      "options": [
+        "Difficulty accommodating change after the process is underway",
+        "Too much customer involvement",
+        "Lack of documentation",
+        "High cost of prototyping"
+      ],
+      "answer": "Difficulty accommodating change after the process is underway",
+      "section": "Waterfall model phases",
+      "rate": "medium",
+      "suggestion": "Review the limitations of the waterfall model"
+    },
+    {
+      "question": "In incremental development, what is reduced compared to the waterfall model?",
+      "type": "mcq",
+      "options": [
+        "Cost of accommodating changing requirements",
+        "Number of development phases",
+        "Need for customer feedback",
+        "Use of reusable components"
+      ],
+      "answer": "Cost of accommodating changing requirements",
+      "section": "Incremental development benefits",
+      "rate": "medium",
+      "suggestion": "Review the benefits of incremental development"
+    },
+    {
+      "question": "What is a common problem in incremental development?",
+      "type": "mcq",
+      "options": [
+        "System structure tends to degrade as new increments are added",
+        "It requires more documentation than waterfall",
+        "It is too rigid for changing requirements",
+        "It lacks customer involvement"
+      ],
+      "answer": "System structure tends to degrade as new increments are added",
+      "section": "Incremental development problems",
+      "rate": "medium",
+      "suggestion": "Review the problems associated with incremental development"
+    },
+    {
+      "question": "Which model is based on software reuse and system integration from existing components?",
+      "type": "mcq",
+      "options": [
+        "Integration and configuration",
+        "Waterfall model",
+        "Incremental development",
+        "Spiral model"
+      ],
+      "answer": "Integration and configuration",
+      "section": "Integration and configuration",
+      "rate": "easy",
+      "suggestion": "Recall the definition of integration and configuration model"
+    },
+    {
+      "question": "What is a key advantage of the integration and configuration model?",
+      "type": "mcq",
+      "options": [
+        "Reduced costs and risks",
+        "Increased customer control",
+        "More detailed documentation",
+        "Strict phase completion"
+      ],
+      "answer": "Reduced costs and risks",
+      "section": "Advantages and disadvantages",
+      "rate": "medium",
+      "suggestion": "Review the advantages of reuse-based development"
+    },
+    {
+      "question": "What are the four basic process activities in software engineering?",
+      "type": "mcq",
+      "options": [
+        "Specification, development, validation, evolution",
+        "Planning, coding, testing, deployment",
+        "Analysis, design, implementation, maintenance",
+        "Elicitation, modeling, validation, management"
+      ],
+      "answer": "Specification, development, validation, evolution",
+      "section": "Process activities",
+      "rate": "easy",
+      "suggestion": "Review the four basic activities listed in the chapter"
+    },
+    {
+      "question": "Which activity in requirements engineering involves defining requirements in detail?",
+      "type": "mcq",
+      "options": [
+        "Requirements specification",
+        "Requirements elicitation",
+        "Requirements validation",
+        "Requirements analysis"
+      ],
+      "answer": "Requirements specification",
+      "section": "Software specification",
+      "rate": "easy",
+      "suggestion": "Recall the three main activities in requirements engineering"
+    },
+    {
+      "question": "What is the purpose of software validation?",
+      "type": "mcq",
+      "options": [
+        "To ensure the system meets customer requirements",
+        "To write the code for the system",
+        "To gather system requirements",
+        "To design the system architecture"
+      ],
+      "answer": "To ensure the system meets customer requirements",
+      "section": "Software validation",
+      "rate": "easy",
+      "suggestion": "Review the definition of validation"
+    },
+    {
+      "question": "Which testing phase involves testing the system as a whole?",
+      "type": "mcq",
+      "options": [
+        "System testing",
+        "Unit testing",
+        "Integration testing",
+        "Acceptance testing"
+      ],
+      "answer": "System testing",
+      "section": "Testing stages",
+      "rate": "easy",
+      "suggestion": "Review the different stages of testing"
+    },
+    {
+      "question": "What does the V-model represent?",
+      "type": "mcq",
+      "options": [
+        "Correspondence between testing and development activities",
+        "A version control system",
+        "A type of agile methodology",
+        "A prototyping technique"
+      ],
+      "answer": "Correspondence between testing and development activities",
+      "section": "Testing phases in a plan-driven software process",
+      "rate": "medium",
+      "suggestion": "Review the explanation of the V-model"
+    },
+    {
+      "question": "Why is software evolution necessary?",
+      "type": "mcq",
+      "options": [
+        "To meet changing customer needs",
+        "To reduce initial development costs",
+        "To eliminate all bugs",
+        "To avoid documentation"
+      ],
+      "answer": "To meet changing customer needs",
+      "section": "Software evolution",
+      "rate": "easy",
+      "suggestion": "Recall the reason for software evolution"
+    },
+    {
+      "question": "What are the two main ways to reduce the cost of rework due to change?",
+      "type": "mcq",
+      "options": [
+        "Change anticipation and change tolerance",
+        "More testing and more documentation",
+        "Faster coding and less planning",
+        "Strict deadlines and fixed requirements"
+      ],
+      "answer": "Change anticipation and change tolerance",
+      "section": "Reducing the costs of rework",
+      "rate": "medium",
+      "suggestion": "Review the strategies for coping with change"
+    },
+    {
+      "question": "What is a prototype used for?",
+      "type": "mcq",
+      "options": [
+        "To demonstrate concepts and try out design options",
+        "To replace the final system entirely",
+        "To write the final documentation",
+        "To train end-users"
+      ],
+      "answer": "To demonstrate concepts and try out design options",
+      "section": "Software prototyping",
+      "rate": "easy",
+      "suggestion": "Review the definition and purpose of prototyping"
+    },
+    {
+      "question": "Which is NOT a benefit of prototyping?",
+      "type": "mcq",
+      "options": [
+        "Increased system complexity",
+        "Improved system usability",
+        "Closer match to user needs",
+        "Reduced development effort"
+      ],
+      "answer": "Increased system complexity",
+      "section": "Benefits of prototyping",
+      "rate": "easy",
+      "suggestion": "Review the listed benefits of prototyping"
+    },
+    {
+      "question": "Why should throw-away prototypes be discarded?",
+      "type": "mcq",
+      "options": [
+        "They are not a good basis for a production system",
+        "They are too expensive to maintain",
+        "They cannot be demonstrated to customers",
+        "They lack user interface elements"
+      ],
+      "answer": "They are not a good basis for a production system",
+      "section": "Throw-away prototypes",
+      "rate": "medium",
+      "suggestion": "Review the reasons for discarding throw-away prototypes"
+    },
+    {
+      "question": "What is incremental delivery?",
+      "type": "mcq",
+      "options": [
+        "Deploying an increment for use by end-users",
+        "Developing the entire system at once",
+        "Writing all documentation before coding",
+        "Testing only at the end of development"
+      ],
+      "answer": "Deploying an increment for use by end-users",
+      "section": "Incremental delivery",
+      "rate": "medium",
+      "suggestion": "Review the definition of incremental delivery"
+    },
+    {
+      "question": "Which is an advantage of incremental delivery?",
+      "type": "mcq",
+      "options": [
+        "Customer value is delivered earlier",
+        "All requirements are fixed from the start",
+        "No testing is needed between increments",
+        "Documentation is minimized"
+      ],
+      "answer": "Customer value is delivered earlier",
+      "section": "Incremental delivery advantages",
+      "rate": "medium",
+      "suggestion": "Review the advantages of incremental delivery"
+    },
+    {
+      "question": "What is the goal of software process improvement?",
+      "type": "mcq",
+      "options": [
+        "To increase product quality and/or reduce costs",
+        "To eliminate all software bugs",
+        "To make software development faster than hardware",
+        "To replace all human developers with AI"
+      ],
+      "answer": "To increase product quality and/or reduce costs",
+      "section": "Process improvement",
+      "rate": "easy",
+      "suggestion": "Review the purpose of process improvement"
+    },
+    {
+      "question": "Which approach focuses on improving process and project management?",
+      "type": "mcq",
+      "options": [
+        "Process maturity approach",
+        "Agile approach",
+        "Waterfall approach",
+        "Prototyping approach"
+      ],
+      "answer": "Process maturity approach",
+      "section": "Approaches to improvement",
+      "rate": "medium",
+      "suggestion": "Recall the two main approaches to process improvement"
+    },
+    {
+      "question": "What is the first activity in process improvement?",
+      "type": "mcq",
+      "options": [
+        "Process measurement",
+        "Process change",
+        "Process analysis",
+        "Process modeling"
+      ],
+      "answer": "Process measurement",
+      "section": "Process improvement activities",
+      "rate": "medium",
+      "suggestion": "Review the sequence of process improvement activities"
+    },
+    {
+      "question": "Which is a common process metric?",
+      "type": "mcq",
+      "options": [
+        "Time taken to complete an activity",
+        "Number of developers in a team",
+        "Customer satisfaction score",
+        "Lines of code written"
+      ],
+      "answer": "Time taken to complete an activity",
+      "section": "Process metrics",
+      "rate": "easy",
+      "suggestion": "Review examples of process metrics"
+    },
+    {
+      "question": "What does the SEI Capability Maturity Model measure?",
+      "type": "mcq",
+      "options": [
+        "Process maturity levels of an organization",
+        "Number of software products released",
+        "Customer feedback ratings",
+        "Code complexity metrics"
+      ],
+      "answer": "Process maturity levels of an organization",
+      "section": "The SEI capability maturity model",
+      "rate": "medium",
+      "suggestion": "Recall the purpose of the SEI CMM"
+    },
+    {
+      "question": "Which is the highest level in the SEI CMM?",
+      "type": "mcq",
+      "options": [
+        "Optimizing",
+        "Defined",
+        "Managed",
+        "Initial"
+      ],
+      "answer": "Optimizing",
+      "section": "Capability maturity levels",
+      "rate": "medium",
+      "suggestion": "Review the five maturity levels in order"
+    },
+    {
+      "question": "What is the focus of the 'Defined' level in CMM?",
+      "type": "mcq",
+      "options": [
+        "Organizational standardization and deployment of processes",
+        "Ad-hoc and uncontrolled processes",
+        "Quantitative management of subprocesses",
+        "Continuous process improvement"
+      ],
+      "answer": "Organizational standardization and deployment of processes",
+      "section": "Capability maturity levels",
+      "rate": "hard",
+      "suggestion": "Review the description of each maturity level"
+    },
+    {
+      "question": "Which model is most appropriate for systems with stable requirements?",
+      "type": "mcq",
+      "options": [
+        "Waterfall model",
+        "Incremental development",
+        "Agile model",
+        "Prototyping model"
+      ],
+      "answer": "Waterfall model",
+      "section": "Waterfall model problems",
+      "rate": "medium",
+      "suggestion": "Recall when the waterfall model is appropriate"
+    },
+    {
+      "question": "What is a reusable software component that is configured for a particular environment?",
+      "type": "mcq",
+      "options": [
+        "Stand-alone application system (COTS)",
+        "Web service",
+        "Custom-built module",
+        "Open-source library"
+      ],
+      "answer": "Stand-alone application system (COTS)",
+      "section": "Types of reusable software",
+      "rate": "easy",
+      "suggestion": "Review the types of reusable software"
+    },
+    {
+      "question": "Which process activity involves converting system specification into an executable system?",
+      "type": "mcq",
+      "options": [
+        "Software design and implementation",
+        "Software specification",
+        "Software validation",
+        "Software evolution"
+      ],
+      "answer": "Software design and implementation",
+      "section": "Software design and implementation",
+      "rate": "easy",
+      "suggestion": "Review the definition of design and implementation"
+    },
+    {
+      "question": "What does architectural design identify?",
+      "type": "mcq",
+      "options": [
+        "Overall structure of the system and principal components",
+        "Detailed code algorithms",
+        "User interface colors and fonts",
+        "Database table relationships only"
+      ],
+      "answer": "Overall structure of the system and principal components",
+      "section": "Design activities",
+      "rate": "medium",
+      "suggestion": "Review the focus of architectural design"
+    },
+    {
+      "question": "What is the difference between verification and validation?",
+      "type": "mcq",
+      "options": [
+        "Verification checks if we are building the system correctly; validation checks if we are building the right system",
+        "Verification is done by developers; validation is done by customers",
+        "Verification is about testing; validation is about documentation",
+        "Verification is optional; validation is mandatory"
+      ],
+      "answer": "Verification checks if we are building the system correctly; validation checks if we are building the right system",
+      "section": "Verification and validation",
+      "rate": "medium",
+      "suggestion": "Review the definitions of verification and validation"
+    },
+    {
+      "question": "Which testing stage involves testing with customer data?",
+      "type": "mcq",
+      "options": [
+        "Customer testing / User acceptance testing",
+        "Component testing",
+        "System testing",
+        "Integration testing"
+      ],
+      "answer": "Customer testing / User acceptance testing",
+      "section": "Testing stages",
+      "rate": "easy",
+      "suggestion": "Review the purpose of each testing stage"
+    },
+    {
+      "question": "What is change tolerance?",
+      "type": "mcq",
+      "options": [
+        "Designing the process to accommodate changes at low cost",
+        "Ignoring changes to save time",
+        "Rejecting all customer change requests",
+        "Using only waterfall model to avoid changes"
+      ],
+      "answer": "Designing the process to accommodate changes at low cost",
+      "section": "Reducing the costs of rework",
+      "rate": "medium",
+      "suggestion": "Review the concept of change tolerance"
+    },
+    {
+      "question": "What is a key characteristic of agile processes?",
+      "type": "mcq",
+      "options": [
+        "Incremental planning and responsiveness to change",
+        "Fixed requirements and sequential phases",
+        "Heavy documentation and formal reviews",
+        "Long development cycles and late delivery"
+      ],
+      "answer": "Incremental planning and responsiveness to change",
+      "section": "Plan-driven and agile processes",
+      "rate": "easy",
+      "suggestion": "Recall the defining traits of agile processes"
+    },
+    {
+      "question": "Which is a common activity in software specification?",
+      "type": "mcq",
+      "options": [
+        "Requirements elicitation and analysis",
+        "Coding and debugging",
+        "User training",
+        "System deployment"
+      ],
+      "answer": "Requirements elicitation and analysis",
+      "section": "Software specification",
+      "rate": "easy",
+      "suggestion": "Review the activities in requirements engineering"
+    },
+    {
+      "question": "What is a disadvantage of integration and configuration?",
+      "type": "mcq",
+      "options": [
+        "Loss of control over evolution of reused elements",
+        "High cost of developing from scratch",
+        "Inability to accommodate change",
+        "Lack of customer involvement"
+      ],
+      "answer": "Loss of control over evolution of reused elements",
+      "section": "Advantages and disadvantages",
+      "rate": "medium",
+      "suggestion": "Review the disadvantages of reuse-based development"
+    },
+    {
+      "question": "What does 'pre-condition' mean in a process description?",
+      "type": "mcq",
+      "options": [
+        "A condition that must hold before a process activity begins",
+        "A condition that is checked after the product is delivered",
+        "A type of software bug",
+        "A user requirement document"
+      ],
+      "answer": "A condition that must hold before a process activity begins",
+      "section": "Software process descriptions",
+      "rate": "medium",
+      "suggestion": "Review the definition of pre- and post-conditions"
+    },
+    {
+      "question": "What is incremental development?",
+      "type": "mcq",
+      "options": [
+        "Interleaved specification, development, and validation",
+        "Sequential phases like waterfall",
+        "Reuse of existing components only",
+        "No planning or documentation"
+      ],
+      "answer": "Interleaved specification, development, and validation",
+      "section": "Incremental development",
+      "rate": "easy",
+      "suggestion": "Recall the key feature of incremental development"
+    },
+    {
+      "question": "Which is a problem with incremental delivery?",
+      "type": "mcq",
+      "options": [
+        "Hard to identify common facilities needed by all increments",
+        "Too much customer feedback",
+        "Lack of reusable components",
+        "Excessive documentation requirements"
+      ],
+      "answer": "Hard to identify common facilities needed by all increments",
+      "section": "Incremental delivery problems",
+      "rate": "medium",
+      "suggestion": "Review the challenges of incremental delivery"
+    },
+    {
+      "question": "What is the purpose of process analysis?",
+      "type": "mcq",
+      "options": [
+        "To assess the current process and identify weaknesses",
+        "To write new code for the system",
+        "To train developers on new tools",
+        "To gather customer requirements"
+      ],
+      "answer": "To assess the current process and identify weaknesses",
+      "section": "Process improvement activities",
+      "rate": "medium",
+      "suggestion": "Review the role of process analysis in improvement"
+    },
+    {
+      "question": "Which level of CMM is described as 'essentially uncontrolled'?",
+      "type": "mcq",
+      "options": [
+        "Initial",
+        "Managed",
+        "Defined",
+        "Optimizing"
+      ],
+      "answer": "Initial",
+      "section": "The SEI capability maturity model",
+      "rate": "medium",
+      "suggestion": "Review the characteristics of each CMM level"
+    },
+    {
+      "question": "What is system prototyping used for?",
+      "type": "mcq",
+      "options": [
+        "Checking customer requirements and feasibility of design",
+        "Replacing the final system entirely",
+        "Writing user manuals",
+        "Training end-users before deployment"
+      ],
+      "answer": "Checking customer requirements and feasibility of design",
+      "section": "Coping with changing requirements",
+      "rate": "medium",
+      "suggestion": "Review the purpose of prototyping"
+    },
+    {
+      "question": "Which is a characteristic of plan-driven processes?",
+      "type": "mcq",
+      "options": [
+        "All activities are planned in advance",
+        "No documentation is produced",
+        "Changes are welcome at any stage",
+        "Developers work without a plan"
+      ],
+      "answer": "All activities are planned in advance",
+      "section": "Plan-driven and agile processes",
+      "rate": "easy",
+      "suggestion": "Recall the key traits of plan-driven processes"
+    },
+    {
+      "question": "What does 'evolutionary prototyping' involve?",
+      "type": "mcq",
+      "options": [
+        "Developing a prototype that evolves into the final system",
+        "Discarding the prototype after use",
+        "Using only throw-away prototypes",
+        "No customer involvement in prototyping"
+      ],
+      "answer": "Developing a prototype that evolves into the final system",
+      "section": "Evolutionary Prototyping Model",
+      "rate": "medium",
+      "suggestion": "Review the difference between evolutionary and throw-away prototyping"
+    },
+    {
+      "question": "What is a key benefit of using reusable components?",
+      "type": "mcq",
+      "options": [
+        "Faster delivery and deployment",
+        "Higher customer involvement",
+        "More detailed documentation",
+        "Increased system complexity"
+      ],
+      "answer": "Faster delivery and deployment",
+      "section": "Advantages and disadvantages",
+      "rate": "medium",
+      "suggestion": "Review the advantages of reuse-based development"
+    },
+    {
+      "question": "Which activity is part of software validation?",
+      "type": "mcq",
+      "options": [
+        "System testing",
+        "Requirements elicitation",
+        "Architectural design",
+        "Code implementation"
+      ],
+      "answer": "System testing",
+      "section": "Software validation",
+      "rate": "easy",
+      "suggestion": "Recall the activities involved in validation"
+    },
+    {
+      "question": "What is a 'role' in a process description?",
+      "type": "mcq",
+      "options": [
+        "Reflects responsibilities of people involved",
+        "A type of software tool",
+        "A pre-condition for starting a phase",
+        "A post-condition after testing"
+      ],
+      "answer": "Reflects responsibilities of people involved",
+      "section": "Software process descriptions",
+      "rate": "easy",
+      "suggestion": "Review the definition of roles in process descriptions"
+    },
+    {
+      "question": "What does the 'Quantitatively Managed' level in CMM emphasize?",
+      "type": "mcq",
+      "options": [
+        "Using statistical methods to control subprocesses",
+        "Ad-hoc and unpredictable processes",
+        "Standardizing processes across the organization",
+        "Continuous improvement driven by measurements"
+      ],
+      "answer": "Using statistical methods to control subprocesses",
+      "section": "Capability maturity levels",
+      "rate": "hard",
+      "suggestion": "Review the description of the Quantitatively Managed level"
+    },
+    {
+      "question": "Which model is most flexible for changing requirements?",
+      "type": "mcq",
+      "options": [
+        "Incremental development",
+        "Waterfall model",
+        "Plan-driven model",
+        "Sequential model"
+      ],
+      "answer": "Incremental development",
+      "section": "Incremental development benefits",
+      "rate": "medium",
+      "suggestion": "Recall which model best accommodates change"
+    },
+    {
+      "question": "What is a 'product' in a process description?",
+      "type": "mcq",
+      "options": [
+        "Outcome of a process activity",
+        "A type of software license",
+        "A project management tool",
+        "A customer requirement document"
+      ],
+      "answer": "Outcome of a process activity",
+      "section": "Software process descriptions",
+      "rate": "easy",
+      "suggestion": "Review the definition of products in process descriptions"
+    },
+    {
+      "question": "Which is a common method for coping with changing requirements?",
+      "type": "mcq",
+      "options": [
+        "Incremental delivery",
+        "Fixed-price contracts",
+        "No customer feedback",
+        "Late testing"
+      ],
+      "answer": "Incremental delivery",
+      "section": "Coping with changing requirements",
+      "rate": "medium",
+      "suggestion": "Review strategies for handling change"
+    }
+  ]
+}

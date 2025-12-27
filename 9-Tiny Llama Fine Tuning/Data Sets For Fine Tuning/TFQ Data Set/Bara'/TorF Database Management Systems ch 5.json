@@ -1,0 +1,84 @@
+{
+  "document": "file name.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A transaction is a unit of program execution that may access multiple data items.",
+        "answer": "True"
+      },
+      {
+        "question": "The ACID properties include Atomicity, Consistency, Isolation, and Durability.",
+        "answer": "True"
+      },
+      {
+        "question": "In a read‑only transaction the database is updated but not read.",
+        "answer": "False"
+      },
+      {
+        "question": "A transaction that fails after an update to one record must still leave that record unchanged in the database until recovery.",
+        "answer": "True"
+      },
+      {
+        "question": "Durability guarantees that once a transaction commits, its changes will persist even if the system crashes afterwards.",
+        "answer": "True"
+      },
+      {
+        "question": "Isolation requires that two concurrent transactions never read each other’s intermediate values.",
+        "answer": "False"
+      },
+      {
+        "question": "Lost update problems occur when two transactions write to the same record concurrently without proper synchronization.",
+        "answer": "True"
+      },
+      {
+        "question": "The temporary update (dirty‑read) problem is solved by allowing a transaction to read uncommitted data from another transaction.",
+        "answer": "False"
+      },
+      {
+        "question": "A consistency violation can happen during the execution of a transaction but must be resolved before it commits.",
+        "answer": "True"
+      },
+      {
+        "question": "An active transaction that aborts will always leave the database in a partially committed state.",
+        "answer": "False"
+      },
+      {
+        "question": "The log record for a write operation normally contains the old value and the new value of the data item.",
+        "answer": "True"
+      },
+      {
+        "question": "Recovery can be performed by redoing only those transactions that have already committed before a crash.",
+        "answer": "True"
+      },
+      {
+        "question": "The commit point of a transaction is reached once all its database operations are executed and the changes are recorded in the log.",
+        "answer": "True"
+      },
+      {
+        "question": "A system failure such as a power loss is considered a media failure.",
+        "answer": "True"
+      },
+      {
+        "question": "When two transactions run concurrently, the database must always show a consistent snapshot of all tables after each transaction completes.",
+        "answer": "True"
+      },
+      {
+        "question": "If a transaction’s log record is missing for one of its writes, recovery will never be able to undo that change if it did not commit.",
+        "answer": "False"
+      },
+      {
+        "question": "The concurrency control scheme called locking can prevent lost update problems by ensuring exclusive write access.",
+        "answer": "True"
+      },
+      {
+        "question": "A deadlock occurs when two transactions hold locks on each other and wait for a resource that is held by the other.",
+        "answer": "True"
+      },
+      {
+        "question": "The consistency requirement only concerns primary key integrity constraints.",
+        "answer": "False"
+      }
+    ]
+  }
+}

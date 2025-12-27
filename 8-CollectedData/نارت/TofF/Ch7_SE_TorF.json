@@ -1,0 +1,243 @@
+{
+  "filename": "Chapter 7 – Design and Implementation",
+  "quiz": [
+    {
+      "question": "Software design and implementation activities are usually carried out sequentially.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Design and Implementation Overview",
+      "rate": "hard",
+      "suggestion": "Review how design and implementation are interleaved"
+    },
+    {
+      "question": "Software design focuses on identifying components and their relationships based on customer requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Design and Implementation Overview",
+      "rate": "hard",
+      "suggestion": "Understand the role of design"
+    },
+    {
+      "question": "Implementation is the process of realizing a software design as an executable program.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Design and Implementation Overview",
+      "rate": "easy",
+      "suggestion": "Review implementation definition"
+    },
+
+    {
+      "question": "Using off-the-shelf software always requires writing new system functionality from scratch.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Build vs Buy",
+      "rate": "hard",
+      "suggestion": "Understand COTS systems"
+    },
+    {
+      "question": "When using COTS software, the design effort focuses on system configuration rather than programming.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Build vs Buy",
+      "rate": "hard",
+      "suggestion": "Review design focus in buy decisions"
+    },
+
+    {
+      "question": "Object-oriented design processes require system models to support communication between teams.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Object-Oriented Design Process",
+      "rate": "medium",
+      "suggestion": "Review benefits of design models"
+    },
+    {
+      "question": "Object-oriented design models are usually cost-effective for very small systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Object-Oriented Design Process",
+      "rate": "hard",
+      "suggestion": "Understand model cost trade-offs"
+    },
+
+    {
+      "question": "System context models describe how the system interacts dynamically with its environment.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "System Context and Interaction",
+      "rate": "hard",
+      "suggestion": "Differentiate context and interaction models"
+    },
+    {
+      "question": "Interaction models show how a system is used over time.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "System Context and Interaction",
+      "rate": "medium",
+      "suggestion": "Review interaction modeling"
+    },
+
+    {
+      "question": "Architectural design identifies major system components and their interactions.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architectural Design",
+      "rate": "easy",
+      "suggestion": "Review architecture definition"
+    },
+    {
+      "question": "Layered and client-server models are examples of architectural patterns.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architectural Design",
+      "rate": "easy",
+      "suggestion": "Understand architectural patterns"
+    },
+
+    {
+      "question": "There is a fixed formula for identifying object classes in object-oriented design.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Object Class Identification",
+      "rate": "hard",
+      "suggestion": "Understand object identification challenges"
+    },
+    {
+      "question": "Object identification is typically an iterative process.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Object Class Identification",
+      "rate": "medium",
+      "suggestion": "Review OO design iteration"
+    },
+
+    {
+      "question": "Grammatical analysis identifies objects based on nouns in system descriptions.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Approaches to Object Identification",
+      "rate": "hard",
+      "suggestion": "Review grammatical approach"
+    },
+    {
+      "question": "Behavioral approaches identify objects based on system data storage only.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Approaches to Object Identification",
+      "rate": "hard",
+      "suggestion": "Understand behavioral identification"
+    },
+
+    {
+      "question": "Object interfaces must be specified to allow parallel development.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Interface Specification",
+      "rate": "medium",
+      "suggestion": "Review interface importance"
+    },
+    {
+      "question": "UML class diagrams can be used to specify object interfaces.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Interface Specification",
+      "rate": "easy",
+      "suggestion": "Review UML usage"
+    },
+
+    {
+      "question": "Reuse is uncommon in modern software development.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Implementation Issues",
+      "rate": "hard",
+      "suggestion": "Understand modern reuse practices"
+    },
+    {
+      "question": "Configuration management tracks different versions of software components.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Implementation Issues",
+      "rate": "easy",
+      "suggestion": "Review configuration management"
+    },
+
+    {
+      "question": "Host-target development means software runs on the same machine it is developed on.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Implementation Issues",
+      "rate": "hard",
+      "suggestion": "Understand host-target separation"
+    },
+
+    {
+      "question": "System-level reuse involves reusing complete application systems.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Reuse Levels",
+      "rate": "medium",
+      "suggestion": "Review reuse levels"
+    },
+    {
+      "question": "Object-level reuse refers to reusing entire systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Reuse Levels",
+      "rate": "hard",
+      "suggestion": "Differentiate reuse levels"
+    },
+
+    {
+      "question": "Reuse can increase costs due to integration and adaptation efforts.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Reuse Costs",
+      "rate": "hard",
+      "suggestion": "Understand reuse trade-offs"
+    },
+
+    {
+      "question": "Open-source development allows users to inspect and modify source code.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Open Source Development",
+      "rate": "easy",
+      "suggestion": "Review open-source principles"
+    },
+    {
+      "question": "Open-source software is never owned by an individual or organization.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Open Source Licensing",
+      "rate": "hard",
+      "suggestion": "Understand legal ownership"
+    },
+
+    {
+      "question": "GPL licenses require derived software to also be open-source.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "License Models",
+      "rate": "medium",
+      "suggestion": "Review GPL implications"
+    },
+    {
+      "question": "BSD licenses require modified code to be republished.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "License Models",
+      "rate": "hard",
+      "suggestion": "Understand permissive licenses"
+    },
+
+    {
+      "question": "License management includes understanding component evolution paths.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "License Management",
+      "rate": "medium",
+      "suggestion": "Review license management practices"
+    }
+  ]
+}
