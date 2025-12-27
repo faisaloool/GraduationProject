@@ -23,7 +23,7 @@ from peft import (
 # CONFIG
 # =========================
 MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-DATA_DIR = "./data"       # Folder containing all JSON / JSONL files
+DATA_DIR = "./data"       # Folder containing JSON / JSONL
 OUTPUT_DIR = "./output"
 MAX_LENGTH = 2048
 
@@ -35,35 +35,27 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
 
 # =========================
-# MODEL (4-bit or fallback 8-bit)
+# MODEL (8-bit QLoRA + gradient checkpointing)
 # =========================
+bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+
 try:
-    print("🔹 Trying to load 4-bit model...")
-    bnb_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_compute_dtype=torch.float16,
-        bnb_4bit_use_double_quant=True
-    )
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
         quantization_config=bnb_config,
-        device_map="auto"
+        device_map="sequential",   # safer for 3070 Ti
     )
-except Exception as e:
-    print(f"⚠️ 4-bit loading failed: {e}")
-    print("🔹 Falling back to 8-bit model...")
-    bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+except RuntimeError:
+    print("⚠️ GPU memory allocation failed, falling back to CPU offload...")
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
-        quantization_config=bnb_config,
-        device_map="auto"
+        device_map={"": "cpu"},
+        offload_folder="./offload",
+        offload_state_dict=True
     )
 
 model.config.use_cache = False
 model = prepare_model_for_kbit_training(model)
-
-# ✅ Enable gradient checkpointing to reduce VRAM usage
 model.gradient_checkpointing_enable()
 
 # =========================
@@ -94,7 +86,7 @@ for json_file in json_files:
                 data = [data]
             all_examples.extend(data)
         except json.JSONDecodeError:
-            # Try JSONL line by line
+            # try JSONL line by line
             f.seek(0)
             for line_num, line in enumerate(f, start=1):
                 if line.strip():
@@ -116,7 +108,6 @@ for ex in all_examples:
 
 min_count = min(len(v) for v in type_groups.values())
 balanced_examples = []
-
 for qtype, examples in type_groups.items():
     if len(examples) > min_count:
         examples = random.sample(examples, min_count)
@@ -125,7 +116,7 @@ for qtype, examples in type_groups.items():
 random.shuffle(balanced_examples)
 dataset = Dataset.from_list(balanced_examples)
 
-# Split train/validation
+# Train/validation split
 dataset = dataset.train_test_split(test_size=0.05)
 train_dataset = dataset["train"]
 eval_dataset = dataset["test"]
@@ -198,16 +189,13 @@ training_args = TrainingArguments(
     gradient_accumulation_steps=8,
     learning_rate=2e-4,
     num_train_epochs=3,
-
     save_strategy="steps",
     save_steps=500,
     save_total_limit=3,
-
     logging_steps=10,
     fp16=True,
     optim="paged_adamw_8bit",
     report_to="none",
-
     remove_unused_columns=False
 )
 
