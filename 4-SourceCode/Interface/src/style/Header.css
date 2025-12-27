@@ -6,7 +6,8 @@ header {
   align-items: center;
   justify-content: space-between;
 
-  height: 82px;
+  /* Match sidebar top-of-side-bar height */
+  height: 70px;
   width: 100%;
   padding: 0 16px;
 
@@ -22,8 +23,8 @@ header {
   font-weight: 600;
   color: #46eaff;
   letter-spacing: 0.2px;
-  margin-left: 10px;
-  padding-left: 10px;
+  margin: 0;
+  padding: 0;
 }
 
 .header-btns {
@@ -57,7 +58,7 @@ header {
   color: #ffffff;
   border-color: #097e8d;
   box-shadow: 0 0 0 1px #097e8d inset;
-  margin-right: 50px;
+  margin-right: 0;
 }
 .header-btns .sign-up:hover {
   background: #0e8e70;
@@ -114,7 +115,7 @@ header {
 
 @media (max-width: 768px) {
   header {
-    height: 56px;
+    height: 70px;
     padding: 0 12px;
   }
   .ai-version {
@@ -133,10 +134,15 @@ header {
 
 /* موبايل كبير (600px) */
 @media (max-width: 600px) {
+  /* Hide the version label on mobile */
   .ai-version {
-    font-size: 14px;
-    padding-left: 4px;
-    margin-left: 4px;
+    display: none;
+  }
+
+  header {
+    height: 70px;
+    padding: 0 12px;
+    justify-content: flex-end;
   }
 
   .header-btns button {
@@ -161,7 +167,7 @@ header {
   }
 
   header {
-    height: 54px;
+    height: 70px;
   }
 
   .menu-btn svg {
@@ -170,13 +176,12 @@ header {
   }
 
   .ai-version {
-    font-size: 13px;
+    display: none;
   }
 }
 
 /* موبايل صغير جداً (375px وتحت) */
 @media (max-width: 375px) {
-
   /* إخفاء أزرار Login/Signup ووضع Menu فقط */
   .header-btns button {
     display: none;
@@ -189,7 +194,7 @@ header {
   }
 
   .ai-version {
-    font-size: 12px;
+    display: none;
   }
 
   header {

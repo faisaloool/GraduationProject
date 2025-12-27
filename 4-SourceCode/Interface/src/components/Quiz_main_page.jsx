@@ -208,131 +208,135 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     });
   };
 
-  if (error) {
-    return (
-      <div className="page">
-        <div className="header">
-          <Header quiz={{ title: "Main-page" }} setEditing={setEditing} />
-        </div>
-        <main>
+  const isWelcomePage = exam.title === "Main-page" || !exam.title;
+  const showInitialLoader = loading && !initialLoadFinished;
+  const showExamSkeleton = !showInitialLoader && examTransitioning;
+  const showExamContent =
+    !showInitialLoader && !examTransitioning && !isWelcomePage;
+
+  return (
+    <div className="page">
+      <div className="header">
+        <Header
+          quiz={error ? { title: "Main-page" } : exam}
+          setEditing={setEditing}
+        />
+      </div>
+
+      <main ref={quizRef}>
+        {error ? (
           <div className="exam-space">
             <div className="exam-error-card" role="alert">
               <h2>Sorry somthing went wrong </h2>
               <p>{String(error)}</p>
             </div>
           </div>
-        </main>
-      </div>
-    );
-  }
-
-  const showInitialLoader = loading && !initialLoadFinished;
-
-  return (
-    <div className="page">
-      <div className="header">
-        <Header quiz={exam} setEditing={setEditing} />
-      </div>
-
-      <main ref={quizRef}>
-        <div className="exam-space">
-          {showInitialLoader ? (
-            <div
-              className="quiz-initial-loader"
-              role="status"
-              aria-live="polite"
-            >
-              <div className="quiz-initial-loader-spinner" aria-hidden />
-              <div className="quiz-initial-loader-text">Loading...</div>
+        ) : isWelcomePage ? (
+          <div className="wellcome-page">
+            <div>
+              <h1 className="wellcome">
+                <span className="wlc">Welcome to </span>
+                <span className="quiz">Quiz AI</span>
+              </h1>
+              <p className="subtitle">Get ready for endless learning!</p>
             </div>
-          ) : examTransitioning ? (
-            <div className="exam-skeleton">
-              <div className="skeleton-message shimmer" />
-              {[0, 1].map((idx) => (
-                <div className="exam-skeleton-question" key={idx}>
-                  <div className="skeleton-question-title shimmer" />
-                  <div className="skeleton-option-list">
-                    {Array.from({ length: idx === 0 ? 4 : 2 }).map(
-                      (_, optIdx) => (
-                        <div
-                          className="skeleton-option-line shimmer"
-                          key={optIdx}
-                        />
-                      )
-                    )}
+            <div className="input">
+              <Input setExam={setExam} />
+            </div>
+          </div>
+        ) : (
+          <div className="exam-space">
+            {showInitialLoader && (
+              <div
+                className="quiz-initial-loader"
+                role="status"
+                aria-live="polite"
+              >
+                <div className="quiz-initial-loader-spinner" aria-hidden />
+                <div className="quiz-initial-loader-text">Loading...</div>
+              </div>
+            )}
+
+            {showExamSkeleton && (
+              <div className="exam-skeleton">
+                <div className="skeleton-message shimmer" />
+                {[0, 1].map((idx) => (
+                  <div className="exam-skeleton-question" key={idx}>
+                    <div className="skeleton-question-title shimmer" />
+                    <div className="skeleton-option-list">
+                      {Array.from({ length: idx === 0 ? 4 : 2 }).map(
+                        (_, optIdx) => (
+                          <div
+                            className="skeleton-option-line shimmer"
+                            key={optIdx}
+                          />
+                        )
+                      )}
+                    </div>
+                  </div>
+                ))}
+                <div className="skeleton-submit shimmer" />
+              </div>
+            )}
+
+            {showExamContent && (
+              <>
+                <div className="userMessage">
+                  <div className="message">
+                    generate an exam for {exam.title}
                   </div>
                 </div>
-              ))}
-              <div className="skeleton-submit shimmer" />
-            </div>
-          ) : exam.title === "Main-page" || !exam.title ? (
-            <div className="wellcome-page">
-              <div>
-                <h1 className="wellcome">
-                  <span className="wlc">Welcome to </span>
-                  <span className="quiz">Quiz AI</span>
-                </h1>
-                <p className="subtitle">Get ready for endless learning!</p>
-              </div>
-              <div className="input">
-                <Input setExam={setExam} />
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="userMessage">
-                <div className="message">generate an exam for {exam.title}</div>
-              </div>
-              {getExamResponse(exam.questions)}
+                {getExamResponse(exam.questions)}
 
-              {!isSubmitted && (
-                <div className="submitExamBtn" onClick={examResult}>
-                  submit
-                </div>
-              )}
+                {!isSubmitted && (
+                  <div className="submitExamBtn" onClick={examResult}>
+                    submit
+                  </div>
+                )}
 
-              {isSubmitted && (
-                <div className="exam-result-row">
-                  <div className="exam-result">{`You scored ${currentScore} / ${totalMarks}`}</div>
-                  <button className="retry-btn" onClick={handleRetry}>
-                    Retry
-                  </button>
-                </div>
-              )}
-              {/* fixed bottom-center scroll indicator */}
-              <div
-                className={`scroll-indicator ${
-                  showScrollArrow ? "" : "hidden"
-                }`}
-                role="button"
-                tabIndex={showScrollArrow ? 0 : -1}
-                onClick={showScrollArrow ? scrollToBottom : undefined}
-                onKeyDown={(e) => {
-                  if (!showScrollArrow) return;
-                  if (e.key === "Enter" || e.key === " ") scrollToBottom();
-                }}
-                aria-label="Scroll to bottom"
-                title="Scroll to bottom"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  width="30"
-                  height="30"
-                  fill="none"
-                  aria-hidden
+                {isSubmitted && (
+                  <div className="exam-result-row">
+                    <div className="exam-result">{`You scored ${currentScore} / ${totalMarks}`}</div>
+                    <button className="retry-btn" onClick={handleRetry}>
+                      Retry
+                    </button>
+                  </div>
+                )}
+                {/* fixed bottom-center scroll indicator */}
+                <div
+                  className={`scroll-indicator ${
+                    showScrollArrow ? "" : "hidden"
+                  }`}
+                  role="button"
+                  tabIndex={showScrollArrow ? 0 : -1}
+                  onClick={showScrollArrow ? scrollToBottom : undefined}
+                  onKeyDown={(e) => {
+                    if (!showScrollArrow) return;
+                    if (e.key === "Enter" || e.key === " ") scrollToBottom();
+                  }}
+                  aria-label="Scroll to bottom"
+                  title="Scroll to bottom"
                 >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="white"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            </>
-          )}
-        </div>
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="30"
+                    height="30"
+                    fill="none"
+                    aria-hidden
+                  >
+                    <path
+                      d="M6 9l6 6 6-6"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </main>
     </div>
   );

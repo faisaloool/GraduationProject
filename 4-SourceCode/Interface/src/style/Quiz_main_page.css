@@ -18,6 +18,7 @@
 
 /* page becomes the flexible quiz area (takes remaining horizontal space) */
 .page {
+  width: 100%;
   display: flex;
   flex-direction: column;
   flex: 1 2 auto;
@@ -60,7 +61,9 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0px auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ===== Initial Page Loader (first load only) ===== */
@@ -120,7 +123,9 @@ main {
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
   overflow: hidden;
   z-index: 1;
-  width: 105%;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
   position: relative; /* مهم جدا لتعمل ::before و ::after */
 }
 
@@ -759,8 +764,6 @@ main {
     left: 0px;
   }
 
-  .text {
-  }
   .wlc {
     margin-left: 0;
     margin-right: 10px;
@@ -979,9 +982,9 @@ main {
     justify-content: center;
   }
 
-  .exam-space {
+  /* .exam-space {
     width: 95%;
-  }
+  } */
   .file-form {
     padding-left: 30px;
     display: flex;
@@ -1077,5 +1080,70 @@ main {
   }
   .input-settings {
     left: -60px;
+  }
+}
+
+/* ===== Responsive quiz content (questions/options/buttons) ===== */
+@media (max-width: 900px) {
+  .exam-space {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .exam-space {
+    padding: 0 12px;
+  }
+
+  .exam-response {
+    height: auto;
+  }
+
+  .exam-response .QuestionTitle {
+    font-size: 1.25rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .Question {
+    font-size: 1.1rem;
+  }
+
+  .Option {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.9rem;
+  }
+
+  .userMessage {
+    margin-top: 1.6rem;
+    justify-content: center;
+  }
+
+  .message {
+    font-size: 16px;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .submitExamBtn {
+    width: 100%;
+    max-width: 360px;
+    font-size: 22px;
+    padding: 1rem;
+    height: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  .scroll-indicator {
+    bottom: 18px;
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 380px) {
+  .submitExamBtn {
+    font-size: 20px;
   }
 }
