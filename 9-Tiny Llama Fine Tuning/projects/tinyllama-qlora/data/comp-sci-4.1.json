@@ -1,0 +1,278 @@
+{
+  "document": "FDS_CH4.pptx",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is text mining also known as?",
+        "options": [
+          "Data structuring",
+          "Knowledge discovery in textual databases",
+          "Information retrieval",
+          "Computational linguistics"
+        ],
+        "answer": "Knowledge discovery in textual databases"
+      },
+      {
+        "question": "What percentage of corporate data is estimated to be in unstructured form like text?",
+        "options": ["50-60%", "65-75%", "85-90%", "95-100%"],
+        "answer": "85-90%"
+      },
+      {
+        "question": "Which of these is a real-world example of text mining mentioned?",
+        "options": [
+          "Facebook autocompleting statuses with friend names",
+          "Predicting stock market trends",
+          "Designing computer hardware",
+          "Creating 3D animations"
+        ],
+        "answer": "Facebook autocompleting statuses with friend names"
+      },
+      {
+        "question": "What technique does Facebook use to autocomplete statuses with friend names?",
+        "options": [
+          "Sentiment analysis",
+          "Named entity recognition",
+          "Text clustering",
+          "Plagiarism detection"
+        ],
+        "answer": "Named entity recognition"
+      },
+      {
+        "question": "The primary difference between data mining and text mining is:",
+        "options": [
+          "The tools used",
+          "The cost of implementation",
+          "The nature of the data (structured vs. unstructured)",
+          "The required programming language"
+        ],
+        "answer": "The nature of the data (structured vs. unstructured)"
+      },
+      {
+        "question": "What is the first step in the three-step text mining process?",
+        "options": [
+          "Create the Term-by-Document Matrix",
+          "Extract patterns",
+          "Establish the corpus",
+          "Perform stemming"
+        ],
+        "answer": "Establish the corpus"
+      },
+      {
+        "question": "What does NLP stand for in the context of text mining?",
+        "options": [
+          "Natural Language Processing",
+          "Neural Linguistic Programming",
+          "Network Learning Protocol",
+          "Named Language Parser"
+        ],
+        "answer": "Natural Language Processing"
+      },
+      {
+        "question": "What is the 'Bag of Words' model?",
+        "options": [
+          "A model that considers word order and sentence structure",
+          "A model that only looks for the occurrence of words, not their order",
+          "A database of English words and synonyms",
+          "A technique for language identification"
+        ],
+        "answer": "A model that only looks for the occurrence of words, not their order"
+      },
+      {
+        "question": "Which of these is a major resource for NLP mentioned in the document?",
+        "options": ["WordNet", "Google Search", "Wikipedia API", "Thesaurus.com"],
+        "answer": "WordNet"
+      },
+      {
+        "question": "What is the purpose of sentiment analysis?",
+        "options": [
+          "To detect spelling errors",
+          "To translate text between languages",
+          "To detect favorable and unfavorable opinions",
+          "To summarize long documents"
+        ],
+        "answer": "To detect favorable and unfavorable opinions"
+      },
+      {
+        "question": "What does the second step of the text mining process involve?",
+        "options": [
+          "Collecting unstructured data",
+          "Creating the Term-by-Document Matrix (TDM)",
+          "Extracting knowledge through classification",
+          "Digitizing voice recordings"
+        ],
+        "answer": "Creating the Term-by-Document Matrix (TDM)"
+      },
+      {
+        "question": "Which of these is NOT listed as an application of text mining?",
+        "options": [
+          "Entity identification",
+          "Spam filtering",
+          "Automatic text summarization",
+          "Predicting next week's weather"
+        ],
+        "answer": "Predicting next week's weather"
+      },
+      {
+        "question": "What does text mining aim to turn unstructured text into?",
+        "options": [
+          "A more structured form",
+          "A visual graphic",
+          "An audio file",
+          "A compressed archive"
+        ],
+        "answer": "A more structured form"
+      },
+      {
+        "question": "In the context of text mining, what does 'stemming' refer to?",
+        "options": [
+          "The main idea of a document",
+          "The process of reducing words to their root form",
+          "The most frequent word in a corpus",
+          "The title of a text file"
+        ],
+        "answer": "The process of reducing words to their root form"
+      },
+      {
+        "question": "What does Google use text mining for in Gmail?",
+        "options": [
+          "To create email accounts",
+          "To divide emails into categories like social and updates",
+          "To send emails automatically",
+          "To design the Gmail interface"
+        ],
+        "answer": "To divide emails into categories like social and updates"
+      },
+      {
+        "question": "What is a 'corpus' in text mining?",
+        "options": [
+          "A type of graph",
+          "A collection of relevant unstructured data",
+          "A search algorithm",
+          "A software tool"
+        ],
+        "answer": "A collection of relevant unstructured data"
+      },
+      {
+        "question": "What is the purpose of creating a Term-by-Document Matrix (TDM)?",
+        "options": [
+          "To store emails",
+          "To visualize data geographically",
+          "To impose structure on textual data for analysis",
+          "To correct grammar"
+        ],
+        "answer": "To impose structure on textual data for analysis"
+      },
+      {
+        "question": "What does SentiWordNet relate to?",
+        "options": [
+          "Sentiment analysis",
+          "Speech recognition",
+          "Search engine optimization",
+          "Software development"
+        ],
+        "answer": "Sentiment analysis"
+      },
+      {
+        "question": "What is the difference between syntax and semantics in text mining?",
+        "options": [
+          "Syntax is about meaning, semantics is about word arrangement.",
+          "Syntax is about word arrangement, semantics is about meaning.",
+          "They are the same thing.",
+          "Syntax is for speech, semantics is for writing."
+        ],
+        "answer": "Syntax is about word arrangement, semantics is about meaning."
+      },
+      {
+        "question": "How often is unstructured corporate data estimated to double in size?",
+        "options": ["Every 6 months", "Every 12 months", "Every 18 months", "Every 24 months"],
+        "answer": "Every 18 months"
+      },
+      {
+        "question": "What is an example of 'stop words'?",
+        "options": [
+          "Technical jargon",
+          "Common words like 'the', 'and', 'is' that are often filtered out",
+          "Misspelled words",
+          "Named entities like people and places"
+        ],
+        "answer": "Common words like 'the', 'and', 'is' that are often filtered out"
+      },
+      {
+        "question": "Which step in the text mining process involves techniques like classification and clustering?",
+        "options": [
+          "Step 1: Establish the corpus",
+          "Step 2: Create the TDM",
+          "Step 3: Extract patterns/knowledge",
+          "Preprocessing step"
+        ],
+        "answer": "Step 3: Extract patterns/knowledge"
+      },
+      {
+        "question": "Text mining combines language science and computer science with what other techniques?",
+        "options": [
+          "Statistical and machine learning techniques",
+          "Chemical engineering techniques",
+          "Civil engineering techniques",
+          "Musical theory techniques"
+        ],
+        "answer": "Statistical and machine learning techniques"
+      },
+      {
+        "question": "What does the process of 'scatter/gather' relate to in text mining?",
+        "options": [
+          "Data visualization",
+          "Clustering of text documents",
+          "Email filtering",
+          "Language translation"
+        ],
+        "answer": "Clustering of text documents"
+      },
+      {
+        "question": "What is the goal of named entity recognition in the Facebook example?",
+        "options": [
+          "To detect that you're typing a noun and guess it's a person",
+          "To correct your spelling",
+          "To translate your status into another language",
+          "To summarize your status"
+        ],
+        "answer": "To detect that you're typing a noun and guess it's a person"
+      },
+      {
+        "question": "What is the 'old approach' to structuring text mentioned in the document?",
+        "options": ["Natural Language Processing (NLP)", "Bag of Words", "Deep Learning", "Neural Networks"],
+        "answer": "Bag of Words"
+      },
+      {
+        "question": "What kind of insights can be gained from analyzing police reports using text mining?",
+        "options": [
+          "Insights into the evolution of crimes",
+          "Predictions for future stock prices",
+          "Optimal patrol routes based on traffic",
+          "Personnel scheduling efficiency"
+        ],
+        "answer": "Insights into the evolution of crimes"
+      },
+      {
+        "question": "What is an example of a meta-attribute in text mining that Google uses?",
+        "options": [
+          "Document type or language",
+          "Font size and color",
+          "Author's age",
+          "Time of day the document was created"
+        ],
+        "answer": "Document type or language"
+      },
+      {
+        "question": "What field is NLP a subfield of?",
+        "options": [
+          "Artificial intelligence and computational linguistics",
+          "Database management",
+          "Network security",
+          "Web design"
+        ],
+        "answer": "Artificial intelligence and computational linguistics"
+      }
+    ]
+  }
+}

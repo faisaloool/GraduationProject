@@ -1,0 +1,158 @@
+{
+  "document": "CH03-CompSec4e.pptx - Chapter 3: User Authentication",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is digital user authentication defined as?",
+        "options": [
+          "The process of encrypting user identities",
+          "The process of establishing confidence in electronically presented user identities",
+          "The process of creating digital certificates",
+          "The process of storing user passwords securely"
+        ],
+        "answer": "The process of establishing confidence in electronically presented user identities"
+      },
+      {
+        "question": "According to FIPS 199, how many levels of potential impact are defined for security breaches?",
+        "options": [
+          "Two levels",
+          "Three levels",
+          "Four levels",
+          "Five levels"
+        ],
+        "answer": "Three levels"
+      },
+      {
+        "question": "What does the user ID determine in password-based authentication?",
+        "options": [
+          "Only the user's password strength",
+          "That the user is authorized and their privileges",
+          "Only the user's physical location",
+          "The encryption algorithm used"
+        ],
+        "answer": "That the user is authorized and their privileges"
+      },
+      {
+        "question": "Which type of authentication card contains only non-volatile memory and no microprocessor?",
+        "options": [
+          "Smart card",
+          "Memory card",
+          "Magnetic stripe card",
+          "FIDO2 security key"
+        ],
+        "answer": "Memory card"
+      },
+      {
+        "question": "What is a major drawback of memory cards compared to smart cards?",
+        "options": [
+          "They are too expensive to produce",
+          "They have no processing capability for cryptographic operations",
+          "They cannot store any user data",
+          "They are incompatible with all reader devices"
+        ],
+        "answer": "They have no processing capability for cryptographic operations"
+      },
+      {
+        "question": "What distinguishes smart tokens from memory cards?",
+        "options": [
+          "Smart tokens have magnetic stripes",
+          "Smart tokens include embedded microprocessors",
+          "Smart tokens cannot process data",
+          "Smart tokens are only used for physical access"
+        ],
+        "answer": "Smart tokens include embedded microprocessors"
+      },
+      {
+        "question": "Smart cards typically include which three types of memory?",
+        "options": [
+          "RAM, Cache, and Virtual memory",
+          "ROM, EEPROM, and RAM",
+          "Flash, SSD, and HDD",
+          "Primary, Secondary, and Tertiary memory"
+        ],
+        "answer": "ROM, EEPROM, and RAM"
+      },
+      {
+        "question": "What does PACE stand for in electronic identity cards?",
+        "options": [
+          "Password Access Control Entry",
+          "Password Authenticated Connection Establishment",
+          "Personal Authentication Certificate Exchange",
+          "Protected Access Control Encryption"
+        ],
+        "answer": "Password Authenticated Connection Establishment"
+      },
+      {
+        "question": "Biometric authentication is based on what type of recognition?",
+        "options": [
+          "Password recognition",
+          "Pattern recognition",
+          "Token recognition",
+          "Certificate recognition"
+        ],
+        "answer": "Pattern recognition"
+      },
+      {
+        "question": "Which of these is NOT a physical characteristic used in biometric authentication?",
+        "options": [
+          "Fingerprints",
+          "Retinal pattern",
+          "Password length",
+          "Voice"
+        ],
+        "answer": "Password length"
+      },
+      {
+        "question": "What makes remote user authentication more complex than local authentication?",
+        "options": [
+          "It requires biometric sensors",
+          "Additional security threats like eavesdropping",
+          "It needs physical tokens",
+          "It is always slower"
+        ],
+        "answer": "Additional security threats like eavesdropping"
+      },
+      {
+        "question": "What protocol is commonly used to counter threats in remote authentication?",
+        "options": [
+          "Static password protocol",
+          "Challenge-response protocol",
+          "Plaintext transmission protocol",
+          "Single-factor protocol"
+        ],
+        "answer": "Challenge-response protocol"
+      },
+      {
+        "question": "What does EEPROM stand for in smart card memory?",
+        "options": [
+          "Electrically Erasable Programmable Read-Only Memory",
+          "Electronic Entry Programmable Random-Only Memory",
+          "Encrypted Erasable Protected Read-Only Memory",
+          "Enhanced Electronic Programmable Random-Only Memory"
+        ],
+        "answer": "Electrically Erasable Programmable Read-Only Memory"
+      },
+      {
+        "question": "What is a proactive password checking strategy?",
+        "options": [
+          "Checking passwords after they are compromised",
+          "Forcing users to change passwords frequently",
+          "Checking passwords against a dictionary of bad passwords during creation",
+          "Storing passwords in plaintext for easy recovery"
+        ],
+        "answer": "Checking passwords against a dictionary of bad passwords during creation"
+      },
+      {
+        "question": "What type of authentication protocol do smart tokens use that involves generating one-time passwords?",
+        "options": [
+          "Static protocol",
+          "Dynamic password generator protocol",
+          "Plaintext protocol",
+          "Encrypted storage protocol"
+        ],
+        "answer": "Dynamic password generator protocol"
+      }
+    ]
+  }
+}

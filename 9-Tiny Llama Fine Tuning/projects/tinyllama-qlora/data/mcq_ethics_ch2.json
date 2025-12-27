@@ -1,0 +1,713 @@
+{
+  "document": "Ch2_Privacy-new.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "Which technologies have significantly impacted privacy?",
+        "options": [
+          "Databases and digital cameras",
+          "Web and smartphones",
+          "Global positioning system (GPS) devices",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What sectors are mentioned in relation to privacy?",
+        "options": [
+          "Business and Social Sectors",
+          "Education and Health Sectors",
+          "Technology and Entertainment Sectors",
+          "Government and Military Sectors"
+        ],
+        "answer": "Business and Social Sectors"
+      },
+      {
+        "question": "What is the first step toward protecting privacy?",
+        "options": [
+          "Ignoring the risks",
+          "Understanding the risks and problems",
+          "Sharing personal information freely",
+          "Avoiding all technology"
+        ],
+        "answer": "Understanding the risks and problems"
+      },
+      {
+        "question": "For computer professionals, understanding privacy risks helps in:",
+        "options": [
+          "Designing systems with built-in privacy protections",
+          "Increasing surveillance",
+          "Ignoring user data",
+          "Reducing system security"
+        ],
+        "answer": "Designing systems with built-in privacy protections"
+      },
+      {
+        "question": "Which of the following is NOT a key aspect of privacy?",
+        "options": [
+          "Freedom from intrusion",
+          "Control of information about oneself",
+          "Freedom from surveillance",
+          "Unrestricted data sharing"
+        ],
+        "answer": "Unrestricted data sharing"
+      },
+      {
+        "question": "What does 'freedom from intrusion' imply in the context of privacy?",
+        "options": [
+          "Being constantly monitored",
+          "Being left alone",
+          "Sharing all personal data",
+          "Tracking others"
+        ],
+        "answer": "Being left alone"
+      },
+      {
+        "question": "What is a key principle of privacy related to personal information?",
+        "options": [
+          "Lack of control over personal data",
+          "Control of information about oneself",
+          "Mandatory data sharing",
+          "Public disclosure of all activities"
+        ],
+        "answer": "Control of information about oneself"
+      },
+      {
+        "question": "What is one reason people might want to keep their religious beliefs private?",
+        "options": [
+          "To avoid paying taxes",
+          "To prevent others from knowing their favorite food",
+          "To maintain privacy from certain people they interact with",
+          "To hide their educational background"
+        ],
+        "answer": "To maintain privacy from certain people they interact with"
+      },
+      {
+        "question": "What is a common skeptical question about privacy concerns?",
+        "options": [
+          "Why do you need so much space?",
+          "What do you have to hide?",
+          "How much money do you make?",
+          "Where do you live?"
+        ],
+        "answer": "What do you have to hide?"
+      },
+      {
+        "question": "Which category do privacy threats fall into?",
+        "options": [
+          "Intentional institutional uses of personal information",
+          "Accidental weather changes",
+          "Random social media likes",
+          "Unplanned grocery shopping"
+        ],
+        "answer": "Intentional institutional uses of personal information"
+      },
+      {
+        "question": "What is considered a risk related to unauthorized use or release by 'insiders'?",
+        "options": [
+          "Theft of information",
+          "Inadvertent leakage of information",
+          "Our own actions",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What are some examples of new technology risks mentioned?",
+        "options": [
+          "Government and private databases",
+          "Sophisticated tools for surveillance and data analysis",
+          "Weakness of data",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What type of data do search engines collect daily?",
+        "options": [
+          "Search query data",
+          "Personal identification data",
+          "Financial transaction data",
+          "Health records"
+        ],
+        "answer": "Search query data"
+      },
+      {
+        "question": "What is a primary use of the data collected by search engines?",
+        "options": [
+          "To target advertising",
+          "To develop new products",
+          "To monitor user behavior",
+          "To sell to third parties"
+        ],
+        "answer": "To target advertising"
+      },
+      {
+        "question": "What is a common risk associated with new technologies like smartphones and location apps?",
+        "options": [
+          "Data is always encrypted",
+          "Data is sometimes stored and sent without user’s knowledge",
+          "Users have full control over their data",
+          "No data is collected"
+        ],
+        "answer": "Data is sometimes stored and sent without user’s knowledge"
+      },
+      {
+        "question": "What is a summary of risks associated with activities in cyberspace?",
+        "options": [
+          "Data is rarely recorded",
+          "Huge amounts of data are stored",
+          "People are fully aware of data collection",
+          "Software is simple and secure"
+        ],
+        "answer": "Huge amounts of data are stored"
+      },
+      {
+        "question": "Why should we care about privacy risks in cyberspace?",
+        "options": [
+          "Because data collection is always transparent",
+          "Because leaks never happen",
+          "Because people are not aware of the collection of data",
+          "Because software is simple and easy to understand"
+        ],
+        "answer": "Because people are not aware of the collection of data"
+      },
+      {
+        "question": "What has made re-identification much easier?",
+        "options": [
+          "The decrease in information quantity",
+          "The quantity of information and power of data search and analysis tools",
+          "The lack of data search tools",
+          "The absence of public Web sites"
+        ],
+        "answer": "The quantity of information and power of data search and analysis tools"
+      },
+      {
+        "question": "What is stated about information on the Internet?",
+        "options": [
+          "It disappears quickly",
+          "It seems to last forever",
+          "It is only accessible to a few",
+          "It is not collected for any purpose"
+        ],
+        "answer": "It seems to last forever"
+      },
+      {
+        "question": "What can a collection of small items provide?",
+        "options": [
+          "A vague picture",
+          "A detailed picture",
+          "No useful information",
+          "A misleading picture"
+        ],
+        "answer": "A detailed picture"
+      },
+      {
+        "question": "What can the government request from businesses or organizations?",
+        "options": [
+          "Financial statements",
+          "Sensitive personal data",
+          "Marketing strategies",
+          "Employee records"
+        ],
+        "answer": "Sensitive personal data"
+      },
+      {
+        "question": "Who do we depend upon to protect our personal information?",
+        "options": [
+          "The government",
+          "Businesses and organizations",
+          "Ourselves",
+          "Friends and family"
+        ],
+        "answer": "Businesses and organizations"
+      },
+      {
+        "question": "What is personal information?",
+        "options": [
+          "Any information relating to a business",
+          "Any information relating to an individual person",
+          "Any information relating to a government",
+          "Any information relating to a product"
+        ],
+        "answer": "Any information relating to an individual person"
+      },
+      {
+        "question": "What does informed consent mean?",
+        "options": [
+          "Users are unaware of what information is collected",
+          "Users are aware of what information is collected and how it is used",
+          "Users are forced to provide information",
+          "Users are not allowed to access their information"
+        ],
+        "answer": "Users are aware of what information is collected and how it is used"
+      },
+      {
+        "question": "What is invisible information gathering?",
+        "options": [
+          "Collection of public information",
+          "Collection of personal information without the user's knowledge",
+          "Collection of financial information",
+          "Collection of marketing information"
+        ],
+        "answer": "Collection of personal information without the user's knowledge"
+      },
+      {
+        "question": "What are cookies in the context of web sites?",
+        "options": [
+          "Files a Web site stores on a visitor’s computer",
+          "A type of malware",
+          "A web browser feature",
+          "A security protocol"
+        ],
+        "answer": "Files a Web site stores on a visitor’s computer"
+      },
+      {
+        "question": "What is secondary use of personal information?",
+        "options": [
+          "Use of personal information for the same purpose it was provided",
+          "Use of personal information for a purpose other than the purpose for which it was provided",
+          "Sharing personal information with third parties",
+          "Deleting personal information after use"
+        ],
+        "answer": "Use of personal information for a purpose other than the purpose for which it was provided"
+      },
+      {
+        "question": "What is data mining?",
+        "options": [
+          "Deleting unnecessary data",
+          "Searching and analyzing masses of data to find patterns and develop new information or knowledge",
+          "Encrypting data for security",
+          "Storing data in a database"
+        ],
+        "answer": "Searching and analyzing masses of data to find patterns and develop new information or knowledge"
+      },
+      {
+        "question": "What is computer matching?",
+        "options": [
+          "Combining and comparing information from different sources",
+          "Matching computer hardware components",
+          "A method of data encryption",
+          "A process of data deletion"
+        ],
+        "answer": "Combining and comparing information from different sources"
+      },
+      {
+        "question": "What is used to match records in different databases?",
+        "options": [
+          "Social Security Number",
+          "Driver's License Number",
+          "Passport Number",
+          "Credit Card Number"
+        ],
+        "answer": "Social Security Number"
+      },
+      {
+        "question": "What is computer profiling?",
+        "options": [
+          "Analyzing data to determine characteristics of people most likely to engage in a certain behavior",
+          "Creating computer hardware profiles",
+          "Developing software for data analysis",
+          "Designing computer networks"
+        ],
+        "answer": "Analyzing data to determine characteristics of people most likely to engage in a certain behavior"
+      },
+      {
+        "question": "What are the two common forms for providing informed consent?",
+        "options": [
+          "Opt out and Opt in",
+          "Sign in and Sign out",
+          "Agree and Disagree",
+          "Accept and Reject"
+        ],
+        "answer": "Opt out and Opt in"
+      },
+      {
+        "question": "What does opt out mean in the context of informed consent?",
+        "options": [
+          "Person must request that an organization not use information",
+          "Person automatically agrees to the use of information",
+          "Person is unaware of the information use",
+          "Person is required to provide additional information"
+        ],
+        "answer": "Person must request that an organization not use information"
+      },
+      {
+        "question": "What does opt in mean in the context of informed consent?",
+        "options": [
+          "The collector of the information may use information only if the person agrees",
+          "The collector of the information may use information without consent",
+          "The person is automatically opted out",
+          "The person is required to provide additional information"
+        ],
+        "answer": "The collector of the information may use information only if the person agrees"
+      },
+      {
+        "question": "What is one of the fair information principles mentioned?",
+        "options": [
+          "Collect as much data as possible",
+          "Inform people when you collect information",
+          "Keep data indefinitely",
+          "Ignore accuracy of data"
+        ],
+        "answer": "Inform people when you collect information"
+      },
+      {
+        "question": "What should be done with data that is no longer needed?",
+        "options": [
+          "Keep it indefinitely",
+          "Sell it to third parties",
+          "Delete it",
+          "Keep it only as long as needed"
+        ],
+        "answer": "Keep it only as long as needed"
+      },
+      {
+        "question": "What is a key aspect of maintaining data according to the principles?",
+        "options": [
+          "Ignore accuracy",
+          "Maintain accuracy of data",
+          "Share data publicly",
+          "Avoid protecting security"
+        ],
+        "answer": "Maintain accuracy of data"
+      },
+      {
+        "question": "What should organizations develop policies for?",
+        "options": [
+          "Ignoring law enforcement requests",
+          "Responding to law enforcement requests for data",
+          "Sharing data with unauthorized parties",
+          "Deleting all data immediately"
+        ],
+        "answer": "Responding to law enforcement requests for data"
+      },
+      {
+        "question": "What is an example of a technology?",
+        "options": [
+          "Smartphones",
+          "Particle sniffers",
+          "Social media platforms",
+          "Cloud storage"
+        ],
+        "answer": "Particle sniffers"
+      },
+      {
+        "question": "What is the purpose of the 'Do Not Track' button in browsers?",
+        "options": [
+          "To block all advertisements",
+          "To request websites not to collect or track browsing data",
+          "To speed up internet browsing",
+          "To encrypt all data sent from the browser"
+        ],
+        "answer": "To request websites not to collect or track browsing data"
+      },
+      {
+        "question": "What is the default setting for the 'Do Not Track' button in browsers?",
+        "options": [
+          "Turned on by default",
+          "Turned off by default",
+          "Varies by browser",
+          "Only available upon request"
+        ],
+        "answer": "Turned off by default"
+      },
+      {
+        "question": "What determines the effectiveness of the 'Do Not Track' request?",
+        "options": [
+          "The type of browser being used",
+          "The internet service provider",
+          "How a website responds to the request",
+          "Government regulations"
+        ],
+        "answer": "How a website responds to the request"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a method related to data collection in the text?",
+        "options": [
+          "Data mining",
+          "Targeted ads",
+          "Informed consent",
+          "Data encryption"
+        ],
+        "answer": "Data encryption"
+      },
+      {
+        "question": "What is one of the key concerns raised in the text regarding new technologies?",
+        "options": [
+          "The speed of data transmission",
+          "The cost of internet services",
+          "When government agencies should be permitted to use them without a search warrant",
+          "The availability of free Wi-Fi"
+        ],
+        "answer": "When government agencies should be permitted to use them without a search warrant"
+      },
+      {
+        "question": "What is one reason websites collect browsing data?",
+        "options": [
+          "To decrease website security",
+          "To provide content and services",
+          "To reduce ad relevance",
+          "To limit user recommendations"
+        ],
+        "answer": "To provide content and services"
+      },
+      {
+        "question": "What technology is used for location tracking?",
+        "options": [
+          "Global Positioning Systems (GPS)",
+          "Radio Frequency Identification (RFID)",
+          "Bluetooth",
+          "Wi-Fi"
+        ],
+        "answer": "Global Positioning Systems (GPS)"
+      },
+      {
+        "question": "Which devices are commonly used for location tracking?",
+        "options": [
+          "Desktop computers only",
+          "Cell phones and other devices",
+          "Landline telephones",
+          "Televisions"
+        ],
+        "answer": "Cell phones and other devices"
+      },
+      {
+        "question": "What is the primary use of data mining and computer matching?",
+        "options": [
+          "To improve marketing strategies",
+          "To fight terrorism",
+          "To enhance social media platforms",
+          "To monitor financial transactions"
+        ],
+        "answer": "To fight terrorism"
+      },
+      {
+        "question": "What type of records are considered public records?",
+        "options": [
+          "Medical records",
+          "Bankruptcy records",
+          "Educational records",
+          "Employment records"
+        ],
+        "answer": "Bankruptcy records"
+      },
+      {
+        "question": "What is a potential consequence of accessing public records?",
+        "options": [
+          "Identity theft",
+          "Increased government transparency",
+          "Improved public services",
+          "Enhanced data security"
+        ],
+        "answer": "Identity theft"
+      },
+      {
+        "question": "What is one issue with Social Security Numbers?",
+        "options": [
+          "They are too widely used",
+          "They are difficult to falsify",
+          "They are rarely used",
+          "They are highly secure"
+        ],
+        "answer": "They are too widely used"
+      },
+      {
+        "question": "What type of information might new proposals require for identification?",
+        "options": [
+          "Citizenship, employment, health, tax, financial, or other data",
+          "Only biometric information",
+          "Only financial data",
+          "Only employment history"
+        ],
+        "answer": "Citizenship, employment, health, tax, financial, or other data"
+      },
+      {
+        "question": "What additional feature might new identification cards have according to many proposals?",
+        "options": [
+          "Access to a variety of databases for additional information",
+          "Only basic personal information",
+          "No additional features",
+          "Limited to financial data"
+        ],
+        "answer": "Access to a variety of databases for additional information"
+      },
+      {
+        "question": "What is a potential advantage of a new national ID system?",
+        "options": [
+          "Increased potential for misuse",
+          "Threat to freedom and privacy",
+          "Harder to falsify",
+          "Requires multiple cards"
+        ],
+        "answer": "Harder to falsify"
+      },
+      {
+        "question": "What is a potential disadvantage of a new national ID system?",
+        "options": [
+          "Harder to falsify",
+          "Threat to freedom and privacy",
+          "Have to carry only one card",
+          "Increased convenience"
+        ],
+        "answer": "Threat to freedom and privacy"
+      },
+      {
+        "question": "Which technology is mentioned for enhancing privacy?",
+        "options": [
+          "Public-key cryptography",
+          "Biometric scanning",
+          "Blockchain",
+          "Artificial intelligence"
+        ],
+        "answer": "Public-key cryptography"
+      },
+      {
+        "question": "What is a business tool mentioned for protecting data?",
+        "options": [
+          "Encryption",
+          "Biometric scanning",
+          "Artificial intelligence",
+          "Blockchain"
+        ],
+        "answer": "Encryption"
+      },
+      {
+        "question": "What is a key aspect of consumer freedom in the market?",
+        "options": [
+          "Regulatory enforcement",
+          "Voluntary agreements",
+          "Mandatory contracts",
+          "Government intervention"
+        ],
+        "answer": "Voluntary agreements"
+      },
+      {
+        "question": "What does the diversity of individual tastes and values influence?",
+        "options": [
+          "Government policies",
+          "Market response to consumer preferences",
+          "Regulatory frameworks",
+          "Corporate strategies"
+        ],
+        "answer": "Market response to consumer preferences"
+      },
+      {
+        "question": "What is a major concern regarding the use of personal information?",
+        "options": [
+          "Increased consumer knowledge",
+          "Costly and disruptive results of errors in databases",
+          "Enhanced privacy protection",
+          "Improved data accuracy"
+        ],
+        "answer": "Costly and disruptive results of errors in databases"
+      },
+      {
+        "question": "Why do consumers need protection?",
+        "options": [
+          "From excessive market competition",
+          "From their own lack of knowledge, judgment, or interest",
+          "From government surveillance",
+          "From corporate transparency"
+        ],
+        "answer": "From their own lack of knowledge, judgment, or interest"
+      },
+      {
+        "question": "What is a flaw of regulatory solutions?",
+        "options": [
+          "They enhance consumer freedom",
+          "They are always effective",
+          "They can be costly and disruptive",
+          "They are universally accepted"
+        ],
+        "answer": "They can be costly and disruptive"
+      },
+      {
+        "question": "What did the 1934 Communications Act prohibit?",
+        "options": [
+          "Interception of messages",
+          "Wiretapping by law enforcement",
+          "Email communication",
+          "Electronic surveillance"
+        ],
+        "answer": "Interception of messages"
+      },
+      {
+        "question": "Which act allowed wiretapping and electronic surveillance by law enforcement with a court order?",
+        "options": [
+          "1934 Communications Act",
+          "1968 Omnibus Crime Control and Safe Streets Act",
+          "Electronic Communications Privacy Act of 1986",
+          "Safe Streets Act of 1968"
+        ],
+        "answer": "1968 Omnibus Crime Control and Safe Streets Act"
+      },
+      {
+        "question": "What did the Electronic Communications Privacy Act of 1986 (ECPA) extend?",
+        "options": [
+          "1934 Communications Act",
+          "1968 Omnibus Crime Control and Safe Streets Act",
+          "Email communication laws",
+          "Government surveillance"
+        ],
+        "answer": "1968 Omnibus Crime Control and Safe Streets Act"
+      },
+      {
+        "question": "What type of communications did the Electronic Communications Privacy Act of 1986 (ECPA) include?",
+        "options": [
+          "Telephone communications",
+          "Electronic communications",
+          "Radio communications",
+          "Postal communications"
+        ],
+        "answer": "Electronic communications"
+      },
+      {
+        "question": "What is the primary purpose of email?",
+        "options": [
+          "To send physical mail",
+          "To communicate electronically",
+          "To store files",
+          "To browse the internet"
+        ],
+        "answer": "To communicate electronically"
+      },
+      {
+        "question": "Which of the following is NOT a common use of email?",
+        "options": [
+          "Sending messages",
+          "Receiving attachments",
+          "Streaming videos",
+          "Scheduling meetings"
+        ],
+        "answer": "Streaming videos"
+      },
+      {
+        "question": "What does 'nt access to email' likely refer to?",
+        "options": [
+          "No access to email",
+          "New technology for email",
+          "Network troubleshooting",
+          "Email encryption"
+        ],
+        "answer": "No access to email"
+      },
+      {
+        "question": "Which section of the text mentions 'Communications'?",
+        "options": ["Section 6", "Section 132-134", "Section 1", "Section 10"],
+        "answer": "Section 6"
+      },
+      {
+        "question": "What might '132-134' refer to in the context of the text?",
+        "options": [
+          "Page numbers",
+          "Email addresses",
+          "Error codes",
+          "Network ports"
+        ],
+        "answer": "Page numbers"
+      }
+    ]
+  }
+}

@@ -1,0 +1,368 @@
+{
+  "document": "Ch7_Professional Ethics.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Initial professional education is a characteristic of a profession.",
+        "answer": "true"
+      },
+      {
+        "question": "Accreditation is not related to professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Skills development is a characteristic of a profession.",
+        "answer": "true"
+      },
+      {
+        "question": "Certification is not a part of professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Licensing is a characteristic of a profession.",
+        "answer": "true"
+      },
+      {
+        "question": "Professional development is not related to professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Code of ethics is a characteristic of a profession.",
+        "answer": "true"
+      },
+      {
+        "question": "Professional society is not related to professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Software engineering is considered a profession.",
+        "answer": "true"
+      },
+      {
+        "question": "Whistleblowing is not discussed in the context of professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Professionals are expected to act for the public good.",
+        "answer": "true"
+      },
+      {
+        "question": "A CPA requires only a high school diploma to become certified.",
+        "answer": "false"
+      },
+      {
+        "question": "To become a CPA, one needs to complete 150+ semester hours of education.",
+        "answer": "true"
+      },
+      {
+        "question": "CPAs must pass an exam to retain their certification.",
+        "answer": "false"
+      },
+      {
+        "question": "Software Engineers are not considered professionals.",
+        "answer": "false"
+      },
+      {
+        "question": "A software engineer must analyze user requirements.",
+        "answer": "true"
+      },
+      {
+        "question": "Writing and testing code is not part of a software engineer's responsibilities.",
+        "answer": "false"
+      },
+      {
+        "question": "Software engineers do not need to communicate with other programmers involved in the project.",
+        "answer": "false"
+      },
+      {
+        "question": "Researching, designing, and writing new software programs is a task for software engineers.",
+        "answer": "true"
+      },
+      {
+        "question": "Software engineers work closely with project managers and graphic artists.",
+        "answer": "true"
+      },
+      {
+        "question": "Software engineers do not interact with sales and marketing teams.",
+        "answer": "false"
+      },
+      {
+        "question": "Making incompatible platforms work together is a responsibility of a software engineer.",
+        "answer": "true"
+      },
+      {
+        "question": "Creating technical specifications is part of software engineering tasks.",
+        "answer": "true"
+      },
+      {
+        "question": "Operational documentation is written without the involvement of technical authors.",
+        "answer": "false"
+      },
+      {
+        "question": "Maintaining systems involves monitoring but not correcting software defects.",
+        "answer": "false"
+      },
+      {
+        "question": "The Software Engineering Code includes eight principles.",
+        "answer": "true"
+      },
+      {
+        "question": "The eight principles identify key ethical relationships and obligations.",
+        "answer": "true"
+      },
+      {
+        "question": "Public service is not one of the eight principles in the Software Engineering Code.",
+        "answer": "false"
+      },
+      {
+        "question": "Client and employer considerations are part of the eight principles.",
+        "answer": "true"
+      },
+      {
+        "question": "Product quality is not mentioned in the Software Engineering Code principles.",
+        "answer": "false"
+      },
+      {
+        "question": "Judgment is one of the eight principles in the Software Engineering Code.",
+        "answer": "true"
+      },
+      {
+        "question": "Management requirements are excluded from the Software Engineering Code principles.",
+        "answer": "false"
+      },
+      {
+        "question": "The Code reflects principles drawn from multiple ethical theories.",
+        "answer": "true"
+      },
+      {
+        "question": "If the Code doesn’t forbid something, it means it is morally acceptable.",
+        "answer": "false"
+      },
+      {
+        "question": "Virtue Ethics originated from Aristotle.",
+        "answer": "true"
+      },
+      {
+        "question": "There is a mechanical process for determining if an action is right or wrong.",
+        "answer": "false"
+      },
+      {
+        "question": "Happiness results from living a life of virtue.",
+        "answer": "true"
+      },
+      {
+        "question": "Intellectual virtue is developed through education.",
+        "answer": "true"
+      },
+      {
+        "question": "Moral virtue is developed by repeating inappropriate acts.",
+        "answer": "false"
+      },
+      {
+        "question": "Deriving pleasure from a virtuous act is a sign that the virtue has been acquired.",
+        "answer": "true"
+      },
+      {
+        "question": "Benevolence, courage, fairness, generosity, honesty, loyalty, patience, and tolerance are some virtues.",
+        "answer": "true"
+      },
+      {
+        "question": "A person of strong moral character knows the right thing to do in each situation.",
+        "answer": "true"
+      },
+      {
+        "question": "Virtue ethics provides a solution to the problem of impartiality.",
+        "answer": "true"
+      },
+      {
+        "question": "All virtues must be impartial.",
+        "answer": "false"
+      },
+      {
+        "question": "Generosity is an example of a partial virtue.",
+        "answer": "true"
+      },
+      {
+        "question": "Honesty is an example of a partial virtue.",
+        "answer": "false"
+      },
+      {
+        "question": "Virtue ethics provides a clear methodology for answering moral problems.",
+        "answer": "false"
+      },
+      {
+        "question": "Be impartial is one of the fundamental principles of professional ethics.",
+        "answer": "true"
+      },
+      {
+        "question": "Disclosing information that others ought to know is not part of professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Respecting the rights of others is a principle of professional ethics.",
+        "answer": "true"
+      },
+      {
+        "question": "Treating others justly is not mentioned in the fundamental principles of professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Taking responsibility for your actions and inactions is part of professional ethics.",
+        "answer": "true"
+      },
+      {
+        "question": "You do not need to take responsibility for the actions of those you supervise.",
+        "answer": "false"
+      },
+      {
+        "question": "Continually improving your abilities is a principle of professional ethics.",
+        "answer": "true"
+      },
+      {
+        "question": "Sharing knowledge is not included in the fundamental principles of professional ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Prof. Smith freely gave valuable information.",
+        "answer": "true"
+      },
+      {
+        "question": "Prof. Smith did not reveal conflict of interest.",
+        "answer": "true"
+      },
+      {
+        "question": "A whistleblower tries to report harmful situations through unauthorized channels.",
+        "answer": "false"
+      },
+      {
+        "question": "A whistleblower is always supported by the organization.",
+        "answer": "false"
+      },
+      {
+        "question": "Whistleblowers are punished for their actions by losing their job or all chances of advancement.",
+        "answer": "true"
+      },
+      {
+        "question": "The false Claims Act is designed to protect whistleblowers.",
+        "answer": "false"
+      },
+      {
+        "question": "The Whistleblower Protection Act is intended to safeguard individuals who report misconduct.",
+        "answer": "true"
+      },
+      {
+        "question": "The Challenger explosion in 1986 involved documented warnings from engineers about the dangers of low temperatures.",
+        "answer": "true"
+      },
+      {
+        "question": "Financial and emotional hardship are not common consequences for whistleblowers.",
+        "answer": "false"
+      },
+      {
+        "question": "Morton Thiokol executives and NASA officials hid their concerns.",
+        "answer": "true"
+      },
+      {
+        "question": "Roger shared information with the Presidential Commission.",
+        "answer": "true"
+      },
+      {
+        "question": "People become whistleblowers for the same reasons.",
+        "answer": "false"
+      },
+      {
+        "question": "The morality of action may depend on the motives of the whistleblower.",
+        "answer": "true"
+      },
+      {
+        "question": "Desire to help the public is a questionable motive for whistleblowing.",
+        "answer": "false"
+      },
+      {
+        "question": "Retaliation is considered a good motive for whistleblowing.",
+        "answer": "false"
+      },
+      {
+        "question": "Avoiding punishment is a valid reason for whistleblowing.",
+        "answer": "false"
+      },
+      {
+        "question": "Whistleblowers are often viewed as disloyal by corporations.",
+        "answer": "true"
+      },
+      {
+        "question": "The public can use legal remedies to seek damages if a company causes harm.",
+        "answer": "true"
+      },
+      {
+        "question": "Whistleblowing is seen as a sign of organizational success.",
+        "answer": "false"
+      },
+      {
+        "question": "Whistleblowing can lead to ruined careers.",
+        "answer": "true"
+      },
+      {
+        "question": "Publicity can lead to negative media attention.",
+        "answer": "true"
+      },
+      {
+        "question": "Disruption of an organization’s social fabric makes it easier for people to work as a team.",
+        "answer": "false"
+      },
+      {
+        "question": "Whistleblowing harms the whistleblower.",
+        "answer": "true"
+      },
+      {
+        "question": "Retaliation is a positive outcome of whistleblowing.",
+        "answer": "false"
+      },
+      {
+        "question": "Estrangement refers to being accepted within a group.",
+        "answer": "false"
+      },
+      {
+        "question": "Organizations should improve communication.",
+        "answer": "true"
+      },
+      {
+        "question": "Robert Spitzer suggests organizations should use principle-based ethics in decision making.",
+        "answer": "true"
+      },
+      {
+        "question": "Price fixing is an example of unethical decision-making.",
+        "answer": "true"
+      },
+      {
+        "question": "Over-billing or billing for services not performed is considered ethical behavior.",
+        "answer": "false"
+      },
+      {
+        "question": "Concealing safety concerns is a moral duty.",
+        "answer": "false"
+      },
+      {
+        "question": "false certifications by educational institutions are ethical practices.",
+        "answer": "false"
+      },
+      {
+        "question": "Whistleblowing is considered a moral duty by Richard DeGeorge.",
+        "answer": "true"
+      },
+      {
+        "question": "Richard DeGeorge suggests that serious harm to the public is not a factor in whistleblowing.",
+        "answer": "false"
+      },
+      {
+        "question": "Telling your manager about an issue is one of Richard DeGeorge’s questions for whistleblowing.",
+        "answer": "true"
+      },
+      {
+        "question": "Still others: Whistleblowing is never morally required",
+        "answer": "false"
+      }
+    ]
+  }
+}

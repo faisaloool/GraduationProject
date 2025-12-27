@@ -1,0 +1,208 @@
+{
+  "document": "Legacy Information Systems are large, vital software systems that resist modification and evolution. Solutions for these systems include freezing, outsourcing, maintenance, discarding, wrapping, and migration. Wrapping involves encapsulating legacy components with new software layers (Forward, Backward, System, Application, and Function wrappers) across various levels of encapsulation (Process, Transaction, Program, Module, and Procedure).",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "How do Brodie and Stonebraker define legacy systems?",
+        "options": [
+          "Systems that are easy to update to meet new business requirements",
+          "Any information system that significantly resists modification and evolution",
+          "Small software systems that are no longer vital to an organization",
+          "Systems written in modern programming languages"
+        ],
+        "answer": "Any information system that significantly resists modification and evolution"
+      },
+      {
+        "question": "According to Bennett, what characterizes legacy software systems?",
+        "options": [
+          "Small systems that are easy to manage",
+          "Systems that are not vital to the organization",
+          "Large software systems we don't know how to cope with but are vital",
+          "Well-documented systems with flat-file structures"
+        ],
+        "answer": "Large software systems we don't know how to cope with but are vital"
+      },
+      {
+        "question": "Which of the following is considered an 'acceptable feature' of a legacy system?",
+        "options": [
+          "Consistent and clear documentation",
+          "Written in modern, object-oriented languages",
+          "Often more than 10 years old (geriatric)",
+          "Easy to expand and scale"
+        ],
+        "answer": "Often more than 10 years old (geriatric)"
+      },
+      {
+        "question": "What type of data management is commonly found in legacy systems?",
+        "options": [
+          "Cloud-based relational databases",
+          "Flat-file structures",
+          "NoSQL databases",
+          "Blockchain-secured data"
+        ],
+        "answer": "Flat-file structures"
+      },
+      {
+        "question": "How many general categories of solutions are identified for legacy information systems (LIS)?",
+        "options": [
+          "Three",
+          "Four",
+          "Six",
+          "Ten"
+        ],
+        "answer": "Six"
+      },
+      {
+        "question": "Which LIS solution involves completely throwing away the old system and starting over?",
+        "options": [
+          "Freeze",
+          "Discard and redevelop",
+          "Wrap",
+          "Carry on maintenance"
+        ],
+        "answer": "Discard and redevelop"
+      },
+      {
+        "question": "In what year was the concept of a 'wrapper' first introduced at IBM?",
+        "options": [
+          "1980",
+          "1988",
+          "1996",
+          "2006"
+        ],
+        "answer": "1988"
+      },
+      {
+        "question": "What is the primary purpose of 'wrapping' a legacy component?",
+        "options": [
+          "To delete the old code entirely",
+          "To move the system to a new processor",
+          "To encapsulate it with a new layer that hides complexity and provides a new interface",
+          "To rewrite the business logic in a new language"
+        ],
+        "answer": "To encapsulate it with a new layer that hides complexity and provides a new interface"
+      },
+      {
+        "question": "Which communication method is NOT specifically mentioned for encapsulation layers to talk to legacy components?",
+        "options": [
+          "Sockets",
+          "Remote Procedure Calls (RPCs)",
+          "Application Program Interfaces (APIs)",
+          "Quantum Teleportation"
+        ],
+        "answer": "Quantum Teleportation"
+      },
+      {
+        "question": "What are the two classifications of Database wrappers?",
+        "options": [
+          "Internal and External",
+          "Forward (f-wrappers) and Backward (b-wrappers)",
+          "Static and Dynamic",
+          "Procedural and Functional"
+        ],
+        "answer": "Forward (f-wrappers) and Backward (b-wrappers)"
+      },
+      {
+        "question": "In a backward wrapper (b-wrapper) approach, what happens first?",
+        "options": [
+          "A new user interface is developed",
+          "Data are migrated first",
+          "The legacy code is deleted",
+          "The hardware is upgraded"
+        ],
+        "answer": "Data are migrated first"
+      },
+      {
+        "question": "Which type of wrapper supports customized access to services like routing, sorting, and printing?",
+        "options": [
+          "Database wrappers",
+          "Application wrappers",
+          "System service wrappers",
+          "Function wrappers"
+        ],
+        "answer": "System service wrappers"
+      },
+      {
+        "question": "What do Application wrappers typically encapsulate?",
+        "options": [
+          "Hardware drivers",
+          "Online transactions or batch processes",
+          "Low-level math functions",
+          "Network protocols"
+        ],
+        "answer": "Online transactions or batch processes"
+      },
+      {
+        "question": "Which wrapper provides limited access by invoking only specific parts of a program?",
+        "options": [
+          "Function wrappers",
+          "System service wrappers",
+          "Database wrappers",
+          "Process wrappers"
+        ],
+        "answer": "Function wrappers"
+      },
+      {
+        "question": "In the levels of encapsulation granularity, which is at the lowest level?",
+        "options": [
+          "Process",
+          "Transaction",
+          "Module",
+          "Procedure"
+        ],
+        "answer": "Procedure"
+      },
+      {
+        "question": "Which level of encapsulation is considered the highest level of granularity?",
+        "options": [
+          "Procedure",
+          "Module",
+          "Transaction",
+          "Process"
+        ],
+        "answer": "Process"
+      },
+      {
+        "question": "How many levels of granularity are identified in the 'Levels of Encapsulation'?",
+        "options": [
+          "Three",
+          "Four",
+          "Five",
+          "Six"
+        ],
+        "answer": "Five"
+      },
+      {
+        "question": "In Process level encapsulation, what happens once a job is completed on the server?",
+        "options": [
+          "The server restarts",
+          "The wrapper takes over output files to forward to the client",
+          "The database is deleted",
+          "The legacy system is discarded"
+        ],
+        "answer": "The wrapper takes over output files to forward to the client"
+      },
+      {
+        "question": "What does a wrapper do at the Transaction level of encapsulation?",
+        "options": [
+          "It acts as a hardware firewall",
+          "It simulates a user terminal",
+          "It rewrites the database schema",
+          "It translates the entire system to C++"
+        ],
+        "answer": "It simulates a user terminal"
+      },
+      {
+        "question": "Which migration method is mentioned in the chapter outline but involves moving the database last?",
+        "options": [
+          "Cold Turkey",
+          "Database First",
+          "Database Last",
+          "Chicken Little"
+        ],
+        "answer": "Database Last"
+      }
+    ]
+  }
+}

@@ -1,4 +1,6 @@
 import os
+import glob
+import json
 import torch
 from datasets import load_dataset
 from transformers import (
@@ -6,7 +8,8 @@ from transformers import (
     AutoModelForCausalLM,
     TrainingArguments,
     Trainer,
-    BitsAndBytesConfig
+    BitsAndBytesConfig,
+    DataCollatorForLanguageModeling
 )
 from peft import (
     LoraConfig,
@@ -18,15 +21,16 @@ from peft import (
 # CONFIG
 # =========================
 MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-DATA_PATH = "train.jsonl"
-OUTPUT_DIR = "./tinyllama-question-generator"
+DATA_DIR = "./data"       # folder containing all your JSON files
+OUTPUT_DIR = "./output"
 MAX_LENGTH = 2048
 
 # =========================
 # TOKENIZER
 # =========================
-tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, use_fast=True)
 tokenizer.pad_token = tokenizer.eos_token
+tokenizer.padding_side = "right"
 
 # =========================
 # MODEL (4-bit QLoRA)
@@ -44,6 +48,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto"
 )
 
+model.config.use_cache = False
 model = prepare_model_for_kbit_training(model)
 
 # =========================
@@ -59,15 +64,25 @@ lora_config = LoraConfig(
 )
 
 model = get_peft_model(model, lora_config)
+model.print_trainable_parameters()
 
 # =========================
-# DATASET
+# LOAD DATASET (MULTIPLE JSON FILES)
 # =========================
-dataset = load_dataset("json", data_files=DATA_PATH)["train"]
+json_files = glob.glob(f"{DATA_DIR}/*.json")
+dataset = load_dataset("json", data_files=json_files, split="train")
 
+# Optional: shuffle and split train/validation
+dataset = dataset.shuffle(seed=42)
+dataset = dataset.train_test_split(test_size=0.05, seed=42)
+train_dataset = dataset["train"]
+eval_dataset = dataset["test"]
+
+# =========================
+# PROMPT FORMATTER
+# =========================
 def format_prompt(example):
-    prompt = f"""
-You are an AI that generates exam questions from documents.
+    prompt = f"""You are an AI that generates exam questions from documents.
 
 DOCUMENT:
 {example['document']}
@@ -85,7 +100,7 @@ SCHEMA:
   "questions": [
     {{
       "question": "string",
-      "options": ["A", "B", "C", "D"],   // MCQ only
+      "options": ["A", "B", "C", "D"],
       "answer": "string"
     }}
   ]
@@ -93,24 +108,35 @@ SCHEMA:
 
 OUTPUT:
 """
-    response = str(example["output"])
+    response = json.dumps(example["output"], ensure_ascii=False)
     return {"text": prompt + response}
 
-dataset = dataset.map(format_prompt)
+train_dataset = train_dataset.map(format_prompt, remove_columns=train_dataset.column_names)
+eval_dataset = eval_dataset.map(format_prompt, remove_columns=eval_dataset.column_names)
 
+# =========================
+# TOKENIZATION
+# =========================
 def tokenize(batch):
-    return tokenizer(
+    tokens = tokenizer(
         batch["text"],
         truncation=True,
         padding="max_length",
         max_length=MAX_LENGTH
     )
+    tokens["labels"] = tokens["input_ids"].copy()
+    return tokens
 
-dataset = dataset.map(tokenize, remove_columns=dataset.column_names)
+train_dataset = train_dataset.map(tokenize, batched=True)
+eval_dataset = eval_dataset.map(tokenize, batched=True)
+
+# =========================
+# DATA COLLATOR
+# =========================
+data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 
 # =========================
 # TRAINING ARGUMENTS
-# (RESUME-SAFE)
 # =========================
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
@@ -119,7 +145,6 @@ training_args = TrainingArguments(
     learning_rate=2e-4,
     num_train_epochs=3,
 
-    # 🔁 CHECKPOINTING
     save_strategy="steps",
     save_steps=500,
     save_total_limit=3,
@@ -129,7 +154,6 @@ training_args = TrainingArguments(
     optim="paged_adamw_8bit",
     report_to="none",
 
-    # Important for resume
     remove_unused_columns=False
 )
 
@@ -139,11 +163,13 @@ training_args = TrainingArguments(
 trainer = Trainer(
     model=model,
     args=training_args,
-    train_dataset=dataset
+    train_dataset=train_dataset,
+    eval_dataset=eval_dataset,
+    data_collator=data_collator
 )
 
 # =========================
-# RESUME LOGIC
+# RESUME CHECKPOINT
 # =========================
 checkpoint = None
 if os.path.isdir(OUTPUT_DIR):
@@ -156,6 +182,9 @@ if os.path.isdir(OUTPUT_DIR):
         checkpoint = sorted(checkpoints, key=lambda x: int(x.split("-")[-1]))[-1]
         print(f"🔁 Resuming from {checkpoint}")
 
+# =========================
+# TRAIN
+# =========================
 trainer.train(resume_from_checkpoint=checkpoint)
 
 # =========================
@@ -164,5 +193,5 @@ trainer.train(resume_from_checkpoint=checkpoint)
 model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
 
-print("✅ Training complete and saved.")
+print("✅ Training complete. LoRA adapter saved.")
 

@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 2: The Data Science Process - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The typical data science process consists of six steps that are followed in a strict linear order.",
+        "answer": "False"
+      },
+      {
+        "question": "The first step in the data science process is defining research goals and creating a project charter.",
+        "answer": "True"
+      },
+      {
+        "question": "Understanding the what, why, and how of a project is part of step 1.",
+        "answer": "True"
+      },
+      {
+        "question": "A project charter should not include a timeline.",
+        "answer": "False"
+      },
+      {
+        "question": "Data scientists should spend minimal time understanding business goals and context.",
+        "answer": "False"
+      },
+      {
+        "question": "Retrieving data is always the responsibility of the data scientist.",
+        "answer": "False"
+      },
+      {
+        "question": "Data can only be found within an organization, not outside it.",
+        "answer": "False"
+      },
+      {
+        "question": "Data warehouses are designed for reading and analyzing data.",
+        "answer": "True"
+      },
+      {
+        "question": "Data lakes contain data in its natural or raw format.",
+        "answer": "True"
+      },
+      {
+        "question": "Chinese walls are physical barriers that prevent data access.",
+        "answer": "False"
+      },
+      {
+        "question": "Nielsen and GFK are companies that specialize in collecting retail industry data.",
+        "answer": "True"
+      },
+      {
+        "question": "Open data is never of high quality.",
+        "answer": "False"
+      },
+      {
+        "question": "Data cleansing is unimportant because models can handle dirty data effectively.",
+        "answer": "False"
+      },
+      {
+        "question": "The principle 'garbage in equals garbage out' applies to data science.",
+        "answer": "True"
+      },
+      {
+        "question": "Missing values are always wrong and should be deleted immediately.",
+        "answer": "False"
+      },
+      {
+        "question": "Exploratory data analysis mainly uses graphical techniques.",
+        "answer": "True"
+      },
+      {
+        "question": "During exploratory data analysis, you should not discover any new data anomalies.",
+        "answer": "False"
+      },
+      {
+        "question": "Mike Bostock's website is useful for data exploration examples.",
+        "answer": "True"
+      },
+      {
+        "question": "Model building is less focused than exploratory analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "Model building techniques come from machine learning, data mining, and statistics.",
+        "answer": "True"
+      },
+      {
+        "question": "Building a model is typically a one-time process without iteration.",
+        "answer": "False"
+      },
+      {
+        "question": "Most models consist of selecting techniques, executing the model, and diagnosis.",
+        "answer": "True"
+      },
+      {
+        "question": "Presenting findings is the final step of the data science process.",
+        "answer": "True"
+      },
+      {
+        "question": "The research goal should be vague to allow flexibility in the project.",
+        "answer": "False"
+      },
+      {
+        "question": "Project charters require teamwork and input from multiple stakeholders.",
+        "answer": "True"
+      },
+      {
+        "question": "Data marts are subsets of data warehouses serving specific business units.",
+        "answer": "True"
+      },
+      {
+        "question": "Twitter, LinkedIn, and Facebook do not provide data for commercial use.",
+        "answer": "False"
+      },
+      {
+        "question": "Data transformation is unnecessary if the data is already clean.",
+        "answer": "False"
+      },
+      {
+        "question": "Exploratory data analysis is about cleansing data, not exploring it.",
+        "answer": "False"
+      },
+      {
+        "question": "All modeling techniques can handle missing values without issues.",
+        "answer": "False"
+      },
+      {
+        "question": "The outcome of step 1 should include well-defined deliverables.",
+        "answer": "True"
+      },
+      {
+        "question": "Data retrieval always involves designing a data collection process from scratch.",
+        "answer": "False"
+      },
+      {
+        "question": "Documentation and metadata are always the top priority in organizations.",
+        "answer": "False"
+      },
+      {
+        "question": "Getting access to data within organizations is always quick and easy.",
+        "answer": "False"
+      },
+      {
+        "question": "Correcting data errors should be done as early as possible in the process.",
+        "answer": "True"
+      },
+      {
+        "question": "During exploratory analysis, you should keep your mind closed to avoid bias.",
+        "answer": "False"
+      },
+      {
+        "question": "20% of techniques will help in 80% of cases according to the Pareto principle.",
+        "answer": "True"
+      },
+      {
+        "question": "Presenting findings is an exciting part where you explain results to stakeholders.",
+        "answer": "True"
+      },
+      {
+        "question": "Data can be stored only in databases, not in simple text files.",
+        "answer": "False"
+      },
+      {
+        "question": "A project charter should include proof that the project is achievable.",
+        "answer": "True"
+      }
+    ]
+  }
+}

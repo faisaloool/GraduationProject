@@ -1,0 +1,568 @@
+{
+  "document": "Ch1_Introduction.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "The era characterized by exceptional access to information is the current era.",
+        "answer": "true"
+      },
+      {
+        "question": "Low-cost computers are not considered catalysts for change.",
+        "answer": "false"
+      },
+      {
+        "question": "High-speed communication is a catalyst for change.",
+        "answer": "true"
+      },
+      {
+        "question": "Low-cost computers and high-speed communication networks enable products of the Information Age, such as the Samsung Galaxy A2.",
+        "answer": "true"
+      },
+      {
+        "question": "Advances in technology over the past two decades include smartphones and MP3 players.",
+        "answer": "true"
+      },
+      {
+        "question": "Digital photography and the World Wide Web are not part of the advancements in technology.",
+        "answer": "false"
+      },
+      {
+        "question": "The dynamic between people and technology is a key aspect of the Information Age.",
+        "answer": "true"
+      },
+      {
+        "question": "People adopt technology.",
+        "answer": "true"
+      },
+      {
+        "question": "Technology does not change society.",
+        "answer": "false"
+      },
+      {
+        "question": "Using technology cannot change people.",
+        "answer": "false"
+      },
+      {
+        "question": "Our experiences physically change our brains.",
+        "answer": "true"
+      },
+      {
+        "question": "Experiences with technology can have psychological effects.",
+        "answer": "true"
+      },
+      {
+        "question": "Technologies solve problems but may create new problems.",
+        "answer": "true"
+      },
+      {
+        "question": "Humans have the capacity to transcend the present and live by purposes stretching into the future.",
+        "answer": "true"
+      },
+      {
+        "question": "The text distinguishes human behavior from animal behavior by the ability to transcend the present and live through future-oriented goals.",
+        "answer": "true"
+      },
+      {
+        "question": "The text suggests that machines have the same ability as humans to design and build their world.",
+        "answer": "false"
+      },
+      {
+        "question": "Cell phones cannot be used for locating water in remote areas.",
+        "answer": "false"
+      },
+      {
+        "question": "Rudeness is not an issue with cellphones.",
+        "answer": "false"
+      },
+      {
+        "question": "Smartphones are only used for conversations and messaging.",
+        "answer": "false"
+      },
+      {
+        "question": "People use smartphones for banking and managing investments.",
+        "answer": "true"
+      },
+      {
+        "question": "Location tracking raises privacy concerns.",
+        "answer": "true"
+      },
+      {
+        "question": "Cameras in cell phones do not affect privacy in public and non-public places.",
+        "answer": "false"
+      },
+      {
+        "question": "Cell phones can interfere with solitude, quiet, and concentration.",
+        "answer": "true"
+      },
+      {
+        "question": "Talking on cell phones while driving is safe.",
+        "answer": "false"
+      },
+      {
+        "question": "Kill switches allow a remote entity to disable applications and delete files.",
+        "answer": "true"
+      },
+      {
+        "question": "Kill switches are used mainly for security.",
+        "answer": "true"
+      },
+      {
+        "question": "Kill switches are only found in smartphones.",
+        "answer": "false"
+      },
+      {
+        "question": "Governments might pressure companies to use kill switches.",
+        "answer": "true"
+      },
+      {
+        "question": "Kill switches do not raise concerns about user autonomy.",
+        "answer": "false"
+      },
+      {
+        "question": "Companies will always use kill switches carefully for improved security.",
+        "answer": "false"
+      },
+      {
+        "question": "The first online social networking site was www.classmates.com in 1995.",
+        "answer": "true"
+      },
+      {
+        "question": "Myspace was founded in 2003 and had roughly 100 million member profiles by 2006.",
+        "answer": "true"
+      },
+      {
+        "question": "Facebook was started at Harvard as an online version of student directories.",
+        "answer": "true"
+      },
+      {
+        "question": "Social networking is popular with hundreds of millions of people because of the ease with which they can share aspects of their lives.",
+        "answer": "true"
+      },
+      {
+        "question": "Businesses do not connect with customers through social networking.",
+        "answer": "false"
+      },
+      {
+        "question": "Organizations do not seek donations through social networking.",
+        "answer": "false"
+      },
+      {
+        "question": "Groups organize volunteers.",
+        "answer": "true"
+      },
+      {
+        "question": "Protesters organize demonstrations and revolutions.",
+        "answer": "true"
+      },
+      {
+        "question": "Individuals pool resources through 'crowd funding'.",
+        "answer": "true"
+      },
+      {
+        "question": "Social network companies have eliminated all privacy problems.",
+        "answer": "false"
+      },
+      {
+        "question": "Social networking has become the new way of communicating.",
+        "answer": "true"
+      },
+      {
+        "question": "Social networking sites can affect the quality of in-person relationships.",
+        "answer": "true"
+      },
+      {
+        "question": "Email messages in the 1980s were typically long and detailed.",
+        "answer": "false"
+      },
+      {
+        "question": "Spending time online can reduce time spent on physical activity.",
+        "answer": "true"
+      },
+      {
+        "question": "Email was first used mostly by computer scientists.",
+        "answer": "true"
+      },
+      {
+        "question": "The use of email expanded to millions of people before it reached science researchers.",
+        "answer": "false"
+      },
+      {
+        "question": "High-energy physicists established the World Wide Web in Europe in 1990.",
+        "answer": "true"
+      },
+      {
+        "question": "The Web became an environment for ordinary people in the early 1990s.",
+        "answer": "false"
+      },
+      {
+        "question": "The Web has grown from an idea to a huge library and news source.",
+        "answer": "true"
+      },
+      {
+        "question": "The Web does not give us access to information and audiences unimaginable a generation ago.",
+        "answer": "false"
+      },
+      {
+        "question": "The Web empowers ordinary people to make better decisions about everything from selecting a bicycle to selecting medical treatments.",
+        "answer": "true"
+      },
+      {
+        "question": "Today there are millions of Web pages.",
+        "answer": "false"
+      },
+      {
+        "question": "The Web is not used for electronic commerce.",
+        "answer": "false"
+      },
+      {
+        "question": "Software tools available for free can help analyze the healthiness of our diet or plan a budget.",
+        "answer": "true"
+      },
+      {
+        "question": "Blogs were originally created for professionals to share news and entertainment.",
+        "answer": "false"
+      },
+      {
+        "question": "Inexpensive video cameras and video-manipulation tools have led to significant developments in communication.",
+        "answer": "true"
+      },
+      {
+        "question": "Many videos on the Web can infringe copyrights owned by entertainment companies.",
+        "answer": "true"
+      },
+      {
+        "question": "Wikipedia is an online encyclopedia written by paid professionals.",
+        "answer": "false"
+      },
+      {
+        "question": "Informal communities of programmers create and maintain free software.",
+        "answer": "true"
+      },
+      {
+        "question": "Watch-dogs on the Web are formal, centralized groups that investigate crimes.",
+        "answer": "false"
+      },
+      {
+        "question": "Amazon.com started in 1994 selling books on the Web.",
+        "answer": "true"
+      },
+      {
+        "question": "E-commerce has no benefits for consumers.",
+        "answer": "false"
+      },
+      {
+        "question": "Auction sites help people find customers more efficiently.",
+        "answer": "true"
+      },
+      {
+        "question": "Lower overhead has not affected comparison shopping.",
+        "answer": "false"
+      },
+      {
+        "question": "Small businesses and artists can sell directly to buyers, avoiding fees to middlemen and distributors.",
+        "answer": "true"
+      },
+      {
+        "question": "The Web has enabled a peer-to-peer economy.",
+        "answer": "true"
+      },
+      {
+        "question": "eBay.com facilitates online auctions.",
+        "answer": "true"
+      },
+      {
+        "question": "Online sales in the United States now total hundreds of billions of dollars a year.",
+        "answer": "true"
+      },
+      {
+        "question": "Sellers can sell directly to buyers, resulting in a peer-to-peer economy.",
+        "answer": "true"
+      },
+      {
+        "question": "E-commerce and trust concerns are unrelated.",
+        "answer": "false"
+      },
+      {
+        "question": "PayPal.com was created because people were reluctant to provide credit card information for online purchases.",
+        "answer": "true"
+      },
+      {
+        "question": "Encryption and secure servers made online payments less safe.",
+        "answer": "false"
+      },
+      {
+        "question": "The Better Business Bureau established a Web site to help businesses complain about consumers.",
+        "answer": "false"
+      },
+      {
+        "question": "Traditional stores adopted consumer-friendly return policies as online sales increased.",
+        "answer": "true"
+      },
+      {
+        "question": "Email programs and email accounts are mentioned as examples of free stuff.",
+        "answer": "true"
+      },
+      {
+        "question": "Phone services using VOIP such as Skype are not considered free stuff.",
+        "answer": "false"
+      },
+      {
+        "question": "University lectures are listed as part of the free stuff.",
+        "answer": "true"
+      },
+      {
+        "question": "Companies do not collect any data to fund free services.",
+        "answer": "false"
+      },
+      {
+        "question": "Artificial intelligence is a branch of computer science that makes computers perform tasks normally requiring human intelligence.",
+        "answer": "true"
+      },
+      {
+        "question": "Learning is not a characteristic of many AI programs.",
+        "answer": "false"
+      },
+      {
+        "question": "Researchers found that narrow, specialized skills were easier for computers than recognizing people or carrying on a conversation.",
+        "answer": "true"
+      },
+      {
+        "question": "Artificial intelligence requires computers to perform tasks that do not require human intelligence.",
+        "answer": "false"
+      },
+      {
+        "question": "Many AI applications involve pattern recognition.",
+        "answer": "true"
+      },
+      {
+        "question": "Applications of AI include reading handwriting, matching fingerprints, and matching faces in photos.",
+        "answer": "true"
+      },
+      {
+        "question": "Speech recognition is now a common tool.",
+        "answer": "true"
+      },
+      {
+        "question": "The Turing Test is passed if the computer convinces the human subject that the computer is human.",
+        "answer": "true"
+      },
+      {
+        "question": "Will people find it scarier to undergo surgery performed entirely by a machine than riding in the first automatic elevators or airplanes?",
+        "answer": "true"
+      },
+      {
+        "question": "Will it be easy to distinguish whether we are conversing with a human or a machine in the future?",
+        "answer": "false"
+      },
+      {
+        "question": "Will chips implanted in our brains enhance our memory with gigabytes of data and a search engine?",
+        "answer": "true"
+      },
+      {
+        "question": "Will robots be a part of unexpected developments in the future?",
+        "answer": "true"
+      },
+      {
+        "question": "Mechanical devices that perform physical tasks traditionally done by humans can operate in hazardous environments.",
+        "answer": "true"
+      },
+      {
+        "question": "Smart sensors are not used in motion and control applications.",
+        "answer": "false"
+      },
+      {
+        "question": "Motion sensing devices can trigger airbags in a crash.",
+        "answer": "true"
+      },
+      {
+        "question": "Sensors cannot detect temperature or moisture.",
+        "answer": "false"
+      },
+      {
+        "question": "Robots can walk using motion sensing devices.",
+        "answer": "true"
+      },
+      {
+        "question": "Assistive technology devices help restore productivity and independence to people with disabilities.",
+        "answer": "true"
+      },
+      {
+        "question": "Researchers are experimenting with chips that convert brain signals to controls for leg and arm muscles.",
+        "answer": "true"
+      },
+      {
+        "question": "Cyberspace has many of the problems, annoyances, and controversies of non-cyber life: crime, violent fiction and games, advertising, copyright.",
+        "answer": "true"
+      },
+      {
+        "question": "Adapting to new technology requires changes in laws, social institutions, and personal skills.",
+        "answer": "true"
+      },
+      {
+        "question": "The text mentions that relearning standards for deciding when to trust what we read is not important.",
+        "answer": "false"
+      },
+      {
+        "question": "The text discusses issues related to non-electronic life, such as crime and violent fantasy games.",
+        "answer": "true"
+      },
+      {
+        "question": "The text states that products that do not work right are not a concern.",
+        "answer": "false"
+      },
+      {
+        "question": "New technology requires us to rethink how to protect our privacy.",
+        "answer": "true"
+      },
+      {
+        "question": "Privacy is always more important than any other benefit.",
+        "answer": "false"
+      },
+      {
+        "question": "Solutions to problems caused by new technology can come from improved technology.",
+        "answer": "true"
+      },
+      {
+        "question": "Market mechanisms like competition and consumer choice cannot help solve problems from new technology.",
+        "answer": "false"
+      },
+      {
+        "question": "Education and public awareness are not sources of solutions for problems resulting from new technology.",
+        "answer": "false"
+      },
+      {
+        "question": "The ease of communication with distant countries has profound social, economic, and political effects.",
+        "answer": "true"
+      },
+      {
+        "question": "The Net makes information and opportunities less available to people isolated by geography or political system.",
+        "answer": "false"
+      },
+      {
+        "question": "The Net makes crime fighting and law enforcement more difficult.",
+        "answer": "true"
+      },
+      {
+        "question": "Criminals cannot steal or disrupt services from remote locations due to the Net.",
+        "answer": "false"
+      },
+      {
+        "question": "Combating crime and enforcing the law is more difficult because criminals can steal and disrupt services from outside the victim’s country.",
+        "answer": "true"
+      },
+      {
+        "question": "Laws in one country prohibiting certain content on the Web or certain kinds of Web services restrict people and businesses only within that country.",
+        "answer": "false"
+      },
+      {
+        "question": "Perfection is considered a direction rather than an option when evaluating new technologies and applications.",
+        "answer": "true"
+      },
+      {
+        "question": "The text suggests that achieving zero risk is possible in most aspects of life.",
+        "answer": "false"
+      },
+      {
+        "question": "The text emphasizes comparing alternatives and weighing problems against benefits.",
+        "answer": "true"
+      },
+      {
+        "question": "The text states that everyone has the same idea of what perfection is.",
+        "answer": "false"
+      },
+      {
+        "question": "The text mentions differences between personal choices, business policies, and law.",
+        "answer": "true"
+      },
+      {
+        "question": "Ethics is the study of what it means to 'do the right thing'.",
+        "answer": "true"
+      },
+      {
+        "question": "Ethical theories aim to decrease human dignity and well-being.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethics assumes people are irrational and do not make free choices.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethical rules apply to our interactions and actions that affect others.",
+        "answer": "true"
+      },
+      {
+        "question": "Most ethical theories strive to enhance peace, happiness, and well-being.",
+        "answer": "true"
+      },
+      {
+        "question": "Ethics are intended to achieve good results for people in general.",
+        "answer": "true"
+      },
+      {
+        "question": "Deontological theories are not part of ethical views.",
+        "answer": "false"
+      },
+      {
+        "question": "Utilitarianism is a type of ethical theory.",
+        "answer": "true"
+      },
+      {
+        "question": "Negative rights refer to the right to act without interference.",
+        "answer": "true"
+      },
+      {
+        "question": "Positive rights impose an obligation on some people to provide certain things for others.",
+        "answer": "true"
+      },
+      {
+        "question": "The Golden Rule states that you should treat others as you would want them to treat you.",
+        "answer": "true"
+      },
+      {
+        "question": "Doing one's work dishonestly is considered virtuous.",
+        "answer": "false"
+      },
+      {
+        "question": "People submit to a common law willingly to live in a civil society.",
+        "answer": "true"
+      },
+      {
+        "question": "Human behavior and real human situations are simple to understand.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethical theories help to identify important principles or guidelines.",
+        "answer": "true"
+      },
+      {
+        "question": "Organizations do not have ethics.",
+        "answer": "false"
+      },
+      {
+        "question": "Only individuals can be held responsible for their acts, not organizations.",
+        "answer": "false"
+      },
+      {
+        "question": "Distinguishing between wrong and harm is an important distinction in ethics.",
+        "answer": "true"
+      },
+      {
+        "question": "Separating goals from constraints is not relevant in ethical considerations.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethics is related to personal preference.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethics is a branch of law.",
+        "answer": "false"
+      },
+      {
+        "question": "Ethics is discussed in pages 55-59.",
+        "answer": "true"
+      }
+    ]
+  }
+}

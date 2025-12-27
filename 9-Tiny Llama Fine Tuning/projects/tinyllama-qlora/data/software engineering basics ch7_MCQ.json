@@ -1,0 +1,677 @@
+{
+  "filename": "Ch7.pptx",
+  "quiz": [
+    {
+      "question": "What is the main focus of software design and implementation?",
+      "type": "mcq",
+      "options": [
+        "Developing an executable software system",
+        "Writing user manuals",
+        "Conducting market research",
+        "Designing hardware components"
+      ],
+      "answer": "Developing an executable software system",
+      "section": "Design and implementation",
+      "rate": "easy",
+      "suggestion": "Review the definition of software design and implementation"
+    },
+    {
+      "question": "What does the 'Build or Buy' decision involve?",
+      "type": "mcq",
+      "options": [
+        "Choosing between developing custom software or buying off-the-shelf systems",
+        "Deciding whether to use open-source or proprietary tools",
+        "Selecting a programming language",
+        "Choosing a testing framework"
+      ],
+      "answer": "Choosing between developing custom software or buying off-the-shelf systems",
+      "section": "Build or Buy",
+      "rate": "easy",
+      "suggestion": "Recall the meaning of Build or Buy in software development"
+    },
+    {
+      "question": "Which of the following is a common activity in object-oriented design processes?",
+      "type": "mcq",
+      "options": [
+        "Define the context and modes of use of the system",
+        "Write the final user documentation",
+        "Purchase hardware for the system",
+        "Market the software product"
+      ],
+      "answer": "Define the context and modes of use of the system",
+      "section": "Process stages",
+      "rate": "easy",
+      "suggestion": "Review the common activities in object-oriented design processes"
+    },
+    {
+      "question": "What is a system context model?",
+      "type": "mcq",
+      "options": [
+        "A structural model that shows other systems in the environment",
+        "A dynamic model of user interactions",
+        "A model of the system's internal architecture",
+        "A model of the system's data flow"
+      ],
+      "answer": "A structural model that shows other systems in the environment",
+      "section": "Context and interaction models",
+      "rate": "easy",
+      "suggestion": "Recall the definition of a system context model"
+    },
+    {
+      "question": "What does an interaction model represent?",
+      "type": "mcq",
+      "options": [
+        "How the system interacts with its environment during use",
+        "The static structure of system components",
+        "The hardware configuration of the system",
+        "The data storage schema of the system"
+      ],
+      "answer": "How the system interacts with its environment during use",
+      "section": "Context and interaction models",
+      "rate": "easy",
+      "suggestion": "Review the definition of an interaction model"
+    },
+    {
+      "question": "What is the purpose of architectural design in the development process?",
+      "type": "mcq",
+      "options": [
+        "To identify major components and their interactions",
+        "To write the source code for each module",
+        "To create the user interface design",
+        "To perform system testing"
+      ],
+      "answer": "To identify major components and their interactions",
+      "section": "Architectural Design",
+      "rate": "easy",
+      "suggestion": "Recall the role of architectural design"
+    },
+    {
+      "question": "Which approach is NOT commonly used for object class identification?",
+      "type": "mcq",
+      "options": [
+        "Random selection",
+        "Grammatical approach based on natural language",
+        "Behavioral approach",
+        "Scenario-based analysis"
+      ],
+      "answer": "Random selection",
+      "section": "Approaches to identification",
+      "rate": "easy",
+      "suggestion": "Review the methods for identifying object classes"
+    },
+    {
+      "question": "What are the levels of software reuse?",
+      "type": "mcq",
+      "options": [
+        "Abstraction, object, component, and system levels",
+        "Code, design, test, and documentation levels",
+        "Hardware, software, network, and data levels",
+        "Individual, team, organizational, and community levels"
+      ],
+      "answer": "Abstraction, object, component, and system levels",
+      "section": "Reuse levels",
+      "rate": "medium",
+      "suggestion": "Recall the different levels at which software can be reused"
+    },
+    {
+      "question": "Which is a cost associated with software reuse?",
+      "type": "mcq",
+      "options": [
+        "Costs of adapting and configuring reusable software",
+        "Costs of hiring new developers",
+        "Costs of purchasing new hardware",
+        "Costs of marketing the final product"
+      ],
+      "answer": "Costs of adapting and configuring reusable software",
+      "section": "Reuse costs",
+      "rate": "medium",
+      "suggestion": "Review the different costs involved in software reuse"
+    },
+    {
+      "question": "What is open-source development?",
+      "type": "mcq",
+      "options": [
+        "An approach where source code is published and volunteers contribute",
+        "A method where only paid developers can access the source code",
+        "A proprietary software development model",
+        "A type of hardware design process"
+      ],
+      "answer": "An approach where source code is published and volunteers contribute",
+      "section": "Open Source Development",
+      "rate": "easy",
+      "suggestion": "Recall the definition of open-source development"
+    },
+    {
+      "question": "Which of the following is an example of an open-source system?",
+      "type": "mcq",
+      "options": [
+        "Linux operating system",
+        "Microsoft Windows",
+        "Apple iOS",
+        "Oracle Database"
+      ],
+      "answer": "Linux operating system",
+      "section": "Open source systems",
+      "rate": "easy",
+      "suggestion": "Recall examples of open-source software mentioned in the chapter"
+    },
+    {
+      "question": "What is a common business model for open-source product companies?",
+      "type": "mcq",
+      "options": [
+        "Selling support for the product",
+        "Selling the source code exclusively",
+        "Charging for each download",
+        "Licensing the software under strict proprietary terms"
+      ],
+      "answer": "Selling support for the product",
+      "section": "Open source business",
+      "rate": "medium",
+      "suggestion": "Review the business models associated with open-source software"
+    },
+    {
+      "question": "Which open-source license requires derived works to also be open-source?",
+      "type": "mcq",
+      "options": [
+        "GNU General Public License (GPL)",
+        "BSD License",
+        "MIT License",
+        "Apache License"
+      ],
+      "answer": "GNU General Public License (GPL)",
+      "section": "License models",
+      "rate": "medium",
+      "suggestion": "Recall the characteristics of different open-source licenses"
+    },
+    {
+      "question": "What does the LGPL license allow?",
+      "type": "mcq",
+      "options": [
+        "Linking to open-source code without publishing the source of new components",
+        "Selling modified code without any restrictions",
+        "Using the code only in academic projects",
+        "Distributing the software only in binary form"
+      ],
+      "answer": "Linking to open-source code without publishing the source of new components",
+      "section": "License models",
+      "rate": "hard",
+      "suggestion": "Review the differences between GPL and LGPL licenses"
+    },
+    {
+      "question": "Which of the following is an implementation issue discussed in the chapter?",
+      "type": "mcq",
+      "options": [
+        "Configuration management",
+        "User interface design",
+        "Market analysis",
+        "Hardware procurement"
+      ],
+      "answer": "Configuration management",
+      "section": "Implementation issues",
+      "rate": "easy",
+      "suggestion": "Recall the key implementation issues highlighted"
+    },
+    {
+      "question": "What is host-target development?",
+      "type": "mcq",
+      "options": [
+        "Developing on one computer and executing on another",
+        "Developing software for multiple operating systems",
+        "Using cloud servers for development and deployment",
+        "Writing code on the target hardware directly"
+      ],
+      "answer": "Developing on one computer and executing on another",
+      "section": "Implementation issues",
+      "rate": "medium",
+      "suggestion": "Review the concept of host-target development"
+    },
+    {
+      "question": "What is the purpose of interface specification in object-oriented design?",
+      "type": "mcq",
+      "options": [
+        "To allow objects and components to be designed in parallel",
+        "To finalize the user interface design",
+        "To select the programming language",
+        "To document the system requirements"
+      ],
+      "answer": "To allow objects and components to be designed in parallel",
+      "section": "Interface specification",
+      "rate": "medium",
+      "suggestion": "Recall why interface specification is important"
+    },
+    {
+      "question": "Which tool is an example of a testing tool in development platforms?",
+      "type": "mcq",
+      "options": [
+        "JUnit",
+        "Eclipse",
+        "Git",
+        "MySQL"
+      ],
+      "answer": "JUnit",
+      "section": "Development platform tools",
+      "rate": "easy",
+      "suggestion": "Recall examples of development tools mentioned"
+    },
+    {
+      "question": "What is a key principle of open-source licensing?",
+      "type": "mcq",
+      "options": [
+        "Source code should be freely available",
+        "Only the original developer can modify the code",
+        "The software cannot be used commercially",
+        "Users must pay a subscription fee"
+      ],
+      "answer": "Source code should be freely available",
+      "section": "Open source licensing",
+      "rate": "easy",
+      "suggestion": "Review the fundamental principle of open-source licensing"
+    },
+    {
+      "question": "Which of the following is a benefit of open-source development?",
+      "type": "mcq",
+      "options": [
+        "Rapid development through community contributions",
+        "Guaranteed profitability",
+        "Complete control over all modifications",
+        "No need for documentation"
+      ],
+      "answer": "Rapid development through community contributions",
+      "section": "Open source business",
+      "rate": "medium",
+      "suggestion": "Recall the advantages of open-source development"
+    },
+    {
+      "question": "What is a common challenge in object class identification?",
+      "type": "mcq",
+      "options": [
+        "It relies on skill, experience, and domain knowledge",
+        "It can be done automatically by tools",
+        "It is always straightforward and deterministic",
+        "It does not require iteration"
+      ],
+      "answer": "It relies on skill, experience, and domain knowledge",
+      "section": "Object class identification",
+      "rate": "medium",
+      "suggestion": "Review the difficulties in identifying object classes"
+    },
+    {
+      "question": "What is the role of configuration management during development?",
+      "type": "mcq",
+      "options": [
+        "Tracking different versions of software components",
+        "Designing the system architecture",
+        "Writing user stories",
+        "Conducting acceptance testing"
+      ],
+      "answer": "Tracking different versions of software components",
+      "section": "Implementation issues",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of configuration management"
+    },
+    {
+      "question": "Which of the following is a reuse level that involves entire application systems?",
+      "type": "mcq",
+      "options": [
+        "System level",
+        "Abstraction level",
+        "Object level",
+        "Component level"
+      ],
+      "answer": "System level",
+      "section": "Reuse levels",
+      "rate": "medium",
+      "suggestion": "Recall the highest level of software reuse"
+    },
+    {
+      "question": "What is a key activity in license management for open-source software?",
+      "type": "mcq",
+      "options": [
+        "Educating people about open source",
+        "Hiding the source code from users",
+        "Preventing any modifications to the code",
+        "Selling the software without a license"
+      ],
+      "answer": "Educating people about open source",
+      "section": "License Management",
+      "rate": "medium",
+      "suggestion": "Review the recommendations for managing open-source licenses"
+    },
+    {
+      "question": "Which design model is used to show the system's interactions with its environment?",
+      "type": "mcq",
+      "options": [
+        "Use case diagrams",
+        "Class diagrams",
+        "Sequence diagrams",
+        "State diagrams"
+      ],
+      "answer": "Use case diagrams",
+      "section": "Weather station use cases",
+      "rate": "easy",
+      "suggestion": "Recall which UML diagram is used for interactions"
+    },
+    {
+      "question": "What does the 'abstraction level' of reuse refer to?",
+      "type": "mcq",
+      "options": [
+        "Using knowledge of successful abstractions in design",
+        "Reusing entire software systems",
+        "Reusing individual objects from a library",
+        "Reusing collections of objects and classes"
+      ],
+      "answer": "Using knowledge of successful abstractions in design",
+      "section": "Reuse levels",
+      "rate": "hard",
+      "suggestion": "Recall the meaning of abstraction-level reuse"
+    },
+    {
+      "question": "Which of the following is NOT a typical development platform tool?",
+      "type": "mcq",
+      "options": [
+        "Marketing analysis software",
+        "Integrated compiler and editing system",
+        "Language debugging system",
+        "Graphical editing tools for UML"
+      ],
+      "answer": "Marketing analysis software",
+      "section": "Development platform tools",
+      "rate": "easy",
+      "suggestion": "Recall the types of tools used in development platforms"
+    },
+    {
+      "question": "What is a major advantage of using off-the-shelf systems (COTS)?",
+      "type": "mcq",
+      "options": [
+        "It can be cheaper and faster than custom development",
+        "It always provides perfect customization",
+        "It eliminates the need for design",
+        "It guarantees higher performance"
+      ],
+      "answer": "It can be cheaper and faster than custom development",
+      "section": "Build or Buy",
+      "rate": "easy",
+      "suggestion": "Review the benefits of using COTS"
+    },
+    {
+      "question": "What is the focus of object-oriented design using UML?",
+      "type": "mcq",
+      "options": [
+        "Developing several different system models",
+        "Writing code in a specific programming language",
+        "Creating user documentation",
+        "Conducting system testing"
+      ],
+      "answer": "Developing several different system models",
+      "section": "An object-oriented design process using the UML",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of UML in object-oriented design"
+    },
+    {
+      "question": "Which of the following is an example of an application domain object in the weather station system?",
+      "type": "mcq",
+      "options": [
+        "Ground thermometer",
+        "User interface",
+        "Database management system",
+        "Network router"
+      ],
+      "answer": "Ground thermometer",
+      "section": "Weather station object classes",
+      "rate": "medium",
+      "suggestion": "Recall the tangible objects identified in the weather station example"
+    },
+    {
+      "question": "What does the BSD license allow?",
+      "type": "mcq",
+      "options": [
+        "Including open-source code in proprietary systems without republishing changes",
+        "Requiring all derived works to be open-source",
+        "Restricting commercial use of the software",
+        "Forbidding any modifications to the code"
+      ],
+      "answer": "Including open-source code in proprietary systems without republishing changes",
+      "section": "License models",
+      "rate": "hard",
+      "suggestion": "Recall the permissive nature of the BSD license"
+    },
+    {
+      "question": "What is the purpose of system context and interaction models?",
+      "type": "mcq",
+      "options": [
+        "To understand the system's environment and how it interacts",
+        "To write the source code for the system",
+        "To design the user interface layout",
+        "To estimate project costs"
+      ],
+      "answer": "To understand the system's environment and how it interacts",
+      "section": "System context and interactions",
+      "rate": "easy",
+      "suggestion": "Recall the importance of context and interaction models"
+    },
+    {
+      "question": "Which of the following is a challenge in software reuse?",
+      "type": "mcq",
+      "options": [
+        "Integrating reusable software elements from different sources",
+        "Finding developers to write new code",
+        "Choosing a programming language",
+        "Creating user manuals"
+      ],
+      "answer": "Integrating reusable software elements from different sources",
+      "section": "Reuse costs",
+      "rate": "medium",
+      "suggestion": "Review the difficulties associated with software reuse"
+    },
+    {
+      "question": "What is a key feature of open-source licensing?",
+      "type": "mcq",
+      "options": [
+        "Legal conditions are included to restrict use",
+        "The code is always free for any use without conditions",
+        "Only the original developer can use the code",
+        "The software cannot be distributed"
+      ],
+      "answer": "Legal conditions are included to restrict use",
+      "section": "Open source licensing",
+      "rate": "medium",
+      "suggestion": "Recall how open-source licenses impose conditions"
+    },
+    {
+      "question": "Which activity is part of the object-oriented design process?",
+      "type": "mcq",
+      "options": [
+        "Specify object interfaces",
+        "Conduct market research",
+        "Purchase development tools",
+        "Write end-user documentation"
+      ],
+      "answer": "Specify object interfaces",
+      "section": "Process stages",
+      "rate": "easy",
+      "suggestion": "Recall the stages in object-oriented design"
+    },
+    {
+      "question": "What is the main goal of architectural design in the weather station example?",
+      "type": "mcq",
+      "options": [
+        "To identify major components and their interactions",
+        "To write the code for each sensor",
+        "To design the physical housing of the station",
+        "To create the user manual"
+      ],
+      "answer": "To identify major components and their interactions",
+      "section": "Architectural Design",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of architectural design in the example"
+    },
+    {
+      "question": "Which tool helps organize code for different development projects?",
+      "type": "mcq",
+      "options": [
+        "Project support tools",
+        "Graphical editing tools",
+        "Debugging systems",
+        "Testing tools"
+      ],
+      "answer": "Project support tools",
+      "section": "Development platform tools",
+      "rate": "easy",
+      "suggestion": "Recall the function of project support tools"
+    },
+    {
+      "question": "What does the 'component level' of reuse involve?",
+      "type": "mcq",
+      "options": [
+        "Reusing collections of objects and object classes",
+        "Reusing entire application systems",
+        "Reusing individual functions",
+        "Reusing design patterns only"
+      ],
+      "answer": "Reusing collections of objects and object classes",
+      "section": "Reuse levels",
+      "rate": "medium",
+      "suggestion": "Recall the definition of component-level reuse"
+    },
+    {
+      "question": "Which of the following is a characteristic of open-source business models?",
+      "type": "mcq",
+      "options": [
+        "Selling support services rather than the software itself",
+        "Keeping the source code secret",
+        "Charging high license fees",
+        "Avoiding community involvement"
+      ],
+      "answer": "Selling support services rather than the software itself",
+      "section": "Open source business",
+      "rate": "medium",
+      "suggestion": "Recall how companies profit from open-source software"
+    },
+    {
+      "question": "What is the purpose of a use case description?",
+      "type": "mcq",
+      "options": [
+        "To detail interactions between actors and the system",
+        "To list all object classes in the system",
+        "To specify the hardware requirements",
+        "To document the programming syntax"
+      ],
+      "answer": "To detail interactions between actors and the system",
+      "section": "Use case description—Report weather",
+      "rate": "easy",
+      "suggestion": "Recall the role of use case descriptions"
+    },
+    {
+      "question": "Which of the following is an example of a configuration management activity?",
+      "type": "mcq",
+      "options": [
+        "Tracking versions of software components",
+        "Designing user interfaces",
+        "Writing test cases",
+        "Conducting user training"
+      ],
+      "answer": "Tracking versions of software components",
+      "section": "Configuration management tool interaction",
+      "rate": "easy",
+      "suggestion": "Recall what configuration management involves"
+    },
+    {
+      "question": "What is a key consideration in the 'Build or Buy' decision?",
+      "type": "mcq",
+      "options": [
+        "Whether existing systems can be adapted to meet requirements",
+        "The popularity of the programming language",
+        "The color scheme of the user interface",
+        "The age of the development team"
+      ],
+      "answer": "Whether existing systems can be adapted to meet requirements",
+      "section": "Build or Buy",
+      "rate": "medium",
+      "suggestion": "Recall the factors influencing the Build or Buy choice"
+    },
+    {
+      "question": "Which of the following is a benefit of using open-source software?",
+      "type": "mcq",
+      "options": [
+        "Access to a large community of contributors and users",
+        "Guaranteed absence of bugs",
+        "No need for licensing agreements",
+        "Automatic compliance with all standards"
+      ],
+      "answer": "Access to a large community of contributors and users",
+      "section": "Open source business",
+      "rate": "easy",
+      "suggestion": "Recall the advantages of open-source software"
+    },
+    {
+      "question": "What is the role of interface specification in parallel development?",
+      "type": "mcq",
+      "options": [
+        "To allow different teams to work on objects simultaneously",
+        "To finalize the user interface design early",
+        "To choose the programming language",
+        "To estimate project timelines"
+      ],
+      "answer": "To allow different teams to work on objects simultaneously",
+      "section": "Interface specification",
+      "rate": "medium",
+      "suggestion": "Recall why interface specification enables parallel work"
+    },
+    {
+      "question": "Which of the following is a challenge in open-source license management?",
+      "type": "mcq",
+      "options": [
+        "Understanding different license types and their implications",
+        "Preventing any use of the software",
+        "Ensuring the software is never modified",
+        "Keeping the source code completely hidden"
+      ],
+      "answer": "Understanding different license types and their implications",
+      "section": "License Management",
+      "rate": "medium",
+      "suggestion": "Recall the complexities of managing open-source licenses"
+    },
+    {
+      "question": "What is the primary focus when designing with off-the-shelf systems?",
+      "type": "mcq",
+      "options": [
+        "How to use configuration features to meet requirements",
+        "Writing custom code from scratch",
+        "Designing new hardware components",
+        "Creating original user interfaces"
+      ],
+      "answer": "How to use configuration features to meet requirements",
+      "section": "Build or Buy",
+      "rate": "medium",
+      "suggestion": "Recall the design focus when using COTS"
+    },
+    {
+      "question": "Which of the following is NOT a level of software reuse?",
+      "type": "mcq",
+      "options": [
+        "Documentation level",
+        "Abstraction level",
+        "Object level",
+        "System level"
+      ],
+      "answer": "Documentation level",
+      "section": "Reuse levels",
+      "rate": "easy",
+      "suggestion": "Recall the four levels of software reuse"
+    },
+    {
+      "question": "What is a key activity in open-source license management?",
+      "type": "mcq",
+      "options": [
+        "Having auditing systems in place",
+        "Preventing community contributions",
+        "Selling the source code",
+        "Restricting access to the code"
+      ],
+      "answer": "Having auditing systems in place",
+      "section": "License Management",
+      "rate": "medium",
+      "suggestion": "Recall the recommendations for managing open-source licenses effectively"
+    }
+  ]
+}

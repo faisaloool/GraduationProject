@@ -1,0 +1,208 @@
+{
+  "document": "Introduction to Database Management Systems (DBMS), covering concepts such as data models, data independence, transactions, concurrency control, and DBMS architecture.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is a Database Management System (DBMS)?",
+        "options": [
+          "A programming language",
+          "A software package designed to store and manage databases",
+          "An operating system",
+          "A hardware storage device"
+        ],
+        "answer": "A software package designed to store and manage databases"
+      },
+      {
+        "question": "Which of the following is NOT a function of a DBMS?",
+        "options": [
+          "Managing large amounts of data",
+          "Supporting concurrent access",
+          "Providing atomic access to data",
+          "Compiling source code"
+        ],
+        "answer": "Compiling source code"
+      },
+      {
+        "question": "Which example best illustrates the need for a DBMS?",
+        "options": [
+          "Editing a text file",
+          "Running a calculator",
+          "Multiple ATM machines accessing the same bank account",
+          "Printing a document"
+        ],
+        "answer": "Multiple ATM machines accessing the same bank account"
+      },
+      {
+        "question": "Why is data in an online bookseller database considered persistent?",
+        "options": [
+          "It is stored temporarily in memory",
+          "It is frequently updated",
+          "It outlives the programs that use it",
+          "It is accessed by only one user"
+        ],
+        "answer": "It outlives the programs that use it"
+      },
+      {
+        "question": "Which issue is a major challenge when using files instead of a DBMS?",
+        "options": [
+          "Lack of storage",
+          "Difficulty handling concurrency",
+          "High hardware cost",
+          "Slow CPU performance"
+        ],
+        "answer": "Difficulty handling concurrency"
+      },
+      {
+        "question": "What is the relational model primarily based on?",
+        "options": [
+          "Objects",
+          "Graphs",
+          "Tables",
+          "Files"
+        ],
+        "answer": "Tables"
+      },
+      {
+        "question": "Which company offers SQL Server?",
+        "options": [
+          "Oracle",
+          "IBM",
+          "Microsoft",
+          "Google"
+        ],
+        "answer": "Microsoft"
+      },
+      {
+        "question": "Which of the following is a query language used in DBMS?",
+        "options": [
+          "HTML",
+          "Python",
+          "SQL",
+          "Assembly"
+        ],
+        "answer": "SQL"
+      },
+      {
+        "question": "What does DDL stand for?",
+        "options": [
+          "Data Description Language",
+          "Data Definition Language",
+          "Database Design Language",
+          "Dynamic Data Language"
+        ],
+        "answer": "Data Definition Language"
+      },
+      {
+        "question": "Which level of abstraction describes how users view the data?",
+        "options": [
+          "Physical level",
+          "Conceptual level",
+          "External level",
+          "Internal level"
+        ],
+        "answer": "External level"
+      },
+      {
+        "question": "What is data independence?",
+        "options": [
+          "Ability to access data without authorization",
+          "Ability to change data without validation",
+          "Ability to change schema at one level without affecting another",
+          "Ability to store data in multiple formats"
+        ],
+        "answer": "Ability to change schema at one level without affecting another"
+      },
+      {
+        "question": "Which type of data independence allows changes in storage structure?",
+        "options": [
+          "Logical data independence",
+          "Physical data independence",
+          "View independence",
+          "Schema independence"
+        ],
+        "answer": "Physical data independence"
+      },
+      {
+        "question": "Which level of abstraction is the lowest level?",
+        "options": [
+          "View level",
+          "Conceptual level",
+          "Logical level",
+          "Physical level"
+        ],
+        "answer": "Physical level"
+      },
+      {
+        "question": "Why is concurrency control important in a DBMS?",
+        "options": [
+          "To improve graphics performance",
+          "To prevent data inconsistency",
+          "To reduce storage size",
+          "To simplify queries"
+        ],
+        "answer": "To prevent data inconsistency"
+      },
+      {
+        "question": "What is a transaction in a DBMS?",
+        "options": [
+          "A backup operation",
+          "A single SQL query",
+          "An atomic sequence of database operations",
+          "A database file"
+        ],
+        "answer": "An atomic sequence of database operations"
+      },
+      {
+        "question": "Which property ensures a transaction is all-or-nothing?",
+        "options": [
+          "Consistency",
+          "Isolation",
+          "Atomicity",
+          "Durability"
+        ],
+        "answer": "Atomicity"
+      },
+      {
+        "question": "What is the purpose of write-ahead logging (WAL)?",
+        "options": [
+          "To improve query speed",
+          "To reduce disk usage",
+          "To ensure recovery after crashes",
+          "To encrypt data"
+        ],
+        "answer": "To ensure recovery after crashes"
+      },
+      {
+        "question": "Who is responsible for designing logical and physical schemas?",
+        "options": [
+          "End user",
+          "Application programmer",
+          "Database administrator (DBA)",
+          "System analyst"
+        ],
+        "answer": "Database administrator (DBA)"
+      },
+      {
+        "question": "Which component is part of a DBMS layered architecture?",
+        "options": [
+          "Query optimization and execution",
+          "Web browser",
+          "Compiler",
+          "Operating system kernel"
+        ],
+        "answer": "Query optimization and execution"
+      },
+      {
+        "question": "Which is a key benefit of using a DBMS?",
+        "options": [
+          "Manual data processing",
+          "Reduced data security",
+          "Concurrent access and crash recovery",
+          "Limited data sharing"
+        ],
+        "answer": "Concurrent access and crash recovery"
+      }
+    ]
+  }
+}

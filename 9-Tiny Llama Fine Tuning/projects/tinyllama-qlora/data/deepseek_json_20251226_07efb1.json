@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 4: Access Control - Computer Security: Principles and Practice, 4th Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Access control is defined by NISTIR 7298 as the process of granting or denying requests to use information or enter facilities.",
+        "answer": "True"
+      },
+      {
+        "question": "RFC 4949 defines access control as a process that ignores security policies.",
+        "answer": "False"
+      },
+      {
+        "question": "All of computer security is fundamentally concerned with access control.",
+        "answer": "True"
+      },
+      {
+        "question": "Role-based access control (RBAC) assigns permissions based on user identity alone.",
+        "answer": "False"
+      },
+      {
+        "question": "Discretionary access control (DAC) uses security labels and clearances.",
+        "answer": "False"
+      },
+      {
+        "question": "Mandatory access control (MAC) compares security labels with user clearances.",
+        "answer": "True"
+      },
+      {
+        "question": "In DAC, an entity cannot grant access rights to another entity.",
+        "answer": "False"
+      },
+      {
+        "question": "An access matrix lists subjects on one dimension and objects on the other.",
+        "answer": "True"
+      },
+      {
+        "question": "A protection domain is a set of objects with no access rights.",
+        "answer": "False"
+      },
+      {
+        "question": "In UNIX, each user has a unique user ID and a group ID.",
+        "answer": "True"
+      },
+      {
+        "question": "UNIX file access control uses 10 protection bits.",
+        "answer": "False"
+      },
+      {
+        "question": "SetUID allows a program to run with the privileges of the file owner.",
+        "answer": "True"
+      },
+      {
+        "question": "The superuser in UNIX is subject to all usual access control restrictions.",
+        "answer": "False"
+      },
+      {
+        "question": "Access control lists (ACLs) are not supported in UNIX systems.",
+        "answer": "False"
+      },
+      {
+        "question": "Constraints in RBAC help adapt the model to organizational policies.",
+        "answer": "True"
+      },
+      {
+        "question": "Attribute-based access control (ABAC) uses only user attributes.",
+        "answer": "False"
+      },
+      {
+        "question": "ICAM stands for Identity, Credential, and Access Management.",
+        "answer": "True"
+      },
+      {
+        "question": "A credential is an object that binds an identity to a token.",
+        "answer": "True"
+      },
+      {
+        "question": "Identity federation allows organizations to trust digital identities from external sources.",
+        "answer": "True"
+      },
+      {
+        "question": "The Open Identity Trust Framework is unrelated to identity federation.",
+        "answer": "False"
+      },
+      {
+        "question": "DAC is often implemented using an access matrix.",
+        "answer": "True"
+      },
+      {
+        "question": "In kernel mode, all memory areas and instructions are accessible.",
+        "answer": "True"
+      },
+      {
+        "question": "The sticky bit in UNIX prevents any file in a directory from being deleted.",
+        "answer": "False"
+      },
+      {
+        "question": "ABAC policies consider user, resource, and environmental attributes.",
+        "answer": "True"
+      },
+      {
+        "question": "RBAC is a type of mandatory access control.",
+        "answer": "False"
+      },
+      {
+        "question": "ICAM was developed exclusively by private corporations.",
+        "answer": "False"
+      },
+      {
+        "question": "Credential management is not part of ICAM.",
+        "answer": "False"
+      },
+      {
+        "question": "Identity management creates trusted digital identities.",
+        "answer": "True"
+      },
+      {
+        "question": "MAC is based on the identity of the requestor.",
+        "answer": "False"
+      },
+      {
+        "question": "A protection domain row in an access matrix defines user passwords.",
+        "answer": "False"
+      },
+      {
+        "question": "UNIX protection bits specify read, write, and execute for owner, group, and others.",
+        "answer": "True"
+      },
+      {
+        "question": "SetGID applies the group ID privileges temporarily.",
+        "answer": "True"
+      },
+      {
+        "question": "ABAC is also known as policy-based access control.",
+        "answer": "True"
+      },
+      {
+        "question": "Federation addresses how to trust identities from external organizations.",
+        "answer": "True"
+      },
+      {
+        "question": "In RBAC, roles are static and never change.",
+        "answer": "False"
+      },
+      {
+        "question": "A subject in access control can be a user, program, or process.",
+        "answer": "True"
+      },
+      {
+        "question": "DAC allows users to pass their access rights to others.",
+        "answer": "True"
+      },
+      {
+        "question": "MAC is discretionary because users can change labels.",
+        "answer": "False"
+      },
+      {
+        "question": "The owner ID in UNIX is stored in the file's inode.",
+        "answer": "True"
+      },
+      {
+        "question": "ICAM's goal is to prevent all access to agency resources.",
+        "answer": "False"
+      }
+    ]
+  }
+}

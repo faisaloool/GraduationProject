@@ -1,0 +1,1238 @@
+{
+  "document": "ch7_Microprogrammed_Control_1.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary function of the Control Unit in a microprogrammed control system?",
+        "options": [
+          "To store data temporarily",
+          "To initiate sequences of microoperations",
+          "To perform arithmetic operations",
+          "To manage memory allocation"
+        ],
+        "answer": "To initiate sequences of microoperations"
+      },
+      {
+        "question": "What do control signals specify in a bus-organized system?",
+        "options": [
+          "Memory addresses",
+          "Microoperations",
+          "Data types",
+          "Processor speed"
+        ],
+        "answer": "Microoperations"
+      },
+      {
+        "question": "What do groups of bits in a control unit select?",
+        "options": [
+          "Paths in multiplexers, decoders, and arithmetic logic units",
+          "Memory locations",
+          "Input devices",
+          "Output devices"
+        ],
+        "answer": "Paths in multiplexers, decoders, and arithmetic logic units"
+      },
+      {
+        "question": "What are the two major types of Control Units?",
+        "options": [
+          "Hardwired Control and Microprogrammed Control",
+          "Sequential Control and Parallel Control",
+          "Static Control and Dynamic Control",
+          "Centralized Control and Decentralized Control"
+        ],
+        "answer": "Hardwired Control and Microprogrammed Control"
+      },
+      {
+        "question": "How is the control logic implemented in a Hardwired Control Unit?",
+        "options": [
+          "Using software algorithms",
+          "Using gates, F/Fs, decoders, and other digital circuits",
+          "Using microcode",
+          "Using programmable logic arrays"
+        ],
+        "answer": "Using gates, F/Fs, decoders, and other digital circuits"
+      },
+      {
+        "question": "What is a disadvantage of Hardwired Control?",
+        "options": [
+          "Slow operation",
+          "Complex programming",
+          "Wiring change",
+          "High power consumption"
+        ],
+        "answer": "Wiring change"
+      },
+      {
+        "question": "What is the main advantage of microprogrammed control?",
+        "options": [
+          "Fast operation",
+          "Easy modification by updating microprogram",
+          "No need for control memory",
+          "Hardware simplicity"
+        ],
+        "answer": "Easy modification by updating microprogram"
+      },
+      {
+        "question": "Where is the control information stored in a microprogrammed control unit?",
+        "options": [
+          "Main memory",
+          "Cache",
+          "Control memory",
+          "Registers"
+        ],
+        "answer": "Control memory"
+      },
+      {
+        "question": "What is a disadvantage of microprogrammed control?",
+        "options": [
+          "Complex hardware",
+          "Slow operation",
+          "Difficult modification",
+          "High power consumption"
+        ],
+        "answer": "Slow operation"
+      },
+      {
+        "question": "How are control variables represented in microprogrammed control?",
+        "options": [
+          "Hexadecimal strings",
+          "Decimal numbers",
+          "String of 1’s and 0’s",
+          "Analog signals"
+        ],
+        "answer": "String of 1’s and 0’s"
+      },
+      {
+        "question": "What is a microinstruction?",
+        "options": [
+          "A control word in control memory",
+          "A type of RAM",
+          "An auxiliary memory",
+          "A dynamic microprogram"
+        ],
+        "answer": "A control word in control memory"
+      },
+      {
+        "question": "What does a microprogram consist of?",
+        "options": [
+          "Control signals",
+          "Microoperations",
+          "Microinstructions",
+          "Dynamic microprogramming"
+        ],
+        "answer": "Microinstructions"
+      },
+      {
+        "question": "What is dynamic microprogramming?",
+        "options": [
+          "Control Memory = RAM",
+          "Microprogram loaded from auxiliary memory",
+          "Microinstruction specifying microoperations",
+          "Control word in control memory"
+        ],
+        "answer": "Control Memory = RAM"
+      },
+      {
+        "question": "What is the role of RAM in dynamic microprogramming?",
+        "options": [
+          "To store microinstructions",
+          "To generate control signals",
+          "To change a writable control memory",
+          "To execute the instruction set"
+        ],
+        "answer": "To change a writable control memory"
+      },
+      {
+        "question": "Where is the microprogram initially loaded from?",
+        "options": [
+          "Control memory",
+          "RAM",
+          "Auxiliary memory",
+          "Microinstruction"
+        ],
+        "answer": "Auxiliary memory"
+      },
+      {
+        "question": "What is static microprogramming?",
+        "options": [
+          "Control Memory = RAM",
+          "Control Memory = ROM",
+          "Control Memory = Cache",
+          "Control Memory = Register"
+        ],
+        "answer": "Control Memory = ROM"
+      },
+      {
+        "question": "What are control words in ROM made permanent during?",
+        "options": [
+          "Software installation",
+          "Hardware production",
+          "System boot",
+          "User configuration"
+        ],
+        "answer": "Hardware production"
+      },
+      {
+        "question": "What does a microinstruction contain?",
+        "options": [
+          "Only a control word",
+          "Only a sequencing word",
+          "A control word and a sequencing word",
+          "None of the above"
+        ],
+        "answer": "A control word and a sequencing word"
+      },
+      {
+        "question": "What is a control word?",
+        "options": [
+          "All the control information required for one clock cycle",
+          "All the control information required for multiple clock cycles",
+          "Only the sequencing information",
+          "Only the address information"
+        ],
+        "answer": "All the control information required for one clock cycle"
+      },
+      {
+        "question": "What is a sequencing word?",
+        "options": [
+          "Information needed to decide the next microinstruction address",
+          "Information needed to decide the current microinstruction address",
+          "Information needed to decide the previous microinstruction address",
+          "None of the above"
+        ],
+        "answer": "Information needed to decide the next microinstruction address"
+      },
+      {
+        "question": "Where is the microprogram stored in a microprogrammed control unit?",
+        "options": [
+          "Control Memory (Control Storage: CS)",
+          "Main Memory",
+          "Cache Memory",
+          "Secondary Storage"
+        ],
+        "answer": "Control Memory (Control Storage: CS)"
+      },
+      {
+        "question": "What does Writeable Control Memory (WCS) allow?",
+        "options": [
+          "Modification of microprogram",
+          "Increase in memory size",
+          "Reduction in power consumption",
+          "Enhancement of CPU speed"
+        ],
+        "answer": "Modification of microprogram"
+      },
+      {
+        "question": "What can be changed in a system with Writeable Control Storage?",
+        "options": [
+          "Instruction set",
+          "Hardware components",
+          "Operating system",
+          "User interface"
+        ],
+        "answer": "Instruction set"
+      },
+      {
+        "question": "What is Dynamic Microprogramming?",
+        "options": [
+          "A system where microprogram can be changed",
+          "A system with fixed microprogram",
+          "A system that dynamically allocates memory",
+          "A system that adjusts CPU frequency"
+        ],
+        "answer": "A system where microprogram can be changed"
+      },
+      {
+        "question": "Who can change the microprogram in a computer system with Writeable Control Storage?",
+        "options": [
+          "Systems programmer or user",
+          "Only the system administrator",
+          "Only the hardware manufacturer",
+          "Only the software developer"
+        ],
+        "answer": "Systems programmer or user"
+      },
+      {
+        "question": "What is Control Memory in a microprogrammed control organization?",
+        "options": [
+          "A memory part of a control unit",
+          "A type of RAM",
+          "A cache memory",
+          "A secondary storage"
+        ],
+        "answer": "A memory part of a control unit"
+      },
+      {
+        "question": "What is the function of the Main Memory in a microprogrammed control unit?",
+        "options": [
+          "Storing microprogram (Microinstruction)",
+          "Storing user program (Machine instruction/data)",
+          "Specifying the address of the microinstruction",
+          "Determining the address sequence read from control memory"
+        ],
+        "answer": "Storing user program (Machine instruction/data)"
+      },
+      {
+        "question": "What does the Control Address Register (CAR) specify?",
+        "options": [
+          "The address of the microinstruction",
+          "The user program data",
+          "The next microinstruction sequence",
+          "The control memory size"
+        ],
+        "answer": "The address of the microinstruction"
+      },
+      {
+        "question": "What is the role of the Sequencer (Next Address Generator)?",
+        "options": [
+          "Storing machine instructions",
+          "Determining the address sequence read from control memory",
+          "Executing user programs",
+          "Managing main memory allocation"
+        ],
+        "answer": "Determining the address sequence read from control memory"
+      },
+      {
+        "question": "Which of the following is NOT a way to specify the next address of a microinstruction?",
+        "options": [
+          "In-line Sequencing",
+          "Branch",
+          "Conditional Branch",
+          "Direct Memory Access"
+        ],
+        "answer": "Direct Memory Access"
+      },
+      {
+        "question": "What is stored in the Control Memory?",
+        "options": [
+          "User program data",
+          "Microprogram (Microinstruction)",
+          "Machine instructions",
+          "Operating system files"
+        ],
+        "answer": "Microprogram (Microinstruction)"
+      },
+      {
+        "question": "What is the primary function of the Control Data Register in a pipeline?",
+        "options": [
+          "To store the main program instructions",
+          "To hold the microinstruction read from control memory",
+          "To manage the arithmetic operations",
+          "To control the input/output devices"
+        ],
+        "answer": "To hold the microinstruction read from control memory"
+      },
+      {
+        "question": "Why is overlapping microinstruction execution and control storage access beneficial?",
+        "options": [
+          "To reduce power consumption",
+          "To improve speed by executing operations in parallel",
+          "To simplify the instruction set",
+          "To increase the size of the control memory"
+        ],
+        "answer": "To improve speed by executing operations in parallel"
+      },
+      {
+        "question": "What does RISC stand for in computer architecture?",
+        "options": [
+          "Reduced Instruction Set Computer",
+          "Random Instruction Set Computing",
+          "Reduced Integrated System Components",
+          "Rapid Instruction Sequencing Control"
+        ],
+        "answer": "Reduced Instruction Set Computer"
+      },
+      {
+        "question": "Which of the following is a characteristic of RISC architecture?",
+        "options": [
+          "Complex instruction set with many operations",
+          "Limited number of general-purpose registers",
+          "Simplified instruction set with fewer operations",
+          "Variable-length instruction formats"
+        ],
+        "answer": "Simplified instruction set with fewer operations"
+      },
+      {
+        "question": "What is the primary method of control used in a computer system as discussed in Sec. 8-8?",
+        "options": [
+          "Hardwired control",
+          "Microprogrammed control",
+          "Software control",
+          "Dynamic control"
+        ],
+        "answer": "Hardwired control"
+      },
+      {
+        "question": "What is another term for 'Address Sequencing' as mentioned in the text?",
+        "options": [
+          "Next Address Generator",
+          "Control Memory Mapper",
+          "Instruction Sequencer",
+          "Routine Selector"
+        ],
+        "answer": "Next Address Generator"
+      },
+      {
+        "question": "Where are microinstructions stored in groups?",
+        "options": [
+          "Main memory",
+          "Cache memory",
+          "Control memory",
+          "Secondary memory"
+        ],
+        "answer": "Control memory"
+      },
+      {
+        "question": "What does the 'Mapping' process involve?",
+        "options": [
+          "Converting virtual addresses to physical addresses",
+          "Linking instruction codes to control memory addresses",
+          "Translating high-level code to machine code",
+          "Assigning memory blocks to processes"
+        ],
+        "answer": "Linking instruction codes to control memory addresses"
+      },
+      {
+        "question": "Which of the following is NOT a capability of Address Sequencing?",
+        "options": [
+          "Incrementing the control address register",
+          "Unconditional branch",
+          "Conditional branch",
+          "Dynamic memory allocation"
+        ],
+        "answer": "Dynamic memory allocation"
+      },
+      {
+        "question": "What is the purpose of mapping bits of the instruction address for control memory?",
+        "options": [
+          "To determine the next instruction to execute",
+          "To store data temporarily",
+          "To manage subroutine returns",
+          "To handle arithmetic operations"
+        ],
+        "answer": "To determine the next instruction to execute"
+      },
+      {
+        "question": "Which of the following is NOT a routine mentioned in the text?",
+        "options": [
+          "ADD Routine",
+          "SUB Routine",
+          "LDA Routine",
+          "BUN Routine"
+        ],
+        "answer": "SUB Routine"
+      },
+      {
+        "question": "What is the OP-code for the LDA instruction?",
+        "options": [
+          "0000",
+          "0001",
+          "0010",
+          "0011"
+        ],
+        "answer": "0010"
+      },
+      {
+        "question": "Which facility is mentioned for subroutine handling?",
+        "options": [
+          "Direct Mapping",
+          "Control Storage",
+          "Subroutine return",
+          "Status bit conditions"
+        ],
+        "answer": "Subroutine return"
+      },
+      {
+        "question": "What does the BUN instruction's OP-code correspond to?",
+        "options": [
+          "0000",
+          "0011",
+          "0100",
+          "0010"
+        ],
+        "answer": "0100"
+      },
+      {
+        "question": "What does CAR stand for in the context of control memory?",
+        "options": [
+          "Control Address Register",
+          "Computer Address Register",
+          "Central Address Register",
+          "Command Address Register"
+        ],
+        "answer": "Control Address Register"
+      },
+      {
+        "question": "How many different paths can the CAR receive the address from?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "Which of the following is NOT a path from which the CAR can receive an address?",
+        "options": [
+          "Incrementer",
+          "Branch address from control memory",
+          "Mapping Logic",
+          "Data Register"
+        ],
+        "answer": "Data Register"
+      },
+      {
+        "question": "What is the function of the SBR in the context of control memory?",
+        "options": [
+          "Storing subroutine return addresses",
+          "Incrementing the CAR",
+          "Mapping logic operations",
+          "Branch address storage"
+        ],
+        "answer": "Storing subroutine return addresses"
+      },
+      {
+        "question": "Which routine is NOT mentioned in the provided text?",
+        "options": [
+          "ADD Routine",
+          "LDA Routine",
+          "STA Routine",
+          "MUL Routine"
+        ],
+        "answer": "MUL Routine"
+      },
+      {
+        "question": "Where is the return address for a subroutine stored?",
+        "options": [
+          "ROM",
+          "SBR",
+          "Branch Logic",
+          "Status Bits"
+        ],
+        "answer": "SBR"
+      },
+      {
+        "question": "What controls the conditional branch decisions generated in the Branch Logic?",
+        "options": [
+          "ROM",
+          "SBR",
+          "Status Bits",
+          "Opcode"
+        ],
+        "answer": "Status Bits"
+      },
+      {
+        "question": "What does the Branch Logic do if the specified condition is met?",
+        "options": [
+          "Increments the control address register",
+          "Branches to the indicated address",
+          "Stores the return address in SBR",
+          "Maps the instruction"
+        ],
+        "answer": "Branches to the indicated address"
+      },
+      {
+        "question": "How many distinct instructions can a 4-bit opcode specify?",
+        "options": [
+          "8",
+          "16",
+          "32",
+          "64"
+        ],
+        "answer": "16"
+      },
+      {
+        "question": "What is the first step in the opcode to 7-bit control memory address mapping process?",
+        "options": [
+          "Place a '1' in the most significant bit of the address",
+          "Place a '0' in the most significant bit of the address",
+          "Transfer 4-bit Operation code bits",
+          "Clear the two most significant bits of the CAR"
+        ],
+        "answer": "Place a '0' in the most significant bit of the address"
+      },
+      {
+        "question": "How is the mapping function typically implemented?",
+        "options": [
+          "Using a Mapping ROM",
+          "Using a PLD (Programmable Logic Device)",
+          "Both a and b",
+          "Using a CPU cache"
+        ],
+        "answer": "Both a and b"
+      },
+      {
+        "question": "What is the size of the control memory mentioned in the text?",
+        "options": [
+          "64 words",
+          "128 words",
+          "256 words",
+          "512 words"
+        ],
+        "answer": "128 words"
+      },
+      {
+        "question": "What are subroutines?",
+        "options": [
+          "Independent programs that run separately",
+          "Programs that are used by other routines",
+          "Hardware components of a computer",
+          "Data storage units"
+        ],
+        "answer": "Programs that are used by other routines"
+      },
+      {
+        "question": "Which bits are cleared in the CAR during the opcode to address mapping process?",
+        "options": [
+          "The two most significant bits",
+          "The two least significant bits",
+          "The middle two bits",
+          "No bits are cleared"
+        ],
+        "answer": "The two least significant bits"
+      },
+      {
+        "question": "What can microinstructions be saved by?",
+        "options": [
+          "Subroutines that use common sections of microcode",
+          "Main memory instructions",
+          "Control memory data",
+          "Direct register access"
+        ],
+        "answer": "Subroutines that use common sections of microcode"
+      },
+      {
+        "question": "What must a subroutine have a provision for?",
+        "options": [
+          "Storing the return address during a subroutine call",
+          "Reading data from main memory",
+          "Writing data to control memory",
+          "Executing multiple instructions simultaneously"
+        ],
+        "answer": "Storing the return address during a subroutine call"
+      },
+      {
+        "question": "Where does data written to memory come from?",
+        "options": [
+          "DR (Data Register)",
+          "Main memory",
+          "Control memory",
+          "Subroutine return address"
+        ],
+        "answer": "DR (Data Register)"
+      },
+      {
+        "question": "Where can data read from memory go?",
+        "options": [
+          "Only to DR (Data Register)",
+          "Main memory",
+          "Control memory",
+          "Subroutine return address"
+        ],
+        "answer": "Only to DR (Data Register)"
+      },
+      {
+        "question": "What are the two types of memory mentioned in the computer configuration?",
+        "options": [
+          "Main memory (instruction/data) and Control memory (microprogram)",
+          "DR and subroutine memory",
+          "Cache memory and virtual memory",
+          "ROM and RAM"
+        ],
+        "answer": "Main memory (instruction/data) and Control memory (microprogram)"
+      },
+      {
+        "question": "Which component can receive information from AC, PC, or Memory?",
+        "options": [
+          "DR",
+          "AR",
+          "PC",
+          "ALU"
+        ],
+        "answer": "DR"
+      },
+      {
+        "question": "What is the primary function of the ALU?",
+        "options": [
+          "Storing data",
+          "Performing microoperations with data from AC and DR",
+          "Controlling the flow of data",
+          "Decoding instructions"
+        ],
+        "answer": "Performing microoperations with data from AC and DR"
+      },
+      {
+        "question": "Which register can receive information only from AR?",
+        "options": [
+          "DR",
+          "AR",
+          "PC",
+          "AC"
+        ],
+        "answer": "PC"
+      },
+      {
+        "question": "How many bits are allocated for the opcode in the instruction format?",
+        "options": [
+          "1 bit",
+          "4 bits",
+          "11 bits",
+          "16 bits"
+        ],
+        "answer": "4 bits"
+      },
+      {
+        "question": "What is the size of the address field in the instruction format?",
+        "options": [
+          "1 bit",
+          "4 bits",
+          "11 bits",
+          "16 bits"
+        ],
+        "answer": "11 bits"
+      },
+      {
+        "question": "How many microoperation fields are there in the microinstruction format?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "3"
+      },
+      {
+        "question": "Which microoperation field is used for the operation DR ← M[AR]?",
+        "options": [
+          "F1",
+          "F2",
+          "F3",
+          "F4"
+        ],
+        "answer": "F2"
+      },
+      {
+        "question": "What is the microoperation code for PC ← PC + 1?",
+        "options": [
+          "100",
+          "101",
+          "110",
+          "111"
+        ],
+        "answer": "101"
+      },
+      {
+        "question": "What is the nine-bit microoperation field for DR ← M[AR] and PC ← PC + 1?",
+        "options": [
+          "000 100 101",
+          "010 001 000",
+          "100 101 000",
+          "101 100 000"
+        ],
+        "answer": "000 100 101"
+      },
+      {
+        "question": "Can two or more conflicting microoperations be specified simultaneously?",
+        "options": [
+          "Yes",
+          "No",
+          "Sometimes",
+          "Depends on the microoperation field"
+        ],
+        "answer": "No"
+      },
+      {
+        "question": "What does the microoperation code 010 001 000 represent?",
+        "options": [
+          "Clear AC to 0 and subtract",
+          "DR ← M[AR] and PC ← PC + 1",
+          "Add and shift",
+          "None of the above"
+        ],
+        "answer": "Clear AC to 0 and subtract"
+      },
+      {
+        "question": "What does the symbol DRTAC(F1 = 100) represent?",
+        "options": [
+          "A transfer from AC to DR",
+          "A transfer from DR to AC",
+          "A transfer from DR to memory",
+          "A transfer from AC to memory"
+        ],
+        "answer": "A transfer from DR to AC"
+      },
+      {
+        "question": "What does the condition field '00' represent?",
+        "options": [
+          "Indirect address bit",
+          "Unconditional branch",
+          "Sign bit of AC",
+          "Zero value in AC"
+        ],
+        "answer": "Unconditional branch"
+      },
+      {
+        "question": "What does the condition field '01' check?",
+        "options": [
+          "Unconditional branch",
+          "Indirect address bit",
+          "Sign bit of AC",
+          "Zero value in AC"
+        ],
+        "answer": "Indirect address bit"
+      },
+      {
+        "question": "What does the condition field '10' check?",
+        "options": [
+          "Unconditional branch",
+          "Indirect address bit",
+          "Sign bit of AC",
+          "Zero value in AC"
+        ],
+        "answer": "Sign bit of AC"
+      },
+      {
+        "question": "What does the condition field '11' check?",
+        "options": [
+          "Unconditional branch",
+          "Indirect address bit",
+          "Sign bit of AC",
+          "Zero value in AC"
+        ],
+        "answer": "Zero value in AC"
+      },
+      {
+        "question": "What does the branch field '00' represent?",
+        "options": [
+          "JMP",
+          "CALL",
+          "RET",
+          "MAP"
+        ],
+        "answer": "JMP"
+      },
+      {
+        "question": "What does the branch field '01' represent?",
+        "options": [
+          "JMP",
+          "CALL",
+          "RET",
+          "MAP"
+        ],
+        "answer": "CALL"
+      },
+      {
+        "question": "What does the branch field '10' represent?",
+        "options": [
+          "JMP",
+          "CALL",
+          "RET",
+          "MAP"
+        ],
+        "answer": "RET"
+      },
+      {
+        "question": "What does the branch field '11' represent?",
+        "options": [
+          "JMP",
+          "CALL",
+          "RET",
+          "MAP"
+        ],
+        "answer": "MAP"
+      },
+      {
+        "question": "How many words can the 7-bit address field (AD) address?",
+        "options": [
+          "64 words",
+          "128 words",
+          "256 words",
+          "512 words"
+        ],
+        "answer": "128 words"
+      },
+      {
+        "question": "What is the purpose of the Label Field in a symbolic microinstruction?",
+        "options": [
+          "To define the origin of the microinstruction",
+          "To terminate with a colon (:)",
+          "To specify the microoperation",
+          "To indicate the return address"
+        ],
+        "answer": "To terminate with a colon (:)"
+      },
+      {
+        "question": "How many symbols can the Microoperation Field contain in a symbolic microinstruction?",
+        "options": [
+          "One only",
+          "One, two, or three",
+          "Two or three",
+          "Up to four"
+        ],
+        "answer": "One, two, or three"
+      },
+      {
+        "question": "Which of the following is NOT a valid value for the CD Field?",
+        "options": [
+          "U",
+          "I",
+          "S",
+          "T"
+        ],
+        "answer": "T"
+      },
+      {
+        "question": "What does the BR Field in a symbolic microinstruction specify?",
+        "options": [
+          "Branch operations like JMP, CALL, RET, or MAP",
+          "The return address",
+          "The microoperation symbols",
+          "The origin of the microinstruction"
+        ],
+        "answer": "Branch operations like JMP, CALL, RET, or MAP"
+      },
+      {
+        "question": "What does the AD Field use to represent the next address?",
+        "options": [
+          "The symbol 'NEXT'",
+          "The symbol 'RET'",
+          "The symbol 'MAP'",
+          "A numeric value"
+        ],
+        "answer": "The symbol 'NEXT'"
+      },
+      {
+        "question": "What is the purpose of the ORG pseudoinstruction?",
+        "options": [
+          "To define the origin of the microinstruction",
+          "To terminate the microinstruction",
+          "To specify the microoperation",
+          "To indicate the return address"
+        ],
+        "answer": "To define the origin of the microinstruction"
+      },
+      {
+        "question": "What is the purpose of the FETCH subroutine?",
+        "options": [
+          "To execute arithmetic operations",
+          "To fetch the next instruction from memory",
+          "To manage input/output operations",
+          "To handle interrupt requests"
+        ],
+        "answer": "To fetch the next instruction from memory"
+      },
+      {
+        "question": "Which of the following is NOT a part of the FETCH subroutine's symbolic microprogram?",
+        "options": [
+          "Opcode Fetch",
+          "Opcode Decode",
+          "Mapping",
+          "Data Encryption"
+        ],
+        "answer": "Data Encryption"
+      },
+      {
+        "question": "What is the total size of the memory map mentioned in the text?",
+        "options": [
+          "64 words",
+          "128 words",
+          "256 words",
+          "512 words"
+        ],
+        "answer": "128 words"
+      },
+      {
+        "question": "What is the purpose of the MAP microinstruction in the FETCH subroutine?",
+        "options": [
+          "To branch to the address specified by the 4-bit Opcode",
+          "To execute the ADD instruction",
+          "To store data in memory",
+          "To perform indirect addressing"
+        ],
+        "answer": "To branch to the address specified by the 4-bit Opcode"
+      },
+      {
+        "question": "What is the branch address for the BRANCH instruction?",
+        "options": [
+          "0",
+          "4",
+          "8",
+          "12"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "What is the branch address for the EXCHANGE instruction?",
+        "options": [
+          "0",
+          "4",
+          "8",
+          "12"
+        ],
+        "answer": "12"
+      },
+      {
+        "question": "What does I = 1 indicate in the context of the given text?",
+        "options": [
+          "Indirect addressing is enabled",
+          "Direct addressing is enabled",
+          "The instruction is invalid",
+          "The Opcode is 1"
+        ],
+        "answer": "Indirect addressing is enabled"
+      },
+      {
+        "question": "How many machine instructions are mentioned in the text?",
+        "options": [
+          "8",
+          "16",
+          "32",
+          "64"
+        ],
+        "answer": "16"
+      },
+      {
+        "question": "What type of memory is commonly used in microprogrammed systems for control memory?",
+        "options": [
+          "RAM",
+          "ROM",
+          "Cache",
+          "Register"
+        ],
+        "answer": "ROM"
+      },
+      {
+        "question": "Why is ROM preferred over RAM for control memory in microprogrammed systems?",
+        "options": [
+          "It is more expensive",
+          "It is slower",
+          "It is cheaper and faster",
+          "It allows users to change the system architecture"
+        ],
+        "answer": "It is cheaper and faster"
+      },
+      {
+        "question": "What is one reason ROM is used in microprogrammed systems?",
+        "options": [
+          "To allow users to modify the system architecture",
+          "To prevent users from changing the system architecture",
+          "To increase the cost of the system",
+          "To slow down the system"
+        ],
+        "answer": "To prevent users from changing the system architecture"
+      },
+      {
+        "question": "What does the microprogram in a microprogrammed system typically implement?",
+        "options": [
+          "Data storage",
+          "Control logic",
+          "User interfaces",
+          "Networking protocols"
+        ],
+        "answer": "Control logic"
+      },
+      {
+        "question": "What is the binary representation of the decimal number 4?",
+        "options": [
+          "0000010",
+          "0000100",
+          "0000011",
+          "0000101"
+        ],
+        "answer": "0000100"
+      },
+      {
+        "question": "Which binary number corresponds to the decimal number 5?",
+        "options": [
+          "0000010",
+          "0000011",
+          "0000100",
+          "0000101"
+        ],
+        "answer": "0000101"
+      },
+      {
+        "question": "What is the binary representation of the number 6 in the given text?",
+        "options": [
+          "0000110",
+          "0000111",
+          "0001000",
+          "0001001"
+        ],
+        "answer": "0000110"
+      },
+      {
+        "question": "What is the binary representation of the number 7 in the given text?",
+        "options": [
+          "0000110",
+          "0000111",
+          "0001000",
+          "0001001"
+        ],
+        "answer": "0000111"
+      },
+      {
+        "question": "What is the binary representation of the number 8 in the given text?",
+        "options": [
+          "0000110",
+          "0000111",
+          "0001000",
+          "0001001"
+        ],
+        "answer": "0001000"
+      },
+      {
+        "question": "What is the binary representation of the number 9 in the given text?",
+        "options": [
+          "0000110",
+          "0000111",
+          "0001000",
+          "0001001"
+        ],
+        "answer": "0001001"
+      },
+      {
+        "question": "What operation is associated with the number 8 in the given text?",
+        "options": [
+          "STORE",
+          "LOAD",
+          "ADD",
+          "SUBTRACT"
+        ],
+        "answer": "STORE"
+      },
+      {
+        "question": "What is the binary code for 'EXCHANGE' in the given text?",
+        "options": [
+          "0001010",
+          "0001100",
+          "0001101",
+          "0001110"
+        ],
+        "answer": "0001100"
+      },
+      {
+        "question": "Which of the following is NOT a binary code present in the text?",
+        "options": [
+          "0001011",
+          "0001111",
+          "0001101",
+          "0001110"
+        ],
+        "answer": "0001111"
+      },
+      {
+        "question": "What is the binary representation of the number 12 in the text?",
+        "options": [
+          "0001010",
+          "0001100",
+          "0001101",
+          "0001110"
+        ],
+        "answer": "0001100"
+      },
+      {
+        "question": "How many unique binary codes are listed in the provided text?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "5"
+      },
+      {
+        "question": "What is the binary representation of the FETCH instruction?",
+        "options": [
+          "1000000",
+          "1000001",
+          "1000010",
+          "1000011"
+        ],
+        "answer": "1000000"
+      },
+      {
+        "question": "What is the purpose of decoding microinstruction fields in a control unit?",
+        "options": [
+          "To initiate the corresponding microoperation",
+          "To increase the speed of the processor",
+          "To reduce the size of the instruction set",
+          "To enhance the security of the system"
+        ],
+        "answer": "To initiate the corresponding microoperation"
+      },
+      {
+        "question": "Which decoder is used for decoding F1, F2, and F3 of Microinstruction?",
+        "options": [
+          "2 x 4 decoder",
+          "3 x 8 decoder",
+          "4 x 16 decoder",
+          "1 x 2 decoder"
+        ],
+        "answer": "3 x 8 decoder"
+      },
+      {
+        "question": "What does F1 = 101 (5) represent in the context of microoperations?",
+        "options": [
+          "DRTAR",
+          "INCR",
+          "SHIFT",
+          "LOAD"
+        ],
+        "answer": "DRTAR"
+      },
+      {
+        "question": "What is the output of the decoder F1 connected to when outputs 5 and 6 are active?",
+        "options": [
+          "Load input of AR",
+          "Input of OR gate",
+          "Output of DR",
+          "Output of AC"
+        ],
+        "answer": "Load input of AR"
+      },
+      {
+        "question": "When output 5 is active, what data does the multiplexer select?",
+        "options": [
+          "Data from DR",
+          "Data from AC",
+          "Data from AR",
+          "Data from OR gate"
+        ],
+        "answer": "Data from DR"
+      },
+      {
+        "question": "When output 5 is inactive, what data does the multiplexer select?",
+        "options": [
+          "Data from DR",
+          "Data from AC",
+          "Data from AR",
+          "Data from OR gate"
+        ],
+        "answer": "Data from AC"
+      },
+      {
+        "question": "Where do the control signals of the ALU in hardwired control come from?",
+        "options": [
+          "Output of decoders associated with AND, ADD, and DRTAC",
+          "Input of OR gate",
+          "Output of DR",
+          "Output of AC"
+        ],
+        "answer": "Output of decoders associated with AND, ADD, and DRTAC"
+      },
+      {
+        "question": "What is the reference for the control signal of ALU in hardwired control?",
+        "options": [
+          "Page 164, Fig. 5-19, 20",
+          "Page 165, Fig. 5-21, 22",
+          "Page 163, Fig. 5-17, 18",
+          "Page 166, Fig. 5-23, 24"
+        ],
+        "answer": "Page 164, Fig. 5-19, 20"
+      }
+    ]
+  }
+}

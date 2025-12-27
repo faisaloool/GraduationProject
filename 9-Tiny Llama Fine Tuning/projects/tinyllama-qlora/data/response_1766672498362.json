@@ -1,0 +1,472 @@
+{
+  "document": "ch7_Microprogrammed_Control_1.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Microprogrammed Control initiates sequences of microoperations.",
+        "answer": "true"
+      },
+      {
+        "question": "Control signals in a bus-organized system specify microoperations.",
+        "answer": "true"
+      },
+      {
+        "question": "Hardwired Control is implemented using software programs.",
+        "answer": "false"
+      },
+      {
+        "question": "Hardwired Control operates slower than Microprogrammed Control.",
+        "answer": "false"
+      },
+      {
+        "question": "Control Memory is used to store microprograms.",
+        "answer": "true"
+      },
+      {
+        "question": "Microprogrammed control stores control information in a control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Modifying a microprogrammed control design requires hardware changes.",
+        "answer": "false"
+      },
+      {
+        "question": "Microprogrammed control operates faster than hardwired control.",
+        "answer": "false"
+      },
+      {
+        "question": "A control word represents control variables as a string of 1’s and 0’s.",
+        "answer": "true"
+      },
+      {
+        "question": "A microprogrammed control unit uses binary control variables stored in memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Variables are stored in control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "A microinstruction specifies only one microoperation.",
+        "answer": "false"
+      },
+      {
+        "question": "A microprogram generates all the control signals required to execute the instruction set correctly.",
+        "answer": "true"
+      },
+      {
+        "question": "Dynamic microprogramming uses ROM for control memory.",
+        "answer": "false"
+      },
+      {
+        "question": "RAM can be used to change a writable control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Microprogram is initially loaded from an auxiliary memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Static microprogramming uses ROM as Control Memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Control words in ROM are temporary and can be changed after hardware production.",
+        "answer": "false"
+      },
+      {
+        "question": "A microinstruction contains both a control word and a sequencing word.",
+        "answer": "true"
+      },
+      {
+        "question": "The control word provides information required for multiple clock cycles.",
+        "answer": "false"
+      },
+      {
+        "question": "The sequencing word determines the next microinstruction address.",
+        "answer": "true"
+      },
+      {
+        "question": "Control Memory is also known as Control Storage (CS).",
+        "answer": "true"
+      },
+      {
+        "question": "Control Memory is used to store the microprogram in a microprogrammed control unit.",
+        "answer": "true"
+      },
+      {
+        "question": "Writeable Control Memory (WCS) allows the microprogram to be changed.",
+        "answer": "true"
+      },
+      {
+        "question": "Instruction set cannot be modified in Writeable Control Memory (WCS).",
+        "answer": "false"
+      },
+      {
+        "question": "Dynamic Microprogramming refers to a computer system whose control unit is implemented with a microprogram in WCS.",
+        "answer": "true"
+      },
+      {
+        "question": "Microprogram in WCS can be changed by a systems programmer or a user.",
+        "answer": "true"
+      },
+      {
+        "question": "Control Memory is not part of a control unit.",
+        "answer": "false"
+      },
+      {
+        "question": "Main Memory is used for storing microprograms.",
+        "answer": "false"
+      },
+      {
+        "question": "Control Memory is used for storing microprograms.",
+        "answer": "true"
+      },
+      {
+        "question": "The Control Address Register (CAR) specifies the address of the microinstruction.",
+        "answer": "true"
+      },
+      {
+        "question": "The Sequencer determines the address sequence read from control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Next address of the next microinstruction can be specified in only one way.",
+        "answer": "false"
+      },
+      {
+        "question": "The Control Data Register holds the microinstruction read from control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "The Control Data Register allows the execution of microoperations specified by the control word sequentially.",
+        "answer": "false"
+      },
+      {
+        "question": "Overlapping microinstruction execution and control storage access improves speed.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC stands for Reduced Instruction Set Computer.",
+        "answer": "true"
+      },
+      {
+        "question": "Does the system use hardwired control rather than microprogrammed control?",
+        "answer": "true"
+      },
+      {
+        "question": "Is address sequencing the same as a sequencer?",
+        "answer": "true"
+      },
+      {
+        "question": "Are microinstructions stored in control memory in groups?",
+        "answer": "true"
+      },
+      {
+        "question": "Does the instruction code map to an address in control memory?",
+        "answer": "true"
+      },
+      {
+        "question": "Is incrementing the control address register a capability of address sequencing?",
+        "answer": "true"
+      },
+      {
+        "question": "Is an unconditional branch a capability of address sequencing?",
+        "answer": "true"
+      },
+      {
+        "question": "The mapping process involves bits of the instruction address for control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "Direct mapping is not mentioned in the text.",
+        "answer": "false"
+      },
+      {
+        "question": "The CAR (Control Address Register) can receive addresses from four different paths.",
+        "answer": "true"
+      },
+      {
+        "question": "The SBR (Subroutine Register) is used to store the return address for subroutines.",
+        "answer": "true"
+      },
+      {
+        "question": "The mapping logic is one of the paths that can provide an address to the CAR.",
+        "answer": "true"
+      },
+      {
+        "question": "The JMP/CALL operation is not a way to provide an address to the CAR.",
+        "answer": "false"
+      },
+      {
+        "question": "The incrementer is one of the paths that can provide an address to the CAR.",
+        "answer": "true"
+      },
+      {
+        "question": "The return address can be stored in the CAR.",
+        "answer": "false"
+      },
+      {
+        "question": "The multiplexer is used to select the address for the control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "The return address for a subroutine is stored in SBR.",
+        "answer": "true"
+      },
+      {
+        "question": "Conditional branching decisions are controlled by status bits.",
+        "answer": "true"
+      },
+      {
+        "question": "Branch Logic increments the control address register if the condition is not met.",
+        "answer": "true"
+      },
+      {
+        "question": "The Mapping Function is implemented by Mapping ROM or PLD.",
+        "answer": "true"
+      },
+      {
+        "question": "Subroutines are programs that are used by other routines.",
+        "answer": "true"
+      },
+      {
+        "question": "Microinstructions can be called from any point within the main body of the microprogram.",
+        "answer": "true"
+      },
+      {
+        "question": "Subroutines cannot save microinstructions by using common sections of microcode.",
+        "answer": "false"
+      },
+      {
+        "question": "A subroutine must store the return address during a subroutine call.",
+        "answer": "true"
+      },
+      {
+        "question": "A subroutine does not need to restore the address during a subroutine return.",
+        "answer": "false"
+      },
+      {
+        "question": "Data written to memory come from DR.",
+        "answer": "true"
+      },
+      {
+        "question": "Data read from memory can go to any register, not just DR.",
+        "answer": "false"
+      },
+      {
+        "question": "DR can receive information from AC, PC, or Memory.",
+        "answer": "true"
+      },
+      {
+        "question": "AR can receive information from PC or DR.",
+        "answer": "true"
+      },
+      {
+        "question": "PC can receive information from AR or DR.",
+        "answer": "false"
+      },
+      {
+        "question": "ALU performs microoperations with data from AC and DR.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction format includes a 1-bit field for indirect addressing.",
+        "answer": "true"
+      },
+      {
+        "question": "The opcode in the instruction format is 5 bits.",
+        "answer": "false"
+      },
+      {
+        "question": "The address field in the instruction format is 11 bits.",
+        "answer": "true"
+      },
+      {
+        "question": "There are 16 possible memory-reference instructions.",
+        "answer": "true"
+      },
+      {
+        "question": "The microoperation fields F1, F2, and F3 are each 3 bits.",
+        "answer": "true"
+      },
+      {
+        "question": "A microinstruction can specify two simultaneous microoperations from F2 and F3 and none from F1.",
+        "answer": "true"
+      },
+      {
+        "question": "Two or more conflicting microoperations can be specified simultaneously.",
+        "answer": "false"
+      },
+      {
+        "question": "In the microinstruction field descriptions, CD = 00 represents an indirect address bit.",
+        "answer": "false"
+      },
+      {
+        "question": "CD = 10 indicates the sign bit of AC.",
+        "answer": "true"
+      },
+      {
+        "question": "The address field AD consists of 7 bits.",
+        "answer": "true"
+      },
+      {
+        "question": "CD = 11 represents a zero value in AC.",
+        "answer": "true"
+      },
+      {
+        "question": "The address field AD supports 128 words of 20 bits each.",
+        "answer": "true"
+      },
+      {
+        "question": "The Label Field in a symbolic microinstruction is terminated with a colon (:).",
+        "answer": "true"
+      },
+      {
+        "question": "The Microoperation Field can contain more than three symbols.",
+        "answer": "false"
+      },
+      {
+        "question": "The CD Field can only be U, I, S, or Z.",
+        "answer": "true"
+      },
+      {
+        "question": "The BR Field includes the options JMP, CALL, RET, or MAP.",
+        "answer": "true"
+      },
+      {
+        "question": "The Symbol 'NEXT' in the AD Field refers to the previous address.",
+        "answer": "false"
+      },
+      {
+        "question": "The Symbol 'RET' or 'MAP' in the AD Field sets the AD field to 0000000.",
+        "answer": "true"
+      },
+      {
+        "question": "ORG is a pseudoinstruction used to define the origin.",
+        "answer": "true"
+      },
+      {
+        "question": "The Fetch subroutine handles opcode decoding.",
+        "answer": "true"
+      },
+      {
+        "question": "The memory map is divided into 256 words.",
+        "answer": "false"
+      },
+      {
+        "question": "The Control Storage consists of 128 20-bit words.",
+        "answer": "true"
+      },
+      {
+        "question": "The symbolic microprogram must be translated to binary using an assembler program or manually by the user.",
+        "answer": "true"
+      },
+      {
+        "question": "Most microprogrammed systems use a ROM for the control memory.",
+        "answer": "true"
+      },
+      {
+        "question": "RAM is cheaper and faster than ROM for control memory.",
+        "answer": "false"
+      },
+      {
+        "question": "Using ROM prevents the occasional user from changing the architecture of the system.",
+        "answer": "true"
+      },
+      {
+        "question": "This microprogram can be implemented using RAM.",
+        "answer": "false"
+      },
+      {
+        "question": "The text contains binary sequences.",
+        "answer": "true"
+      },
+      {
+        "question": "The text includes the word 'STORE'.",
+        "answer": "true"
+      },
+      {
+        "question": "The text contains decimal numbers.",
+        "answer": "true"
+      },
+      {
+        "question": "The text includes the word 'LOAD'.",
+        "answer": "false"
+      },
+      {
+        "question": "The text contains hexadecimal numbers.",
+        "answer": "false"
+      },
+      {
+        "question": "The text contains binary sequences.",
+        "answer": "true"
+      },
+      {
+        "question": "The text includes the word 'EXCHANGE'.",
+        "answer": "true"
+      },
+      {
+        "question": "All binary sequences in the text are of equal length.",
+        "answer": "false"
+      },
+      {
+        "question": "The text includes numerical identifiers like '12' and '13'.",
+        "answer": "true"
+      },
+      {
+        "question": "The text is a complete sentence.",
+        "answer": "false"
+      },
+      {
+        "question": "The text contains binary numbers.",
+        "answer": "true"
+      },
+      {
+        "question": "The text is a poem.",
+        "answer": "false"
+      },
+      {
+        "question": "The text includes the word 'FETCH'.",
+        "answer": "true"
+      },
+      {
+        "question": "The text is written in English.",
+        "answer": "false"
+      },
+      {
+        "question": "The text contains the number '65'.",
+        "answer": "true"
+      },
+      {
+        "question": "F1, F2, and F3 of Microinstruction are decoded with a 3 x 8 decoder.",
+        "answer": "true"
+      },
+      {
+        "question": "The output of the decoder is connected to the proper circuit to initiate the corresponding microoperation.",
+        "answer": "true"
+      },
+      {
+        "question": "The text discusses the design of a memory unit.",
+        "answer": "false"
+      },
+      {
+        "question": "Output 5 and 6 of decoder F1 are connected to the load input of AR.",
+        "answer": "true"
+      },
+      {
+        "question": "Multiplexer selects the data from DR when output 5 is inactive.",
+        "answer": "false"
+      },
+      {
+        "question": "Multiplexer selects the data from AC when output 5 is inactive.",
+        "answer": "true"
+      },
+      {
+        "question": "Control signals come from the output of the decoders associated with the AND, ADD, and DRTAC.",
+        "answer": "true"
+      }
+    ]
+  }
+}

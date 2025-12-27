@@ -1,0 +1,341 @@
+{
+  "filename": "Chapter 5 - Geometric Transformations (1).ppt",
+  "quiz": [
+    {
+      "question": "Geometric transformations include translation, rotation, scaling, reflection, and shearing.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GEOMETRIC TRANSFORMATIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "2D translation can be represented as a 2×2 matrix without homogeneous coordinates.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "MATRIX REPRESENTATION",
+      "rate": "medium"
+    },
+    {
+      "question": "Homogeneous coordinates allow translation to be represented as a linear transformation using a 3×3 matrix.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HOMOGENOUS COORDINATE",
+      "rate": "easy"
+    },
+    {
+      "question": "Two successive rotations are additive; the total rotation is the sum of the individual rotation angles.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUCCESSIVE TRANSFORMATIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "Two successive scalings are additive; the total scaling factor is the sum of the individual scaling factors.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SUCCESSIVE TRANSFORMATIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "Matrix multiplication is commutative for transformation matrices.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "MATRIX MULTIPLICATION",
+      "rate": "medium"
+    },
+    {
+      "question": "The inverse of a rotation by angle θ is a rotation by angle -θ.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INVERSE ROTATION (R⁻¹)",
+      "rate": "medium"
+    },
+    {
+      "question": "To rotate an object around a fixed point, you must first translate the fixed point to the origin.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FIXED POINT ROTATION (X_F, Y_F)",
+      "rate": "medium"
+    },
+    {
+      "question": "Reflection about the x-axis can be represented by the matrix [[1,0],[0,-1]].",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "REFLECTION",
+      "rate": "easy"
+    },
+    {
+      "question": "Shearing is a transformation that preserves the area of an object.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SHEARING",
+      "rate": "hard"
+    },
+    {
+      "question": "In 3D, rotation around the z-axis does not affect the z-coordinate of points.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COORDINATE-AXES ROTATIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "The order of applying 3D rotations does not affect the final orientation of an object.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "ORDER OF ROTATIONS",
+      "rate": "medium"
+    },
+    {
+      "question": "Reflection relative to the xy-plane in 3D changes the sign of the z-coordinate.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "3D REFLECTION",
+      "rate": "easy"
+    },
+    {
+      "question": "A 3D scaling transformation about a fixed point requires translating the fixed point to the origin first.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "3D SCALING ABOUT A FIXED POINT (X_F, Y_F, Z_F)",
+      "rate": "medium"
+    },
+    {
+      "question": "The inverse of a translation by (tx, ty) is a translation by (-tx, -ty).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INVERSE TRANSLATION (T⁻¹)",
+      "rate": "easy"
+    },
+    {
+      "question": "A 2D rotation matrix is always orthogonal.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D ROTATION",
+      "rate": "hard"
+    },
+    {
+      "question": "The transformation matrix for scaling by (2, 2) is the same as the matrix for uniform scaling by 2.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D SCALING",
+      "rate": "easy"
+    },
+    {
+      "question": "In homogeneous coordinates, the point (x, y, 0) represents a point at infinity.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HOMOGENOUS COORDINATE",
+      "rate": "hard"
+    },
+    {
+      "question": "Shearing along the x-axis changes the y-coordinate based on the x-coordinate.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SHEARING",
+      "rate": "medium"
+    },
+    {
+      "question": "Two successive translations are multiplicative.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SUCCESSIVE TRANSFORMATIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "The determinant of a rotation matrix is always 1.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D ROTATION",
+      "rate": "hard"
+    },
+    {
+      "question": "Reflection about the line y = x can be represented by swapping x and y coordinates.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "REFLECTION",
+      "rate": "medium"
+    },
+    {
+      "question": "In 3D, rotation around the y-axis uses a different rotation matrix structure than rotation around the x-axis.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COORDINATE-AXES ROTATIONS",
+      "rate": "medium"
+    },
+    {
+      "question": "The identity matrix represents a transformation that leaves all points unchanged.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MATRICES",
+      "rate": "easy"
+    },
+    {
+      "question": "A 3D translation matrix in homogeneous coordinates is a 4×4 matrix.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "3D TRANSLATION",
+      "rate": "easy"
+    },
+    {
+      "question": "Scaling by a factor of zero reduces an object to a single point.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D SCALING",
+      "rate": "medium"
+    },
+    {
+      "question": "Inverse scaling by (sx, sy) is scaling by (1/sx, 1/sy).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INVERSE SCALING (S⁻¹)",
+      "rate": "easy"
+    },
+    {
+      "question": "Shearing transformation is also known as skew transformation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SHEARING",
+      "rate": "easy"
+    },
+    {
+      "question": "A 2D transformation matrix must be square to be invertible.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INVERSE TRANSFORMATIONS",
+      "rate": "medium"
+    },
+    {
+      "question": "Rotation in 3D around an arbitrary axis can be decomposed into rotations around the coordinate axes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COORDINATE-AXES ROTATIONS",
+      "rate": "hard"
+    },
+    {
+      "question": "Reflection about the origin in 2D is equivalent to a 180-degree rotation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "REFLECTION",
+      "rate": "medium"
+    },
+    {
+      "question": "A translation matrix does not have an inverse if the translation vector is zero.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "INVERSE TRANSLATION (T⁻¹)",
+      "rate": "hard"
+    },
+    {
+      "question": "The transformation matrices for 2D and 3D rotations are always symmetric.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "2D ROTATION",
+      "rate": "hard"
+    },
+    {
+      "question": "In homogeneous coordinates, the third coordinate must always be 1 for representing finite points.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "HOMOGENOUS COORDINATE",
+      "rate": "hard"
+    },
+    {
+      "question": "A shear transformation can be represented by a matrix with ones on the diagonal and zeros elsewhere.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SHEARING",
+      "rate": "medium"
+    },
+    {
+      "question": "Combining a rotation and a translation in 2D can be done with a single 3×3 matrix using homogeneous coordinates.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MATRIX COMPOSITION",
+      "rate": "medium"
+    },
+    {
+      "question": "3D reflection about the yz-plane changes the sign of the x-coordinate.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "3D REFLECTION",
+      "rate": "medium"
+    },
+    {
+      "question": "The inverse of a combined transformation M1 * M2 is M2⁻¹ * M1⁻¹.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INVERSE TRANSFORMATIONS",
+      "rate": "hard"
+    },
+    {
+      "question": "Scaling with negative factors results in reflection as well as resizing.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D SCALING",
+      "rate": "medium"
+    },
+    {
+      "question": "In 3D, a rotation of 90 degrees around the x-axis followed by a rotation of 90 degrees around the y-axis yields the same result as the reverse order.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "ORDER OF ROTATIONS",
+      "rate": "hard"
+    },
+    {
+      "question": "The transformation matrix for a 2D rotation is [[cosθ, -sinθ], [sinθ, cosθ]].",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D ROTATION",
+      "rate": "easy"
+    },
+    {
+      "question": "A point at the origin is unaffected by a rotation transformation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "2D ROTATION",
+      "rate": "easy"
+    },
+    {
+      "question": "Shearing preserves parallel lines in the object.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SHEARING",
+      "rate": "hard"
+    },
+    {
+      "question": "In 3D, a translation along the z-axis only affects the z-coordinate.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "3D TRANSLATION",
+      "rate": "easy"
+    },
+    {
+      "question": "A reflection transformation is its own inverse.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "REFLECTION",
+      "rate": "medium"
+    },
+    {
+      "question": "The composition of a scaling and a rotation is commutative.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "MATRIX COMPOSITION",
+      "rate": "hard"
+    },
+    {
+      "question": "A 3D rotation matrix has a determinant of -1.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "3D ROTATION",
+      "rate": "hard"
+    },
+    {
+      "question": "Homogeneous coordinates allow representing points at infinity with w = 0.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HOMOGENOUS COORDINATE",
+      "rate": "hard"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 3: Data Acquisition - Guide to Computer Forensics and Investigations, Fifth Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Data in a forensics acquisition tool is stored as an image file.",
+        "answer": "True"
+      },
+      {
+        "question": "Raw format is the only format for storing digital evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "Raw format advantages include fast data transfers and ignoring minor data read errors.",
+        "answer": "True"
+      },
+      {
+        "question": "Proprietary formats can be easily shared between different forensic tools.",
+        "answer": "False"
+      },
+      {
+        "question": "The Expert Witness format is an official standard for forensic image files.",
+        "answer": "False"
+      },
+      {
+        "question": "Advanced Forensics Format (AFF) was developed as a closed-source acquisition format.",
+        "answer": "False"
+      },
+      {
+        "question": "AFF design goals include providing compressed or uncompressed image files.",
+        "answer": "True"
+      },
+      {
+        "question": "Static acquisitions and live acquisitions are the two types of data acquisitions.",
+        "answer": "True"
+      },
+      {
+        "question": "Creating a disk-to-image file is the least common acquisition method.",
+        "answer": "False"
+      },
+      {
+        "question": "Disk-to-disk copies are bit-for-bit replications of the original drive.",
+        "answer": "True"
+      },
+      {
+        "question": "Logical acquisition captures only specific files of interest to the case.",
+        "answer": "True"
+      },
+      {
+        "question": "Sparse acquisition collects fragments of allocated data only.",
+        "answer": "False"
+      },
+      {
+        "question": "When making a copy, digital signatures are unnecessary for verification.",
+        "answer": "False"
+      },
+      {
+        "question": "You should create only one image of digital evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "The host protected area of a disk drive should be copied during acquisition.",
+        "answer": "True"
+      },
+      {
+        "question": "Whole disk encryption makes static acquisitions easier.",
+        "answer": "False"
+      },
+      {
+        "question": "Acquisition tools for Windows cannot acquire data from a disk's host protected area.",
+        "answer": "True"
+      },
+      {
+        "question": "Mini-WinFE enables building a Windows forensic boot CD/DVD or USB drive.",
+        "answer": "True"
+      },
+      {
+        "question": "Linux automatically mounts and accesses drives, requiring write-blockers.",
+        "answer": "False"
+      },
+      {
+        "question": "Forensic Linux Live CDs are configured to mount connected storage media as read-only.",
+        "answer": "True"
+      },
+      {
+        "question": "Validating evidence is optional in computer forensics.",
+        "answer": "False"
+      },
+      {
+        "question": "Hashing algorithms like CRC-32, MD5, and SHA are used for validation.",
+        "answer": "True"
+      },
+      {
+        "question": "RAID systems are easy to acquire because of their small size.",
+        "answer": "False"
+      },
+      {
+        "question": "RAID stands for Redundant Array of Independent Disks.",
+        "answer": "True"
+      },
+      {
+        "question": "RAID 0 provides data redundancy through striping.",
+        "answer": "False"
+      },
+      {
+        "question": "RAID 1 uses mirroring to duplicate data across two or more disks.",
+        "answer": "True"
+      },
+      {
+        "question": "RAID 2 is commonly used today for error correction.",
+        "answer": "False"
+      },
+      {
+        "question": "RAID 5 uses block-level striping with distributed parity.",
+        "answer": "True"
+      },
+      {
+        "question": "RAID 6 can tolerate only one disk failure.",
+        "answer": "False"
+      },
+      {
+        "question": "RAID 10 combines RAID 0 striping with RAID 1 mirroring.",
+        "answer": "True"
+      },
+      {
+        "question": "Copying small RAID systems to one large disk is impossible.",
+        "answer": "False"
+      },
+      {
+        "question": "Remote network acquisition tools can connect to suspect computers via network connections.",
+        "answer": "True"
+      },
+      {
+        "question": "Antivirus tools typically help remote acquisition tools function better.",
+        "answer": "False"
+      },
+      {
+        "question": "ProDiscover Incident Response can capture volatile system state information.",
+        "answer": "True"
+      },
+      {
+        "question": "PDServer is a remote agent that needs to be loaded on the forensic examiner's computer.",
+        "answer": "False"
+      },
+      {
+        "question": "Remote acquisition with EnCase Enterprise supports RAID acquisition.",
+        "answer": "True"
+      },
+      {
+        "question": "F-Response is designed to work only with specific digital forensics programs.",
+        "answer": "False"
+      },
+      {
+        "question": "PassMark Software ImageUSB is used to create bootable flash drives.",
+        "answer": "True"
+      },
+      {
+        "question": "ASRData SMART is a Windows-only forensics analysis tool.",
+        "answer": "False"
+      },
+      {
+        "question": "SourceForge provides applications for security, analysis, and investigations.",
+        "answer": "True"
+      }
+    ]
+  }
+}

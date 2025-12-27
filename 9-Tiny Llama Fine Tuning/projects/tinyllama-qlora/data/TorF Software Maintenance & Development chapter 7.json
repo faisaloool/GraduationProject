@@ -1,0 +1,88 @@
+{
+  "document": "Software Evolution and Maintenance (Chapter 7: Refactoring) by Tripathy & Naik",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "As software evolves, its maintenance cost typically increases. [cite: 32]",
+        "answer": "True"
+      },
+      {
+        "question": "Software restructuring is an informal process of adding new requirements to a program. [cite: 74]",
+        "answer": "False"
+      },
+      {
+        "question": "Out-of-date documentation is one of the causes for decreased understandability in software. [cite: 33, 35]",
+        "answer": "True"
+      },
+      {
+        "question": "External software value refers to the fact that customers view fewer faults as better software. [cite: 51]",
+        "answer": "True"
+      },
+      {
+        "question": "A well-structured system is more expensive to maintain than a poorly structured one. [cite: 52]",
+        "answer": "False"
+      },
+      {
+        "question": "One simple example of restructuring is using meaningful names for variables. [cite: 55]",
+        "answer": "True"
+      },
+      {
+        "question": "Restructuring generally produces a program in a different programming language than the original. [cite: 75]",
+        "answer": "False"
+      },
+      {
+        "question": "The first activity in a refactoring process is to identify what needs to be refactored. [cite: 84]",
+        "answer": "True"
+      },
+      {
+        "question": "A 'code smell' is a symptom in source code that may indicate a deeper problem. [cite: 108]",
+        "answer": "True"
+      },
+      {
+        "question": "Short methods and small classes are listed as examples of code smells. [cite: 112, 113]",
+        "answer": "False"
+      },
+      {
+        "question": "Refactoring can be applied to design documents and requirements documents, not just source code. [cite: 101, 103, 104]",
+        "answer": "True"
+      },
+      {
+        "question": "Refactoring R1 and R2 (renaming methods in PrintServer and FileServer) must be performed together. [cite: 126]",
+        "answer": "True"
+      },
+      {
+        "question": "Refactoring R7 involves exposing a private field so other classes can access it directly. [cite: 130]",
+        "answer": "False"
+      },
+      {
+        "question": "In the refactoring process, it is important to ensure that behavior is preserved. [cite: 87]",
+        "answer": "True"
+      },
+      {
+        "question": "The order in which refactorings are applied never affects the outcome. [cite: 173]",
+        "answer": "False"
+      },
+      {
+        "question": "Refactorings R1 and R2 must precede R3. [cite: 174]",
+        "answer": "True"
+      },
+      {
+        "question": "Refactorings R4 and R6 are mutually exclusive. [cite: 179]",
+        "answer": "True"
+      },
+      {
+        "question": "Pretty printing is considered a simple example of software restructuring. [cite: 54]",
+        "answer": "True"
+      },
+      {
+        "question": "The objective of refactoring is to change the external behavior of the software for the user. [cite: 73, 74]",
+        "answer": "False"
+      },
+      {
+        "question": "Software restructuring can help in keeping pace with new software structures. [cite: 59]",
+        "answer": "True"
+      }
+    ]
+  }
+}
