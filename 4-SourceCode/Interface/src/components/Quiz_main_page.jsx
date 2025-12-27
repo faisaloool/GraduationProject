@@ -231,6 +231,17 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
               <p>{String(error)}</p>
             </div>
           </div>
+        ) : showInitialLoader ? (
+          <div className="exam-space">
+            <div
+              className="quiz-initial-loader"
+              role="status"
+              aria-live="polite"
+            >
+              <div className="quiz-initial-loader-spinner" aria-hidden />
+              <div className="quiz-initial-loader-text">Loading...</div>
+            </div>
+          </div>
         ) : isWelcomePage ? (
           <div className="wellcome-page">
             <div>
@@ -246,17 +257,6 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
           </div>
         ) : (
           <div className="exam-space">
-            {showInitialLoader && (
-              <div
-                className="quiz-initial-loader"
-                role="status"
-                aria-live="polite"
-              >
-                <div className="quiz-initial-loader-spinner" aria-hidden />
-                <div className="quiz-initial-loader-text">Loading...</div>
-              </div>
-            )}
-
             {showExamSkeleton && (
               <div className="exam-skeleton">
                 <div className="skeleton-message shimmer" />
