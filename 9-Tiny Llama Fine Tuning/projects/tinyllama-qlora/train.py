@@ -53,6 +53,10 @@ model = AutoModelForCausalLM.from_pretrained(
 model.config.use_cache = False
 model = prepare_model_for_kbit_training(model)
 
+# ✅ Gradient checkpointing enabled
+model.gradient_checkpointing_enable()
+
+
 # =========================
 # LoRA CONFIG
 # =========================
