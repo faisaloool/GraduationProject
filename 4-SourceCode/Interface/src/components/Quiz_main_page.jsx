@@ -18,11 +18,23 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   /* const [RightOrWrong, setRightOrWrong] = useState(new Map()); */
   const [showScrollArrow, setShowScrollArrow] = useState(false);
   const [examTransitioning, setExamTransitioning] = useState(false);
+  const [initialLoadStarted, setInitialLoadStarted] = useState(false);
+  const [initialLoadFinished, setInitialLoadFinished] = useState(false);
 
   // stable key for current exam
   const examKey = exam.examId || exam.quizId;
   const currentScore = submitedMap.get(examKey);
   const isSubmitted = typeof currentScore === "number";
+
+  useEffect(() => {
+    if (!initialLoadStarted && loading) {
+      setInitialLoadStarted(true);
+      return;
+    }
+    if (initialLoadStarted && !loading && !initialLoadFinished) {
+      setInitialLoadFinished(true);
+    }
+  }, [loading, initialLoadStarted, initialLoadFinished]);
 
   useEffect(() => {
     if (exam.title === "Main-page" || !exam.title) return;
@@ -214,6 +226,8 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     );
   }
 
+  const showInitialLoader = loading && !initialLoadFinished;
+
   return (
     <div className="page">
       <div className="header">
@@ -222,7 +236,16 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
       <main ref={quizRef}>
         <div className="exam-space">
-          {examTransitioning ? (
+          {showInitialLoader ? (
+            <div
+              className="quiz-initial-loader"
+              role="status"
+              aria-live="polite"
+            >
+              <div className="quiz-initial-loader-spinner" aria-hidden />
+              <div className="quiz-initial-loader-text">Loading...</div>
+            </div>
+          ) : examTransitioning ? (
             <div className="exam-skeleton">
               <div className="skeleton-message shimmer" />
               {[0, 1].map((idx) => (
