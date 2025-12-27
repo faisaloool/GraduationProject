@@ -95,7 +95,6 @@ nav {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
 }
 
 ul {
@@ -132,7 +131,7 @@ li {
 li:hover {
   background-color: #067e8b5e;
   cursor: pointer;
-  font-size: 23px;
+  /* font-size: 23px; */
 }
 
 /* الخط المتحرك تحت النص */
@@ -317,6 +316,55 @@ a:focus {
 /* Optional hover to align with theme */
 .quiz-card-item:hover {
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* ===== Sidebar quizzes error ===== */
+.error-message {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 77, 79, 0.14),
+    rgba(10, 10, 10, 0.9)
+  );
+  border: 1px solid rgba(255, 77, 79, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 77, 79, 0.08),
+    0 14px 46px -18px rgba(255, 77, 79, 0.25);
+}
+
+.error-message__title {
+  color: #ffb4b5;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+
+.error-message__text {
+  color: #ff8f91;
+  font-size: 13px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  opacity: 0.95;
+}
+
+@media (max-width: 480px) {
+  .error-message {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .error-message__title {
+    font-size: 13px;
+  }
+
+  .error-message__text {
+    font-size: 12px;
+  }
 }
 /* لكروم، إيدج، وسفاري */
 ::-webkit-scrollbar {
@@ -599,7 +647,7 @@ a:focus {
   max-width: 80px;
   transition: width 100ms ease;
 }
-li:hover {
+/* li:hover {
   font-size: 23px;
 }
 li:hover {
@@ -610,61 +658,61 @@ li:hover {
 }
 li::after {
   background-color: var(--line-color);
-}
+} */
 
 @media (max-width: 400px) {
- .side-bar {
-  text-align: center;
-  
+  .side-bar {
+    text-align: center;
+
     width: 219px;
     min-width: 219px;
     transition: width 100ms ease;
     font-size: 10px;
-}
-li{
-  font-size: 16px;
-  text-align: center;
-}
-.side-bar-body h2{
-  font-size: 13px;
-  text-align: center;
-  overflow: hidden;
-}
-.quizss p{
-  width: 100px;
-  text-align: center;
-padding-left: 40px;
-}
+  }
+  li {
+    font-size: 16px;
+    text-align: center;
+  }
+  .side-bar-body h2 {
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .quizss p {
+    width: 100px;
+    text-align: center;
+    padding-left: 40px;
+  }
 
-.side-bar-body {
-   text-align: center;
-  width: 300px;
-  background-color: #1e1e1e;
+  .side-bar-body {
+    text-align: center;
+    width: 300px;
+    background-color: #1e1e1e;
 
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
-}
-.collapsed {
-  align-self: center;
-  align-items: center;
-   justify-content: center;
-  width: 50px;
-  max-width: 40px;
-  min-width: 40px;
-  flex: 0 0 80px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  .collapsed {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    max-width: 40px;
+    min-width: 40px;
+    flex: 0 0 80px;
 
-  transition: width 100ms ease;
-  height: 100%;
-  background-color: #1e1e1e;
+    transition: width 100ms ease;
+    height: 100%;
+    background-color: #1e1e1e;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
-  overflow: hidden;
-}
+    overflow: hidden;
+  }
 }
