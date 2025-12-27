@@ -39,17 +39,20 @@ export const Side_bar = ({ editing, setEditing }) => {
       )
     : [];
 
+  // close search function
   const closeSearch = () => {
     setShowSearch(false);
     setSearchTerm("");
   };
 
+  // handleing serach exam sellected option
   const handleSelectExam = (selected) => {
     setExam(selected);
     navigate(`/exam/${selected.examId || selected.quizId}`);
     closeSearch();
   };
 
+  // close search with Escape
   useEffect(() => {
     if (!showSearch) return;
     const onKeyDown = (e) => {
@@ -98,17 +101,23 @@ export const Side_bar = ({ editing, setEditing }) => {
     );
   };
 
+  // close delete pop up
   const handleClosePopUp = () => {
     setEditing({ id: -999 });
     setMenuQuiz(null);
   };
 
+  // confirm delete quiz
   const handleConfirmDelete = async () => {
     try {
-      if (!menuQuiz) return handleClosePopUp();
-      const id = menuQuiz.examId || menuQuiz.quizId;
-      await deleteExam(id);
-      if ((exam?.examId || exam?.quizId) === id) {
+      if (!menuQuiz && editing.id === -999) return handleClosePopUp();
+      const id = editing.id || menuQuiz.examId || menuQuiz.quizId;
+      const response = await deleteExam(id);
+      if (response?.error) {
+        console.error("Error deleting exam:", response.error);
+        return;
+      }
+      if ((exam?.examId || exam?.quizId) === id || editing.id === id) {
         setExam({ title: "Main-page" });
         navigate("/");
       }
@@ -138,7 +147,7 @@ export const Side_bar = ({ editing, setEditing }) => {
           }}
         >
           <div className="top-of-side-bar">
-            <div className={collaps==true?"closlogo" :"Logo"}>
+            <div className={collaps == true ? "closlogo" : "Logo"}>
               <img src="#" alt="Quiz AI logo" />
             </div>
             <div onClick={() => setCollaps(!collaps)}>
@@ -176,7 +185,9 @@ export const Side_bar = ({ editing, setEditing }) => {
             {!collaps && (
               <div className="Quizzes">
                 <details open>
-                  <summary className="quizss"><p>Quizzes</p></summary>
+                  <summary className="quizss">
+                    <p>Quizzes</p>
+                  </summary>
                   <div className="quizzes-list">{renderQuizzes()}</div>
                 </details>
               </div>
@@ -284,7 +295,7 @@ export const Side_bar = ({ editing, setEditing }) => {
             <p className="modal-body">
               Are you sure you want to delete{" "}
               <span className="modal-quiz-title">
-                “{menuQuiz?.title || "this quiz"}”
+                “{menuQuiz?.title || exam.title || "this quiz"}”
               </span>
               ? This action cannot be undone.
             </p>

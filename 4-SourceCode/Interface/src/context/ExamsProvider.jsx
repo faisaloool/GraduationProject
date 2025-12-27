@@ -11,6 +11,9 @@ export function ExamsProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const getExamId = (maybeExam) =>
+    maybeExam?.examId ?? maybeExam?.quizId ?? maybeExam?.id ?? null;
+
   // Load exams when user changes
   useEffect(() => {
     if (user) {
@@ -40,16 +43,28 @@ export function ExamsProvider({ children }) {
 
   // Update a single exam
   const updateExam = (examId, updatedData) => {
+    const targetId = String(examId);
     setExams((prev) =>
       prev.map((exam) =>
-        exam.examId === examId ? { ...exam, ...updatedData } : exam
+        String(getExamId(exam)) === targetId
+          ? { ...exam, ...updatedData }
+          : exam
       )
     );
   };
 
   // Delete an exam
   const deleteExam = (examId) => {
-    setExams((prev) => prev.filter((exam) => exam.examId !== examId));
+    const targetId = String(examId);
+    const existed = exams.some((exam) => String(getExamId(exam)) === targetId);
+
+    setExams((prev) =>
+      prev.filter((exam) => String(getExamId(exam)) !== targetId)
+    );
+
+    return existed
+      ? Promise.resolve()
+      : Promise.reject(new Error("Exam not found"));
   };
 
   // Add a new exam
@@ -59,9 +74,10 @@ export function ExamsProvider({ children }) {
 
   // rename exam
   const renameExam = (examId, newName) => {
+    const targetId = String(examId);
     setExams((prev) =>
       prev.map((exam) =>
-        exam.examId === examId ? { ...exam, name: newName } : exam
+        String(getExamId(exam)) === targetId ? { ...exam, name: newName } : exam
       )
     );
   };

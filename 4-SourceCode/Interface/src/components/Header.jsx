@@ -1,11 +1,17 @@
-import React, { useEffect, useState, useRef } from "react";
+import { React, useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "../style/Header.css";
+
 import { useAuth } from "../context/AuthContext.jsx";
+import { useExams } from "../context/ExamsProvider.jsx";
+
 import { BsThreeDots } from "react-icons/bs";
 import { Options_menu } from "./Options_menu.jsx";
 
 export const Header = ({ quiz, setEditing }) => {
+  const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
+    useExams();
   const { user, isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,31 +20,10 @@ export const Header = ({ quiz, setEditing }) => {
 
   const handleThreeDotsClick = (e) => {
     e.stopPropagation();
+    setMenuOpen((prev) => !prev);
     const rect = e.currentTarget.getBoundingClientRect();
     setMenuPosition({ x: rect.right - 250, y: rect.top });
-    setMenuOpen((prev) => !prev);
   };
-
-  // close menu when clicking outside
-  useEffect(() => {
-    if (!menuOpen) return;
-
-    const handleClickOutside = (e) => {
-      const target = e.target;
-      if (!target || !(target instanceof Element)) return;
-
-      // ignore clicks on the menu button or inside the menu
-      if (target.closest(".menu-btn")) return;
-      if (menuRef.current && menuRef.current.contains(target)) return;
-
-      setMenuOpen(false);
-    };
-
-    document.addEventListener("click", handleClickOutside, true);
-    return () => {
-      document.removeEventListener("click", handleClickOutside, true);
-    };
-  }, [menuOpen]);
 
   const hasStoredAuth = () => {
     try {
@@ -103,12 +88,19 @@ export const Header = ({ quiz, setEditing }) => {
         )}
       </header>
 
+      {/* menu option */}
       {menuOpen && (
-        <div ref={menuRef}>
+        <div
+          ref={menuRef}
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen(false);
+          }}
+        >
           <Options_menu
             position={menuPosition}
             setEditing={setEditing}
-            quiz={quiz}
+            quiz={exam}
             where={"header"}
             onClose={() => setMenuOpen(false)}
           />

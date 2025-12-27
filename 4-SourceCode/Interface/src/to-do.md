@@ -2,6 +2,9 @@
 
 ### 🔧 Features & Improvements
 
+- [ ] **Add Error page**  
+       Create an Error page the appear when there is a problem in the network or the servers .
+
 - [✔] **Add Search Feature**  
    Implement a search functionality to allow users to easily find quizzes or questions.
 
