@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Serif", serif;
+}
+
+.error-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(
+      1200px 600px at 20% 10%,
+      rgba(70, 234, 255, 0.12),
+      rgba(0, 0, 0, 0) 60%
+    ),
+    radial-gradient(
+      900px 500px at 90% 85%,
+      rgba(30, 146, 155, 0.18),
+      rgba(0, 0, 0, 0) 55%
+    ),
+    #151515;
+}
+
+.error-page__card {
+  width: 100%;
+  max-width: 760px;
+  border-radius: 20px;
+  padding: 22px 22px 18px;
+  background: rgba(15, 15, 15, 0.92);
+  border: 1px solid rgba(70, 234, 255, 0.18);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-page__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(70, 234, 255, 0.22),
+    rgba(30, 146, 155, 0.12)
+  );
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.error-page__card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #46eaff, #1e929b);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.error-page__title,
+.error-page__subtitle,
+.error-page__message {
+  position: relative;
+  z-index: 1;
+}
+
+.error-page__title {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.error-page__subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.9;
+  margin-bottom: 14px;
+}
+
+.error-page__message {
+  width: 100%;
+  border-radius: 12px;
+  padding: 14px 14px;
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(70, 234, 255, 0.18);
+  color: #ffffff;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.6;
+  max-height: 44vh;
+  overflow: auto;
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .error-page {
+    padding: 14px;
+  }
+
+  .error-page__card {
+    padding: 16px 16px 14px;
+    border-radius: 18px;
+  }
+
+  .error-page__title {
+    font-size: 22px;
+  }
+
+  .error-page__subtitle {
+    font-size: 14px;
+  }
+
+  .error-page__message {
+    font-size: 13px;
+    max-height: 52vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .error-page__card {
+    padding: 26px 26px 20px;
+  }
+
+  .error-page__title {
+    font-size: 34px;
+  }
+}

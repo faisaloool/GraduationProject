@@ -687,6 +687,7 @@ main {
 }
 
 .exam-error-card {
+  margin-top: 5rem;
   width: min(520px, 90%);
   border-radius: 20px;
   padding: 28px 32px;

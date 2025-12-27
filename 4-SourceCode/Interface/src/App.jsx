@@ -2,6 +2,7 @@ import { use, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Side_bar } from "./components/Side_bar";
 import { Quiz_main_page } from "./components/Quiz_main_page";
+import { Error_page } from "./components/Error_page";
 import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
@@ -39,6 +40,7 @@ function App() {
             </main>
           }
         />
+        <Route path="/Error" element={<Error_page />} />
       </Routes>
     </Router>
   );

@@ -37,8 +37,7 @@ export async function fetchUserExams(userId, token) {
     const data = await response.json();
     return data; // return exams list
   } catch (error) {
-    console.error("Error fetching user exams:", error);
-    return []; // return empty array if something goes wrong
+    return Promise.reject(new Error("somthing went wrong", error));
   }
 }
 

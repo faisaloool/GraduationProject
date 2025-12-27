@@ -65,8 +65,11 @@ export const Side_bar = ({ editing, setEditing }) => {
   const renderQuizzes = () => {
     if (error) {
       return (
-        <div className="error-message">
-          <p>Error loading quizzes: {error.message}</p>
+        <div className="error-message" role="alert" aria-live="polite">
+          <div className="error-message__title">Couldn’t load quizzes</div>
+          <div className="error-message__text">
+            {String(error?.message || error)}
+          </div>
         </div>
       );
     }
@@ -175,7 +178,14 @@ export const Side_bar = ({ editing, setEditing }) => {
                   </div>
                 </li>
                 <li>
-                  <div className="Item" onClick={() => setShowSearch(true)}>
+                  <div
+                    className="Item"
+                    onClick={() => {
+                      if (!error) {
+                        setShowSearch(true);
+                      }
+                    }}
+                  >
                     <IoSearch className="side-bar-icons" />
                     {!collaps && <a>Search</a>}
                   </div>
