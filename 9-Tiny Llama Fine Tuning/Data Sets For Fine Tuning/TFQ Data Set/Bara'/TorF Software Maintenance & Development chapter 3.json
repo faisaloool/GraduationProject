@@ -1,0 +1,80 @@
+{
+  "document": "Software Evolution and Maintenance Models – Chapter 3 of Tripathy & Naik’s book",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The traditional Software Development Life Cycle (SDLC) has only one phase that includes both development and maintenance activities.",
+        "answer": "False"
+      },
+      {
+        "question": "In the SDLC, maintenance is typically performed for roughly two–thirds of a product’s life‑span.",
+        "answer": "True"
+      },
+      {
+        "question": "Software maintenance always requires that all changes be made to source code before any documentation is updated.",
+        "answer": "False"
+      },
+      {
+        "question": "The Quick Fix Model proposes that the necessary changes are applied directly to the source code and then to the accompanying documentation.",
+        "answer": "True"
+      },
+      {
+        "question": "In the Iterative Enhancement Model, changes begin at the lowest‑level artifacts such as test case libraries.",
+        "answer": "False"
+      },
+      {
+        "question": "The Full Reuse Model requires identifying components of an old system that are candidates for reuse before any modification takes place.",
+        "answer": "True"
+      },
+      {
+        "question": "The staged model for CSS (Commercial Software Systems) includes a phase called ‘Phase out’ where the system is wrapped and then permanently shut down.",
+        "answer": "False"
+      },
+      {
+        "question": "In the FLOSS staged model, there is no possibility of transitioning from the ‘Servicing’ stage back to the ‘Evolution’ stage.",
+        "answer": "True"
+      },
+      {
+        "question": "The Change Mini‑Cycle model was introduced to detail how a change may introduce new requirements or alter existing ones.",
+        "answer": "True"
+      },
+      {
+        "question": "IEEE/EIA 1219 defines seven phases in its maintenance process, the last of which is ‘Delivery’.",
+        "answer": "True"
+      },
+      {
+        "question": "In IEEE/EIA 1219, the phase following ‘System Test’ is named ‘Acceptance Test’.",
+        "answer": "True"
+      },
+      {
+        "question": "Implementation in IEEE/EIA 1219 involves only writing new code, not performing unit testing.",
+        "answer": "False"
+      },
+      {
+        "question": "ISO/IEC 14764 describes maintenance as an iterative process for managing and executing software maintenance activities.",
+        "answer": "True"
+      },
+      {
+        "question": "The ISO/IEC 14764 maintenance process includes a ‘Migration’ activity that is responsible for designing the migration steps.",
+        "answer": "True"
+      },
+      {
+        "question": "Software Configuration Management (SCM) manages only the source code and executable binaries, but not documentation or hardware.",
+        "answer": "False"
+      },
+      {
+        "question": "A benefit of effective SCMM is that it reduces confusion during configuration changes.",
+        "answer": "True"
+      },
+      {
+        "question": "The spectrum of functionality for SCM includes the categories ‘product’, ‘tool’ and ‘process’.",
+        "answer": "True"
+      },
+      {
+        "question": "A change request (CR) workflow is designed to uniquely identify, describe and track each change.",
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "document": "Software Evolution and Maintenance (Chapter 2) discusses the taxonomy of software maintenance, evolution, categories of concepts, and challenges of maintaining component‑based systems.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Corrective maintenance is intended to fix failures that occur in a running system.",
+        "answer": "True"
+      },
+      {
+        "question": "Adaptive maintenance seeks to modify the software to improve its performance regardless of changes in the data or processing environment.",
+        "answer": "False"
+      },
+      {
+        "question": "Perfective maintenance is also known as reengineering, which involves restructuring code for better readability and maintainability.",
+        "answer": "True"
+      },
+      {
+        "question": "Preventive maintenance prevents problems from occurring by modifying the software product before any defect appears.",
+        "answer": "True"
+      },
+      {
+        "question": "Activity‑based classification divides maintenance activities into three categories: corrections, enhancements, and prevention.",
+        "answer": "False"
+      },
+      {
+        "question": "Evidence‑based classification groups maintenance types based on changes to hardware components used by the system.",
+        "answer": "False"
+      },
+      {
+        "question": "Investigation activity is one of the four maintenance types defined in Chapter 2.",
+        "answer": "True"
+      },
+      {
+        "question": "The abbreviation SPE stands for Specified, Problem, Evolving.",
+        "answer": "True"
+      },
+      {
+        "question": "P‑type programs are specified with a formal specification of all functional and non‑functional properties before they are written.",
+        "answer": "False"
+      },
+      {
+        "question": "The acceptance of an E‑type program is based only on its runtime performance metrics.",
+        "answer": "False"
+      },
+      {
+        "question": "Lehman's first law states that software size grows linearly over time.",
+        "answer": "False"
+      },
+      {
+        "question": "Declining quality means that users experience improved performance as the system ages.",
+        "answer": "False"
+      },
+      {
+        "question": "Software process execution aging manifests as degradation in performance or transient failures of a continuously running system.",
+        "answer": "True"
+      },
+      {
+        "question": "Code decay includes improved readability of changed code as one of its characteristics.",
+        "answer": "False"
+      },
+      {
+        "question": "A commercial off‑the‑shelf (COTS) component is defined as an independent unit with contractually specified interfaces and explicit context dependencies only.",
+        "answer": "True"
+      },
+      {
+        "question": "When integrating COTS components, the primary code written by integrators is tailoring the source code of the components.",
+        "answer": "False"
+      },
+      {
+        "question": "The openness of a component influences the maintainability of a component‑based system.",
+        "answer": "True"
+      },
+      {
+        "question": "A change‑control board approves proposed changes after investigation and before implementation.",
+        "answer": "True"
+      },
+      {
+        "question": "Level 1 support in a maintenance organization primarily develops patch releases for the system.",
+        "answer": "False"
+      },
+      {
+        "question": "Preventive maintenance is intended to reduce entropy by improving architecture and design over time.",
+        "answer": "True"
+      }
+    ]
+  }
+}
