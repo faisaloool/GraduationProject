@@ -138,13 +138,17 @@ function Form({ isLogin }) {
         </div>
       )}
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && (
+        <p className="auth-error" role="alert" aria-live="polite">
+          {error}
+        </p>
+      )}
 
       <button className="submit_btn" disabled={loading}>
         {loading ? "Loading..." : isLogin ? "Log In" : "Sign Up"}
       </button>
 
-      {isLogin && <p className="forget">Forget Password?</p>}
+      {isLogin && <p className="forgot">Forget Password?</p>}
     </form>
   );
 }
