@@ -23,7 +23,7 @@ from peft import (
 # CONFIG
 # =========================
 MODEL_ID = "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
-DATA_DIR = "./data"       # Folder containing JSON / JSONL
+DATA_DIR = "./data"       
 OUTPUT_DIR = "./output"
 MAX_LENGTH = 2048
 
@@ -35,23 +35,26 @@ tokenizer.pad_token = tokenizer.eos_token
 tokenizer.padding_side = "right"
 
 # =========================
-# MODEL (8-bit QLoRA + gradient checkpointing)
+# MODEL
 # =========================
-bnb_config = BitsAndBytesConfig(load_in_8bit=True)
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True, # Changed to 4bit for better memory efficiency on 3070 Ti
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_quant_type="nf4"
+)
 
 try:
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
         quantization_config=bnb_config,
-        device_map="sequential",   # safer for 3070 Ti
+        device_map="auto", 
     )
 except RuntimeError:
     print("⚠️ GPU memory allocation failed, falling back to CPU offload...")
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
         device_map={"": "cpu"},
-        offload_folder="./offload",
-        offload_state_dict=True
+        offload_folder="./offload"
     )
 
 model.config.use_cache = False
@@ -67,16 +70,41 @@ lora_config = LoraConfig(
     lora_dropout=0.05,
     bias="none",
     task_type="CAUSAL_LM",
-    target_modules=["q_proj", "v_proj"]
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
 )
 model = get_peft_model(model, lora_config)
-model.print_trainable_parameters()
 
 # =========================
-# LOAD JSON / JSONL FILES
+# DATA LOADING & NORMALIZATION
 # =========================
 json_files = glob.glob(f"{DATA_DIR}/*.json")
 all_examples = []
+
+def normalize_example(ex):
+    """Ensures every example has 'document', 'question_type', and 'output' keys."""
+    # 1. Handle Document (The Input)
+    # If 'document' is missing but 'question' exists, use the question as context
+    if "document" not in ex:
+        ex["document"] = ex.get("question", "No document provided.")
+    
+    # 2. Handle Output (The Target)
+    # If the example is flat (has question/answer at top level), wrap it in the expected output format
+    if "output" not in ex:
+        ex["output"] = {
+            "questions": [
+                {
+                    "question": ex.get("question", ""),
+                    "options": ex.get("options", []),
+                    "answer": ex.get("answer", "")
+                }
+            ]
+        }
+    
+    # 3. Handle Type
+    if "question_type" not in ex:
+        ex["question_type"] = "General"
+        
+    return ex
 
 for json_file in json_files:
     with open(json_file, "r", encoding="utf-8") as f:
@@ -84,44 +112,36 @@ for json_file in json_files:
             data = json.load(f)
             if isinstance(data, dict):
                 data = [data]
-            all_examples.extend(data)
+            for item in data:
+                all_examples.append(normalize_example(item))
         except json.JSONDecodeError:
-            # try JSONL line by line
             f.seek(0)
-            for line_num, line in enumerate(f, start=1):
+            for line in f:
                 if line.strip():
                     try:
-                        all_examples.append(json.loads(line.strip()))
-                    except json.JSONDecodeError as e:
-                        print(f"⚠️ Skipping invalid line {line_num} in {json_file}: {e}")
+                        all_examples.append(normalize_example(json.loads(line.strip())))
+                    except: continue
 
 if not all_examples:
-    raise ValueError("No valid examples found in your JSON/JSONL files.")
+    raise ValueError("No valid examples found.")
 
 # =========================
-# BALANCE BY QUESTION TYPE
+# BALANCE & DATASET CREATION
 # =========================
 type_groups = defaultdict(list)
 for ex in all_examples:
-    qtype = ex.get("question_type", "UNKNOWN")
-    type_groups[qtype].append(ex)
+    type_groups[ex["question_type"]].append(ex)
 
 min_count = min(len(v) for v in type_groups.values())
 balanced_examples = []
 for qtype, examples in type_groups.items():
-    if len(examples) > min_count:
-        examples = random.sample(examples, min_count)
-    balanced_examples.extend(examples)
+    balanced_examples.extend(random.sample(examples, min_count))
 
 random.shuffle(balanced_examples)
-dataset = Dataset.from_list(balanced_examples)
-
-# Train/validation split
-dataset = dataset.train_test_split(test_size=0.05)
-train_dataset = dataset["train"]
-eval_dataset = dataset["test"]
-
-print(f"✅ Dataset balanced by question_type. Each type has {min_count} examples.")
+full_dataset = Dataset.from_list(balanced_examples)
+split = full_dataset.train_test_split(test_size=0.05)
+train_dataset = split["train"]
+eval_dataset = split["test"]
 
 # =========================
 # PROMPT FORMATTER
@@ -135,53 +155,27 @@ DOCUMENT:
 QUESTION TYPE:
 {example['question_type']}
 
-INSTRUCTIONS:
-- Generate up to 25 questions
-- Output ONLY valid JSON
-- Follow this schema strictly
-
-SCHEMA:
-{{
-  "questions": [
-    {{
-      "question": "string",
-      "options": ["A", "B", "C", "D"],
-      "answer": "string"
-    }}
-  ]
-}}
-
 OUTPUT:
 """
+    # response = target output
     response = json.dumps(example["output"], ensure_ascii=False)
-    return {"text": prompt + response}
+    # TinyLlama Chat template: <|system|>\n...<|user|>\n...<|assistant|>\n...
+    full_text = f"<|user|>\n{prompt}</s>\n<|assistant|>\n{response}</s>"
+    return {"text": full_text}
 
-train_dataset = train_dataset.map(format_prompt, remove_columns=train_dataset.column_names)
-eval_dataset = eval_dataset.map(format_prompt, remove_columns=eval_dataset.column_names)
+# Apply formatting and tokenize immediately to ensure schema consistency
+def process_data(batch):
+    formatted = [format_prompt(dict(zip(batch.keys(), values))) for values in zip(*batch.values())]
+    texts = [f['text'] for f in formatted]
+    tokenized = tokenizer(texts, truncation=True, padding="max_length", max_length=MAX_LENGTH)
+    tokenized["labels"] = tokenized["input_ids"].copy()
+    return tokenized
 
-# =========================
-# TOKENIZATION
-# =========================
-def tokenize(batch):
-    tokens = tokenizer(
-        batch["text"],
-        truncation=True,
-        padding="max_length",
-        max_length=MAX_LENGTH
-    )
-    tokens["labels"] = tokens["input_ids"].copy()
-    return tokens
-
-train_dataset = train_dataset.map(tokenize, batched=True)
-eval_dataset = eval_dataset.map(tokenize, batched=True)
+train_dataset = train_dataset.map(process_data, batched=True, remove_columns=train_dataset.column_names)
+eval_dataset = eval_dataset.map(process_data, batched=True, remove_columns=eval_dataset.column_names)
 
 # =========================
-# DATA COLLATOR
-# =========================
-data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
-
-# =========================
-# TRAINING ARGUMENTS
+# TRAINER
 # =========================
 training_args = TrainingArguments(
     output_dir=OUTPUT_DIR,
@@ -190,49 +184,24 @@ training_args = TrainingArguments(
     learning_rate=2e-4,
     num_train_epochs=3,
     save_strategy="steps",
-    save_steps=500,
-    save_total_limit=3,
+    save_steps=100,
     logging_steps=10,
     fp16=True,
     optim="paged_adamw_8bit",
-    report_to="none",
-    remove_unused_columns=False
+    report_to="none"
 )
 
-# =========================
-# TRAINER
-# =========================
 trainer = Trainer(
     model=model,
     args=training_args,
     train_dataset=train_dataset,
     eval_dataset=eval_dataset,
-    data_collator=data_collator
+    data_collator=DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm=False)
 )
 
-# =========================
-# RESUME CHECKPOINT
-# =========================
-checkpoint = None
-if os.path.isdir(OUTPUT_DIR):
-    checkpoints = [
-        os.path.join(OUTPUT_DIR, d)
-        for d in os.listdir(OUTPUT_DIR)
-        if d.startswith("checkpoint-")
-    ]
-    if checkpoints:
-        checkpoint = sorted(checkpoints, key=lambda x: int(x.split("-")[-1]))[-1]
-        print(f"🔁 Resuming from {checkpoint}")
+trainer.train()
 
-# =========================
-# TRAIN
-# =========================
-trainer.train(resume_from_checkpoint=checkpoint)
-
-# =========================
-# SAVE FINAL LoRA ADAPTER
-# =========================
+# SAVE
 model.save_pretrained(OUTPUT_DIR)
 tokenizer.save_pretrained(OUTPUT_DIR)
-
-print("✅ Training complete. LoRA adapter saved.")
+print("✅ Done!")
