@@ -57,13 +57,13 @@ header {
   background: #097e8d;
   color: #ffffff;
   border-color: #097e8d;
-  box-shadow: 0 0 0 1px #097e8d inset;
+  box-shadow: none;
   margin-right: 0;
 }
 .header-btns .sign-up:hover {
   background: #0e8e70;
   border-color: #0e8e70;
-  box-shadow: 0 4px 18px rgba(16, 163, 127, 0.35);
+  box-shadow: none;
 }
 
 .header-btns button:focus-visible {

@@ -14,17 +14,7 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: radial-gradient(
-      1200px 600px at 20% 10%,
-      rgba(70, 234, 255, 0.12),
-      rgba(0, 0, 0, 0) 60%
-    ),
-    radial-gradient(
-      900px 500px at 90% 85%,
-      rgba(30, 146, 155, 0.18),
-      rgba(0, 0, 0, 0) 55%
-    ),
-    #151515;
+  background: #151515;
 }
 
 .error-page__card {
@@ -33,7 +23,7 @@
   border-radius: 20px;
   padding: 22px 22px 18px;
   background: rgba(15, 15, 15, 0.92);
-  border: 1px solid rgba(70, 234, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
   color: #ffffff;
   position: relative;
@@ -41,28 +31,11 @@
 }
 
 .error-page__card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(70, 234, 255, 0.22),
-    rgba(30, 146, 155, 0.12)
-  );
-  opacity: 0.35;
-  pointer-events: none;
+  content: none;
 }
 
 .error-page__card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #46eaff, #1e929b);
-  opacity: 0.9;
-  pointer-events: none;
+  content: none;
 }
 
 .error-page__title,
@@ -92,7 +65,7 @@
   border-radius: 12px;
   padding: 14px 14px;
   background: rgba(0, 0, 0, 0.38);
-  border: 1px solid rgba(70, 234, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   white-space: pre-wrap;
   word-break: break-word;

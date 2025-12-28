@@ -21,8 +21,7 @@
   border: 1px solid rgba(70, 234, 255, 0.18);
   border-radius: 14px;
 
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(70, 234, 255, 0.08),
-    0 12px 38px -8px rgba(0, 242, 255, 0.15);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
 
@@ -74,8 +73,7 @@
 /* Hover/focus-like visuals */
 .option_item:hover {
   background: var(--accent-soft);
-  box-shadow: 0 0 0 1px rgba(70, 234, 255, 0.22),
-    0 6px 18px -6px rgba(70, 234, 255, 0.25);
+  box-shadow: none;
 }
 .option_item:hover svg {
   transform: translateY(-2px);
@@ -92,8 +90,7 @@
 }
 .option_item.delete:hover {
   background: rgba(255, 80, 80, 0.1);
-  box-shadow: 0 0 0 1px rgba(255, 120, 120, 0.28),
-    0 6px 18px -6px rgba(255, 120, 120, 0.28);
+  box-shadow: none;
 }
 .option_item.delete:active {
   background: rgba(255, 80, 80, 0.22);

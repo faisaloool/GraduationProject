@@ -62,7 +62,7 @@ export const Header = ({ quiz, setEditing }) => {
   return (
     <>
       <header>
-        <div className="ai-version">Quiz AI 1.0</div>
+        <div className="ai-version">Quiz AI</div>
         {!loggedIn ? (
           <div className="header-btns">
             <button className="log-in" onClick={handleClick(true)}>

@@ -19,7 +19,7 @@
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.45);
   border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.12);
+  box-shadow: none;
   backdrop-filter: blur(2px);
   font-size: 14px;
   line-height: 1.3;
@@ -60,7 +60,7 @@
   background: rgba(12, 18, 20, 0.55);
   margin-right: 14px;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 242, 255, 0.18);
+  box-shadow: none;
   transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease,
     transform 0.1s ease;
 }
@@ -68,7 +68,7 @@
 .input-settings:hover {
   border-color: rgba(70, 234, 255, 0.8);
   background: rgba(70, 234, 255, 0.14);
-  box-shadow: 0 10px 26px rgba(0, 242, 255, 0.28);
+  box-shadow: none;
   transform: translateY(-1px);
 }
 
@@ -102,8 +102,7 @@
   background: rgba(12, 18, 20, 0.92);
   border: 1px solid rgba(70, 234, 255, 0.35);
   border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(70, 234, 255, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
   color: #f5fbff;
   line-height: 1.45;
   padding: 24px;
@@ -151,7 +150,7 @@
 
 .settings-input.number-input:focus {
   border-color: #46eaff;
-  box-shadow: 0 0 10px rgba(70, 234, 255, 0.35);
+  box-shadow: none;
   outline: none;
 }
 

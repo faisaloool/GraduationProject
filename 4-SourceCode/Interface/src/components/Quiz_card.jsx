@@ -78,7 +78,10 @@ export const Quiz_card = ({
         {canShowMenu && (
           <div
             className="threeDots"
-            style={{ display: hover ? "block" : "none" }}
+            style={{
+              opacity: hover ? 1 : 0,
+              pointerEvents: hover ? "auto" : "none",
+            }}
             onClick={(e) => {
               handleThreeDotsClick(e);
             }}

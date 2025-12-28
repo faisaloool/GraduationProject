@@ -184,9 +184,8 @@ li {
 
 /* اللون عند المرور */
 li:hover {
-  background-color: #067e8b5e;
+  background-color: #333333;
   cursor: pointer;
-  /* font-size: 23px; */
 }
 
 /* الخط المتحرك تحت النص */
@@ -204,9 +203,9 @@ li::after {
 }
 
 /* عند المرور بالماوس */
-li:hover::after {
+/* li:hover::after {
   transform: translateX(-50%) scaleX(1);
-}
+} */
 
 a {
   text-decoration: none;
@@ -365,7 +364,7 @@ a:focus {
 .quiz-card-item.active {
   border: 2px solid #5b7cfa;
   background: rgba(91, 124, 250, 0.08);
-  box-shadow: 0 0 10px rgba(91, 124, 250, 0.15);
+  box-shadow: none;
 }
 
 /* Optional hover to align with theme */
@@ -385,8 +384,7 @@ a:focus {
     rgba(10, 10, 10, 0.9)
   );
   border: 1px solid rgba(255, 77, 79, 0.28);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 77, 79, 0.08),
-    0 14px 46px -18px rgba(255, 77, 79, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
 
 .error-message__title {
@@ -436,9 +434,9 @@ a:focus {
 }
 
 /* لما المستخدم يعمل hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #06d5f0af; /* اللون عند السحب */
-}
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #06d5f0af;
+} */
 
 /* pop up style */
 /* Modal overlay */
@@ -466,8 +464,7 @@ a:focus {
   );
   border: 1px solid rgba(70, 234, 255, 0.22);
   border-radius: 16px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(70, 234, 255, 0.08),
-    0 14px 46px -10px rgba(0, 242, 255, 0.18);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
   color: #e9feff;
   padding: 18px 18px 16px;
   animation: modal-pop 160ms ease-out;
@@ -538,19 +535,19 @@ a:focus {
 }
 .btn-cancel:hover {
   background: rgba(70, 234, 255, 0.08);
-  box-shadow: 0 0 0 1px rgba(70, 234, 255, 0.28);
+  box-shadow: none;
 }
 
 .btn-delete {
   background: #e84545;
   color: #0f0f0f;
   border-color: #e84545;
-  box-shadow: 0 0 0 1px rgba(232, 69, 69, 0.25) inset;
+  box-shadow: none;
 }
 .btn-delete:hover {
   background: #cf3d3d;
   border-color: #cf3d3d;
-  box-shadow: 0 8px 22px rgba(232, 69, 69, 0.35);
+  box-shadow: none;
 }
 
 /* Mobile tweaks */
@@ -590,7 +587,7 @@ a:focus {
   );
   border: 1px solid rgba(70, 234, 255, 0.25);
   border-radius: 18px;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(70, 234, 255, 0.1);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.65);
   padding: 28px 30px;
   color: #f4fbff;
 }
@@ -643,7 +640,7 @@ a:focus {
 .sidebar-search-modal input[type="search"]:focus {
   outline: none;
   border-color: #46eaff;
-  box-shadow: 0 0 12px rgba(70, 234, 255, 0.35);
+  box-shadow: none;
 }
 
 .sidebar-search-results {

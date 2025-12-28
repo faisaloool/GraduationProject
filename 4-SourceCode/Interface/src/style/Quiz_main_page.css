@@ -120,7 +120,7 @@ main {
   border-radius: 20px;
   padding: 30px;
   color: white;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+  box-shadow: none;
   overflow: hidden;
   z-index: 1;
   width: 100%;
@@ -339,13 +339,14 @@ main {
   flex-direction: column;
   height: 50vh;
   width: 100%;
+  margin-bottom: 1rem;
 }
 .exam-response .QuestionTitle {
   font-size: 1.6rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: #00a67d;
+  color: #e9feff;
 }
 
 .exam-response .subtitle {
@@ -372,9 +373,9 @@ main {
   cursor: pointer;
 }
 .Option:hover {
-  background: #00a67d;
+  background: #298a97;
   color: #fff;
-  border-color: #00a67d;
+  border-color: #298a97;
 }
 .Option-list {
   display: flex;
@@ -408,18 +409,18 @@ main {
 .message {
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: #e9feff;
   padding: 0.5rem;
-  background: #00a67d;
+  background: #298a97;
   border-radius: 10px;
   width: auto;
   height: auto;
 }
 .submitExamBtn {
-  color: #00a67d;
+  color: #298a97;
   font-size: 30px;
   font-weight: 600;
-  border: 1px solid #00a67d;
+  border: 1px solid #298a97;
   padding: 1.6rem;
   width: 250px;
   height: 40px;
@@ -432,12 +433,12 @@ main {
   transition: background 0.3s ease, color 0.3s ease, font-weight 0.2s ease;
 }
 .submitExamBtn:hover {
-  background: #00a67d;
+  background: #298a97;
   color: black;
   transition: background 0.3s ease, color 0.3s ease, font-weight 0.2s ease;
 }
 .selected-option {
-  background: #00a67d;
+  background: #298a97;
   color: #fff;
 }
 
@@ -473,7 +474,7 @@ main {
 
 .scroll-indicator:hover {
   transform: translateX(-50%) translateY(-4px);
-  box-shadow: 0 10px 26px rgba(0, 166, 125, 0.18);
+  box-shadow: none;
 }
 
 .scroll-indicator:active {
@@ -525,12 +526,10 @@ main {
   border: 1px solid rgba(70, 234, 255, 0.35);
   border-radius: 14px;
 
-  box-shadow: 0 8px 30px rgba(0, 242, 255, 0.12),
-    inset 0 0 22px rgba(0, 166, 125, 0.08);
+  box-shadow: none;
   backdrop-filter: blur(4px);
 
-  animation: result-pop 260ms ease-out both,
-    glow-pulse 2400ms ease-in-out infinite;
+  animation: result-pop 260ms ease-out both;
 }
 
 /* Pop-in animation */
@@ -542,19 +541,6 @@ main {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
-  }
-}
-
-/* Gentle glow pulse to match the app's theme */
-@keyframes glow-pulse {
-  0%,
-  100% {
-    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.12),
-      inset 0 0 22px rgba(0, 166, 125, 0.08);
-  }
-  50% {
-    box-shadow: 0 10px 36px rgba(0, 242, 255, 0.22),
-      inset 0 0 28px rgba(0, 166, 125, 0.16);
   }
 }
 
@@ -579,9 +565,9 @@ main {
   height: 46px;
   padding: 0 18px;
   border-radius: 12px;
-  border: 1px solid #00a67d;
+  border: 1px solid #298a97;
   background: transparent;
-  color: #00a67d;
+  color: #298a97;
   font-weight: 700;
   letter-spacing: 0.2px;
   cursor: pointer;
@@ -590,9 +576,9 @@ main {
 }
 
 .retry-btn:hover {
-  background: #00a67d;
+  background: #298a97;
   color: #0f0f0f;
-  box-shadow: 0 0 16px rgba(0, 166, 125, 0.35);
+  box-shadow: none;
 }
 
 .retry-btn:focus-visible {
@@ -662,9 +648,9 @@ main {
 .shimmer {
   background: linear-gradient(
     120deg,
-    rgba(70, 234, 255, 0.12) 25%,
-    rgba(70, 234, 255, 0.32) 50%,
-    rgba(70, 234, 255, 0.12) 75%
+    rgba(41, 138, 151, 0.08) 25%,
+    rgba(41, 138, 151, 0.16) 50%,
+    rgba(41, 138, 151, 0.08) 75%
   );
   background-size: 200% 100%;
   animation: quizSkeletonShimmer 1.4s linear infinite;
@@ -704,8 +690,7 @@ main {
   );
   border: 1px solid rgba(232, 69, 69, 0.35);
   color: #ffe0e0;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6),
-    inset 0 0 30px rgba(232, 69, 69, 0.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
 }
 
 .exam-error-card h2 {
@@ -731,7 +716,7 @@ main {
 }
 
 .exam-error-card button:hover {
-  box-shadow: 0 10px 22px rgba(232, 69, 69, 0.4);
+  box-shadow: none;
 }
 
 .exam-error-card button:active {
