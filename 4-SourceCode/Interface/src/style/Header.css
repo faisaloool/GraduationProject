@@ -42,7 +42,7 @@ header {
   padding: 8px 12px;
   font-size: 16px;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 2px solid rgba(255, 255, 255, 0.14);
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease,
     box-shadow 0.15s ease, transform 0.05s ease;
@@ -61,8 +61,9 @@ header {
   margin-right: 0;
 }
 .header-btns .sign-up:hover {
-  background: #0e8e70;
-  border-color: #0e8e70;
+  background: rgba(15, 15, 15, 0.85);
+  border-color: #097e8d;
+  color: #097e8d;
   box-shadow: none;
 }
 
