@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { generateQuizFromFile } from "../util/service.js";
 import { useExams } from "../context/ExamsProvider.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import "../style/Input.css";
 
@@ -11,6 +12,7 @@ import { GoFileSubmodule } from "react-icons/go";
 export const Input = ({ setExam }) => {
   const navigate = useNavigate();
   const { exams, loading, loadExams, deleteExam, addExam } = useExams();
+  const { token, isLoggedIn } = useAuth();
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -32,6 +34,11 @@ export const Input = ({ setExam }) => {
     e.preventDefault();
     if (isSubmitting) return;
 
+    if (!isLoggedIn || !token) {
+      setErrorMessage("Please log in before submitting.");
+      return;
+    }
+
     const input = document.querySelector(".inputfile");
     const file = input && input.files[0];
     if (!file) {
@@ -42,7 +49,7 @@ export const Input = ({ setExam }) => {
     setErrorMessage("");
     setIsSubmitting(true);
     try {
-      const response = await generateQuizFromFile(file, "your-auth-token");
+      const response = await generateQuizFromFile(file, token);
 
       if (response?.error) {
         throw new Error(String(response.error));
