@@ -42,16 +42,71 @@ export async function fetchUserExams(userId, token) {
 }
 
 export async function generateQuizFromFile(file, token) {
-  const formData = new FormData();
-  formData.append("file", file);
-  const res = await fetch(`${API_URL2}/quiz-ai/quiz/create`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    body: formData,
-  });
-  return res.json();
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    const res = await fetch(`${API_URL2}/quiz-ai/quiz/create`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    // Parse body robustly: some backends return JSON with wrong/missing content-type.
+    let rawText = null;
+    let body = null;
+    try {
+      rawText = await res.text();
+      const trimmed = (rawText || "").trim();
+      if (trimmed) {
+        // Attempt JSON parse even if headers are wrong.
+        if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+          body = JSON.parse(trimmed);
+        }
+      }
+    } catch {
+      // keep body/rawText as null
+    }
+
+    const headers = Object.fromEntries(res.headers.entries());
+
+    const result = {
+      ok: res.ok,
+      status: res.status,
+      statusText: res.statusText,
+      url: res.url,
+      headers,
+      body,
+      rawText,
+    };
+
+    if (!res.ok) {
+      return {
+        ...result,
+        error:
+          body?.error ||
+          body?.message ||
+          rawText ||
+          `Request failed with status ${res.status}`,
+      };
+    }
+
+    // Success: return full response object (caller reads result.body)
+    return result;
+  } catch (error) {
+    return {
+      ok: false,
+      status: 0,
+      statusText: "",
+      url: "",
+      headers: {},
+      body: null,
+      rawText: null,
+      error: error?.message || "Network error while generating quiz.",
+    };
+  }
 }
 
 export async function verifyCode(code, email) {

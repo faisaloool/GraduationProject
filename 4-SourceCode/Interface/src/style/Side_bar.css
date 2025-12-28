@@ -727,3 +727,31 @@ li::after {
     flex-basis: 64px;
   }
 }
+
+/* Mobile: slightly smaller collapsed (shrink) sidebar */
+@media (max-width: 600px) {
+  .side-bar.collapsed {
+    width: 64px;
+    flex-basis: 64px;
+  }
+
+  .side-bar.collapsed .top-of-side-bar {
+    padding: 0.6rem 0;
+    padding-bottom: 1rem;
+  }
+
+  .side-bar.collapsed li {
+    width: 48px;
+    padding: 0.55rem;
+  }
+
+  .side-bar.collapsed .side-bar-icons {
+    font-size: 22px;
+  }
+
+  .side-bar .closlogo {
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+  }
+}

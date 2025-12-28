@@ -6,11 +6,13 @@ import { useNavigate } from "react-router-dom";
 import "../style/Input.css";
 
 import { LuSettings2 } from "react-icons/lu";
+import { GoFileSubmodule } from "react-icons/go";
 
 export const Input = ({ setExam }) => {
   const navigate = useNavigate();
   const { exams, loading, loadExams, deleteExam, addExam } = useExams();
-  const [erorr, setErorr] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [settings, setSettings] = useState({
     mcqCount: 8,
@@ -28,18 +30,43 @@ export const Input = ({ setExam }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
     const input = document.querySelector(".inputfile");
     const file = input && input.files[0];
-    if (file) {
+    if (!file) {
+      setErrorMessage("No file selected.");
+      return;
+    }
+
+    setErrorMessage("");
+    setIsSubmitting(true);
+    try {
       const response = await generateQuizFromFile(file, "your-auth-token");
-      const quiz = response.quizzes[0];
-      setErorr(false);
+
+      if (response?.error) {
+        throw new Error(String(response.error));
+      }
+
+      const quiz = response?.body?.quizzes?.[0];
+      if (!quiz) {
+        throw new Error(
+          String(
+            response?.body?.message ||
+              response?.rawText ||
+              "No quiz returned from server."
+          )
+        );
+      }
+
       addExam(quiz);
       setExam(quiz);
       const id = quiz.quizId || quiz.examId;
       navigate(`/exam/${id}`);
-    } else {
-      setErorr(true);
+    } catch (err) {
+      setErrorMessage(String(err?.message || err || "Something went wrong."));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -53,23 +80,26 @@ export const Input = ({ setExam }) => {
   return (
     <>
       <div className="input-wrapper">
-        <div className={`erorr-message ${erorr ? "show" : "hidden"}`}>
-          No file selected.
+        <div className={`erorr-message ${errorMessage ? "show" : "hidden"}`}>
+          {errorMessage || " "}
         </div>
-        <form className="file-form">
+        <form className="upload-bar" onSubmit={handleSubmit}>
           <div
-            className="input-settings"
+            className="upload-settings"
             tabIndex={0}
             aria-label="Upload settings"
             onClick={() => {
+              if (isSubmitting) return;
               setShowSettings(!showSettings);
             }}
           >
             <LuSettings2 aria-hidden="true" />
           </div>
-          <label className="add-file">
-            <input type="file" className="inputfile" />
-            <span className="folder-icon">📁</span>
+          <label className="upload-file">
+            <input type="file" className="inputfile" disabled={isSubmitting} />
+            <span className="folder-icon">
+              <GoFileSubmodule />
+            </span>
             <span className="text">Add File</span>
             <span className="sound-wave">
               <span></span>
@@ -78,8 +108,19 @@ export const Input = ({ setExam }) => {
             </span>
           </label>
 
-          <button type="submit" className="generate-btn" onClick={handleSubmit}>
-            Generate Quiz
+          <button
+            type="submit"
+            className="upload-submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <>
+                <span className="upload-spinner" aria-hidden="true" />
+                Generating...
+              </>
+            ) : (
+              "Generate Quiz"
+            )}
           </button>
         </form>
       </div>

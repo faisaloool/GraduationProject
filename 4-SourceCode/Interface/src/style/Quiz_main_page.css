@@ -46,7 +46,8 @@
 /* main is the scrollable content area under the header, single scrollbar only here */
 main {
   width: 100%;
-  /* flex: 1 1 auto; */
+  flex: 1 1 auto;
+  min-height: 0;
   background-color: #151515;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -109,32 +110,32 @@ main {
   background: linear-gradient(145deg, #1e1e1e, #222);
   box-shadow: none;
 } */
+.wellcome-page,
 .wellcome-page:has(.input) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   text-align: center;
-  height: calc(100vh - 13vh);
+  min-height: 100%;
   background: linear-gradient(305deg, #1e929b 20%, #0f0f0f 100%);
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 0;
+  padding: 30px 24px;
   color: white;
   box-shadow: none;
   overflow: hidden;
   z-index: 1;
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   position: relative; /* مهم جدا لتعمل ::before و ::after */
 }
 
 .wellcome-page .input {
-  position: relative;
-  bottom: -40%;
-  width: 90%;
-  max-width: 400px;
-  margin-right: 70px;
+  position: static;
+  width: min(92vw, 760px);
+  max-width: none;
+  margin: 26px auto 0;
 }
 
 /* .wellcome-page:has(.input)::before {
@@ -176,14 +177,14 @@ main {
 }
 
 .wellcome {
-  margin: 10px auto;
-  margin-top: 7rem;
+  margin: 0px auto 0px auto;
   display: flex;
   font-size: 45px;
   color: white;
   font-weight: 600;
   white-space: nowrap;
-  width: 450px;
+  width: 465px;
+  transform: translateY(-24px);
 }
 
 .wlc {
@@ -230,11 +231,14 @@ main {
 .file-form {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: stretch;
   gap: 10px;
-
-  border-radius: 10px;
-  width: 160%;
+  width: 100%;
+  max-width: 760px;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(12, 18, 20, 0.55);
+  border: 1px solid rgba(41, 138, 151, 0.35);
 }
 
 /* الزر الخاص برفع الملف */
@@ -244,18 +248,22 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 8px;
-  background-color: #303030;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff;
-  padding: 8px 14px;
-  border-radius: 8px;
+  padding: 0 14px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  width: 100%;
-  transition: background 0.3s ease;
+  flex: 1 1 auto;
+  min-width: 220px;
+  height: 48px;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .add-file:hover {
-  background-color: #3b3b3b;
+  background-color: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 /* اخفاء input */
@@ -273,7 +281,7 @@ main {
 .text {
   flex: 1;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 /* الموجات الصوتية */
@@ -314,21 +322,41 @@ main {
 
 /* زر Generate Quiz */
 .generate-btn {
-  background-color: #000;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 8px;
+  background: transparent;
+  color: #e9feff;
+  padding: 0 16px;
+  border-radius: 12px;
   font-weight: 600;
-  border: none;
+  border: 1px solid #298a97;
   cursor: pointer;
-  min-width: 35%;
-  transition: background 0.3s ease;
-  height: 40px;
+  flex: 0 0 auto;
+  min-width: 160px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  height: 48px;
   font-size: 1rem;
 }
 
 .generate-btn:hover {
-  background-color: #111;
+  background: #298a97;
+  color: #0f0f0f;
+  border-color: #298a97;
+}
+
+@media (max-width: 600px) {
+  .file-form {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .add-file {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .generate-btn {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
 }
 
 /* ===== Question Styles ===== */
@@ -644,13 +672,23 @@ main {
   margin: 0 auto 40px;
 }
 
+/* Base skeleton surface (keeps visibility even between shimmer highlights) */
+.skeleton-message,
+.skeleton-question-title,
+.skeleton-option-line,
+.skeleton-submit {
+  background-color: rgba(41, 138, 151, 0.07);
+  border: 1px solid rgba(41, 138, 151, 0.14);
+}
+
 /* shimmer effect for loading state */
 .shimmer {
-  background: linear-gradient(
+  background-color: rgba(41, 138, 151, 0.08);
+  background-image: linear-gradient(
     120deg,
-    rgba(41, 138, 151, 0.08) 25%,
-    rgba(41, 138, 151, 0.16) 50%,
-    rgba(41, 138, 151, 0.08) 75%
+    rgba(41, 138, 151, 0.12) 25%,
+    rgba(41, 138, 151, 0.24) 50%,
+    rgba(41, 138, 151, 0.12) 75%
   );
   background-size: 200% 100%;
   animation: quizSkeletonShimmer 1.4s linear infinite;
@@ -840,15 +878,13 @@ main {
 
   .wellcome-page {
     width: 100%;
-    height: calc(100vh - 10vh);
     padding: 20px;
   }
 
   .wellcome-page .input {
-    bottom: -20%;
-    left: -60px;
-    margin-right: 0;
+    position: static;
     width: 100%;
+    margin: 18px auto 0;
   }
   @keyframes typeDelete {
     0% {
@@ -912,7 +948,7 @@ main {
 @media (max-width: 900px) {
   .wellcome-page {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0;
   }
 
   .add-file {
@@ -1001,8 +1037,8 @@ main {
 /* شاشات كبيرة جدا */
 @media (min-width: 1600px) {
   .wellcome-page {
-    max-width: 1500px;
-    margin: auto;
+    max-width: none;
+    margin: 0;
   }
 
   .exam-space {
@@ -1130,5 +1166,84 @@ main {
 @media (max-width: 380px) {
   .submitExamBtn {
     font-size: 20px;
+  }
+}
+
+/* ===== Unified upload bar (welcome page) ===== */
+/* Scoped + placed at end to override earlier responsive rules */
+.wellcome-page .file-form {
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 760px;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(12, 18, 20, 0.55);
+  border: 1px solid rgba(41, 138, 151, 0.35);
+  box-sizing: border-box;
+}
+
+.wellcome-page .file-form .input-settings {
+  flex: 0 0 48px;
+  margin: 0;
+  position: static;
+  left: auto;
+  right: auto;
+}
+
+.wellcome-page .add-file {
+  flex: 1 1 360px;
+  min-width: 0;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.wellcome-page .add-file .text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wellcome-page .generate-btn {
+  flex: 0 1 auto;
+  min-width: 140px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid #298a97;
+  color: #e9feff;
+  position: static;
+  left: auto;
+  right: auto;
+}
+
+.wellcome-page .generate-btn:hover {
+  background: #298a97;
+  color: #0f0f0f;
+}
+
+@media (max-width: 600px) {
+  .wellcome-page .file-form {
+    flex-wrap: wrap;
+  }
+
+  .wellcome-page .add-file {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .wellcome-page .generate-btn {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 }
