@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Side_bar } from "./components/Side_bar";
 import { Quiz_main_page } from "./components/Quiz_main_page";
 import { Error_page } from "./components/Error_page";
+import { ResetPasswordPage } from "./components/ResetPasswordPage.jsx";
 import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
@@ -40,7 +41,9 @@ function App() {
             </main>
           }
         />
-        <Route path="/Error" element={<Error_page />} />
+        <Route path="/error" element={<Error_page />} />
+        <Route path="/change-password/:token" element={<ResetPasswordPage />} />
+        <Route path="/change-password" element={<ResetPasswordPage />} />
       </Routes>
     </Router>
   );

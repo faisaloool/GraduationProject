@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 import { useExams } from "../context/ExamsProvider.jsx";
 
+import { requestPasswordResetEmail } from "../util/service.js";
+
 import "../style/Account_style.css";
 
 export const Account = ({ collapsed = false }) => {
@@ -35,8 +37,8 @@ export const Account = ({ collapsed = false }) => {
   const [menuCoords, setMenuCoords] = useState({ top: 0, left: 0 });
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [nameInput, setNameInput] = useState(name);
-  const [passwordInput, setPasswordInput] = useState("");
   const [passwordMessage, setPasswordMessage] = useState("");
+  const [passwordSending, setPasswordSending] = useState(false);
 
   useEffect(() => setNameInput(name), [name]);
 
@@ -63,7 +65,6 @@ export const Account = ({ collapsed = false }) => {
 
   useEffect(() => {
     if (!settingsOpen) {
-      setPasswordInput("");
       setPasswordMessage("");
     }
     const onKeyDown = (e) => e.key === "Escape" && setSettingsOpen(false);
@@ -87,7 +88,6 @@ export const Account = ({ collapsed = false }) => {
   const openSettings = () => {
     setMenuOpen(false);
     setNameInput(name);
-    setPasswordInput("");
     setPasswordMessage("");
     setSettingsOpen(true);
   };
@@ -103,13 +103,32 @@ export const Account = ({ collapsed = false }) => {
     closeSettings();
   };
 
-  const handlePasswordChange = () => {
-    if (!passwordInput.trim()) {
-      setPasswordMessage("Enter a new password before updating.");
+  const handlePasswordChange = async () => {
+    if (passwordSending) return;
+    setPasswordMessage("");
+
+    if (!email) {
+      setPasswordMessage("No email found for this account.");
       return;
     }
-    setPasswordMessage("Password updated (demo only).");
-    setPasswordInput("");
+
+    setPasswordSending(true);
+    try {
+      const result = await requestPasswordResetEmail(email);
+      if (result?.error) {
+        setPasswordMessage(result.error);
+        return;
+      }
+
+      setPasswordMessage(
+        result?.message ||
+          "We sent you an email with a link to change your password."
+      );
+    } catch (err) {
+      setPasswordMessage(err?.message || "Failed to send reset email.");
+    } finally {
+      setPasswordSending(false);
+    }
   };
 
   const handleLogout = () => {
@@ -282,27 +301,15 @@ export const Account = ({ collapsed = false }) => {
                 onChange={(e) => setNameInput(e.target.value)}
               />
 
-              <label
-                className="account-field-label"
-                htmlFor="account-password-input"
-              >
-                New password
-              </label>
+              <label className="account-field-label">Password</label>
               <div className="account-password-row">
-                <input
-                  id="account-password-input"
-                  className="account-field-input"
-                  type="password"
-                  value={passwordInput}
-                  onChange={(e) => setPasswordInput(e.target.value)}
-                />
                 <button
                   type="button"
                   className="account-secondary-btn"
                   onClick={handlePasswordChange}
-                  disabled={!passwordInput.trim()}
+                  disabled={passwordSending || !email}
                 >
-                  Change password
+                  {passwordSending ? "Sending..." : "Change password"}
                 </button>
               </div>
               {passwordMessage && (

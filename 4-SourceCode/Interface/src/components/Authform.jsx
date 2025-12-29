@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../style/AuthForm.css";
-import { loginUser, registerUser } from "../util/service.js";
+import {
+  loginUser,
+  registerUser,
+  requestPasswordResetEmail,
+} from "../util/service.js";
 import { useAuth } from "../context/AuthContext.jsx";
 
 export default function AuthForms({ isLogin, setIsLogin }) {
@@ -57,12 +61,15 @@ function Form({ isLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [info, setInfo] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sendingReset, setSendingReset] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setInfo("");
 
     try {
       let data;
@@ -93,6 +100,34 @@ function Form({ isLogin }) {
       setLoading(false);
     }
   }
+
+  const handleForgotPassword = async () => {
+    if (sendingReset) return;
+    setError("");
+    setInfo("");
+
+    if (!email.trim()) {
+      setError("Please enter your email first.");
+      return;
+    }
+
+    setSendingReset(true);
+    try {
+      const result = await requestPasswordResetEmail(email);
+      if (result?.error) {
+        setError(result.error);
+        return;
+      }
+      setInfo(
+        result?.message ||
+          "If this email exists, we sent you a link to change your password."
+      );
+    } catch (err) {
+      setError(err?.message || "Failed to send password reset email.");
+    } finally {
+      setSendingReset(false);
+    }
+  };
 
   return (
     <form className="form" onSubmit={handleSubmit}>
@@ -144,11 +179,26 @@ function Form({ isLogin }) {
         </p>
       )}
 
+      {info && (
+        <p className="auth-success" role="status" aria-live="polite">
+          {info}
+        </p>
+      )}
+
       <button className="submit_btn" disabled={loading}>
         {loading ? "Loading..." : isLogin ? "Log In" : "Sign Up"}
       </button>
 
-      {isLogin && <p className="forgot">Forget Password?</p>}
+      {isLogin && (
+        <button
+          type="button"
+          className="forgot"
+          onClick={handleForgotPassword}
+          disabled={sendingReset}
+        >
+          {sendingReset ? "Sending..." : "Forget Password?"}
+        </button>
+      )}
     </form>
   );
 }

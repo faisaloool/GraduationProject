@@ -2,43 +2,184 @@ const API_URL = "https://d58837bb-c348-4ce4-9768-3b480c517aba.mock.pstmn.io";
 const API_URL2 = "https://382050f1-d285-4eac-93a7-adf0c0e0ef1f.mock.pstmn.io";
 //old one with limtited urls const API_URL = "https://0befc81c-b05a-4c91-97dc-febeb4033999.mock.pstmn.io";
 
+async function safeReadBody(res) {
+  const contentType = res.headers.get("content-type") || "";
+
+  try {
+    if (contentType.includes("application/json")) {
+      return { json: await res.json(), text: null };
+    }
+  } catch {
+    // fall back to text
+  }
+
+  let text = null;
+  try {
+    text = await res.text();
+  } catch {
+    text = null;
+  }
+
+  if (text) {
+    const trimmed = text.trim();
+    if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
+      try {
+        return { json: JSON.parse(trimmed), text };
+      } catch {
+        // ignore
+      }
+    }
+  }
+
+  return { json: null, text };
+}
+
+function unwrapApiData(payload) {
+  // Supports both:
+  // - { success, status, message, data: {...} }
+  // - { user, token, ... }
+  if (payload && typeof payload === "object" && "data" in payload) {
+    return payload.data;
+  }
+  return payload;
+}
+
+function extractApiErrorMessage(payload, fallbackMessage) {
+  if (!payload) return fallbackMessage;
+  if (typeof payload === "string") return payload;
+
+  const message =
+    payload?.message ||
+    payload?.error?.details ||
+    payload?.error ||
+    payload?.details;
+
+  if (typeof message === "string" && message.trim()) return message;
+  return fallbackMessage;
+}
+
+async function requestJson(url, { method = "GET", headers = {}, json } = {}) {
+  try {
+    const res = await fetch(url, {
+      method,
+      headers: {
+        ...(json ? { "Content-Type": "application/json" } : null),
+        ...headers,
+      },
+      body: json ? JSON.stringify(json) : undefined,
+    });
+
+    const { json: payload, text } = await safeReadBody(res);
+    const defaultError = text?.trim()
+      ? text.trim()
+      : `Request failed with status ${res.status}`;
+
+    return {
+      ok: res.ok,
+      status: res.status,
+      statusText: res.statusText,
+      url: res.url,
+      payload,
+      rawText: text,
+      error: res.ok ? null : extractApiErrorMessage(payload, defaultError),
+    };
+  } catch (err) {
+    return {
+      ok: false,
+      status: 0,
+      statusText: "",
+      url,
+      payload: null,
+      rawText: null,
+      error: err?.message || "Network error. Please try again.",
+    };
+  }
+}
+
 export async function loginUser(email, password) {
-  const res = await fetch(`${API_URL}/quiz-ai/login`, {
+  const result = await requestJson(`${API_URL}/quiz-ai/login`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password }),
+    json: { email, password },
   });
-  return res.json();
+
+  if (!result.ok) return { error: result.error || "Login failed." };
+  const data = unwrapApiData(result.payload);
+  return data || { error: "Unexpected server response." };
 }
 
 export async function registerUser(name, email, password) {
-  const res = await fetch(`${API_URL}/quiz-ai/signup`, {
+  const result = await requestJson(`${API_URL}/quiz-ai/signup`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, password }),
+    json: { name, email, password },
   });
-  return res.json();
+
+  if (!result.ok) return { error: result.error || "Sign up failed." };
+  const data = unwrapApiData(result.payload);
+  return data || { error: "Unexpected server response." };
 }
 
 export async function fetchUserExams(userId, token) {
-  try {
-    const response = await fetch(`${API_URL}/quiz-ai/users/${userId}/exams`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    });
+  const result = await requestJson(`${API_URL}/quiz-ai/users/${userId}/exams`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch exams");
-    }
+  if (!result.ok) return { error: result.error || "Failed to fetch exams." };
+  const data = unwrapApiData(result.payload);
+  return data ?? result.payload;
+}
 
-    const data = await response.json();
-    return data; // return exams list
-  } catch (error) {
-    return Promise.reject(new Error("somthing went wrong", error));
+export async function requestPasswordResetEmail(email) {
+  const cleanEmail = String(email || "").trim();
+  if (!cleanEmail) return { error: "Please enter your email first." };
+
+  // This endpoint should trigger the backend to send an email containing
+  // a reset URL with token (e.g. /change-password/:token).
+  const result = await requestJson(`${API_URL}/quiz-ai/change-password`, {
+    method: "POST",
+    json: { email: cleanEmail },
+  });
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to send password reset email." };
   }
+
+  const data = unwrapApiData(result.payload);
+  return (
+    data ||
+    result.payload || { success: true, message: "Password reset email sent." }
+  );
+}
+
+export async function resetPassword(token, password, confirmPassword) {
+  const cleanToken = String(token || "").trim();
+  if (!cleanToken) return { error: "Missing reset token." };
+
+  const url = `${API_URL}/quiz-ai/change-password/${encodeURIComponent(
+    cleanToken
+  )}`;
+
+  const result = await requestJson(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${cleanToken}`,
+    },
+    json: {
+      password,
+      confirmPassword,
+      token: cleanToken,
+    },
+  });
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to reset password." };
+  }
+
+  // Return either unwrapped data or a generic success shape.
+  const data = unwrapApiData(result.payload);
+  return data || { success: true, message: "Password updated successfully." };
 }
 
 export async function generateQuizFromFile(file, token) {
@@ -110,24 +251,11 @@ export async function generateQuizFromFile(file, token) {
 }
 
 export async function verifyCode(code, email) {
-  try {
-    const response = await fetch(`${API_URL}/verify`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ code, email }),
-    });
-    const result = await response.json();
-    if (response.ok) {
-      // Handle successful verification
-      return result;
-    } else {
-      // Handle verification failure
-      console.log("Verification failed:", result.message);
-      return { error: result.message };
-    }
-  } catch (error) {
-    console.log("Error during verification:", error);
-  }
+  const result = await requestJson(`${API_URL}/verify`, {
+    method: "POST",
+    json: { code, email },
+  });
+
+  if (!result.ok) return { error: result.error || "Verification failed." };
+  return result.payload;
 }
