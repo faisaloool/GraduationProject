@@ -1,0 +1,218 @@
+{
+  "document": "This collection of multiple‑choice questions covers the key concepts, processes, and tools related to software reverse engineering and data reverse engineering as described in Tripathy & Naik’s chapter on Reengineering.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary goal of Data Reverse Engineering (DRE)?",
+        "options": [
+          "Recovering user interfaces",
+          "Reconstituting data assets",
+          "Optimizing code performance",
+          "Automating testing"
+        ],
+        "answer": "Reconstituting data assets"
+      },
+      {
+        "question": "Which phase is the first step in the forward design process of a database?",
+        "options": [
+          "Physical phase",
+          "Logical phase",
+          "Conceptual phase",
+          "Implementation phase"
+        ],
+        "answer": "Conceptual phase"
+      },
+      {
+        "question": "In reverse engineering, what does the tool 'RE-Analyzer' provide?",
+        "options": [
+          "A web‑based code editor",
+          "Integration with a CASE tool",
+          "Automatic bug fixing",
+          "Database reverse engineering support"
+        ],
+        "answer": "Integration with a CASE tool"
+      },
+      {
+        "question": "Which of the following is NOT one of the 5 analysis techniques that facilitate reverse engineering?",
+        "options": [
+          "Lexical analysis",
+          "Syntaxic analysis",
+          "Control flow analysis",
+          "Object‑oriented design"
+        ],
+        "answer": "Object‑oriented design"
+      },
+      {
+        "question": "What is the purpose of recovering data assets in DRE?",
+        "options": [
+          "To delete obsolete files",
+          "To make them more useful",
+          "To archive for backup",
+          "To create new databases"
+        ],
+        "answer": "To make them more useful"
+      },
+      {
+        "question": "Which tool is described as a language‑independent reverse engineering tool that combines metrics and software visualization?",
+        "options": [
+          "Ada SDA",
+          "CodeCrawler",
+          "ManSART",
+          "SEELA"
+        ],
+        "answer": "CodeCrawler"
+      },
+      {
+        "question": "What does the 'Rigi' tool help to comprehend in large software systems?",
+        "options": [
+          "User interfaces",
+          "Software architecture",
+          "Testing frameworks",
+          "Database schemas"
+        ],
+        "answer": "Software architecture"
+      },
+      {
+        "question": "Which phase of the DBRE process recovers the conceptual schema that describes semantics underlying existing data structures?",
+        "options": [
+          "Data structure extraction",
+          "Data structure conceptualization",
+          "Physical schema generation",
+          "Logical schema validation"
+        ],
+        "answer": "Data structure conceptualization"
+      },
+      {
+        "question": "Which of the following is a key feature of 'McCabe IQ'?",
+        "options": [
+          "Predicting error‑prone sections of code",
+          "Reconstructing user interfaces",
+          "Generating UML diagrams",
+          "Automating refactoring"
+        ],
+        "answer": "Predicting error‑prone sections of code"
+      },
+      {
+        "question": "In reverse engineering, what does the 'ManSART' tool recover?",
+        "options": [
+          "Source code files",
+          "Software architecture",
+          "Database tables",
+          "Program executables"
+        ],
+        "answer": "Software architecture"
+      },
+      {
+        "question": "Which of these is NOT a major phase in reverse engineering tools’ basic structure?",
+        "options": [
+          "Analysis of the software system",
+          "Storage of analysis results",
+          "Automatic compilation",
+          "View composition"
+        ],
+        "answer": "Automatic compilation"
+      },
+      {
+        "question": "What type of data is recovered during 'Data Reverse Engineering'?",
+        "options": [
+          "User interface designs",
+          "Source code files",
+          "Data assets",
+          "Test cases"
+        ],
+        "answer": "Data assets"
+      },
+      {
+        "question": "Which tool is used for reverse engineering source code into a higher abstraction level of representation?",
+        "options": [
+          "RE-Analyzer",
+          "Reengineering Assistant (RA)",
+          "SEELA",
+          "JAD"
+        ],
+        "answer": "Reengineering Assistant (RA)"
+      },
+      {
+        "question": "In the forward design process, which phase is responsible for expressing the conceptual schema as a simple model suitable for optimization reasoning?",
+        "options": [
+          "Conceptual phase",
+          "Logical phase",
+          "Physical phase",
+          "Implementation phase"
+        ],
+        "answer": "Logical phase"
+      },
+      {
+        "question": "Which of the following is a direct result of a 'Database Reverse Engineering (DBRE)' process?",
+        "options": [
+          "Recreating the complete logical and conceptual schemas",
+          "Automatic generation of source code",
+          "Creating user interfaces",
+          "Generating test cases"
+        ],
+        "answer": "Recreating the complete logical and conceptual schemas"
+      },
+      {
+        "question": "Which tool provides a web‑based concept called Software Bookshelf for presentation navigation?",
+        "options": [
+          "PBS (Portable Bookshelf)",
+          "Rigi",
+          "JAD",
+          "SEELA"
+        ],
+        "answer": "PBS (Portable Bookshelf)"
+      },
+      {
+        "question": "What is the primary purpose of 'RE-Analyzer' in a reverse engineering project?",
+        "options": [
+          "To recover source code from binaries",
+          "To integrate with CASE tools",
+          "To generate documentation automatically",
+          "To debug applications"
+        ],
+        "answer": "To integrate with CASE tools"
+      },
+      {
+        "question": "Which of the following best describes 'SEELA'?",
+        "options": [
+          "A database reverse engineering tool",
+          "An architecture recovery tool",
+          "A reverse engineering tool for structured source code documentation and maintenance",
+          "A unit testing framework"
+        ],
+        "answer": "A reverse engineering tool for structured source code documentation and maintenance"
+      },
+      {
+        "question": "During the DBRE process, which phase focuses on extracting data structures from host language representation?",
+        "options": [
+          "Conceptualization",
+          "Data structure extraction",
+          "Physical schema mapping",
+          "Logical validation"
+        ],
+        "answer": "Data structure extraction"
+      },
+      {
+        "question": "Which of the following best describes 'Ada SDA'?",
+        "options": [
+          "A tool that supports analysis and migration of Ada programs",
+          "An automatic code generator",
+          "A database reverse engineering tool",
+          "The 1‑page summary of a database schema"
+        ],
+        "answer": "A tool that supports analysis and migration of Ada programs"
+      },
+      {
+        "question": "What does the reverse engineering process aim to produce?",
+        "options": [
+          "An exact binary copy of the existing system",
+          "New software from scratch",
+          "Alternative views or models of the original system",
+          "A fully automated code base"
+        ],
+        "answer": "Alternative views or models of the original system"
+      }
+    ]
+  }
+}

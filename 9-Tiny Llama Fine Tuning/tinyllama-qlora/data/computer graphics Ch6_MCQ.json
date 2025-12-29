@@ -1,0 +1,719 @@
+{
+  "filename": "Chapter 6 - Two-Dimensional Viewing.ppt",
+  "quiz": [
+    {
+      "question": "In 2D viewing, what is a window?",
+      "type": "mcq",
+      "options": [
+        "A rectangular area on the display device where objects are shown",
+        "A world-coordinate area selected for display",
+        "A device-independent coordinate system",
+        "A region where objects are permanently deleted"
+      ],
+      "answer": "A world-coordinate area selected for display",
+      "section": "Windowing Concepts",
+      "rate": "easy",
+      "suggestion": "Review the definition of a window in 2D viewing."
+    },
+    {
+      "question": "What is the purpose of clipping in computer graphics?",
+      "type": "mcq",
+      "options": [
+        "To resize images",
+        "To avoid drawing parts of primitives outside the window",
+        "To change the color of objects",
+        "To rotate objects for better display"
+      ],
+      "answer": "To avoid drawing parts of primitives outside the window",
+      "section": "Clipping",
+      "rate": "easy",
+      "suggestion": "Recall why clipping is performed during 2D viewing."
+    },
+    {
+      "question": "Which algorithm is known for efficiently clipping lines by reducing intersection calculations?",
+      "type": "mcq",
+      "options": [
+        "Brute Force Clipping",
+        "Cohen-Sutherland Clipping",
+        "Sutherland-Hodgman Clipping",
+        "Weiler-Atherton Clipping"
+      ],
+      "answer": "Cohen-Sutherland Clipping",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "easy",
+      "suggestion": "Recall the key advantage of the Cohen-Sutherland algorithm."
+    },
+    {
+      "question": "In Cohen-Sutherland clipping, what does a region code of 0000 indicate?",
+      "type": "mcq",
+      "options": [
+        "The point is above the window",
+        "The point is below the window",
+        "The point is completely inside the window",
+        "The point is completely outside the window"
+      ],
+      "answer": "The point is completely inside the window",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "easy",
+      "suggestion": "Review the meaning of the region codes in Cohen-Sutherland."
+    },
+    {
+      "question": "What is the viewport in 2D viewing?",
+      "type": "mcq",
+      "options": [
+        "The area in world coordinates to be displayed",
+        "The area on the display device where the window is mapped",
+        "The coordinate system used for modeling objects",
+        "A temporary storage for clipped objects"
+      ],
+      "answer": "The area on the display device where the window is mapped",
+      "section": "Windowing Concepts",
+      "rate": "easy",
+      "suggestion": "Review the difference between window and viewport."
+    },
+    {
+      "question": "Which clipping algorithm is specifically designed for clipping polygons?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Brute Force",
+        "Sutherland-Hodgman",
+        "Bresenham"
+      ],
+      "answer": "Sutherland-Hodgman",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall which algorithm is used for polygon (area) clipping."
+    },
+    {
+      "question": "In the Sutherland-Hodgman algorithm, what happens when a vertex moves from inside to outside the boundary?",
+      "type": "mcq",
+      "options": [
+        "Save the vertex",
+        "Save the intersection point",
+        "Discard the vertex",
+        "Save both vertex and intersection"
+      ],
+      "answer": "Save the intersection point",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Review the four cases of the Sutherland-Hodgman algorithm."
+    },
+    {
+      "question": "What does the Weiler-Atherton polygon clipping algorithm avoid?",
+      "type": "mcq",
+      "options": [
+        "Clipping lines",
+        "Degenerate polygons",
+        "Using region codes",
+        "Intersection calculations"
+      ],
+      "answer": "Degenerate polygons",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the advantages of the Weiler-Atherton algorithm."
+    },
+    {
+      "question": "In point clipping, a point (x, y) is inside the clip window if:",
+      "type": "mcq",
+      "options": [
+        "x < xwmin and y < ywmin",
+        "x >= xwmin and x <= xwmax and y >= ywmin and y <= ywmax",
+        "x > xwmax and y > ywmax",
+        "x = xwmin or x = xwmax"
+      ],
+      "answer": "x >= xwmin and x <= xwmax and y >= ywmin and y <= ywmax",
+      "section": "Point Clipping",
+      "rate": "easy",
+      "suggestion": "Review the condition for a point to be inside a rectangular window."
+    },
+    {
+      "question": "Which bit in the Cohen-Sutherland region code represents the area above the window?",
+      "type": "mcq",
+      "options": [
+        "Bit 1",
+        "Bit 2",
+        "Bit 3",
+        "Bit 4"
+      ],
+      "answer": "Bit 4",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the bit assignments: top, bottom, right, left."
+    },
+    {
+      "question": "What is the primary disadvantage of brute force line clipping?",
+      "type": "mcq",
+      "options": [
+        "It cannot clip polygons",
+        "It is computationally expensive",
+        "It only works for horizontal lines",
+        "It requires special hardware"
+      ],
+      "answer": "It is computationally expensive",
+      "section": "Brute Force Clipping",
+      "rate": "easy",
+      "suggestion": "Recall why brute force clipping is inefficient."
+    },
+    {
+      "question": "In the viewport transformation, what is (xv, yv) calculated from?",
+      "type": "mcq",
+      "options": [
+        "World coordinates only",
+        "Normalized device coordinates",
+        "Screen coordinates directly",
+        "Window coordinates and viewport dimensions"
+      ],
+      "answer": "Window coordinates and viewport dimensions",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Review the viewport transformation formula."
+    },
+    {
+      "question": "Which clipping method is used for text when either all characters are displayed or none?",
+      "type": "mcq",
+      "options": [
+        "All-or-none string clipping",
+        "Character-by-character clipping",
+        "Bitmap clipping",
+        "Region-based clipping"
+      ],
+      "answer": "All-or-none string clipping",
+      "section": "Text Clipping",
+      "rate": "medium",
+      "suggestion": "Recall the two common methods for text clipping."
+    },
+    {
+      "question": "In Cohen-Sutherland, if both endpoints have a '1' in the same bit position, the line is:",
+      "type": "mcq",
+      "options": [
+        "Completely inside",
+        "Partially inside",
+        "Completely outside",
+        "Intersecting the window"
+      ],
+      "answer": "Completely outside",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Review the trivial acceptance and rejection tests."
+    },
+    {
+      "question": "What does the Sutherland-Hodgman algorithm clip a polygon against?",
+      "type": "mcq",
+      "options": [
+        "One boundary at a time",
+        "All boundaries simultaneously",
+        "Only convex polygons",
+        "Only concave polygons"
+      ],
+      "answer": "One boundary at a time",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the sequential boundary processing in Sutherland-Hodgman."
+    },
+    {
+      "question": "Which algorithm is better suited for clipping concave polygons?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton",
+        "Brute Force"
+      ],
+      "answer": "Weiler-Atherton",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall which algorithm handles concave polygons without creating extra edges."
+    },
+    {
+      "question": "In the viewport transformation, what does 'normalization' refer to?",
+      "type": "mcq",
+      "options": [
+        "Converting to device coordinates",
+        "Mapping window coordinates to viewport coordinates",
+        "Scaling coordinates to a standard range",
+        "Clipping unnecessary objects"
+      ],
+      "answer": "Mapping window coordinates to viewport coordinates",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Review the normalization step in the viewing pipeline."
+    },
+    {
+      "question": "Which of the following is NOT a case in the Sutherland-Hodgman polygon clipping algorithm?",
+      "type": "mcq",
+      "options": [
+        "Both vertices in",
+        "Both vertices out",
+        "First vertex in, second out",
+        "First vertex above, second below"
+      ],
+      "answer": "First vertex above, second below",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the four standard cases of Sutherland-Hodgman."
+    },
+    {
+      "question": "What is the key idea behind Cohen-Sutherland line clipping?",
+      "type": "mcq",
+      "options": [
+        "Using parametric equations",
+        "Dividing space into regions and using bit codes",
+        "Recursively subdividing lines",
+        "Using floating-point arithmetic"
+      ],
+      "answer": "Dividing space into regions and using bit codes",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the core mechanism of Cohen-Sutherland."
+    },
+    {
+      "question": "Which coordinate system is used to define the window?",
+      "type": "mcq",
+      "options": [
+        "Screen coordinates",
+        "Device coordinates",
+        "World coordinates",
+        "Viewport coordinates"
+      ],
+      "answer": "World coordinates",
+      "section": "Windowing Concepts",
+      "rate": "easy",
+      "suggestion": "Recall where the window is defined."
+    },
+    {
+      "question": "If a line's endpoints have region codes 0000 and 0100, what does this indicate?",
+      "type": "mcq",
+      "options": [
+        "The line is completely inside",
+        "The line is completely outside",
+        "The line may partially intersect the window",
+        "The line is vertical"
+      ],
+      "answer": "The line may partially intersect the window",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall how to interpret different region codes for two endpoints."
+    },
+    {
+      "question": "What is the main challenge when clipping curves?",
+      "type": "mcq",
+      "options": [
+        "Determining region codes",
+        "Finding intersection points with boundaries",
+        "Handling degenerate cases",
+        "Using bit operations"
+      ],
+      "answer": "Finding intersection points with boundaries",
+      "section": "Other Area Clipping Concerns",
+      "rate": "hard",
+      "suggestion": "Recall the additional complexity in clipping curves like circles."
+    },
+    {
+      "question": "In text clipping, what does 'all-or-none character clipping' mean?",
+      "type": "mcq",
+      "options": [
+        "Only fully visible characters are displayed",
+        "The entire string is clipped if any part is outside",
+        "Each character is clipped individually",
+        "Text is never clipped"
+      ],
+      "answer": "Only fully visible characters are displayed",
+      "section": "Text Clipping",
+      "rate": "medium",
+      "suggestion": "Review the two common text clipping strategies."
+    },
+    {
+      "question": "Which of the following is a clipping concern for concave areas?",
+      "type": "mcq",
+      "options": [
+        "Superfluous lines may appear",
+        "Region codes cannot be computed",
+        "Lines become curves",
+        "Viewport transformation fails"
+      ],
+      "answer": "Superfluous lines may appear",
+      "section": "Other Area Clipping Concerns",
+      "rate": "hard",
+      "suggestion": "Recall the specific issue with clipping concave polygons."
+    },
+    {
+      "question": "What is the first step in the Weiler-Atherton clipping algorithm?",
+      "type": "mcq",
+      "options": [
+        "Traverse the window boundary",
+        "Start at the first inside vertex",
+        "Compute region codes",
+        "Divide the polygon into convex parts"
+      ],
+      "answer": "Start at the first inside vertex",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the sequence of steps in Weiler-Atherton clipping."
+    },
+    {
+      "question": "In the viewport transformation formula, what does (xvmax – xvmin) / (xwmax – xwmin) represent?",
+      "type": "mcq",
+      "options": [
+        "Scaling factor in x-direction",
+        "Translation in x-direction",
+        "Rotation angle",
+        "Shearing factor"
+      ],
+      "answer": "Scaling factor in x-direction",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Review the viewport transformation equations."
+    },
+    {
+      "question": "Which bit in Cohen-Sutherland represents the area to the left of the window?",
+      "type": "mcq",
+      "options": [
+        "Bit 1",
+        "Bit 2",
+        "Bit 3",
+        "Bit 4"
+      ],
+      "answer": "Bit 1",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the bit order: left, right, bottom, top."
+    },
+    {
+      "question": "What is the output of the Sutherland-Hodgman algorithm after processing all boundaries?",
+      "type": "mcq",
+      "options": [
+        "A set of clipped line segments",
+        "A new clipped polygon",
+        "A region code for each vertex",
+        "A transformed viewport"
+      ],
+      "answer": "A new clipped polygon",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the final output of polygon clipping algorithms."
+    },
+    {
+      "question": "Which algorithm requires calculating intersection points with window boundaries for most lines?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Brute Force",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton"
+      ],
+      "answer": "Brute Force",
+      "section": "Brute Force Clipping",
+      "rate": "easy",
+      "suggestion": "Recall why brute force clipping is inefficient."
+    },
+    {
+      "question": "In Cohen-Sutherland, which lines are processed by calculating intersections?",
+      "type": "mcq",
+      "options": [
+        "Lines completely inside",
+        "Lines completely outside",
+        "Lines that cannot be trivially accepted or rejected",
+        "Lines parallel to window edges"
+      ],
+      "answer": "Lines that cannot be trivially accepted or rejected",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the three categories of lines in Cohen-Sutherland."
+    },
+    {
+      "question": "What does clipping a concave polygon sometimes produce that must be removed?",
+      "type": "mcq",
+      "options": [
+        "Extra vertices",
+        "Superfluous lines",
+        "Incorrect colors",
+        "Out-of-range coordinates"
+      ],
+      "answer": "Superfluous lines",
+      "section": "Other Area Clipping Concerns",
+      "rate": "hard",
+      "suggestion": "Recall the specific issue with concave polygon clipping."
+    },
+    {
+      "question": "Which transformation maps the window to the viewport?",
+      "type": "mcq",
+      "options": [
+        "Viewport transformation",
+        "World transformation",
+        "Modeling transformation",
+        "Clipping transformation"
+      ],
+      "answer": "Viewport transformation",
+      "section": "Viewport Transformation",
+      "rate": "easy",
+      "suggestion": "Recall the name of the mapping from window to viewport."
+    },
+    {
+      "question": "In Sutherland-Hodgman, if both vertices are outside the boundary, what action is taken?",
+      "type": "mcq",
+      "options": [
+        "Save both vertices",
+        "Save the intersection",
+        "Save nothing",
+        "Save the first vertex"
+      ],
+      "answer": "Save nothing",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Review the four cases of Sutherland-Hodgman."
+    },
+    {
+      "question": "What is the primary benefit of the Cohen-Sutherland algorithm?",
+      "type": "mcq",
+      "options": [
+        "It clips polygons",
+        "It reduces intersection calculations",
+        "It works in 3D",
+        "It handles curves"
+      ],
+      "answer": "It reduces intersection calculations",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the efficiency gain of Cohen-Sutherland."
+    },
+    {
+      "question": "Which algorithm follows the window boundary after an intersection?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton",
+        "Brute Force"
+      ],
+      "answer": "Weiler-Atherton",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the unique 'following the boundary' step in Weiler-Atherton."
+    },
+    {
+      "question": "What is the condition for a point to be clipped in point clipping?",
+      "type": "mcq",
+      "options": [
+        "x < xwmin",
+        "x > xwmax or y < ywmin or y > ywmax",
+        "x = xwmin and y = ywmin",
+        "x and y are both zero"
+      ],
+      "answer": "x > xwmax or y < ywmin or y > ywmax",
+      "section": "Point Clipping",
+      "rate": "easy",
+      "suggestion": "Recall the condition for a point to be outside the window."
+    },
+    {
+      "question": "In the viewport transformation, what are (xw, yw)?",
+      "type": "mcq",
+      "options": [
+        "Viewport coordinates",
+        "World coordinates of a point in the window",
+        "Normalized coordinates",
+        "Device coordinates"
+      ],
+      "answer": "World coordinates of a point in the window",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Recall the variables used in the viewport transformation formula."
+    },
+    {
+      "question": "Which clipping algorithm uses the concept of 'turning right' at intersections?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton",
+        "Brute Force"
+      ],
+      "answer": "Weiler-Atherton",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the traversal rule in Weiler-Atherton."
+    },
+    {
+      "question": "What does the region code 1010 represent in Cohen-Sutherland?",
+      "type": "mcq",
+      "options": [
+        "Above and to the right of the window",
+        "Below and to the left of the window",
+        "Above and to the left of the window",
+        "Inside the window"
+      ],
+      "answer": "Above and to the right of the window",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall how bits correspond to positions: left, right, bottom, top."
+    },
+    {
+      "question": "In Sutherland-Hodgman, when moving from outside to inside, what is saved?",
+      "type": "mcq",
+      "options": [
+        "Only the vertex",
+        "Only the intersection",
+        "Both intersection and vertex",
+        "Nothing"
+      ],
+      "answer": "Both intersection and vertex",
+      "section": "Sutherland-Hodgman Area Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Review the four cases of Sutherland-Hodgman."
+    },
+    {
+      "question": "What is the main difference between window and viewport?",
+      "type": "mcq",
+      "options": [
+        "Window is in device coordinates, viewport in world coordinates",
+        "Window is what is viewed, viewport is where it is displayed",
+        "Window is for input, viewport for output",
+        "Window is always larger than viewport"
+      ],
+      "answer": "Window is what is viewed, viewport is where it is displayed",
+      "section": "Windowing Concepts",
+      "rate": "easy",
+      "suggestion": "Recall the fundamental distinction between window and viewport."
+    },
+    {
+      "question": "Which algorithm is an extension of the Sutherland-Hodgman algorithm to avoid extra vertices?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Weiler-Atherton",
+        "Extended H-S algorithm",
+        "Brute Force"
+      ],
+      "answer": "Extended H-S algorithm",
+      "section": "Extended H-S Algorithm",
+      "rate": "hard",
+      "suggestion": "Recall the extension that tags vertices to avoid duplicates."
+    },
+    {
+      "question": "In Cohen-Sutherland, what is done if a line is neither completely inside nor outside?",
+      "type": "mcq",
+      "options": [
+        "It is discarded",
+        "It is drawn entirely",
+        "It is subdivided and tested again",
+        "Its intersection with a boundary is calculated"
+      ],
+      "answer": "Its intersection with a boundary is calculated",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the process for non-trivial lines in Cohen-Sutherland."
+    },
+    {
+      "question": "What is the final stage in the 2D viewing pipeline after clipping?",
+      "type": "mcq",
+      "options": [
+        "Viewport transformation",
+        "World transformation",
+        "Modeling transformation",
+        "Projection"
+      ],
+      "answer": "Viewport transformation",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Recall the sequence of steps in 2D viewing."
+    },
+    {
+      "question": "Which algorithm is best for clipping polygons with holes?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton",
+        "Brute Force"
+      ],
+      "answer": "Weiler-Atherton",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall which algorithm handles complex polygons with holes."
+    },
+    {
+      "question": "In text clipping, what is a disadvantage of all-or-none string clipping?",
+      "type": "mcq",
+      "options": [
+        "It is too slow",
+        "It may clip entire strings unnecessarily",
+        "It requires complex calculations",
+        "It only works for monospaced fonts"
+      ],
+      "answer": "It may clip entire strings unnecessarily",
+      "section": "Text Clipping",
+      "rate": "medium",
+      "suggestion": "Recall the trade-offs between text clipping methods."
+    },
+    {
+      "question": "What is the primary data structure used in Weiler-Atherton clipping?",
+      "type": "mcq",
+      "options": [
+        "Bit codes",
+        "Linked lists of vertices",
+        "Arrays of region codes",
+        "Queues of intersection points"
+      ],
+      "answer": "Linked lists of vertices",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the data structure used to track vertices and intersections."
+    },
+    {
+      "question": "Which of the following is true about the viewport transformation?",
+      "type": "mcq",
+      "options": [
+        "It is a nonlinear transformation",
+        "It involves scaling and translation",
+        "It rotates objects to fit the screen",
+        "It is applied before clipping"
+      ],
+      "answer": "It involves scaling and translation",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Recall the mathematical operations in viewport transformation."
+    },
+    {
+      "question": "In Cohen-Sutherland, how many regions are created around the window?",
+      "type": "mcq",
+      "options": [
+        "4",
+        "8",
+        "9",
+        "16"
+      ],
+      "answer": "9",
+      "section": "Cohen-Sutherland Clipping Algorithm",
+      "rate": "medium",
+      "suggestion": "Recall the 3x3 division of space in Cohen-Sutherland."
+    },
+    {
+      "question": "What is the main purpose of the normalization step in viewing?",
+      "type": "mcq",
+      "options": [
+        "To convert to a standard coordinate range",
+        "To clip objects outside the window",
+        "To map to device coordinates",
+        "To apply geometric transformations"
+      ],
+      "answer": "To convert to a standard coordinate range",
+      "section": "Viewport Transformation",
+      "rate": "medium",
+      "suggestion": "Recall the role of normalization in the viewing pipeline."
+    },
+    {
+      "question": "Which clipping algorithm can handle self-intersecting polygons?",
+      "type": "mcq",
+      "options": [
+        "Cohen-Sutherland",
+        "Sutherland-Hodgman",
+        "Weiler-Atherton",
+        "Brute Force"
+      ],
+      "answer": "Weiler-Atherton",
+      "section": "Weiler-Atherton Polygon Clipping",
+      "rate": "hard",
+      "suggestion": "Recall the capability of Weiler-Atherton for complex polygons."
+    }
+  ]
+}

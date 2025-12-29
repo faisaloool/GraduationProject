@@ -1,0 +1,1048 @@
+{
+  "document": "Ch5_ network.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is one of the primary utilities of networking computers?",
+        "options": [
+          "Increased storage capacity",
+          "Sharing printers and exchanging data",
+          "Enhanced word processing capabilities",
+          "Improved computer hardware performance"
+        ],
+        "answer": "Sharing printers and exchanging data"
+      },
+      {
+        "question": "What does the Internet connect?",
+        "options": [
+          "Millions of computers",
+          "Only local area networks",
+          "Specific government systems",
+          "A limited number of devices"
+        ],
+        "answer": "Millions of computers"
+      },
+      {
+        "question": "Which of the following is a concern related to the World Wide Web?",
+        "options": [
+          "Hardware compatibility",
+          "Ethical perspectives on pornography",
+          "Software licensing",
+          "Computer processing speed"
+        ],
+        "answer": "Ethical perspectives on pornography"
+      },
+      {
+        "question": "What is a major issue discussed in the context of children and the Web?",
+        "options": [
+          "Internet speed",
+          "Access to educational content",
+          "Censorship and control",
+          "Hardware requirements"
+        ],
+        "answer": "Censorship and control"
+      },
+      {
+        "question": "What is a potential negative effect of the Internet?",
+        "options": [
+          "Decreased computer utility",
+          "Internet addiction",
+          "Reduced data exchange",
+          "Limited email access"
+        ],
+        "answer": "Internet addiction"
+      },
+      {
+        "question": "What happens to network utility as the number of users increases?",
+        "options": [
+          "It decreases linearly",
+          "It remains constant",
+          "It grows as the number of users squared",
+          "It decreases exponentially"
+        ],
+        "answer": "It grows as the number of users squared"
+      },
+      {
+        "question": "What is an email address used for?",
+        "options": [
+          "To identify a physical mailbox",
+          "To uniquely identify a cyberspace mailbox",
+          "To identify a computer's IP address",
+          "To identify a network router"
+        ],
+        "answer": "To uniquely identify a cyberspace mailbox"
+      },
+      {
+        "question": "How are email messages transferred between computers?",
+        "options": [
+          "As a single file",
+          "Broken into packets",
+          "Through physical mail",
+          "Via direct connection"
+        ],
+        "answer": "Broken into packets"
+      },
+      {
+        "question": "What role do routers play in email transfer?",
+        "options": [
+          "They create email messages",
+          "They store email messages",
+          "They transfer packets from sender’s mail server to receiver’s mail server",
+          "They encrypt email messages"
+        ],
+        "answer": "They transfer packets from sender’s mail server to receiver’s mail server"
+      },
+      {
+        "question": "What percentage of email was spam in 2001?",
+        "options": ["8%", "40%", "75%", "90%"],
+        "answer": "8%"
+      },
+      {
+        "question": "What percentage of email was spam in 2009?",
+        "options": ["8%", "40%", "75%", "90%"],
+        "answer": "90%"
+      },
+      {
+        "question": "Why is spam considered an effective marketing tool?",
+        "options": [
+          "It is expensive but highly targeted",
+          "It is a cheap way to advertise",
+          "It guarantees high response rates",
+          "It is legally required for all businesses"
+        ],
+        "answer": "It is a cheap way to advertise"
+      },
+      {
+        "question": "How much cheaper is spam compared to traditional junk mail?",
+        "options": [
+          "10 times cheaper",
+          "50 times cheaper",
+          "100 times cheaper",
+          "200 times cheaper"
+        ],
+        "answer": "100 times cheaper"
+      },
+      {
+        "question": "How do firms typically acquire email addresses for spam?",
+        "options": [
+          "By purchasing them from government databases",
+          "Through opt-in lists where users voluntarily provide their email",
+          "By hacking into private email servers",
+          "By randomly generating email addresses"
+        ],
+        "answer": "Through opt-in lists where users voluntarily provide their email"
+      },
+      {
+        "question": "What do viruses gather from PCs' address books?",
+        "options": [
+          "Email addresses",
+          "Passwords",
+          "Credit card details",
+          "Social security numbers"
+        ],
+        "answer": "Email addresses"
+      },
+      {
+        "question": "What is the purpose of dictionary attacks in the context of spam?",
+        "options": [
+          "To encrypt emails",
+          "To generate random email addresses",
+          "To guess common passwords or email addresses",
+          "To block spam emails"
+        ],
+        "answer": "To guess common passwords or email addresses"
+      },
+      {
+        "question": "Why do spammers change email and IP addresses?",
+        "options": [
+          "To increase email speed",
+          "To mask the sending machine",
+          "To reduce email costs",
+          "To comply with regulations"
+        ],
+        "answer": "To mask the sending machine"
+      },
+      {
+        "question": "What is a common method spammers use to launch spam?",
+        "options": [
+          "Using secure servers",
+          "Capturing another insecure system",
+          "Purchasing email lists legally",
+          "Sending emails manually"
+        ],
+        "answer": "Capturing another insecure system"
+      },
+      {
+        "question": "What is the primary function of spam blockers?",
+        "options": [
+          "To send spam emails",
+          "To screen out spam by blocking suspicious subject lines",
+          "To encrypt spam emails",
+          "To track spam sources"
+        ],
+        "answer": "To screen out spam by blocking suspicious subject lines"
+      },
+      {
+        "question": "What is the purpose of Trend Micro's Real-Time Blackhole List?",
+        "options": [
+          "To provide a database of IP addresses that send spam",
+          "To block all incoming emails from unknown senders",
+          "To encrypt emails for secure communication",
+          "To track the location of email marketers"
+        ],
+        "answer": "To provide a database of IP addresses that send spam"
+      },
+      {
+        "question": "What happens to unsecured mail servers that have been hijacked according to the text?",
+        "options": [
+          "They are automatically secured by Trend Micro",
+          "They may be blocked even if they are not spammers",
+          "They receive a warning before being blocked",
+          "They are removed from the internet"
+        ],
+        "answer": "They may be blocked even if they are not spammers"
+      },
+      {
+        "question": "Who does Trend Micro contact regarding violations of bulk email standards?",
+        "options": [
+          "Government agencies",
+          "Marketers who violate the standards",
+          "Internet service providers",
+          "Email recipients"
+        ],
+        "answer": "Marketers who violate the standards"
+      },
+      {
+        "question": "What is one ethical concern mentioned about publishing a blacklist?",
+        "options": [
+          "It may expose sensitive user data",
+          "It could block legitimate mail servers",
+          "It increases the cost of email services",
+          "It requires too much maintenance"
+        ],
+        "answer": "It could block legitimate mail servers"
+      },
+      {
+        "question": "What does Trend Micro do with the database of IP addresses that send spam?",
+        "options": [
+          "Deletes it after a week",
+          "Sells it to organizations",
+          "Publishes it for free",
+          "Uses it only for internal purposes"
+        ],
+        "answer": "Sells it to organizations"
+      },
+      {
+        "question": "According to social contract theory, what is a key issue with emails?",
+        "options": [
+          "Senders and receivers derive equal benefit",
+          "Senders benefit more than receivers",
+          "Receivers benefit more than senders",
+          "Emails are not part of the social contract"
+        ],
+        "answer": "Senders benefit more than receivers"
+      },
+      {
+        "question": "What is a utilitarian concern regarding blacklisting to combat spam?",
+        "options": [
+          "It increases internet utility for all users",
+          "It only affects spammers and not innocent users",
+          "It reduces internet utility by affecting innocent users and marketing firms",
+          "It has no impact on internet utility"
+        ],
+        "answer": "It reduces internet utility by affecting innocent users and marketing firms"
+      },
+      {
+        "question": "From a Kantian perspective, what is unethical about blacklisting to eliminate spam?",
+        "options": [
+          "It treats innocent users as a means to an end",
+          "It respects the autonomy of all users equally",
+          "It maximizes happiness for the greatest number",
+          "It is not a universalizable maxim"
+        ],
+        "answer": "It treats innocent users as a means to an end"
+      },
+      {
+        "question": "What is one proposed solution to the spam epidemic?",
+        "options": [
+          "Ban all email advertisements",
+          "Require an explicit opt-in from subscribers",
+          "Allow all emails without restrictions",
+          "Increase the cost of sending emails"
+        ],
+        "answer": "Require an explicit opt-in from subscribers"
+      },
+      {
+        "question": "What is another proposed solution to the spam epidemic?",
+        "options": [
+          "Encrypt all emails",
+          "Require labeling of email advertisements",
+          "Block all marketing firms",
+          "Limit the number of emails sent per day"
+        ],
+        "answer": "Require labeling of email advertisements"
+      },
+      {
+        "question": "What must be included in the subject line of commercial emails according to the text?",
+        "options": [
+          "The word 'Commercial'",
+          "The word 'ADS'",
+          "The word 'Spam'",
+          "The word 'Email'"
+        ],
+        "answer": "The word 'ADS'"
+      },
+      {
+        "question": "What is proposed to add to every email sent for ads?",
+        "options": [
+          "A tracking link",
+          "A micropayment",
+          "A survey",
+          "A promotional code"
+        ],
+        "answer": "A micropayment"
+      },
+      {
+        "question": "What is 'Spam' as described in the text?",
+        "options": [
+          "A wanted, individual instant message",
+          "An unwanted, bulk instant message",
+          "A promotional email",
+          "A personal message from a friend"
+        ],
+        "answer": "An unwanted, bulk instant message"
+      },
+      {
+        "question": "How do people combat spam according to the text?",
+        "options": [
+          "By accepting messages only from friends or buddies",
+          "By blocking all emails",
+          "By reporting every email as spam",
+          "By unsubscribing from all mailing lists"
+        ],
+        "answer": "By accepting messages only from friends or buddies"
+      },
+      {
+        "question": "What is needed to address the issue of spam according to the text?",
+        "options": [
+          "Only technical solutions",
+          "Only social solutions",
+          "Socio-technical solutions",
+          "No solutions are needed"
+        ],
+        "answer": "Socio-technical solutions"
+      },
+      {
+        "question": "What is an example of a new social situation emerging due to internet design?",
+        "options": [
+          "Online shopping",
+          "Spam emails",
+          "Video conferencing",
+          "Social media posts"
+        ],
+        "answer": "Spam emails"
+      },
+      {
+        "question": "Why is there a strong motivation to send more email messages?",
+        "options": [
+          "Because email messages are practically free",
+          "Because email messages are expensive",
+          "Because email messages are slow",
+          "Because email messages are encrypted"
+        ],
+        "answer": "Because email messages are practically free"
+      },
+      {
+        "question": "What is a key attribute of the websites mentioned?",
+        "options": [
+          "Centralized control",
+          "Decentralized nature",
+          "Requirement for a central authority",
+          "Limited unique addresses"
+        ],
+        "answer": "Decentralized nature"
+      },
+      {
+        "question": "What makes it difficult to control the Web?",
+        "options": [
+          "Its centralized nature",
+          "Its decentralized nature",
+          "Its lack of unique addresses",
+          "Its requirement for a central authority"
+        ],
+        "answer": "Its decentralized nature"
+      },
+      {
+        "question": "What does every Web object have?",
+        "options": [
+          "A shared address",
+          "A unique address (URL)",
+          "No address",
+          "A temporary address"
+        ],
+        "answer": "A unique address (URL)"
+      },
+      {
+        "question": "What is the basis of the system described in the text?",
+        "options": ["Television", "Internet", "Radio", "Newspaper"],
+        "answer": "Internet"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a requirement for the system?",
+        "options": [
+          "Browsers",
+          "Media for storage",
+          "Software for retrieving data",
+          "Printers"
+        ],
+        "answer": "Printers"
+      },
+      {
+        "question": "What is a wiki?",
+        "options": [
+          "A personal online journal",
+          "A website for online shopping",
+          "A website that allows easy creation and editing of interlinked web pages",
+          "A platform for promoting business"
+        ],
+        "answer": "A website that allows easy creation and editing of interlinked web pages"
+      },
+      {
+        "question": "Who usually maintains blogs according to the text?",
+        "options": [
+          "A group of authors",
+          "An individual with regular entries of commentary",
+          "A business organization",
+          "A government agency"
+        ],
+        "answer": "An individual with regular entries of commentary"
+      },
+      {
+        "question": "Which of the following activities is mentioned as a use of the web?",
+        "options": [
+          "Watching movies",
+          "Shopping",
+          "Playing video games",
+          "Listening to music"
+        ],
+        "answer": "Shopping"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a use of the Internet in the text?",
+        "options": ["E-learning", "E-commerce", "Entertainment", "Healthcare"],
+        "answer": "Healthcare"
+      },
+      {
+        "question": "What is the main concern addressed in the section 'Too Much Control or Too Little?'",
+        "options": [
+          "Internet speed",
+          "Internet access and censorship",
+          "Cost of Internet services",
+          "Internet security"
+        ],
+        "answer": "Internet access and censorship"
+      },
+      {
+        "question": "Which country is mentioned as having a centralized control center for the Internet?",
+        "options": [
+          "United States",
+          "Germany",
+          "Saudi Arabia",
+          "People’s Republic of China"
+        ],
+        "answer": "Saudi Arabia"
+      },
+      {
+        "question": "What is the 'self-discipline' agreement?",
+        "options": [
+          "An agreement to limit Internet speed",
+          "An agreement signed by ISPs in the People’s Republic of China",
+          "An agreement to promote Internet access",
+          "An agreement to ban all social media"
+        ],
+        "answer": "An agreement signed by ISPs in the People’s Republic of China"
+      },
+      {
+        "question": "What type of sites does Germany forbid access to, according to the text?",
+        "options": [
+          "Gambling sites",
+          "Neo-Nazi sites",
+          "Pornography sites",
+          "Social media sites"
+        ],
+        "answer": "Neo-Nazi sites"
+      },
+      {
+        "question": "What is the United States' repeated effort?",
+        "options": [
+          "Limiting access to gambling sites",
+          "Limiting access of minors to pornography",
+          "Promoting Internet access in rural areas",
+          "Banning all social media"
+        ],
+        "answer": "Limiting access of minors to pornography"
+      },
+      {
+        "question": "What is the main topic of the section 'Direct Censorship'?",
+        "options": [
+          "The benefits of Internet censorship",
+          "The attempt to control or suppress Internet content",
+          "The history of Internet censorship",
+          "The technical aspects of Internet censorship"
+        ],
+        "answer": "The attempt to control or suppress Internet content"
+      },
+      {
+        "question": "What is the main purpose of direct censorship?",
+        "options": [
+          "To promote freedom of speech",
+          "To suppress or regulate public access to material considered offensive or harmful",
+          "To increase media bandwidth",
+          "To encourage public debates"
+        ],
+        "answer": "To suppress or regulate public access to material considered offensive or harmful"
+      },
+      {
+        "question": "Which of the following is a form of direct censorship?",
+        "options": [
+          "Self-censorship",
+          "Prepublication review",
+          "Public debates",
+          "Media freedom"
+        ],
+        "answer": "Prepublication review"
+      },
+      {
+        "question": "What is the primary reason for prepublication review?",
+        "options": [
+          "To increase media bandwidth",
+          "To monitor government secrets",
+          "To promote public debates",
+          "To encourage freedom of speech"
+        ],
+        "answer": "To monitor government secrets"
+      },
+      {
+        "question": "What is the most common form of censorship?",
+        "options": [
+          "Government domination",
+          "Licensing and registration",
+          "Self-censorship",
+          "Prepublication review"
+        ],
+        "answer": "Self-censorship"
+      },
+      {
+        "question": "Why might a group engage in self-censorship?",
+        "options": [
+          "To increase media bandwidth",
+          "To avoid subsequent consequences",
+          "To promote public debates",
+          "To encourage freedom of speech"
+        ],
+        "answer": "To avoid subsequent consequences"
+      },
+      {
+        "question": "What is one of the challenges posed by the Internet according to the text?",
+        "options": [
+          "One-to-one communication",
+          "Many-to-many communication",
+          "Limited access to information",
+          "High cost of usage"
+        ],
+        "answer": "Many-to-many communication"
+      },
+      {
+        "question": "What is mentioned as a way to maintain good relations with government officials?",
+        "options": [
+          "Avoid offending the government",
+          "Provide financial incentives",
+          "Share confidential information",
+          "Ignore government policies"
+        ],
+        "answer": "Avoid offending the government"
+      },
+      {
+        "question": "What type of media is?",
+        "options": [
+          "Newspapers",
+          "Movies, TVs, CDs",
+          "Radio broadcasts",
+          "Podcasts"
+        ],
+        "answer": "Movies, TVs, CDs"
+      },
+      {
+        "question": "What is one of the issues related to content on the Web?",
+        "options": [
+          "Universal acceptance",
+          "Not universally accepted",
+          "Strict censorship",
+          "Complete freedom"
+        ],
+        "answer": "Not universally accepted"
+      },
+      {
+        "question": "What is mentioned as a method to control access to certain content on the Web?",
+        "options": [
+          "Ratings systems",
+          "Password protection",
+          "Geographic blocking",
+          "Time restrictions"
+        ],
+        "answer": "Ratings systems"
+      },
+      {
+        "question": "What is a challenge mentioned regarding the internet?",
+        "options": [
+          "Limited number of websites",
+          "Difficulty in monitoring all web pages",
+          "Few PCs connected yearly",
+          "Easy to determine user age"
+        ],
+        "answer": "Difficulty in monitoring all web pages"
+      },
+      {
+        "question": "What does the text say about the internet and national borders?",
+        "options": [
+          "It is confined within national borders",
+          "It extends beyond national borders",
+          "It is regulated by national laws only",
+          "It does not affect national laws"
+        ],
+        "answer": "It extends beyond national borders"
+      },
+      {
+        "question": "What is a problem with adult websites according to the text?",
+        "options": [
+          "They can easily confirm user age",
+          "They cannot confirm the age of users",
+          "They are always monitored",
+          "They are illegal everywhere"
+        ],
+        "answer": "They cannot confirm the age of users"
+      },
+      {
+        "question": "Who among the following opposed censorship according to the text?",
+        "options": ["Kant", "Plato", "Aristotle", "Socrates"],
+        "answer": "Kant"
+      },
+      {
+        "question": "What is a quote associated with Kant in the text?",
+        "options": [
+          "Knowledge is power",
+          "Have courage to use your own reason",
+          "I think therefore I am",
+          "The unexamined life is not worth living"
+        ],
+        "answer": "Have courage to use your own reason"
+      },
+      {
+        "question": "Which thinker is associated with the Enlightenment?",
+        "options": [
+          "Kant",
+          "Mill",
+          "Both Kant and Mill",
+          "Neither Kant nor Mill"
+        ],
+        "answer": "Kant"
+      },
+      {
+        "question": "What does the text say about Mill's view on censorship?",
+        "options": [
+          "He supported it",
+          "He opposed it",
+          "He was indifferent",
+          "He proposed strict laws"
+        ],
+        "answer": "He opposed it"
+      },
+      {
+        "question": "What does the term 'infallible' translate to in Arabic?",
+        "options": ["معصوم", "نواة", "التدخل", "إيذاء"],
+        "answer": "معصوم"
+      },
+      {
+        "question": "According to the text, what may any opinion (not the majority opinion) contain?",
+        "options": [
+          "A kernel of truth",
+          "The whole truth",
+          "No truth",
+          "Only falsehood"
+        ],
+        "answer": "A kernel of truth"
+      },
+      {
+        "question": "What is Mill’s Principle of Harm primarily concerned with?",
+        "options": [
+          "Preventing harm to others",
+          "Promoting individual good",
+          "Encouraging government intervention in all matters",
+          "Limiting freedom of expression"
+        ],
+        "answer": "Preventing harm to others"
+      },
+      {
+        "question": "When must the government intervene according to the text?",
+        "options": [
+          "When an individual's act harms others",
+          "When an individual's act benefits others",
+          "When an individual's act is unpopular",
+          "When an individual's act is legal"
+        ],
+        "answer": "When an individual's act harms others"
+      },
+      {
+        "question": "In which century is the history of Freedom of Expression?",
+        "options": [
+          "18th century",
+          "19th century",
+          "20th century",
+          "21st century"
+        ],
+        "answer": "18th century"
+      },
+      {
+        "question": "What could people be punished for in 18th century England and the colonies?",
+        "options": [
+          "Sedition or libel",
+          "Theft or robbery",
+          "Murder or assault",
+          "Tax evasion"
+        ],
+        "answer": "Sedition or libel"
+      },
+      {
+        "question": "What did the American states adopt regarding freedom of expression?",
+        "options": [
+          "Bills of rights",
+          "Strict censorship laws",
+          "No regulations",
+          "Mandatory licensing for publications"
+        ],
+        "answer": "Bills of rights"
+      },
+      {
+        "question": "Where is freedom of expression addressed in the U.S. Constitution?",
+        "options": [
+          "1st Amendment",
+          "2nd Amendment",
+          "5th Amendment",
+          "10th Amendment"
+        ],
+        "answer": "1st Amendment"
+      },
+      {
+        "question": "What was the purpose of including freedom of expression in the 1st Amendment?",
+        "options": [
+          "To discuss public issues",
+          "To protect private property",
+          "To regulate commerce",
+          "To establish a national religion"
+        ],
+        "answer": "To discuss public issues"
+      },
+      {
+        "question": "Is freedom of expression considered an absolute right?",
+        "options": [
+          "Yes, without any exceptions",
+          "No, it has limitations",
+          "Only in certain states",
+          "Only for government officials"
+        ],
+        "answer": "No, it has limitations"
+      },
+      {
+        "question": "What must the right to freedom of expression be balanced against?",
+        "options": [
+          "Private interests",
+          "The public good",
+          "Corporate profits",
+          "Government policies"
+        ],
+        "answer": "The public good"
+      },
+      {
+        "question": "What is one example of a restriction on freedom of expression for the public good?",
+        "options": [
+          "Ban on political debates",
+          "Ban on scientific research",
+          "Ban on cigarette advertising on TV",
+          "Ban on all forms of art"
+        ],
+        "answer": "Ban on cigarette advertising on TV"
+      },
+      {
+        "question": "What is a Web filter?",
+        "options": [
+          "A tool to speed up internet browsing",
+          "Software that prevents display of certain Web pages",
+          "A device to block viruses",
+          "A program to track online activity"
+        ],
+        "answer": "Software that prevents display of certain Web pages"
+      },
+      {
+        "question": "Where can a Web filter be installed?",
+        "options": [
+          "Only on government servers",
+          "Only on school computers",
+          "On an individual PC",
+          "Only on mobile devices"
+        ],
+        "answer": "On an individual PC"
+      },
+      {
+        "question": "What is an Internet Service Provider (ISP)?",
+        "options": [
+          "A company that provides web access",
+          "A company that manufactures computers",
+          "A company that develops software",
+          "A company that sells mobile phones"
+        ],
+        "answer": "A company that provides web access"
+      },
+      {
+        "question": "Which of the following services might an ISP provide?",
+        "options": [
+          "Email services",
+          "Domain registration",
+          "Web hosting",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is a 'black list' in the context of ISPs?",
+        "options": [
+          "A list of trusted websites",
+          "A list of objectionable sites",
+          "A list of popular websites",
+          "A list of search engines"
+        ],
+        "answer": "A list of objectionable sites"
+      },
+      {
+        "question": "What is one method ISPs use to filter objectionable content?",
+        "options": [
+          "Blocking all websites",
+          "Examining content for objectionable words/phrases",
+          "Encrypting all web traffic",
+          "Disabling email services"
+        ],
+        "answer": "Examining content for objectionable words/phrases"
+      },
+      {
+        "question": "What issue is related to breaking trust on the Internet?",
+        "options": [
+          "Identity Theft",
+          "Software Piracy",
+          "Data Mining",
+          "Cloud Computing"
+        ],
+        "answer": "Identity Theft"
+      },
+      {
+        "question": "What is identity theft in the context of electronic identity?",
+        "options": [
+          "Using someone else's physical identity",
+          "Using someone else's electronic identity",
+          "Creating a fake electronic identity",
+          "Stealing physical documents"
+        ],
+        "answer": "Using someone else's electronic identity"
+      },
+      {
+        "question": "What is phishing?",
+        "options": [
+          "A type of fishing activity",
+          "Use of email or Web pages to deceive people into revealing personal information",
+          "A method of hacking into computers",
+          "A type of virus"
+        ],
+        "answer": "Use of email or Web pages to deceive people into revealing personal information"
+      },
+      {
+        "question": "What might a fake PayPal site ask you to do?",
+        "options": [
+          "Update your software",
+          "Disclose personal information because your card is about to expire",
+          "Download a new app",
+          "Change your password"
+        ],
+        "answer": "Disclose personal information because your card is about to expire"
+      },
+      {
+        "question": "What is a chat room predator?",
+        "options": [
+          "Someone who hunts animals in chat rooms",
+          "Someone who supports real-time discussions among many people",
+          "Someone who uses chat rooms to deceive or harm others",
+          "A type of chat room moderator"
+        ],
+        "answer": "Someone who uses chat rooms to deceive or harm others"
+      },
+      {
+        "question": "Which of the following messaging apps are?",
+        "options": [
+          "Messenger, Snap, WhatsApp, Telegram",
+          "Messenger, Snap, WhatsApp, Teams",
+          "Messenger, Snap, WhatsApp, BOTIM",
+          "Messenger, Snap, WhatsApp, Skype"
+        ],
+        "answer": "Messenger, Snap, WhatsApp, BOTIM"
+      },
+      {
+        "question": "How do some pedophiles meet according to the text?",
+        "options": [
+          "Through social media platforms",
+          "Through chat rooms",
+          "Through online gaming",
+          "Through email"
+        ],
+        "answer": "Through chat rooms"
+      },
+      {
+        "question": "What method do police use to counter pedophiles in chat rooms?",
+        "options": [
+          "Monitoring chat rooms",
+          "Sting operations",
+          "Banning chat rooms",
+          "Public awareness campaigns"
+        ],
+        "answer": "Sting operations"
+      },
+      {
+        "question": "What is mentioned about the quality of web-based information?",
+        "options": [
+          "It is always reliable",
+          "It varies widely",
+          "It is mostly false",
+          "It is controlled by governments"
+        ],
+        "answer": "It varies widely"
+      },
+      {
+        "question": "What historical event is?",
+        "options": [
+          "World War I",
+          "Moon landings",
+          "The Renaissance",
+          "The Industrial Revolution"
+        ],
+        "answer": "Moon landings"
+      },
+      {
+        "question": "What does Google attempt to reward according to the text?",
+        "options": [
+          "Quantity of information",
+          "Speed of information",
+          "Quality of information",
+          "Popularity of information"
+        ],
+        "answer": "Quality of information"
+      },
+      {
+        "question": "How many web pages does Google's database keep according to the text?",
+        "options": ["1 million", "8 million", "100 million", "1 billion"],
+        "answer": "8 million"
+      },
+      {
+        "question": "What method does Google use to rank web pages?",
+        "options": [
+          "Alphabetical order",
+          "Voting algorithm",
+          "Random selection",
+          "User reviews"
+        ],
+        "answer": "Voting algorithm"
+      },
+      {
+        "question": "According to the text, what does the Google search engine use to rank a page higher?",
+        "options": [
+          "The number of images on the page",
+          "The number of links pointing to the page",
+          "The length of the page's content",
+          "The number of keywords on the page"
+        ],
+        "answer": "The number of links pointing to the page"
+      },
+      {
+        "question": "What is the traditional definition of addiction as?",
+        "options": [
+          "Occasional use of a substance",
+          "Compulsive use of a harmful substance or drug",
+          "Using a substance without knowing its effects",
+          "Using a substance for medical purposes"
+        ],
+        "answer": "Compulsive use of a harmful substance or drug"
+      },
+      {
+        "question": "Who created the test for Internet addiction?",
+        "options": [
+          "Mark Zuckerberg",
+          "Kimberly Young",
+          "Bill Gates",
+          "Steve Jobs"
+        ],
+        "answer": "Kimberly Young"
+      },
+      {
+        "question": "How many questions are in Kimberly Young's test for Internet addiction?",
+        "options": ["5", "8", "10", "12"],
+        "answer": "8"
+      },
+      {
+        "question": "According to Kimberly Young's test, how many 'yes' answers indicate Internet addiction?",
+        "options": ["3", "5", "7", "9"],
+        "answer": "5"
+      },
+      {
+        "question": "What is the nature of Kimberly Young's test for Internet addiction as per the text?",
+        "options": [
+          "Widely accepted",
+          "Controversial",
+          "Outdated",
+          "Scientific"
+        ],
+        "answer": "Controversial"
+      },
+      {
+        "question": "What does the term 'نعم' signify in the context of the text?",
+        "options": ["Happiness", "Addiction", "Success", "Friendship"],
+        "answer": "Addiction"
+      },
+      {
+        "question": "Which of the following is NOT mentioned as a contributing factor to computer addiction?",
+        "options": [
+          "Peer groups",
+          "Stress",
+          "Excessive wealth",
+          "Lack of social support"
+        ],
+        "answer": "Excessive wealth"
+      },
+      {
+        "question": "What individual factor is associated with following activities to excess?",
+        "options": [
+          "Fear of failure",
+          "Lack of achievement",
+          "Tendency to follow activities to excess",
+          "A feeling of isolation"
+        ],
+        "answer": "Tendency to follow activities to excess"
+      },
+      {
+        "question": "Which situational factor is mentioned as contributing to computer addiction?",
+        "options": [
+          "Peer groups",
+          "Stress",
+          "Lack of achievement",
+          "Fear of failure"
+        ],
+        "answer": "Stress"
+      }
+    ]
+  }
+}

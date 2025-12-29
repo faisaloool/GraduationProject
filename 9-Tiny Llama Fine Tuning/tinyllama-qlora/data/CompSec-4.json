@@ -1,0 +1,158 @@
+{
+  "document": "CH04-CompSec4e.pptx - Chapter 4: Access Control",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What does NISTIR 7298 define access control as?",
+        "options": [
+          "The process of encrypting data",
+          "The process of authenticating users",
+          "The process of granting or denying specific requests for information and facility access",
+          "The process of creating security policies"
+        ],
+        "answer": "The process of granting or denying specific requests for information and facility access"
+      },
+      {
+        "question": "What does DAC stand for in access control?",
+        "options": [
+          "Digital Access Control",
+          "Discretionary Access Control",
+          "Dynamic Access Control",
+          "Distributed Access Control"
+        ],
+        "answer": "Discretionary Access Control"
+      },
+      {
+        "question": "Which access control policy compares security labels with security clearances?",
+        "options": [
+          "Role-based access control (RBAC)",
+          "Attribute-based access control (ABAC)",
+          "Discretionary access control (DAC)",
+          "Mandatory access control (MAC)"
+        ],
+        "answer": "Mandatory access control (MAC)"
+      },
+      {
+        "question": "What is a protection domain?",
+        "options": [
+          "A type of firewall",
+          "A set of objects with access rights to those objects",
+          "A user authentication method",
+          "An encryption algorithm"
+        ],
+        "answer": "A set of objects with access rights to those objects"
+      },
+      {
+        "question": "How many protection bits does traditional UNIX file access control use?",
+        "options": [
+          "8 bits",
+          "12 bits",
+          "16 bits",
+          "24 bits"
+        ],
+        "answer": "12 bits"
+      },
+      {
+        "question": "What does the sticky bit do when applied to a directory in UNIX?",
+        "options": [
+          "Encrypts all files in the directory",
+          "Only the owner can rename, move, or delete their files in the directory",
+          "Makes all files in the directory read-only",
+          "Hides the directory from all users"
+        ],
+        "answer": "Only the owner can rename, move, or delete their files in the directory"
+      },
+      {
+        "question": "What is the superuser in UNIX?",
+        "options": [
+          "A user with limited privileges",
+          "A user exempt from usual access control restrictions",
+          "A user who can only read files",
+          "A temporary user account"
+        ],
+        "answer": "A user exempt from usual access control restrictions"
+      },
+      {
+        "question": "What does RBAC control access based on?",
+        "options": [
+          "User identity only",
+          "User roles and rules stating what accesses are allowed",
+          "Security labels and clearances",
+          "Environmental conditions only"
+        ],
+        "answer": "User roles and rules stating what accesses are allowed"
+      },
+      {
+        "question": "What does ABAC control access based on?",
+        "options": [
+          "User identity only",
+          "User roles only",
+          "Attributes of the user, resource, and environmental conditions",
+          "Security labels only"
+        ],
+        "answer": "Attributes of the user, resource, and environmental conditions"
+      },
+      {
+        "question": "What does ICAM stand for?",
+        "options": [
+          "Internet Certificate Access Management",
+          "Identity, Credential, and Access Management",
+          "Integrated Control Access Module",
+          "International Certificate Authority Management"
+        ],
+        "answer": "Identity, Credential, and Access Management"
+      },
+      {
+        "question": "What is a credential in ICAM?",
+        "options": [
+          "A user's password",
+          "An object that binds an identity to a token",
+          "An access control list",
+          "A security policy document"
+        ],
+        "answer": "An object that binds an identity to a token"
+      },
+      {
+        "question": "What does identity federation address?",
+        "options": [
+          "How to create new user accounts",
+          "How to trust identities from external organizations",
+          "How to encrypt all user data",
+          "How to delete old user accounts"
+        ],
+        "answer": "How to trust identities from external organizations"
+      },
+      {
+        "question": "What do constraints provide in RBAC?",
+        "options": [
+          "A way to limit system performance",
+          "A means of adapting RBAC to specific organizational policies",
+          "A method to encrypt access control data",
+          "A way to slow down access requests"
+        ],
+        "answer": "A means of adapting RBAC to specific organizational policies"
+      },
+      {
+        "question": "In the access matrix model, what do the columns typically represent?",
+        "options": [
+          "Users or subjects",
+          "Objects or resources",
+          "Access rights",
+          "Security levels"
+        ],
+        "answer": "Objects or resources"
+      },
+      {
+        "question": "What is the purpose of SetUID in UNIX?",
+        "options": [
+          "To change file ownership permanently",
+          "To temporarily use rights of the file owner for privileged programs",
+          "To encrypt user IDs",
+          "To delete user accounts"
+        ],
+        "answer": "To temporarily use rights of the file owner for privileged programs"
+      }
+    ]
+  }
+}

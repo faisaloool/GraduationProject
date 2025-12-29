@@ -1,0 +1,178 @@
+{
+  "document": "Chapter2-PhysicalLayer (1).pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "Which layer serves as the foundation for the other layers in the network model?",
+        "options": [
+          "Physical Layer",
+          "Data Link Layer",
+          "Network Layer",
+          "Transport Layer"
+        ],
+        "answer": "Physical Layer"
+      },
+      {
+        "question": "Which of the following is NOT a type of guided transmission media?",
+        "options": [
+          "Twisted Pair",
+          "Fiber Optics",
+          "Satellites",
+          "Coaxial Cable"
+        ],
+        "answer": "Satellites"
+      },
+      {
+        "question": "The process of sending digital bits using analog signals is referred to as:",
+        "options": [
+          "Demodulation",
+          "Amplification",
+          "Modulation",
+          "Encapsulation"
+        ],
+        "answer": "Modulation"
+      },
+      {
+        "question": "What is the primary purpose of the 'twists' in a twisted pair cable?",
+        "options": [
+          "To increase the flexibility of the wire",
+          "To reduce electromagnetic interference and radiated signals",
+          "To increase the total length of the cable",
+          "To separate the positive and negative voltages"
+        ],
+        "answer": "To reduce electromagnetic interference and radiated signals"
+      },
+      {
+        "question": "Which type of link allows for data transmission in both directions simultaneously?",
+        "options": [
+          "Simplex link",
+          "Half-duplex link",
+          "Full-duplex link",
+          "Point-to-point link"
+        ],
+        "answer": "Full-duplex link"
+      },
+      {
+        "question": "What is the defining characteristic of a half-duplex link?",
+        "options": [
+          "Transmission in only one fixed direction",
+          "Transmission in both directions, but not at the same time",
+          "Transmission using fiber optics only",
+          "Transmission using only one wire for both directions"
+        ],
+        "answer": "Transmission in both directions, but not at the same time"
+      },
+      {
+        "question": "Which physical phenomenon is responsible for keeping light trapped inside a fiber optic core?",
+        "options": [
+          "Refraction",
+          "Diffraction",
+          "Total internal reflection",
+          "Dispersion"
+        ],
+        "answer": "Total internal reflection"
+      },
+      {
+        "question": "What is the typical core size of a single-mode fiber cable, used for long-distance transmission?",
+        "options": ["50 microns", "10 microns", "100 microns", "1 micron"],
+        "answer": "10 microns"
+      },
+      {
+        "question": "Which light source is typically paired with multi-mode fiber for shorter, cost-effective links?",
+        "options": [
+          "Lasers",
+          "LEDs",
+          "Incandescent bulbs",
+          "Fluorescent pulses"
+        ],
+        "answer": "LEDs"
+      },
+      {
+        "question": "Which wireless band is primarily utilized for wide-area broadcast and penetrates buildings well?",
+        "options": ["Radio", "Microwave", "Infrared", "Ultraviolet"],
+        "answer": "Radio"
+      },
+      {
+        "question": "What is a significant disadvantage of wireless transmission compared to wired media?",
+        "options": [
+          "High cost of initial deployment",
+          "Signals interfere and must be strictly managed",
+          "Inability to support mobility",
+          "Limited to line-of-sight only at all frequencies"
+        ],
+        "answer": "Signals interfere and must be strictly managed"
+      },
+      {
+        "question": "At what altitude do Geostationary (GEO) satellites orbit to appear stationary from Earth?",
+        "options": ["500 km", "35,000 km", "1,000 km", "10,000 km"],
+        "answer": "35,000 km"
+      },
+      {
+        "question": "Which multiplexing technique divides the available transmission time on a medium among users?",
+        "options": [
+          "Frequency Division Multiplexing",
+          "Time Division Multiplexing",
+          "Code Division Multiplexing",
+          "Wavelength Division Multiplexing"
+        ],
+        "answer": "Time Division Multiplexing"
+      },
+      {
+        "question": "What is a drawback of Synchronous TDM?",
+        "options": [
+          "It is too complex to implement in digital systems",
+          "It wastes bandwidth if a device has no data to transmit during its slot",
+          "It requires different frequencies for every user",
+          "It only works with analog signals"
+        ],
+        "answer": "It wastes bandwidth if a device has no data to transmit during its slot"
+      },
+      {
+        "question": "How does Statistical Time Division Multiplexing (STDM) improve efficiency over Synchronous TDM?",
+        "options": [
+          "By using wider frequency bands",
+          "By only transmitting data from active workstations",
+          "By eliminating the need for addresses in the frame",
+          "By requiring all users to transmit at the same speed"
+        ],
+        "answer": "By only transmitting data from active workstations"
+      },
+      {
+        "question": "Which technique is specifically an optical version of FDM used in fiber optic cables?",
+        "options": ["TDM", "WDM", "CDMA", "DMT"],
+        "answer": "WDM"
+      },
+      {
+        "question": "In Code Division Multiple Access (CDMA), how is a binary '0' typically transmitted?",
+        "options": [
+          "As the unique spreading code",
+          "As the mathematical inverse of the unique code",
+          "As zero volts (no signal)",
+          "As a random noise sequence"
+        ],
+        "answer": "As the mathematical inverse of the unique code"
+      },
+      {
+        "question": "Which modulation technique is commonly used for each subchannel in Discrete Multitone (DMT) systems like DSL?",
+        "options": [
+          "Frequency Modulation (FM)",
+          "Quadrature Amplitude Modulation (QAM)",
+          "Amplitude Modulation (AM)",
+          "Phase Shift Keying (PSK)"
+        ],
+        "answer": "Quadrature Amplitude Modulation (QAM)"
+      },
+      {
+        "question": "What is the primary benefit of data compression on a communications line?",
+        "options": [
+          "It increases the security of the transmission",
+          "It reduces the transfer time for a given file size",
+          "It prevents signal attenuation over long distances",
+          "It allows the use of cheaper copper wires instead of fiber"
+        ],
+        "answer": "It reduces the transfer time for a given file size"
+      }
+    ]
+  }
+}

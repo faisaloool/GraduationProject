@@ -1,0 +1,218 @@
+{
+  "document": "Software Evolution and Maintenance Models",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best describes the traditional Software Development Life Cycle (SDLC) as presented in Chapter 3?",
+        "options": [
+          "Two discrete phases: development and maintenance",
+          "Three continuous phases: design, coding, testing",
+          "Four overlapping phases: requirements, design, build, test",
+          "One phase that includes all activities"
+        ],
+        "answer": "Two discrete phases: development and maintenance"
+      },
+      {
+        "question": "What proportion of a product’s life‑span is typically spent on maintenance?",
+        "options": [
+          "Approximately one–third",
+          "About half",
+          "One–second",
+          "Nearly all of it"
+        ],
+        "answer": "Approximately one–third"
+      },
+      {
+        "question": "Which statement best captures a unique characteristic of software maintenance?",
+        "options": [
+          "Maintenance is performed on an operational system, so changes must respect existing constraints",
+          "Maintenance is typically longer than development cycles",
+          "Test data for maintenance is always created from scratch",
+          "Maintenance does not require regression testing"
+        ],
+        "answer": "Maintenance is performed on an operational system, so changes must respect existing constraints"
+      },
+      {
+        "question": "In Basili’s ‘Quick Fix Model’ what happens first?",
+        "options": [
+          "Source code is modified to fix the problem",
+          "Documentation is updated before coding",
+          "A full design review occurs first",
+          "Regression tests are run first"
+        ],
+        "answer": "Source code is modified to fix the problem"
+      },
+      {
+        "question": "The ‘Iterative Enhancement Model’ starts by revising which type of artifact?",
+        "options": [
+          "Highest‑level documents (requirements and design)",
+          "Lowest‑level source code files",
+          "User manuals only",
+          "Test case libraries"
+        ],
+        "answer": "Highest‑level documents (requirements and design)"
+      },
+      {
+        "question": "Which of the following is NOT an activity in the ‘Full Reuse Model’?",
+        "options": [
+          "Identify components that are candidates for reuse",
+          "Modify components to support new requirements",
+          "Integrate modified components into a new system",
+          "Create a brand‑new design from scratch"
+        ],
+        "answer": "Create a brand‑new design from scratch"
+      },
+      {
+        "question": "According to the staged model of CSS, what is the first stage called?",
+        "options": [
+          "Initial development",
+          "Evolution",
+          "Servicing",
+          "Phase out"
+        ],
+        "answer": "Initial development"
+      },
+      {
+        "question": "In the staged model for FLOSS systems, which transition does NOT appear in the diagram?",
+        "options": [
+          "From Servicing to Evolution",
+          "From Phase out to Evolution",
+          "From Initial development to Servicing",
+          "From Evolution to Phase out"
+        ],
+        "answer": "From Evolution to Phase out"
+      },
+      {
+        "question": "What is the primary purpose of the Change Mini‑Cycle model?",
+        "options": [
+          "To describe how a change may introduce new requirements or alter existing ones",
+          "To provide a detailed test plan for regression testing",
+          "To define the phases of a software release cycle",
+          "To schedule maintenance activities"
+        ],
+        "answer": "To describe how a change may introduce new requirements or alter existing ones"
+      },
+      {
+        "question": "Which of the following is NOT one of the seven phases in IEEE/EIA 1219?",
+        "options": [
+          "Problem identification",
+          "Design",
+          "Implementation",
+          "Deployment"
+        ],
+        "answer": "Deployment"
+      },
+      {
+        "question": "In IEEE/EIA 1219, which phase follows ‘System Test’?",
+        "options": [
+          "Acceptance Test",
+          "Delivery",
+          "Problem Identification",
+          "Implementation"
+        ],
+        "answer": "Acceptance Test"
+      },
+      {
+        "question": "What activity is performed during the Implementation phase of IEEE/EIA 1219?",
+        "options": [
+          "Writing new code and performing unit testing",
+          "Integrating changed code only",
+          "Creating a test suite for the new design",
+          "Reviewing risk analysis only"
+        ],
+        "answer": "Writing new code and performing unit testing"
+      },
+      {
+        "question": "ISO/IEC 14764 describes maintenance as?",
+        "options": [
+          "An iterative process for managing and executing activities",
+          "A single‑phase linear cycle",
+          "A set of static documentation tasks",
+          "A process that only handles releases"
+        ],
+        "answer": "An iterative process for managing and executing activities"
+      },
+      {
+        "question": "Which activity is NOT part of ISO/IEC 14764’s maintenance process?",
+        "options": [
+          "Process Implementation",
+          "Problem and Modification Analysis",
+          "Modification Implementation",
+          "User Training Program"
+        ],
+        "answer": "User Training Program"
+      },
+      {
+        "question": "Software Configuration Management (SCM) is primarily concerned with controlling what?",
+        "options": [
+          "All product items and their changes over time",
+          "Only source code files",
+          "Just the executable binaries",
+          "The user interface design"
+        ],
+        "answer": "All product items and their changes over time"
+      },
+      {
+        "question": "Which of the following is NOT a benefit of effective SCM?",
+        "options": [
+          "Reduced confusion in versioning",
+          "Higher quality software with less maintenance effort",
+          "Increased productivity due to better control",
+          "More frequent releases regardless of change size"
+        ],
+        "answer": "More frequent releases regardless of change size"
+      },
+      {
+        "question": "SCM’s spectrum of functionality includes which category?",
+        "options": [
+          "Product",
+          "Tool",
+          "Process",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "The change request (CR) workflow is primarily designed to:",
+        "options": [
+          "Uniquely identify, describe and track each change",
+          "Schedule releases in a changelog",
+          "Automate all testing activities",
+          "Track only the defects discovered during maintenance"
+        ],
+        "answer": "Uniquely identify, describe and track each change"
+      },
+      {
+        "question": "Which state is NOT part of the CR life‑cycle diagram?",
+        "options": [
+          "Proposed",
+          "Approved … ",
+          "Rejected ? ",
+          "Implemented — "
+        ],
+        "answer": "Implemented — "
+      },
+      {
+        "question": "In a change request, what does 'CR' stand for?",
+        "options": [
+          "Change Request",
+          "Corrective Release",
+          "Critical Requirement",
+          "Configuration Review"
+        ],
+        "answer": "Change Request"
+      },
+      {
+        "question": "Which activity in ISO/IEC 14764 is responsible for ‘migration’?",
+        "options": [
+          "Process Implementation",
+          "Modification Implementation",
+          "Migration",
+          "Retention"
+        ],
+        "answer": "Migration"
+      }
+    ]
+  }
+}

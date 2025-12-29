@@ -1,0 +1,565 @@
+{
+  "filename": "Chapter 1 - Introduction.ppt",
+  "quiz": [
+    {
+      "question": "What does computer graphics primarily deal with?",
+      "type": "mcq",
+      "options": [
+        "Production, manipulation, and display of images using computers",
+        "Processing numerical data for scientific calculations",
+        "Designing computer hardware components",
+        "Managing operating systems"
+      ],
+      "answer": "Production, manipulation, and display of images using computers",
+      "section": "What is Computer Graphics?",
+      "rate": "easy",
+      "suggestion": "Focus on the formal definition of computer graphics"
+    },
+    {
+      "question": "Which device is NOT mentioned as an output medium for computer graphics?",
+      "type": "mcq",
+      "options": [
+        "Screens",
+        "Hardcopy devices",
+        "Printers",
+        "Plotters"
+      ],
+      "answer": "Printers",
+      "section": "What is Computer Graphics?",
+      "rate": "easy",
+      "suggestion": "Review output devices mentioned explicitly"
+    },
+    {
+      "question": "Which field is NOT listed as an application of computer graphics?",
+      "type": "mcq",
+      "options": [
+        "Movies",
+        "Games",
+        "Agricultural irrigation control",
+        "Advertising"
+      ],
+      "answer": "Agricultural irrigation control",
+      "section": "Applications of CG",
+      "rate": "easy",
+      "suggestion": "Memorize listed application fields"
+    },
+    {
+      "question": "What does CAD stand for in computer graphics?",
+      "type": "mcq",
+      "options": [
+        "Computer Aided Design",
+        "Computer Assisted Drawing",
+        "Centralized Art Development",
+        "Computer Animated Design"
+      ],
+      "answer": "Computer Aided Design",
+      "section": "Computer Aided Design",
+      "rate": "easy",
+      "suggestion": "Remember common abbreviations"
+    },
+    {
+      "question": "In CAD systems, objects are often initially displayed as:",
+      "type": "mcq",
+      "options": [
+        "Wireframe outlines",
+        "Photorealistic textures",
+        "Bitmap images",
+        "Raster scans"
+      ],
+      "answer": "Wireframe outlines",
+      "section": "Computer Aided Design",
+      "rate": "medium",
+      "suggestion": "Understand visualization techniques in CAD"
+    },
+    {
+      "question": "Which feature allows CAD software to display multiple views simultaneously?",
+      "type": "mcq",
+      "options": [
+        "Multi-window environment",
+        "Layer compositing",
+        "Texture mapping",
+        "Rasterization"
+      ],
+      "answer": "Multi-window environment",
+      "section": "Computer Aided Design",
+      "rate": "medium",
+      "suggestion": "Review CAD software characteristics"
+    },
+    {
+      "question": "Presentation graphics are mainly used to:",
+      "type": "mcq",
+      "options": [
+        "Summarize data visually",
+        "Design 3D game characters",
+        "Edit video footage",
+        "Simulate physical systems"
+      ],
+      "answer": "Summarize data visually",
+      "section": "Presentation Graphics",
+      "rate": "easy",
+      "suggestion": "Focus on purpose, not tools"
+    },
+    {
+      "question": "Which of the following is an example of presentation graphics?",
+      "type": "mcq",
+      "options": [
+        "Bar charts",
+        "3D animation rigs",
+        "Physics engines",
+        "Texture shaders"
+      ],
+      "answer": "Bar charts",
+      "section": "Presentation Graphics",
+      "rate": "easy",
+      "suggestion": "Recall visual data examples"
+    },
+    {
+      "question": "Computer art is used in:",
+      "type": "mcq",
+      "options": [
+        "Fine art and commercial art",
+        "Only scientific research",
+        "Database management",
+        "Network security"
+      ],
+      "answer": "Fine art and commercial art",
+      "section": "Computer Art",
+      "rate": "easy",
+      "suggestion": "Differentiate artistic vs technical uses"
+    },
+    {
+      "question": "What tool is used in electronic painting?",
+      "type": "mcq",
+      "options": [
+        "Graphics tablet with stylus",
+        "Joystick controller",
+        "Keyboard only",
+        "Scanner"
+      ],
+      "answer": "Graphics tablet with stylus",
+      "section": "Computer Art",
+      "rate": "medium",
+      "suggestion": "Understand digital art tools"
+    },
+    {
+      "question": "Morphing in computer graphics refers to:",
+      "type": "mcq",
+      "options": [
+        "Transforming one object into another",
+        "Compressing image files",
+        "Rendering shadows",
+        "Capturing motion"
+      ],
+      "answer": "Transforming one object into another",
+      "section": "Computer Art",
+      "rate": "medium",
+      "suggestion": "Learn animation-related terms"
+    },
+    {
+      "question": "Simulation in computer graphics is mainly used to model:",
+      "type": "mcq",
+      "options": [
+        "Physical, financial, and economic systems",
+        "Only artistic scenes",
+        "Database structures",
+        "Operating systems"
+      ],
+      "answer": "Physical, financial, and economic systems",
+      "section": "Simulation",
+      "rate": "easy",
+      "suggestion": "Connect simulation with modeling"
+    },
+    {
+      "question": "Which industry heavily relies on interactivity in computer graphics?",
+      "type": "mcq",
+      "options": [
+        "Game industry",
+        "Book publishing",
+        "Textile manufacturing",
+        "Data entry services"
+      ],
+      "answer": "Game industry",
+      "section": "Entertainment",
+      "rate": "easy",
+      "suggestion": "Relate graphics features to industries"
+    },
+    {
+      "question": "Education and training graphics often use:",
+      "type": "mcq",
+      "options": [
+        "Computer-generated models",
+        "Hand-drawn sketches only",
+        "Text-based simulations",
+        "Spreadsheet charts"
+      ],
+      "answer": "Computer-generated models",
+      "section": "Education & Training",
+      "rate": "easy",
+      "suggestion": "Focus on learning aids"
+    },
+    {
+      "question": "Which profession commonly uses simulators for training?",
+      "type": "mcq",
+      "options": [
+        "Aircraft pilots",
+        "Accountants",
+        "Journalists",
+        "Librarians"
+      ],
+      "answer": "Aircraft pilots",
+      "section": "Education & Training",
+      "rate": "easy",
+      "suggestion": "Remember listed examples"
+    },
+    {
+      "question": "Scientific visualization is mainly used to:",
+      "type": "mcq",
+      "options": [
+        "Represent scientific and medical data graphically",
+        "Create cartoon animations",
+        "Edit photographs",
+        "Design logos"
+      ],
+      "answer": "Represent scientific and medical data graphically",
+      "section": "Visualization",
+      "rate": "medium",
+      "suggestion": "Differentiate visualization types"
+    },
+    {
+      "question": "Which imaging techniques are mentioned under scientific visualization?",
+      "type": "mcq",
+      "options": [
+        "X-Ray and Ultrasound",
+        "JPEG compression",
+        "Vector drawing",
+        "Pixel shading"
+      ],
+      "answer": "X-Ray and Ultrasound",
+      "section": "Scientific Visualization",
+      "rate": "medium",
+      "suggestion": "Recall medical imaging examples"
+    },
+    {
+      "question": "Business visualization commonly uses:",
+      "type": "mcq",
+      "options": [
+        "Graphs and charts",
+        "Motion capture",
+        "Ray tracing",
+        "Game physics"
+      ],
+      "answer": "Graphs and charts",
+      "section": "Business Visualization",
+      "rate": "easy",
+      "suggestion": "Link visualization to data presentation"
+    },
+    {
+      "question": "Image processing differs from computer graphics because it:",
+      "type": "mcq",
+      "options": [
+        "Modifies existing images",
+        "Creates images from scratch",
+        "Focuses only on 3D models",
+        "Avoids digital techniques"
+      ],
+      "answer": "Modifies existing images",
+      "section": "Image Processing",
+      "rate": "medium",
+      "suggestion": "Compare CG and image processing"
+    },
+    {
+      "question": "Tomography is described as:",
+      "type": "mcq",
+      "options": [
+        "Displaying cross-sections of objects using X-rays or ultrasound",
+        "Animating 3D characters",
+        "Compressing image data",
+        "Rendering textures"
+      ],
+      "answer": "Displaying cross-sections of objects using X-rays or ultrasound",
+      "section": "Image Processing",
+      "rate": "medium",
+      "suggestion": "Understand medical imaging terms"
+    },
+    {
+      "question": "A major component of graphical user interfaces is:",
+      "type": "mcq",
+      "options": [
+        "Window manager",
+        "Compiler",
+        "Database engine",
+        "Network adapter"
+      ],
+      "answer": "Window manager",
+      "section": "Graphical User Interfaces",
+      "rate": "easy",
+      "suggestion": "Focus on GUI components"
+    },
+    {
+      "question": "Icons in GUIs are designed to:",
+      "type": "mcq",
+      "options": [
+        "Represent processing options graphically",
+        "Store data",
+        "Execute background tasks",
+        "Manage memory"
+      ],
+      "answer": "Represent processing options graphically",
+      "section": "Graphical User Interfaces",
+      "rate": "easy",
+      "suggestion": "Understand interface design goals"
+    },
+    {
+      "question": "2D graphics present information in:",
+      "type": "mcq",
+      "options": [
+        "Flat format",
+        "Volumetric format",
+        "Holographic format",
+        "Physical format"
+      ],
+      "answer": "Flat format",
+      "section": "2D Graphics",
+      "rate": "easy",
+      "suggestion": "Recall dimensional definitions"
+    },
+    {
+      "question": "Video clips are essentially made up of:",
+      "type": "mcq",
+      "options": [
+        "A sequence of images",
+        "Audio signals",
+        "3D meshes",
+        "Binary code only"
+      ],
+      "answer": "A sequence of images",
+      "section": "2D Graphics",
+      "rate": "easy",
+      "suggestion": "Understand basic video structure"
+    },
+    {
+      "question": "Images in video are typically displayed at:",
+      "type": "mcq",
+      "options": [
+        "30–32 frames per second",
+        "10 frames per second",
+        "60–90 frames per second",
+        "5 frames per second"
+      ],
+      "answer": "30–32 frames per second",
+      "section": "2D Graphics",
+      "rate": "medium",
+      "suggestion": "Remember standard frame rates"
+    },
+    {
+      "question": "Graphics packages are best described as:",
+      "type": "mcq",
+      "options": [
+        "Libraries providing graphics functions",
+        "Hardware devices",
+        "Operating systems",
+        "Programming languages"
+      ],
+      "answer": "Libraries providing graphics functions",
+      "section": "Graphics Packages",
+      "rate": "easy",
+      "suggestion": "Understand software classifications"
+    },
+    {
+      "question": "Which was the first graphics package accepted by ISO and ANSI?",
+      "type": "mcq",
+      "options": [
+        "GKS",
+        "OpenGL",
+        "PHIGS",
+        "RenderMan"
+      ],
+      "answer": "GKS",
+      "section": "Graphics Packages",
+      "rate": "medium",
+      "suggestion": "Focus on standards history"
+    },
+    {
+      "question": "OpenGL is best described as:",
+      "type": "mcq",
+      "options": [
+        "A graphics library",
+        "An operating system",
+        "A hardware device",
+        "A database system"
+      ],
+      "answer": "A graphics library",
+      "section": "OpenGL",
+      "rate": "easy",
+      "suggestion": "Know OpenGL fundamentals"
+    },
+    {
+      "question": "OpenGL primarily supports rendering of:",
+      "type": "mcq",
+      "options": [
+        "Color images of 3D objects",
+        "Text documents",
+        "Audio signals",
+        "Network packets"
+      ],
+      "answer": "Color images of 3D objects",
+      "section": "OpenGL",
+      "rate": "medium",
+      "suggestion": "Understand OpenGL capabilities"
+    },
+    {
+      "question": "One key advantage of OpenGL is:",
+      "type": "mcq",
+      "options": [
+        "Hardware independence",
+        "Built-in file handling",
+        "Integrated user interfaces",
+        "Automatic memory management"
+      ],
+      "answer": "Hardware independence",
+      "section": "OpenGL",
+      "rate": "medium",
+      "suggestion": "Review OpenGL features"
+    },
+    {
+      "question": "Which primitives can OpenGL draw?",
+      "type": "mcq",
+      "options": [
+        "Points, lines, and polygons",
+        "Circuits and signals",
+        "Files and folders",
+        "Audio waves"
+      ],
+      "answer": "Points, lines, and polygons",
+      "section": "How OpenGL Works",
+      "rate": "easy",
+      "suggestion": "Memorize basic primitives"
+    },
+    {
+      "question": "Which feature is supported by OpenGL?",
+      "type": "mcq",
+      "options": [
+        "Texture mapping",
+        "File input/output",
+        "User interaction handling",
+        "Database connectivity"
+      ],
+      "answer": "Texture mapping",
+      "section": "How OpenGL Works",
+      "rate": "medium",
+      "suggestion": "Differentiate supported vs unsupported features"
+    },
+    {
+      "question": "OpenGL does NOT include functions for:",
+      "type": "mcq",
+      "options": [
+        "User interaction",
+        "Lighting",
+        "Shading",
+        "Animation"
+      ],
+      "answer": "User interaction",
+      "section": "How OpenGL Works",
+      "rate": "medium",
+      "suggestion": "Remember OpenGL limitations"
+    },
+    {
+      "question": "How many libraries is OpenGL divided into?",
+      "type": "mcq",
+      "options": [
+        "Three",
+        "Two",
+        "Four",
+        "Five"
+      ],
+      "answer": "Three",
+      "section": "OpenGL Division",
+      "rate": "easy",
+      "suggestion": "Recall OpenGL structure"
+    },
+    {
+      "question": "Which OpenGL library provides higher-level drawing utilities?",
+      "type": "mcq",
+      "options": [
+        "GLU",
+        "GL",
+        "GLUT",
+        "GKS"
+      ],
+      "answer": "GLU",
+      "section": "OpenGL Division",
+      "rate": "medium",
+      "suggestion": "Understand roles of OpenGL libraries"
+    },
+    {
+      "question": "GLUT is mainly used for:",
+      "type": "mcq",
+      "options": [
+        "Window management and input handling",
+        "3D rendering algorithms",
+        "Texture compression",
+        "Shader programming"
+      ],
+      "answer": "Window management and input handling",
+      "section": "OpenGL Division",
+      "rate": "medium",
+      "suggestion": "Know the purpose of GLUT"
+    },
+    {
+      "question": "In the sample OpenGL program, which primitive is drawn?",
+      "type": "mcq",
+      "options": [
+        "Triangle",
+        "Circle",
+        "Rectangle",
+        "Line strip"
+      ],
+      "answer": "Triangle",
+      "section": "Program Sample",
+      "rate": "easy",
+      "suggestion": "Read example code carefully"
+    },
+    {
+      "question": "Which function clears the color buffer in OpenGL?",
+      "type": "mcq",
+      "options": [
+        "glClear",
+        "glFlush",
+        "glBegin",
+        "glVertex"
+      ],
+      "answer": "glClear",
+      "section": "Program Sample",
+      "rate": "medium",
+      "suggestion": "Recognize common OpenGL functions"
+    },
+    {
+      "question": "Which function specifies vertex coordinates?",
+      "type": "mcq",
+      "options": [
+        "glVertex2i",
+        "glColor3f",
+        "glClearColor",
+        "glBegin"
+      ],
+      "answer": "glVertex2i",
+      "section": "Program Sample",
+      "rate": "medium",
+      "suggestion": "Understand OpenGL drawing commands"
+    },
+    {
+      "question": "Which OpenGL function forces execution of drawing commands?",
+      "type": "mcq",
+      "options": [
+        "glFlush",
+        "glEnd",
+        "glBegin",
+        "glClear"
+      ],
+      "answer": "glFlush",
+      "section": "Program Sample",
+      "rate": "medium",
+      "suggestion": "Review rendering pipeline basics"
+    }
+  ]
+}

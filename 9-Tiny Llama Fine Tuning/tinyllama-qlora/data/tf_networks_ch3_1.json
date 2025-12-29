@@ -1,0 +1,156 @@
+{
+  "document": "Chapter3-DataLinkLayer_PART1 (1).ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "The Data Link Layer involves error detection and correction as part of its core functionality.",
+        "answer": "true"
+      },
+      {
+        "question": "Sliding Window Protocols are a fundamental component of the Data Link Layer discussion.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer focuses on achieving reliable communication between two adjacent machines.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer provides a well-defined service interface to the Network Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer is responsible for dealing with transmission errors occurring on the physical link.",
+        "answer": "true"
+      },
+      {
+        "question": "Regulating the flow of data so that slow receivers are not overwhelmed by fast senders is a key function of the Data Link Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "Framing is a critical design issue addressed by the Data Link Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "Error control is a possible service provided by the Data Link Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer accepts packets from the Network Layer and encapsulates them into frames.",
+        "answer": "true"
+      },
+      {
+        "question": "Each standard frame typically contains a frame header, a payload field, and a frame trailer.",
+        "answer": "true"
+      },
+      {
+        "question": "The reception of frames involves the process of decapsulation, which is the reverse of encapsulation.",
+        "answer": "true"
+      },
+      {
+        "question": "The payload field of a frame specifically holds the packet received from the Network Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer facilitates data transfer between Network Layer processes on source and destination machines.",
+        "answer": "true"
+      },
+      {
+        "question": "Unacknowledged connectionless service is a possible service model within the Data Link Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "In unacknowledged connectionless service, a frame is sent without establishing a connection or performing error recovery.",
+        "answer": "true"
+      },
+      {
+        "question": "Unacknowledged connectionless service is appropriate when the physical link error rate is very low.",
+        "answer": "true"
+      },
+      {
+        "question": "Unacknowledged connectionless service is suitable for real-time traffic like voice where low latency is preferred over perfect reliability.",
+        "answer": "true"
+      },
+      {
+        "question": "In networking, late data are often considered worse than bad data for real-time applications.",
+        "answer": "true"
+      },
+      {
+        "question": "Ethernet is a common example of unacknowledged connectionless service at the link layer.",
+        "answer": "true"
+      },
+      {
+        "question": "In acknowledged connectionless service, each frame sent is individually acknowledged by the receiver.",
+        "answer": "true"
+      },
+      {
+        "question": "Acknowledged connectionless service is highly useful over unreliable channels, such as wireless systems.",
+        "answer": "true"
+      },
+      {
+        "question": "IEEE 802.11 is an example of a protocol that utilizes acknowledged connectionless service.",
+        "answer": "true"
+      },
+      {
+        "question": "In acknowledged connection-oriented service, source and destination machines must establish a connection before data transfer.",
+        "answer": "true"
+      },
+      {
+        "question": "Each frame sent over an established connection in the link layer is typically numbered to ensure order.",
+        "answer": "true"
+      },
+      {
+        "question": "Acknowledged connection-oriented service ensures that each frame is received exactly once and in the correct order.",
+        "answer": "true"
+      },
+      {
+        "question": "In connectionless service, a lost acknowledgment can lead to the same packet being received multiple times.",
+        "answer": "true"
+      },
+      {
+        "question": "The Data Link Layer is responsible for breaking the continuous bit stream from the physical layer into discrete frames.",
+        "answer": "true"
+      },
+      {
+        "question": "The checksum for each frame is computed and checked at the Data Link Layer, not the Application Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "Character count framing uses a field in the header to specify the total number of characters in a frame.",
+        "answer": "true"
+      },
+      {
+        "question": "A major disadvantage of character count framing is that errors in the count field make resynchronization very difficult.",
+        "answer": "true"
+      },
+      {
+        "question": "Byte stuffing utilizes special flag bytes to delimit frames and escape bytes to handle occurrences of flags in the data.",
+        "answer": "true"
+      },
+      {
+        "question": "Byte stuffing increases frame length but simplifies resynchronization after transmission errors.",
+        "answer": "true"
+      },
+      {
+        "question": "A major limitation of traditional byte-stuffing is its dependency on 8-bit characters.",
+        "answer": "true"
+      },
+      {
+        "question": "Bit stuffing is a framing method performed at the bit level rather than the byte level.",
+        "answer": "true"
+      },
+      {
+        "question": "In bit stuffing, the transmitter inserts a '0' bit after seeing five consecutive '1' bits in the data stream.",
+        "answer": "true"
+      },
+      {
+        "question": "High-Level Data Link Control (HDLC) is a bit-oriented protocol, not a byte-oriented one.",
+        "answer": "true"
+      },
+      {
+        "question": "Physical layer coding violations, such as non-standard signal levels, can be used as a method for framing.",
+        "answer": "true"
+      }
+    ]
+  }
+}
