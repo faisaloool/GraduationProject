@@ -259,3 +259,54 @@ export async function verifyCode(code, email) {
   if (!result.ok) return { error: result.error || "Verification failed." };
   return result.payload;
 }
+
+export async function renameQuiz(quizId, title, token) {
+  const id = String(quizId ?? "").trim();
+  const nextTitle = String(title ?? "").trim();
+
+  if (!id) return { error: "Missing quiz id." };
+  if (!nextTitle) return { error: "Title cannot be empty." };
+
+  const result = await requestJson(
+    `${API_URL}/quiz-ai/quiz/${encodeURIComponent(id)}/rename`,
+    {
+      // API doc uses PUT; some backends also accept POST.
+      method: "PUT",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      // Send both keys for compatibility across backend implementations.
+      json: { name: nextTitle, title: nextTitle },
+    }
+  );
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to rename quiz." };
+  }
+
+  // Expected response:
+  // {
+  //   success: true,
+  //   message: "Quiz renamed successfully.",
+  //   quiz: { id: 1, title: "Updated Quiz Title" }
+  // }
+  // IMPORTANT: do NOT use the title from the response; use user-provided nextTitle.
+  const payload = result.payload;
+  const success = payload?.success;
+  if (success === false) {
+    return {
+      error:
+        payload?.message || result.error || "Failed to rename quiz (server).",
+    };
+  }
+
+  const responseQuizId = payload?.quiz?.id ?? payload?.quiz?.quizId;
+  const normalizedId = responseQuizId ?? id;
+
+  return {
+    success: true,
+    message: payload?.message || "Quiz renamed successfully.",
+    quiz: {
+      id: normalizedId,
+      title: nextTitle,
+    },
+  };
+}

@@ -5,7 +5,7 @@ import React, {
   useEffect,
   use,
 } from "react";
-import { fetchUserExams } from "../util/service.js";
+import { fetchUserExams, renameQuiz } from "../util/service.js";
 import { useAuth } from "./AuthContext.jsx";
 
 const ExamsContext = createContext();
@@ -76,13 +76,37 @@ export function ExamsProvider({ children }) {
   };
 
   // rename exam
-  const renameExam = (examId, newName) => {
+  const renameExam = async (examId, newTitle) => {
     const targetId = String(examId);
+    const nextTitle = String(newTitle ?? "").trim();
+
+    if (!nextTitle) {
+      console.error("renameExam: blocked empty title");
+      return { error: "Title cannot be empty." };
+    }
+
+    const result = await renameQuiz(targetId, nextTitle, token);
+    if (result?.error) {
+      console.error("renameExam failed:", result.error);
+      return { error: result.error };
+    }
+
+    // Only update local state AFTER backend confirms.
     setExams((prev) =>
-      prev.map((exam) =>
-        String(getExamId(exam)) === targetId ? { ...exam, name: newName } : exam
+      prev.map((examItem) =>
+        String(getExamId(examItem)) === targetId
+          ? { ...examItem, title: nextTitle }
+          : examItem
       )
     );
+
+    setExam((prev) => {
+      const prevId = String(getExamId(prev));
+      if (prevId !== targetId) return prev;
+      return { ...prev, title: nextTitle };
+    });
+
+    return result;
   };
 
   return (

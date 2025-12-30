@@ -40,6 +40,37 @@ export const Quiz_card = ({
     editing?.id == id;
   const canShowMenu = editingId === -999;
 
+  useEffect(() => {
+    // Keep local title in sync, but don't clobber while actively renaming.
+    if (!isRenamingThis) setTitle(e.title);
+  }, [e.title, isRenamingThis]);
+
+  const commitRename = async () => {
+    const nextTitle = String(title ?? "").trim();
+    if (!nextTitle) {
+      setTitle(e.title);
+      setEditing({ id: -999 });
+      return;
+    }
+
+    if (nextTitle === String(e.title ?? "").trim()) {
+      setEditing({ id: -999 });
+      return;
+    }
+
+    const previousTitle = e.title;
+    const result = await renameExam(e.examId || e.quizId, nextTitle);
+    if (result?.error) {
+      // Backend rejected or failed: keep the old title.
+      console.error("Rename rejected:", result.error);
+      setTitle(previousTitle);
+      setEditing({ id: -999 });
+      return;
+    }
+
+    setEditing({ id: -999 });
+  };
+
   return (
     <>
       <div
@@ -59,13 +90,11 @@ export const Quiz_card = ({
             value={title}
             onChange={(event) => setTitle(event.target.value)}
             onBlur={() => {
-              setEditing({ id: -999 });
+              commitRename();
             }}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
-                e.title = title;
-                renameExam(e.examId || e.quizId, title);
-                setEditing({ id: -999 });
+                commitRename();
               }
             }}
             placeholder="Rename quiz..."
