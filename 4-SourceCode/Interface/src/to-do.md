@@ -2,8 +2,11 @@
 
 ### 🔧 Features & Improvements
 
-- [✔] **Fix Quiz submit behavior**  
-   Fix the behavior when submiting to show the right answers and wrong answers and why wrong when answer is wrong .
+- [✔] **Reflect local changes on the data base**  
+   some of the fetures all the user to make changes but those changes are not reflected on the cloud server .
+
+- [ ] **Fix Quiz submit behavior**  
+       Fix the behavior when submiting to show the right answers and wrong answers and why wrong when answer is wrong .
 
 - [ ] **Add share Quiz**  
        create a share quiz feature where the user can share there quizzes with other users .
