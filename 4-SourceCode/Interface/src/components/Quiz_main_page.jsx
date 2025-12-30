@@ -6,6 +6,9 @@ import { Header } from "./Header";
 
 import { useExams } from "../context/ExamsProvider.jsx";
 
+import { GrRefresh } from "react-icons/gr";
+import { MdDeleteForever } from "react-icons/md";
+
 export const Quiz_main_page = ({ editing, setEditing }) => {
   const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
     useExams();
@@ -156,6 +159,26 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
                   </p>
                 ))}
               </div>
+              <div className="options">
+                <button
+                  type="button"
+                  className="option-item"
+                  aria-label="Regenerate question"
+                  data-tooltip="Regenerate question"
+                  onClick={() => {}}
+                >
+                  <GrRefresh aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  className="option-item delete-option"
+                  aria-label="Delete question"
+                  data-tooltip="Delete question"
+                  onClick={() => {}}
+                >
+                  <MdDeleteForever aria-hidden />
+                </button>
+              </div>
             </div>
           );
 
@@ -194,6 +217,26 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
                 >
                   {String.fromCharCode(97 + 1)}. False
                 </p>
+              </div>
+              <div className="options">
+                <button
+                  type="button"
+                  className="option-item"
+                  aria-label="Regenerate question"
+                  data-tooltip="Regenerate question"
+                  onClick={() => {}}
+                >
+                  <GrRefresh aria-hidden />
+                </button>
+                <button
+                  type="button"
+                  className="option-item delete-option"
+                  aria-label="Delete question"
+                  data-tooltip="Delete question"
+                  onClick={() => {}}
+                >
+                  <MdDeleteForever aria-hidden />
+                </button>
               </div>
             </div>
           );

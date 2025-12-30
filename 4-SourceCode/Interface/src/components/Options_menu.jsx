@@ -4,6 +4,8 @@ import { createPortal } from "react-dom";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
 import { FiShare } from "react-icons/fi";
+import { GrRefresh } from "react-icons/gr";
+
 import "../style/Options_menu_style.css";
 
 export const Options_menu = ({
@@ -63,6 +65,12 @@ export const Options_menu = ({
         >
           Rename
           <MdDriveFileRenameOutline />
+        </p>
+      )}
+      {where === "header" && (
+        <p className="option_item">
+          Regnerate quiz
+          <GrRefresh />
         </p>
       )}
       <p

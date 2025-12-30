@@ -360,14 +360,136 @@ main {
 }
 
 /* ===== Question Styles ===== */
+.options {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  border-radius: 999px;
+
+  background: rgba(12, 18, 20, 0.7);
+  border: 1px solid rgba(70, 234, 255, 0.18);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.options .option-item {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(233, 254, 255, 0.92);
+  cursor: pointer;
+
+  display: inline-grid;
+  place-items: center;
+
+  transition: background 0.2s ease, transform 0.05s ease, box-shadow 0.2s ease,
+    color 0.2s ease;
+
+  position: relative; /* tooltip anchor */
+}
+
+.options .option-item:hover {
+  background: rgba(70, 234, 255, 0.14);
+  color: rgba(233, 254, 255, 0.98);
+}
+
+.options .option-item:active {
+  transform: translateY(1px);
+}
+
+.options .option-item:focus-visible {
+  outline: 2px solid #46eaff;
+  outline-offset: 3px;
+}
+
+.options .option-item svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Tooltip */
+.options .option-item[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  transform: translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: rgba(233, 254, 255, 0.98);
+  background: rgba(10, 18, 20, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.options .option-item[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: calc(100% + 4px);
+  width: 10px;
+  height: 10px;
+  transform: translateY(6px) rotate(45deg);
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(10, 18, 20, 0.96);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.options .option-item:hover::after,
+.options .option-item:hover::before,
+.options .option-item:focus-visible::after,
+.options .option-item:focus-visible::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Delete button: keep it red (even on hover) */
+.options .option-item.delete-option {
+  color: #ff4d4d;
+}
+
+.options .option-item.delete-option:hover {
+  background: rgba(232, 69, 69, 0.22);
+  color: #ff4d4d;
+}
 .exam-response {
+  position: relative;
   display: flex;
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  height: 50vh;
+  height: auto;
   width: 100%;
-  margin-bottom: 1rem;
+
+  margin-bottom: 22px;
+  margin-top: 3rem;
+  padding: 18px 18px 66px;
+
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
 }
 .exam-response .QuestionTitle {
   font-size: 1.6rem;
@@ -413,6 +535,24 @@ main {
 
   gap: 0.5rem;
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  .exam-response {
+    padding: 16px 14px 64px;
+  }
+
+  .options {
+    right: 12px;
+    bottom: 12px;
+    gap: 6px;
+    padding: 5px;
+  }
+
+  .options .option-item {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /* ===== Animation ===== */
