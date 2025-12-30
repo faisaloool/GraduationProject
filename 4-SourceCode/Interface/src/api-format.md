@@ -1,6 +1,6 @@
 # API Specification
 
-## Last Update: 2025/12/13
+## Last Update: 2025/12/30
 
 ## HTTP Status Codes
 
@@ -401,7 +401,7 @@ none
 **Method:**  
 **Description:**
 
-## 13. Get exam based on exam id
+## 13. Get quiz based on quiz id
 
 **URL:quiz-ai/quiz/:id**  
 **Method:GET**  
