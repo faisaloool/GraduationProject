@@ -2,8 +2,11 @@
 
 ### 🔧 Features & Improvements
 
-- [✔] **Reflect local changes on the data base**  
-   some of the fetures all the user to make changes but those changes are not reflected on the cloud server .
+- [ ] **Pop up notifiction componenet**  
+      add a pop up notifiction component to add more feedback to the user expirence .
+
+- [ ] **Reflect local changes on the data base**  
+       some of the fetures all the user to make changes but those changes are not reflected on the cloud server .
 
 - [ ] **Fix Quiz submit behavior**  
        Fix the behavior when submiting to show the right answers and wrong answers and why wrong when answer is wrong .
