@@ -5,7 +5,7 @@ import React, {
   useEffect,
   use,
 } from "react";
-import { fetchUserExams, renameQuiz } from "../util/service.js";
+import { fetchUserExams, renameQuiz, deleteQuiz } from "../util/service.js";
 import { useAuth } from "./AuthContext.jsx";
 
 const ExamsContext = createContext();
@@ -57,17 +57,36 @@ export function ExamsProvider({ children }) {
   };
 
   // Delete an exam
-  const deleteExam = (examId) => {
+  const deleteExam = async (examId) => {
     const targetId = String(examId);
-    const existed = exams.some((exam) => String(getExamId(exam)) === targetId);
-
-    setExams((prev) =>
-      prev.filter((exam) => String(getExamId(exam)) !== targetId)
+    const existed = exams.some(
+      (examItem) => String(getExamId(examItem)) === targetId
     );
 
-    return existed
-      ? Promise.resolve()
-      : Promise.reject(new Error("Exam not found"));
+    if (!existed) {
+      const msg = "Exam not found";
+      console.error("deleteExam:", msg);
+      return { error: msg };
+    }
+
+    const result = await deleteQuiz(targetId, token);
+    if (result?.error) {
+      console.error("deleteExam failed:", result.error);
+      return { error: result.error };
+    }
+
+    // Only update local state AFTER backend confirms.
+    setExams((prev) =>
+      prev.filter((examItem) => String(getExamId(examItem)) !== targetId)
+    );
+
+    setExam((prev) => {
+      const prevId = String(getExamId(prev));
+      if (prevId !== targetId) return prev;
+      return { title: "Main-page", examId: null };
+    });
+
+    return result;
   };
 
   // Add a new exam

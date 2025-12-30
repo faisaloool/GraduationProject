@@ -206,7 +206,7 @@ none
 }
 }
 
-## 6. Get exam based on User id
+## 6. Get exams based on User id
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
@@ -225,21 +225,15 @@ none
 "timestamp": "2025-11-16T18:23:00Z",
 "data": {
 "quizzes": [
-"examId": 1,
-"title": "General Knowledge Test",
-"totalMarks": 10,
-"questions": [
 {
-"id": 1,
-"type": "MCQ",
-"question": "What is the capital of Jordan?",
-"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
-"correctAnswer": "a",
-"marks": 2
-},
-], ....
+"examId": 1,
+"title": "General Knowledge Test"
+}
+,{
+"examId": 2,
+"title": "idk",
+}, ....
 ]
-, ....
 }
 }
 
@@ -257,7 +251,7 @@ none
 
 ## 7. Rename Quiz
 
-**URL:quiz-ai/quiz/quizId/rename**  
+**URL:quiz-ai/quiz/:quizId/rename**  
 **Method:PUT**  
 **Description: Renaming quizes based on (the id of the exam)**
 
@@ -406,3 +400,40 @@ none
 **URL:**  
 **Method:**  
 **Description:**
+
+## 13. Get exam based on exam id
+
+**URL:quiz-ai/quiz/:id**  
+**Method:GET**  
+**Description: Getting quiz data from the id**
+
+### Request Body
+
+none
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"quiz": {
+"examId": 1,
+"title": "General Knowledge Test",
+"totalMarks": 10,
+"questions": [
+{
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+},
+], ....
+}
+, ....
+}
+}

@@ -310,3 +310,31 @@ export async function renameQuiz(quizId, title, token) {
     },
   };
 }
+
+export async function deleteQuiz(quizId, token) {
+  const id = String(quizId ?? "").trim();
+  if (!id) return { error: "Missing quiz id." };
+
+  const result = await requestJson(
+    `${API_URL}/quiz-ai/quiz/${encodeURIComponent(id)}`,
+    {
+      method: "DELETE",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    }
+  );
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to delete quiz." };
+  }
+
+  const payload = result.payload;
+  if (payload?.success === false) {
+    return { error: payload?.message || "Failed to delete quiz (server)." };
+  }
+
+  return {
+    success: true,
+    message: payload?.message || "Quiz deleted successfully.",
+    quizId: id,
+  };
+}
