@@ -24,7 +24,6 @@
   flex: 1 2 auto;
   min-height: 0;
   min-width: 0;
-  height: 100vh;
 }
 ::-webkit-scrollbar {
   width: 10px; /* عرض العمود */
@@ -53,10 +52,6 @@ main {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
-  display: flex;
-  flex-direction: column;
-  /* Give a definite height so 100% children can fill reliably */
-  height: calc(100vh - 70px);
 }
 
 /* content inside the scrolling area must be able to shrink */
@@ -122,9 +117,6 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  flex: 1 0 auto;
-  flex: 1 1 auto;
-  height: 100%;
   min-height: 100%;
   background: linear-gradient(305deg, #1e929b 20%, #0f0f0f 100%);
   border-radius: 0;
