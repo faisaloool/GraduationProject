@@ -1,0 +1,11 @@
+Can you give me 15 True or False Questions in JSON blocks from this file based on this template format
+
+{ 		
+  "File Name": "",
+  "Question Type": "",
+  "Question": "",
+  "Options": [
+    ""
+  ],
+  "Answer": "",
+}

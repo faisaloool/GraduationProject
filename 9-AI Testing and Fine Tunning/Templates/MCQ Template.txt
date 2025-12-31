@@ -1,0 +1,14 @@
+Can you give me 15 Multiple Choice Questions in JSON blocks from this file based on this template format
+
+{
+  "File Name": "",
+  "Question Type": "Multiple Choice",
+  "Question": "",
+  "Options": [
+    "A) ",
+    "B) ",
+    "C) ",
+    "D) "
+  ],
+  "Answer": "",
+}

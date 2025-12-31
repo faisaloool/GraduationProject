@@ -1,0 +1,67 @@
+##############################################################
+
+Local AI Model Identifier and Quantization Level: nemotron-3-nano 30B Q_4_K_M
+
+reasoning speed for 15 T or F Prompt: 31.89 seconds
+
+reasoning speed for 15 MCQ Prompt: 59.35 seconds
+
+LM Studio API Response speed: 12 seconds
+
+Format Correctness: 2/2
+##############################################################
+
+Local AI Model Identifier and Quantization Level: gpt-oss-20b Q_4_K_S
+
+reasoning speed for 15 T or F Prompt: 34.55 seconds
+
+reasoning speed for 15 MCQ Prompt: 26.31 seconds
+
+LM Studio API Response speed: 12 seconds
+
+Format Correctness: 2/2
+##############################################################
+
+Local AI Model Identifier and Quantization Level: deepseek-r1-0528-qwen3-8b Q_4_K_M
+
+reasoning speed for 15 T or F Prompt: 23.76 seconds
+
+reasoning speed for 15 MCQ Prompt: 1 minutes and 48 seconds
+
+LM Studio API Response speed: 10 seconds
+
+Format Correctness: 1/2
+##############################################################
+Local AI Model Identifier and Quantization Level: ministral-3-14b-reasoning Q_4_K_M
+
+reasoning speed for 15 T or F Prompt: 2 minutes and 31 seconds
+
+reasoning speed for 15 MCQ Prompt: over 5 minutes
+
+LM Studio API Response speed: 8 seconds
+
+Format Correctness: /2
+##############################################################
+Improtant info:
+
+Context Length used for the test: 80000 //to accommodate most files
+used to run and test the models in a local chat: LM Studio built in chat
+used to test the models api server preformance: LM Studio Studio Server service and Silly Tavrern
+Hardware used:
+CPU: Intel Core I7-12700H
+GPU: Nvidia Geforce RTX 3070TI Laptop edition
+Ram: 32GB 4800 MT/s DDR5 running in dual channel
+
+##############################################################
+Findings:
+
+25 quesions at per prompt causes fast context window overflow and very slow resonse times.
+dropping the number of quesions needed from 25 to 15 casused a much faster resonse time.
+gpt-oss-20b is able to generate resonses to mcq quesions in a much faster and more consistent manner
+deepseek-r1-0528-qwen3-8b is extermely slow at mcq generation compared to gpt-oss-20b.
+deepseek-r1-0528-qwen3-8b is more prone to breaking the format than gpt-oss-20b.
+nemotron-3-nano is slightly faster at thinking in true or false quesions but is much slower at mcq.
+both gpt-oss-20b and nemotron-3-nano are consistent in there resonse formating and quality.
+ministral-3-14b-reasoning have shown extermely slow reasoning and resonse speeds often falling behind bigger models.
+ministral-3-14b-reasoning seems to be the fastest at responding to api calls but not by a big margain.
+##############################################################
