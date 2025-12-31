@@ -9,6 +9,8 @@ import { useExams } from "../context/ExamsProvider.jsx";
 import { GrRefresh } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 
+import { AntigravityCanvas } from "./AntigravityCanvas";
+
 export const Quiz_main_page = ({ editing, setEditing }) => {
   const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
     useExams();
@@ -287,14 +289,15 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
           </div>
         ) : isWelcomePage ? (
           <div className="wellcome-page">
-            <div>
+            <AntigravityCanvas className="welcome-canvas" />
+            <div className="wellcome-content">
               <h1 className="wellcome">
                 <span className="wlc">Welcome to </span>
                 <span className="quiz">Quiz AI</span>
               </h1>
               <p className="subtitle">Get ready for endless learning!</p>
             </div>
-            <div className="input">
+            <div className="input wellcome-content">
               <Input setExam={setExam} />
             </div>
           </div>
