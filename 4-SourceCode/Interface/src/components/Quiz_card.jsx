@@ -16,6 +16,7 @@ export const Quiz_card = ({
   setMenuPosition,
   setMenuOpen,
   setMenuQuiz,
+  onSelect,
 }) => {
   const navigate = useNavigate();
   const [hover, setHover] = React.useState(false);
@@ -80,6 +81,7 @@ export const Quiz_card = ({
         onClick={() => {
           setExam(e);
           navigate(`/exam/${e.examId || e.quizId}`);
+          onSelect?.();
         }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}

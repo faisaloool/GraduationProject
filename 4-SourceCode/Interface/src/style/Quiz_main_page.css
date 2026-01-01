@@ -54,6 +54,21 @@ main {
   scrollbar-width: thin;
 }
 
+/* Mobile sidebar overlay behavior: when collapsed, keep content visible; when expanded, hide scroll indicator */
+@media (max-width: 600px) {
+  .side-bar.collapsed + .page {
+    padding-left: 64px;
+  }
+
+  .side-bar:not(.collapsed) + .page {
+    padding-left: 0;
+  }
+
+  .side-bar:not(.collapsed) + .page .scroll-indicator {
+    display: none;
+  }
+}
+
 /* content inside the scrolling area must be able to shrink */
 .exam-space {
   max-width: 1000px;

@@ -26,6 +26,12 @@ export const Side_bar = ({ editing, setEditing }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
 
+  const collapseOnMobile = () => {
+    if (window.matchMedia && window.matchMedia("(max-width: 600px)").matches) {
+      setCollaps(true);
+    }
+  };
+
   const menuRef = useRef(null);
 
   const { user, isLoggedIn, logout, token } = useAuth();
@@ -49,6 +55,7 @@ export const Side_bar = ({ editing, setEditing }) => {
   const handleSelectExam = (selected) => {
     setExam(selected);
     navigate(`/exam/${selected.examId || selected.quizId}`);
+    collapseOnMobile();
     closeSearch();
   };
 
@@ -98,6 +105,7 @@ export const Side_bar = ({ editing, setEditing }) => {
             setMenuPosition={setMenuPosition}
             setMenuOpen={setMenuOpen}
             setMenuQuiz={setMenuQuiz}
+            onSelect={collapseOnMobile}
           />
         ))}
       </div>
@@ -180,6 +188,7 @@ export const Side_bar = ({ editing, setEditing }) => {
                     e.stopPropagation();
                     setExam({ title: "Main-page" });
                     navigate("/");
+                    collapseOnMobile();
                   }}
                 >
                   <div className="Item">

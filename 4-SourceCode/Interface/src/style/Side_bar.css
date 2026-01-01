@@ -692,8 +692,6 @@ li::after {
 @media (max-width: 400px) {
   .side-bar {
     text-align: center;
-    width: 219px;
-    flex-basis: 219px;
     font-size: 10px;
   }
   li {
@@ -730,6 +728,19 @@ li::after {
 
 /* Mobile: slightly smaller collapsed (shrink) sidebar */
 @media (max-width: 600px) {
+  /* On phones, the sidebar should not squeeze the main page.
+     Expanded: overlay full width. Collapsed: small rail. */
+  .side-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    flex: 0 0 auto;
+    z-index: 1200;
+  }
+
   .side-bar.collapsed {
     width: 64px;
     flex-basis: 64px;
