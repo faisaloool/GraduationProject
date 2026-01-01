@@ -24,6 +24,7 @@
   flex: 1 2 auto;
   min-height: 0;
   min-width: 0;
+  background-color: #151515;
 }
 ::-webkit-scrollbar {
   width: 10px; /* عرض العمود */
@@ -43,8 +44,8 @@
   background: #06d5f0af; /* اللون عند السحب */
 }
 
-/* main is the scrollable content area under the header, single scrollbar only here */
-main {
+/* main is the scrollable content area under the header (quiz page only) */
+.page > main {
   width: 100%;
   flex: 1 1 auto;
   min-height: 0;
@@ -57,7 +58,7 @@ main {
 /* Mobile sidebar overlay behavior: when collapsed, keep content visible; when expanded, hide scroll indicator */
 @media (max-width: 600px) {
   .side-bar.collapsed + .page {
-    padding-left: 64px;
+    padding-left: 56px;
   }
 
   .side-bar:not(.collapsed) + .page {
