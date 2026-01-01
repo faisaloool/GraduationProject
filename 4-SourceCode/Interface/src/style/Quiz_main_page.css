@@ -576,10 +576,42 @@
   transition: background 0.25s ease, color 0.25s ease, border 0.25s ease;
   cursor: pointer;
 }
+
+.Option.locked {
+  cursor: default;
+}
+
+.Option.locked:hover {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #3a3a3a;
+}
+
+.Option.correct-option {
+  border-color: rgba(16, 163, 127, 0.65);
+  background: rgba(16, 163, 127, 0.18);
+  color: #e9feff;
+}
+
+.Option.wrong-option {
+  border-color: rgba(255, 77, 77, 0.7);
+  background: rgba(255, 77, 77, 0.16);
+  color: #e9feff;
+}
 .Option:hover {
   background: #298a97;
   color: #fff;
   border-color: #298a97;
+}
+
+.exam-sync-error {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ff8f91;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .Option-list {
   display: flex;

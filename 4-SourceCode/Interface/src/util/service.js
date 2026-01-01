@@ -429,3 +429,46 @@ export async function deleteQuestion(quizId, questionId, token) {
     questionId: qId,
   };
 }
+
+export async function submitExamAnswers(payload, token) {
+  const userId = String(payload?.userId ?? "").trim();
+  const examId = String(payload?.examId ?? payload?.quizId ?? "").trim();
+  const answers = Array.isArray(payload?.answers) ? payload.answers : [];
+
+  if (!userId) return { error: "Missing userId." };
+  if (!examId) return { error: "Missing examId." };
+
+  const cleanedAnswers = answers
+    .map((a) => {
+      const questionId = a?.questionId ?? a?.id ?? a?._id;
+      const selectedOption = String(
+        a?.selectedOption ?? a?.selected ?? a?.answer ?? ""
+      ).trim();
+      return { questionId, selectedOption };
+    })
+    .filter((a) => a.questionId != null && a.selectedOption);
+
+  // TODO: Replace with the real backend URL when available.
+  const url = `${API_URL}/quiz-ai/exams/${encodeURIComponent(examId)}/submit`;
+
+  const result = await requestJson(url, {
+    method: "POST",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    json: {
+      userId,
+      examId,
+      answers: cleanedAnswers,
+    },
+  });
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to submit exam." };
+  }
+
+  const data = unwrapApiData(result.payload);
+  if (data?.success === false) {
+    return { error: data?.message || "Failed to submit exam (server)." };
+  }
+
+  return data || { success: true, message: "Submitted successfully." };
+}

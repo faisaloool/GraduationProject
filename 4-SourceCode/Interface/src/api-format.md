@@ -282,6 +282,7 @@ none
 ### Request Body
 
 {
+"userId": "user_123"
 "examId": "exam_01",
 "answers": [
 { "questionId": 101, "selectedOption": "a" },
@@ -294,26 +295,7 @@ none
 
 {
 "success": true,
-"status": 200,
-"data": {
-"totalMark": 85,
-"results": [
-{
-"questionId": 101,
-"isCorrect": true,
-"userSelected": "a",
-"correctOption": "a",
-"explanation": null
-},
-{
-"questionId": 102,
-"isCorrect": false,
-"userSelected": "c",
-"correctOption": "d",
-"referenceSection": "Chapter 4: Advanced AI Models"
-}
-]
-}
+"status": 200
 }
 
 ## 9. Question regenrate
