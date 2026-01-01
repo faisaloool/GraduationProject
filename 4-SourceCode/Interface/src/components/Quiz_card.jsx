@@ -18,6 +18,8 @@ export const Quiz_card = ({
   setMenuQuiz,
   onSelect,
 }) => {
+  const MAX_EXAM_TITLE_LENGTH = 40;
+
   const navigate = useNavigate();
   const [hover, setHover] = React.useState(false);
   const [title, setTitle] = useState(e.title);
@@ -75,7 +77,9 @@ export const Quiz_card = ({
   }, [e.title, isRenamingThis]);
 
   const commitRename = async () => {
-    const nextTitle = String(title ?? "").trim();
+    const nextTitle = String(title ?? "")
+      .slice(0, MAX_EXAM_TITLE_LENGTH)
+      .trim();
     if (!nextTitle) {
       setTitle(e.title);
       setEditing({ id: -999 });
@@ -118,7 +122,12 @@ export const Quiz_card = ({
           <input
             className="quiz-title-input"
             value={title}
-            onChange={(event) => setTitle(event.target.value)}
+            maxLength={MAX_EXAM_TITLE_LENGTH}
+            onChange={(event) =>
+              setTitle(
+                String(event.target.value ?? "").slice(0, MAX_EXAM_TITLE_LENGTH)
+              )
+            }
             onBlur={() => {
               commitRename();
             }}

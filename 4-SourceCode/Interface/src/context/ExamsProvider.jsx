@@ -23,6 +23,8 @@ export function ExamsProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const MAX_EXAM_TITLE_LENGTH = 40;
+
   const getExamId = (maybeExam) =>
     maybeExam?.examId ?? maybeExam?.quizId ?? maybeExam?.id ?? null;
 
@@ -103,7 +105,10 @@ export function ExamsProvider({ children }) {
   // rename exam
   const renameExam = async (examId, newTitle) => {
     const targetId = String(examId);
-    const nextTitle = String(newTitle ?? "").trim();
+    let nextTitle = String(newTitle ?? "").trim();
+    if (nextTitle.length > MAX_EXAM_TITLE_LENGTH) {
+      nextTitle = nextTitle.slice(0, MAX_EXAM_TITLE_LENGTH).trimEnd();
+    }
 
     if (!nextTitle) {
       console.error("renameExam: blocked empty title");

@@ -404,8 +404,6 @@ export async function deleteQuestion(quizId, questionId, token) {
   if (!qId) return { error: "Missing question id." };
 
   // TODO: Replace this URL with the real backend endpoint when you have it.
-  // Example format you can adapt:
-  //   `${API_URL}/quiz-ai/${qzId}/question/${qId}`
   const url = `${API_URL}/quiz-ai/${encodeURIComponent(
     qzId
   )}/question/${encodeURIComponent(qId)}`;
