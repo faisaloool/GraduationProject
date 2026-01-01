@@ -25,11 +25,39 @@ export const Quiz_card = ({
   const { exam, setExam, exams, loading, loadExams, deleteExam, renameExam } =
     useExams();
   const id = e.examId || e.quizId;
+  const activeId = exam?.examId || exam?.quizId;
+  const isActive = String(activeId ?? "") === String(id ?? "");
+
+  const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
   const handleThreeDotsClick = (event) => {
     event.stopPropagation();
     const rect = event.currentTarget.getBoundingClientRect();
-    setMenuPosition({ x: rect.right + 5, y: rect.top });
+
+    // Options_menu uses `position: fixed` so coordinates must be viewport-relative.
+    // Keep the menu fully visible by clamping within the viewport.
+    const viewportW = window.innerWidth || document.documentElement.clientWidth;
+    const viewportH =
+      window.innerHeight || document.documentElement.clientHeight;
+
+    const margin = 8;
+    const menuW = Math.min(280, Math.floor(viewportW * 0.9));
+    const menuH = 340; // matches CSS max-height
+
+    // Prefer opening to the right; if it overflows, open to the left.
+    let x = rect.right + margin;
+    if (x + menuW > viewportW - margin) {
+      x = rect.left - menuW - margin;
+    }
+    x = clamp(x, margin, viewportW - menuW - margin);
+
+    let y = rect.top;
+    if (y + menuH > viewportH - margin) {
+      y = viewportH - menuH - margin;
+    }
+    y = clamp(y, margin, viewportH - margin);
+
+    setMenuPosition({ x, y });
     setMenuOpen((prev) => !prev);
     setMenuQuiz(e);
   };
@@ -75,7 +103,7 @@ export const Quiz_card = ({
   return (
     <>
       <div
-        className={`${exam.examId === e.examId ? "active-card" : "quiz-card"} ${
+        className={`${isActive ? "active-card" : "quiz-card"} ${
           isRenamingThis ? "editing" : ""
         }`}
         onClick={() => {
@@ -110,8 +138,8 @@ export const Quiz_card = ({
           <div
             className="threeDots"
             style={{
-              opacity: hover ? 1 : 0,
-              pointerEvents: hover ? "auto" : "none",
+              opacity: hover || isActive ? 1 : 0,
+              pointerEvents: hover || isActive ? "auto" : "none",
             }}
             onClick={(e) => {
               handleThreeDotsClick(e);

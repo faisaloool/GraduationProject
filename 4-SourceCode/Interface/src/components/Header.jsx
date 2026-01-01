@@ -20,7 +20,7 @@ export const Header = ({ quiz, setEditing }) => {
 
   const handleThreeDotsClick = (e) => {
     e.stopPropagation();
-    setMenuOpen((prev) => !prev);
+    setMenuOpen(!menuOpen);
     const rect = e.currentTarget.getBoundingClientRect();
     setMenuPosition({ x: rect.right - 250, y: rect.top });
   };

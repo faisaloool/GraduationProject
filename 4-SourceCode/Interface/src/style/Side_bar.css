@@ -721,7 +721,7 @@ li::after {
     overflow-y: auto;
   }
   .side-bar.collapsed {
-    width: 50px;
+    width: 56px;
     flex-basis: 56px;
   }
 }
@@ -742,7 +742,7 @@ li::after {
   }
 
   .side-bar.collapsed {
-    width: 50px;
+    width: 56px;
     flex-basis: 56px;
   }
 
