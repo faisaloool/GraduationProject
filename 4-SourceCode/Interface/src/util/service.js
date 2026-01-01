@@ -338,3 +338,96 @@ export async function deleteQuiz(quizId, token) {
     quizId: id,
   };
 }
+
+export async function regenerateQuestion(
+  quizId,
+  questionId,
+  questionPayload,
+  token
+) {
+  const qzId = String(quizId ?? "").trim();
+  const qId = String(questionId ?? "").trim();
+
+  if (!qzId) return { error: "Missing quiz id." };
+  if (!qId) return { error: "Missing question id." };
+
+  const result = await requestJson(
+    `${API_URL}//quiz-ai/${encodeURIComponent(
+      qzId
+    )}/question/${encodeURIComponent(qId)}/regenerate`,
+    {
+      method: "POST",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      // Send a few compatible keys; backend expectations may vary.
+      json: {
+        quizId: qzId,
+        questionId: qId,
+        question: questionPayload,
+      },
+    }
+  );
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to regenerate question." };
+  }
+
+  const data = unwrapApiData(result.payload);
+
+  if (data?.success === false) {
+    return {
+      error:
+        data?.message ||
+        result.error ||
+        "Failed to regenerate question (server).",
+    };
+  }
+
+  const maybeQuestion =
+    data?.question ||
+    data?.regeneratedQuestion ||
+    data?.generatedQuestion ||
+    data?.data?.question ||
+    data;
+
+  if (!maybeQuestion || typeof maybeQuestion !== "object") {
+    return { error: "Unexpected server response." };
+  }
+
+  return maybeQuestion;
+}
+
+export async function deleteQuestion(quizId, questionId, token) {
+  const qzId = String(quizId ?? "").trim();
+  const qId = String(questionId ?? "").trim();
+
+  if (!qzId) return { error: "Missing quiz id." };
+  if (!qId) return { error: "Missing question id." };
+
+  // TODO: Replace this URL with the real backend endpoint when you have it.
+  // Example format you can adapt:
+  //   `${API_URL}/quiz-ai/${qzId}/question/${qId}`
+  const url = `${API_URL}/quiz-ai/${encodeURIComponent(
+    qzId
+  )}/question/${encodeURIComponent(qId)}`;
+
+  const result = await requestJson(url, {
+    method: "DELETE",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to delete question." };
+  }
+
+  const data = unwrapApiData(result.payload);
+  if (data?.success === false) {
+    return { error: data?.message || "Failed to delete question (server)." };
+  }
+
+  return {
+    success: true,
+    message: data?.message || "Question deleted successfully.",
+    quizId: qzId,
+    questionId: qId,
+  };
+}

@@ -12,8 +12,17 @@ import { MdDeleteForever } from "react-icons/md";
 import { AntigravityCanvas } from "./AntigravityCanvas";
 
 export const Quiz_main_page = ({ editing, setEditing }) => {
-  const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
-    useExams();
+  const {
+    exam,
+    setExam,
+    exams,
+    loading,
+    loadExams,
+    deleteExam,
+    regenerateExamQuestion,
+    deleteExamQuestion,
+    error,
+  } = useExams();
 
   const quizRef = useRef(null);
   const [questionNumber, setQuestionNumber] = React.useState(0);
@@ -30,6 +39,12 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   const examKey = exam.examId || exam.quizId;
   const currentScore = submitedMap.get(examKey);
   const isSubmitted = typeof currentScore === "number";
+
+  const [regeneratingById, setRegeneratingById] = useState({});
+  const [regenerateErrorById, setRegenerateErrorById] = useState({});
+
+  const [deletingById, setDeletingById] = useState({});
+  const [deleteErrorById, setDeleteErrorById] = useState({});
 
   useEffect(() => {
     if (!initialLoadStarted && loading) {
@@ -53,16 +68,119 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     if (quizRef.current) {
       quizRef.current.scrollTo({ top: 0, behavior: "instant" });
     }
-    // calculating total marks of the exam
+    // resetting user answers and the question counter when a NEW exam is loaded
+    setQuestionNumber(0);
+    setMyMap(new Map());
+  }, [examKey]);
+
+  useEffect(() => {
+    // calculating total marks of the exam (can change without changing examKey)
     let marks = 0;
     exam.questions?.forEach(({ marks: m }) => {
       marks += m;
     });
     setTotalMarks(marks);
-    //resting user answers and the quetsion counter when a new exam is loaded
-    setQuestionNumber(0);
-    setMyMap(new Map());
-  }, [exam]);
+  }, [examKey, exam.questions]);
+
+  const handleRegenerateQuestion = async (questionId, questionPayload) => {
+    const quizId = examKey;
+    const qIdKey = String(questionId);
+
+    if (!quizId) {
+      setRegenerateErrorById((prev) => ({
+        ...prev,
+        [qIdKey]: "Missing quiz id.",
+      }));
+      return;
+    }
+
+    setRegeneratingById((prev) => ({ ...prev, [qIdKey]: true }));
+    setRegenerateErrorById((prev) => {
+      const next = { ...prev };
+      delete next[qIdKey];
+      return next;
+    });
+
+    const result = await regenerateExamQuestion(
+      quizId,
+      questionId,
+      questionPayload
+    );
+
+    if (result?.error) {
+      setRegenerateErrorById((prev) => ({
+        ...prev,
+        [qIdKey]: result.error,
+      }));
+    } else {
+      // Clear the user's selected answer for this question (options likely changed)
+      setMyMap((prev) => {
+        const next = new Map(prev);
+        next.delete(questionId);
+        return next;
+      });
+    }
+
+    setRegeneratingById((prev) => {
+      const next = { ...prev };
+      delete next[qIdKey];
+      return next;
+    });
+  };
+
+  const handleDeleteQuestion = async (questionId) => {
+    const quizId = examKey;
+    const qIdKey = String(questionId);
+
+    if (!quizId) {
+      setDeleteErrorById((prev) => ({
+        ...prev,
+        [qIdKey]: "Missing quiz id.",
+      }));
+      return;
+    }
+
+    setDeletingById((prev) => ({ ...prev, [qIdKey]: true }));
+    setDeleteErrorById((prev) => {
+      const next = { ...prev };
+      delete next[qIdKey];
+      return next;
+    });
+
+    const result = await deleteExamQuestion(quizId, questionId);
+
+    if (result?.error) {
+      setDeleteErrorById((prev) => ({
+        ...prev,
+        [qIdKey]: result.error,
+      }));
+    } else {
+      // Clear selected answer + any previous regen error for this question.
+      setMyMap((prev) => {
+        const next = new Map(prev);
+        next.delete(questionId);
+        return next;
+      });
+      setRegenerateErrorById((prev) => {
+        const next = { ...prev };
+        delete next[qIdKey];
+        return next;
+      });
+
+      // If exam was submitted, clear stored score to avoid stale result.
+      setSubmitedMap((prev) => {
+        const next = new Map(prev);
+        next.delete(examKey);
+        return next;
+      });
+    }
+
+    setDeletingById((prev) => {
+      const next = { ...prev };
+      delete next[qIdKey];
+      return next;
+    });
+  };
 
   useEffect(() => {
     const el = quizRef.current;
@@ -135,6 +253,14 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   // here we display the exam questions and options
   const getExamResponse = (questions) => {
     return questions.map(({ id, question, options, type, marks }) => {
+      const qIdKey = String(id);
+      const isRegenerating = !!regeneratingById[qIdKey];
+      const regenerateError = regenerateErrorById[qIdKey];
+      const isDeleting = !!deletingById[qIdKey];
+      const deleteError = deleteErrorById[qIdKey];
+      const isBusy = isRegenerating || isDeleting;
+      const actionError = deleteError || regenerateError;
+
       switch (String(type).toLowerCase()) {
         case "mcq":
           return (
@@ -164,23 +290,53 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
               <div className="options">
                 <button
                   type="button"
-                  className="option-item"
+                  className={`option-item ${
+                    isRegenerating ? "is-loading" : ""
+                  }`}
                   aria-label="Regenerate question"
                   data-tooltip="Regenerate question"
-                  onClick={() => {}}
+                  aria-busy={isRegenerating}
+                  disabled={isBusy}
+                  onClick={() =>
+                    handleRegenerateQuestion(id, {
+                      id,
+                      question,
+                      options,
+                      type,
+                      marks,
+                    })
+                  }
                 >
-                  <GrRefresh aria-hidden />
+                  {isRegenerating ? (
+                    <span className="option-spinner" aria-hidden />
+                  ) : (
+                    <GrRefresh aria-hidden />
+                  )}
                 </button>
                 <button
                   type="button"
-                  className="option-item delete-option"
+                  className={`option-item delete-option ${
+                    isDeleting ? "is-loading" : ""
+                  }`}
                   aria-label="Delete question"
                   data-tooltip="Delete question"
-                  onClick={() => {}}
+                  aria-busy={isDeleting}
+                  disabled={isBusy}
+                  onClick={() => handleDeleteQuestion(id)}
                 >
-                  <MdDeleteForever aria-hidden />
+                  {isDeleting ? (
+                    <span className="option-spinner" aria-hidden />
+                  ) : (
+                    <MdDeleteForever aria-hidden />
+                  )}
                 </button>
               </div>
+
+              {actionError && (
+                <p className="question-action-error" role="alert">
+                  {actionError}
+                </p>
+              )}
             </div>
           );
 
@@ -223,23 +379,53 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
               <div className="options">
                 <button
                   type="button"
-                  className="option-item"
+                  className={`option-item ${
+                    isRegenerating ? "is-loading" : ""
+                  }`}
                   aria-label="Regenerate question"
                   data-tooltip="Regenerate question"
-                  onClick={() => {}}
+                  aria-busy={isRegenerating}
+                  disabled={isBusy}
+                  onClick={() =>
+                    handleRegenerateQuestion(id, {
+                      id,
+                      question,
+                      options,
+                      type,
+                      marks,
+                    })
+                  }
                 >
-                  <GrRefresh aria-hidden />
+                  {isRegenerating ? (
+                    <span className="option-spinner" aria-hidden />
+                  ) : (
+                    <GrRefresh aria-hidden />
+                  )}
                 </button>
                 <button
                   type="button"
-                  className="option-item delete-option"
+                  className={`option-item delete-option ${
+                    isDeleting ? "is-loading" : ""
+                  }`}
                   aria-label="Delete question"
                   data-tooltip="Delete question"
-                  onClick={() => {}}
+                  aria-busy={isDeleting}
+                  disabled={isBusy}
+                  onClick={() => handleDeleteQuestion(id)}
                 >
-                  <MdDeleteForever aria-hidden />
+                  {isDeleting ? (
+                    <span className="option-spinner" aria-hidden />
+                  ) : (
+                    <MdDeleteForever aria-hidden />
+                  )}
                 </button>
               </div>
+
+              {actionError && (
+                <p className="question-action-error" role="alert">
+                  {actionError}
+                </p>
+              )}
             </div>
           );
 

@@ -5,7 +5,13 @@ import React, {
   useEffect,
   use,
 } from "react";
-import { fetchUserExams, renameQuiz, deleteQuiz } from "../util/service.js";
+import {
+  fetchUserExams,
+  renameQuiz,
+  deleteQuiz,
+  regenerateQuestion,
+  deleteQuestion,
+} from "../util/service.js";
 import { useAuth } from "./AuthContext.jsx";
 
 const ExamsContext = createContext();
@@ -128,6 +134,142 @@ export function ExamsProvider({ children }) {
     return result;
   };
 
+  const getQuestionId = (maybeQuestion) =>
+    maybeQuestion?.id ??
+    maybeQuestion?.questionId ??
+    maybeQuestion?._id ??
+    null;
+
+  const regenerateExamQuestion = async (
+    examId,
+    questionId,
+    questionPayload
+  ) => {
+    const targetExamId = String(examId ?? "").trim();
+    const targetQuestionId = String(questionId ?? "").trim();
+
+    if (!targetExamId) return { error: "Missing exam id." };
+    if (!targetQuestionId) return { error: "Missing question id." };
+
+    const currentExamId = String(getExamId(exam) ?? "");
+    if (!currentExamId || currentExamId !== targetExamId) {
+      return { error: "Exam not loaded." };
+    }
+
+    const prevQuestions = Array.isArray(exam?.questions) ? exam.questions : [];
+    const existed = prevQuestions.some(
+      (q) => String(getQuestionId(q)) === targetQuestionId
+    );
+    if (!existed) return { error: "Question not found." };
+
+    const result = await regenerateQuestion(
+      targetExamId,
+      targetQuestionId,
+      questionPayload,
+      token
+    );
+
+    if (result?.error) return { error: result.error };
+
+    const nextQuestion =
+      result?.question && typeof result.question === "object"
+        ? result.question
+        : result;
+
+    if (!nextQuestion || typeof nextQuestion !== "object") {
+      return { error: "Unexpected server response." };
+    }
+
+    setExam((prev) => {
+      const prevExamId = String(getExamId(prev) ?? "");
+      if (prevExamId !== targetExamId) return prev;
+
+      const prevQs = Array.isArray(prev?.questions) ? prev.questions : [];
+      const updatedQuestions = prevQs.map((q) => {
+        const qId = String(getQuestionId(q));
+        if (qId !== targetQuestionId) return q;
+
+        const merged = { ...q, ...nextQuestion };
+        if (merged.id == null && q?.id != null) merged.id = q.id;
+        if (merged.questionId == null && q?.questionId != null)
+          merged.questionId = q.questionId;
+        if (merged.id == null && merged.questionId == null) {
+          merged.id = getQuestionId(q) ?? targetQuestionId;
+        }
+        return { ...merged };
+      });
+
+      return { ...prev, questions: updatedQuestions };
+    });
+
+    // Keep the quizzes list in sync as well (important if user re-selects quiz).
+    setExams((prev) =>
+      prev.map((examItem) => {
+        const itemId = String(getExamId(examItem) ?? "");
+        if (itemId !== targetExamId) return examItem;
+
+        const itemQs = Array.isArray(examItem?.questions)
+          ? examItem.questions
+          : null;
+        if (!itemQs) return examItem;
+
+        const updatedQuestions = itemQs.map((q) => {
+          const qId = String(getQuestionId(q));
+          if (qId !== targetQuestionId) return q;
+
+          const merged = { ...q, ...nextQuestion };
+          if (merged.id == null && q?.id != null) merged.id = q.id;
+          if (merged.questionId == null && q?.questionId != null)
+            merged.questionId = q.questionId;
+          if (merged.id == null && merged.questionId == null) {
+            merged.id = getQuestionId(q) ?? targetQuestionId;
+          }
+          return { ...merged };
+        });
+
+        return { ...examItem, questions: updatedQuestions };
+      })
+    );
+
+    return { success: true, question: nextQuestion };
+  };
+
+  const deleteExamQuestion = async (examId, questionId) => {
+    const targetExamId = String(examId ?? "").trim();
+    const targetQuestionId = String(questionId ?? "").trim();
+
+    if (!targetExamId) return { error: "Missing exam id." };
+    if (!targetQuestionId) return { error: "Missing question id." };
+
+    const currentExamId = String(getExamId(exam) ?? "");
+    if (!currentExamId || currentExamId !== targetExamId) {
+      return { error: "Exam not loaded." };
+    }
+
+    const prevQuestions = Array.isArray(exam?.questions) ? exam.questions : [];
+    const existed = prevQuestions.some(
+      (q) => String(getQuestionId(q)) === targetQuestionId
+    );
+    if (!existed) return { error: "Question not found." };
+
+    const result = await deleteQuestion(targetExamId, targetQuestionId, token);
+    if (result?.error) return { error: result.error };
+
+    setExam((prev) => {
+      const prevExamId = String(getExamId(prev) ?? "");
+      if (prevExamId !== targetExamId) return prev;
+
+      const prevQs = Array.isArray(prev?.questions) ? prev.questions : [];
+      const updatedQuestions = prevQs.filter(
+        (q) => String(getQuestionId(q)) !== targetQuestionId
+      );
+
+      return { ...prev, questions: updatedQuestions };
+    });
+
+    return { success: true, ...result };
+  };
+
   return (
     <ExamsContext.Provider
       value={{
@@ -140,6 +282,8 @@ export function ExamsProvider({ children }) {
         deleteExam,
         addExam,
         renameExam,
+        regenerateExamQuestion,
+        deleteExamQuestion,
         error,
       }}
     >
