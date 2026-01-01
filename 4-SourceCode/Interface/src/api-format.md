@@ -1,6 +1,6 @@
 # API Specification
 
-## Last Update: 2025/12/30
+## Last Update: 2026/1/2
 
 ## HTTP Status Codes
 
@@ -210,7 +210,7 @@ none
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
-**Description: Getting user exames**
+**Description: Getting user exams (title,id) that he generated or got shared to**
 
 ### Request Body
 
@@ -377,11 +377,44 @@ none
 }
 }
 
-## 12. Share quiz (don't know how yet!)
+## 12. Share quiz
 
-**URL:**  
-**Method:**  
-**Description:**
+**URL:quiz-ai/shared/:UUID token**  
+**Method:GET**  
+**Description: fetching shared quiz from the UUID token in the path**
+
+### Request Body
+
+{
+"userId":"abc-123"
+"UUID":"a1b2c3d4-e5f6"
+}
+
+### Response Body (Success)
+
+{
+"success": true,
+"status": 200,
+"message": "Request completed successfully.",
+"timestamp": "2025-11-16T18:23:00Z",
+"data": {
+"quiz": {
+"examId": 1,
+"title": "General Knowledge Test",
+"totalMarks": 10,
+"questions": [
+{
+"id": 1,
+"type": "MCQ",
+"question": "What is the capital of Jordan?",
+"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
+"correctAnswer": "a",
+"marks": 2
+},
+], .....
+}
+}
+}
 
 ## 13. Get quiz based on quiz id
 
