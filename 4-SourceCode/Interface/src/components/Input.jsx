@@ -80,8 +80,28 @@ export const Input = ({ setExam }) => {
   const saveSettings = () => {
     const mcqInput = document.getElementById("mcq-count");
     const tfInput = document.getElementById("tf-count");
-    const mcqCount = parseInt(mcqInput.value, 10);
-    const tfCount = parseInt(tfInput.value, 10);
+
+    // Define your hard limits
+    const LIMITS = {
+      MAX_MCQ: 20,
+      MAX_TF: 30,
+    };
+
+    // 1. Parse the values
+    let mcqCount = parseInt(mcqInput.value, 10) || 0;
+    let tfCount = parseInt(tfInput.value, 10) || 0;
+
+    // 2. Silently clamp the values to your maximums
+    // If mcqCount is 100, Math.min(100, 20) returns 20.
+    // If mcqCount is -5, Math.max(-5, 0) returns 0.
+    mcqCount = Math.min(Math.max(mcqCount, 0), LIMITS.MAX_MCQ);
+    tfCount = Math.min(Math.max(tfCount, 0), LIMITS.MAX_TF);
+
+    // 3. Optional: Update the UI inputs so the user sees the change
+    mcqInput.value = mcqCount;
+    tfInput.value = tfCount;
+
+    // 4. Save to state
     setSettings({ mcqCount, tfCount });
   };
   return (
