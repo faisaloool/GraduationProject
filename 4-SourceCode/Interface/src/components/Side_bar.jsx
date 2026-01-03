@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
 
@@ -21,11 +21,57 @@ export const Side_bar = ({ editing, setEditing }) => {
   const navigate = useNavigate();
 
   const [collaps, setCollaps] = React.useState(false);
+  const sidebarRef = useRef(null);
+  const expandTimerRef = useRef(null);
+  const [expandedReady, setExpandedReady] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuPosition, setMenuPosition] = useState(null);
   const [menuQuiz, setMenuQuiz] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearch, setShowSearch] = useState(false);
+
+  const EXPAND_TRANSITION_MS = 240;
+
+  // Hide expanded-only content immediately on collapse, and only show it after
+  // the expand transition finishes to avoid janky layout during width animation.
+  useEffect(() => {
+    if (expandTimerRef.current) {
+      window.clearTimeout(expandTimerRef.current);
+      expandTimerRef.current = null;
+    }
+
+    if (collaps) {
+      setExpandedReady(false);
+      return;
+    }
+
+    // Expanding: wait for transition end (fallback timer below).
+    setExpandedReady(false);
+    expandTimerRef.current = window.setTimeout(() => {
+      setExpandedReady(true);
+      expandTimerRef.current = null;
+    }, EXPAND_TRANSITION_MS);
+
+    return () => {
+      if (expandTimerRef.current) {
+        window.clearTimeout(expandTimerRef.current);
+        expandTimerRef.current = null;
+      }
+    };
+  }, [collaps]);
+
+  const onSidebarTransitionEnd = (e) => {
+    if (collaps) return;
+    // Only react to the main width animation.
+    if (e.propertyName !== "width" && e.propertyName !== "flex-basis") return;
+    if (expandTimerRef.current) {
+      window.clearTimeout(expandTimerRef.current);
+      expandTimerRef.current = null;
+    }
+    setExpandedReady(true);
+  };
+
+  const showExpanded = !collaps && expandedReady;
 
   const collapseOnMobile = () => {
     if (window.matchMedia && window.matchMedia("(max-width: 600px)").matches) {
@@ -114,7 +160,9 @@ export const Side_bar = ({ editing, setEditing }) => {
     <>
       {isLoggedIn && (
         <div
+          ref={sidebarRef}
           className={`side-bar ${collaps ? "collapsed" : ""}`}
+          onTransitionEnd={onSidebarTransitionEnd}
           onClick={(e) => {
             if (!collaps) return;
             // Don't auto-expand when clicking interactive items (nav/account).
@@ -133,7 +181,7 @@ export const Side_bar = ({ editing, setEditing }) => {
               <LogoIcon size={62} />
             </div>
             <div onClick={() => setCollaps(!collaps)}>
-              {!collaps && (
+              {showExpanded && (
                 <div className="shrink shrink-icon">
                   <div>
                     <BsReverseLayoutSidebarReverse />
@@ -155,7 +203,7 @@ export const Side_bar = ({ editing, setEditing }) => {
                 >
                   <div className="Item">
                     <IoIosCreate className="side-bar-icons" />
-                    {!collaps && <a>New Quiz</a>}
+                    {showExpanded && <a className="sb-appear">New Quiz</a>}
                   </div>
                 </li>
                 <li>
@@ -169,13 +217,13 @@ export const Side_bar = ({ editing, setEditing }) => {
                     }}
                   >
                     <IoSearch className="side-bar-icons" />
-                    {!collaps && <a>Search</a>}
+                    {showExpanded && <a className="sb-appear">Search</a>}
                   </div>
                 </li>
               </ul>
             </nav>
-            {!collaps && (
-              <div className="Quizzes">
+            {showExpanded && (
+              <div className="Quizzes sb-appear">
                 <details open>
                   <summary className="quizss">
                     <p>Quizzes</p>
@@ -185,7 +233,7 @@ export const Side_bar = ({ editing, setEditing }) => {
               </div>
             )}
           </div>
-          <Account collapsed={collaps} />
+          <Account collapsed={collaps || !expandedReady} />
         </div>
       )}
 

@@ -14,6 +14,28 @@
   overflow: hidden;
 }
 
+/* Fade/slide in expanded-only content after expand finishes */
+.sb-appear {
+  animation: sb-appear 170ms ease-out;
+}
+
+@keyframes sb-appear {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-appear {
+    animation: none;
+  }
+}
+
 /* collapsed modifier (same element: class="side-bar collapsed") */
 .side-bar.collapsed {
   width: 80px;
@@ -136,6 +158,8 @@ nav {
   padding-top: 2rem;
   width: 100%;
   background-color: #1e1e1e;
+
+  border-right: #46464650 solid 1px;
 
   display: flex;
   flex-direction: column;
