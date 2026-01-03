@@ -36,11 +36,8 @@ export const Account = ({ collapsed = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [menuCoords, setMenuCoords] = useState({ top: 0, left: 0 });
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [nameInput, setNameInput] = useState(name);
   const [passwordMessage, setPasswordMessage] = useState("");
   const [passwordSending, setPasswordSending] = useState(false);
-
-  useEffect(() => setNameInput(name), [name]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -87,21 +84,11 @@ export const Account = ({ collapsed = false }) => {
 
   const openSettings = () => {
     setMenuOpen(false);
-    setNameInput(name);
     setPasswordMessage("");
     setSettingsOpen(true);
   };
 
   const closeSettings = () => setSettingsOpen(false);
-
-  const handleSaveSettings = () => {
-    const trimmed = nameInput.trim();
-    if (trimmed && trimmed !== name) {
-      const remember = Boolean(localStorage.getItem("token"));
-      login({ ...user, name: trimmed }, token, remember);
-    }
-    closeSettings();
-  };
 
   const handlePasswordChange = async () => {
     if (passwordSending) return;
@@ -258,7 +245,6 @@ export const Account = ({ collapsed = false }) => {
               <div className="account-settings-header">
                 <div>
                   <h3>Account settings</h3>
-                  <p>Update your profile information and manage security.</p>
                 </div>
                 <button
                   type="button"
@@ -287,19 +273,6 @@ export const Account = ({ collapsed = false }) => {
                   </p>
                 </div>
               </div>
-
-              <label
-                className="account-field-label"
-                htmlFor="account-name-input"
-              >
-                Display name
-              </label>
-              <input
-                id="account-name-input"
-                className="account-field-input"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-              />
 
               <label className="account-field-label">Password</label>
               <div className="account-password-row">
@@ -330,13 +303,6 @@ export const Account = ({ collapsed = false }) => {
                   onClick={handleLogout}
                 >
                   Log out
-                </button>
-                <button
-                  type="button"
-                  className="account-primary-btn"
-                  onClick={handleSaveSettings}
-                >
-                  Save changes
                 </button>
               </div>
             </div>
