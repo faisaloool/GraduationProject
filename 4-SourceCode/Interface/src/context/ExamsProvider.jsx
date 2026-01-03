@@ -32,13 +32,7 @@ export function ExamsProvider({ children }) {
     `quizai:examState:${String(userIdValue || "anon")}:${String(examIdValue)}`;
 
   const getUserIdCandidates = () => {
-    const ids = [
-      user?.id,
-      user?.userId,
-      user?._id,
-      user?.uid,
-      "anon",
-    ]
+    const ids = [user?.id, user?.userId, user?._id, user?.uid, "anon"]
       .map((v) => (v == null ? null : String(v)))
       .filter((v) => v && v.trim());
     return Array.from(new Set(ids));
