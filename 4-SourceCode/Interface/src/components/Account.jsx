@@ -79,7 +79,7 @@ export const Account = ({ collapsed = false }) => {
       const rect = accountRef.current.getBoundingClientRect();
       setMenuCoords({
         top: rect.top,
-        left: rect.left + rect.width,
+        left: rect.right,
       });
     }
     setMenuOpen((prev) => !prev);
