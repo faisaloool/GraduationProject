@@ -339,6 +339,36 @@ export async function deleteQuiz(quizId, token) {
   };
 }
 
+export async function fetchSharedExam(sharedId, userId, token) {
+  const uuid = String(sharedId ?? "").trim();
+  const uId = String(userId ?? "").trim();
+
+  if (!uuid) return { error: "Missing shared quiz id." };
+  if (!uId) return { error: "Missing userId." };
+
+  const result = await requestJson(
+    `${API_URL}/quiz-ai/shared/${encodeURIComponent(uuid)}`,
+    {
+      method: "POST",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      json: { userId: uId, UUID: uuid },
+    }
+  );
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to fetch shared quiz." };
+  }
+
+  const data = unwrapApiData(result.payload);
+  const quiz = data?.quiz ?? data?.exam ?? data;
+
+  if (!quiz || typeof quiz !== "object") {
+    return { error: "Unexpected server response." };
+  }
+
+  return quiz;
+}
+
 export async function regenerateQuestion(
   quizId,
   questionId,

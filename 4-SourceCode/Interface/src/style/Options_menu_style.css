@@ -147,7 +147,7 @@
   max-width: 520px;
   background: linear-gradient(
     150deg,
-    rgba(30, 146, 155, 0.18),
+    rgba(30, 147, 155, 0.418),
     rgba(10, 10, 10, 0.94)
   );
   border: 1px solid rgba(70, 234, 255, 0.22);
@@ -247,5 +247,62 @@
   .btn {
     padding: 9px 12px;
     font-size: 13px;
+  }
+}
+
+/* Share modal */
+.share-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.share-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(70, 234, 255, 0.22);
+  background: rgba(0, 0, 0, 0.25);
+  color: #e9feff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.share-input:focus {
+  outline: none;
+  border-color: rgba(70, 234, 255, 0.5);
+}
+
+.btn-copy {
+  background: rgba(70, 234, 255, 0.18);
+  color: #e9feff;
+  border-color: rgba(70, 234, 255, 0.35);
+}
+
+.btn-copy:hover {
+  background: rgba(70, 234, 255, 0.26);
+}
+
+.btn-copy:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.share-status {
+  margin-top: 10px;
+  min-height: 18px;
+  font-size: 13px;
+  color: #cfeff3;
+}
+
+@media (max-width: 520px) {
+  .share-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-copy {
+    width: 100%;
   }
 }

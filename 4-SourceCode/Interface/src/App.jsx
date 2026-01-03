@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Side_bar } from "./components/Side_bar";
 import { Quiz_main_page } from "./components/Quiz_main_page";
@@ -8,6 +8,7 @@ import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
 import { VerifyAccount } from "./components/verifyaccount.jsx";
+import { Shared_exam_route } from "./components/Shared_exam_route.jsx";
 function App() {
   const [editing, setEditing] = useState(-999);
   const [isLogin, setIsLogin] = useState(false);
@@ -39,6 +40,12 @@ function App() {
               <Side_bar editing={editing} setEditing={setEditing} />
               <Quiz_main_page editing={editing} setEditing={setEditing} />
             </main>
+          }
+        />
+        <Route
+          path="/shared/:id"
+          element={
+            <Shared_exam_route editing={editing} setEditing={setEditing} />
           }
         />
         <Route path="/error" element={<Error_page />} />

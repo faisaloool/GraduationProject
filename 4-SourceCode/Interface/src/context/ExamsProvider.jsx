@@ -4,11 +4,13 @@ import React, {
   useState,
   useEffect,
   use,
+  useCallback,
 } from "react";
 import {
   fetchUserExams,
   renameQuiz,
   deleteQuiz,
+  fetchSharedExam,
   regenerateQuestion,
   deleteQuestion,
 } from "../util/service.js";
@@ -121,6 +123,60 @@ export function ExamsProvider({ children }) {
   const addExam = (newExam) => {
     setExams((prev) => [newExam, ...prev]);
   };
+
+  const loadSharedExam = useCallback(
+    async (sharedId) => {
+      const uuid = String(sharedId ?? "").trim();
+      if (!uuid) {
+        setError("Missing shared quiz id.");
+        return { error: "Missing shared quiz id." };
+      }
+
+      const userId = user?.id ?? user?.userId ?? user?._id ?? user?.uid ?? null;
+      if (!userId) {
+        setError("Missing user id.");
+        return { error: "Missing user id." };
+      }
+
+      setError(null);
+      try {
+        const result = await fetchSharedExam(uuid, userId, token);
+        if (result?.error) {
+          setError(result.error);
+          return { error: result.error };
+        }
+
+        const sharedQuiz = result && typeof result === "object" ? result : null;
+        if (!sharedQuiz) {
+          const msg = "Unexpected server response.";
+          setError(msg);
+          return { error: msg };
+        }
+
+        // Set the active exam so Quiz_main_page renders it.
+        setExam(sharedQuiz);
+
+        // Optionally add it to the sidebar list if it's not already present.
+        const sharedExamId = getExamId(sharedQuiz);
+        if (sharedExamId != null) {
+          setExams((prev) => {
+            const exists = prev.some(
+              (item) => String(getExamId(item)) === String(sharedExamId)
+            );
+            if (exists) return prev;
+            return [sharedQuiz, ...prev];
+          });
+        }
+
+        return { success: true, quiz: sharedQuiz };
+      } catch (err) {
+        const msg = err?.message || "Failed to load shared quiz.";
+        setError(msg);
+        return { error: msg };
+      }
+    },
+    [token, user]
+  );
 
   // rename exam
   const renameExam = async (examId, newTitle) => {
@@ -303,6 +359,7 @@ export function ExamsProvider({ children }) {
         exams,
         loading,
         loadExams,
+        loadSharedExam,
         updateExam,
         deleteExam,
         addExam,

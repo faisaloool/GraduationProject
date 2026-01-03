@@ -55,6 +55,7 @@ export default function AuthForms({ isLogin, setIsLogin }) {
 
 function Form({ isLogin }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const { login, setUser } = useAuth();
 
   const [name, setName] = useState("");
@@ -87,7 +88,12 @@ function Form({ isLogin }) {
             document.getElementById("keepSigned")?.checked || false;
           // Use the new login function from context
           login(data.user, data.token, keepSignedIn);
-          navigate("/");
+          const from = location?.state?.from;
+          if (typeof from === "string" && from.trim()) {
+            navigate(from, { replace: true });
+          } else {
+            navigate("/");
+          }
         } else {
           setUser(data.user);
           navigate("/verifyaccount");

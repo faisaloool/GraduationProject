@@ -379,15 +379,15 @@ none
 
 ## 12. Share quiz
 
-**URL:quiz-ai/shared/:UUID token**  
-**Method:GET**  
-**Description: fetching shared quiz from the UUID token in the path**
+**URL:quiz-ai/shared/:QuizId**  
+**Method:POST**  
+**Description: fetching shared quiz from the QuizId in the path**
 
 ### Request Body
 
 {
 "userId":"abc-123"
-"UUID":"a1b2c3d4-e5f6"
+"QuizId":"a1b2c3d4-e5f6"
 }
 
 ### Response Body (Success)

@@ -24,6 +24,12 @@ export const Options_menu = ({
   const id = quiz?.examId || quiz?.quizId;
   const containerRef = useRef(null);
   const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("");
+
+  const shareUrl = id
+    ? `${window.location.origin}/shared/${encodeURIComponent(String(id))}`
+    : "";
 
   useEffect(() => {
     if (!onClose) return;
@@ -31,7 +37,7 @@ export const Options_menu = ({
     const handleClick = (e) => {
       // While the confirm dialog is open, clicks happen outside the menu
       // (because the dialog is portaled). Don't auto-close the menu.
-      if (confirmDeleteOpen) return;
+      if (confirmDeleteOpen || shareOpen) return;
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         onClose();
       }
@@ -39,9 +45,18 @@ export const Options_menu = ({
 
     const handleKey = (e) => {
       if (e.key !== "Escape") return;
+
       if (confirmDeleteOpen) {
         setConfirmDeleteOpen(false);
+        return;
       }
+
+      if (shareOpen) {
+        setShareOpen(false);
+        setCopyStatus("");
+        return;
+      }
+
       onClose();
     };
 
@@ -51,7 +66,7 @@ export const Options_menu = ({
       document.removeEventListener("mousedown", handleClick);
       window.removeEventListener("keydown", handleKey);
     };
-  }, [onClose, confirmDeleteOpen]);
+  }, [onClose, confirmDeleteOpen, shareOpen]);
 
   const runAndClose = (fn) => () => {
     fn?.();
@@ -62,6 +77,39 @@ export const Options_menu = ({
     setConfirmDeleteOpen(false);
     setEditing?.({ id: -999 });
     onClose?.();
+  };
+
+  const closeShareDialog = () => {
+    setShareOpen(false);
+    setCopyStatus("");
+    setEditing?.({ id: -999 });
+    onClose?.();
+  };
+
+  const copyShareLink = async () => {
+    if (!shareUrl) return;
+
+    try {
+      if (navigator?.clipboard?.writeText && window.isSecureContext) {
+        await navigator.clipboard.writeText(shareUrl);
+      } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = shareUrl;
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+
+      setCopyStatus("Copied!");
+      window.setTimeout(() => setCopyStatus(""), 1500);
+    } catch {
+      setCopyStatus("Couldn't copy");
+      window.setTimeout(() => setCopyStatus(""), 1500);
+    }
   };
 
   const confirmDelete = async () => {
@@ -94,7 +142,12 @@ export const Options_menu = ({
         zIndex: 9999,
       }}
     >
-      <p className="option_item" onClick={onClose}>
+      <p
+        className="option_item"
+        onClick={() => {
+          setShareOpen(true);
+        }}
+      >
         Share
         <FiShare />
       </p>
@@ -130,6 +183,52 @@ export const Options_menu = ({
   return (
     <>
       {createPortal(menu, document.body)}
+      {shareOpen &&
+        createPortal(
+          <div className="modal-overlay" onClick={closeShareDialog}>
+            <div
+              className="modal-card"
+              onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="modal-header">
+                <h3>Share quiz</h3>
+              </div>
+              <p className="modal-body">Copy the link and share it.</p>
+
+              <div className="share-row">
+                <input
+                  className="share-input"
+                  type="text"
+                  value={shareUrl}
+                  readOnly
+                  onFocus={(e) => e.target.select()}
+                  aria-label="Share link"
+                />
+                <button
+                  className="btn btn-copy"
+                  type="button"
+                  onClick={copyShareLink}
+                  disabled={!shareUrl}
+                >
+                  Copy
+                </button>
+              </div>
+
+              <div className="share-status" aria-live="polite">
+                {copyStatus}
+              </div>
+
+              <div className="modal-actions">
+                <button className="btn btn-cancel" onClick={closeShareDialog}>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
       {confirmDeleteOpen &&
         createPortal(
           <div className="modal-overlay" onClick={closeDeleteDialog}>
