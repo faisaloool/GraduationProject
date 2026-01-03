@@ -63,6 +63,7 @@ input {
   margin: 0;
   flex: 1;
   font-size: 18px;
+  font-weight: 500;
   text-align: left;
 }
 .threeDots {

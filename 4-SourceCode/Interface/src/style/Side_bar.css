@@ -75,6 +75,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 /* Force perfect centering of the logo container in collapsed mode */
@@ -119,6 +121,7 @@ nav {
   top: 0px;
 
   border-bottom: #46464650 solid 1px;
+  border-right: #46464650 solid 1px;
 
   margin-top: 0;
   padding: 0 16px;
@@ -139,6 +142,12 @@ nav {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
+}
+
+/* Logo icon should follow the app theme color */
+.Logo,
+.side-bar .closlogo {
+  color: #46e9ffd0;
 }
 .Logo {
   margin-left: 1rem;

@@ -12,9 +12,10 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { useExams } from "../context/ExamsProvider.jsx";
 
 import { BsReverseLayoutSidebarReverse } from "react-icons/bs";
-import { IoCreateOutline } from "react-icons/io5";
+import { IoIosCreate } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { IoLibraryOutline } from "react-icons/io5";
+import LogoIcon from "./LogoIcon.jsx";
 
 export const Side_bar = ({ editing, setEditing }) => {
   const navigate = useNavigate();
@@ -129,7 +130,7 @@ export const Side_bar = ({ editing, setEditing }) => {
         >
           <div className="top-of-side-bar">
             <div className={collaps == true ? "closlogo" : "Logo"}>
-              <img src="#" alt="Quiz AI logo" />
+              <LogoIcon size={62} />
             </div>
             <div onClick={() => setCollaps(!collaps)}>
               {!collaps && (
@@ -153,7 +154,7 @@ export const Side_bar = ({ editing, setEditing }) => {
                   }}
                 >
                   <div className="Item">
-                    <IoCreateOutline className="side-bar-icons" />
+                    <IoIosCreate className="side-bar-icons" />
                     {!collaps && <a>New Quiz</a>}
                   </div>
                 </li>

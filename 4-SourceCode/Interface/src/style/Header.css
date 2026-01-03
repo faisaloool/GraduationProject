@@ -11,7 +11,7 @@ header {
   width: 100%;
   padding: 0 16px;
 
-  background: rgba(15, 15, 15, 0.85);
+  background-color: #1e1e1e;
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #46464650;
