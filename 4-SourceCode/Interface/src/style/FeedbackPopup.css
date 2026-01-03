@@ -5,6 +5,12 @@
   bottom: 18px;
   z-index: 10050;
 
+  /* Animation base state */
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+  transition: opacity 160ms ease, transform 180ms ease;
+
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -29,6 +35,17 @@
 
   max-height: min(40vh, 220px);
   overflow: auto;
+}
+
+.feedback-popup.is-entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feedback-popup.is-exiting {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
 }
 
 /* Safe-area padding for iOS notches / home indicator */
@@ -78,6 +95,16 @@
   .feedback-popup {
     width: auto;
     margin-right: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedback-popup {
+    transition: none;
+    transform: none;
+  }
+  .feedback-popup {
+    opacity: 1;
   }
 }
 
