@@ -182,10 +182,26 @@ export async function resetPassword(token, password, confirmPassword) {
   return data || { success: true, message: "Password updated successfully." };
 }
 
-export async function generateQuizFromFile(file, token) {
+export async function generateQuizFromFile(file, token, settings) {
   try {
     const formData = new FormData();
     formData.append("file", file);
+
+    // Optional settings: allow the backend to control question counts.
+    // API spec uses: settings: { mcq: number, tf: number }
+    if (settings && typeof settings === "object") {
+      const mcqCount = Number(settings.mcqCount);
+      const tfCount = Number(settings.tfCount);
+      if (Number.isFinite(mcqCount) || Number.isFinite(tfCount)) {
+        formData.append(
+          "settings",
+          JSON.stringify({
+            mcq: Number.isFinite(mcqCount) ? mcqCount : undefined,
+            tf: Number.isFinite(tfCount) ? tfCount : undefined,
+          })
+        );
+      }
+    }
 
     const res = await fetch(`${API_URL2}/quiz-ai/quiz/create`, {
       method: "POST",

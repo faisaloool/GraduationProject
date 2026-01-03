@@ -16,10 +16,16 @@ export const Input = ({ setExam }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [settingsError, setSettingsError] = useState("");
   const [settings, setSettings] = useState({
     mcqCount: 8,
     tfCount: 2,
   });
+
+  const TOTAL_LIMITS = {
+    MIN_TOTAL: 10,
+    MAX_TOTAL: 50,
+  };
 
   useEffect(() => {
     if (!showSettings) return;
@@ -46,10 +52,23 @@ export const Input = ({ setExam }) => {
       return;
     }
 
+    const mcqCount = Number(settings?.mcqCount) || 0;
+    const tfCount = Number(settings?.tfCount) || 0;
+    const total = mcqCount + tfCount;
+    if (total < TOTAL_LIMITS.MIN_TOTAL || total > TOTAL_LIMITS.MAX_TOTAL) {
+      setErrorMessage(
+        `Total questions must be between ${TOTAL_LIMITS.MIN_TOTAL} and ${TOTAL_LIMITS.MAX_TOTAL} (MCQ + True/False).`
+      );
+      return;
+    }
+
     setErrorMessage("");
     setIsSubmitting(true);
     try {
-      const response = await generateQuizFromFile(file, token);
+      const response = await generateQuizFromFile(file, token, {
+        mcqCount,
+        tfCount,
+      });
 
       if (response?.error) {
         throw new Error(String(response.error));
@@ -81,21 +100,29 @@ export const Input = ({ setExam }) => {
     const mcqInput = document.getElementById("mcq-count");
     const tfInput = document.getElementById("tf-count");
 
-    // Define your hard limits
+    // Per-field limits (total is enforced separately)
     const LIMITS = {
-      MAX_MCQ: 20,
-      MAX_TF: 30,
+      MIN: 0,
+      MAX: TOTAL_LIMITS.MAX_TOTAL,
     };
 
     // 1. Parse the values
     let mcqCount = parseInt(mcqInput.value, 10) || 0;
     let tfCount = parseInt(tfInput.value, 10) || 0;
 
-    // 2. Silently clamp the values to your maximums
-    // If mcqCount is 100, Math.min(100, 20) returns 20.
-    // If mcqCount is -5, Math.max(-5, 0) returns 0.
-    mcqCount = Math.min(Math.max(mcqCount, 0), LIMITS.MAX_MCQ);
-    tfCount = Math.min(Math.max(tfCount, 0), LIMITS.MAX_TF);
+    // 2. Clamp each value to [0..50]
+    mcqCount = Math.min(Math.max(mcqCount, LIMITS.MIN), LIMITS.MAX);
+    tfCount = Math.min(Math.max(tfCount, LIMITS.MIN), LIMITS.MAX);
+
+    const total = mcqCount + tfCount;
+    if (total < TOTAL_LIMITS.MIN_TOTAL || total > TOTAL_LIMITS.MAX_TOTAL) {
+      setSettingsError(
+        `Total questions must be between ${TOTAL_LIMITS.MIN_TOTAL} and ${TOTAL_LIMITS.MAX_TOTAL}. Current total: ${total}.`
+      );
+      return false;
+    }
+
+    setSettingsError("");
 
     // 3. Optional: Update the UI inputs so the user sees the change
     mcqInput.value = mcqCount;
@@ -103,6 +130,7 @@ export const Input = ({ setExam }) => {
 
     // 4. Save to state
     setSettings({ mcqCount, tfCount });
+    return true;
   };
   return (
     <>
@@ -170,6 +198,7 @@ export const Input = ({ setExam }) => {
                   className="settings-input number-input"
                   type="number"
                   min={0}
+                  max={TOTAL_LIMITS.MAX_TOTAL}
                   defaultValue={settings.mcqCount}
                 />
                 <label htmlFor="tf-count">True/False</label>
@@ -178,16 +207,23 @@ export const Input = ({ setExam }) => {
                   className="settings-input number-input"
                   type="number"
                   min={0}
+                  max={TOTAL_LIMITS.MAX_TOTAL}
                   defaultValue={settings.tfCount}
                 />
               </div>
+
+              {settingsError && (
+                <div className="settings-error" role="alert">
+                  {settingsError}
+                </div>
+              )}
 
               <div className="settings-actions">
                 <button
                   className="settings-save"
                   onClick={() => {
-                    saveSettings();
-                    setShowSettings(false);
+                    const ok = saveSettings();
+                    if (ok) setShowSettings(false);
                   }}
                 >
                   Save

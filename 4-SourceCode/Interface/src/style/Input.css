@@ -316,6 +316,17 @@
   outline: none;
 }
 
+.settings-error {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: #ffe5e5;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .settings-actions {
   display: flex;
   justify-content: flex-end;
