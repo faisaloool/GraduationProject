@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
+
+import { useExams } from "../context/ExamsProvider.jsx";
 
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
@@ -15,30 +18,69 @@ export const Options_menu = ({
   where,
   onClose,
 }) => {
-  const [id] = useState(quiz.examId || quiz.quizId);
+  const navigate = useNavigate();
+  const { exam, setExam, deleteExam } = useExams();
+
+  const id = quiz?.examId || quiz?.quizId;
   const containerRef = useRef(null);
+  const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
 
   useEffect(() => {
     if (!onClose) return;
+
     const handleClick = (e) => {
+      // While the confirm dialog is open, clicks happen outside the menu
+      // (because the dialog is portaled). Don't auto-close the menu.
+      if (confirmDeleteOpen) return;
       if (containerRef.current && !containerRef.current.contains(e.target)) {
         onClose();
       }
     };
+
     const handleKey = (e) => {
-      if (e.key === "Escape") onClose();
+      if (e.key !== "Escape") return;
+      if (confirmDeleteOpen) {
+        setConfirmDeleteOpen(false);
+      }
+      onClose();
     };
+
     document.addEventListener("mousedown", handleClick);
     window.addEventListener("keydown", handleKey);
     return () => {
       document.removeEventListener("mousedown", handleClick);
       window.removeEventListener("keydown", handleKey);
     };
-  }, [onClose]);
+  }, [onClose, confirmDeleteOpen]);
 
   const runAndClose = (fn) => () => {
     fn?.();
     onClose?.();
+  };
+
+  const closeDeleteDialog = () => {
+    setConfirmDeleteOpen(false);
+    setEditing?.({ id: -999 });
+    onClose?.();
+  };
+
+  const confirmDelete = async () => {
+    try {
+      if (!id) return;
+
+      const response = await deleteExam(id);
+      if (response?.error) {
+        console.error("Error deleting exam:", response.error);
+      }
+
+      const activeId = exam?.examId || exam?.quizId;
+      if (String(activeId ?? "") === String(id ?? "")) {
+        setExam({ title: "Main-page" });
+        navigate("/");
+      }
+    } finally {
+      closeDeleteDialog();
+    }
   };
 
   const menu = (
@@ -75,14 +117,52 @@ export const Options_menu = ({
       )}
       <p
         className="option_item delete"
-        onClick={runAndClose(() =>
-          setEditing({ id: `${id}`, action: "delete" })
-        )}
+        onClick={() => {
+          setConfirmDeleteOpen(true);
+        }}
       >
         Delete
         <MdDeleteForever />
       </p>
     </div>
   );
-  return createPortal(menu, document.body);
+
+  return (
+    <>
+      {createPortal(menu, document.body)}
+      {confirmDeleteOpen &&
+        createPortal(
+          <div className="modal-overlay" onClick={closeDeleteDialog}>
+            <div
+              className="modal-card"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+              role="dialog"
+              aria-modal="true"
+            >
+              <div className="modal-header">
+                <h3>Delete quiz?</h3>
+              </div>
+              <p className="modal-body">
+                Are you sure you want to delete{" "}
+                <span className="modal-quiz-title">
+                  “{quiz?.title || exam?.title || "this quiz"}”
+                </span>
+                ? This action cannot be undone.
+              </p>
+              <div className="modal-actions">
+                <button className="btn btn-cancel" onClick={closeDeleteDialog}>
+                  Cancel
+                </button>
+                <button className="btn btn-delete" onClick={confirmDelete}>
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
+    </>
+  );
 };

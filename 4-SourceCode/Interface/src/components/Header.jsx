@@ -1,4 +1,4 @@
-import { React, useEffect, useState, useRef } from "react";
+import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../style/Header.css";
@@ -15,7 +15,6 @@ export const Header = ({ quiz, setEditing }) => {
   const { user, isLoggedIn, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
   const [menuPosition, setMenuPosition] = useState(null);
 
   const handleThreeDotsClick = (e) => {
@@ -90,21 +89,13 @@ export const Header = ({ quiz, setEditing }) => {
 
       {/* menu option */}
       {menuOpen && (
-        <div
-          ref={menuRef}
-          onClick={(e) => {
-            e.stopPropagation();
-            setMenuOpen(false);
-          }}
-        >
-          <Options_menu
-            position={menuPosition}
-            setEditing={setEditing}
-            quiz={exam}
-            where={"header"}
-            onClose={() => setMenuOpen(false)}
-          />
-        </div>
+        <Options_menu
+          position={menuPosition}
+          setEditing={setEditing}
+          quiz={exam}
+          where={"header"}
+          onClose={() => setMenuOpen(false)}
+        />
       )}
     </>
   );

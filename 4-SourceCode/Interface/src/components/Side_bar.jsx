@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createPortal } from "react-dom";
 
@@ -32,11 +32,8 @@ export const Side_bar = ({ editing, setEditing }) => {
     }
   };
 
-  const menuRef = useRef(null);
-
   const { user, isLoggedIn, logout, token } = useAuth();
-  const { exam, setExam, exams, loading, loadExams, deleteExam, error } =
-    useExams();
+  const { exam, setExam, exams, loading, loadExams, error } = useExams();
 
   const normalizedSearch = searchTerm.trim().toLowerCase();
   const matchingExams = normalizedSearch
@@ -111,42 +108,6 @@ export const Side_bar = ({ editing, setEditing }) => {
       </div>
     );
   };
-
-  // close delete pop up
-  const handleClosePopUp = () => {
-    setEditing({ id: -999 });
-    setMenuQuiz(null);
-  };
-
-  // confirm delete quiz
-  const handleConfirmDelete = async () => {
-    try {
-      if (!menuQuiz && editing.id === -999) return handleClosePopUp();
-      const id = editing.id || menuQuiz.examId || menuQuiz.quizId;
-      const response = await deleteExam(id);
-      if (response?.error) {
-        console.error("Error deleting exam:", response.error);
-        return;
-      }
-      if ((exam?.examId || exam?.quizId) === id || editing.id === id) {
-        setExam({ title: "Main-page" });
-        navigate("/");
-      }
-    } finally {
-      setMenuOpen(false);
-      handleClosePopUp();
-    }
-  };
-
-  // close popup with Escape
-  useEffect(() => {
-    if (editing.id === -999) return;
-    const onKey = (e) => {
-      if (e.key === "Escape") handleClosePopUp();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [editing]);
 
   return (
     <>
@@ -292,53 +253,14 @@ export const Side_bar = ({ editing, setEditing }) => {
         )}
 
       {/* menu option */}
-      {menuOpen && (
-        <div
-          ref={menuRef}
-          onClick={(e) => {
-            e.stopPropagation();
-            setMenuOpen(false);
-          }}
-        >
-          <Options_menu
-            position={menuPosition}
-            setEditing={setEditing}
-            quiz={menuQuiz}
-            where={"quiz"}
-            onClose={() => setMenuOpen(false)}
-          />
-        </div>
-      )}
-
-      {/* delete pop up */}
-      {editing.id != -999 && editing.action === "delete" && (
-        <div className="modal-overlay" onClick={handleClosePopUp}>
-          <div
-            className="modal-card"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-          >
-            <div className="modal-header">
-              <h3>Delete quiz?</h3>
-            </div>
-            <p className="modal-body">
-              Are you sure you want to delete{" "}
-              <span className="modal-quiz-title">
-                “{menuQuiz?.title || exam.title || "this quiz"}”
-              </span>
-              ? This action cannot be undone.
-            </p>
-            <div className="modal-actions">
-              <button className="btn btn-cancel" onClick={handleClosePopUp}>
-                Cancel
-              </button>
-              <button className="btn btn-delete" onClick={handleConfirmDelete}>
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
+      {menuOpen && menuQuiz && (
+        <Options_menu
+          position={menuPosition}
+          setEditing={setEditing}
+          quiz={menuQuiz}
+          where={"quiz"}
+          onClose={() => setMenuOpen(false)}
+        />
       )}
     </>
   );
