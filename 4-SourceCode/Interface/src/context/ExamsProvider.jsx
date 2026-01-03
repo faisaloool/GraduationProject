@@ -28,6 +28,22 @@ export function ExamsProvider({ children }) {
   const getExamId = (maybeExam) =>
     maybeExam?.examId ?? maybeExam?.quizId ?? maybeExam?.id ?? null;
 
+  const getExamStorageKey = (userIdValue, examIdValue) =>
+    `quizai:examState:${String(userIdValue || "anon")}:${String(examIdValue)}`;
+
+  const getUserIdCandidates = () => {
+    const ids = [
+      user?.id,
+      user?.userId,
+      user?._id,
+      user?.uid,
+      "anon",
+    ]
+      .map((v) => (v == null ? null : String(v)))
+      .filter((v) => v && v.trim());
+    return Array.from(new Set(ids));
+  };
+
   // Load exams when user changes
   useEffect(() => {
     if (user) {
@@ -81,6 +97,16 @@ export function ExamsProvider({ children }) {
     if (result?.error) {
       console.error("deleteExam failed:", result.error);
       return { error: result.error };
+    }
+
+    // Remove any locally persisted attempt/submission state for this exam.
+    // (Stored by Quiz_main_page under quizai:examState:<userId>:<examId>)
+    try {
+      for (const userIdValue of getUserIdCandidates()) {
+        localStorage.removeItem(getExamStorageKey(userIdValue, targetId));
+      }
+    } catch {
+      // ignore storage errors
     }
 
     // Only update local state AFTER backend confirms.
