@@ -369,6 +369,33 @@ export async function fetchSharedExam(sharedId, userId, token) {
   return quiz;
 }
 
+export async function regenerateQuiz(quizId, token) {
+  const id = String(quizId ?? "").trim();
+  if (!id) return { error: "Missing quiz id." };
+
+  const result = await requestJson(`${API_URL}/quiz-ai/quiz/regenrate`, {
+    method: "POST",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    json: { quizId: id },
+  });
+
+  if (!result.ok) {
+    return { error: result.error || "Failed to regenerate quiz." };
+  }
+
+  const data = unwrapApiData(result.payload);
+  if (data?.success === false) {
+    return { error: data?.message || "Failed to regenerate quiz (server)." };
+  }
+
+  const quiz = data?.quiz ?? data?.exam ?? data;
+  if (!quiz || typeof quiz !== "object") {
+    return { error: "Unexpected server response." };
+  }
+
+  return quiz;
+}
+
 export async function regenerateQuestion(
   quizId,
   questionId,

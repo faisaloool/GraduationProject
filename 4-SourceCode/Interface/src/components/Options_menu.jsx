@@ -19,7 +19,8 @@ export const Options_menu = ({
   onClose,
 }) => {
   const navigate = useNavigate();
-  const { exam, setExam, deleteExam } = useExams();
+  const { exam, setExam, deleteExam, regenerateWholeExam, regeneratingQuiz } =
+    useExams();
 
   const id = quiz?.examId || quiz?.quizId;
   const containerRef = useRef(null);
@@ -162,8 +163,17 @@ export const Options_menu = ({
           <MdDriveFileRenameOutline />
         </p>
       )}
-      {where === "header" && (
-        <p className="option_item">
+      {where === "header" && id && (
+        <p
+          className="option_item"
+          onClick={runAndClose(async () => {
+            if (regeneratingQuiz) return;
+            const response = await regenerateWholeExam?.(id);
+            if (response?.error) {
+              console.error("Error regenerating quiz:", response.error);
+            }
+          })}
+        >
           Regnerate quiz
           <GrRefresh />
         </p>

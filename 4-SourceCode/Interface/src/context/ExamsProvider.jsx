@@ -11,6 +11,7 @@ import {
   renameQuiz,
   deleteQuiz,
   fetchSharedExam,
+  regenerateQuiz,
   regenerateQuestion,
   deleteQuestion,
 } from "../util/service.js";
@@ -23,7 +24,10 @@ export function ExamsProvider({ children }) {
   const [exam, setExam] = useState({ title: "Main-page", examId: null });
   const [exams, setExams] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [regeneratingQuiz, setRegeneratingQuiz] = useState(false);
+  const [examResetNonce, setExamResetNonce] = useState(0);
   const [error, setError] = useState(null);
+  const [feedback, setFeedback] = useState(null);
 
   const MAX_EXAM_TITLE_LENGTH = 40;
 
@@ -39,6 +43,20 @@ export function ExamsProvider({ children }) {
       .filter((v) => v && v.trim());
     return Array.from(new Set(ids));
   };
+
+  const pushFeedback = useCallback((type, message) => {
+    const msg = String(message ?? "").trim();
+    if (!msg) return;
+    setFeedback({
+      type: type === "success" ? "success" : "error",
+      message: msg,
+      ts: Date.now(),
+    });
+  }, []);
+
+  const clearFeedback = useCallback(() => {
+    setFeedback(null);
+  }, []);
 
   // Load exams when user changes
   useEffect(() => {
@@ -86,12 +104,14 @@ export function ExamsProvider({ children }) {
     if (!existed) {
       const msg = "Exam not found";
       console.error("deleteExam:", msg);
+      pushFeedback("error", msg);
       return { error: msg };
     }
 
     const result = await deleteQuiz(targetId, token);
     if (result?.error) {
       console.error("deleteExam failed:", result.error);
+      pushFeedback("error", result.error);
       return { error: result.error };
     }
 
@@ -115,6 +135,8 @@ export function ExamsProvider({ children }) {
       if (prevId !== targetId) return prev;
       return { title: "Main-page", examId: null };
     });
+
+    pushFeedback("success", result?.message || "Quiz deleted successfully.");
 
     return result;
   };
@@ -178,6 +200,84 @@ export function ExamsProvider({ children }) {
     [token, user]
   );
 
+  const regenerateWholeExam = useCallback(
+    async (examId) => {
+      const targetId = String(examId ?? "").trim();
+      if (!targetId) {
+        pushFeedback("error", "Missing exam id.");
+        return { error: "Missing exam id." };
+      }
+
+      setRegeneratingQuiz(true);
+
+      try {
+        const result = await regenerateQuiz(targetId, token);
+        if (result?.error) {
+          pushFeedback("error", result.error);
+          return { error: result.error };
+        }
+
+        const nextExam = result && typeof result === "object" ? result : null;
+        if (!nextExam) {
+          const msg = "Unexpected server response.";
+          pushFeedback("error", msg);
+          return { error: msg };
+        }
+
+        // Clear any locally persisted attempt/submission state for the old exam.
+        try {
+          for (const userIdValue of getUserIdCandidates()) {
+            localStorage.removeItem(getExamStorageKey(userIdValue, targetId));
+          }
+        } catch {
+          // ignore storage errors
+        }
+
+        const nextExamId = String(getExamId(nextExam) ?? targetId);
+
+        setExams((prev) => {
+          const target = String(targetId);
+
+          if (nextExamId === target) {
+            return prev.map((item) =>
+              String(getExamId(item)) === target ? nextExam : item
+            );
+          }
+
+          // If backend generates a new exam id, replace old exam with the new one.
+          const idx = prev.findIndex(
+            (item) => String(getExamId(item)) === target
+          );
+          if (idx === -1) return [nextExam, ...prev];
+
+          const copy = prev.slice();
+          copy.splice(idx, 1, nextExam);
+          return copy;
+        });
+
+        setExam((prev) => {
+          const prevId = String(getExamId(prev) ?? "");
+          if (prevId !== String(targetId)) return prev;
+          return nextExam;
+        });
+
+        // Signal Quiz_main_page to reset its local UI state even when examId stays the same.
+        setExamResetNonce((n) => n + 1);
+
+        pushFeedback("success", "Quiz regenerated successfully.");
+
+        return { success: true, quiz: nextExam };
+      } catch (err) {
+        const msg = err?.message || "Failed to regenerate quiz.";
+        pushFeedback("error", msg);
+        return { error: msg };
+      } finally {
+        setRegeneratingQuiz(false);
+      }
+    },
+    [token, pushFeedback]
+  );
+
   // rename exam
   const renameExam = async (examId, newTitle) => {
     const targetId = String(examId);
@@ -188,12 +288,14 @@ export function ExamsProvider({ children }) {
 
     if (!nextTitle) {
       console.error("renameExam: blocked empty title");
+      pushFeedback("error", "Title cannot be empty.");
       return { error: "Title cannot be empty." };
     }
 
     const result = await renameQuiz(targetId, nextTitle, token);
     if (result?.error) {
       console.error("renameExam failed:", result.error);
+      pushFeedback("error", result.error);
       return { error: result.error };
     }
 
@@ -212,6 +314,8 @@ export function ExamsProvider({ children }) {
       return { ...prev, title: nextTitle };
     });
 
+    pushFeedback("success", result?.message || "Quiz renamed successfully.");
+
     return result;
   };
 
@@ -229,11 +333,18 @@ export function ExamsProvider({ children }) {
     const targetExamId = String(examId ?? "").trim();
     const targetQuestionId = String(questionId ?? "").trim();
 
-    if (!targetExamId) return { error: "Missing exam id." };
-    if (!targetQuestionId) return { error: "Missing question id." };
+    if (!targetExamId) {
+      pushFeedback("error", "Missing exam id.");
+      return { error: "Missing exam id." };
+    }
+    if (!targetQuestionId) {
+      pushFeedback("error", "Missing question id.");
+      return { error: "Missing question id." };
+    }
 
     const currentExamId = String(getExamId(exam) ?? "");
     if (!currentExamId || currentExamId !== targetExamId) {
+      pushFeedback("error", "Exam not loaded.");
       return { error: "Exam not loaded." };
     }
 
@@ -241,7 +352,10 @@ export function ExamsProvider({ children }) {
     const existed = prevQuestions.some(
       (q) => String(getQuestionId(q)) === targetQuestionId
     );
-    if (!existed) return { error: "Question not found." };
+    if (!existed) {
+      pushFeedback("error", "Question not found.");
+      return { error: "Question not found." };
+    }
 
     const result = await regenerateQuestion(
       targetExamId,
@@ -250,7 +364,10 @@ export function ExamsProvider({ children }) {
       token
     );
 
-    if (result?.error) return { error: result.error };
+    if (result?.error) {
+      pushFeedback("error", result.error);
+      return { error: result.error };
+    }
 
     const nextQuestion =
       result?.question && typeof result.question === "object"
@@ -258,6 +375,7 @@ export function ExamsProvider({ children }) {
         : result;
 
     if (!nextQuestion || typeof nextQuestion !== "object") {
+      pushFeedback("error", "Unexpected server response.");
       return { error: "Unexpected server response." };
     }
 
@@ -312,6 +430,7 @@ export function ExamsProvider({ children }) {
       })
     );
 
+    pushFeedback("success", "Question regenerated successfully.");
     return { success: true, question: nextQuestion };
   };
 
@@ -319,11 +438,18 @@ export function ExamsProvider({ children }) {
     const targetExamId = String(examId ?? "").trim();
     const targetQuestionId = String(questionId ?? "").trim();
 
-    if (!targetExamId) return { error: "Missing exam id." };
-    if (!targetQuestionId) return { error: "Missing question id." };
+    if (!targetExamId) {
+      pushFeedback("error", "Missing exam id.");
+      return { error: "Missing exam id." };
+    }
+    if (!targetQuestionId) {
+      pushFeedback("error", "Missing question id.");
+      return { error: "Missing question id." };
+    }
 
     const currentExamId = String(getExamId(exam) ?? "");
     if (!currentExamId || currentExamId !== targetExamId) {
+      pushFeedback("error", "Exam not loaded.");
       return { error: "Exam not loaded." };
     }
 
@@ -331,10 +457,16 @@ export function ExamsProvider({ children }) {
     const existed = prevQuestions.some(
       (q) => String(getQuestionId(q)) === targetQuestionId
     );
-    if (!existed) return { error: "Question not found." };
+    if (!existed) {
+      pushFeedback("error", "Question not found.");
+      return { error: "Question not found." };
+    }
 
     const result = await deleteQuestion(targetExamId, targetQuestionId, token);
-    if (result?.error) return { error: result.error };
+    if (result?.error) {
+      pushFeedback("error", result.error);
+      return { error: result.error };
+    }
 
     setExam((prev) => {
       const prevExamId = String(getExamId(prev) ?? "");
@@ -348,6 +480,10 @@ export function ExamsProvider({ children }) {
       return { ...prev, questions: updatedQuestions };
     });
 
+    pushFeedback(
+      "success",
+      result?.message || "Question deleted successfully."
+    );
     return { success: true, ...result };
   };
 
@@ -358,12 +494,17 @@ export function ExamsProvider({ children }) {
         setExam,
         exams,
         loading,
+        regeneratingQuiz,
+        examResetNonce,
+        feedback,
+        clearFeedback,
         loadExams,
         loadSharedExam,
         updateExam,
         deleteExam,
         addExam,
         renameExam,
+        regenerateWholeExam,
         regenerateExamQuestion,
         deleteExamQuestion,
         error,

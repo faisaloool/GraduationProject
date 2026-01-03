@@ -1,0 +1,90 @@
+.feedback-popup {
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 10050;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: min(420px, calc(100vw - 36px));
+  margin-left: auto;
+  margin-right: 0;
+  padding: 12px 14px;
+
+  background: linear-gradient(
+    150deg,
+    rgba(30, 147, 155, 0.42),
+    rgba(10, 10, 10, 0.94)
+  );
+  border: 1px solid rgba(70, 234, 255, 0.22);
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+  color: #e9feff;
+
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+
+  max-height: min(40vh, 220px);
+  overflow: auto;
+}
+
+/* Safe-area padding for iOS notches / home indicator */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .feedback-popup {
+    bottom: calc(18px + env(safe-area-inset-bottom));
+    left: calc(18px + env(safe-area-inset-left));
+    right: calc(18px + env(safe-area-inset-right));
+  }
+}
+
+.feedback-popup--error {
+  border-color: rgba(255, 80, 80, 0.35);
+}
+
+.feedback-popup__message {
+  flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #cfeff3;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.feedback-popup__close {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #e9feff;
+  cursor: pointer;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  .feedback-popup {
+    width: auto;
+    margin-right: 0;
+  }
+}
+
+.feedback-popup__close:hover {
+  background: rgba(70, 234, 255, 0.12);
+}
+
+.feedback-popup--error .feedback-popup__close:hover {
+  background: rgba(255, 80, 80, 0.1);
+}

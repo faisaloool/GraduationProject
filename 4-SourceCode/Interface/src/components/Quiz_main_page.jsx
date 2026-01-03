@@ -12,6 +12,7 @@ import { GrRefresh } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 
 import { AntigravityCanvas } from "./AntigravityCanvas";
+import { FeedbackPopup } from "./FeedbackPopup";
 
 export const Quiz_main_page = ({ editing, setEditing }) => {
   const {
@@ -19,6 +20,10 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     setExam,
     exams,
     loading,
+    regeneratingQuiz,
+    examResetNonce,
+    feedback,
+    clearFeedback,
     loadExams,
     deleteExam,
     regenerateExamQuestion,
@@ -149,7 +154,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     setSubmittedScore(score);
     setSubmitSyncError(storedSyncError);
     setExamStateHydrated(true);
-  }, [examKey]);
+  }, [examKey, examResetNonce]);
 
   useEffect(() => {
     if (!examStateHydrated) return;
@@ -680,13 +685,15 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   };
 
   const isWelcomePage = exam.title === "Main-page" || !exam.title;
-  const showInitialLoader = loading && !initialLoadFinished;
+  const showInitialLoader =
+    regeneratingQuiz || (loading && !initialLoadFinished);
   const showExamSkeleton = !showInitialLoader && examTransitioning;
   const showExamContent =
     !showInitialLoader && !examTransitioning && !isWelcomePage;
 
   return (
     <div className="page">
+      <FeedbackPopup feedback={feedback} onClose={clearFeedback} />
       <div className="header">
         <Header
           quiz={error ? { title: "Main-page" } : exam}
