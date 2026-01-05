@@ -1,0 +1,355 @@
+{
+  "filename": "Chapter 4 - Filling Area (2).ppt",
+  "quiz": [
+    {
+      "question": "A filled area is described by polygons in most graphics routines.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FILLED AREA",
+      "rate": "easy"
+    },
+    {
+      "question": "A polygon is defined by a set of two or more vertices connected by edges.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "POLYGON",
+      "rate": "easy"
+    },
+    {
+      "question": "A convex polygon has all interior angles less than or equal to 180 degrees.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POLYGON",
+      "rate": "easy"
+    },
+    {
+      "question": "Concave polygons are easier to fill than convex polygons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "IDENTIFYING CONCAVE POLYGON",
+      "rate": "easy"
+    },
+    {
+      "question": "One method to identify a concave polygon is to check if extending an edge intersects other edges.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "IDENTIFYING CONCAVE POLYGON",
+      "rate": "medium"
+    },
+    {
+      "question": "The cross product method for splitting concave polygons works by calculating edge vectors and their cross products.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SPLITTING CONCAVE POLYGON",
+      "rate": "medium"
+    },
+    {
+      "question": "The odd-parity rule states that a point is interior if the number of intersections with polygon edges is even.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "INCLUSION OF A POINT IN POLYGON",
+      "rate": "easy"
+    },
+    {
+      "question": "In the nonzero winding number rule, a point is interior if its winding number is zero.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "INCLUSION OF A POINT IN POLYGON",
+      "rate": "medium"
+    },
+    {
+      "question": "The scan-line fill algorithm works by intersecting scan lines with polygon edges and filling between pairs of intersections.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SCAN-LINE FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "The scan-line algorithm processes the polygon from its leftmost to its rightmost vertex.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SCAN-LINE FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "The active edge table (AET) stores all edges of the polygon, not just those intersecting the current scan line.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "EDGE TABLES",
+      "rate": "medium"
+    },
+    {
+      "question": "The global edge table (GET) has one bucket for each scan line, storing edges that have that scan line as their y-min value.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GLOBAL EDGE TABLE",
+      "rate": "hard"
+    },
+    {
+      "question": "Boundary fill algorithm is used when the region has a single-color boundary.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "In 4-connected boundary fill, only the up, down, left, and right neighbors are considered.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "Flood fill algorithm is suitable for regions with multi-colored boundaries.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FLOOD FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "The flood fill algorithm starts from a boundary pixel and fills outward.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "FLOOD FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Span flood-fill algorithm fills horizontal pixel spans instead of individual pixels to reduce stacking.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SPAN FLOOD-FILL ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "Pattern fill is a style where the polygon is filled with a predefined pattern.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POLYGON FILLING STYLES",
+      "rate": "easy"
+    },
+    {
+      "question": "In the RGB color model, (1,1,0) represents the color yellow.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RGB (RED-GREEN-BLUE)",
+      "rate": "easy"
+    },
+    {
+      "question": "The CMY color model is an additive color model.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CMY (CYAN-MAGENTA-YELLOW)",
+      "rate": "medium"
+    },
+    {
+      "question": "HSV stands for Hue, Saturation, and Value.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HSV (HUE-SATURATION-VALUE)",
+      "rate": "easy"
+    },
+    {
+      "question": "Saturation in HSV refers to the brightness of a color.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "HSV (HUE-SATURATION-VALUE)",
+      "rate": "medium"
+    },
+    {
+      "question": "The interior of a self-intersecting polygon can be correctly identified using the odd-even rule.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INCLUSION OF A POINT IN POLYGON",
+      "rate": "hard"
+    },
+    {
+      "question": "The winding number for an exterior point is always zero.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "INCLUSION OF A POINT IN POLYGON",
+      "rate": "hard"
+    },
+    {
+      "question": "Scan-line algorithms are only used for convex polygons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SCAN-LINE FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "The active edge table is updated as the scan line moves upward.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "ACTIVE EDGE TABLE",
+      "rate": "medium"
+    },
+    {
+      "question": "In boundary fill, 8-connected filling considers diagonal neighbors in addition to orthogonal ones.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "Flood fill replaces a specified interior color with the desired fill color.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FLOOD FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "RGB is a subtractive color model used in printing.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RGB (RED-GREEN-BLUE)",
+      "rate": "medium"
+    },
+    {
+      "question": "Cyan, magenta, and yellow are the primary colors in the subtractive CMY model.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CMY (CYAN-MAGENTA-YELLOW)",
+      "rate": "easy"
+    },
+    {
+      "question": "Value in HSV corresponds to the intensity or brightness of a color.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HSV (HUE-SATURATION-VALUE)",
+      "rate": "easy"
+    },
+    {
+      "question": "A polygon must have at least four vertices.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "POLYGON",
+      "rate": "easy"
+    },
+    {
+      "question": "Surface tessellation refers to approximating a surface with polygons.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FILLED AREA",
+      "rate": "medium"
+    },
+    {
+      "question": "The rotational method for splitting concave polygons rotates the polygon so that each vertex is placed at the origin.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SPLITTING CONCAVE POLYGON",
+      "rate": "hard"
+    },
+    {
+      "question": "In the odd-parity rule, if a point is on the boundary, it is considered interior.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "INCLUSION OF A POINT IN POLYGON",
+      "rate": "hard"
+    },
+    {
+      "question": "The scan-line algorithm handles special cases at vertices by counting them as two intersections.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SCAN-LINE – SPECIAL CASES",
+      "rate": "hard"
+    },
+    {
+      "question": "The global edge table stores the slope (1/m) for each edge.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "GLOBAL EDGE TABLE",
+      "rate": "hard"
+    },
+    {
+      "question": "Boundary fill algorithm uses a stack to store neighboring pixels for processing.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Flood fill can be implemented recursively or iteratively.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FLOOD FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Hollow filling means only the boundary of the polygon is drawn.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POLYGON FILLING STYLES",
+      "rate": "easy"
+    },
+    {
+      "question": "In RGB, (0,0,0) represents white.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RGB (RED-GREEN-BLUE)",
+      "rate": "easy"
+    },
+    {
+      "question": "In CMY, (0,0,0) represents white.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CMY (CYAN-MAGENTA-YELLOW)",
+      "rate": "medium"
+    },
+    {
+      "question": "Hue in HSV represents the dominant wavelength of the color.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "HSV (HUE-SATURATION-VALUE)",
+      "rate": "easy"
+    },
+    {
+      "question": "The scan-line algorithm is used only for monochrome displays.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SCAN-LINE FILL ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "The active edge table is sorted by the y-max values of edges.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "ACTIVE EDGE TABLE",
+      "rate": "hard"
+    },
+    {
+      "question": "Boundary fill algorithm may fail if the interior and boundary colors are the same.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Flood fill is generally faster than boundary fill for simple polygons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "FLOOD FILL ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "In 8-connected filling, the fill can leak through diagonal gaps in the boundary.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BOUNDARY FILL ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "The span flood-fill algorithm reduces memory usage by stacking only the start of spans.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SPAN FLOOD-FILL ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "Color models like RGB and CMY are device-dependent.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COLOUR",
+      "rate": "medium"
+    }
+  ]
+}

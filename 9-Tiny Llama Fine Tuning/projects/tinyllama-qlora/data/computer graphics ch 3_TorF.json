@@ -1,0 +1,355 @@
+{
+  "filename": "Chapter 3 - Graphics Primitives (4).ppt",
+  "quiz": [
+    {
+      "question": "Scan conversion is the process of converting geometric primitives into pixels in image space.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SCAN CONVERSION",
+      "rate": "easy"
+    },
+    {
+      "question": "Graphics primitives include only points and lines, not circles or polygons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "GRAPHICS OUTPUT PRIMITIVES",
+      "rate": "easy"
+    },
+    {
+      "question": "In OpenGL, the coordinate origin is always at the lower-left corner of the screen.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "2D CARTESIAN REFERENCE SYSTEM",
+      "rate": "easy"
+    },
+    {
+      "question": "The glVertex function in OpenGL is used to specify coordinates for points, lines, and other primitives.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "DDA stands for Digital Differential Analyzer and is a line drawing algorithm.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "easy"
+    },
+    {
+      "question": "In DDA, if the absolute slope |m| is greater than 1, we step in y by 1 and compute x incrementally.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's line algorithm uses floating-point arithmetic to determine pixel positions.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's algorithm is more efficient than DDA because it uses only integer calculations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "For lines with slope greater than 1, Bresenham's algorithm steps in the y-direction and calculates x values.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE ALGORITHM (2)",
+      "rate": "medium"
+    },
+    {
+      "question": "The circle equation is x^2 + y^2 = r^2.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "A circle centered at (0,0) has four-way symmetry.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CIRCLE DRAWING BY SYMMETRY",
+      "rate": "easy"
+    },
+    {
+      "question": "The midpoint circle algorithm uses a circle function f_circle(x,y) = x^2 + y^2 - r^2 to make decisions.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "In the midpoint circle algorithm, if the decision parameter p_k is negative, the next pixel chosen is at (x_k+1, y_k).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "The initial decision parameter in the midpoint circle algorithm for integer radius r is p0 = 1 - r.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "Bresenham's circle algorithm uses a different initial decision parameter than the midpoint circle algorithm.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "In OpenGL, glBegin(GL_LINES) is used to draw a series of connected line segments.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPENGL OUTPUT PRIMITIVES",
+      "rate": "easy"
+    },
+    {
+      "question": "The slope-intercept line equation is y = mx + b, where m is the slope and b is the y-intercept.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "easy"
+    },
+    {
+      "question": "DDA algorithm is immune to floating-point round-off errors for long lines.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DDA",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's line algorithm always chooses the pixel closest to the mathematical line path.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "For a line from (6,9) to (11,12) using DDA, the y-increment is 0.5.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DDA EXAMPLE",
+      "rate": "medium"
+    },
+    {
+      "question": "In Bresenham's algorithm, the decision parameter p_k is updated using only addition and subtraction.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "The midpoint circle algorithm only calculates pixels in the first quadrant.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "A circle drawn using the simple square-root method has no gaps regardless of slope.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's circle algorithm is also known as the midpoint circle algorithm.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRESENHAM'S CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "In OpenGL, gluOrtho2D is used to set up a 2D orthographic projection.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TWO-DIMENSIONAL WORLD COORDINATE REFERENCE FRAME IN OPENGL",
+      "rate": "easy"
+    },
+    {
+      "question": "The Bresenham line algorithm can be adapted to draw curves other than lines.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM",
+      "rate": "medium"
+    },
+    {
+      "question": "For a circle with radius 10, the midpoint algorithm starts with p0 = -9.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "EXAMPLE (1)",
+      "rate": "hard"
+    },
+    {
+      "question": "The DDA algorithm always steps in the x-direction by 1 regardless of slope.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's algorithm is only applicable for lines with positive slope.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRESENHAM'S LINE ALGORITHM (2)",
+      "rate": "medium"
+    },
+    {
+      "question": "In the midpoint circle algorithm, when p_k >= 0, the next pixel is (x_k+1, y_k-1).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "OpenGL's glVertex function must be placed between glBegin and glEnd calls.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "The line from (2,4) to (8,9) has a slope less than 1.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "EXAMPLE: BRESENHAM'S LINE ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's circle algorithm uses an initial decision parameter p0 = 3 - 2r.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "The simple circle drawing algorithm using y = sqrt(r^2 - x^2) is very efficient because it avoids square roots.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "In DDA, rounding operations are required because computed intermediate values may be floats.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "LINE DRAWING ALGORITHMS",
+      "rate": "medium"
+    },
+    {
+      "question": "For a line with endpoints (0,0) and (8,6), the Bresenham algorithm will produce exactly 9 pixels.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "EXERCISE (1)",
+      "rate": "hard"
+    },
+    {
+      "question": "The midpoint circle algorithm works by evaluating the circle function at the midpoint between two candidate pixels.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's line algorithm is also called the integer DDA algorithm.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "In OpenGL, glVertex2i(10, 20) specifies a 2D integer coordinate point.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OPENGL POINT FUNCTIONS",
+      "rate": "easy"
+    },
+    {
+      "question": "The DDA algorithm can be used to draw lines with negative slopes without modification.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DDA (DIGITAL DIFFERENTIAL ANALYZER)",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's algorithm for circles is more accurate than the midpoint circle algorithm.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRESENHAM'S CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "A line from (2,8) to (11,5) has a negative slope.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "EXAMPLE (SLOPE < 0)",
+      "rate": "medium"
+    },
+    {
+      "question": "The midpoint circle algorithm requires calculation of pixels in all eight octants separately.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "In Bresenham's line algorithm, if p_k is exactly 0, either of the two candidate pixels can be chosen.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "DDA is generally faster than Bresenham's algorithm for lines.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DDA",
+      "rate": "medium"
+    },
+    {
+      "question": "The circle drawing algorithms discussed assume the circle is centered at the origin.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "For a circle of radius 10, the first octant runs from x=0 to x=y.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CIRCLE DRAWING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Bresenham's line algorithm can be derived from the midpoint line algorithm.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRESENHAM'S LINE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "In the midpoint circle algorithm, when x becomes greater than or equal to y, the algorithm stops for the first octant.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "MIDPOINT CIRCLE DRAWING ALGORITHM",
+      "rate": "hard"
+    },
+    {
+      "question": "OpenGL provides built-in functions for drawing circles using the midpoint algorithm.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OPENGL OUTPUT PRIMITIVES",
+      "rate": "easy"
+    }
+  ]
+}

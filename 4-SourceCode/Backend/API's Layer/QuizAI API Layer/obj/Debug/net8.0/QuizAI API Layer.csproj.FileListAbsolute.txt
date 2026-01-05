@@ -1,3 +1,12 @@
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.csproj.AssemblyReference.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.AssemblyInfoInputs.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.AssemblyInfo.cs
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.csproj.CoreCompileInputs.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.sourcelink.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\appsettings.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\QuizAI API Layer.staticwebassets.endpoints.json
@@ -8,13 +17,29 @@ C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCod
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\QuizAI API Layer.pdb
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -25,6 +50,8 @@ C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCod
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -35,6 +62,7 @@ C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCod
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\System.Memory.Data.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\cs\Microsoft.Data.SqlClient.resources.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
@@ -59,15 +87,6 @@ C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCod
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\QuizAI DataBack Layer.dll
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\QuizAI Business Layer.pdb
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\QuizAI DataBack Layer.pdb
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.csproj.AssemblyReference.cache
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.AssemblyInfoInputs.cache
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.AssemblyInfo.cs
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.csproj.CoreCompileInputs.cache
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.sourcelink.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -83,21 +102,3 @@ C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCod
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.pdb
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\QuizAI API Layer.genruntimeconfig.cache
 C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\obj\Debug\net8.0\ref\QuizAI API Layer.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
-C:\Users\albab\OneDrive - Mutah University\Desktop\GraduationProject\4-SourceCode\Backend\API's Layer\QuizAI API Layer\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll

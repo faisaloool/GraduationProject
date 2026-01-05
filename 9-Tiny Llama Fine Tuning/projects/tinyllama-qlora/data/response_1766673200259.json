@@ -1,0 +1,348 @@
+{
+  "document": "ch08_part2_1.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Most computer instructions can be classified into three categories: Data transfer, Data manipulation, and Program control instructions.",
+        "answer": "true"
+      },
+      {
+        "question": "Load instruction transfers data from a processor register to memory.",
+        "answer": "false"
+      },
+      {
+        "question": "Store instruction transfers data from memory to a processor register.",
+        "answer": "false"
+      },
+      {
+        "question": "Move instruction transfers data from one register to another register.",
+        "answer": "true"
+      },
+      {
+        "question": "Exchange instruction is a type of Data Transfer Instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "Swap information can occur between two registers or a register and a memory word.",
+        "answer": "true"
+      },
+      {
+        "question": "Input/Output operations transfer data among processor registers and input/output devices.",
+        "answer": "true"
+      },
+      {
+        "question": "Push/Pop operations transfer data between processor registers and a memory stack.",
+        "answer": "true"
+      },
+      {
+        "question": "The '@' symbol represents Immediate Mode in addressing.",
+        "answer": "false"
+      },
+      {
+        "question": "The '$' symbol represents Address relative to PC in addressing.",
+        "answer": "true"
+      },
+      {
+        "question": "The '#' symbol represents Indirect Address in addressing.",
+        "answer": "false"
+      },
+      {
+        "question": "The '( )' symbols represent Index Mode, Register Indirect, Autoincrement in addressing.",
+        "answer": "true"
+      },
+      {
+        "question": "Arithmetic Instructions are part of Data Transfer Instructions.",
+        "answer": "false"
+      },
+      {
+        "question": "Program Control Instructions specify conditions for altering the content of PC.",
+        "answer": "true"
+      },
+      {
+        "question": "The change in PC value as a result of the execution of a program control instruction causes a break in the sequence of instruction execution.",
+        "answer": "true"
+      },
+      {
+        "question": "Branch and Jump instructions are used interchangeably to mean the same.",
+        "answer": "true"
+      },
+      {
+        "question": "The bits in the status register are set or cleared based on operations performed in the ALU.",
+        "answer": "true"
+      },
+      {
+        "question": "The status register is a 8-bit register.",
+        "answer": "false"
+      },
+      {
+        "question": "Bit C (carry) is set to 1 if the end carry C8 is 1.",
+        "answer": "true"
+      },
+      {
+        "question": "Bit S (sign) is set to 1 if F7 is 0.",
+        "answer": "false"
+      },
+      {
+        "question": "Bit Z (zero) is set to 1 if the output of the ALU contains all 0’s.",
+        "answer": "true"
+      },
+      {
+        "question": "Bit V (overflow) is set to 1 if the exclusive-OR of the last two carries (C8 and C7) is equal to 1.",
+        "answer": "true"
+      },
+      {
+        "question": "In 2's complement representation, the binary number 11101100 represents a negative number.",
+        "answer": "true"
+      },
+      {
+        "question": "The flags C = 1, S = 1, V = 0, Z = 0 indicate an overflow occurred during the last arithmetic operation.",
+        "answer": "false"
+      },
+      {
+        "question": "Different computers always use the same temporary location to store the return address.",
+        "answer": "false"
+      },
+      {
+        "question": "Using a stack memory to store the return address is the most efficient method.",
+        "answer": "true"
+      },
+      {
+        "question": "During a subroutine call, the content of the PC is pushed onto the stack.",
+        "answer": "true"
+      },
+      {
+        "question": "The stack pointer is incremented before popping the return address from the stack.",
+        "answer": "false"
+      },
+      {
+        "question": "An interrupt transfers program control from a currently running program to another service program.",
+        "answer": "true"
+      },
+      {
+        "question": "Control does not return to the original program after the service program is executed.",
+        "answer": "false"
+      },
+      {
+        "question": "An interrupt is initiated by an internal or external signal.",
+        "answer": "true"
+      },
+      {
+        "question": "A subroutine call is initiated by an internal or external signal.",
+        "answer": "false"
+      },
+      {
+        "question": "A software interrupt is initiated by an external signal.",
+        "answer": "false"
+      },
+      {
+        "question": "The address of the interrupt service program is determined by the hardware.",
+        "answer": "true"
+      },
+      {
+        "question": "The address of the subroutine call is determined from the address field of an instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "An interrupt procedure stores only the program counter (Return address).",
+        "answer": "false"
+      },
+      {
+        "question": "A subroutine call stores all the information necessary to define the state of the CPU.",
+        "answer": "false"
+      },
+      {
+        "question": "The Program Status Word (PSW) is the collection of all status bit conditions in the CPU.",
+        "answer": "true"
+      },
+      {
+        "question": "The PSW is stored in a general-purpose register.",
+        "answer": "false"
+      },
+      {
+        "question": "Supervisor Mode is when the CPU is executing a program that is part of the operating system.",
+        "answer": "true"
+      },
+      {
+        "question": "User Mode is when the CPU is executing a program that is part of the operating system.",
+        "answer": "false"
+      },
+      {
+        "question": "External Interrupts come from I/O devices, timing devices, or power supply monitoring circuits.",
+        "answer": "true"
+      },
+      {
+        "question": "Internal Interrupts are caused by external sources such as I/O devices.",
+        "answer": "false"
+      },
+      {
+        "question": "Attempting to divide by zero is considered an invalid operation.",
+        "answer": "true"
+      },
+      {
+        "question": "A stack overflow is a valid operation in computing.",
+        "answer": "false"
+      },
+      {
+        "question": "Software interrupts are initiated by executing an instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC stands for Reduced Instruction Set Computing.",
+        "answer": "true"
+      },
+      {
+        "question": "CISC stands for Complex Instruction Set Computing.",
+        "answer": "true"
+      },
+      {
+        "question": "The main difference between RISC and CISC is in the number of computing cycles each of their instructions take.",
+        "answer": "true"
+      },
+      {
+        "question": "CISC instructions typically utilize fewer cycles than RISC instructions.",
+        "answer": "false"
+      },
+      {
+        "question": "CISC has a larger, more feature-rich instruction set compared to RISC.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC processors generally have slower clock speeds than CISC processors.",
+        "answer": "false"
+      },
+      {
+        "question": "RISC architectures typically have more general purpose registers than CISC.",
+        "answer": "true"
+      },
+      {
+        "question": "CISC architecture typically has a large number of instructions ranging from 100 to 250.",
+        "answer": "true"
+      },
+      {
+        "question": "CISC architecture does not include instructions that perform specialized tasks.",
+        "answer": "false"
+      },
+      {
+        "question": "CISC architecture has a large variety of addressing modes, typically from 5 to 20 different modes.",
+        "answer": "true"
+      },
+      {
+        "question": "CISC architecture uses fixed-length instruction formats.",
+        "answer": "false"
+      },
+      {
+        "question": "Instructions in CISC architecture can manipulate operands in memory.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC architectures have a relatively large number of registers in the processor unit.",
+        "answer": "true"
+      },
+      {
+        "question": "Memory access in RISC architectures is limited to load and store instructions.",
+        "answer": "true"
+      },
+      {
+        "question": "All operations in RISC architectures are done within the registers of the CPU.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC architectures use microprogrammed control rather than hardwired control.",
+        "answer": "false"
+      },
+      {
+        "question": "RISC architectures typically have a fixed-length, easily decoded instruction format.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC architectures support single-cycle instruction execution.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC architectures use overlapped register windows to speed up procedure call and return.",
+        "answer": "true"
+      },
+      {
+        "question": "RISC architectures have a relatively large number of addressing modes.",
+        "answer": "false"
+      },
+      {
+        "question": "Compiler support is essential for translating high-level language programs into machine language programs.",
+        "answer": "true"
+      },
+      {
+        "question": "Overlapped Register Windows eliminate the need for saving and restoring register values.",
+        "answer": "true"
+      },
+      {
+        "question": "Time-consuming operations during procedure calls are not related to saving and restoring registers.",
+        "answer": "false"
+      },
+      {
+        "question": "Passing of parameters and results is not facilitated by Overlapped Register Windows.",
+        "answer": "false"
+      },
+      {
+        "question": "The concept of overlapped register windows involves a total of 74 registers.",
+        "answer": "true"
+      },
+      {
+        "question": "R0 - R9 are Global registers.",
+        "answer": "true"
+      },
+      {
+        "question": "R10 - R63 are divided into 4 windows.",
+        "answer": "true"
+      },
+      {
+        "question": "R26 - R31 store parameters and results for procedure B.",
+        "answer": "true"
+      },
+      {
+        "question": "R16 - R25 are local to procedure B.",
+        "answer": "false"
+      },
+      {
+        "question": "R32 - R41 are local to procedure A.",
+        "answer": "false"
+      },
+      {
+        "question": "The circular window includes 10 Local registers.",
+        "answer": "true"
+      },
+      {
+        "question": "Each window has 2 sets of 6 registers common to adjacent windows.",
+        "answer": "true"
+      },
+      {
+        "question": "G represents Local registers in the organization of register windows.",
+        "answer": "false"
+      },
+      {
+        "question": "L represents Local registers in the organization of register windows.",
+        "answer": "true"
+      },
+      {
+        "question": "C represents Global registers in the organization of register windows.",
+        "answer": "false"
+      },
+      {
+        "question": "The number of registers available for each window is calculated as Window Size = L + 2C + G.",
+        "answer": "true"
+      },
+      {
+        "question": "The total number of registers needed in the processor is calculated as Register file = (L + C) * W + G.",
+        "answer": "true"
+      },
+      {
+        "question": "The formula for Window Size includes the term 3C.",
+        "answer": "false"
+      },
+      {
+        "question": "The formula for Register File includes the term (L + C) * W - G.",
+        "answer": "false"
+      }
+    ]
+  }
+}

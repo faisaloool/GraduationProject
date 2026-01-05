@@ -1,0 +1,233 @@
+{
+  "document": "FDS_CH4_BD.pptx",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What are the two big data applications covered in this chapter?",
+        "options": ["Hadoop and Python", "Spark and SQL", "Hadoop and Spark", "Hive and Mahout"],
+        "answer": "Hadoop and Spark"
+      },
+      {
+        "question": "What is Apache Hadoop primarily described as?",
+        "options": [
+          "A programming language",
+          "A database management system",
+          "A framework for storing and processing large data sets",
+          "A data visualization tool"
+        ],
+        "answer": "A framework for storing and processing large data sets"
+      },
+      {
+        "question": "Which of these is NOT a characteristic of Hadoop?",
+        "options": ["Reliable", "Fault tolerant", "Scalable", "Centralized processing"],
+        "answer": "Centralized processing"
+      },
+      {
+        "question": "What is at the heart of Hadoop?",
+        "options": [
+          "A single powerful server",
+          "A distributed file system (HDFS) and MapReduce",
+          "A collection of spreadsheets",
+          "A high-speed internet connection"
+        ],
+        "answer": "A distributed file system (HDFS) and MapReduce"
+      },
+      {
+        "question": "What programming method does Hadoop use to achieve parallelism?",
+        "options": ["Spark", "SQL", "MapReduce", "Python scripting"],
+        "answer": "MapReduce"
+      },
+      {
+        "question": "What is a major disadvantage of the MapReduce algorithm mentioned?",
+        "options": [
+          "It is too simple.",
+          "It is not suitable for interactive analysis because it writes data to disk between steps.",
+          "It can only run on a single computer.",
+          "It requires expensive proprietary hardware."
+        ],
+        "answer": "It is not suitable for interactive analysis because it writes data to disk between steps."
+      },
+      {
+        "question": "In the MapReduce toy company example, what was the task?",
+        "options": [
+          "To design new toys",
+          "To count how many color units are needed",
+          "To process customer payments",
+          "To build the company website"
+        ],
+        "answer": "To count how many color units are needed"
+      },
+      {
+        "question": "The MapReduce process roughly boils down to which two big phases?",
+        "options": ["Sort and Merge", "Map and Reduce", "Extract and Load", "Query and Display"],
+        "answer": "Map and Reduce"
+      },
+      {
+        "question": "What does the 'Reduce' phase in MapReduce resemble?",
+        "options": [
+          "A SQL 'SELECT' statement",
+          "A SQL 'GROUP BY' operation",
+          "A 'DELETE' operation",
+          "An 'INSERT' operation"
+        ],
+        "answer": "A SQL 'GROUP BY' operation"
+      },
+      {
+        "question": "Which framework is introduced to overcome MapReduce's weakness with interactive and iterative analysis?",
+        "options": ["Hive", "HBase", "Spark", "Mahout"],
+        "answer": "Spark"
+      },
+      {
+        "question": "What does Spark rely on for file storage and resource management?",
+        "options": [
+          "Its own proprietary systems",
+          "Systems like the Hadoop File System and YARN",
+          "Cloud storage only",
+          "Local computer hard drives"
+        ],
+        "answer": "Systems like the Hadoop File System and YARN"
+      },
+      {
+        "question": "How does Spark improve performance over MapReduce for iterative algorithms?",
+        "options": [
+          "By using faster processors",
+          "By using an in-memory computing model (RDDs)",
+          "By reducing the price of the software",
+          "By using a simpler programming language"
+        ],
+        "answer": "By using an in-memory computing model (RDDs)"
+      },
+      {
+        "question": "What does RDD stand for in Spark?",
+        "options": [
+          "Rapid Data Deployment",
+          "Resilient Distributed Dataset",
+          "Redundant Disk Drive",
+          "Random Data Distribution"
+        ],
+        "answer": "Resilient Distributed Dataset"
+      },
+      {
+        "question": "Which component of the Spark ecosystem is for real-time analysis?",
+        "options": ["Spark SQL", "Spark Streaming", "MLlib", "GraphX"],
+        "answer": "Spark Streaming"
+      },
+      {
+        "question": "Which component of the Spark ecosystem provides a SQL interface?",
+        "options": ["Spark Core", "Spark SQL", "Spark Streaming", "GraphX"],
+        "answer": "Spark SQL"
+      },
+      {
+        "question": "What is MLlib?",
+        "options": [
+          "A machine learning tool for Spark",
+          "A library for graph databases",
+          "A streaming data processor",
+          "A SQL query optimizer"
+        ],
+        "answer": "A machine learning tool for Spark"
+      },
+      {
+        "question": "What is GraphX?",
+        "options": [
+          "A graph database for Spark",
+          "A chart plotting library",
+          "A geographic mapping tool",
+          "A grammar checker"
+        ],
+        "answer": "A graph database for Spark"
+      },
+      {
+        "question": "What language does Hive use to interact with data?",
+        "options": ["A language based on SQL", "Python", "Java", "A proprietary visual language"],
+        "answer": "A language based on SQL"
+      },
+      {
+        "question": "Hadoop can scale up to use how many computers?",
+        "options": ["Dozens", "Hundreds", "Thousands", "Millions"],
+        "answer": "Thousands"
+      },
+      {
+        "question": "What does YARN manage in the Hadoop ecosystem?",
+        "options": ["Cluster resources", "User accounts", "Network security", "Data visualization"],
+        "answer": "Cluster resources"
+      },
+      {
+        "question": "For what type of tasks is Spark said to improve performance by an order of magnitude?",
+        "options": [
+          "Batch processing of static data",
+          "Interactive analysis and iterative algorithms",
+          "Simple word processing",
+          "Managing hardware failures"
+        ],
+        "answer": "Interactive analysis and iterative algorithms"
+      },
+      {
+        "question": "What is a key advantage of Spark's in-memory processing?",
+        "options": [
+          "It eliminates costly disk operations.",
+          "It makes the software free.",
+          "It simplifies user interface design.",
+          "It requires less electricity."
+        ],
+        "answer": "It eliminates costly disk operations."
+      },
+      {
+        "question": "Hadoop and Spark are described as what?",
+        "options": [
+          "Competing frameworks",
+          "Complementary systems",
+          "Different versions of the same software",
+          "Tools for different industries"
+        ],
+        "answer": "Complementary systems"
+      },
+      {
+        "question": "What can you run Spark on for testing and development?",
+        "options": ["Only on large paid clusters", "Only in the cloud", "On your local system", "Only on supercomputers"],
+        "answer": "On your local system"
+      },
+      {
+        "question": "In the MapReduce example, what color did the mapping phase output as key-value pairs?",
+        "options": [
+          "Only unique colors",
+          "All colors from the orders, including duplicates",
+          "The most popular color",
+          "A mix of colors and product names"
+        ],
+        "answer": "All colors from the orders, including duplicates"
+      },
+      {
+        "question": "What is HDFS?",
+        "options": [
+          "Hadoop Distributed File System",
+          "High-Definition File Storage",
+          "Hadoop Data Formatting Service",
+          "Hyper-Data Fetching System"
+        ],
+        "answer": "Hadoop Distributed File System"
+      },
+      {
+        "question": "What kind of data does big data technology like Hadoop enable businesses to grasp the value of?",
+        "options": [
+          "Only structured financial data",
+          "The massive amount of data available",
+          "Only social media data",
+          "Only customer purchase records"
+        ],
+        "answer": "The massive amount of data available"
+      },
+      {
+        "question": "What is the primary purpose of the resource manager (YARN) in Hadoop?",
+        "options": [
+          "To manage how cluster resources are allocated to applications",
+          "To manage employee salaries",
+          "To manage customer relationships",
+          "To manage internet bandwidth"
+        ],
+        "answer": "To manage how cluster resources are allocated to applications"
+      }
+    ]
+  }
+}

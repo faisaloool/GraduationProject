@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.IdentityModel.Tokens;
 using QuizAIDataBack;
-using QuizAIDataBack;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
@@ -30,7 +30,7 @@ namespace QuizAI_Business_Layer
             if (userInfo == null)
                 return null;
 
-            var token = JwtServiceBusinessLayer.GenerateJwt(userInfo.Email);
+            var token = JwtServiceBusinessLayer.GenerateJwt(userInfo.id, userInfo.Email);
 
             return new UserLoginResponseDTO
             {
@@ -54,7 +54,7 @@ namespace QuizAI_Business_Layer
             }
         }
 
-        public static async Task<int> UseForgotPasswordToken(string ForgotPasswordToken)
+        public static async Task<Guid?> UseForgotPasswordToken(string ForgotPasswordToken)
         {
             ResetPasswordTokenDTO tokenInfo = await UserDataBack.GetResetPasswordTokenInfoAsync(ForgotPasswordToken);
             if(tokenInfo != null && !tokenInfo.isUsed && tokenInfo.ExpiresAt > DateTime.UtcNow)
@@ -62,34 +62,57 @@ namespace QuizAI_Business_Layer
                 await UserDataBack.MarkForgotPasswordTokenAsUsed(tokenInfo.Token);
                 return tokenInfo.UserID;
             }
-            return -1;
+            return Guid.Empty;
         }
 
+        public static async Task<bool> ResetUserPassword(Guid id, string newPassword)
+        {
+            if (Security.IsValidPassword(newPassword))
+            {
+                UserDTO user = await UserDataBack.GetUserByUserIDAsync(id);
+                if (user != null)
+                {
+                    await UserDataBack.ResetPasswordAsync(id, newPassword);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     public static class JwtServiceBusinessLayer
     {
         private static string secretKey = "17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==";
 
-        public static string GenerateJwt(string email, int expireMinutes = 60)
+        public static string GenerateJwt(Guid userId, string email, int expireMinutes = 60)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(secretKey);
 
+            var claims = new[]
+            {
+                new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, email)
+            };
+
+            var now = DateTime.UtcNow;
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.Email, email)
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(expireMinutes),
+                Subject = new ClaimsIdentity(claims),
+                Expires = now.AddMinutes(expireMinutes),
+                NotBefore = now,
+                IssuedAt = now,
                 SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                    new SymmetricSecurityKey(key),
+                    SecurityAlgorithms.HmacSha256Signature)
             };
+
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+
     }
 
     //public class ContentBusinessLayer
@@ -202,5 +225,30 @@ namespace QuizAI_Business_Layer
             }
         }
     }
+
+    public class QuizzesBusinessLayer
+    {
+        public static async Task<QuizResponseDTO> GetQuizzesByUserID(Guid UserID)
+        {
+            return await QuizzesDataBack.GetQuizzesByUserIDAsync(UserID);
+        }
+
+        public static async Task<bool> DeleteQuizUsingQuizID(Guid QuizID, Guid UserID)
+        {
+            return await QuizzesDataBack.DeleteQuizAsync(QuizID, UserID);
+        }
+
+        public static async Task<bool> RenameQuiz(Guid QuizID, Guid UserID, string NewName)
+        {
+            return await QuizzesDataBack.RenameQuizAsync(QuizID, UserID, NewName);
+        }
+
+        public static async Task ShareQuiz(Guid RecipientUserID, Guid QuizID)
+        {
+            await QuizzesDataBack.ShareQuizAsync(RecipientUserID, QuizID);
+
+        }
+    }
+
 }
 

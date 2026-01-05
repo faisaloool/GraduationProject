@@ -18,12 +18,12 @@ namespace QuizAIDataBack
 {
     public class UserDTO
     {
-        public int id { get; set; }
+        public Guid id { get; set; }
         public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
 
-        public UserDTO(int id, string email, string name)
+        public UserDTO(Guid id, string email, string name)
         {
             this.id = id;
             this.Name = name;
@@ -80,7 +80,7 @@ namespace QuizAIDataBack
             this.token = token;
         }
 
-        public UserLoginResponseDTO(int id, string email, string name)
+        public UserLoginResponseDTO(Guid id, string email, string name)
         {
             this.user.id = id;
             this.user.Email = email;
@@ -90,12 +90,20 @@ namespace QuizAIDataBack
 
     public class HealthResponseDTO
     {
-        public string message { get; set; }
         public bool OverallStatus { get; set; }
-        public HealthResponseDTO(string message, bool overall)
+
+        public bool DBConReadiness {  get; set; }
+
+        public bool DiskSpaceReadiness { get; set; }
+        
+        public bool AIModelReadiness { get; set; }
+
+        public HealthResponseDTO(bool overall, bool DBConnectionReadiness, bool DiskSpaceReadiness, bool AIModelReadiness)
         {
-            this.message = message;
             this.OverallStatus = overall;
+            this.DBConReadiness = DBConnectionReadiness;
+            this.DiskSpaceReadiness = DiskSpaceReadiness;
+            this.AIModelReadiness = AIModelReadiness;
         }
     }
 
@@ -122,15 +130,15 @@ namespace QuizAIDataBack
 
     public class ResetPasswordTokenDTO
     {
-        public int ID { get; set; }
-        public int UserID { get; set; }
+        public Guid ID { get; set; }
+        public Guid UserID { get; set; }
         public string Token { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ExpiresAt { get; set; }
         public bool isUsed { get; set; }
 
         public ResetPasswordTokenDTO() { }
-        public ResetPasswordTokenDTO(int ID, int UserID, string Token, DateTime CreatedAt, DateTime ExpiresAt, bool isUsed)
+        public ResetPasswordTokenDTO(Guid ID, Guid UserID, string Token, DateTime CreatedAt, DateTime ExpiresAt, bool isUsed)
         {
             this.ID = ID;
             this.UserID = UserID;
@@ -142,10 +150,27 @@ namespace QuizAIDataBack
     }
 
 
+    public class QuizDTO
+    {
+        public Guid QuizID { get; set; }
+        public string QuizTitle { get; set; }
+        public QuizDTO(Guid QuizID, string QuizTitle)
+        {
+            this.QuizID = QuizID;
+            this.QuizTitle = QuizTitle;
+        }
+    }
 
+    public class QuizResponseDTO
+    {
+        public List<QuizDTO> QuizzesInfo { get; set; } = new List<QuizDTO>();
+        public QuizResponseDTO() { }
+    }
 
-
-
+    public class RenameQuizRequestDTO
+    {
+        public string Name { get; set; }
+    }
 
 
 
@@ -300,121 +325,4 @@ namespace QuizAIDataBack
         public string Code { get; set; }
         public string Details { get; set; }
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//public class RegisterationDTO
-//{
-//    public int id;
-//    [Required]
-//    [EmailAddress]
-//    public string Email { get; set; }
-
-//    [Required]
-//    public string Password { get; set; }
-//    [Required]
-
-//    public string Name { get; set; }
-
-
-//    //public string UserRole { get; set; }
-//    public RegisterationDTO(string Email, string Password, string FullName)
-//    {
-//        this.id = id;
-//        this.Email = Email;
-//        this.Password = Password;
-//        this.Name = FullName;
-//    }
-//    public RegisterationDTO(int id, string Email, string FullName)
-//    {
-//        this.id = id;
-//        this.Email = Email;
-//        this.Name = FullName;
-//    }
-//    public RegisterationDTO() { }
-//}
-
-//public class UserDTO
-//{
-//    public int id;
-//    [Required]
-//    [EmailAddress]
-//    public string Email { get; set; }
-
-//    [Required]
-//    [JsonIgnore]
-//    public string Password { get; set; }
-//    [Required]
-
-//    public string FullName { get; set; }
-
-
-//    //public string UserRole { get; set; }
-//    public UserDTO(string Email, string Password, string FullName)
-//    {
-//        this.id = id;
-//        this.Email = Email;
-//        this.Password = Password;
-//        this.FullName = FullName;
-//    }
-//    public UserDTO(int id, string Email, string FullName)
-//    {
-//        this.id = id;
-//        this.Email = Email;
-//        this.FullName = FullName;
-//    }
-//}
-
-
-
-
-//public class UserLoginDTO
-//{
-//    [Required]
-//    [EmailAddress]
-//    public string Email { get; set; }
-//    [Required]
-//    public string Password { get; set; }
-//    public UserLoginDTO(string Email, string Password)
-//    {
-//        this.Email = Email;
-//        this.Password = Password;
-//    }
-//}
-
-//public class ContentDTO
-//{
-//    public int UserID { get; set; }
-//    public int FileType { get; set; }
-//    public string FilePath { get; set; }
-//    public string ExtractedText { get; set; }
-
-//    public ContentDTO(int UserID, int FileType, string FilePath, string ExtractedText)
-//    {
-//        this.UserID = UserID;
-//        this.FileType = FileType;
-//        this.FilePath = FilePath;
-//        this.ExtractedText = ExtractedText;
-//    }
-//}
-//public class LoginResultDTO
-//{
-//    public UserDTO User { get; set; }
-//    public string Token { get; set; }
-//}

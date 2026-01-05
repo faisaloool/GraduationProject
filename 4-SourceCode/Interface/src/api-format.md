@@ -1,7 +1,7 @@
-# API Specification
+ API Specification
 
-## Last Update: 2026/1/2
-
+## Last Update: 2025/12/30
+#
 ## HTTP Status Codes
 
 | Code | Meaning      |
@@ -60,7 +60,7 @@
 
 ## Quiz AI Endpoints
 
-## 1. server helth status
+## 1. server helth status ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/helth**  
 **Method:GET**  
@@ -70,7 +70,7 @@
 
 none
 
-## 2. Log in
+## 2. Log in ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/login**  
 **Method:POST**  
@@ -114,7 +114,7 @@ none
 "data": null
 }
 
-## 3. Sign up
+## 3. Sign up ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/signup**  
 **Method:POST**  
@@ -159,11 +159,13 @@ none
 "data": null
 }
 
-## 4. PassWord recovery
+## 4. PassWord recovery  ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/ ? ?**  
 **Method:POST**  
 **Description:reassigning the password after sending an email to the user email and verifiying the code to set the new password**
+
+
 
 ## 5. Quiz Generate
 
@@ -206,11 +208,11 @@ none
 }
 }
 
-## 6. Get exams based on User id
+## 6. Get exams based on User id    ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
-**Description: Getting user exams (title,id) that he generated or got shared to**
+**Description: Getting user exames**
 
 ### Request Body
 
@@ -237,7 +239,7 @@ none
 }
 }
 
-## 7. Quiz delete
+## 7. Quiz delete    ///////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/delete**  
 **Method:DEL**  
@@ -249,7 +251,7 @@ none
 "quizId" : "1",
 }
 
-## 7. Rename Quiz
+## 7. Rename Quiz /////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/:quizId/rename**  
 **Method:PUT**  
@@ -282,7 +284,6 @@ none
 ### Request Body
 
 {
-"userId": "user_123"
 "examId": "exam_01",
 "answers": [
 { "questionId": 101, "selectedOption": "a" },
@@ -295,7 +296,26 @@ none
 
 {
 "success": true,
-"status": 200
+"status": 200,
+"data": {
+"totalMark": 85,
+"results": [
+{
+"questionId": 101,
+"isCorrect": true,
+"userSelected": "a",
+"correctOption": "a",
+"explanation": null
+},
+{
+"questionId": 102,
+"isCorrect": false,
+"userSelected": "c",
+"correctOption": "d",
+"referenceSection": "Chapter 4: Advanced AI Models"
+}
+]
+}
 }
 
 ## 9. Question regenrate
@@ -377,44 +397,11 @@ none
 }
 }
 
-## 12. Share quiz
+## 12. Share quiz (don't know how yet!) 
 
-**URL:quiz-ai/shared/:QuizId**  
-**Method:POST**  
-**Description: fetching shared quiz from the QuizId in the path**
-
-### Request Body
-
-{
-"userId":"abc-123"
-"QuizId":"a1b2c3d4-e5f6"
-}
-
-### Response Body (Success)
-
-{
-"success": true,
-"status": 200,
-"message": "Request completed successfully.",
-"timestamp": "2025-11-16T18:23:00Z",
-"data": {
-"quiz": {
-"examId": 1,
-"title": "General Knowledge Test",
-"totalMarks": 10,
-"questions": [
-{
-"id": 1,
-"type": "MCQ",
-"question": "What is the capital of Jordan?",
-"options": ["Amman", "Madin", "Egypt", "Mu'tah"],
-"correctAnswer": "a",
-"marks": 2
-},
-], .....
-}
-}
-}
+**URL:**  
+**Method:**  
+**Description:**
 
 ## 13. Get quiz based on quiz id
 

@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 5: Working with Windows and CLI Systems - Guide to Computer Forensics and Investigations, Fifth Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A file system gives the OS a road map to data on a disk.",
+        "answer": "True"
+      },
+      {
+        "question": "CMOS stores system configuration and date/time information when power is off.",
+        "answer": "True"
+      },
+      {
+        "question": "BIOS contains programs that perform input and output at the application level.",
+        "answer": "False"
+      },
+      {
+        "question": "The bootstrap process is contained in RAM.",
+        "answer": "False"
+      },
+      {
+        "question": "Disk drives are made up of platters coated with optical material.",
+        "answer": "False"
+      },
+      {
+        "question": "Solid-state storage devices use wear-leveling to ensure even wear of memory cells.",
+        "answer": "True"
+      },
+      {
+        "question": "In Microsoft file structures, sectors are grouped to form clusters.",
+        "answer": "True"
+      },
+      {
+        "question": "Clusters range from 512 bytes up to 64,000 bytes each.",
+        "answer": "False"
+      },
+      {
+        "question": "Clusters are numbered sequentially starting at 0 in FAT file systems.",
+        "answer": "False"
+      },
+      {
+        "question": "A partition is also known as a logical drive.",
+        "answer": "True"
+      },
+      {
+        "question": "Windows OSs can have four primary partitions followed by an extended partition.",
+        "answer": "False"
+      },
+      {
+        "question": "The Master Boot Record (MBR) is located on the first sector of a storage device.",
+        "answer": "True"
+      },
+      {
+        "question": "GPT is an older partitioning scheme replaced by MBR.",
+        "answer": "False"
+      },
+      {
+        "question": "FAT was originally designed for hard disks.",
+        "answer": "False"
+      },
+      {
+        "question": "FAT16, FAT32, and exFAT are current FAT versions.",
+        "answer": "True"
+      },
+      {
+        "question": "Drive slack includes RAM slack and file slack.",
+        "answer": "True"
+      },
+      {
+        "question": "Fragmentation occurs when file clusters are stored contiguously.",
+        "answer": "False"
+      },
+      {
+        "question": "When a FAT file is deleted, the first letter of the filename is replaced with HEX E5.",
+        "answer": "True"
+      },
+      {
+        "question": "NTFS was introduced with Windows 95.",
+        "answer": "False"
+      },
+      {
+        "question": "NTFS is a journaling file system that records transactions before carrying them out.",
+        "answer": "True"
+      },
+      {
+        "question": "In NTFS, everything written to the disk is considered a file.",
+        "answer": "True"
+      },
+      {
+        "question": "The Master File Table (MFT) is the first data set on an NTFS disk.",
+        "answer": "False"
+      },
+      {
+        "question": "NTFS uses ASCII for international data formatting.",
+        "answer": "False"
+      },
+      {
+        "question": "The first 15 records in the MFT are reserved for user files.",
+        "answer": "False"
+      },
+      {
+        "question": "MFT records are called metadata.",
+        "answer": "True"
+      },
+      {
+        "question": "Files smaller than 512 bytes are always stored outside the MFT.",
+        "answer": "False"
+      },
+      {
+        "question": "Data runs provide cluster addresses where files are stored on NTFS partitions.",
+        "answer": "True"
+      },
+      {
+        "question": "LCN stands for Logical Cluster Number in NTFS.",
+        "answer": "True"
+      },
+      {
+        "question": "Alternate data streams can obscure evidentiary data in NTFS.",
+        "answer": "True"
+      },
+      {
+        "question": "NTFS compression is similar to FAT DriveSpace 3.",
+        "answer": "True"
+      },
+      {
+        "question": "EFS uses a symmetric key method for encrypting files.",
+        "answer": "False"
+      },
+      {
+        "question": "EFS recovery certificates are sent to the local Windows user account.",
+        "answer": "False"
+      },
+      {
+        "question": "When an NTFS file is deleted in Windows, it is immediately removed from the MFT.",
+        "answer": "False"
+      },
+      {
+        "question": "ReFS is designed for very large data storage needs like the cloud.",
+        "answer": "True"
+      },
+      {
+        "question": "Whole disk encryption helps prevent loss of information from stolen laptops.",
+        "answer": "True"
+      },
+      {
+        "question": "Whole disk encryption tools encrypt each file separately rather than each sector.",
+        "answer": "False"
+      },
+      {
+        "question": "BitLocker requires TPM version 2.0 or newer.",
+        "answer": "False"
+      },
+      {
+        "question": "TrueCrypt is an example of a third-party disk encryption tool.",
+        "answer": "True"
+      },
+      {
+        "question": "The Windows Registry stores hardware and software configuration information.",
+        "answer": "True"
+      },
+      {
+        "question": "Virtual machines cannot be used in digital forensics.",
+        "answer": "False"
+      }
+    ]
+  }
+}

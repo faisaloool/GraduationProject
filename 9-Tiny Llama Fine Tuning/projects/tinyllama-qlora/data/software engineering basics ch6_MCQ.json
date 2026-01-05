@@ -1,0 +1,719 @@
+{
+  "filename": "Ch6.pptx",
+  "quiz": [
+    {
+      "question": "What is architectural design primarily concerned with?",
+      "type": "mcq",
+      "options": [
+        "Understanding how a software system should be organized and designing its overall structure",
+        "Writing detailed code for each module",
+        "Testing the final software product",
+        "Creating user manuals"
+      ],
+      "answer": "Understanding how a software system should be organized and designing its overall structure",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Review the definition of architectural design in the chapter"
+    },
+    {
+      "question": "What is the critical link between design and requirements engineering?",
+      "type": "mcq",
+      "options": [
+        "Architectural design",
+        "Code implementation",
+        "User interface design",
+        "System testing"
+      ],
+      "answer": "Architectural design",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Recall the role of architectural design in connecting requirements and design"
+    },
+    {
+      "question": "Which of the following is an output of the architectural design process?",
+      "type": "mcq",
+      "options": [
+        "An architectural model describing the organization of the system",
+        "A fully functional software system",
+        "A user requirements document",
+        "A test plan"
+      ],
+      "answer": "An architectural model describing the organization of the system",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Review the output of architectural design"
+    },
+    {
+      "question": "What is the difference between 'architecture in the small' and 'architecture in the large'?",
+      "type": "mcq",
+      "options": [
+        "'In the small' deals with individual programs; 'in the large' deals with complex enterprise systems",
+        "'In the small' deals with hardware; 'in the large' deals with software",
+        "'In the small' is for testing; 'in the large' is for deployment",
+        "They are the same concept"
+      ],
+      "answer": "'In the small' deals with individual programs; 'in the large' deals with complex enterprise systems",
+      "section": "Architectural Abstraction",
+      "rate": "medium",
+      "suggestion": "Review the definitions of architecture in the small and large"
+    },
+    {
+      "question": "Which of the following is an advantage of explicit architecture?",
+      "type": "mcq",
+      "options": [
+        "Stakeholder communication",
+        "Eliminates the need for testing",
+        "Reduces code length",
+        "Automatically generates documentation"
+      ],
+      "answer": "Stakeholder communication",
+      "section": "Advantages of explicit architecture",
+      "rate": "easy",
+      "suggestion": "Review the benefits of having an explicit architecture"
+    },
+    {
+      "question": "What is a common criticism of simple block diagrams in architectural representation?",
+      "type": "mcq",
+      "options": [
+        "They lack semantics and do not show relationship types",
+        "They are too detailed",
+        "They are only used for hardware design",
+        "They cannot be drawn quickly"
+      ],
+      "answer": "They lack semantics and do not show relationship types",
+      "section": "Architectural Representations",
+      "rate": "medium",
+      "suggestion": "Review the limitations of simple block diagrams"
+    },
+    {
+      "question": "What is a key use of architectural models?",
+      "type": "mcq",
+      "options": [
+        "Facilitating discussion about system design",
+        "Replacing the need for coding",
+        "Automatically fixing design errors",
+        "Generating test cases"
+      ],
+      "answer": "Facilitating discussion about system design",
+      "section": "Use of architectural models",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of architectural models"
+    },
+    {
+      "question": "Which system characteristic is supported by localizing critical operations and minimizing communications?",
+      "type": "mcq",
+      "options": [
+        "Performance",
+        "Security",
+        "Safety",
+        "Maintainability"
+      ],
+      "answer": "Performance",
+      "section": "Architecture and system characteristics",
+      "rate": "medium",
+      "suggestion": "Review how architectural decisions affect non-functional characteristics"
+    },
+    {
+      "question": "Which architectural view shows how software is decomposed for development?",
+      "type": "mcq",
+      "options": [
+        "Development view",
+        "Logical view",
+        "Process view",
+        "Physical view"
+      ],
+      "answer": "Development view",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Recall the descriptions of each view in the 4+1 model"
+    },
+    {
+      "question": "What is an architectural pattern?",
+      "type": "mcq",
+      "options": [
+        "A stylized description of good design practice tried and tested in different environments",
+        "A specific programming language syntax",
+        "A type of hardware configuration",
+        "A testing methodology"
+      ],
+      "answer": "A stylized description of good design practice tried and tested in different environments",
+      "section": "Architectural patterns",
+      "rate": "easy",
+      "suggestion": "Review the definition of architectural patterns"
+    },
+    {
+      "question": "Which pattern separates the application into Model, View, and Controller?",
+      "type": "mcq",
+      "options": [
+        "Model-View-Controller (MVC)",
+        "Layered architecture",
+        "Client-server",
+        "Pipe and filter"
+      ],
+      "answer": "Model-View-Controller (MVC)",
+      "section": "The Model-View-Controller(MVC) pattern",
+      "rate": "easy",
+      "suggestion": "Recall the MVC pattern description"
+    },
+    {
+      "question": "In layered architecture, what happens when a layer interface changes?",
+      "type": "mcq",
+      "options": [
+        "Only the adjacent layer is affected",
+        "All layers are affected",
+        "Only the top layer is affected",
+        "No layers are affected"
+      ],
+      "answer": "Only the adjacent layer is affected",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Review the characteristics of layered architecture"
+    },
+    {
+      "question": "Which architecture uses a central database or repository for data sharing?",
+      "type": "mcq",
+      "options": [
+        "Repository architecture",
+        "Client-server architecture",
+        "Pipe and filter architecture",
+        "Layered architecture"
+      ],
+      "answer": "Repository architecture",
+      "section": "Repository architecture",
+      "rate": "medium",
+      "suggestion": "Recall the data sharing approach in repository architecture"
+    },
+    {
+      "question": "What is a key characteristic of client-server architecture?",
+      "type": "mcq",
+      "options": [
+        "Distributed system with servers providing specific services to clients",
+        "All components run on a single computer",
+        "Data flows sequentially through filters",
+        "System is organized into abstract layers"
+      ],
+      "answer": "Distributed system with servers providing specific services to clients",
+      "section": "Client-server architecture",
+      "rate": "easy",
+      "suggestion": "Review the description of client-server architecture"
+    },
+    {
+      "question": "Which architecture is also known as the pipe and filter model?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter architecture",
+        "Layered architecture",
+        "Repository architecture",
+        "Client-server architecture"
+      ],
+      "answer": "Pipe and filter architecture",
+      "section": "Pipe and filter architecture",
+      "rate": "easy",
+      "suggestion": "Recall the alternative name for pipe and filter architecture"
+    },
+    {
+      "question": "Which architecture is NOT suitable for interactive systems?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter architecture",
+        "Layered architecture",
+        "Client-server architecture",
+        "Repository architecture"
+      ],
+      "answer": "Pipe and filter architecture",
+      "section": "Pipe and filter architecture",
+      "rate": "medium",
+      "suggestion": "Review the limitations of pipe and filter architecture"
+    },
+    {
+      "question": "What does the '4+1' view model include?",
+      "type": "mcq",
+      "options": [
+        "Logical, process, development, physical views + use cases",
+        "Model, View, Controller, Repository + scenarios",
+        "Client, server, network, database + use cases",
+        "Input, process, output, storage + use cases"
+      ],
+      "answer": "Logical, process, development, physical views + use cases",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Recall the components of the 4+1 view model"
+    },
+    {
+      "question": "Which architectural pattern is commonly used in web applications?",
+      "type": "mcq",
+      "options": [
+        "Model-View-Controller (MVC)",
+        "Pipe and filter",
+        "Repository",
+        "Layered"
+      ],
+      "answer": "Model-View-Controller (MVC)",
+      "section": "Web application architecture using the MVC pattern",
+      "rate": "easy",
+      "suggestion": "Recall the application of MVC in web systems"
+    },
+    {
+      "question": "How does layered architecture support incremental development?",
+      "type": "mcq",
+      "options": [
+        "By allowing sub-systems in different layers to be developed separately",
+        "By requiring all layers to be completed before testing",
+        "By merging all layers into one module",
+        "By eliminating the need for interfaces"
+      ],
+      "answer": "By allowing sub-systems in different layers to be developed separately",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Review the benefits of layered architecture"
+    },
+    {
+      "question": "In repository architecture, how is data typically shared?",
+      "type": "mcq",
+      "options": [
+        "Through a central database accessible by all sub-systems",
+        "By passing data explicitly between sub-systems",
+        "Using a client-server request model",
+        "Through sequential pipes and filters"
+      ],
+      "answer": "Through a central database accessible by all sub-systems",
+      "section": "Repository architecture",
+      "rate": "medium",
+      "suggestion": "Recall the data sharing mechanism in repository architecture"
+    },
+    {
+      "question": "Which architectural decision helps improve security?",
+      "type": "mcq",
+      "options": [
+        "Using a layered architecture with critical assets in inner layers",
+        "Localizing safety-critical features",
+        "Minimizing communications between components",
+        "Using fine-grain replaceable components"
+      ],
+      "answer": "Using a layered architecture with critical assets in inner layers",
+      "section": "Architecture and system characteristics",
+      "rate": "medium",
+      "suggestion": "Review how architecture affects security"
+    },
+    {
+      "question": "What is a disadvantage of box and line diagrams?",
+      "type": "mcq",
+      "options": [
+        "They are very abstract and do not show detailed relationships",
+        "They are too complex for stakeholders",
+        "They cannot be used for project planning",
+        "They are only suitable for hardware design"
+      ],
+      "answer": "They are very abstract and do not show detailed relationships",
+      "section": "Box and line diagrams",
+      "rate": "medium",
+      "suggestion": "Review the limitations of box and line diagrams"
+    },
+    {
+      "question": "Which of the following is a benefit of architecture reuse?",
+      "type": "mcq",
+      "options": [
+        "Building product lines around a core architecture",
+        "Eliminating the need for requirements",
+        "Making all systems identical",
+        "Reducing the need for testing"
+      ],
+      "answer": "Building product lines around a core architecture",
+      "section": "Architecture reuse",
+      "rate": "medium",
+      "suggestion": "Recall the advantages of reusing architectures"
+    },
+    {
+      "question": "Which view in the 4+1 model shows the system hardware and software distribution?",
+      "type": "mcq",
+      "options": [
+        "Physical view",
+        "Logical view",
+        "Process view",
+        "Development view"
+      ],
+      "answer": "Physical view",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "easy",
+      "suggestion": "Recall the focus of the physical view"
+    },
+    {
+      "question": "What does the MVC pattern help achieve?",
+      "type": "mcq",
+      "options": [
+        "Separation of concerns in user interface and data management",
+        "Centralized data storage",
+        "Sequential data processing",
+        "Hardware independence"
+      ],
+      "answer": "Separation of concerns in user interface and data management",
+      "section": "The Model-View-Controller(MVC) pattern",
+      "rate": "medium",
+      "suggestion": "Review the purpose of the MVC pattern"
+    },
+    {
+      "question": "Which architectural pattern is often used in data processing systems?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter",
+        "Client-server",
+        "MVC",
+        "Layered"
+      ],
+      "answer": "Pipe and filter",
+      "section": "Pipe and filter architecture",
+      "rate": "medium",
+      "suggestion": "Recall the common use of pipe and filter in batch systems"
+    },
+    {
+      "question": "What is a key feature of client-server architecture?",
+      "type": "mcq",
+      "options": [
+        "Servers provide specific services to clients over a network",
+        "All components are stored in a central repository",
+        "Data flows through a series of transformations",
+        "The system is divided into abstract layers"
+      ],
+      "answer": "Servers provide specific services to clients over a network",
+      "section": "Client-server architecture",
+      "rate": "easy",
+      "suggestion": "Review the definition of client-server architecture"
+    },
+    {
+      "question": "Which architecture is best for systems requiring high availability?",
+      "type": "mcq",
+      "options": [
+        "Client-server with redundant components",
+        "Pipe and filter with sequential processing",
+        "MVC with separate models",
+        "Layered with strict interfaces"
+      ],
+      "answer": "Client-server with redundant components",
+      "section": "Architecture and system characteristics",
+      "rate": "hard",
+      "suggestion": "Recall how availability is supported through redundancy"
+    },
+    {
+      "question": "What is the main purpose of architectural design decisions?",
+      "type": "mcq",
+      "options": [
+        "To affect the non-functional characteristics of the system",
+        "To write the detailed code for modules",
+        "To create user documentation",
+        "To perform system testing"
+      ],
+      "answer": "To affect the non-functional characteristics of the system",
+      "section": "Architectural design decisions",
+      "rate": "medium",
+      "suggestion": "Review the impact of architectural decisions"
+    },
+    {
+      "question": "Which notation is commonly used for describing system architectures?",
+      "type": "mcq",
+      "options": [
+        "Unified Modeling Language (UML)",
+        "Binary code",
+        "Plain text",
+        "Mathematical formulas"
+      ],
+      "answer": "Unified Modeling Language (UML)",
+      "section": "Representing architectural views",
+      "rate": "easy",
+      "suggestion": "Recall the commonly used notation for architectural description"
+    },
+    {
+      "question": "In the context of agility, what is generally done early in agile processes?",
+      "type": "mcq",
+      "options": [
+        "Designing an overall systems architecture",
+        "Writing all the code first",
+        "Skipping architectural design",
+        "Testing the final product"
+      ],
+      "answer": "Designing an overall systems architecture",
+      "section": "Agility and architecture",
+      "rate": "medium",
+      "suggestion": "Review the relationship between agile processes and architecture"
+    },
+    {
+      "question": "What does a process view show?",
+      "type": "mcq",
+      "options": [
+        "How the system is composed of interacting processes at run-time",
+        "The key abstractions as objects or classes",
+        "How software is decomposed for development",
+        "The system hardware and software distribution"
+      ],
+      "answer": "How the system is composed of interacting processes at run-time",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Recall the focus of the process view"
+    },
+    {
+      "question": "Which pattern is also known as the batch sequential model?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter",
+        "Layered",
+        "Repository",
+        "Client-server"
+      ],
+      "answer": "Pipe and filter",
+      "section": "Pipe and filter architecture",
+      "rate": "medium",
+      "suggestion": "Recall the variant of pipe and filter used in batch systems"
+    },
+    {
+      "question": "What is a disadvantage of layered architecture?",
+      "type": "mcq",
+      "options": [
+        "It can be artificial to structure systems this way",
+        "It does not support incremental development",
+        "It is only suitable for small systems",
+        "It requires all layers to be on the same hardware"
+      ],
+      "answer": "It can be artificial to structure systems this way",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Review the limitations of layered architecture"
+    },
+    {
+      "question": "Which architectural style uses the concept of abstract machines?",
+      "type": "mcq",
+      "options": [
+        "Layered architecture",
+        "Repository architecture",
+        "Client-server architecture",
+        "Pipe and filter architecture"
+      ],
+      "answer": "Layered architecture",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Recall the description of layered architecture"
+    },
+    {
+      "question": "How does repository architecture improve efficiency?",
+      "type": "mcq",
+      "options": [
+        "By providing an efficient data sharing mechanism",
+        "By eliminating the need for data storage",
+        "By making all sub-systems independent",
+        "By reducing the number of components"
+      ],
+      "answer": "By providing an efficient data sharing mechanism",
+      "section": "Repository architecture",
+      "rate": "medium",
+      "suggestion": "Review the advantages of repository architecture"
+    },
+    {
+      "question": "What is a key benefit of using architectural patterns?",
+      "type": "mcq",
+      "options": [
+        "Representing, sharing, and reusing knowledge",
+        "Eliminating the need for documentation",
+        "Making all systems identical",
+        "Automatically generating code"
+      ],
+      "answer": "Representing, sharing, and reusing knowledge",
+      "section": "Architectural patterns",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of architectural patterns"
+    },
+    {
+      "question": "Which architecture is most appropriate for a payment processing system?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter",
+        "MVC",
+        "Client-server",
+        "Layered"
+      ],
+      "answer": "Pipe and filter",
+      "section": "An example of the pipe and filter architecture used in a payments system",
+      "rate": "medium",
+      "suggestion": "Recall the example given for pipe and filter in payments"
+    },
+    {
+      "question": "What does the logical view in the 4+1 model represent?",
+      "type": "mcq",
+      "options": [
+        "Key abstractions in the system as objects or classes",
+        "Run-time interacting processes",
+        "Software decomposition for development",
+        "Hardware and software distribution"
+      ],
+      "answer": "Key abstractions in the system as objects or classes",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Recall the focus of the logical view"
+    },
+    {
+      "question": "Which architectural decision helps with maintainability?",
+      "type": "mcq",
+      "options": [
+        "Using fine-grain, replaceable components",
+        "Localizing safety-critical features",
+        "Minimizing communications",
+        "Using a central repository"
+      ],
+      "answer": "Using fine-grain, replaceable components",
+      "section": "Architecture and system characteristics",
+      "rate": "medium",
+      "suggestion": "Review how maintainability is supported architecturally"
+    },
+    {
+      "question": "What is the +1 in the 4+1 view model?",
+      "type": "mcq",
+      "options": [
+        "Use cases or scenarios",
+        "A physical hardware diagram",
+        "A detailed code listing",
+        "A test plan"
+      ],
+      "answer": "Use cases or scenarios",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "easy",
+      "suggestion": "Recall what the '+1' represents in the model"
+    },
+    {
+      "question": "Which pattern is suitable for modeling sub-system interfacing?",
+      "type": "mcq",
+      "options": [
+        "Layered architecture",
+        "Pipe and filter",
+        "Repository",
+        "Client-server"
+      ],
+      "answer": "Layered architecture",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Recall the purpose of layered architecture"
+    },
+    {
+      "question": "How does client-server architecture support distribution?",
+      "type": "mcq",
+      "options": [
+        "By allowing clients and servers to be on different computers",
+        "By storing all data centrally",
+        "By processing data sequentially",
+        "By organizing components into layers"
+      ],
+      "answer": "By allowing clients and servers to be on different computers",
+      "section": "Client-server architecture",
+      "rate": "easy",
+      "suggestion": "Review the distributed nature of client-server systems"
+    },
+    {
+      "question": "What is a common method for documenting software architectures?",
+      "type": "mcq",
+      "options": [
+        "Simple, informal block diagrams",
+        "Detailed source code comments",
+        "User manuals",
+        "Test scripts"
+      ],
+      "answer": "Simple, informal block diagrams",
+      "section": "Architectural Representations",
+      "rate": "easy",
+      "suggestion": "Recall the commonly used method for architectural documentation"
+    },
+    {
+      "question": "Which architectural pattern is based on functional transformations?",
+      "type": "mcq",
+      "options": [
+        "Pipe and filter",
+        "Layered",
+        "Repository",
+        "Client-server"
+      ],
+      "answer": "Pipe and filter",
+      "section": "Pipe and filter architecture",
+      "rate": "easy",
+      "suggestion": "Recall the foundation of pipe and filter architecture"
+    },
+    {
+      "question": "What is the primary goal of architectural design?",
+      "type": "mcq",
+      "options": [
+        "To identify main structural components and their relationships",
+        "To write executable code",
+        "To create user interfaces",
+        "To perform system validation"
+      ],
+      "answer": "To identify main structural components and their relationships",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Review the core objective of architectural design"
+    },
+    {
+      "question": "Which factor influences architectural design decisions?",
+      "type": "mcq",
+      "options": [
+        "The type of system being developed",
+        "The programming language used",
+        "The age of the development team",
+        "The color scheme of the user interface"
+      ],
+      "answer": "The type of system being developed",
+      "section": "Architectural design decisions",
+      "rate": "medium",
+      "suggestion": "Recall what influences architectural choices"
+    },
+    {
+      "question": "What does the development view focus on?",
+      "type": "mcq",
+      "options": [
+        "How the software is decomposed for development",
+        "Key abstractions as objects or classes",
+        "Run-time processes and interactions",
+        "Hardware and software distribution"
+      ],
+      "answer": "How the software is decomposed for development",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Recall the purpose of the development view"
+    },
+    {
+      "question": "Which architectural pattern is commonly used in integrated development environments (IDEs)?",
+      "type": "mcq",
+      "options": [
+        "Repository architecture",
+        "Pipe and filter",
+        "Client-server",
+        "MVC"
+      ],
+      "answer": "Repository architecture",
+      "section": "A repository architecture for an IDE",
+      "rate": "medium",
+      "suggestion": "Recall the example of repository architecture in IDEs"
+    },
+    {
+      "question": "What is a key challenge in refactoring system architecture in agile processes?",
+      "type": "mcq",
+      "options": [
+        "It affects many components and is expensive",
+        "It is not allowed in agile methods",
+        "It only affects the user interface",
+        "It simplifies the code automatically"
+      ],
+      "answer": "It affects many components and is expensive",
+      "section": "Agility and architecture",
+      "rate": "medium",
+      "suggestion": "Review the cost of architectural refactoring in agile"
+    },
+    {
+      "question": "Which pattern emphasizes incremental development through layers?",
+      "type": "mcq",
+      "options": [
+        "Layered architecture",
+        "Pipe and filter",
+        "Repository",
+        "Client-server"
+      ],
+      "answer": "Layered architecture",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Recall how layered architecture supports incremental development"
+    }
+  ]
+}

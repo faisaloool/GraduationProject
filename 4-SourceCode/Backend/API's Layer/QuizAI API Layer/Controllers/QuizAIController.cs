@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using QuizAI_Business_Layer;
 using QuizAIDataBack;
 using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
+using System.Security.Claims;
+using System.IdentityModel.Tokens.Jwt;
 
 //Qotiph
 
@@ -73,14 +77,6 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
-
-
-
-
-
-
-
-
 
         [HttpPost("Login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -177,8 +173,6 @@ namespace QuizAI_API_Layer.Controllers
         //    }
         //}
 
-
-
         [HttpGet("health")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -186,49 +180,21 @@ namespace QuizAI_API_Layer.Controllers
         {
             try
             {
-                string message = "";
-                bool readiness = true;
-
-                if (!await ServerHealthBusinessLayer.CheckDbConnection())
-                {
-                    message += "Database connection isn't valid now.\n";
-                    readiness = false;
-                }
-                else
-                {
-                    message += "Database connection is ok.\n";
-                }
+                bool DBConReadiness = await ServerHealthBusinessLayer.CheckDbConnection();
+                bool DiskSpaceReadiness = ServerHealthBusinessLayer.IsDiskSpaceOk();
+                bool AIModelReadiness = false;
 
 
-                if (!ServerHealthBusinessLayer.IsDiskSpaceOk())
-                {
-                    message += "Disk space in the server isn't enough.\n";
-                    readiness = false;
-                }
-                else
-                {
-                    message += "Disk space is more than enough.\n";
-                }
-                //don't forget to check the ai model under.
-                if (true)
-                {
-                    message += "Ai model isn't ready now.\n";
-                    readiness = false;
-                }
-                else
-                {
-                    message += "Ai model is ready now.\n";
-                }
-                HealthResponseDTO health = new HealthResponseDTO(message, readiness);
+                bool OverallReadiness = (DBConReadiness && DiskSpaceReadiness && AIModelReadiness);
 
-                return Ok(new ApiResponse<object>
+                return Ok(new ApiResponse<HealthResponseDTO>
                 {
 
                     Success = true,
                     Status = 200,
                     Message = "Request completed successfully.",
                     Timestamp = DateTime.UtcNow,
-                    Data = health,
+                    Data = new HealthResponseDTO(OverallReadiness, DBConReadiness, DiskSpaceReadiness, AIModelReadiness),
                     Error = null,
 
                 });
@@ -256,7 +222,7 @@ namespace QuizAI_API_Layer.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //used when the user presses the forgot password button. it generates a token and sends it to his email.
-        public async Task<ActionResult<ForgotPasswordResponseDTO>> ForgotPassword(ForgotPasswordRequestDTO ForgotPasswordInfo)
+        public async Task<ActionResult<ApiResponse<ForgotPasswordResponseDTO>>> ForgotPassword(ForgotPasswordRequestDTO ForgotPasswordInfo)
         {
             try
             {
@@ -288,12 +254,15 @@ namespace QuizAI_API_Layer.Controllers
         }
 
         [HttpGet("Verify-Token")] //this function is used when the user clicks the link in his email. it verifies the token.
-        public async Task<ActionResult<object>> ResetPassword([FromQuery] string token)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<object>> VerifyToken([FromQuery] string token)
         {
             try
             {
-                int userID = await UserBusinessLayer.UseForgotPasswordToken(token);
-                if (userID != -1)
+                Guid? userID = await UserBusinessLayer.UseForgotPasswordToken(token);
+                if (userID != Guid.Empty)
                 {
                     return Ok(new ApiResponse<object>
                     {
@@ -334,8 +303,231 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
+        [HttpPost("ResetPassword")] //Used when the user resets his password (screen)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ApiResponse<bool>>> ResetPassword(Guid id, string password)
+        {
+            try
+            {
+                bool result = await UserBusinessLayer.ResetUserPassword(id, password);
+                return Ok(new ApiResponse<object>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = new { isPasswordReseted = result },
+                    Error = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+
+        [Authorize]
+        [HttpGet("exams")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ApiResponse<QuizResponseDTO>>> GetUserExams()
+        {
+
+            try
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+
+
+                if (userIdClaim == null)
+                {
+                    return Unauthorized();
+                }
+                Guid UserID = Guid.Parse(userIdClaim!.Value);
+
+
+                QuizResponseDTO Quizzes = await QuizzesBusinessLayer.GetQuizzesByUserID(UserID);
+                if (Quizzes.QuizzesInfo == null || Quizzes.QuizzesInfo.Count == 0)
+                {
+                    return NotFound(new ApiResponse<object>
+                    {
+                        Success = false,
+                        Status = 404,
+                        Message = "The requested resource was not found.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = null,
+                        Error = new ApiError
+                        {
+                            Code = "RESOURCE_NOT_FOUND",
+                            Details = $"No quizzes found for User ID {UserID}."
+                        }
+                    });
+                }
+                return Ok(new ApiResponse<QuizResponseDTO>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = Quizzes,
+                    Error = null
+                });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+        [Authorize]
+        [HttpDelete("delete")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ApiResponse<bool>>> DeleteQuiz(Guid QuizID)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+
+
+                if (userIdClaim == null)
+                {
+                    return Unauthorized();
+                }
+                Guid UserID = Guid.Parse(userIdClaim!.Value);
+
+
+                bool result = await QuizzesBusinessLayer.DeleteQuizUsingQuizID(QuizID, UserID);
+                if (result == true)
+                {
+                    return Ok(new ApiResponse<bool>
+                    {
+                        Success = true,
+                        Status = 200,
+                        Message = "Request completed successfully.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = result,
+                        Error = null
+                    });
+                }
+                return BadRequest(new ApiResponse<bool>
+                {
+                    Success = false,
+                    Status = 400,
+                    Message = "Quiz not found or not owned by user.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = false,
+                    Error = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+        [Authorize]
+        [HttpPut("{quizId}/rename")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ApiResponse<bool>>> RenameQuiz(Guid quizId, [FromBody] RenameQuizRequestDTO request)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+
+                if (userIdClaim == null)
+                {
+                    return Unauthorized();
+                }
+                Guid UserID = Guid.Parse(userIdClaim!.Value);
+
+
+                bool result = await QuizzesBusinessLayer.RenameQuiz(quizId, UserID, request.Name);
+                if (!result)
+                {
+                    return BadRequest(new ApiResponse<bool>
+                    {
+                        Success = false,
+                        Status = 400,
+                        Message = "Quiz not found or not owned by user.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = false,
+                        Error = null
+                    });
+                }
+                return Ok(new ApiResponse<bool>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = result,
+                    Error = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+        [Authorize]
+        [HttpPost("{quizID}/share")]
+        public async Task ShareQuiz()
+        {
+
+        }
 
     }
-
-
 }

@@ -1,0 +1,84 @@
+{
+  "document": "This lecture covers basic algorithm concepts, induction proof techniques, and asymptotic notation.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Every correct algorithm must terminate after a finite number of steps.",
+        "answer": "True"
+      },
+      {
+        "question": "Induction can only be applied when the base case is n = 1.",
+        "answer": "False"
+      },
+      {
+        "question": "An algorithm that runs in O(n) time always requires linear memory as well.",
+        "answer": "False"
+      },
+      {
+        "question": "The definition of an algorithm includes a precise specification for every step.",
+        "answer": "True"
+      },
+      {
+        "question": "A recursive algorithm is the same as an iterative one in terms of implementation.",
+        "answer": "False"
+      },
+      {
+        "question": "Asymptotic notation describes how an algorithm behaves when the input size grows very large.",
+        "answer": "True"
+      },
+      {
+        "question": "The big-O upper bound ignores constant factors.",
+        "answer": "True"
+      },
+      {
+        "question": "In a weak induction proof, one assumes the statement holds for all values up to n-1.",
+        "answer": "False"
+      },
+      {
+        "question": "Strong induction can start with two base cases: S(0) and S(1).",
+        "answer": "True"
+      },
+      {
+        "question": "An algorithm that is correct for some inputs but not all is considered a valid algorithm.",
+        "answer": "False"
+      },
+      {
+        "question": "The term 'space complexity' refers to the amount of memory used by an algorithm.",
+        "answer": "True"
+      },
+      {
+        "question": "A linearithmic time algorithm has running time O(n log n).",
+        "answer": "True"
+      },
+      {
+        "question": "The example 1 + 2 + ... + n = n(n+1)/2 is proved using induction.",
+        "answer": "True"
+      },
+      {
+        "question": "A polynomial time algorithm can have running time O(2^n).",
+        "answer": "False"
+      },
+      {
+        "question": "The base case for an inductive proof must always be the same as the hypothesis step.",
+        "answer": "False"
+      },
+      {
+        "question": "In asymptotic analysis, we usually model a computer with a RAM machine where every memory access costs one unit of time.",
+        "answer": "True"
+      },
+      {
+        "question": "A binary search algorithm runs in O(log n) time.",
+        "answer": "True"
+      },
+      {
+        "question": "The term 'exponential time' refers to running times like O(2^n).",
+        "answer": "True"
+      },
+      {
+        "question": "An algorithm that uses dynamic programming always runs faster than a brute‑force approach.",
+        "answer": "False"
+      }
+    ]
+  }
+}

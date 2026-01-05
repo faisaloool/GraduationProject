@@ -1,0 +1,1269 @@
+{
+  "document": "ch4__Register_Transfer_and_Microoperations_2.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is a microoperation in computer system architecture?",
+        "options": [
+          "A complex operation performed over multiple clock cycles",
+          "An elementary operation performed during one clock pulse",
+          "A software operation executed by the CPU",
+          "A high-level programming language construct"
+        ],
+        "answer": "An elementary operation performed during one clock pulse"
+      },
+      {
+        "question": "Which of the following is an example of a microoperation?",
+        "options": [
+          "Shift",
+          "Count",
+          "Clear",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What does the Register Transfer Language describe?",
+        "options": [
+          "The set of registers and their functions",
+          "The set of allowable microoperations",
+          "The organization of the computer",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is the primary purpose of Register Transfer Language?",
+        "options": [
+          "To describe the flow of data between registers",
+          "To define high-level programming constructs",
+          "To optimize software performance",
+          "To manage memory allocation"
+        ],
+        "answer": "To describe the flow of data between registers"
+      },
+      {
+        "question": "What is Register Transfer Language?",
+        "options": [
+          "A programming language for web development",
+          "A symbolic language for describing digital computers",
+          "A hardware description language for analog circuits",
+          "A scripting language for automation"
+        ],
+        "answer": "A symbolic language for describing digital computers"
+      },
+      {
+        "question": "What is the primary use of Register Transfer Language?",
+        "options": [
+          "To describe the internal organization of digital computers",
+          "To write operating system kernels",
+          "To design graphical user interfaces",
+          "To develop mobile applications"
+        ],
+        "answer": "To describe the internal organization of digital computers"
+      },
+      {
+        "question": "How does Register Transfer Language facilitate the design process of digital systems?",
+        "options": [
+          "By providing a graphical interface for circuit design",
+          "By automating the testing process",
+          "By describing sequences of microoperations",
+          "By optimizing code for performance"
+        ],
+        "answer": "By describing sequences of microoperations"
+      },
+      {
+        "question": "What does the internal organization of a computer describe?",
+        "options": [
+          "The physical layout of hardware components",
+          "The sequence of microoperations for any function",
+          "The software architecture of applications",
+          "The network configuration of the system"
+        ],
+        "answer": "The sequence of microoperations for any function"
+      },
+      {
+        "question": "What is a common way to represent the block diagram of a register?",
+        "options": [
+          "A sequential transfer of bits",
+          "A simultaneous transfer of all bits from the source to the destination register during one clock pulse",
+          "A partial transfer of bits over multiple clock cycles",
+          "No transfer of bits occurs"
+        ],
+        "answer": "A simultaneous transfer of all bits from the source to the destination register during one clock pulse"
+      },
+      {
+        "question": "What does the condition (p=1) determine in the context of register transfer?",
+        "options": [
+          "The speed of the transfer",
+          "When the transfer is to occur",
+          "The number of bits to be transferred",
+          "The type of register involved"
+        ],
+        "answer": "When the transfer is to occur"
+      },
+      {
+        "question": "Which of the following is NOT a subfield of a register?",
+        "options": [
+          "PC(H)",
+          "PC(L)",
+          "A bit of a register",
+          "A byte of memory"
+        ],
+        "answer": "A byte of memory"
+      },
+      {
+        "question": "What is the notation 'R2 ← R1' used to represent?",
+        "options": [
+          "Comparison of two registers",
+          "Transfer of data from R1 to R2",
+          "Logical operation between R1 and R2",
+          "Deletion of data in R1"
+        ],
+        "answer": "Transfer of data from R1 to R2"
+      },
+      {
+        "question": "How are individual bits typically shown in a register diagram?",
+        "options": [
+          "As a single block",
+          "As numbered bits",
+          "As a continuous line",
+          "They are not shown"
+        ],
+        "answer": "As numbered bits"
+      },
+      {
+        "question": "What does the designation 'R2' typically represent in register transfers?",
+        "options": [
+          "A part of a register",
+          "A specific register",
+          "A timing diagram",
+          "A clock signal"
+        ],
+        "answer": "A specific register"
+      },
+      {
+        "question": "Which symbol is used to denote a part of a register in register transfers?",
+        "options": [
+          "Capital letters",
+          "Parentheses ( )",
+          "Numerals",
+          "Arrow ()"
+        ],
+        "answer": "Parentheses ( )"
+      },
+      {
+        "question": "Which of the following is a basic symbol used in register transfers?",
+        "options": [
+          "Block diagram",
+          "Timing diagram",
+          "Capital letters and numerals",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is the purpose of a timing diagram in register transfers?",
+        "options": [
+          "To denote a part of a register",
+          "To represent the clock signal and transfer timing",
+          "To implement controlled transfers",
+          "To designate a register"
+        ],
+        "answer": "To represent the clock signal and transfer timing"
+      },
+      {
+        "question": "What does the colon symbol (:) denote in register transfer notation?",
+        "options": [
+          "Transfer of information",
+          "Termination of control function",
+          "Separation of two micro-operations",
+          "Clock cycle"
+        ],
+        "answer": "Termination of control function"
+      },
+      {
+        "question": "What does the comma symbol (,) denote in register transfer notation?",
+        "options": [
+          "Transfer of information",
+          "Termination of control function",
+          "Separation of two micro-operations",
+          "Clock cycle"
+        ],
+        "answer": "Separation of two micro-operations"
+      },
+      {
+        "question": "What is the primary purpose of register transfer notation?",
+        "options": [
+          "To describe the transfer of data between registers",
+          "To terminate control functions",
+          "To separate micro-operations",
+          "To indicate clock cycles"
+        ],
+        "answer": "To describe the transfer of data between registers"
+      },
+      {
+        "question": "What is the purpose of a multiplexer in a digital logic circuit?",
+        "options": [
+          "To process data",
+          "To select one of many input signals and forward it to a single output line",
+          "To store data temporarily",
+          "To perform arithmetic operations"
+        ],
+        "answer": "To select one of many input signals and forward it to a single output line"
+      },
+      {
+        "question": "In a 4-bit system, how many multiplexers are needed to construct a bus for registers R0 to R3?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "What does the size of each multiplexer depend on in a bus transfer system?",
+        "options": [
+          "The number of registers",
+          "The number of bits in each register",
+          "The speed of the processor",
+          "The type of storage used"
+        ],
+        "answer": "The number of bits in each register"
+      },
+      {
+        "question": "Which component is used to select the highest bit from each register in a bus transfer system?",
+        "options": [
+          "Multiplexer 0",
+          "Multiplexer 1",
+          "Bus 0",
+          "Bus 1"
+        ],
+        "answer": "Multiplexer 1"
+      },
+      {
+        "question": "What is the primary function of a bus in a computer system?",
+        "options": [
+          "To perform calculations",
+          "To store data permanently",
+          "To facilitate communication between components",
+          "To display output"
+        ],
+        "answer": "To facilitate communication between components"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, what is the MUX size we use?",
+        "options": [
+          "64X1",
+          "32X1",
+          "16X1",
+          "8X1"
+        ],
+        "answer": "64X1"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, how many MUX are needed?",
+        "options": [
+          "16",
+          "32",
+          "64",
+          "128"
+        ],
+        "answer": "16"
+      },
+      {
+        "question": "For register R0 to R63 in a 16-bit system, how many select bits are required?",
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
+        "answer": "6"
+      },
+      {
+        "question": "What are the possible states of a Tri-State buffer?",
+        "options": [
+          "0, 1",
+          "0, 1, High-impedance",
+          "0, 1, Low-impedance",
+          "High-impedance, Low-impedance"
+        ],
+        "answer": "0, 1, High-impedance"
+      },
+      {
+        "question": "What is the primary purpose of a buffer in a bus system?",
+        "options": [
+          "To increase speed",
+          "To match impedance",
+          "To reduce power consumption",
+          "To amplify signals"
+        ],
+        "answer": "To match impedance"
+      },
+      {
+        "question": "What is the output of a tri-state buffer gate when the control input C is 1?",
+        "options": [
+          "Output Y = input A",
+          "Output Y = high-impedance",
+          "Output Y = 0",
+          "Output Y = 1"
+        ],
+        "answer": "Output Y = input A"
+      },
+      {
+        "question": "What is the output of a tri-state buffer gate when the control input C is 0?",
+        "options": [
+          "Output Y = input A",
+          "Output Y = high-impedance",
+          "Output Y = 0",
+          "Output Y = 1"
+        ],
+        "answer": "Output Y = high-impedance"
+      },
+      {
+        "question": "Which of the following describes the function of a tri-state buffer gate?",
+        "options": [
+          "It can output 0, 1, or high-impedance based on the control input",
+          "It can output only 0 or 1",
+          "It can output only high-impedance",
+          "It can output only input A"
+        ],
+        "answer": "It can output 0, 1, or high-impedance based on the control input"
+      },
+      {
+        "question": "What is the purpose of a tri-state buffer in a bus system?",
+        "options": [
+          "To allow multiple devices to share a common bus without interference",
+          "To increase the speed of data transfer",
+          "To store data temporarily",
+          "To convert analog signals to digital signals"
+        ],
+        "answer": "To allow multiple devices to share a common bus without interference"
+      },
+      {
+        "question": "What is the state of the output when a tri-state buffer is disabled?",
+        "options": [
+          "High-impedance",
+          "0",
+          "1",
+          "Same as input A"
+        ],
+        "answer": "High-impedance"
+      },
+      {
+        "question": "Which register holds the address for memory operations?",
+        "options": [
+          "Data Register (DR)",
+          "Address Register (AR)",
+          "Instruction Register (IR)",
+          "Program Counter (PC)"
+        ],
+        "answer": "Address Register (AR)"
+      },
+      {
+        "question": "What does the operation 'DR ← M[AR]' represent?",
+        "options": [
+          "Writing data to memory",
+          "Reading data from memory",
+          "Transferring data between registers",
+          "Incrementing the address register"
+        ],
+        "answer": "Reading data from memory"
+      },
+      {
+        "question": "What does the operation 'M[AR] ← R1' represent?",
+        "options": [
+          "Reading data from memory",
+          "Writing data to memory",
+          "Transferring data between registers",
+          "Decrementing the address register"
+        ],
+        "answer": "Writing data to memory"
+      },
+      {
+        "question": "What is the purpose of the Address Register (AR) in memory operations?",
+        "options": [
+          "To hold the data being read or written",
+          "To hold the address of the memory location being accessed",
+          "To store the result of arithmetic operations",
+          "To keep track of the program counter"
+        ],
+        "answer": "To hold the address of the memory location being accessed"
+      },
+      {
+        "question": "What does the operation 'R2 ← ABUS' signify?",
+        "options": [
+          "Transfer content of bus A into R2",
+          "Transfer content of R2 into bus A",
+          "Memory read operation",
+          "Memory write operation"
+        ],
+        "answer": "Transfer content of bus A into R2"
+      },
+      {
+        "question": "What does 'M[R]' represent?",
+        "options": [
+          "Memory word specified by register R",
+          "Memory read operation",
+          "Memory write operation",
+          "Equivalent to M[AR]"
+        ],
+        "answer": "Memory word specified by register R"
+      },
+      {
+        "question": "What is the equivalent of 'M'?",
+        "options": [
+          "M[AR]",
+          "M[R]",
+          "DR ← M",
+          "M ← DR"
+        ],
+        "answer": "M[AR]"
+      },
+      {
+        "question": "What does 'DR ← M' operation do?",
+        "options": [
+          "Transfers content of memory word specified by AR into DR",
+          "Transfers content of DR into memory word specified by AR",
+          "Transfers content of bus A into R2",
+          "Memory word specified by register R"
+        ],
+        "answer": "Transfers content of memory word specified by AR into DR"
+      },
+      {
+        "question": "What does 'M ← DR' operation signify?",
+        "options": [
+          "Transfers content of DR into memory word specified by AR",
+          "Transfers content of memory word specified by AR into DR",
+          "Transfer content of bus A into R2",
+          "Memory word specified by register R"
+        ],
+        "answer": "Transfers content of DR into memory word specified by AR"
+      },
+      {
+        "question": "Which of the following is NOT a type of microoperation?",
+        "options": [
+          "Register transfer microoperations",
+          "Arithmetic microoperations",
+          "Logic microoperations",
+          "Memory access microoperations"
+        ],
+        "answer": "Memory access microoperations"
+      },
+      {
+        "question": "Which arithmetic operations are considered basic?",
+        "options": [
+          "Addition and subtraction",
+          "Multiplication and division",
+          "Addition and multiplication",
+          "Subtraction and division"
+        ],
+        "answer": "Addition and subtraction"
+      },
+      {
+        "question": "What does the operation R0 = R1 * R2 represent?",
+        "options": [
+          "Addition",
+          "Subtraction",
+          "Multiplication",
+          "Division"
+        ],
+        "answer": "Multiplication"
+      },
+      {
+        "question": "What does the operation R0 = R1 / R2 represent?",
+        "options": [
+          "Addition",
+          "Subtraction",
+          "Multiplication",
+          "Division"
+        ],
+        "answer": "Division"
+      },
+      {
+        "question": "What determines whether a single circuit performs addition or subtraction?",
+        "options": [
+          "Input values",
+          "Control signals",
+          "Output values",
+          "Clock speed"
+        ],
+        "answer": "Control signals"
+      },
+      {
+        "question": "What does the '+' operator denote in the operation R3 ← R1 + R2?",
+        "options": [
+          "Logical OR",
+          "Arithmetic addition",
+          "Bitwise AND",
+          "Bitwise XOR"
+        ],
+        "answer": "Arithmetic addition"
+      },
+      {
+        "question": "What is the result of adding 1 to the one’s complement of R2?",
+        "options": [
+          "Logical OR of R2",
+          "2’s complement of R2",
+          "Bitwise NOT of R2",
+          "Arithmetic addition of R2"
+        ],
+        "answer": "2’s complement of R2"
+      },
+      {
+        "question": "How is a binary adder constructed?",
+        "options": [
+          "With half-adder circuits connected in cascade",
+          "With full-adder circuits connected in cascade",
+          "With XOR gates connected in cascade",
+          "With AND gates connected in cascade"
+        ],
+        "answer": "With full-adder circuits connected in cascade"
+      },
+      {
+        "question": "What operations can be combined into one common circuit in a binary adder-subtractor?",
+        "options": [
+          "Addition and multiplication",
+          "Subtraction and division",
+          "Addition and subtraction",
+          "Multiplication and division"
+        ],
+        "answer": "Addition and subtraction"
+      },
+      {
+        "question": "What is the output of an XOR gate when both inputs are 0?",
+        "options": [
+          "0",
+          "1",
+          "Undefined",
+          "Depends on the gate configuration"
+        ],
+        "answer": "0"
+      },
+      {
+        "question": "What is the output of an XOR gate when one input is 0 and the other is 1?",
+        "options": [
+          "0",
+          "1",
+          "Undefined",
+          "Depends on the gate configuration"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "What is the output of an XOR gate when both inputs are 1?",
+        "options": [
+          "0",
+          "1",
+          "Undefined",
+          "Depends on the gate configuration"
+        ],
+        "answer": "0"
+      },
+      {
+        "question": "What does M = 0 represent in a binary adder-subtractor circuit?",
+        "options": [
+          "Addition operation",
+          "Subtraction operation",
+          "Multiplication operation",
+          "Division operation"
+        ],
+        "answer": "Addition operation"
+      },
+      {
+        "question": "What does M = 1 represent in a binary adder-subtractor circuit?",
+        "options": [
+          "Addition operation",
+          "Subtraction operation",
+          "Multiplication operation",
+          "Division operation"
+        ],
+        "answer": "Subtraction operation"
+      },
+      {
+        "question": "What is the result of B XOR 0?",
+        "options": [
+          "B",
+          "B complement",
+          "0",
+          "1"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "What is the result of B XOR 1?",
+        "options": [
+          "B",
+          "B complement",
+          "0",
+          "1"
+        ],
+        "answer": "B complement"
+      },
+      {
+        "question": "What is the operation performed when M = 1 in a binary adder-subtractor?",
+        "options": [
+          "A + B",
+          "A + B + 1",
+          "A - B",
+          "B - A"
+        ],
+        "answer": "A + B + 1"
+      },
+      {
+        "question": "For unsigned numbers, what does A + B + 1 represent when A >= B?",
+        "options": [
+          "A + B",
+          "A - B",
+          "2's complement of (B - A)",
+          "Undefined"
+        ],
+        "answer": "A - B"
+      },
+      {
+        "question": "For unsigned numbers, what does A + B + 1 represent when A < B?",
+        "options": [
+          "A + B",
+          "A - B",
+          "2's complement of (B - A)",
+          "Undefined"
+        ],
+        "answer": "2's complement of (B - A)"
+      },
+      {
+        "question": "What does a 4-bit binary incrementer do?",
+        "options": [
+          "Adds one to a number in a register",
+          "Subtracts one from a number in a register",
+          "Multiplies a number by two",
+          "Divides a number by two"
+        ],
+        "answer": "Adds one to a number in a register"
+      },
+      {
+        "question": "How can a 4-bit binary incrementer be implemented?",
+        "options": [
+          "Only as a sequential circuit using a binary counter",
+          "Only as a combinational circuit using Half Adders",
+          "Both as a sequential circuit using a binary counter and as a combinational circuit using Half Adders",
+          "Neither as a sequential nor a combinational circuit"
+        ],
+        "answer": "Both as a sequential circuit using a binary counter and as a combinational circuit using Half Adders"
+      },
+      {
+        "question": "What is connected to the least significant Half Adder (HA) bit in a 4-bit binary incrementer?",
+        "options": [
+          "Logic-0",
+          "Logic-1",
+          "The output carry from the next HA",
+          "The input number's least significant bit"
+        ],
+        "answer": "Logic-1"
+      },
+      {
+        "question": "How is the output carry from one Half Adder (HA) used in a 4-bit binary incrementer?",
+        "options": [
+          "It is discarded",
+          "It is connected to the input of the next-higher-order HA",
+          "It is connected back to the same HA",
+          "It is connected to the least significant HA"
+        ],
+        "answer": "It is connected to the input of the next-higher-order HA"
+      },
+      {
+        "question": "What is the purpose of the '1' in the 4-bit binary incrementer diagram?",
+        "options": [
+          "It represents the number to be incremented",
+          "It is the constant value added to increment the number",
+          "It is the output carry",
+          "It is the least significant bit of the result"
+        ],
+        "answer": "It is the constant value added to increment the number"
+      },
+      {
+        "question": "What is the primary function of a Binary Adder-Subtractor?",
+        "options": [
+          "To perform addition only",
+          "To perform subtraction only",
+          "To perform both addition and subtraction",
+          "To perform multiplication"
+        ],
+        "answer": "To perform both addition and subtraction"
+      },
+      {
+        "question": "Which component is used to select between different arithmetic operations in the given circuit?",
+        "options": [
+          "Decoder",
+          "Multiplexer (MUX)",
+          "Encoder",
+          "Flip-Flop"
+        ],
+        "answer": "Multiplexer (MUX)"
+      },
+      {
+        "question": "What does the 'FA' in the circuit diagram stand for?",
+        "options": [
+          "Full Adder",
+          "Flip Adder",
+          "Function Adder",
+          "Fast Adder"
+        ],
+        "answer": "Full Adder"
+      },
+      {
+        "question": "In the given circuit, what is the role of the signals S1 and S0?",
+        "options": [
+          "To control the input values",
+          "To select the operation to be performed",
+          "To control the output values",
+          "To reset the circuit"
+        ],
+        "answer": "To select the operation to be performed"
+      },
+      {
+        "question": "What is the output of the Binary Incrementer when the input is 1111?",
+        "options": [
+          "0000",
+          "1111",
+          "10000",
+          "1110"
+        ],
+        "answer": "10000"
+      },
+      {
+        "question": "What is the microoperation when S0=0, Cin=0, and Y=0?",
+        "options": [
+          "D = A + B",
+          "D = A + B + 1",
+          "D = A + B’",
+          "D = A"
+        ],
+        "answer": "D = A + B"
+      },
+      {
+        "question": "What is the microoperation when S0=0, Cin=1, and Y=1?",
+        "options": [
+          "D = A + B",
+          "D = A + B + 1",
+          "D = A + B’+ 1",
+          "D = A"
+        ],
+        "answer": "D = A + B’+ 1"
+      },
+      {
+        "question": "What is the microoperation when S0=1, Cin=0, and Y=0?",
+        "options": [
+          "D = A + B",
+          "D = A + 1",
+          "D = A - 1",
+          "D = A"
+        ],
+        "answer": "D = A"
+      },
+      {
+        "question": "What is the microoperation when S0=1, Cin=1, and Y=1?",
+        "options": [
+          "D = A + B",
+          "D = A + 1",
+          "D = A - 1",
+          "D = A"
+        ],
+        "answer": "D = A"
+      },
+      {
+        "question": "What is the microoperation when S0=0, Cin=1, and Y=0?",
+        "options": [
+          "D = A + B",
+          "D = A + B’",
+          "D = A + B’+ 1",
+          "D = A"
+        ],
+        "answer": "D = A + B’"
+      },
+      {
+        "question": "What is the primary purpose of AND operations on bit strings in registers?",
+        "options": [
+          "To merge binary or character data",
+          "To mask out certain groups of bits",
+          "To perform arithmetic addition",
+          "To shift bits to the left"
+        ],
+        "answer": "To mask out certain groups of bits"
+      },
+      {
+        "question": "What is the primary purpose of OR operations on bit strings in registers?",
+        "options": [
+          "To mask out certain groups of bits",
+          "To merge binary or character data",
+          "To perform arithmetic subtraction",
+          "To shift bits to the right"
+        ],
+        "answer": "To merge binary or character data"
+      },
+      {
+        "question": "What is the main application of logic microoperations on registers?",
+        "options": [
+          "Performing arithmetic calculations",
+          "Manipulating the bits stored in a register",
+          "Storing data in memory",
+          "Executing conditional jumps"
+        ],
+        "answer": "Manipulating the bits stored in a register"
+      },
+      {
+        "question": "What are microoperations in digital logic?",
+        "options": [
+          "Operations performed on microprocessors",
+          "Bitwise logical operations selected by select signals",
+          "Operations performed on memory units",
+          "Operations performed on arithmetic units"
+        ],
+        "answer": "Bitwise logical operations selected by select signals"
+      },
+      {
+        "question": "Which of the following logic operations can be accommodated in an extended logic circuit?",
+        "options": [
+          "XNOR, NAND, NOR, and complement of the first input",
+          "XNOR, NAND, NOR, and complement of the second input",
+          "XOR, AND, OR, and complement of the second input",
+          "XOR, AND, OR, and complement of the first input"
+        ],
+        "answer": "XNOR, NAND, NOR, and complement of the second input"
+      },
+      {
+        "question": "What is the purpose of the truth table?",
+        "options": [
+          "To represent arithmetic operations",
+          "To represent Boolean functions",
+          "To represent algebraic equations",
+          "To represent statistical data"
+        ],
+        "answer": "To represent Boolean functions"
+      },
+      {
+        "question": "What does the microoperation F ← 0 represent?",
+        "options": [
+          "Clear",
+          "AND",
+          "Transfer A",
+          "Transfer B"
+        ],
+        "answer": "Clear"
+      },
+      {
+        "question": "Which microoperation represents the AND operation?",
+        "options": [
+          "F ← 0",
+          "F ← A∧B",
+          "F ← A",
+          "F ← B"
+        ],
+        "answer": "F ← A∧B"
+      },
+      {
+        "question": "What is the name of the microoperation F ← A?",
+        "options": [
+          "Clear",
+          "AND",
+          "Transfer A",
+          "Transfer B"
+        ],
+        "answer": "Transfer A"
+      },
+      {
+        "question": "Which microoperation represents the Transfer B operation?",
+        "options": [
+          "F ← A",
+          "F ← B",
+          "F ← A∧B",
+          "F ← A∨B"
+        ],
+        "answer": "F ← B"
+      },
+      {
+        "question": "What does the microoperation F ← A∨B represent?",
+        "options": [
+          "AND",
+          "OR",
+          "Ex-OR",
+          "NOR"
+        ],
+        "answer": "OR"
+      },
+      {
+        "question": "What is the name of the microoperation F ← (A∨B)’?",
+        "options": [
+          "NOR",
+          "Ex-NOR",
+          "AND",
+          "OR"
+        ],
+        "answer": "NOR"
+      },
+
+      {
+        "question": "What is the purpose of a multiplexer in the context of the text?",
+        "options": [
+          "To clear a group of bit values",
+          "To select one of the 16 previous functions",
+          "To perform a NAND operation",
+          "To set all bits to 1"
+        ],
+        "answer": "To select one of the 16 previous functions"
+      },
+      {
+        "question": "What is the purpose of the AND operation in the given example?",
+        "options": [
+          "To set bits to ones",
+          "To clear bits by masking with zeros",
+          "To insert new values into bits",
+          "To shift bits to the left"
+        ],
+        "answer": "To clear bits by masking with zeros"
+      },
+      {
+        "question": "What is the first step in the Insert operation?",
+        "options": [
+          "ORing the bits with the required value",
+          "Masking the bits",
+          "Shifting the bits",
+          "Clearing all bits to zero"
+        ],
+        "answer": "Masking the bits"
+      },
+      {
+        "question": "Which operation is used to set a group of bits to ones?",
+        "options": [
+          "AND",
+          "OR",
+          "XOR",
+          "NOT"
+        ],
+        "answer": "OR"
+      },
+      {
+        "question": "What is the result of the OR operation between A (0110 1010) and B (0000 1111)?",
+        "options": [
+          "0110 1010",
+          "0000 1010",
+          "0110 1111",
+          "0000 1111"
+        ],
+        "answer": "0110 1111"
+      },
+      {
+        "question": "What is the result of the XOR operation between A (10101101 10101011) and B (11111111 00000000)?",
+        "options": [
+          "01010010 10101011",
+          "10101101 10101011",
+          "11111111 00000000",
+          "00000000 11111111"
+        ],
+        "answer": "01010010 10101011"
+      },
+      {
+        "question": "What is the purpose of the XOR operation in the given example?",
+        "options": [
+          "To perform a logical AND",
+          "To complement a group of bit values",
+          "To shift bits to the left",
+          "To perform a logical OR"
+        ],
+        "answer": "To complement a group of bit values"
+      },
+      {
+        "question": "What is the result of shifting '11000' left by one bit?",
+        "options": [
+          "11000",
+          "10000",
+          "110000",
+          "10001"
+        ],
+        "answer": "110000"
+      },
+      {
+        "question": "What is the primary use of shift microoperations?",
+        "options": [
+          "Parallel transfer of data",
+          "Serial transfer of data",
+          "Data encryption",
+          "Data compression"
+        ],
+        "answer": "Serial transfer of data"
+      },
+      {
+        "question": "Which of the following is NOT a type of shift microoperation?",
+        "options": [
+          "Logical",
+          "Circular",
+          "Arithmetic",
+          "Sequential"
+        ],
+        "answer": "Sequential"
+      },
+      {
+        "question": "What does the symbolic designation 'R ← shl R' represent?",
+        "options": [
+          "Shift-left register R",
+          "Shift-right register R",
+          "Circular shift-left register R",
+          "Circular shift-right register R"
+        ],
+        "answer": "Shift-left register R"
+      },
+      {
+        "question": "What does the symbolic designation 'R ← shr R' represent?",
+        "options": [
+          "Shift-left register R",
+          "Shift-right register R",
+          "Circular shift-left register R",
+          "Circular shift-right register R"
+        ],
+        "answer": "Shift-right register R"
+      },
+      {
+        "question": "What does the symbolic designation 'R ← cil R' represent?",
+        "options": [
+          "Shift-left register R",
+          "Shift-right register R",
+          "Circular shift-left register R",
+          "Circular shift-right register R"
+        ],
+        "answer": "Circular shift-left register R"
+      },
+      {
+        "question": "What does the symbolic designation 'R ← cir R' represent?",
+        "options": [
+          "Shift-left register R",
+          "Shift-right register R",
+          "Circular shift-left register R",
+          "Circular shift-right register R"
+        ],
+        "answer": "Circular shift-right register R"
+      },
+      {
+        "question": "What does a logical shift-left operation do?",
+        "options": [
+          "Transfers 1 through the serial input",
+          "Transfers 0 through the serial input",
+          "Inverts the bits in the register",
+          "Shifts bits to the right"
+        ],
+        "answer": "Transfers 0 through the serial input"
+      },
+      {
+        "question": "Which microoperation is used for arithmetic shift-right?",
+        "options": [
+          "R ← ashl R",
+          "R ← ashr R",
+          "R ← shl R",
+          "R ← shr R"
+        ],
+        "answer": "R ← ashr R"
+      },
+      {
+        "question": "What is transferred through the serial input during a logical shift?",
+        "options": [
+          "1",
+          "0",
+          "The original bit",
+          "A random bit"
+        ],
+        "answer": "0"
+      },
+      {
+        "question": "Which of the following is an example of a logical shift-left operation?",
+        "options": [
+          "R1 ← ashl R1",
+          "R1 ← ashr R1",
+          "R1 ← shl R1",
+          "R1 ← shr R1"
+        ],
+        "answer": "R1 ← shl R1"
+      },
+      {
+        "question": "What is the result of a logical shift-right operation on the binary number 10100011?",
+        "options": [
+          "01000110",
+          "11010001",
+          "10100011",
+          "01000111"
+        ],
+        "answer": "01000110"
+      },
+      {
+        "question": "What is the primary characteristic of a circular shift operation?",
+        "options": [
+          "It loses bits during the shift",
+          "It circulates the bits without loss of information",
+          "It only works on unsigned numbers",
+          "It always shifts left"
+        ],
+        "answer": "It circulates the bits without loss of information"
+      },
+      {
+        "question": "What is the result of a circular shift-left operation on the binary number 10100011?",
+        "options": [
+          "01000110",
+          "01000111",
+          "10100011",
+          "11010001"
+        ],
+        "answer": "01000111"
+      },
+      {
+        "question": "What does an arithmetic shift-left operation do to a signed binary number?",
+        "options": [
+          "Divides it by 2",
+          "Multiplies it by 2",
+          "Changes its sign",
+          "Converts it to unsigned"
+        ],
+        "answer": "Multiplies it by 2"
+      },
+      {
+        "question": "Which of the following is NOT a type of shift operation?",
+        "options": [
+          "Logical shift",
+          "Circular shift",
+          "Arithmetic shift",
+          "Exponential shift"
+        ],
+        "answer": "Exponential shift"
+      },
+      {
+        "question": "What happens to the sign bit in an arithmetic right shift?",
+        "options": [
+          "It is shifted to the right along with other bits",
+          "It remains unchanged",
+          "It is inverted",
+          "It is discarded"
+        ],
+        "answer": "It remains unchanged"
+      },
+      {
+        "question": "In an arithmetic right shift of the number 0100 (4), what is the result?",
+        "options": [
+          "0010 (2)",
+          "1000 (8)",
+          "0001 (1)",
+          "0100 (4)"
+        ],
+        "answer": "0010 (2)"
+      },
+      {
+        "question": "In an arithmetic right shift of the number 1010 (-6), what is the result?",
+        "options": [
+          "0101 (5)",
+          "1101 (-3)",
+          "0010 (2)",
+          "1110 (-2)"
+        ],
+        "answer": "1101 (-3)"
+      },
+      {
+        "question": "What is the purpose of an arithmetic right shift?",
+        "options": [
+          "To multiply the number by 2",
+          "To divide the number by 2",
+          "To invert the number's sign",
+          "To clear all bits to zero"
+        ],
+        "answer": "To divide the number by 2"
+      },
+      {
+        "question": "How is a negative number represented in an arithmetic right shift operation?",
+        "options": [
+          "By shifting 0 from the sign bit to the right",
+          "By shifting 1 from the sign bit to the right",
+          "By discarding the sign bit",
+          "By inverting all bits"
+        ],
+        "answer": "By shifting 1 from the sign bit to the right"
+      },
+      {
+        "question": "What is the primary purpose of Arithmetic Shift Left (ASL)?",
+        "options": [
+          "To multiply a number by 2",
+          "To divide a number by 2",
+          "To perform logical operations",
+          "To check for overflow"
+        ],
+        "answer": "To multiply a number by 2"
+      },
+      {
+        "question": "What happens to the LSB (Least Significant Bit) during an Arithmetic Shift Left operation?",
+        "options": [
+          "It is replaced with 0",
+          "It is replaced with 1",
+          "It remains unchanged",
+          "It is shifted to the MSB"
+        ],
+        "answer": "It is replaced with 0"
+      },
+      {
+        "question": "What does Vs=1 indicate in the context of Arithmetic Shift Left?",
+        "options": [
+          "Overflow",
+          "No overflow",
+          "Use sign bit",
+          "Shift left by one bit"
+        ],
+        "answer": "Overflow"
+      },
+      {
+        "question": "What is the result of performing Arithmetic Shift Left on the binary number 0010 (2)?",
+        "options": [
+          "0100 (4)",
+          "1000 (8)",
+          "0001 (1)",
+          "1100 (-4)"
+        ],
+        "answer": "0100 (4)"
+      },
+      {
+        "question": "What is the result of performing Arithmetic Shift Left on the binary number 1110 (-2)?",
+        "options": [
+          "1100 (-4)",
+          "1111 (-1)",
+          "0111 (7)",
+          "1010 (-6)"
+        ],
+        "answer": "1100 (-4)"
+      },
+      {
+        "question": "What happens when Arithmetic Shift Left is performed on the binary number 0100 (4)?",
+        "options": [
+          "Overflow occurs",
+          "Result is 1000 (8)",
+          "Result is 0010 (2)",
+          "No overflow occurs"
+        ],
+        "answer": "Overflow occurs"
+      },
+      {
+        "question": "What happens when Arithmetic Shift Left is performed on the binary number 1010 (-6)?",
+        "options": [
+          "Overflow occurs",
+          "Result is 0100 (4)",
+          "Result is 1101 (-3)",
+          "No overflow occurs"
+        ],
+        "answer": "Overflow occurs"
+      },
+      {
+        "question": "What is the key difference between Arithmetic Shift Left and Logical Shift Left?",
+        "options": [
+          "Arithmetic Shift Left checks for overflow",
+          "Logical Shift Left multiplies by 2",
+          "Arithmetic Shift Left shifts right",
+          "Logical Shift Left replaces LSB with 1"
+        ],
+        "answer": "Arithmetic Shift Left checks for overflow"
+      }
+    ]
+  }
+}

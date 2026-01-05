@@ -1,0 +1,211 @@
+{
+  "document": "Lecture 1 – Introduction to Algorithms: An overview covering the definition and properties of algorithms, proof techniques (induction), asymptotic analysis, computational models, and examples of algorithmic complexity.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best describes an algorithm?",
+        "options": [
+          "A finite sequence of instructions that always terminates for all inputs",
+          "An infinite loop that may or may not terminate",
+          "Any random set of operations on data",
+          "Only a proof technique used in mathematics"
+        ],
+        "answer": "A finite sequence of instructions that always terminates for all inputs"
+      },
+      {
+        "question": "Which property is NOT part of the formal definition of an algorithm?",
+        "options": [
+          "Finiteness",
+          "Definiteness",
+          "Parallelism",
+          "Effectiveness"
+        ],
+        "answer": "Parallelism"
+      },
+      {
+        "question": "What type of induction is used in the proof that 1+2+…+n = n(n+1)/2?",
+        "options": [
+          "Weak induction",
+          "Strong induction",
+          "Induction on parity",
+          "Structural induction"
+        ],
+        "answer": "Weak induction"
+      },
+      {
+        "question": "Which of the following is an example of a logarithmic time algorithm?",
+        "options": [
+          "Binary search",
+          "Bubble sort",
+          "Insertion sort",
+          "Naïve matrix multiplication"
+        ],
+        "answer": "Binary search"
+      },
+      {
+        "question": "What does Big‑O notation describe?",
+        "options": [
+          "The exact running time of an algorithm for all inputs",
+          "An upper bound on the growth rate of a function",
+          "The average case performance only",
+          "A lower bound on memory usage"
+        ],
+        "answer": "An upper bound on the growth rate of a function"
+      },
+      {
+        "question": "In which computational model are all memory cells assumed to have equal access cost?",
+        "options": [
+          "Turing machine",
+          "RAM (Random‑Access Machine)",
+          "PDP‑11 architecture",
+          "Cache‑based model"
+        ],
+        "answer": "RAM (Random‑Access Machine)"
+      },
+      {
+        "question": "Which of the following is NOT a valid classification by design paradigm?",
+        "options": [
+          "Greedy method",
+          "Divide and conquer",
+          "Branch and bound",
+          "Dynamic programming"
+        ],
+        "answer": "Branch and bound"
+      },
+      {
+        "question": "What best‑case complexity of finding the smallest element in an unsorted array of size n?",
+        "options": [
+          "O(1)",
+          "O(log n)",
+          "O(n)",
+          "O(n^2)"
+        ],
+        "answer": "O(1)"
+      },
+      {
+        "question": "Which statement about worst‑case complexity is true?",
+        "options": [
+          "It gives a lower bound on running time",
+          "It always equals the average case",
+          "It provides an upper bound on running time for all inputs",
+          "It is irrelevant for algorithm design"
+        ],
+        "answer": "It provides an upper bound on running time for all inputs"
+      },
+      {
+        "question": "What does the term 'effectiveness' refer to in algorithm definitions?",
+        "options": [
+          "The number of steps taken by an algorithm",
+          "Whether the output is correct given a valid input",
+          "How fast the algorithm runs on average",
+          "The memory used during execution"
+        ],
+        "answer": "Whether the output is correct given a valid input"
+      },
+      {
+        "question": "Which of these functions has growth rate Θ(n log n)?",
+        "options": [
+          "f(n)=n^2",
+          "g(n)=n·log n",
+          "h(n)=2^n",
+          "k(n)=n"
+        ],
+        "answer": "g(n)=n·log n"
+      },
+      {
+        "question": "Which of the following algorithms is known as the fastest possible comparison‑based sort?",
+        "options": [
+          "Insertion sort",
+          "Merge sort",
+          "Quick sort",
+          "Bubble sort"
+        ],
+        "answer": "Merge sort"
+      },
+      {
+        "question": "In a RAM model, function calls take how many time units?",
+        "options": [
+          "1",
+          "2",
+          "m×x",
+          "variable depending on depth"
+        ],
+        "answer": "variable depending on depth"
+      },
+      {
+        "question": "Which of the following best describes 'asymptotic performance' in a course?",
+        "options": [
+          "It refers to the precise runtime for small inputs",
+          "It studies how algorithms behave as input size grows large",
+          "It only looks at memory usage",
+          "It is about hardware power consumption"
+        ],
+        "answer": "It studies how algorithms behave as input size grows large"
+      },
+      {
+        "question": "Which of the following is a valid example of a non‑deterministic algorithm?",
+        "options": [
+          "Bubble sort using insertion",
+          "Randomized quicksort",
+          "Dynamic programming on DAGs",
+          "Greedy tree building"
+        ],
+        "answer": "Randomized quicksort"
+      },
+      {
+        "question": "Which of the following is a correct statement about inductive proofs?",
+        "options": [
+          "They prove statements for all n≥0 by base case only",
+          "They can be applied to sequences with infinite length",
+          "Proofs require a base case and an inductive step",
+          "Induction never works for algorithmic complexity"
+        ],
+        "answer": "Proofs require a base case and an inductive step"
+      },
+      {
+        "question": "Which of the following best describes 'lower bound' in algorithm analysis?",
+        "options": [
+          "It is a lower limit on maximum memory usage",
+          "An upper bound on running time",
+          "A guarantee that every algorithm must exceed",
+          "The minimum expected running time for any algorithm solving the same problem"
+        ],
+        "answer": "The minimum expected running time for any algorithm solving the same problem"
+      },
+      {
+        "question": "Which of these is an example of a constant‑time operation?",
+        "options": [
+          "Comparing two integers",
+          "Sorting a list of size n",
+          "Printing an array of length n",
+          "Multiplying two matrices of size n×n"
+        ],
+        "answer": "Comparing two integers"
+      },
+      {
+        "question": "Which algorithmic paradigm is best for problems that require searching through all possible solutions?",
+        "options": [
+          "Brute‑force exhaustive search",
+          "Divide and conquer",
+          "Greedy method",
+          "Dynamic programming"
+        ],
+        "answer": "Brute‑force exhaustive search"
+      },
+      {
+        "question": "Which of the following best captures the meaning of 'complexity' in algorithmic analysis?",
+        "options": [
+          "How many steps a test case runs",
+          "The rate at which data is processed",
+          "A function that describes how often an algorithm’s runtime changes with input size",
+          "The number of hardware instructions executed"
+        ],
+        "answer": "A function that describes how often an algorithm’s runtime changes with input size"
+      },
+      {
+        "question": "Which of the following statements about average‑case complexity is correct?",
+        "options": [
+          "Average case always equals the worst case",
+          "It provides an expected running time over random inputs",
+          "Worst case is better than average

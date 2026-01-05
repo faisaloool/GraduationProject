@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 8: Network Security - Security Simplified",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Network security includes confidentiality, authentication, and message integrity.",
+        "answer": "True"
+      },
+      {
+        "question": "Confidentiality means only the sender should understand the message.",
+        "answer": "False"
+      },
+      {
+        "question": "In network security, Alice and Bob represent trusted parties, Trudy represents an intruder.",
+        "answer": "True"
+      },
+      {
+        "question": "Eavesdropping is when an attacker actively inserts messages into a connection.",
+        "answer": "False"
+      },
+      {
+        "question": "Spoofing is faking the source address in a packet.",
+        "answer": "True"
+      },
+      {
+        "question": "Symmetric key cryptography uses two different keys for encryption and decryption.",
+        "answer": "False"
+      },
+      {
+        "question": "Public key cryptography requires both parties to share a secret key.",
+        "answer": "False"
+      },
+      {
+        "question": "A digital signature can only be created by the sender using their public key.",
+        "answer": "False"
+      },
+      {
+        "question": "SSL stands for Secure Sockets Layer.",
+        "answer": "True"
+      },
+      {
+        "question": "SSL provides confidentiality, integrity, and authentication.",
+        "answer": "True"
+      },
+      {
+        "question": "TLS is an older version of SSL.",
+        "answer": "False"
+      },
+      {
+        "question": "A firewall blocks all incoming and outgoing traffic by default.",
+        "answer": "False"
+      },
+      {
+        "question": "Firewalls can prevent SYN flooding attacks.",
+        "answer": "True"
+      },
+      {
+        "question": "Stateless packet filters remember previous packets in a connection.",
+        "answer": "False"
+      },
+      {
+        "question": "An application-level gateway is also called a proxy.",
+        "answer": "True"
+      },
+      {
+        "question": "Network security goals do not include availability.",
+        "answer": "False"
+      },
+      {
+        "question": "Hijacking is a type of denial of service attack.",
+        "answer": "False"
+      },
+      {
+        "question": "Symmetric cryptography is generally faster than public key cryptography.",
+        "answer": "True"
+      },
+      {
+        "question": "Digital signatures provide non-repudiation.",
+        "answer": "True"
+      },
+      {
+        "question": "SSL uses only symmetric encryption.",
+        "answer": "False"
+      },
+      {
+        "question": "Firewalls are only hardware devices.",
+        "answer": "False"
+      },
+      {
+        "question": "A DMZ is a type of firewall.",
+        "answer": "False"
+      },
+      {
+        "question": "Authentication ensures the message is not altered.",
+        "answer": "False"
+      },
+      {
+        "question": "Message integrity protects against message modification.",
+        "answer": "True"
+      },
+      {
+        "question": "Public key cryptography solves the key distribution problem.",
+        "answer": "True"
+      },
+      {
+        "question": "SSL handshake is used to exchange certificates and establish keys.",
+        "answer": "True"
+      },
+      {
+        "question": "All firewalls support user authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "A circuit-level gateway works at the transport layer.",
+        "answer": "True"
+      },
+      {
+        "question": "IPsec operates at the application layer.",
+        "answer": "False"
+      },
+      {
+        "question": "Wireless LANs do not require security measures.",
+        "answer": "False"
+      },
+      {
+        "question": "DNS servers never require security.",
+        "answer": "False"
+      },
+      {
+        "question": "Trudy is a trusted friend of Alice and Bob.",
+        "answer": "False"
+      },
+      {
+        "question": "Symmetric key algorithms include AES and DES.",
+        "answer": "True"
+      },
+      {
+        "question": "Public key algorithms include RSA and Diffie-Hellman.",
+        "answer": "True"
+      },
+      {
+        "question": "Firewalls can block malware and viruses.",
+        "answer": "True"
+      },
+      {
+        "question": "An IDS is the same as a firewall.",
+        "answer": "False"
+      },
+      {
+        "question": "Network security is only important for online banking.",
+        "answer": "False"
+      },
+      {
+        "question": "Encryption alone provides authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "SSL uses cipher suites negotiated between client and server.",
+        "answer": "True"
+      },
+      {
+        "question": "A personal firewall protects only servers, not desktops.",
+        "answer": "False"
+      }
+    ]
+  }
+}

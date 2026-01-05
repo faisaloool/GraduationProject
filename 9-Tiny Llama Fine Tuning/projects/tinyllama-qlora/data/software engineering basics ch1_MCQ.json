@@ -1,0 +1,649 @@
+{
+  "filename": "Ch1_Introduction.pptx",
+  "quiz": [
+    {
+      "question": "What is software engineering primarily concerned with?",
+      "type": "mcq",
+      "options": [
+        "Theories, methods, and tools for professional software development",
+        "Only programming and coding",
+        "Hardware design and development",
+        "Marketing software products"
+      ],
+      "answer": "Theories, methods, and tools for professional software development",
+      "section": "Software engineering",
+      "rate": "easy",
+      "suggestion": "Review the definition of software engineering in the introduction."
+    },
+    {
+      "question": "Which of the following is true about software costs?",
+      "type": "mcq",
+      "options": [
+        "Maintenance costs often exceed development costs",
+        "Hardware costs always dominate software costs",
+        "Software costs are negligible compared to hardware costs",
+        "Development costs are always higher than maintenance costs"
+      ],
+      "answer": "Maintenance costs often exceed development costs",
+      "section": "Software costs",
+      "rate": "medium",
+      "suggestion": "Review the section on software costs and maintenance."
+    },
+    {
+      "question": "What is a major cause of software project failure?",
+      "type": "mcq",
+      "options": [
+        "Failure to use software engineering methods",
+        "Overuse of agile methodologies",
+        "Excessive documentation",
+        "Lack of hardware resources"
+      ],
+      "answer": "Failure to use software engineering methods",
+      "section": "Software project failure",
+      "rate": "easy",
+      "suggestion": "Refer to the 'Software project failure' slide."
+    },
+    {
+      "question": "Which type of software is marketed and sold to any customer?",
+      "type": "mcq",
+      "options": [
+        "Generic products",
+        "Customized products",
+        "Embedded systems",
+        "Batch processing systems"
+      ],
+      "answer": "Generic products",
+      "section": "Software products",
+      "rate": "easy",
+      "suggestion": "Review the definitions of generic and customized products."
+    },
+    {
+      "question": "Who owns the specification in customized software products?",
+      "type": "mcq",
+      "options": [
+        "The customer",
+        "The software developer",
+        "The government",
+        "The end-user"
+      ],
+      "answer": "The customer",
+      "section": "Product specification",
+      "rate": "medium",
+      "suggestion": "Check the 'Product specification' slide for details."
+    },
+    {
+      "question": "What does software engineering encompass?",
+      "type": "mcq",
+      "options": [
+        "All aspects of software production",
+        "Only programming and testing",
+        "Only project management",
+        "Only system specification"
+      ],
+      "answer": "All aspects of software production",
+      "section": "Software engineering",
+      "rate": "easy",
+      "suggestion": "Review the slide titled 'Software engineering' for a complete definition."
+    },
+    {
+      "question": "Which of the following is NOT a software process activity?",
+      "type": "mcq",
+      "options": [
+        "Software marketing",
+        "Software specification",
+        "Software validation",
+        "Software evolution"
+      ],
+      "answer": "Software marketing",
+      "section": "Software process activities",
+      "rate": "medium",
+      "suggestion": "Refer to the 'Software process activities' slide."
+    },
+    {
+      "question": "Which general issue refers to systems operating across different types of devices?",
+      "type": "mcq",
+      "options": [
+        "Heterogeneity",
+        "Security and trust",
+        "Scale",
+        "Business and social change"
+      ],
+      "answer": "Heterogeneity",
+      "section": "General issues that affect software",
+      "rate": "easy",
+      "suggestion": "Review the 'General issues that affect software' section."
+    },
+    {
+      "question": "Which application type includes e-commerce systems?",
+      "type": "mcq",
+      "options": [
+        "Interactive transaction-based applications",
+        "Stand-alone applications",
+        "Embedded control systems",
+        "Batch processing systems"
+      ],
+      "answer": "Interactive transaction-based applications",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check the 'Application types' slides for examples."
+    },
+    {
+      "question": "What is a fundamental principle applicable to all software systems?",
+      "type": "mcq",
+      "options": [
+        "Systems should be developed using a managed process",
+        "All systems must be developed using agile methods",
+        "Systems must be developed in isolation",
+        "Systems must be proprietary"
+      ],
+      "answer": "Systems should be developed using a managed process",
+      "section": "Software engineering fundamentals",
+      "rate": "medium",
+      "suggestion": "Review the 'Software engineering fundamentals' slide."
+    },
+    {
+      "question": "Which principle of the IEEE/ACM Code of Ethics emphasizes acting in the public interest?",
+      "type": "mcq",
+      "options": [
+        "Public",
+        "Client and Employer",
+        "Product",
+        "Judgment"
+      ],
+      "answer": "Public",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Review the eight ethical principles listed."
+    },
+    {
+      "question": "What should software engineers do regarding intellectual property?",
+      "type": "mcq",
+      "options": [
+        "Protect the intellectual property of employers and clients",
+        "Ignore intellectual property laws",
+        "Share proprietary software freely",
+        "Only respect patents, not copyrights"
+      ],
+      "answer": "Protect the intellectual property of employers and clients",
+      "section": "Issues of professional responsibility",
+      "rate": "medium",
+      "suggestion": "Check the 'Issues of professional responsibility' slide."
+    },
+    {
+      "question": "Which case study involves an embedded system for health management?",
+      "type": "mcq",
+      "options": [
+        "A personal insulin pump",
+        "A wilderness weather station",
+        "Mentcare",
+        "iLearn"
+      ],
+      "answer": "A personal insulin pump",
+      "section": "Case studies",
+      "rate": "easy",
+      "suggestion": "Review the 'Case studies' section for descriptions."
+    },
+    {
+      "question": "Which of the following is NOT an essential attribute of good software?",
+      "type": "mcq",
+      "options": [
+        "High cost",
+        "Maintainability",
+        "Dependability",
+        "Security"
+      ],
+      "answer": "High cost",
+      "section": "Essential attributes of good software",
+      "rate": "easy",
+      "suggestion": "Refer to the slide titled 'Essential attributes of good software'."
+    },
+    {
+      "question": "What does 'software evolution' refer to?",
+      "type": "mcq",
+      "options": [
+        "Modifying software to reflect changing requirements",
+        "Developing software from scratch",
+        "Testing software before release",
+        "Marketing software products"
+      ],
+      "answer": "Modifying software to reflect changing requirements",
+      "section": "Software process activities",
+      "rate": "medium",
+      "suggestion": "Review the 'Software process activities' slide."
+    },
+    {
+      "question": "Which type of system is designed to process data in large batches?",
+      "type": "mcq",
+      "options": [
+        "Batch processing systems",
+        "Interactive transaction-based applications",
+        "Embedded control systems",
+        "Entertainment systems"
+      ],
+      "answer": "Batch processing systems",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check the 'Application types' slides for definitions."
+    },
+    {
+      "question": "What is the focus of 'Software engineering ethics'?",
+      "type": "mcq",
+      "options": [
+        "Wider responsibilities beyond technical skills",
+        "Only legal compliance",
+        "Maximizing profit",
+        "Avoiding all risks"
+      ],
+      "answer": "Wider responsibilities beyond technical skills",
+      "section": "Software engineering ethics",
+      "rate": "medium",
+      "suggestion": "Review the 'Software engineering ethics' section."
+    },
+    {
+      "question": "Which principle in the code of ethics relates to lifelong learning?",
+      "type": "mcq",
+      "options": [
+        "Self",
+        "Colleagues",
+        "Profession",
+        "Management"
+      ],
+      "answer": "Self",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Refer to the eight ethical principles listed."
+    },
+    {
+      "question": "Which of the following is an example of a customized product?",
+      "type": "mcq",
+      "options": [
+        "Air traffic control software",
+        "PC graphics software",
+        "Project management tools",
+        "CAD software"
+      ],
+      "answer": "Air traffic control software",
+      "section": "Software products",
+      "rate": "medium",
+      "suggestion": "Check the examples given for customized products."
+    },
+    {
+      "question": "What does 'software validation' ensure?",
+      "type": "mcq",
+      "options": [
+        "The software meets customer requirements",
+        "The software is developed quickly",
+        "The software is marketed effectively",
+        "The software is low cost"
+      ],
+      "answer": "The software meets customer requirements",
+      "section": "Software process activities",
+      "rate": "easy",
+      "suggestion": "Refer to the 'Software process activities' slide."
+    },
+    {
+      "question": "Which issue relates to the need for software to serve global communities?",
+      "type": "mcq",
+      "options": [
+        "Scale",
+        "Heterogeneity",
+        "Security and trust",
+        "Business and social change"
+      ],
+      "answer": "Scale",
+      "section": "General issues that affect software",
+      "rate": "medium",
+      "suggestion": "Review the 'General issues that affect software' slides."
+    },
+    {
+      "question": "Which ethical issue involves misuse of technical skills?",
+      "type": "mcq",
+      "options": [
+        "Computer misuse",
+        "Confidentiality",
+        "Competence",
+        "Intellectual property rights"
+      ],
+      "answer": "Computer misuse",
+      "section": "Issues of professional responsibility",
+      "rate": "easy",
+      "suggestion": "Check the 'Issues of professional responsibility' slide."
+    },
+    {
+      "question": "Which case study is a data collection system for remote areas?",
+      "type": "mcq",
+      "options": [
+        "A wilderness weather station",
+        "A personal insulin pump",
+        "Mentcare",
+        "iLearn"
+      ],
+      "answer": "A wilderness weather station",
+      "section": "Case studies",
+      "rate": "easy",
+      "suggestion": "Review the 'Case studies' section for descriptions."
+    },
+    {
+      "question": "What does 'dependability' in software refer to?",
+      "type": "mcq",
+      "options": [
+        "Reliability, security, and safety",
+        "Low cost and high speed",
+        "User interface attractiveness",
+        "Marketability and sales"
+      ],
+      "answer": "Reliability, security, and safety",
+      "section": "Essential attributes of good software",
+      "rate": "medium",
+      "suggestion": "Review the 'Essential attributes of good software' slide."
+    },
+    {
+      "question": "Which application type includes systems for modeling physical processes?",
+      "type": "mcq",
+      "options": [
+        "Systems for modelling and simulation",
+        "Entertainment systems",
+        "Batch processing systems",
+        "Data collection systems"
+      ],
+      "answer": "Systems for modelling and simulation",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Check the 'Application types' slides."
+    },
+    {
+      "question": "What is the rationale behind the IEEE/ACM Code of Ethics?",
+      "type": "mcq",
+      "options": [
+        "To ensure software engineering is a beneficial and respected profession",
+        "To increase software sales",
+        "To reduce development costs",
+        "To promote proprietary software only"
+      ],
+      "answer": "To ensure software engineering is a beneficial and respected profession",
+      "section": "Rationale for the code of ethics",
+      "rate": "medium",
+      "suggestion": "Review the 'Rationale for the code of ethics' slide."
+    },
+    {
+      "question": "Which software process activity involves designing and programming?",
+      "type": "mcq",
+      "options": [
+        "Software development",
+        "Software specification",
+        "Software validation",
+        "Software evolution"
+      ],
+      "answer": "Software development",
+      "section": "Software process activities",
+      "rate": "easy",
+      "suggestion": "Refer to the 'Software process activities' slide."
+    },
+    {
+      "question": "What is a key challenge in software engineering due to increasing system complexity?",
+      "type": "mcq",
+      "options": [
+        "Building and delivering systems more quickly",
+        "Reducing the need for customer input",
+        "Eliminating all maintenance phases",
+        "Using only generic products"
+      ],
+      "answer": "Building and delivering systems more quickly",
+      "section": "Software project failure",
+      "rate": "medium",
+      "suggestion": "Review the 'Software project failure' slide."
+    },
+    {
+      "question": "Which ethical principle focuses on advancing the profession's reputation?",
+      "type": "mcq",
+      "options": [
+        "Profession",
+        "Public",
+        "Client and Employer",
+        "Product"
+      ],
+      "answer": "Profession",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Check the eight ethical principles listed."
+    },
+    {
+      "question": "What is the role of software engineers in society according to the code of ethics?",
+      "type": "mcq",
+      "options": [
+        "To commit to making software engineering beneficial and respected",
+        "To maximize profits at all costs",
+        "To avoid all ethical dilemmas",
+        "To focus only on technical skills"
+      ],
+      "answer": "To commit to making software engineering beneficial and respected",
+      "section": "Rationale for the code of ethics",
+      "rate": "medium",
+      "suggestion": "Review the 'Rationale for the code of ethics' slide."
+    },
+    {
+      "question": "What is the primary difference between generic and customized products?",
+      "type": "mcq",
+      "options": [
+        "Ownership of the specification",
+        "Cost of development",
+        "Programming language used",
+        "Type of hardware required"
+      ],
+      "answer": "Ownership of the specification",
+      "section": "Product specification",
+      "rate": "medium",
+      "suggestion": "Review the 'Product specification' slide."
+    },
+    {
+      "question": "Which case study is a digital learning environment for schools?",
+      "type": "mcq",
+      "options": [
+        "iLearn",
+        "Mentcare",
+        "A personal insulin pump",
+        "A wilderness weather station"
+      ],
+      "answer": "iLearn",
+      "section": "Case studies",
+      "rate": "easy",
+      "suggestion": "Review the 'Case studies' section for descriptions."
+    },
+    {
+      "question": "What does 'software engineering diversity' refer to?",
+      "type": "mcq",
+      "options": [
+        "Different methods and tools for different applications",
+        "Using only one universal method for all systems",
+        "Avoiding all customer involvement",
+        "Focusing only on technical aspects"
+      ],
+      "answer": "Different methods and tools for different applications",
+      "section": "Software engineering diversity",
+      "rate": "medium",
+      "suggestion": "Review the 'Software engineering diversity' slide."
+    },
+    {
+      "question": "Which ethical principle emphasizes fairness to colleagues?",
+      "type": "mcq",
+      "options": [
+        "Colleagues",
+        "Self",
+        "Management",
+        "Judgment"
+      ],
+      "answer": "Colleagues",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Check the eight ethical principles listed."
+    },
+    {
+      "question": "Which of the following is NOT a type of application system?",
+      "type": "mcq",
+      "options": [
+        "Social media marketing",
+        "Stand-alone applications",
+        "Embedded control systems",
+        "Batch processing systems"
+      ],
+      "answer": "Social media marketing",
+      "section": "Application types",
+      "rate": "easy",
+      "suggestion": "Review the 'Application types' slides."
+    },
+    {
+      "question": "What is the focus of 'business and social change' as a general issue?",
+      "type": "mcq",
+      "options": [
+        "Rapid development and modification of software",
+        "Avoiding all changes to software",
+        "Using only outdated technologies",
+        "Focusing only on technical aspects"
+      ],
+      "answer": "Rapid development and modification of software",
+      "section": "General issues that affect software",
+      "rate": "medium",
+      "suggestion": "Check the 'General issues that affect software' slides."
+    },
+    {
+      "question": "Which principle in the code of ethics relates to maintaining professional judgment?",
+      "type": "mcq",
+      "options": [
+        "Judgment",
+        "Product",
+        "Client and Employer",
+        "Public"
+      ],
+      "answer": "Judgment",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Review the eight ethical principles listed."
+    },
+    {
+      "question": "What is the primary purpose of software specification?",
+      "type": "mcq",
+      "options": [
+        "Defining what the software should do",
+        "Writing the code for the software",
+        "Marketing the software product",
+        "Testing the software after development"
+      ],
+      "answer": "Defining what the software should do",
+      "section": "Software process activities",
+      "rate": "easy",
+      "suggestion": "Refer to the 'Software process activities' slide."
+    },
+    {
+      "question": "Which of the following is an example of an embedded control system?",
+      "type": "mcq",
+      "options": [
+        "Software in a car's anti-lock braking system",
+        "A PC-based word processor",
+        "A web-based email client",
+        "A batch processing payroll system"
+      ],
+      "answer": "Software in a car's anti-lock braking system",
+      "section": "Application types",
+      "rate": "medium",
+      "suggestion": "Check the examples given for embedded control systems."
+    },
+    {
+      "question": "What does 'software engineering ethics' require beyond technical skills?",
+      "type": "mcq",
+      "options": [
+        "Honest and ethically responsible behavior",
+        "Only following the law",
+        "Maximizing personal gain",
+        "Avoiding all professional responsibilities"
+      ],
+      "answer": "Honest and ethically responsible behavior",
+      "section": "Software engineering ethics",
+      "rate": "medium",
+      "suggestion": "Review the 'Software engineering ethics' slide."
+    },
+    {
+      "question": "Which key point emphasizes that software engineering principles are universally applicable?",
+      "type": "mcq",
+      "options": [
+        "The fundamental notions of software engineering are universally applicable",
+        "Only certain principles apply to specific systems",
+        "Software engineering is only for large systems",
+        "Principles vary by programming language"
+      ],
+      "answer": "The fundamental notions of software engineering are universally applicable",
+      "section": "Key points",
+      "rate": "easy",
+      "suggestion": "Review the 'Key points' slides."
+    },
+    {
+      "question": "What is the main takeaway from the 'Software project failure' section?",
+      "type": "mcq",
+      "options": [
+        "Using software engineering methods is crucial to avoid failure",
+        "Failure is always due to hardware issues",
+        "Only large projects fail",
+        "Failure is unavoidable in software development"
+      ],
+      "answer": "Using software engineering methods is crucial to avoid failure",
+      "section": "Software project failure",
+      "rate": "medium",
+      "suggestion": "Review the 'Software project failure' slide."
+    },
+    {
+      "question": "Which of the following is a responsibility of software engineers regarding competence?",
+      "type": "mcq",
+      "options": [
+        "Not misrepresenting their level of competence",
+        "Accepting any work regardless of competence",
+        "Avoiding all training and learning",
+        "Only working on familiar projects"
+      ],
+      "answer": "Not misrepresenting their level of competence",
+      "section": "Issues of professional responsibility",
+      "rate": "easy",
+      "suggestion": "Check the 'Issues of professional responsibility' slide."
+    },
+    {
+      "question": "What is the primary focus of the 'Product' ethical principle?",
+      "type": "mcq",
+      "options": [
+        "Ensuring products meet high professional standards",
+        "Maximizing product sales",
+        "Reducing product development costs",
+        "Avoiding all product testing"
+      ],
+      "answer": "Ensuring products meet high professional standards",
+      "section": "Ethical principles",
+      "rate": "easy",
+      "suggestion": "Review the eight ethical principles listed."
+    },
+    {
+      "question": "Which case study is related to mental health patient management?",
+      "type": "mcq",
+      "options": [
+        "Mentcare",
+        "iLearn",
+        "A personal insulin pump",
+        "A wilderness weather station"
+      ],
+      "answer": "Mentcare",
+      "section": "Case studies",
+      "rate": "easy",
+      "suggestion": "Review the 'Case studies' section for descriptions."
+    },
+    {
+      "question": "What is the main message of the 'Key points' section?",
+      "type": "mcq",
+      "options": [
+        "Software engineering is a disciplined approach to all aspects of software production",
+        "Software engineering is only about programming",
+        "Software engineering principles do not apply to all systems",
+        "Ethics are not important in software engineering"
+      ],
+      "answer": "Software engineering is a disciplined approach to all aspects of software production",
+      "section": "Key points",
+      "rate": "medium",
+      "suggestion": "Review the 'Key points' slides."
+    }
+  ]
+}

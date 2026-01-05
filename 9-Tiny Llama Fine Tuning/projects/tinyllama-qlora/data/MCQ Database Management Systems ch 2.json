@@ -1,0 +1,208 @@
+{
+  "document": "The Relational Model defines how data is structured, stored, and constrained in relational databases using relations (tables), attributes (columns), tuples (rows), domains, schemas, and integrity constraints.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is a relational database?",
+        "options": [
+          "A collection of files",
+          "A set of relations",
+          "A hierarchical data structure",
+          "A single large table"
+        ],
+        "answer": "A set of relations"
+      },
+      {
+        "question": "In the relational model, a table row is formally called a:",
+        "options": [
+          "Record",
+          "Attribute",
+          "Tuple",
+          "Domain"
+        ],
+        "answer": "Tuple"
+      },
+      {
+        "question": "What does the degree of a relation represent?",
+        "options": [
+          "Number of rows",
+          "Number of tuples",
+          "Number of attributes",
+          "Number of keys"
+        ],
+        "answer": "Number of attributes"
+      },
+      {
+        "question": "What does the cardinality of a relation represent?",
+        "options": [
+          "Number of attributes",
+          "Number of columns",
+          "Number of rows",
+          "Number of domains"
+        ],
+        "answer": "Number of rows"
+      },
+      {
+        "question": "What is the schema of a relation?",
+        "options": [
+          "The current data in the table",
+          "The set of tuples",
+          "The structure defining attributes and their types",
+          "The primary key only"
+        ],
+        "answer": "The structure defining attributes and their types"
+      },
+      {
+        "question": "Which term refers to the set of valid values for an attribute?",
+        "options": [
+          "Tuple",
+          "Domain",
+          "Relation",
+          "Schema"
+        ],
+        "answer": "Domain"
+      },
+      {
+        "question": "In the formal relational model, all tuples in a relation must be:",
+        "options": [
+          "Ordered",
+          "Unique",
+          "Sorted by primary key",
+          "Numerical"
+        ],
+        "answer": "Unique"
+      },
+      {
+        "question": "Which of the following best defines a key?",
+        "options": [
+          "An attribute that can have null values",
+          "A set of attributes that uniquely identifies a tuple",
+          "Any attribute in a relation",
+          "A foreign key reference"
+        ],
+        "answer": "A set of attributes that uniquely identifies a tuple"
+      },
+      {
+        "question": "What is a superkey?",
+        "options": [
+          "A minimal unique identifier",
+          "Any set of attributes containing a key",
+          "Only the primary key",
+          "A foreign key"
+        ],
+        "answer": "Any set of attributes containing a key"
+      },
+      {
+        "question": "What distinguishes a primary key from other candidate keys?",
+        "options": [
+          "It can contain null values",
+          "It is chosen arbitrarily among candidate keys",
+          "It must be numeric",
+          "It must be a foreign key"
+        ],
+        "answer": "It is chosen arbitrarily among candidate keys"
+      },
+      {
+        "question": "Which constraint ensures that primary key values are not null?",
+        "options": [
+          "Domain integrity",
+          "Referential integrity",
+          "Entity integrity",
+          "Semantic integrity"
+        ],
+        "answer": "Entity integrity"
+      },
+      {
+        "question": "A foreign key is used to:",
+        "options": [
+          "Uniquely identify tuples",
+          "Reference a primary key in another relation",
+          "Store computed values",
+          "Enforce domain constraints"
+        ],
+        "answer": "Reference a primary key in another relation"
+      },
+      {
+        "question": "Referential integrity ensures that:",
+        "options": [
+          "All attributes are atomic",
+          "Foreign keys reference valid primary keys or are null",
+          "Primary keys are unique",
+          "Domains are correctly defined"
+        ],
+        "answer": "Foreign keys reference valid primary keys or are null"
+      },
+      {
+        "question": "Which SQL command is used to remove a table definition and its data?",
+        "options": [
+          "DELETE TABLE",
+          "REMOVE TABLE",
+          "DROP TABLE",
+          "ALTER TABLE"
+        ],
+        "answer": "DROP TABLE"
+      },
+      {
+        "question": "What happens when a new column is added using ALTER TABLE?",
+        "options": [
+          "Existing tuples are deleted",
+          "Existing tuples get a null value for the new column",
+          "The table must be recreated",
+          "Only new tuples contain the column"
+        ],
+        "answer": "Existing tuples get a null value for the new column"
+      },
+      {
+        "question": "Which operation may violate referential integrity?",
+        "options": [
+          "SELECT",
+          "INSERT",
+          "DELETE",
+          "Both INSERT and DELETE"
+        ],
+        "answer": "Both INSERT and DELETE"
+      },
+      {
+        "question": "What does CASCADE do in referential integrity constraints?",
+        "options": [
+          "Rejects the operation",
+          "Sets foreign keys to NULL",
+          "Automatically propagates changes",
+          "Ignores constraint violations"
+        ],
+        "answer": "Automatically propagates changes"
+      },
+      {
+        "question": "What is a view in SQL?",
+        "options": [
+          "A stored table with data",
+          "A temporary file",
+          "A stored query definition",
+          "A primary key constraint"
+        ],
+        "answer": "A stored query definition"
+      },
+      {
+        "question": "Which integrity constraints are always implicitly enforced?",
+        "options": [
+          "Semantic constraints",
+          "Domain constraints",
+          "Referential constraints",
+          "View constraints"
+        ],
+        "answer": "Domain constraints"
+      },
+      {
+        "question": "What is the relational database state?",
+        "options": [
+          "The schema of all relations",
+          "A union of all current relation states",
+          "Only the primary keys",
+          "The SQL queries defined"
+        ],
+        "answer": "A union of all current relation states"
+      }
+    ]
+  }
+}

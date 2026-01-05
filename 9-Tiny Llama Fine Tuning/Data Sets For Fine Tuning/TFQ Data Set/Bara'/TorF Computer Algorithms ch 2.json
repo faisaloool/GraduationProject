@@ -1,0 +1,84 @@
+{
+  "document": "The file explains asymptotic performance analysis for sorting algorithms such as Bubble Sort, Selection Sort and Insertion Sort, describes the RAM model of computation, shows how running time is measured by primitive steps, explains Worst‑Case, Best‑Case and Average‑Case analyses, defines Big‑O (upper bound), Ω (lower bound) and Θ (tight bound) notation, and illustrates practical complexity graphs for functions like n, log(n), n·log(n), n², n³ and 2ⁿ.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The RAM model assumes that all memory cells have the same access time.",
+        "answer": "True"
+      },
+      {
+        "question": "In the worst case, a linear search always examines every element of the array.",
+        "answer": "True"
+      },
+      {
+        "question": "Bubble Sort performs at least one full pass over the array in its best case.",
+        "answer": "False"
+      },
+      {
+        "question": "The number of comparisons in Bubble Sort’s worst case is (n‑1)+(n‑2)+…+2+1.",
+        "answer": "True"
+      },
+      {
+        "question": "Insertion Sort has a quadratic running time only in its best case.",
+        "answer": "False"
+      },
+      {
+        "question": "Selection Sort requires n−1 passes over the array to find each minimum element.",
+        "answer": "True"
+      },
+      {
+        "question": "Insertion Sort’s inner loop can be executed at most i times during the i‑th outer iteration.",
+        "answer": "False"
+      },
+      {
+        "question": "A function f(n) = 10n² + 4n + 2 is O(n³).",
+        "answer": "True"
+      },
+      {
+        "question": "The tight bound Θ(g(n)) requires f(n) to be both O(g(n)) and Ω(g(n)).",
+        "answer": "True"
+      },
+      {
+        "question": "Practical complexity graphs show that log(n) grows faster than n.",
+        "answer": "False"
+      },
+      {
+        "question": "The average case running time of Insertion Sort is still Θ(n²).",
+        "answer": "True"
+      },
+      {
+        "question": "The best‑case running time for Selection Sort is O(1) because no swaps are needed.",
+        "answer": "False"
+      },
+      {
+        "question": "A function g(n) = n log(n) grows faster than g(n) = n² for large n.",
+        "answer": "False"
+      },
+      {
+        "question": "In the RAM model, a function call is considered a primitive step with unit time cost.",
+        "answer": "False"
+      },
+      {
+        "question": "The worst‑case running time of Bubble Sort is O(n²) due to the number of swaps and comparisons.",
+        "answer": "True"
+      },
+      {
+        "question": "Insertion Sort can achieve linear time if the input array is already sorted.",
+        "answer": "True"
+      },
+      {
+        "question": "The document states that Insertion Sort’s best‑case running time is O(n²).",
+        "answer": "False"
+      },
+      {
+        "question": "In the definition of Ω(g(n)), there must exist constants c and n₀ such that 0 ≤ c·g(n) ≤ f(n) for all n ≥ n₀.",
+        "answer": "True"
+      },
+      {
+        "question": "The document claims that a function f(n) = 2ⁿ is considered Θ(2ⁿ).",
+        "answer": "True"
+      }
+    ]
+  }
+}

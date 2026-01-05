@@ -1,0 +1,88 @@
+{
+  "document": "This document covers software evolution and maintenance, focusing on reuse and domain engineering. It details the benefits of reuse, types of reusable artifacts (data, architectural, design, and program), characteristics of reusable components, and various reuse models including proactive, reactive, and extractive approaches.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Formal software reuse was first introduced by Dough McIlroy.",
+        "answer": "True"
+      },
+      {
+        "question": "A program family is defined as a set of programs that have no common attributes or features.",
+        "answer": "False"
+      },
+      {
+        "question": "Software reuse involves both development 'with' reuse and development 'for' reuse.",
+        "answer": "True"
+      },
+      {
+        "question": "Data reuse involves the standardization of data formats.",
+        "answer": "True"
+      },
+      {
+        "question": "Architectural reuse is strictly limited to the reuse of executable code.",
+        "answer": "False"
+      },
+      {
+        "question": "Design reuse deals with the reuse of abstract design which is then custom implemented.",
+        "answer": "True"
+      },
+      {
+        "question": "Program reuse involves reusing executable code, such as a pattern-matching system.",
+        "answer": "True"
+      },
+      {
+        "question": "For a component to be reusable, it should ideally have high coupling.",
+        "answer": "False"
+      },
+      {
+        "question": "High cohesion is a property that encourages the reuse of a software component.",
+        "answer": "True"
+      },
+      {
+        "question": "Reliability and portability are properties that indicate the reusability of a software asset.",
+        "answer": "True"
+      },
+      {
+        "question": "The most obvious advantage of software reuse is the economic benefit.",
+        "answer": "True"
+      },
+      {
+        "question": "Software reuse typically leads to increased process risk.",
+        "answer": "False"
+      },
+      {
+        "question": "Reuse can result in improved maintainability and less maintenance effort.",
+        "answer": "True"
+      },
+      {
+        "question": "The proactive reuse model is similar to the Waterfall model for conventional software.",
+        "answer": "True"
+      },
+      {
+        "question": "In the proactive approach, the system is designed only for current requirements with no regard for variations.",
+        "answer": "False"
+      },
+      {
+        "question": "The reactive approach develops reusable assets only when a reuse opportunity arises during product development.",
+        "answer": "True"
+      },
+      {
+        "question": "The reactive approach is best when it is easy to perform long-term predictions of requirements.",
+        "answer": "False"
+      },
+      {
+        "question": "The extractive approach falls between the proactive and reactive models.",
+        "answer": "True"
+      },
+      {
+        "question": "The extractive approach reuses some operational software products to create a domain engineering baseline.",
+        "answer": "True"
+      },
+      {
+        "question": "Environmental independence is a property that makes software components harder to reuse.",
+        "answer": "False"
+      }
+    ]
+  }
+}

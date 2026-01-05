@@ -1,0 +1,199 @@
+{
+  "document": "This document covers the concepts of Schedules, Serializability, Conflict Equivalence, View Equivalence, Deadlock, Recoverability and Cascading Rollbacks in database systems.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Why is concurrency necessary in a database system?",
+        "options": [
+          "To reduce the number of transactions",
+          "To improve resource utilization and throughput",
+          "Because isolation is always required",
+          "To avoid deadlocks"
+        ],
+        "answer": "To improve resource utilization and throughput"
+      },
+      {
+        "question": "Which operation notation represents a transaction Ti reading data item X?",
+        "options": [
+          "R_i(X)",
+          "W_i(X)",
+          "C_i",
+          "T_i"
+        ],
+        "answer": "R_i(X)"
+      },
+      {
+        "question": "What is a 'conflict' between two operations?",
+        "options": [
+          "They belong to the same transaction and operate on different data items",
+          "Both are reads on the same item by different transactions",
+          "They belong to different transactions, involve the same data item, and at least one is a write",
+          "One writes and the other reads from the same transaction"
+        ],
+        "answer": "They belong to different transactions, involve the same data item, and at least one is a write"
+      },
+      {
+        "question": "Which of the following operations are non‑conflicting?",
+        "options": [
+          "W(X) by T1 and R(X) by T2",
+          "W(X) by T1 and W(X) by T2",
+          "R(X) by T1 and R(X) by T2",
+          "W(X) by T1 and W(Y) by T2"
+        ],
+        "answer": "R(X) by T1 and R(X) by T2"
+      },
+      {
+        "question": "Two schedules are conflict equivalent if:",
+        "options": [
+          "They have the same number of operations",
+          "All conflicting pairs occur in the same order in both schedules",
+          "Both schedules are serial",
+          "Their precedence graphs are identical"
+        ],
+        "answer": "All conflicting pairs occur in the same order in both schedules"
+      },
+      {
+        "question": "A schedule is conflict serializable if it can be transformed into a serial schedule by:",
+        "options": [
+          "Swapping any two operations",
+          "Swapping only non‑conflicting operations",
+          "Reordering all write operations",
+          "Changing the order of conflicting writes"
+        ],
+        "answer": "Swapping only non‑conflicting operations"
+      },
+      {
+        "question": "Which condition is NOT part of view equivalence?",
+        "options": [
+          "Initial Read: same transaction reads before another in both schedules",
+          "Updated Read: read must see the same write that produced it",
+          "Final Write: last writer for each item must be the same transaction",
+          "All writes must occur before any reads"
+        ],
+        "answer": "All writes must occur before any reads"
+      },
+      {
+        "question": "In a precedence graph, an edge from Ti to Tj indicates:",
+        "options": [
+          "Ti and Tj are independent",
+          "Tj must precede Ti",
+          "Ti must precede Tj in the schedule",
+          "The two transactions conflict on at least one item"
+        ],
+        "answer": "Ti must precede Tj in the schedule"
+      },
+      {
+        "question": "Which of these is an example of a cascading rollback?",
+        "options": [
+          "T1 aborts, but no other transaction is affected",
+          "T2 aborts after T1 writes a value read by T3",
+          "All transactions commit successfully",
+          "A deadlock occurs without any abort"
+        ],
+        "answer": "T2 aborts after T1 writes a value read by T3"
+      },
+      {
+        "question": "What does the 'CASCADE' clause in a foreign key definition do?",
+        "options": [
+          "Delete or update child rows when parent row changes",
+          "Create a new table automatically",
+          "Prevent insertion of invalid keys",
+          "Enforce unique constraints on parent columns"
+        ],
+        "answer": "Delete or update child rows when parent row changes"
+      },
+      {
+        "question": "Which of the following describes a deadlock scenario?",
+        "options": [
+          "Two transactions both commit immediately",
+          "One transaction holds lock A and waits for B while another holds B and waits for A",
+          "All locks are released before any transaction starts",
+          "Only one transaction is running"
+        ],
+        "answer": "One transaction holds lock A and waits for B while another holds B and waits for A"
+      },
+      {
+        "question": "Deadlock avoidance may use a 'wait‑for' graph that:",
+        "options": [
+          "Shows all locks in the system",
+          "Tracks which transactions are waiting for which resources",
+          "Represents the precedence graph of completed schedules",
+          "Counts the number of deadlocks"
+        ],
+        "answer": "Tracks which transactions are waiting for which resources"
+      },
+      {
+        "question": "A serializable schedule is guaranteed to be:",
+        "options": [
+          "View‑serializable only",
+          "Conflict‑serializable only",
+          "Both conflict and view serializable",
+          "Neither conflict nor view serializable"
+        ],
+        "answer": "Both conflict and view serializable"
+      },
+      {
+        "question": "Which of these is NOT a characteristic of the ACID properties?",
+        "options": [
+          "Atomicity",
+          "Consistency",
+          "Isolation",
+          "Durability",
+          "Concurrency"
+        ],
+        "answer": "Concurrency"
+      },
+      {
+        "question": "An 'abort' operation in a transaction schedule causes:",
+        "options": [
+          "The transaction to commit immediately",
+          "All its writes to be undone",
+          "All other transactions to commit as well",
+          "No effect on the database state"
+        ],
+        "answer": "All its writes to be undone"
+      },
+      {
+        "question": "Which statement is true about a recoverable schedule?",
+        "options": [
+          "It contains no aborts at all",
+          "If a transaction commits, any subsequent commit must have seen the write of that transaction",
+          "Commits and aborts are irrelevant to recoverability",
+          "All transactions rollback automatically"
+        ],
+        "answer": "If a transaction commits, any subsequent commit must have seen the write of that transaction"
+      },
+      {
+        "question": "View equivalence requires:",
+        "options": [
+          "Only initial reads to be preserved",
+          "Only final writes to be preserved",
+          "Initial, updated, and final read/write relationships to be preserved",
+          "No constraints on read order"
+        ],
+        "answer": "Initial, updated, and final read/write relationships to be preserved"
+      },
+      {
+        "question": "In a schedule where Ti performs W_i(A) after Tj writes A, the read of A by Ti will:",
+        "options": [
+          "See Ti's own write",
+          "See j’s write if Ti reads after that operation",
+          "Ignore all prior writes",
+          "Always be undefined"
+        ],
+        "answer": "See j’s write if Ti reads after that operation"
+      },
+      {
+        "question": "Which of the following is NOT a valid way to detect deadlocks?",
+        "options": [
+          "Wait‑for graph analysis",
+          "Timestamp ordering",
+          "Resource allocation graph",
+          "Lock hierarchy traversal"
+        ],
+        "answer": "Timestamp ordering"
+      }
+    ]
+  }
+}

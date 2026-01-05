@@ -1,0 +1,398 @@
+{
+  "document": "FDS Chapter 3: Machine learning",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is machine learning?",
+        "options": [
+          "A programming language",
+          "A field giving computers ability to learn without explicit programming",
+          "A type of database",
+          "A hardware technology"
+        ],
+        "answer": "A field giving computers ability to learn without explicit programming"
+      },
+      {
+        "question": "How does a computer typically learn in machine learning?",
+        "options": [
+          "By reading manuals",
+          "By using data as source and comparing output to desired output",
+          "By being programmed step by step",
+          "By asking humans questions"
+        ],
+        "answer": "By using data as source and comparing output to desired output"
+      },
+      {
+        "question": "What happens as a computer gets more data or experience?",
+        "options": [
+          "It becomes slower",
+          "It becomes better at its designated job",
+          "It forgets previous learning",
+          "It requires more programming"
+        ],
+        "answer": "It becomes better at its designated job"
+      },
+      {
+        "question": "What field is machine learning a subfield of?",
+        "options": [
+          "Database management",
+          "Artificial intelligence",
+          "Computer hardware",
+          "Network security"
+        ],
+        "answer": "Artificial intelligence"
+      },
+      {
+        "question": "What is closely related to machine learning?",
+        "options": [
+          "Only computer science",
+          "Applied mathematics and statistics",
+          "Only business management",
+          "Only programming languages"
+        ],
+        "answer": "Applied mathematics and statistics"
+      },
+      {
+        "question": "What are the two primary goals of machine learning for data scientists?",
+        "options": [
+          "Clustering and association",
+          "Regression and classification",
+          "Dimensionality reduction and reinforcement",
+          "Feature extraction and selection"
+        ],
+        "answer": "Regression and classification"
+      },
+      {
+        "question": "What is regression used for?",
+        "options": [
+          "Categorizing objects into groups",
+          "Predicting continuous numerical values",
+          "Finding patterns without labels",
+          "Reducing data dimensions"
+        ],
+        "answer": "Predicting continuous numerical values"
+      },
+      {
+        "question": "What is classification used for?",
+        "options": [
+          "Predicting numerical values",
+          "Categorizing objects into groups",
+          "Finding data associations",
+          "Compressing data"
+        ],
+        "answer": "Categorizing objects into groups"
+      },
+      {
+        "question": "Where is machine learning mainly linked in the data science process?",
+        "options": [
+          "Data retrieval step",
+          "Data modeling step",
+          "Goal definition step",
+          "Presentation step"
+        ],
+        "answer": "Data modeling step"
+      },
+      {
+        "question": "Where else can machine learning be useful besides modeling?",
+        "options": [
+          "Only in final presentation",
+          "In data preparation and exploration",
+          "Only in data storage",
+          "Only in project planning"
+        ],
+        "answer": "In data preparation and exploration"
+      },
+      {
+        "question": "How many main types of Python packages exist for machine learning?",
+        "options": [
+          "Two types",
+          "Three types",
+          "Four types",
+          "Five types"
+        ],
+        "answer": "Three types"
+      },
+      {
+        "question": "What type of package is used for prototyping?",
+        "options": [
+          "Big data specific packages",
+          "Optimization packages",
+          "Packages for working with data in memory",
+          "Only cloud-based packages"
+        ],
+        "answer": "Packages for working with data in memory"
+      },
+      {
+        "question": "What does SciPy integrate?",
+        "options": [
+          "Only machine learning algorithms",
+          "Fundamental packages for scientific computing",
+          "Only database connectors",
+          "Only visualization tools"
+        ],
+        "answer": "Fundamental packages for scientific computing"
+      },
+      {
+        "question": "What does NumPy provide?",
+        "options": [
+          "Only data visualization",
+          "Powerful array functions and linear algebra",
+          "Only database management",
+          "Only web development tools"
+        ],
+        "answer": "Powerful array functions and linear algebra"
+      },
+      {
+        "question": "What is Matplotlib?",
+        "options": [
+          "A database system",
+          "A 2D plotting package with some 3D functionality",
+          "A machine learning algorithm library",
+          "A data storage format"
+        ],
+        "answer": "A 2D plotting package with some 3D functionality"
+      },
+      {
+        "question": "What does Pandas introduce to Python?",
+        "options": [
+          "Arrays",
+          "Dataframes",
+          "Only lists",
+          "Only tuples"
+        ],
+        "answer": "Dataframes"
+      },
+      {
+        "question": "What is Scikit-learn filled with?",
+        "options": [
+          "Only database connectors",
+          "Only visualization tools",
+          "Machine learning algorithms",
+          "Only web frameworks"
+        ],
+        "answer": "Machine learning algorithms"
+      },
+      {
+        "question": "What does RPy2 allow?",
+        "options": [
+          "Calling Python from R",
+          "Calling R functions from within Python",
+          "Only data visualization",
+          "Only database queries"
+        ],
+        "answer": "Calling R functions from within Python"
+      },
+      {
+        "question": "What is NLTK focused on?",
+        "options": [
+          "Numerical computations",
+          "Text analytics",
+          "Database management",
+          "Network programming"
+        ],
+        "answer": "Text analytics"
+      },
+      {
+        "question": "What becomes important when moving applications to production?",
+        "options": [
+          "Only code readability",
+          "Performance and speed",
+          "Only number of features",
+          "Only user interface"
+        ],
+        "answer": "Performance and speed"
+      },
+      {
+        "question": "What does Numba use to speed up applications?",
+        "options": [
+          "Cloud computing",
+          "Just-in-time compilation",
+          "Only better algorithms",
+          "Only more memory"
+        ],
+        "answer": "Just-in-time compilation"
+      },
+      {
+        "question": "What does PyCUDA allow code to run on?",
+        "options": [
+          "Only CPU",
+          "GPU instead of CPU",
+          "Only cloud servers",
+          "Only mobile devices"
+        ],
+        "answer": "GPU instead of CPU"
+      },
+      {
+        "question": "What does Cython bring to Python?",
+        "options": [
+          "Only web development",
+          "The C programming language capabilities",
+          "Only database management",
+          "Only mobile development"
+        ],
+        "answer": "The C programming language capabilities"
+      },
+      {
+        "question": "What does Blaze enable working with?",
+        "options": [
+          "Only small data sets",
+          "Data structures bigger than main memory",
+          "Only in-memory data",
+          "Only text data"
+        ],
+        "answer": "Data structures bigger than main memory"
+      },
+      {
+        "question": "What does PySpark connect?",
+        "options": [
+          "Python and Hadoop",
+          "Python and Spark",
+          "Only Python databases",
+          "Only Python visualization"
+        ],
+        "answer": "Python and Spark"
+      },
+      {
+        "question": "How many steps are in the modeling phase?",
+        "options": [
+          "Two steps",
+          "Three steps",
+          "Four steps",
+          "Five steps"
+        ],
+        "answer": "Four steps"
+      },
+      {
+        "question": "What is the first step in the modeling process?",
+        "options": [
+          "Training the model",
+          "Feature engineering and model selection",
+          "Model validation",
+          "Applying to new data"
+        ],
+        "answer": "Feature engineering and model selection"
+      },
+      {
+        "question": "What is feature engineering?",
+        "options": [
+          "Building the actual algorithm",
+          "Creating possible predictors for the model",
+          "Testing hardware configurations",
+          "Writing efficient code"
+        ],
+        "answer": "Creating possible predictors for the model"
+      },
+      {
+        "question": "What happens during model training?",
+        "options": [
+          "Data is presented from which the model can learn",
+          "The model is applied to new data",
+          "The model is validated",
+          "Features are selected"
+        ],
+        "answer": "Data is presented from which the model can learn"
+      },
+      {
+        "question": "What error measure is used for classification problems?",
+        "options": [
+          "Mean squared error",
+          "Classification error rate",
+          "Root mean squared error",
+          "Absolute percentage error"
+        ],
+        "answer": "Classification error rate"
+      },
+      {
+        "question": "What does classification error rate measure?",
+        "options": [
+          "Average prediction error",
+          "Percentage of mislabeled observations",
+          "Model training time",
+          "Memory usage"
+        ],
+        "answer": "Percentage of mislabeled observations"
+      },
+      {
+        "question": "What error measure is used for regression problems?",
+        "options": [
+          "Classification error rate",
+          "Mean squared error",
+          "Precision-recall",
+          "F1 score"
+        ],
+        "answer": "Mean squared error"
+      },
+      {
+        "question": "What is the most common validation strategy?",
+        "options": [
+          "K-folds cross validation",
+          "Leave-1 out validation",
+          "Dividing into training and holdout sets",
+          "Bootstrap validation"
+        ],
+        "answer": "Dividing into training and holdout sets"
+      },
+      {
+        "question": "What does k-folds cross validation do?",
+        "options": [
+          "Uses only one observation as test",
+          "Divides data into k parts using each once as test",
+          "Trains only on first k observations",
+          "Uses k different algorithms"
+        ],
+        "answer": "Divides data into k parts using each once as test"
+      },
+      {
+        "question": "When is leave-1 out validation used?",
+        "options": [
+          "With large data sets",
+          "With small data sets",
+          "With streaming data",
+          "With graph data"
+        ],
+        "answer": "With small data sets"
+      },
+      {
+        "question": "What is applying a model to new data called?",
+        "options": [
+          "Model training",
+          "Model validation",
+          "Model scoring",
+          "Feature engineering"
+        ],
+        "answer": "Model scoring"
+      },
+      {
+        "question": "What type of learning uses labeled data with human interaction?",
+        "options": [
+          "Unsupervised learning",
+          "Supervised learning",
+          "Semi-supervised learning",
+          "Reinforcement learning"
+        ],
+        "answer": "Supervised learning"
+      },
+      {
+        "question": "What type of learning doesn't rely on labeled data?",
+        "options": [
+          "Supervised learning",
+          "Unsupervised learning",
+          "Semi-supervised learning",
+          "Reinforcement learning"
+        ],
+        "answer": "Unsupervised learning"
+      },
+      {
+        "question": "What type of learning can use both labeled and unlabeled data?",
+        "options": [
+          "Supervised learning",
+          "Unsupervised learning",
+          "Semi-supervised learning",
+          "Reinforcement learning"
+        ],
+        "answer": "Semi-supervised learning"
+      }
+    ]
+  }
+}

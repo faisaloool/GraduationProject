@@ -1,0 +1,719 @@
+{
+  "filename": "Ch4.pptx",
+  "quiz": [
+    {
+      "question": "What is the main goal of requirements engineering?",
+      "type": "mcq",
+      "options": [
+        "Establishing the services a customer requires and the constraints under which the system operates",
+        "Writing code for the system",
+        "Testing the final software product",
+        "Designing the user interface"
+      ],
+      "answer": "Establishing the services a customer requires and the constraints under which the system operates",
+      "section": "Requirements engineering",
+      "rate": "easy",
+      "suggestion": "Review the definition of requirements engineering in the chapter introduction"
+    },
+    {
+      "question": "Which of the following is NOT a type of requirement?",
+      "type": "mcq",
+      "options": [
+        "Marketing requirement",
+        "User requirement",
+        "System requirement",
+        "Business requirement"
+      ],
+      "answer": "Marketing requirement",
+      "section": "Types of requirement",
+      "rate": "easy",
+      "suggestion": "Review the list of requirement types in the chapter"
+    },
+    {
+      "question": "Who are considered stakeholders in a system?",
+      "type": "mcq",
+      "options": [
+        "Any person or organization affected by the system",
+        "Only the software developers",
+        "Only the end users",
+        "Only the system owners"
+      ],
+      "answer": "Any person or organization affected by the system",
+      "section": "System stakeholders",
+      "rate": "easy",
+      "suggestion": "Review the definition of stakeholders"
+    },
+    {
+      "question": "In agile methods, how are requirements often expressed?",
+      "type": "mcq",
+      "options": [
+        "As user stories",
+        "As detailed mathematical specifications",
+        "As legal contracts",
+        "As Gantt charts"
+      ],
+      "answer": "As user stories",
+      "section": "Agile methods and requirements",
+      "rate": "easy",
+      "suggestion": "Review how agile methods handle requirements"
+    },
+    {
+      "question": "What is a functional requirement?",
+      "type": "mcq",
+      "options": [
+        "A statement of services the system should provide",
+        "A constraint on the development process",
+        "A description of system architecture",
+        "A measure of system usability"
+      ],
+      "answer": "A statement of services the system should provide",
+      "section": "Functional and non-functional requirements",
+      "rate": "easy",
+      "suggestion": "Review the definition of functional requirements"
+    },
+    {
+      "question": "What is a non-functional requirement?",
+      "type": "mcq",
+      "options": [
+        "A constraint on the services or functions offered by the system",
+        "A description of how to code a specific feature",
+        "A list of user stories",
+        "A test case for validation"
+      ],
+      "answer": "A constraint on the services or functions offered by the system",
+      "section": "Functional and non-functional requirements",
+      "rate": "easy",
+      "suggestion": "Review the definition of non-functional requirements"
+    },
+    {
+      "question": "Which of the following is an example of a non-functional requirement?",
+      "type": "mcq",
+      "options": [
+        "The system shall respond to user input within 2 seconds",
+        "The user shall be able to search patient records",
+        "The system shall allow appointment booking",
+        "The system shall have a login screen"
+      ],
+      "answer": "The system shall respond to user input within 2 seconds",
+      "section": "Non-functional requirements",
+      "rate": "medium",
+      "suggestion": "Recall that non-functional requirements often relate to performance, reliability, etc."
+    },
+    {
+      "question": "What problem arises from ambiguous functional requirements?",
+      "type": "mcq",
+      "options": [
+        "They may be interpreted differently by developers and users",
+        "They make the system faster",
+        "They reduce development costs",
+        "They improve user satisfaction"
+      ],
+      "answer": "They may be interpreted differently by developers and users",
+      "section": "Requirements imprecision",
+      "rate": "medium",
+      "suggestion": "Review the example of 'search' in the Mentcare system"
+    },
+    {
+      "question": "Which of the following is a product requirement?",
+      "type": "mcq",
+      "options": [
+        "Execution speed of the system",
+        "Use of a specific programming language",
+        "Compliance with industry standards",
+        "Interoperability with other systems"
+      ],
+      "answer": "Execution speed of the system",
+      "section": "Non-functional classifications",
+      "rate": "medium",
+      "suggestion": "Review the categories of non-functional requirements"
+    },
+    {
+      "question": "What is the purpose of requirements elicitation?",
+      "type": "mcq",
+      "options": [
+        "To discover stakeholder needs and system constraints",
+        "To write the final code",
+        "To test the system after deployment",
+        "To design the system architecture"
+      ],
+      "answer": "To discover stakeholder needs and system constraints",
+      "section": "Requirements elicitation",
+      "rate": "easy",
+      "suggestion": "Review the definition of requirements elicitation"
+    },
+    {
+      "question": "Which technique involves observing how people actually work in their environment?",
+      "type": "mcq",
+      "options": [
+        "Ethnography",
+        "Interviewing",
+        "Use cases",
+        "Prototyping"
+      ],
+      "answer": "Ethnography",
+      "section": "Ethnography",
+      "rate": "medium",
+      "suggestion": "Review the description of ethnography in the chapter"
+    },
+    {
+      "question": "What is a scenario in requirements engineering?",
+      "type": "mcq",
+      "options": [
+        "A structured description of how a system may be used for a particular task",
+        "A list of functional requirements",
+        "A contract between client and contractor",
+        "A type of non-functional requirement"
+      ],
+      "answer": "A structured description of how a system may be used for a particular task",
+      "section": "Stories and scenarios",
+      "rate": "easy",
+      "suggestion": "Review the definition of scenarios"
+    },
+    {
+      "question": "What is a use case?",
+      "type": "mcq",
+      "options": [
+        "A scenario that describes interactions between actors and the system",
+        "A type of non-functional requirement",
+        "A programming language construct",
+        "A testing framework"
+      ],
+      "answer": "A scenario that describes interactions between actors and the system",
+      "section": "Use cases",
+      "rate": "easy",
+      "suggestion": "Review the definition of use cases in the chapter"
+    },
+    {
+      "question": "Which notation is commonly used for writing system requirements in a structured way?",
+      "type": "mcq",
+      "options": [
+        "Natural language supplemented by diagrams and tables",
+        "Binary code",
+        "Assembly language",
+        "Machine language"
+      ],
+      "answer": "Natural language supplemented by diagrams and tables",
+      "section": "Natural language specification",
+      "rate": "easy",
+      "suggestion": "Review the ways of writing system requirements"
+    },
+    {
+      "question": "What is a key guideline for writing natural language requirements?",
+      "type": "mcq",
+      "options": [
+        "Use 'shall' for mandatory requirements",
+        "Use as much technical jargon as possible",
+        "Avoid diagrams and tables",
+        "Write in a poetic style"
+      ],
+      "answer": "Use 'shall' for mandatory requirements",
+      "section": "Guidelines for writing requirements",
+      "rate": "easy",
+      "suggestion": "Review the guidelines for writing clear requirements"
+    },
+    {
+      "question": "What is the purpose of requirements validation?",
+      "type": "mcq",
+      "options": [
+        "To ensure the requirements define the system the customer really wants",
+        "To write the system code",
+        "To design the user interface",
+        "To deploy the system"
+      ],
+      "answer": "To ensure the requirements define the system the customer really wants",
+      "section": "Requirements validation",
+      "rate": "easy",
+      "suggestion": "Review the definition of requirements validation"
+    },
+    {
+      "question": "Which of the following is a requirements validation technique?",
+      "type": "mcq",
+      "options": [
+        "Requirements reviews",
+        "Coding the system",
+        "Writing user manuals",
+        "Designing the database"
+      ],
+      "answer": "Requirements reviews",
+      "section": "Requirements validation techniques",
+      "rate": "easy",
+      "suggestion": "Review the list of validation techniques"
+    },
+    {
+      "question": "What is requirements management?",
+      "type": "mcq",
+      "options": [
+        "The process of managing changing requirements during development",
+        "The process of writing code",
+        "The process of testing the system",
+        "The process of deploying the system"
+      ],
+      "answer": "The process of managing changing requirements during development",
+      "section": "Requirements management",
+      "rate": "easy",
+      "suggestion": "Review the definition of requirements management"
+    },
+    {
+      "question": "Which activity is part of requirements change management?",
+      "type": "mcq",
+      "options": [
+        "Change analysis and costing",
+        "Writing new code immediately",
+        "Deleting old requirements",
+        "Ignoring stakeholder feedback"
+      ],
+      "answer": "Change analysis and costing",
+      "section": "Requirements change management",
+      "rate": "medium",
+      "suggestion": "Review the stages of change management"
+    },
+    {
+      "question": "What is a common reason for requirements change?",
+      "type": "mcq",
+      "options": [
+        "Business and technical environment changes",
+        "Developers decide to change the code",
+        "Users never change their minds",
+        "Requirements are always perfect from the start"
+      ],
+      "answer": "Business and technical environment changes",
+      "section": "Changing requirements",
+      "rate": "easy",
+      "suggestion": "Review the factors that lead to changing requirements"
+    },
+    {
+      "question": "Which of the following is a functional requirement for the Mentcare system?",
+      "type": "mcq",
+      "options": [
+        "A user shall be able to search the appointments lists for all clinics",
+        "The system shall respond within 3 seconds",
+        "The system shall use encryption for data security",
+        "The system shall be developed using Java"
+      ],
+      "answer": "A user shall be able to search the appointments lists for all clinics",
+      "section": "Mentcare system: functional requirements",
+      "rate": "medium",
+      "suggestion": "Review the example functional requirements for Mentcare"
+    },
+    {
+      "question": "What is the difference between a goal and a verifiable non-functional requirement?",
+      "type": "mcq",
+      "options": [
+        "A goal is a general intention; a verifiable requirement is testable",
+        "A goal is detailed; a verifiable requirement is vague",
+        "A goal is written for developers; a verifiable requirement is for users",
+        "A goal is mandatory; a verifiable requirement is optional"
+      ],
+      "answer": "A goal is a general intention; a verifiable requirement is testable",
+      "section": "Goals and requirements",
+      "rate": "medium",
+      "suggestion": "Review the explanation of goals vs. verifiable requirements"
+    },
+    {
+      "question": "What is a key problem with natural language requirements?",
+      "type": "mcq",
+      "options": [
+        "Lack of clarity and precision",
+        "They are too technical",
+        "They are always consistent",
+        "They are easy to automate"
+      ],
+      "answer": "Lack of clarity and precision",
+      "section": "Problems with natural language",
+      "rate": "medium",
+      "suggestion": "Review the drawbacks of natural language specifications"
+    },
+    {
+      "question": "What is the purpose of a requirements document?",
+      "type": "mcq",
+      "options": [
+        "To officially state what is required of the system developers",
+        "To serve as a design document",
+        "To replace testing",
+        "To list all possible bugs"
+      ],
+      "answer": "To officially state what is required of the system developers",
+      "section": "The software requirements document",
+      "rate": "easy",
+      "suggestion": "Review the purpose of the requirements document"
+    },
+    {
+      "question": "Which of the following is a characteristic of good requirements?",
+      "type": "mcq",
+      "options": [
+        "They are verifiable",
+        "They are ambiguous",
+        "They are written only for developers",
+        "They avoid stakeholder input"
+      ],
+      "answer": "They are verifiable",
+      "section": "Requirements checking",
+      "rate": "easy",
+      "suggestion": "Review the criteria for checking requirements"
+    },
+    {
+      "question": "What is the spiral view of the requirements engineering process?",
+      "type": "mcq",
+      "options": [
+        "An iterative process with interleaved activities",
+        "A linear step-by-step process",
+        "A process without stakeholder involvement",
+        "A process that avoids documentation"
+      ],
+      "answer": "An iterative process with interleaved activities",
+      "section": "Requirements engineering processes",
+      "rate": "medium",
+      "suggestion": "Review the description of the spiral model in RE"
+    },
+    {
+      "question": "Which of the following is a stage in requirements elicitation?",
+      "type": "mcq",
+      "options": [
+        "Requirements discovery",
+        "Coding",
+        "System deployment",
+        "User training"
+      ],
+      "answer": "Requirements discovery",
+      "section": "Requirements elicitation",
+      "rate": "easy",
+      "suggestion": "Review the stages of requirements elicitation"
+    },
+    {
+      "question": "What is the role of prototyping in requirements engineering?",
+      "type": "mcq",
+      "options": [
+        "To check requirements and explore design options",
+        "To replace the final system",
+        "To write the final documentation",
+        "To train end-users"
+      ],
+      "answer": "To check requirements and explore design options",
+      "section": "Software prototyping (implied from Ch2)",
+      "rate": "medium",
+      "suggestion": "Recall the use of prototyping from Chapter 2 and its role in RE"
+    },
+    {
+      "question": "Which of the following is an example of an external stakeholder?",
+      "type": "mcq",
+      "options": [
+        "A regulatory agency",
+        "A system developer",
+        "A project manager",
+        "An end-user"
+      ],
+      "answer": "A regulatory agency",
+      "section": "System stakeholders",
+      "rate": "medium",
+      "suggestion": "Recall the types of stakeholders mentioned"
+    },
+    {
+      "question": "What is a domain requirement?",
+      "type": "mcq",
+      "options": [
+        "A constraint from the system's domain of operation",
+        "A functional requirement",
+        "A requirement for the user interface",
+        "A requirement for system testing"
+      ],
+      "answer": "A constraint from the system's domain of operation",
+      "section": "Functional and non-functional requirements",
+      "rate": "medium",
+      "suggestion": "Review the definition of domain requirements"
+    },
+    {
+      "question": "Which technique is effective for understanding existing work practices?",
+      "type": "mcq",
+      "options": [
+        "Ethnography",
+        "Use cases",
+        "Tabular specification",
+        "Natural language"
+      ],
+      "answer": "Ethnography",
+      "section": "Ethnography",
+      "rate": "medium",
+      "suggestion": "Review the strengths of ethnography"
+    },
+    {
+      "question": "What is a major challenge in requirements elicitation?",
+      "type": "mcq",
+      "options": [
+        "Stakeholders don't know what they really want",
+        "Requirements never change",
+        "Stakeholders always agree",
+        "Requirements are always clear"
+      ],
+      "answer": "Stakeholders don't know what they really want",
+      "section": "Problems of requirements elicitation",
+      "rate": "easy",
+      "suggestion": "Review the common problems in requirements elicitation"
+    },
+    {
+      "question": "Which of the following is a non-functional requirement classification?",
+      "type": "mcq",
+      "options": [
+        "Product requirement",
+        "User requirement",
+        "System requirement",
+        "Business requirement"
+      ],
+      "answer": "Product requirement",
+      "section": "Non-functional classifications",
+      "rate": "medium",
+      "suggestion": "Review the categories of non-functional requirements"
+    },
+    {
+      "question": "What is the purpose of requirements prioritization?",
+      "type": "mcq",
+      "options": [
+        "To resolve conflicts and decide which requirements are most important",
+        "To write code faster",
+        "To eliminate all non-functional requirements",
+        "To avoid stakeholder involvement"
+      ],
+      "answer": "To resolve conflicts and decide which requirements are most important",
+      "section": "Process activities",
+      "rate": "medium",
+      "suggestion": "Review the activities in requirements elicitation"
+    },
+    {
+      "question": "What is a use case relationship?",
+      "type": "mcq",
+      "options": [
+        "Include or extend relationships between use cases",
+        "A relationship between developers and users",
+        "A type of non-functional requirement",
+        "A testing methodology"
+      ],
+      "answer": "Include or extend relationships between use cases",
+      "section": "Use Case ..Include – Extended Relationships",
+      "rate": "medium",
+      "suggestion": "Review the use case notations and relationships"
+    },
+    {
+      "question": "Which of the following is a benefit of using scenarios?",
+      "type": "mcq",
+      "options": [
+        "Stakeholders can relate to real-life examples",
+        "They replace all other requirements documents",
+        "They eliminate the need for validation",
+        "They are only for developers"
+      ],
+      "answer": "Stakeholders can relate to real-life examples",
+      "section": "Stories and scenarios",
+      "rate": "easy",
+      "suggestion": "Review the advantages of using scenarios"
+    },
+    {
+      "question": "What is a key element of a scenario description?",
+      "type": "mcq",
+      "options": [
+        "A description of what can go wrong",
+        "A list of all system functions",
+        "The programming language to be used",
+        "The budget for the project"
+      ],
+      "answer": "A description of what can go wrong",
+      "section": "Scenarios",
+      "rate": "medium",
+      "suggestion": "Review what should be included in a scenario"
+    },
+    {
+      "question": "What is the difference between user and system requirements?",
+      "type": "mcq",
+      "options": [
+        "User requirements are for customers; system requirements are detailed and technical",
+        "User requirements are for developers; system requirements are for managers",
+        "User requirements are non-functional; system requirements are functional",
+        "User requirements are optional; system requirements are mandatory"
+      ],
+      "answer": "User requirements are for customers; system requirements are detailed and technical",
+      "section": "Types of requirement",
+      "rate": "medium",
+      "suggestion": "Review the distinction between user and system requirements"
+    },
+    {
+      "question": "Which of the following is a requirement for the insulin pump software?",
+      "type": "mcq",
+      "options": [
+        "If the blood sugar level is falling, no insulin shall be delivered",
+        "The system shall have a blue interface",
+        "The system shall be written in Python",
+        "The system shall be deployed in 3 months"
+      ],
+      "answer": "If the blood sugar level is falling, no insulin shall be delivered",
+      "section": "Example requirements for the insulin pump software system",
+      "rate": "medium",
+      "suggestion": "Review the insulin pump example in the chapter"
+    },
+    {
+      "question": "What is the main output of the requirements engineering process?",
+      "type": "mcq",
+      "options": [
+        "A system requirements document",
+        "A fully tested system",
+        "A user manual",
+        "A project budget"
+      ],
+      "answer": "A system requirements document",
+      "section": "Requirements engineering processes",
+      "rate": "easy",
+      "suggestion": "Review the output of the RE process"
+    },
+    {
+      "question": "What is traceability in requirements engineering?",
+      "type": "mcq",
+      "options": [
+        "The ability to track the origin and relationships of requirements",
+        "The speed of requirement implementation",
+        "The cost of requirement changes",
+        "The clarity of requirement wording"
+      ],
+      "answer": "The ability to track the origin and relationships of requirements",
+      "section": "Requirements management planning",
+      "rate": "medium",
+      "suggestion": "Review the concept of traceability in requirements management"
+    },
+    {
+      "question": "Which of the following is a technique for requirements discovery?",
+      "type": "mcq",
+      "options": [
+        "Interviews",
+        "Coding",
+        "Debugging",
+        "Deployment"
+      ],
+      "answer": "Interviews",
+      "section": "Requirements discovery",
+      "rate": "easy",
+      "suggestion": "Review the techniques for discovering requirements"
+    },
+    {
+      "question": "What is a key factor in requirements document variability?",
+      "type": "mcq",
+      "options": [
+        "Type of system and development approach",
+        "Developer preferences",
+        "Stakeholder age",
+        "Programming language"
+      ],
+      "answer": "Type of system and development approach",
+      "section": "Requirements document variability",
+      "rate": "medium",
+      "suggestion": "Review why requirements documents vary"
+    },
+    {
+      "question": "What is the purpose of change implementation in requirements change management?",
+      "type": "mcq",
+      "options": [
+        "To modify requirements and system artifacts accordingly",
+        "To ignore the change",
+        "To delete old requirements",
+        "To stop the project"
+      ],
+      "answer": "To modify requirements and system artifacts accordingly",
+      "section": "Requirements change management",
+      "rate": "medium",
+      "suggestion": "Review the stages of change management"
+    },
+    {
+      "question": "Which of the following is a characteristic of a good requirement?",
+      "type": "mcq",
+      "options": [
+        "It is realistic given budget and technology",
+        "It is vague to allow flexibility",
+        "It is only understood by developers",
+        "It is never changed"
+      ],
+      "answer": "It is realistic given budget and technology",
+      "section": "Requirements checking",
+      "rate": "easy",
+      "suggestion": "Review the criteria for checking requirements"
+    },
+    {
+      "question": "What is the relationship between requirements and design?",
+      "type": "mcq",
+      "options": [
+        "In practice, they are often inseparable",
+        "Requirements always come after design",
+        "Design is only about coding",
+        "Requirements are only about user interface"
+      ],
+      "answer": "In practice, they are often inseparable",
+      "section": "Requirements and design",
+      "rate": "medium",
+      "suggestion": "Review the discussion on requirements vs. design"
+    },
+    {
+      "question": "Which of the following is a stage in the requirements engineering spiral?",
+      "type": "mcq",
+      "options": [
+        "Requirements specification",
+        "System deployment",
+        "User training",
+        "Marketing"
+      ],
+      "answer": "Requirements specification",
+      "section": "Requirements engineering processes",
+      "rate": "medium",
+      "suggestion": "Review the activities in the spiral view of RE"
+    },
+    {
+      "question": "What is the primary focus of requirements analysis?",
+      "type": "mcq",
+      "options": [
+        "Understanding and refining stakeholder needs",
+        "Writing code for the system",
+        "Testing the final product",
+        "Creating user manuals"
+      ],
+      "answer": "Understanding and refining stakeholder needs",
+      "section": "Requirements engineering processes",
+      "rate": "easy",
+      "suggestion": "Review the activities in requirements engineering"
+    },
+    {
+      "question": "Which of the following is a benefit of using structured specifications?",
+      "type": "mcq",
+      "options": [
+        "They limit ambiguity by using a standard format",
+        "They are always written in natural language",
+        "They avoid stakeholder input",
+        "They are only for non-functional requirements"
+      ],
+      "answer": "They limit ambiguity by using a standard format",
+      "section": "Structured specifications",
+      "rate": "medium",
+      "suggestion": "Review the advantages of structured specifications"
+    },
+    {
+      "question": "What is the role of the software requirements document in a contract?",
+      "type": "mcq",
+      "options": [
+        "It may serve as part of the contract between client and contractor",
+        "It replaces the need for a contract",
+        "It is only for internal use by developers",
+        "It is not related to legal agreements"
+      ],
+      "answer": "It may serve as part of the contract between client and contractor",
+      "section": "The software requirements document",
+      "rate": "medium",
+      "suggestion": "Review the purpose and importance of the requirements document"
+    },
+    {
+      "question": "What is a key challenge in non-functional requirements?",
+      "type": "mcq",
+      "options": [
+        "They are difficult to state precisely and verify",
+        "They are always clear and testable",
+        "They are less important than functional requirements",
+        "They only apply to individual components"
+      ],
+      "answer": "They are difficult to state precisely and verify",
+      "section": "Goals and requirements",
+      "rate": "medium",
+      "suggestion": "Review the challenges with non-functional requirements"
+    }
+  ]
+}
