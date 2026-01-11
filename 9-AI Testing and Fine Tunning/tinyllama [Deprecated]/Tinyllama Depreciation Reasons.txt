@@ -1,0 +1,6 @@
+Tinyllama was deprecated for the following reasons:
+
+1- poor correctness in format
+2- low context window
+3- poor reasoning preformance
+4- extreme bias to True or False questions
