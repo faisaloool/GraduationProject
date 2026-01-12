@@ -7,7 +7,7 @@ import { ResetPasswordPage } from "./components/ResetPasswordPage.jsx";
 import Authform from "./components/Authform.jsx";
 import { Library } from "./components/Library.jsx";
 import "./style/App.css";
-import { VerifyAccount } from "./components/verifyaccount.jsx";
+import { VerifyAccount } from "./components/Verifyaccount.jsx";
 import { Shared_exam_route } from "./components/Shared_exam_route.jsx";
 function App() {
   const [editing, setEditing] = useState(-999);
