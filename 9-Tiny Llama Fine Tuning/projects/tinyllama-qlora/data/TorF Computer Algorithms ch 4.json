@@ -1,0 +1,88 @@
+{
+  "document": "Lecture 4 – Abstract Data Types (ADT) covering linked lists, stacks, queues, trees and graphs",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A singly linked list can be traversed only in the forward direction.",
+        "answer": "True"
+      },
+      {
+        "question": "Each node of a doubly linked list contains pointers to both its previous and next nodes.",
+        "answer": "True"
+      },
+      {
+        "question": "In a circular singly linked list, the last node’s next pointer is NULL.",
+        "answer": "False"
+      },
+      {
+        "question": "A stack follows the Last‑In First‑Out (LIFO) discipline.",
+        "answer": "True"
+      },
+      {
+        "question": "Elements are removed from a queue at its tail end.",
+        "answer": "False"
+      },
+      {
+        "question": "In a binary search tree, all values in the left subtree are greater than the parent node’s value.",
+        "answer": "False"
+      },
+      {
+        "question": "The adjacency matrix of an undirected graph is symmetric.",
+        "answer": "True"
+      },
+      {
+        "question": "free() deallocates memory that was previously obtained by malloc().",
+        "answer": "True"
+      },
+      {
+        "question": "push() adds a new node to the bottom of a stack.",
+        "answer": "False"
+      },
+      {
+        "question": "An edge e = (u,v) is unordered in directed graphs.",
+        "answer": "False"
+      },
+      {
+        "question": "A spanning tree contains all vertices and all edges of the original graph.",
+        "answer": "False"
+      },
+      {
+        "question": "Deleting a node from a singly linked list requires traversing the list from its head to locate the node.",
+        "answer": "True"
+      },
+      {
+        "question": "pop() returns the value at the bottom of a stack.",
+        "answer": "False"
+      },
+      {
+        "question": "isEmpty() for a queue checks that both head and tail pointers are NULL.",
+        "answer": "False"
+      },
+      {
+        "question": "A leaf node in a binary tree has two children.",
+        "answer": "False"
+      },
+      {
+        "question": "A graph can have multiple disconnected components.",
+        "answer": "True"
+      },
+      {
+        "question": "enqueue() inserts an element at the front of a queue.",
+        "answer": "False"
+      },
+      {
+        "question": "Linked lists use dynamic memory allocation so that their length can vary during execution.",
+        "answer": "True"
+      },
+      {
+        "question": "In a doubly circular linked list, the head’s prev pointer points to the last node.",
+        "answer": "True"
+      },
+      {
+        "question": "The pop operation on a stack must check that the stack is not empty before removing an element.",
+        "answer": "True"
+      }
+    ]
+  }
+}

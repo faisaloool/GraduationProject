@@ -1,0 +1,206 @@
+{
+  "document": "DBMS Concurrency Control",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary purpose of Concurrency Control in a DBMS?",
+        "options": [
+          "To speed up single-user transactions",
+          "To manage concurrent execution of operations to maintain consistency",
+          "To delete old data from the database",
+          "To increase the storage capacity of the hard drive"
+        ],
+        "answer": "To manage concurrent execution of operations to maintain consistency"
+      },
+      {
+        "question": "What does 'concurrent execution' mean in a multi-user system?",
+        "options": [
+          "Multiple users accessing the same database at different times",
+          "Multiple users accessing the same database at one time",
+          "A single user performing multiple tasks sequentially",
+          "Shutting down the database for maintenance"
+        ],
+        "answer": "Multiple users accessing the same database at one time"
+      },
+      {
+        "question": "According to the text, how should simultaneous execution be performed to maintain consistency?",
+        "options": [
+          "In a strictly linear manner",
+          "In an interleaved manner",
+          "By blocking all users except one",
+          "By duplicating the database for every user"
+        ],
+        "answer": "In an interleaved manner"
+      },
+      {
+        "question": "Which of the following is NOT listed in the document's outline of concurrency protocols?",
+        "options": [
+          "Lock-Based Protocols",
+          "Timestamp-Based Protocols",
+          "Biometric-Based Protocols",
+          "Validation-Based Protocols"
+        ],
+        "answer": "Biometric-Based Protocols"
+      },
+      {
+        "question": "What are the two main operations in a database transaction that require management?",
+        "options": [
+          "OPEN and CLOSE",
+          "READ and WRITE",
+          "INSERT and SELECT",
+          "UP and DOWN"
+        ],
+        "answer": "READ and WRITE"
+      },
+      {
+        "question": "The 'Lost Update Problem' is also known as what type of conflict?",
+        "options": [
+          "R-R Conflict",
+          "W-R Conflict",
+          "W-W Conflict",
+          "R-W Conflict"
+        ],
+        "answer": "W-W Conflict"
+      },
+      {
+        "question": "The 'Dirty Read Problem' is another name for which problem?",
+        "options": [
+          "Lost Update Problem",
+          "Temporary Update Problem",
+          "Inconsistency Problem",
+          "Unrepeatable Read Problem"
+        ],
+        "answer": "Temporary Update Problem"
+      },
+      {
+        "question": "What conflict type is associated with the Temporary Update Problem?",
+        "options": [
+          "W-W Conflict",
+          "R-R Conflict",
+          "W-R Conflict",
+          "Internal Conflict"
+        ],
+        "answer": "W-R Conflict"
+      },
+      {
+        "question": "In the Lost Update example, if Tx reads $300 and deducts $50 but hasn't written it yet, what value will Ty read?",
+        "options": [
+          "$250",
+          "$300",
+          "$350",
+          "$400"
+        ],
+        "answer": "$300"
+      },
+      {
+        "question": "In the Lost Update example, why is the value $250 lost?",
+        "options": [
+          "The system crashed before Tx could write",
+          "Ty overwrote the value with $400 because it read the original $300",
+          "The bank deleted the transaction",
+          "Tx failed to perform the subtraction"
+        ],
+        "answer": "Ty overwrote the value with $400 because it read the original $300"
+      },
+      {
+        "question": "When does a Dirty Read Problem occur?",
+        "options": [
+          "When a transaction reads data that has been committed",
+          "When a transaction reads an updated item that is later rolled back",
+          "When two transactions read the same data simultaneously",
+          "When a transaction fails to read any data"
+        ],
+        "answer": "When a transaction reads an updated item that is later rolled back"
+      },
+      {
+        "question": "In the Dirty Read example, at time t4, what value does Ty read after Tx writes its update?",
+        "options": [
+          "$300",
+          "$350",
+          "$250",
+          "$50"
+        ],
+        "answer": "$350"
+      },
+      {
+        "question": "In the Dirty Read example, what happens to Tx at time t5?",
+        "options": [
+          "It commits successfully",
+          "It reads account B",
+          "It rollbacks due to a server problem",
+          "It deletes the account"
+        ],
+        "answer": "It rollbacks due to a server problem"
+      },
+      {
+        "question": "What is the Unrepeatable Read Problem also known as?",
+        "options": [
+          "Inconsistency problem",
+          "Lost Update problem",
+          "Deadlock problem",
+          "Interleaved problem"
+        ],
+        "answer": "Inconsistency problem"
+      },
+      {
+        "question": "Which concurrency scheme involves maintaining multiple versions of data?",
+        "options": [
+          "Lock-Based Protocols",
+          "Multiversion Schemes",
+          "Validation-Based Protocols",
+          "Timestamp-Based Protocols"
+        ],
+        "answer": "Multiversion Schemes"
+      },
+      {
+        "question": "Why does concurrent execution cause challenging problems?",
+        "options": [
+          "It uses too much electricity",
+          "Operations may affect each other and cause inconsistency",
+          "It makes the database too large",
+          "It requires specialized hardware"
+        ],
+        "answer": "Operations may affect each other and cause inconsistency"
+      },
+      {
+        "question": "In the Lost Update example, what is the final balance written by Ty at t7?",
+        "options": [
+          "$250",
+          "$300",
+          "$350",
+          "$400"
+        ],
+        "answer": "$400"
+      },
+      {
+        "question": "Which operation follows a READ(A) and a calculation in both examples before a WRITE(A)?",
+        "options": [
+          "A local modification of the value (e.g., A = A - 50)",
+          "A COMMIT command",
+          "A ROLLBACK command",
+          "A DELETE command"
+        ],
+        "answer": "A local modification of the value (e.g., A = A - 50)"
+      },
+      {
+        "question": "Which of these is mentioned as a specific area for concurrency in the outline?",
+        "options": [
+          "Graphics processing",
+          "Index Structures",
+          "Network protocols",
+          "User interface design"
+        ],
+        "answer": "Index Structures"
+      },
+      {
+        "question": "True or False: A dirty read results in a transaction working with data that 'never existed' after a rollback.",
+        "options": [
+          "True",
+          "False"
+        ],
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "document": "Chapter3-DataLinkLayer_part2 (1).ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the main function of the Data Link Layer?",
+        "options": [
+          "To provide error detection and correction",
+          "To manage network-wide routing",
+          "To handle end-to-end application session data",
+          "To control physical voltage levels on the wire"
+        ],
+        "answer": "To provide error detection and correction"
+      },
+      {
+        "question": "Which issue does the Data Link Layer address regarding the delivery of frames to the network layer?",
+        "options": [
+          "Maintaining the proper order of frames",
+          "Managing IP address assignments",
+          "Handling application-layer encryption",
+          "Controlling total network bandwidth usage"
+        ],
+        "answer": "Maintaining the proper order of frames"
+      },
+      {
+        "question": "In reliable data delivery, what does a 'negative acknowledgment' (NAK) from the receiver indicate?",
+        "options": [
+          "The frame has arrived safely and is being processed",
+          "The frame was corrupted or lost and must be retransmitted",
+          "The transmission speed is currently too high for the receiver",
+          "The data is encrypted and requires a key"
+        ],
+        "answer": "The frame was corrupted or lost and must be retransmitted"
+      },
+      {
+        "question": "What is the primary purpose of a 'Timer' in an ARQ (Automatic Repeat Request) system?",
+        "options": [
+          "To synchronize the clock speeds of the sender and receiver",
+          "To prevent the system from hanging indefinitely if a frame vanishes",
+          "To calculate the total propagation delay of the link",
+          "To limit the duration of a user's network session"
+        ],
+        "answer": "To prevent the system from hanging indefinitely if a frame vanishes"
+      },
+      {
+        "question": "Why are sequence numbers assigned to outgoing frames in reliable delivery protocols?",
+        "options": [
+          "To increase the speed of the transmission",
+          "To allow the receiver to distinguish retransmissions from original frames",
+          "To encrypt the data payload for security",
+          "To calculate the checksum for each individual byte"
+        ],
+        "answer": "To allow the receiver to distinguish retransmissions from original frames"
+      },
+      {
+        "question": "Which type of flow control requires the receiver to explicitly grant permission before the sender transmits more data?",
+        "options": [
+          "Rate-based flow control",
+          "Feedback-based flow control",
+          "Encryption-based flow control",
+          "Bandwidth-limited flow control"
+        ],
+        "answer": "Feedback-based flow control"
+      },
+      {
+        "question": "How do error-correcting codes differ from error-detecting codes?",
+        "options": [
+          "Correcting codes only identify that an error happened",
+          "Correcting codes include enough redundancy to allow the receiver to deduce the original data",
+          "Detecting codes use more bandwidth than correcting codes",
+          "Correcting codes are only used at the Physical Layer"
+        ],
+        "answer": "Correcting codes include enough redundancy to allow the receiver to deduce the original data"
+      },
+      {
+        "question": "In a 'systemic' error code, how is the transmitted frame structured?",
+        "options": [
+          "The data bits are encrypted and hidden within check bits",
+          "The data bits are sent directly along with the computed check bits",
+          "Only the check bits are transmitted to save bandwidth",
+          "The data bits are compressed to half their size before encoding"
+        ],
+        "answer": "The data bits are sent directly along with the computed check bits"
+      },
+      {
+        "question": "What is the mathematical requirement for the number of redundant bits (r) needed to correct a single error in a message of 'm' data bits?",
+        "options": [
+          "2^r >= m + r + 1",
+          "2^r = m + r",
+          "2^r < m + r",
+          "r = m / 2"
+        ],
+        "answer": "2^r >= m + r + 1"
+      },
+      {
+        "question": "If you have 7 data bits, how many redundant bits are required by the Hamming code to correct a single-bit error?",
+        "options": ["2", "3", "4", "5"],
+        "answer": "4"
+      },
+      {
+        "question": "In even parity checking, what value is assigned to the parity bit if the number of 1's in the data is already even?",
+        "options": ["0", "1", "Depends on the word size", "No bit is added"],
+        "answer": "0"
+      },
+      {
+        "question": "The standard Internet Checksum process involves adding data segments using which type of arithmetic?",
+        "options": [
+          "2's complement arithmetic",
+          "1's complement arithmetic",
+          "Modulo-10 arithmetic",
+          "Simple binary multiplication"
+        ],
+        "answer": "1's complement arithmetic"
+      },
+      {
+        "question": "What is the mathematical basis of Cyclic Redundancy Check (CRC) error detection?",
+        "options": [
+          "Matrix multiplication",
+          "Binary division of polynomials",
+          "Summation of n-bit words",
+          "Hashing functions"
+        ],
+        "answer": "Binary division of polynomials"
+      },
+      {
+        "question": "Stop-and-Wait ARQ is mathematically equivalent to a sliding window protocol with what window size?",
+        "options": ["0", "1", "7", "Unlimited"],
+        "answer": "1"
+      },
+      {
+        "question": "In networking calculations, what is the formula for Propagation Delay (Tp)?",
+        "options": [
+          "Tp = Velocity / Distance",
+          "Tp = Distance / Velocity",
+          "Tp = Packet Size / Bandwidth",
+          "Tp = Bandwidth * Delay"
+        ],
+        "answer": "Tp = Distance / Velocity"
+      },
+      {
+        "question": "Why does the Stop-and-Wait protocol perform poorly on high-speed, long-distance links (e.g., satellite)?",
+        "options": [
+          "It cannot handle full-duplex communication",
+          "The sender spends most of its time idle, waiting for acknowledgments",
+          "The packets are too large for the routers to handle",
+          "It doesn't include a sequence number for data"
+        ],
+        "answer": "The sender spends most of its time idle, waiting for acknowledgments"
+      },
+      {
+        "question": "What is the primary advantage of Pipelining (Sliding Window) protocols over Stop-and-Wait?",
+        "options": [
+          "They eliminate the need for error control",
+          "They allow multiple packets to be in transit simultaneously, improving channel utilization",
+          "They reduce the propagation delay of the link",
+          "They simplify the receiver's hardware requirements"
+        ],
+        "answer": "They allow multiple packets to be in transit simultaneously, improving channel utilization"
+      }
+    ]
+  }
+}

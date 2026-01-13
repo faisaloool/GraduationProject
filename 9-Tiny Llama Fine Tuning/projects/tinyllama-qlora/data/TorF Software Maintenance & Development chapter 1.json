@@ -1,0 +1,84 @@
+{
+  "document": "Chapter 1 of *Software Evolution and Maintenance* contains foundational concepts on how software changes over time, distinguishing between evolution (continuous improvement) and maintenance (defect‑fixing), summarizing Lehman’s laws of evolution, discussing free vs closed source patterns, detailing types of maintenance activities, describing reengineering, legacy system strategies, impact analysis techniques, refactoring practices, program comprehension methods, and principles of reusable software.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Evolution focuses on preserving against failure while maintenance continuously improves from a poorer state to a better one.",
+        "answer": "False"
+      },
+      {
+        "question": "If a software system is not continually adapted, it becomes progressively less satisfying to its users over time.",
+        "answer": "True"
+      },
+      {
+        "question": "Lehman's second law states that a system’s complexity will decrease unless work is done to explicitly reduce it.",
+        "answer": "False"
+      },
+      {
+        "question": "The eighth of Lehman’s laws is called the feedback system.",
+        "answer": "True"
+      },
+      {
+        "question": "Godfrey and Tu found that the growth trend for Linux from 1994‑1999 was linear.",
+        "answer": "False"
+      },
+      {
+        "question": "The ISO/IEC 14764 standard added a fourth maintenance category called preventive maintenance after Swanson’s original three categories.",
+        "answer": "True"
+      },
+      {
+        "question": "In Kitchenham’s hierarchical view of maintenance, ‘enhancements that add new system requirements’ do not change the implementation.",
+        "answer": "True"
+      },
+      {
+        "question": "A typical legacy‑system management option is to discard and redevelop the entire application from scratch immediately.",
+        "answer": "False"
+      },
+      {
+        "question": "The primary goal of ripple‑effect analysis is to measure how a change propagates through a system.",
+        "answer": "True"
+      },
+      {
+        "question": "A characteristic that does NOT make software reusable is rigid inheritance hierarchy.",
+        "answer": "False"
+      },
+      {
+        "question": "In refactoring, the observable behavior of the program must remain unchanged to preserve functionality.",
+        "answer": "True"
+      },
+      {
+        "question": "Program comprehension is about writing code faster by using keyboard shortcuts.",
+        "answer": "False"
+      },
+      {
+        "question": "The core function of software configuration management (SCM) is to control and audit changes to software configurations.",
+        "answer": "True"
+      },
+      {
+        "question": "Preventive maintenance aims at preserving performance without changing functionality.",
+        "answer": "True"
+      },
+      {
+        "question": "Reverse engineering in reengineering primarily produces a physical copy of the source code.",
+        "answer": "False"
+      },
+      {
+        "question": "A legacy system can be described as ‘a system that resists modification but remains essential to business.’",
+        "answer": "True"
+      },
+      {
+        "question": "Traceability analysis is one of the impact‑analysis techniques used to estimate affected parts of a system.",
+        "answer": "True"
+      },
+      {
+        "question": "Reusing program code across projects reduces development time and cost.",
+        "answer": "True"
+      },
+      {
+        "question": "Lehman's law that states the average amount of work per release remains roughly constant is called conservation of organizational stability.",
+        "answer": "True"
+      }
+    ]
+  }
+}

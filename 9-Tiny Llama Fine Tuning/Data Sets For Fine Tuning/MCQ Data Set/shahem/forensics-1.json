@@ -1,0 +1,248 @@
+{
+  "document": "DF-CH01-DigitalForensics.pptx - Digital Forensics Chapter 1",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is digital forensics?",
+        "options": [
+          "The process of creating computer software",
+          "The application of computer science and investigative procedures for legal purposes involving digital evidence analysis",
+          "The study of computer hardware components",
+          "The process of networking computers"
+        ],
+        "answer": "The application of computer science and investigative procedures for legal purposes involving digital evidence analysis"
+      },
+      {
+        "question": "What is the main difference between digital forensics and data recovery?",
+        "options": [
+          "Data recovery is always legal, digital forensics is not",
+          "Digital forensics retrieves lost data, data recovery analyzes evidence",
+          "Data recovery retrieves accidentally deleted information, digital forensics investigates digital evidence for legal purposes",
+          "There is no difference between the two"
+        ],
+        "answer": "Data recovery retrieves accidentally deleted information, digital forensics investigates digital evidence for legal purposes"
+      },
+      {
+        "question": "What are the three components of the investigations triad?",
+        "options": [
+          "Police, lawyers, and judges",
+          "Vulnerability assessment, network intrusion detection, and digital investigations",
+          "Hardware, software, and networks",
+          "Collection, analysis, and reporting"
+        ],
+        "answer": "Vulnerability assessment, network intrusion detection, and digital investigations"
+      },
+      {
+        "question": "What is case law used for in digital forensics?",
+        "options": [
+          "To create new software tools",
+          "To apply previous similar cases when statutes don't exist",
+          "To train new investigators",
+          "To purchase equipment"
+        ],
+        "answer": "To apply previous similar cases when statutes don't exist"
+      },
+      {
+        "question": "What are the two main categories of digital investigations?",
+        "options": [
+          "Corporate and personal",
+          "Public-sector and private-sector",
+          "Criminal and civil",
+          "Technical and administrative"
+        ],
+        "answer": "Public-sector and private-sector"
+      },
+      {
+        "question": "What act was passed in 1986 that addresses computer-related crimes?",
+        "options": [
+          "Digital Evidence Act",
+          "Computer Fraud and Abuse Act",
+          "Cyber Security Act",
+          "Electronic Communications Privacy Act"
+        ],
+        "answer": "Computer Fraud and Abuse Act"
+      },
+      {
+        "question": "What is a DEFR?",
+        "options": [
+          "Digital Evidence Forensic Report",
+          "Digital Evidence First Responder",
+          "Digital Evidence Federal Regulation",
+          "Digital Evidence File Recovery"
+        ],
+        "answer": "Digital Evidence First Responder"
+      },
+      {
+        "question": "What document contains a sworn statement of support of facts about evidence of a crime?",
+        "options": [
+          "Search warrant",
+          "Affidavit",
+          "Incident report",
+          "Chain of custody form"
+        ],
+        "answer": "Affidavit"
+      },
+      {
+        "question": "What policy defines rules for using company computers and networks?",
+        "options": [
+          "Security policy",
+          "Acceptable use policy",
+          "Privacy policy",
+          "Compliance policy"
+        ],
+        "answer": "Acceptable use policy"
+      },
+      {
+        "question": "What is line of authority in private-sector investigations?",
+        "options": [
+          "The network connection hierarchy",
+          "Who has legal right to initiate investigations and handle evidence",
+          "The management reporting structure",
+          "The evidence collection protocol"
+        ],
+        "answer": "Who has legal right to initiate investigations and handle evidence"
+      },
+      {
+        "question": "What do warning banners on company computer screens accomplish?",
+        "options": [
+          "Improve computer performance",
+          "Inform users the organization can inspect systems and traffic at will",
+          "Prevent viruses",
+          "Encrypt all communications"
+        ],
+        "answer": "Inform users the organization can inspect systems and traffic at will"
+      },
+      {
+        "question": "What does BYOD stand for?",
+        "options": [
+          "Backup Your Own Data",
+          "Bring Your Own Device",
+          "Business Yearly Operations Directive",
+          "Basic Your Own Desktop"
+        ],
+        "answer": "Bring Your Own Device"
+      },
+      {
+        "question": "What is the chain of custody?",
+        "options": [
+          "The path evidence takes from discovery until case closure",
+          "The locking mechanism on evidence containers",
+          "The sequence of commands in forensic software",
+          "The management hierarchy for investigations"
+        ],
+        "answer": "The path evidence takes from discovery until case closure"
+      },
+      {
+        "question": "What is an evidence custody form used for?",
+        "options": [
+          "To store evidence physically",
+          "To document what has been done with evidence and its copies",
+          "To encrypt evidence files",
+          "To analyze evidence data"
+        ],
+        "answer": "To document what has been done with evidence and its copies"
+      },
+      {
+        "question": "What should be used to secure and catalog digital evidence?",
+        "options": [
+          "Plastic bags",
+          "Evidence bags",
+          "Cardboard boxes",
+          "Paper envelopes"
+        ],
+        "answer": "Evidence bags"
+      },
+      {
+        "question": "What is the first step in the systematic approach to problem solving in digital forensics?",
+        "options": [
+          "Copy the evidence drive",
+          "Make an initial assessment about the case type",
+          "Test the design",
+          "Analyze the digital evidence"
+        ],
+        "answer": "Make an initial assessment about the case type"
+      },
+      {
+        "question": "What three types of situations are common in private-sector investigations?",
+        "options": [
+          "Hardware failure, software bugs, network issues",
+          "Abuse of computing assets, email abuse, Internet abuse",
+          "Theft, vandalism, trespassing",
+          "Hacking, phishing, malware"
+        ],
+        "answer": "Abuse of computing assets, email abuse, Internet abuse"
+      },
+      {
+        "question": "What is needed for an Internet abuse investigation?",
+        "options": [
+          "Only the suspect's computer",
+          "Proxy server logs, suspect computer IP address, disk drive, forensics tools",
+          "Only network firewall logs",
+          "Only web browser history"
+        ],
+        "answer": "Proxy server logs, suspect computer IP address, disk drive, forensics tools"
+      },
+      {
+        "question": "What is attorney-client privilege (ACP)?",
+        "options": [
+          "The right of attorneys to use any software",
+          "The requirement to keep all findings confidential",
+          "The ability to bypass search warrants",
+          "The permission to access any system"
+        ],
+        "answer": "The requirement to keep all findings confidential"
+      },
+      {
+        "question": "What is a bit-stream copy?",
+        "options": [
+          "A compressed version of files",
+          "A bit-by-bit copy of the original storage medium",
+          "A summary report of evidence",
+          "A network traffic capture"
+        ],
+        "answer": "A bit-by-bit copy of the original storage medium"
+      },
+      {
+        "question": "What is the first rule of computer forensics?",
+        "options": [
+          "Always work quickly",
+          "Preserve the original evidence",
+          "Use the most expensive tools",
+          "Share findings publicly"
+        ],
+        "answer": "Preserve the original evidence"
+      },
+      {
+        "question": "What devices prevent writing data to evidence drives?",
+        "options": [
+          "Firewalls",
+          "Write-blockers",
+          "Encryptors",
+          "Compressors"
+        ],
+        "answer": "Write-blockers"
+      },
+      {
+        "question": "What does FTK stand for?",
+        "options": [
+          "Forensic Tracking Kit",
+          "File Transfer Key",
+          "Forensic Toolkit",
+          "Federal Technology Knowledge"
+        ],
+        "answer": "Forensic Toolkit"
+      },
+      {
+        "question": "What should always be maintained during an investigation?",
+        "options": [
+          "A backup internet connection",
+          "A journal to keep notes on actions taken",
+          "Multiple user accounts",
+          "Public access to findings"
+        ],
+        "answer": "A journal to keep notes on actions taken"
+      }
+    ]
+  }
+}

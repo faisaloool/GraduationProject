@@ -1,0 +1,80 @@
+{
+  "document": "File name here.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Isolation is a problem only when multiple users are accessing the same data concurrently.",
+        "answer": "True"
+      },
+      {
+        "question": "A schedule can be considered serial if its transactions occur consecutively, one after another.",
+        "answer": "True"
+      },
+      {
+        "question": "In a conflict pair, both operations must belong to the same transaction.",
+        "answer": "False"
+      },
+      {
+        "question": "Two operations are in conflict only if they operate on different data items.",
+        "answer": "False"
+      },
+      {
+        "question": "An operation that writes a data item can be involved in a conflict with another operation that reads the same item.",
+        "answer": "True"
+      },
+      {
+        "question": "Two operations that are both writes on the same data item always conflict.",
+        "answer": "True"
+      },
+      {
+        "question": "A read–read pair on the same data item from different transactions is a conflicting operation pair.",
+        "answer": "False"
+      },
+      {
+        "question": "If one transaction reads a data item and another writes to it, the order of those operations must be preserved for conflict serializability.",
+        "answer": "True"
+      },
+      {
+        "question": "Two schedules are conflict equivalent if they have exactly the same set of operations in any order.",
+        "answer": "False"
+      },
+      {
+        "question": "A schedule is conflict serializable if it can be transformed into some serial schedule by swapping non‑conflicting operations.",
+        "answer": "True"
+      },
+      {
+        "question": "View serializability is a stricter requirement than conflict serializability.",
+        "answer": "False"
+      },
+      {
+        "question": "If a transaction aborts, all other transactions that used its results must also be rolled back for recoverability.",
+        "answer": "True"
+      },
+      {
+        "question": "Cascade updates use ON DELETE CASCADE and ON UPDATE CASCADE only in foreign key definitions.",
+        "answer": "True"
+      },
+      {
+        "question": "A deadlock is a state where two or more transactions hold locks but never release them, causing a halt.",
+        "answer": "True"
+      },
+      {
+        "question": "Deadlock avoidance always requires aborting one of the transactions to resolve the conflict.",
+        "answer": "False"
+      },
+      {
+        "question": "The wait‑for graph is used to detect deadlocks in small databases.",
+        "answer": "True"
+      },
+      {
+        "question": "A schedule that causes cascading rollbacks is called a cascading abort schedule.",
+        "answer": "True"
+      },
+      {
+        "question": "View equivalent schedules must have the same initial read order for all data items.",
+        "answer": "True"
+      }
+    ]
+  }
+}

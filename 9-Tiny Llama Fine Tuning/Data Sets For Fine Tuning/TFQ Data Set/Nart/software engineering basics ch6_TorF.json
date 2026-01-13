@@ -1,0 +1,245 @@
+{
+  "filename": "Ch6.pptx",
+  "quiz": [
+    {
+      "question": "Architectural design is primarily concerned with writing detailed code for individual modules.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Review the definition of architectural design as the high-level organization of a system's structure."
+    },
+    {
+      "question": "Architectural design acts as a critical link between requirements engineering and detailed design.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architectural design",
+      "rate": "easy",
+      "suggestion": "Recall the role of architectural design in translating requirements into a system structure."
+    },
+    {
+      "question": "Refactoring the system architecture is usually inexpensive because it only affects a few components.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agility and architecture",
+      "rate": "easy",
+      "suggestion": "Consider why architectural refactoring is costly due to its broad impact."
+    },
+    {
+      "question": "Architecture in the small refers to the architecture of complex enterprise systems distributed across multiple organizations.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural Abstraction",
+      "rate": "easy",
+      "suggestion": "Distinguish between 'architecture in the small' (individual programs) and 'architecture in the large' (enterprise systems)."
+    },
+    {
+      "question": "An explicit architecture can facilitate communication among system stakeholders.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Advantages of explicit architecture",
+      "rate": "easy",
+      "suggestion": "Review the benefits of having a documented system architecture."
+    },
+    {
+      "question": "Simple block diagrams are sufficient to show all semantic details and relationships in an architecture.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural Representations",
+      "rate": "easy",
+      "suggestion": "Recall the limitations of informal block diagrams."
+    },
+    {
+      "question": "Architectural patterns are reusable solutions that capture proven design practices.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architectural patterns",
+      "rate": "easy",
+      "suggestion": "Review the purpose and nature of architectural patterns."
+    },
+    {
+      "question": "The Model-View-Controller (MVC) pattern is only applicable to desktop applications.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "The Model-View-Controller(MVC) pattern",
+      "rate": "easy",
+      "suggestion": "Consider the wide applicability of MVC, including web applications."
+    },
+    {
+      "question": "A layered architecture organizes the system into a set of layers, each providing a set of services.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Layered architecture",
+      "rate": "easy",
+      "suggestion": "Recall the key characteristic of the layered architectural pattern."
+    },
+    {
+      "question": "In a repository architecture, each subsystem maintains its own database and shares data by passing it explicitly.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Repository architecture",
+      "rate": "easy",
+      "suggestion": "Distinguish between repository and explicit data sharing approaches."
+    },
+    {
+      "question": "Client-server architecture can only be implemented across multiple physical machines.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Client-server architecture",
+      "rate": "medium",
+      "suggestion": "Recall that client-server can also be implemented on a single computer."
+    },
+    {
+      "question": "The pipe and filter architectural pattern is well-suited for interactive systems with frequent user inputs.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Pipe and filter architecture",
+      "rate": "medium",
+      "suggestion": "Consider the typical use cases for pipe and filter architectures."
+    },
+    {
+      "question": "The '4 + 1' view model includes logical, process, development, and physical views, connected by use cases.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "medium",
+      "suggestion": "Review the components of the '4 + 1' architectural view model."
+    },
+    {
+      "question": "Architectural design decisions only affect the functional requirements of a system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural design decisions",
+      "rate": "medium",
+      "suggestion": "Recall that architectural decisions significantly influence non-functional characteristics."
+    },
+    {
+      "question": "A key advantage of layered architectures is that changes in one layer only affect adjacent layers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Layered architecture",
+      "rate": "medium",
+      "suggestion": "Review the benefit of separation of concerns in layered architectures."
+    },
+    {
+      "question": "Architectural Description Languages (ADLs) are widely adopted in industry for documenting system architectures.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Representing architectural views",
+      "rate": "medium",
+      "suggestion": "Consider the current adoption status of ADLs compared to informal diagrams or UML."
+    },
+    {
+      "question": "In a client-server architecture, servers can also act as clients to other servers.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Client-server architecture",
+      "rate": "medium",
+      "suggestion": "Recall that roles in client-server systems can be nested or hybrid."
+    },
+    {
+      "question": "Performance can be improved in an architecture by minimizing communications and localizing critical operations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architecture and system characteristics",
+      "rate": "medium",
+      "suggestion": "Review how architectural choices impact system performance."
+    },
+    {
+      "question": "The repository architectural pattern is most efficient when subsystems need to share large amounts of data.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Repository architecture",
+      "rate": "medium",
+      "suggestion": "Recall the primary strength of the repository pattern."
+    },
+    {
+      "question": "Box-and-line diagrams are too abstract to be useful for stakeholder communication.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Box and line diagrams",
+      "rate": "medium",
+      "suggestion": "Consider the practical uses of high-level architectural diagrams."
+    },
+    {
+      "question": "Architecture reuse across systems in the same domain can lead to the development of product-line architectures.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architecture reuse",
+      "rate": "hard",
+      "suggestion": "Review the concept of product-line architectures and domain-specific reuse."
+    },
+    {
+      "question": "The physical view in the '4 + 1' model shows how the software is decomposed for development teams.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "4 + 1 view model of software architecture",
+      "rate": "hard",
+      "suggestion": "Distinguish between the development view and the physical view."
+    },
+    {
+      "question": "Safety-critical features should be distributed across many subsystems to reduce risk.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architecture and system characteristics",
+      "rate": "hard",
+      "suggestion": "Recall the architectural principle for safety regarding localization of critical features."
+    },
+    {
+      "question": "In MVC, the View component is responsible for managing application data and business logic.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "The Model-View-Controller(MVC) pattern",
+      "rate": "hard",
+      "suggestion": "Review the responsibilities of each component in the MVC pattern."
+    },
+    {
+      "question": "The pipe and filter model is also known as the batch sequential model when transformations are sequential.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Pipe and filter architecture",
+      "rate": "hard",
+      "suggestion": "Recall the variant of pipe and filter used in data processing systems."
+    },
+    {
+      "question": "An architectural model can simultaneously show module decomposition, runtime process interaction, and physical distribution.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural views",
+      "rate": "hard",
+      "suggestion": "Understand that different architectural views are needed to represent different perspectives."
+    },
+    {
+      "question": "Maintainability is improved by using fine-grain, replaceable components in the architecture.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architecture and system characteristics",
+      "rate": "hard",
+      "suggestion": "Review how architectural decisions influence maintainability."
+    },
+    {
+      "question": "The layered architecture pattern is always the most natural and efficient way to structure any software system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Layered architecture",
+      "rate": "hard",
+      "suggestion": "Consider the limitations and artificiality that can arise with layered structures."
+    },
+    {
+      "question": "Architectural patterns include information about when they should and should not be used.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Architectural patterns",
+      "rate": "hard",
+      "suggestion": "Recall that patterns provide context for their applicability."
+    },
+    {
+      "question": "The output of the architectural design process is a fully implemented and tested software system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Architectural design",
+      "rate": "hard",
+      "suggestion": "Understand that architectural design produces a model or blueprint, not a complete implementation."
+    }
+  ]
+}

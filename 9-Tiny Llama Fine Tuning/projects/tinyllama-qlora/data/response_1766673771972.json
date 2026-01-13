@@ -1,0 +1,384 @@
+{
+  "document": "Lect1_Combinational_Logic_revison_1.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Digital Logic Design is the topic of Chapter 4.",
+        "answer": "true"
+      },
+      {
+        "question": "Combinational logic circuits have outputs determined only by the present combination of inputs.",
+        "answer": "true"
+      },
+      {
+        "question": "Sequential circuits are a type of combinational logic.",
+        "answer": "false"
+      },
+      {
+        "question": "A combinational circuit performs operations specified by a set of Boolean functions.",
+        "answer": "true"
+      },
+      {
+        "question": "Decoders and encoders are examples of sequential circuits.",
+        "answer": "false"
+      },
+      {
+        "question": "Adder-Subtractor is a topic covered under combinational logic.",
+        "answer": "true"
+      },
+      {
+        "question": "Multiplexers are part of sequential logic circuits.",
+        "answer": "false"
+      },
+      {
+        "question": "Combinational circuits use memory elements to store previous inputs.",
+        "answer": "false"
+      },
+      {
+        "question": "Does a combinational circuit consist of input variables, logic gates, and output variables?",
+        "answer": "true"
+      },
+      {
+        "question": "Do logic gates in a combinational circuit generate signals to the outputs based on the inputs?",
+        "answer": "true"
+      },
+      {
+        "question": "Are input and output signals in a combinational circuit always analog signals?",
+        "answer": "false"
+      },
+      {
+        "question": "Adders are classified as standard components.",
+        "answer": "true"
+      },
+      {
+        "question": "Subtractors are not considered standard combinational circuits.",
+        "answer": "false"
+      },
+      {
+        "question": "Combinational circuits have memory elements.",
+        "answer": "false"
+      },
+      {
+        "question": "The first step in analyzing a combinational circuit is to ensure it is not sequential.",
+        "answer": "true"
+      },
+      {
+        "question": "Encoders are not part of standard combinational circuits.",
+        "answer": "false"
+      },
+      {
+        "question": "The Boolean functions for each gate output are determined after labeling the gates that are a function of input variables.",
+        "answer": "true"
+      },
+      {
+        "question": "You must repeat the process of labeling gates and determining their Boolean functions until the outputs of the circuit are reached.",
+        "answer": "true"
+      },
+      {
+        "question": "T1 is defined as A + B + C.",
+        "answer": "true"
+      },
+      {
+        "question": "T2 is defined as ABC.",
+        "answer": "true"
+      },
+      {
+        "question": "F2 is defined as AB + AC + BC.",
+        "answer": "true"
+      },
+      {
+        "question": "T3 is defined as F2’T1.",
+        "answer": "true"
+      },
+      {
+        "question": "F1 is defined as T3 + T2.",
+        "answer": "true"
+      },
+      {
+        "question": "F1 can be simplified to (A’ + B’C’)(AB’ + AC’ + BC’ + B’C) + ABC.",
+        "answer": "true"
+      },
+      {
+        "question": "A’BC’ + A’B’C + AB’C’ + ABC is a Boolean expression.",
+        "answer": "true"
+      },
+      {
+        "question": "Labeling the outputs of selected gates with arbitrary symbols is a step in obtaining the truth table from a circuit diagram.",
+        "answer": "true"
+      },
+      {
+        "question": "The truth table for the outputs of gates is obtained as a function of the input variables only.",
+        "answer": "true"
+      },
+      {
+        "question": "The design of combinational circuits starts from the specification of the problem and results in a logic diagram or a set of Boolean functions.",
+        "answer": "true"
+      },
+      {
+        "question": "The first step in designing combinational circuits is to derive the truth table.",
+        "answer": "false"
+      },
+      {
+        "question": "The truth table defines the required relationship between inputs and outputs.",
+        "answer": "true"
+      },
+      {
+        "question": "Simplification of the output functions can be done using algebraic manipulation.",
+        "answer": "true"
+      },
+      {
+        "question": "Computer-based simplification is one of the methods for simplifying output functions.",
+        "answer": "true"
+      },
+      {
+        "question": "Propagation of time through the gates is a factor to consider in simplification.",
+        "answer": "true"
+      },
+      {
+        "question": "Designing a combinational circuit to check if an input is greater than or equal to a value is mentioned in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "Z = 0 when the input is less than 5?",
+        "answer": "true"
+      },
+      {
+        "question": "A is the least significant bit?",
+        "answer": "false"
+      },
+      {
+        "question": "C is the most significant bit?",
+        "answer": "false"
+      },
+      {
+        "question": "Z = 1 for input 101?",
+        "answer": "true"
+      },
+      {
+        "question": "Z = 0 for input 111?",
+        "answer": "false"
+      },
+      {
+        "question": "The output Z is a single bit?",
+        "answer": "true"
+      },
+      {
+        "question": "The input is a 4-bit binary number?",
+        "answer": "false"
+      },
+      {
+        "question": "The Boolean expression F=AC+AB represents a logic diagram with AND and OR gates.",
+        "answer": "true"
+      },
+      {
+        "question": "A combinational circuit with three inputs and one output will always output 1 if the binary value of the inputs is less than 3.",
+        "answer": "true"
+      },
+      {
+        "question": "The binary addition 0 + 0 equals 1.",
+        "answer": "false"
+      },
+      {
+        "question": "The binary addition 1 + 0 equals 0.",
+        "answer": "false"
+      },
+      {
+        "question": "The Boolean expression F= ∑(5,6,7) represents a sum of minterms.",
+        "answer": "true"
+      },
+      {
+        "question": "A combinational circuit that performs addition for two bits is called a half adder.",
+        "answer": "true"
+      },
+      {
+        "question": "A combinational circuit that performs addition of three bits is called a half adder.",
+        "answer": "false"
+      },
+      {
+        "question": "Two half adders can be combined to create a full adder.",
+        "answer": "true"
+      },
+      {
+        "question": "A binary adder-subtractor performs only addition with binary numbers.",
+        "answer": "false"
+      },
+      {
+        "question": "A half adder requires two binary inputs and two binary outputs.",
+        "answer": "true"
+      },
+      {
+        "question": "The output C in a half adder is given by C = x + y.",
+        "answer": "false"
+      },
+      {
+        "question": "The carry output (C) in a full adder is given by the expression C = x + y + z.",
+        "answer": "false"
+      },
+      {
+        "question": "A full adder can be used to add three bits: two significant bits and a carry from a previous addition.",
+        "answer": "true"
+      },
+      {
+        "question": "In a binary adder, full adders are connected in parallel to sum two binary numbers.",
+        "answer": "false"
+      },
+      {
+        "question": "The sum output (S) in a half adder is given by the expression S = x ⊕ y.",
+        "answer": "true"
+      },
+      {
+        "question": "The carry output (C) in a half adder is given by the expression C = x + y.",
+        "answer": "false"
+      },
+      {
+        "question": "The output carry from each full adder is connected to the input carry of the next full adder in the chain.",
+        "answer": "true"
+      },
+      {
+        "question": "A binary subtractor cannot be implemented using a binary adder.",
+        "answer": "false"
+      },
+      {
+        "question": "The subtraction of unsigned binary numbers can be done by means of complements.",
+        "answer": "true"
+      },
+      {
+        "question": "The input carry C0 must be 0 when performing subtraction.",
+        "answer": "false"
+      },
+      {
+        "question": "A - B is calculated as A - B if A >= B.",
+        "answer": "true"
+      },
+      {
+        "question": "The 2's complement of (B - A) is used when A < B.",
+        "answer": "true"
+      },
+      {
+        "question": "The same circuit can be used for signed numbers if there is no overflow.",
+        "answer": "true"
+      },
+      {
+        "question": "A binary subtractor cannot be combined with an adder.",
+        "answer": "false"
+      },
+      {
+        "question": "An exclusive-OR gate is included with each full adder to combine addition and subtraction operations.",
+        "answer": "true"
+      },
+      {
+        "question": "Overflow occurs when two numbers of n digits each are added and the sum occupies n + 1 digits.",
+        "answer": "true"
+      },
+      {
+        "question": "In digital computers, we are not limited by size when performing arithmetic operations.",
+        "answer": "false"
+      },
+      {
+        "question": "The detection of an overflow after the addition of two binary numbers depends on whether the numbers are considered to be signed or unsigned.",
+        "answer": "true"
+      },
+      {
+        "question": "When two unsigned numbers are added, an overflow is detected from the end carry out of the most significant position.",
+        "answer": "true"
+      },
+      {
+        "question": "When two signed numbers are added, the leftmost bit always represents the sign and negative numbers are in 2’s complement form.",
+        "answer": "true"
+      },
+      {
+        "question": "When two signed numbers are added, the end carry indicates an overflow.",
+        "answer": "false"
+      },
+      {
+        "question": "A decoder converts binary information from n input lines to a maximum of 2n unique output lines.",
+        "answer": "true"
+      },
+      {
+        "question": "A decoder always has exactly 2n outputs, regardless of unused combinations.",
+        "answer": "false"
+      },
+      {
+        "question": "A 3-to-8 line decoder has 3 input lines and 8 output lines.",
+        "answer": "true"
+      },
+      {
+        "question": "A decoder can be used with external OR gates to form logical sums.",
+        "answer": "true"
+      },
+      {
+        "question": "Any combinational circuit can be represented by a decoder alone without additional logic gates.",
+        "answer": "false"
+      },
+      {
+        "question": "A circuit with n inputs and m outputs can be implemented by a n-to-2n-line decoder and m OR gates.",
+        "answer": "true"
+      },
+      {
+        "question": "A full adder has only one output.",
+        "answer": "false"
+      },
+      {
+        "question": "The sum output of a full adder is given by S(x, y, z) = (1, 2, 4, 7).",
+        "answer": "true"
+      },
+      {
+        "question": "The carry output of a full adder is given by C(x, y, z) = (3, 5, 6, 7).",
+        "answer": "true"
+      },
+      {
+        "question": "An encoder performs the same operation as a decoder.",
+        "answer": "false"
+      },
+      {
+        "question": "An encoder has 2n (or fewer) input lines and n output lines.",
+        "answer": "true"
+      },
+      {
+        "question": "The output lines of an encoder generate the binary code corresponding to the input value.",
+        "answer": "true"
+      },
+      {
+        "question": "A 4-to-2 encoder has 4 input lines and 2 output lines.",
+        "answer": "true"
+      },
+      {
+        "question": "The encoder has four inputs Y3, Y2, Y1, and Y0.",
+        "answer": "true"
+      },
+      {
+        "question": "The encoder has three outputs A1 and A0.",
+        "answer": "false"
+      },
+      {
+        "question": "At any time, only one of the four inputs can be '1' to get the respective binary code at the output.",
+        "answer": "true"
+      },
+      {
+        "question": "A multiplexer selects binary information from one of many input lines and directs it to multiple output lines.",
+        "answer": "false"
+      },
+      {
+        "question": "The selection of a particular input line in a multiplexer is controlled by a set of selection lines.",
+        "answer": "true"
+      },
+      {
+        "question": "A set of selection lines determines which input is selected in a MUX.",
+        "answer": "true"
+      },
+      {
+        "question": "There are normally 2n input lines and n selection lines in a MUX.",
+        "answer": "true"
+      },
+      {
+        "question": "A 4-to-1 MUX has 4 selection lines.",
+        "answer": "false"
+      },
+      {
+        "question": "The number of selection lines in a MUX is equal to the number of input lines.",
+        "answer": "false"
+      }
+    ]
+  }
+}

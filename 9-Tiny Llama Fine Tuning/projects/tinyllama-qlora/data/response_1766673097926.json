@@ -1,0 +1,718 @@
+{
+  "document": "ch08_part2_1.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following is NOT one of the three categories of computer instructions mentioned?",
+        "options": [
+          "Data transfer",
+          "Data manipulation",
+          "Program control",
+          "Data storage"
+        ],
+        "answer": "Data storage"
+      },
+      {
+        "question": "What is the function of a 'Load' instruction?",
+        "options": [
+          "Transfer from memory to a processor register",
+          "Transfer from a processor register into memory",
+          "Transfer from one register to another register",
+          "Exchange data between two registers"
+        ],
+        "answer": "Transfer from memory to a processor register"
+      },
+      {
+        "question": "Which instruction transfers data from a processor register into memory?",
+        "options": [
+          "Load",
+          "Store",
+          "Move",
+          "Exchange"
+        ],
+        "answer": "Store"
+      },
+      {
+        "question": "What does the 'Move' instruction do?",
+        "options": [
+          "Transfers data from memory to a processor register",
+          "Transfers data from a processor register into memory",
+          "Transfers data from one register to another register",
+          "Exchanges data between two registers"
+        ],
+        "answer": "Transfers data from one register to another register"
+      },
+      {
+        "question": "Which of the following is a typical data transfer instruction?",
+        "options": [
+          "Load",
+          "Store",
+          "Move",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What does the 'swap' instruction do?",
+        "options": [
+          "Transfers data between two registers or a register and a memory word",
+          "Transfers data among processor registers and input/output devices",
+          "Transfers data between processor registers and a memory stack",
+          "Performs arithmetic operations on data"
+        ],
+        "answer": "Transfers data between two registers or a register and a memory word"
+      },
+      {
+        "question": "What is the purpose of the 'Input/Output' instruction?",
+        "options": [
+          "Transfers data between two registers or a register and a memory word",
+          "Transfers data among processor registers and input/output devices",
+          "Transfers data between processor registers and a memory stack",
+          "Performs arithmetic operations on data"
+        ],
+        "answer": "Transfers data among processor registers and input/output devices"
+      },
+      {
+        "question": "What does the 'Push/Pop' instruction do?",
+        "options": [
+          "Transfers data between two registers or a register and a memory word",
+          "Transfers data among processor registers and input/output devices",
+          "Transfers data between processor registers and a memory stack",
+          "Performs arithmetic operations on data"
+        ],
+        "answer": "Transfers data between processor registers and a memory stack"
+      },
+      {
+        "question": "What does the '@' symbol represent in addressing modes?",
+        "options": [
+          "Indirect Address",
+          "Address relative to PC",
+          "Immediate Mode",
+          "Index Mode"
+        ],
+        "answer": "Indirect Address"
+      },
+      {
+        "question": "What does the '$' symbol represent in addressing modes?",
+        "options": [
+          "Indirect Address",
+          "Address relative to PC",
+          "Immediate Mode",
+          "Index Mode"
+        ],
+        "answer": "Address relative to PC"
+      },
+      {
+        "question": "What does the '#' symbol represent in addressing modes?",
+        "options": [
+          "Indirect Address",
+          "Address relative to PC",
+          "Immediate Mode",
+          "Index Mode"
+        ],
+        "answer": "Immediate Mode"
+      },
+      {
+        "question": "What does the '( )' symbol represent in addressing modes?",
+        "options": [
+          "Indirect Address",
+          "Address relative to PC",
+          "Immediate Mode",
+          "Index Mode, Register Indirect, Autoincrement"
+        ],
+        "answer": "Index Mode, Register Indirect, Autoincrement"
+      },
+      {
+        "question": "Which of the following is a type of data manipulation instruction?",
+        "options": [
+          "Arithmetic Instructions",
+          "Input/Output Instructions",
+          "Push/Pop Instructions",
+          "Swap Instructions"
+        ],
+        "answer": "Arithmetic Instructions"
+      },
+      {
+        "question": "What do Program Control Instructions specify?",
+        "options": [
+          "Conditions for altering the content of PC",
+          "Conditions for altering the content of ALU",
+          "Conditions for altering the content of RAM",
+          "Conditions for altering the content of Cache"
+        ],
+        "answer": "Conditions for altering the content of PC"
+      },
+      {
+        "question": "What causes a break in the sequence of instruction execution?",
+        "options": [
+          "Change in ALU value",
+          "Change in PC value",
+          "Change in Register value",
+          "Change in Cache value"
+        ],
+        "answer": "Change in PC value"
+      },
+      {
+        "question": "Which instructions are used interchangeably to mean the same?",
+        "options": [
+          "Branch and Jump",
+          "Shift and Rotate",
+          "Logical and Bit Manipulation",
+          "Load and Store"
+        ],
+        "answer": "Branch and Jump"
+      },
+      {
+        "question": "What is the purpose of the Condition Code Bit or Flag Bit in a processor?",
+        "options": [
+          "To store the result of arithmetic operations",
+          "To indicate the status of the processor",
+          "To control the flow of data in the ALU",
+          "To manage memory allocation"
+        ],
+        "answer": "To indicate the status of the processor"
+      },
+      {
+        "question": "Which bit in the status register is set to 1 if the end carry C8 is 1?",
+        "options": [
+          "Bit S (sign)",
+          "Bit Z (zero)",
+          "Bit V (overflow)",
+          "Bit C (carry)"
+        ],
+        "answer": "Bit C (carry)"
+      },
+      {
+        "question": "What does Bit S (sign) in the status register indicate?",
+        "options": [
+          "The result of the ALU operation is zero",
+          "The result of the ALU operation is negative",
+          "There is an overflow in the ALU operation",
+          "There is a carry in the ALU operation"
+        ],
+        "answer": "The result of the ALU operation is negative"
+      },
+      {
+        "question": "When is Bit Z (zero) in the status register set to 1?",
+        "options": [
+          "If the output of the ALU contains all 1’s",
+          "If the output of the ALU contains all 0’s",
+          "If there is a carry in the ALU operation",
+          "If there is an overflow in the ALU operation"
+        ],
+        "answer": "If the output of the ALU contains all 0’s"
+      },
+      {
+        "question": "What condition sets Bit V (overflow) in the status register to 1?",
+        "options": [
+          "If the exclusive-OR of the last two carries (C8 and C7) is equal to 1",
+          "If the output of the ALU contains all 0’s",
+          "If the end carry C8 is 1",
+          "If F7 is 1"
+        ],
+        "answer": "If the exclusive-OR of the last two carries (C8 and C7) is equal to 1"
+      },
+      {
+        "question": "What is the result of adding 0 and 11101100 (2’s complement of B) with a carry-in of 1?",
+        "options": [
+          "11011100",
+          "11101100",
+          "00010011",
+          "00100011"
+        ],
+        "answer": "11011100"
+      },
+      {
+        "question": "What are the values of the condition codes after the addition operation (C, S, V, Z)?",
+        "options": [
+          "C = 0, S = 0, V = 0, Z = 0",
+          "C = 1, S = 1, V = 0, Z = 0",
+          "C = 1, S = 0, V = 1, Z = 0",
+          "C = 0, S = 1, V = 0, Z = 1"
+        ],
+        "answer": "C = 1, S = 1, V = 0, Z = 0"
+      },
+      {
+        "question": "Which of the following is NOT a method used to store the return address in a subroutine call?",
+        "options": [
+          "First memory location of the subroutine",
+          "A processor register",
+          "A stack memory",
+          "A cache memory"
+        ],
+        "answer": "A cache memory"
+      },
+      {
+        "question": "What is the most efficient method to store the return address in a subroutine call?",
+        "options": [
+          "First memory location of the subroutine",
+          "A processor register",
+          "A stack memory",
+          "A dedicated return address register"
+        ],
+        "answer": "A stack memory"
+      },
+      {
+        "question": "What is the correct sequence of steps in a subroutine RETURN operation?",
+        "options": [
+          "Pop stack and transfer to PC, Increment stack pointer",
+          "Decrement stack pointer, Pop stack and transfer to PC",
+          "Push content of PC onto the stack, Transfer control to the subroutine",
+          "Increment stack pointer, Push content of PC onto the stack"
+        ],
+        "answer": "Pop stack and transfer to PC, Increment stack pointer"
+      },
+      {
+        "question": "What is an Interrupt?",
+        "options": [
+          "A subroutine call initiated by an instruction",
+          "Transfer of program control from a running program to another service program due to an external or internal request",
+          "A hardware malfunction",
+          "A programming error"
+        ],
+        "answer": "Transfer of program control from a running program to another service program due to an external or internal request"
+      },
+      {
+        "question": "What happens after the execution of an Interrupt Service Program?",
+        "options": [
+          "The program terminates",
+          "Control returns to the original program",
+          "The system reboots",
+          "The program skips the next instruction"
+        ],
+        "answer": "Control returns to the original program"
+      },
+      {
+        "question": "How is an Interrupt different from a Subroutine Call?",
+        "options": [
+          "An interrupt is initiated by an instruction, while a subroutine call is initiated by a signal",
+          "An interrupt is initiated by an internal or external signal, while a subroutine call is initiated by an instruction",
+          "There is no difference between them",
+          "An interrupt never returns control to the original program"
+        ],
+        "answer": "An interrupt is initiated by an internal or external signal, while a subroutine call is initiated by an instruction"
+      },
+      {
+        "question": "Which of the following is NOT true about Interrupts?",
+        "options": [
+          "They can be initiated by external signals",
+          "They can be initiated by internal signals",
+          "They always terminate the original program",
+          "Control returns to the original program after execution"
+        ],
+        "answer": "They always terminate the original program"
+      },
+      {
+        "question": "What is the primary purpose of an Interrupt?",
+        "options": [
+          "To terminate the current program",
+          "To transfer control to another service program and then return",
+          "To skip the next instruction",
+          "To cause a system crash"
+        ],
+        "answer": "To transfer control to another service program and then return"
+      },
+      {
+        "question": "What determines the address of the interrupt service program?",
+        "options": [
+          "The operating system",
+          "The hardware",
+          "The software application",
+          "The user input"
+        ],
+        "answer": "The hardware"
+      },
+      {
+        "question": "Where is the address of the subroutine call determined from?",
+        "options": [
+          "The operating system",
+          "The hardware",
+          "The address field of an instruction",
+          "The user input"
+        ],
+        "answer": "The address field of an instruction"
+      },
+      {
+        "question": "What does an interrupt procedure store?",
+        "options": [
+          "Only the program counter",
+          "All information necessary to define the state of the CPU",
+          "The user input",
+          "The operating system settings"
+        ],
+        "answer": "All information necessary to define the state of the CPU"
+      },
+      {
+        "question": "What does a subroutine call store?",
+        "options": [
+          "All information necessary to define the state of the CPU",
+          "Only the program counter (Return address)",
+          "The user input",
+          "The operating system settings"
+        ],
+        "answer": "Only the program counter (Return address)"
+      },
+      {
+        "question": "What is the Program Status Word (PSW)?",
+        "options": [
+          "A collection of all status bit conditions in the CPU",
+          "A software application",
+          "A user input",
+          "An operating system setting"
+        ],
+        "answer": "A collection of all status bit conditions in the CPU"
+      },
+      {
+        "question": "Where is the Program Status Word (PSW) stored?",
+        "options": [
+          "In the operating system",
+          "In a separate hardware register",
+          "In the software application",
+          "In the user input"
+        ],
+        "answer": "In a separate hardware register"
+      },
+      {
+        "question": "What are the two CPU operating modes?",
+        "options": [
+          "Supervisor Mode and User Mode",
+          "External Mode and Internal Mode",
+          "Privileged Mode and Non-Privileged Mode",
+          "System Mode and Program Mode"
+        ],
+        "answer": "Supervisor Mode and User Mode"
+      },
+      {
+        "question": "In which mode does the CPU execute a program that is part of the operating system?",
+        "options": [
+          "User Mode",
+          "Supervisor Mode",
+          "External Mode",
+          "Internal Mode"
+        ],
+        "answer": "Supervisor Mode"
+      },
+      {
+        "question": "What type of interrupts come from I/O devices, timing devices, or power supply monitoring circuits?",
+        "options": [
+          "Internal Interrupts",
+          "External Interrupts",
+          "TRAP",
+          "Register Interrupts"
+        ],
+        "answer": "External Interrupts"
+      },
+      {
+        "question": "What causes Internal Interrupts or TRAP?",
+        "options": [
+          "I/O devices",
+          "Timing devices",
+          "Register overflow",
+          "Power supply issues"
+        ],
+        "answer": "Register overflow"
+      },
+      {
+        "question": "What is an example of an invalid operation in computing?",
+        "options": [
+          "Attempt to divide by zero",
+          "Stack overflow",
+          "Protection violation",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What initiates a software interrupt?",
+        "options": [
+          "Executing an instruction",
+          "A hardware failure",
+          "A power outage",
+          "A network error"
+        ],
+        "answer": "Executing an instruction"
+      },
+      {
+        "question": "What are the two main computer architectures mentioned?",
+        "options": [
+          "RISC and CISC",
+          "ARM and x86",
+          "Harvard and Von Neumann",
+          "32-bit and 64-bit"
+        ],
+        "answer": "RISC and CISC"
+      },
+      {
+        "question": "What is the main difference between RISC and CISC?",
+        "options": [
+          "RISC has more general-purpose registers than CISC",
+          "CISC instructions take more cycles to complete than RISC",
+          "RISC has a larger instruction set than CISC",
+          "CISC has faster clock speeds than RISC"
+        ],
+        "answer": "CISC instructions take more cycles to complete than RISC"
+      },
+      {
+        "question": "Which of the following is a characteristic of CISC?",
+        "options": [
+          "Smaller instruction set",
+          "Faster clock speeds",
+          "More general-purpose registers",
+          "More addressing modes"
+        ],
+        "answer": "More addressing modes"
+      },
+      {
+        "question": "Which of the following is a characteristic of RISC?",
+        "options": [
+          "Larger instruction set",
+          "Slower clock speeds",
+          "Fewer general-purpose registers",
+          "Faster clock speeds"
+        ],
+        "answer": "Faster clock speeds"
+      },
+      {
+        "question": "What is a key feature of RISC architecture?",
+        "options": [
+          "Complex instruction set",
+          "More operations per instruction",
+          "Simpler instruction set",
+          "Slower execution cycles"
+        ],
+        "answer": "Simpler instruction set"
+      },
+      {
+        "question": "Which architecture typically has fewer general-purpose registers?",
+        "options": [
+          "RISC",
+          "CISC",
+          "Both have the same number",
+          "Neither has general-purpose registers"
+        ],
+        "answer": "CISC"
+      },
+      {
+        "question": "What is a major characteristic of a CISC architecture?",
+        "options": [
+          "A small number of instructions",
+          "A large number of instructions",
+          "Fixed-length instruction formats",
+          "Instructions that manipulate operands only in registers"
+        ],
+        "answer": "A large number of instructions"
+      },
+      {
+        "question": "Which of the following is true about CISC architecture?",
+        "options": [
+          "It has a small variety of addressing modes",
+          "It uses fixed-length instruction formats",
+          "It includes instructions that perform specialized tasks",
+          "It manipulates operands only in registers"
+        ],
+        "answer": "It includes instructions that perform specialized tasks"
+      },
+      {
+        "question": "What is a major characteristic of a RISC architecture?",
+        "options": [
+          "A large number of instructions",
+          "A small number of instructions",
+          "Variable-length instruction formats",
+          "Instructions that manipulate operands in memory"
+        ],
+        "answer": "A small number of instructions"
+      },
+      {
+        "question": "Which of the following is NOT a characteristic of CISC architecture?",
+        "options": [
+          "A large number of instructions",
+          "Variable-length instruction formats",
+          "Instructions that manipulate operands in memory",
+          "Fixed-length instruction formats"
+        ],
+        "answer": "Fixed-length instruction formats"
+      },
+      {
+        "question": "Which of the following is a characteristic of RISC architecture?",
+        "options": [
+          "Large number of addressing modes",
+          "Memory access limited to load and store instructions",
+          "Variable-length instruction format",
+          "Microprogrammed control"
+        ],
+        "answer": "Memory access limited to load and store instructions"
+      },
+      {
+        "question": "What is a feature of RISC architecture regarding instruction execution?",
+        "options": [
+          "Multi-cycle instruction execution",
+          "Single-cycle instruction execution",
+          "Microprogrammed control",
+          "Variable-length instruction format"
+        ],
+        "answer": "Single-cycle instruction execution"
+      },
+      {
+        "question": "Which of the following describes the control unit in RISC architecture?",
+        "options": [
+          "Microprogrammed control",
+          "Hardwired control",
+          "Both microprogrammed and hardwired control",
+          "Neither microprogrammed nor hardwired control"
+        ],
+        "answer": "Hardwired control"
+      },
+      {
+        "question": "What is a characteristic of RISC architecture regarding registers?",
+        "options": [
+          "Relatively small number of registers",
+          "Relatively large number of registers",
+          "No use of overlapped register windows",
+          "Registers are not used in RISC architecture"
+        ],
+        "answer": "Relatively large number of registers"
+      },
+      {
+        "question": "Which of the following is true about instruction format in RISC architecture?",
+        "options": [
+          "Variable-length instruction format",
+          "Fixed-length, easily decoded instruction format",
+          "Complex instruction format",
+          "Instruction format varies based on the operation"
+        ],
+        "answer": "Fixed-length, easily decoded instruction format"
+      },
+      {
+        "question": "What is the primary purpose of Overlapped Register Windows?",
+        "options": [
+          "To increase the number of registers available",
+          "To provide passing of parameters and avoid saving/restoring register values",
+          "To reduce the size of the program",
+          "To speed up the execution of arithmetic operations"
+        ],
+        "answer": "To provide passing of parameters and avoid saving/restoring register values"
+      },
+      {
+        "question": "Which of the following is a time-consuming operation during a procedure call?",
+        "options": [
+          "Overlapped Register Windows",
+          "Saving and restoring registers",
+          "Passing of parameters",
+          "All of the above"
+        ],
+        "answer": "Saving and restoring registers"
+      },
+      {
+        "question": "How many registers are mentioned in the concept of overlapped register windows?",
+        "options": [
+          "32",
+          "64",
+          "74",
+          "128"
+        ],
+        "answer": "74"
+      },
+      {
+        "question": "What does the compiler support for efficient translation of high-level language programs into?",
+        "options": [
+          "Assembly language programs",
+          "Machine language programs",
+          "Intermediate code",
+          "Bytecode"
+        ],
+        "answer": "Machine language programs"
+      },
+      {
+        "question": "What is the range of global registers in the given text?",
+        "options": [
+          "R0 - R9",
+          "R10 - R63",
+          "R26 - R31",
+          "R16 - R25"
+        ],
+        "answer": "R0 - R9"
+      },
+      {
+        "question": "Which registers store parameters for procedure B?",
+        "options": [
+          "R16 - R25",
+          "R26 - R31",
+          "R32 - R41",
+          "R0 - R9"
+        ],
+        "answer": "R26 - R31"
+      },
+      {
+        "question": "What is the range of local registers for procedure A?",
+        "options": [
+          "R16 - R25",
+          "R26 - R31",
+          "R32 - R41",
+          "R0 - R9"
+        ],
+        "answer": "R16 - R25"
+      },
+      {
+        "question": "How many local registers are there in the circular window?",
+        "options": [
+          "6",
+          "10",
+          "12",
+          "16"
+        ],
+        "answer": "10"
+      },
+      {
+        "question": "What does 'C' represent in the organization of register windows?",
+        "options": [
+          "Global registers",
+          "Local registers",
+          "Common registers",
+          "Circular registers"
+        ],
+        "answer": "Common registers"
+      },
+      {
+        "question": "What is the formula to calculate the Window Size in registers?",
+        "options": [
+          "L + C + G",
+          "L + 2C + G",
+          "2L + C + G",
+          "L + C + 2G"
+        ],
+        "answer": "L + 2C + G"
+      },
+      {
+        "question": "What is the formula to calculate the total number of registers needed in the processor?",
+        "options": [
+          "(L + C) * W + G",
+          "(L + G) * W + C",
+          "(C + G) * W + L",
+          "(L + C + G) * W"
+        ],
+        "answer": "(L + C) * W + G"
+      },
+      {
+        "question": "Given G = 10, L = 10, C = 6, W = 4, what is the Window Size?",
+        "options": [
+          "26",
+          "32",
+          "38",
+          "42"
+        ],
+        "answer": "32"
+      },
+      {
+        "question": "Given G = 10, L = 10, C = 6, W = 4, what is the total number of registers needed in the processor?",
+        "options": [
+          "64",
+          "70",
+          "74",
+          "80"
+        ],
+        "answer": "74"
+      }
+    ]
+  }
+}

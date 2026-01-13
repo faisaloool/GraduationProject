@@ -1,0 +1,719 @@
+{
+  "filename": "Ch3._Agile_SW_Dev.pptx",
+  "quiz": [
+    {
+      "question": "What is the primary goal of agile development methods?",
+      "type": "mcq",
+      "options": [
+        "To reduce delivery time for working software",
+        "To produce extensive documentation",
+        "To follow a strict sequential process",
+        "To eliminate customer involvement"
+      ],
+      "answer": "To reduce delivery time for working software",
+      "section": "Rapid software development",
+      "rate": "easy",
+      "suggestion": "Review the introduction to agile development"
+    },
+    {
+      "question": "Which of the following is a key characteristic of agile development?",
+      "type": "mcq",
+      "options": [
+        "Specification, design, and implementation are interleaved",
+        "All requirements are fixed before development begins",
+        "Emphasis on comprehensive documentation",
+        "Long development cycles with infrequent releases"
+      ],
+      "answer": "Specification, design, and implementation are interleaved",
+      "section": "Agile development",
+      "rate": "easy",
+      "suggestion": "Review the key features of agile development"
+    },
+    {
+      "question": "According to the Agile Manifesto, what is valued more than 'following a plan'?",
+      "type": "mcq",
+      "options": [
+        "Responding to change",
+        "Comprehensive documentation",
+        "Contract negotiation",
+        "Processes and tools"
+      ],
+      "answer": "Responding to change",
+      "section": "Agile manifesto",
+      "rate": "easy",
+      "suggestion": "Review the four values of the Agile Manifesto"
+    },
+    {
+      "question": "For which type of system development are agile methods particularly successful?",
+      "type": "mcq",
+      "options": [
+        "Product development by a software company",
+        "Safety-critical systems with strict regulations",
+        "Systems requiring extensive upfront documentation",
+        "Projects with fixed and unchanging requirements"
+      ],
+      "answer": "Product development by a software company",
+      "section": "Agile method applicability",
+      "rate": "easy",
+      "suggestion": "Review the two main areas where agile methods are successful"
+    },
+    {
+      "question": "Which agile method introduced practices such as pair programming and test-first development?",
+      "type": "mcq",
+      "options": [
+        "Extreme Programming (XP)",
+        "Scrum",
+        "Waterfall",
+        "Spiral Model"
+      ],
+      "answer": "Extreme Programming (XP)",
+      "section": "Extreme programming",
+      "rate": "easy",
+      "suggestion": "Recall which agile method is known for technical practices"
+    },
+    {
+      "question": "In XP, how are user requirements typically expressed?",
+      "type": "mcq",
+      "options": [
+        "As user stories or scenarios",
+        "As formal specification documents",
+        "As detailed UML diagrams",
+        "As legal contracts"
+      ],
+      "answer": "As user stories or scenarios",
+      "section": "User stories for requirements",
+      "rate": "easy",
+      "suggestion": "Review how requirements are captured in XP"
+    },
+    {
+      "question": "What is refactoring in agile development?",
+      "type": "mcq",
+      "options": [
+        "Constant code improvement to make changes easier",
+        "Rewriting the entire system from scratch",
+        "Writing tests after the code is complete",
+        "Replacing the development team periodically"
+      ],
+      "answer": "Constant code improvement to make changes easier",
+      "section": "Refactoring",
+      "rate": "medium",
+      "suggestion": "Review the purpose and definition of refactoring"
+    },
+    {
+      "question": "What is test-first development?",
+      "type": "mcq",
+      "options": [
+        "Writing tests before writing the code",
+        "Testing only at the end of the project",
+        "Letting customers write all tests",
+        "Automated testing without developer involvement"
+      ],
+      "answer": "Writing tests before writing the code",
+      "section": "Test-driven development",
+      "rate": "medium",
+      "suggestion": "Review the concept of test-first or test-driven development"
+    },
+    {
+      "question": "What is a key benefit of pair programming?",
+      "type": "mcq",
+      "options": [
+        "Spreads knowledge across the team",
+        "Reduces the need for testing",
+        "Eliminates the need for documentation",
+        "Allows programmers to work in isolation"
+      ],
+      "answer": "Spreads knowledge across the team",
+      "section": "Pair programming",
+      "rate": "medium",
+      "suggestion": "Review the benefits of pair programming"
+    },
+    {
+      "question": "What is the primary focus of Scrum?",
+      "type": "mcq",
+      "options": [
+        "Managing iterative development",
+        "Writing detailed specifications",
+        "Automated testing tools",
+        "Formal contract negotiation"
+      ],
+      "answer": "Managing iterative development",
+      "section": "Scrum",
+      "rate": "easy",
+      "suggestion": "Review the main focus of the Scrum framework"
+    },
+    {
+      "question": "In Scrum, what is a 'sprint'?",
+      "type": "mcq",
+      "options": [
+        "A fixed time period for developing an increment",
+        "A meeting to write user stories",
+        "A phase for writing documentation",
+        "A period for customer negotiations"
+      ],
+      "answer": "A fixed time period for developing an increment",
+      "section": "The Scrum sprint cycle",
+      "rate": "easy",
+      "suggestion": "Review the definition of a sprint in Scrum"
+    },
+    {
+      "question": "What is the role of the Scrum Master?",
+      "type": "mcq",
+      "options": [
+        "Facilitator and protector of the team",
+        "Primary developer and coder",
+        "Customer representative",
+        "Documentation writer"
+      ],
+      "answer": "Facilitator and protector of the team",
+      "section": "Teamwork in Scrum",
+      "rate": "medium",
+      "suggestion": "Review the responsibilities of the Scrum Master"
+    },
+    {
+      "question": "What does 'scaling up' agile methods refer to?",
+      "type": "mcq",
+      "options": [
+        "Using agile methods for large software systems",
+        "Increasing team size without changing methods",
+        "Reducing the frequency of releases",
+        "Adding more documentation to the process"
+      ],
+      "answer": "Using agile methods for large software systems",
+      "section": "Scaling out and scaling up",
+      "rate": "medium",
+      "suggestion": "Review the difference between scaling up and scaling out"
+    },
+    {
+      "question": "Which of the following is a common problem when using agile methods for large systems?",
+      "type": "mcq",
+      "options": [
+        "Lack of detailed upfront design",
+        "Too much customer involvement",
+        "Over-documentation",
+        "Inflexible planning"
+      ],
+      "answer": "Lack of detailed upfront design",
+      "section": "Agile methods for large systems",
+      "rate": "medium",
+      "suggestion": "Review the challenges of scaling agile to large systems"
+    },
+    {
+      "question": "What is a major contractual issue with agile development?",
+      "type": "mcq",
+      "options": [
+        "Contracts often require fixed specifications upfront",
+        "Contracts are too flexible and lack structure",
+        "Customers refuse to sign agile contracts",
+        "Contracts prevent iterative development entirely"
+      ],
+      "answer": "Contracts often require fixed specifications upfront",
+      "section": "Contractual issues",
+      "rate": "hard",
+      "suggestion": "Review the conflict between agile development and traditional contracts"
+    },
+    {
+      "question": "Why can agile methods be problematic for software maintenance?",
+      "type": "mcq",
+      "options": [
+        "Lack of formal documentation",
+        "Too much customer involvement",
+        "Over-reliance on automated testing",
+        "Frequent releases"
+      ],
+      "answer": "Lack of formal documentation",
+      "section": "Agile methods and software maintenance",
+      "rate": "hard",
+      "suggestion": "Review the challenges of maintaining agile-developed systems"
+    },
+    {
+      "question": "In multi-team Scrum, what is 'Scrum of Scrums'?",
+      "type": "mcq",
+      "options": [
+        "A daily meeting where team representatives coordinate",
+        "A tool for automated testing",
+        "A type of user story",
+        "A method for writing documentation"
+      ],
+      "answer": "A daily meeting where team representatives coordinate",
+      "section": "Multi-team Scrum",
+      "rate": "medium",
+      "suggestion": "Review the coordination mechanism in scaled Scrum"
+    },
+    {
+      "question": "Which factor is NOT typically considered when deciding between agile and plan-driven methods?",
+      "type": "mcq",
+      "options": [
+        "Color of the user interface",
+        "System size and team location",
+        "Need for detailed specifications",
+        "Ability for incremental delivery"
+      ],
+      "answer": "Color of the user interface",
+      "section": "Agile and plan-driven methods",
+      "rate": "easy",
+      "suggestion": "Review the factors influencing method selection"
+    },
+    {
+      "question": "What does 'brownfield systems' refer to in large system development?",
+      "type": "mcq",
+      "options": [
+        "Systems that interact with existing systems",
+        "Systems developed from scratch",
+        "Systems with no external dependencies",
+        "Systems built using only new technologies"
+      ],
+      "answer": "Systems that interact with existing systems",
+      "section": "Agile methods for large systems",
+      "rate": "hard",
+      "suggestion": "Review the definition of brownfield systems"
+    },
+    {
+      "question": "Which practice is central to XP and supports incremental development?",
+      "type": "mcq",
+      "options": [
+        "Frequent small releases",
+        "Detailed upfront architecture",
+        "Comprehensive documentation",
+        "Formal design reviews"
+      ],
+      "answer": "Frequent small releases",
+      "section": "XP and agile principles",
+      "rate": "medium",
+      "suggestion": "Review XP practices that enable incremental delivery"
+    },
+    {
+      "question": "What is a key benefit of frequent releases in agile development?",
+      "type": "mcq",
+      "options": [
+        "Rapid customer feedback and value delivery",
+        "Reduced need for testing",
+        "Elimination of all bugs",
+        "Less customer involvement"
+      ],
+      "answer": "Rapid customer feedback and value delivery",
+      "section": "Incremental development benefits",
+      "rate": "easy",
+      "suggestion": "Review the advantages of frequent releases"
+    },
+    {
+      "question": "What is a common challenge in distributed Scrum teams?",
+      "type": "mcq",
+      "options": [
+        "Communication and coordination across locations",
+        "Lack of automated tools",
+        "Too many face-to-face meetings",
+        "Over-documentation"
+      ],
+      "answer": "Communication and coordination across locations",
+      "section": "Distributed Scrum",
+      "rate": "medium",
+      "suggestion": "Review the difficulties of using Scrum in distributed teams"
+    },
+    {
+      "question": "Which agile practice involves writing tests as executable components before implementation?",
+      "type": "mcq",
+      "options": [
+        "Test automation",
+        "Pair programming",
+        "Refactoring",
+        "User story writing"
+      ],
+      "answer": "Test automation",
+      "section": "Test automation",
+      "rate": "medium",
+      "suggestion": "Review the concept of test automation in agile"
+    },
+    {
+      "question": "What is the main purpose of daily Scrum meetings?",
+      "type": "mcq",
+      "options": [
+        "To share progress and plan the next day's work",
+        "To write detailed documentation",
+        "To negotiate contracts with customers",
+        "To conduct formal code reviews"
+      ],
+      "answer": "To share progress and plan the next day's work",
+      "section": "Teamwork in Scrum",
+      "rate": "easy",
+      "suggestion": "Review the purpose of daily Scrum meetings"
+    },
+    {
+      "question": "Which of the following is NOT an XP practice?",
+      "type": "mcq",
+      "options": [
+        "Detailed Gantt charts",
+        "Pair programming",
+        "Test-first development",
+        "Refactoring"
+      ],
+      "answer": "Detailed Gantt charts",
+      "section": "Extreme programming practices",
+      "rate": "easy",
+      "suggestion": "Review the list of XP practices"
+    },
+    {
+      "question": "What is a 'product backlog' in Scrum?",
+      "type": "mcq",
+      "options": [
+        "A list of work to be done on the project",
+        "A log of completed tasks",
+        "A set of user manuals",
+        "A record of customer complaints"
+      ],
+      "answer": "A list of work to be done on the project",
+      "section": "The Scrum sprint cycle",
+      "rate": "easy",
+      "suggestion": "Review the definition of product backlog"
+    },
+    {
+      "question": "Why might agile methods conflict with organizational culture?",
+      "type": "mcq",
+      "options": [
+        "Due to a history of plan-based development and documentation",
+        "Because they require more programmers",
+        "Because they eliminate all meetings",
+        "Due to their reliance on formal contracts"
+      ],
+      "answer": "Due to a history of plan-based development and documentation",
+      "section": "Organizational issues",
+      "rate": "medium",
+      "suggestion": "Review cultural challenges in adopting agile methods"
+    },
+    {
+      "question": "What is the role of the customer in XP testing?",
+      "type": "mcq",
+      "options": [
+        "To help develop acceptance tests",
+        "To write all unit tests",
+        "To run automated test suites",
+        "To approve final documentation"
+      ],
+      "answer": "To help develop acceptance tests",
+      "section": "Customer involvement",
+      "rate": "medium",
+      "suggestion": "Review the customer's role in XP testing"
+    },
+    {
+      "question": "Which of the following is a benefit of Scrum?",
+      "type": "mcq",
+      "options": [
+        "Improved team communication and visibility",
+        "Guaranteed bug-free software",
+        "Elimination of all project risks",
+        "No need for customer feedback"
+      ],
+      "answer": "Improved team communication and visibility",
+      "section": "Scrum benefits",
+      "rate": "easy",
+      "suggestion": "Review the listed benefits of Scrum"
+    },
+    {
+      "question": "What does 'scaling out' agile methods mean?",
+      "type": "mcq",
+      "options": [
+        "Introducing agile across a large organization",
+        "Developing larger software systems",
+        "Increasing the length of sprints",
+        "Reducing team size for efficiency"
+      ],
+      "answer": "Introducing agile across a large organization",
+      "section": "Scaling out and scaling up",
+      "rate": "medium",
+      "suggestion": "Review the difference between scaling up and scaling out"
+    },
+    {
+      "question": "Which factor complicates the use of agile methods in regulated industries?",
+      "type": "mcq",
+      "options": [
+        "Need for detailed documentation for compliance",
+        "Lack of customer involvement",
+        "Inability to do iterative development",
+        "Requirement for large teams only"
+      ],
+      "answer": "Need for detailed documentation for compliance",
+      "section": "System issues",
+      "rate": "hard",
+      "suggestion": "Review constraints related to system regulation"
+    },
+    {
+      "question": "What is a key challenge in maintaining agile-developed systems over the long term?",
+      "type": "mcq",
+      "options": [
+        "Lack of documentation and original team knowledge",
+        "Too much customer involvement",
+        "Over-reliance on automated testing",
+        "Frequent changes to requirements"
+      ],
+      "answer": "Lack of documentation and original team knowledge",
+      "section": "Agile maintenance",
+      "rate": "hard",
+      "suggestion": "Review long-term maintenance challenges in agile"
+    },
+    {
+      "question": "In agile development, what is emphasized over comprehensive documentation?",
+      "type": "mcq",
+      "options": [
+        "Working software",
+        "Formal contracts",
+        "Detailed design specs",
+        "Legal compliance"
+      ],
+      "answer": "Working software",
+      "section": "Agile manifesto",
+      "rate": "easy",
+      "suggestion": "Review the Agile Manifesto values"
+    },
+    {
+      "question": "What does the 'C' in COTS stand for?",
+      "type": "mcq",
+      "options": [
+        "Commercial",
+        "Custom",
+        "Configurable",
+        "Critical"
+      ],
+      "answer": "Commercial",
+      "section": "Types of reusable software",
+      "rate": "easy",
+      "suggestion": "Recall the meaning of COTS"
+    },
+    {
+      "question": "Which agile principle is supported by pair programming?",
+      "type": "mcq",
+      "options": [
+        "People not process",
+        "Comprehensive documentation",
+        "Contract negotiation",
+        "Following a plan"
+      ],
+      "answer": "People not process",
+      "section": "XP and agile principles",
+      "rate": "medium",
+      "suggestion": "Review how XP practices align with agile principles"
+    },
+    {
+      "question": "What is a 'user story' typically used for?",
+      "type": "mcq",
+      "options": [
+        "Capturing user requirements in agile projects",
+        "Writing technical documentation",
+        "Creating test plans",
+        "Designing system architecture"
+      ],
+      "answer": "Capturing user requirements in agile projects",
+      "section": "User stories for requirements",
+      "rate": "easy",
+      "suggestion": "Review the purpose of user stories"
+    },
+    {
+      "question": "Which of the following is a disadvantage of test-first development?",
+      "type": "mcq",
+      "options": [
+        "Difficulty writing tests for complex UI logic",
+        "Too much customer involvement",
+        "Increased documentation",
+        "Slower development speed"
+      ],
+      "answer": "Difficulty writing tests for complex UI logic",
+      "section": "Problems with test-first development",
+      "rate": "medium",
+      "suggestion": "Review the challenges of test-first development"
+    },
+    {
+      "question": "What is the main purpose of sprint planning in Scrum?",
+      "type": "mcq",
+      "options": [
+        "To select features from the backlog for the next sprint",
+        "To write user manuals",
+        "To negotiate contracts",
+        "To hire new team members"
+      ],
+      "answer": "To select features from the backlog for the next sprint",
+      "section": "The Scrum sprint cycle",
+      "rate": "easy",
+      "suggestion": "Review what happens during sprint planning"
+    },
+    {
+      "question": "Which of the following is a Scrum role?",
+      "type": "mcq",
+      "options": [
+        "Product Owner",
+        "System Architect",
+        "Quality Assurance Manager",
+        "Technical Writer"
+      ],
+      "answer": "Product Owner",
+      "section": "Scrum terminology",
+      "rate": "easy",
+      "suggestion": "Review the key roles in Scrum"
+    },
+    {
+      "question": "What does 'incremental delivery' mean in agile?",
+      "type": "mcq",
+      "options": [
+        "Delivering parts of the system frequently for feedback",
+        "Delivering the entire system at the end",
+        "Writing all code before any testing",
+        "Developing without customer input"
+      ],
+      "answer": "Delivering parts of the system frequently for feedback",
+      "section": "Incremental delivery",
+      "rate": "easy",
+      "suggestion": "Review the concept of incremental delivery"
+    },
+    {
+      "question": "Why is continuous integration important in agile?",
+      "type": "mcq",
+      "options": [
+        "To frequently integrate and test changes",
+        "To reduce customer meetings",
+        "To eliminate documentation",
+        "To extend sprint durations"
+      ],
+      "answer": "To frequently integrate and test changes",
+      "section": "Scaling up to large systems",
+      "rate": "medium",
+      "suggestion": "Review the role of continuous integration in agile"
+    },
+    {
+      "question": "What is a key difference between agile and plan-driven development?",
+      "type": "mcq",
+      "options": [
+        "Agile interleaves activities; plan-driven separates them",
+        "Agile requires more documentation",
+        "Plan-driven is faster to deliver",
+        "Agile avoids customer involvement"
+      ],
+      "answer": "Agile interleaves activities; plan-driven separates them",
+      "section": "Plan-driven and agile development",
+      "rate": "medium",
+      "suggestion": "Review the fundamental differences between agile and plan-driven"
+    },
+    {
+      "question": "Which of the following is NOT a principle of agile methods?",
+      "type": "mcq",
+      "options": [
+        "Comprehensive documentation is essential",
+        "Welcome changing requirements",
+        "Deliver working software frequently",
+        "Business people and developers work together"
+      ],
+      "answer": "Comprehensive documentation is essential",
+      "section": "The principles of agile methods",
+      "rate": "easy",
+      "suggestion": "Review the Agile Manifesto principles"
+    },
+    {
+      "question": "What is the typical duration of a Scrum sprint?",
+      "type": "mcq",
+      "options": [
+        "2–4 weeks",
+        "6–8 weeks",
+        "3–6 months",
+        "1 year"
+      ],
+      "answer": "2–4 weeks",
+      "section": "The Scrum sprint cycle",
+      "rate": "easy",
+      "suggestion": "Review the standard sprint length in Scrum"
+    },
+    {
+      "question": "Which practice helps reduce risks when team members leave in agile projects?",
+      "type": "mcq",
+      "options": [
+        "Pair programming and knowledge sharing",
+        "Writing detailed documentation only",
+        "Hiring only senior developers",
+        "Avoiding customer involvement"
+      ],
+      "answer": "Pair programming and knowledge sharing",
+      "section": "Pair programming",
+      "rate": "medium",
+      "suggestion": "Review how agile practices mitigate personnel risks"
+    },
+    {
+      "question": "What is a common barrier to adopting agile in large organizations?",
+      "type": "mcq",
+      "options": [
+        "Existing bureaucratic procedures and standards",
+        "Lack of interest from developers",
+        "Too much customer collaboration",
+        "Inability to write user stories"
+      ],
+      "answer": "Existing bureaucratic procedures and standards",
+      "section": "Agile methods across organizations",
+      "rate": "medium",
+      "suggestion": "Review organizational challenges to agile adoption"
+    },
+    {
+      "question": "In XP, who is responsible for making decisions on requirements?",
+      "type": "mcq",
+      "options": [
+        "The customer or user on the team",
+        "The project manager alone",
+        "The development team without input",
+        "An external regulatory body"
+      ],
+      "answer": "The customer or user on the team",
+      "section": "User stories for requirements",
+      "rate": "easy",
+      "suggestion": "Review the customer's role in XP"
+    },
+    {
+      "question": "What is the main advantage of using automated test harnesses?",
+      "type": "mcq",
+      "options": [
+        "Quick and easy execution of tests",
+        "Elimination of all manual testing",
+        "Reduced need for customer feedback",
+        "Guaranteed 100% test coverage"
+      ],
+      "answer": "Quick and easy execution of tests",
+      "section": "Test automation",
+      "rate": "easy",
+      "suggestion": "Review the benefits of test automation"
+    },
+    {
+      "question": "Which factor is critical for successful agile development?",
+      "type": "mcq",
+      "options": [
+        "Good team communication",
+        "Detailed upfront planning",
+        "Extensive documentation",
+        "Fixed and unchanging requirements"
+      ],
+      "answer": "Good team communication",
+      "section": "Agile development techniques",
+      "rate": "easy",
+      "suggestion": "Review the foundational elements of agile success"
+    },
+    {
+      "question": "What does 'backlog grooming' refer to in Scrum?",
+      "type": "mcq",
+      "options": [
+        "Refining and prioritizing the product backlog",
+        "Writing user manuals",
+        "Conducting performance reviews",
+        "Cleaning up old code"
+      ],
+      "answer": "Refining and prioritizing the product backlog",
+      "section": "Scrum terminology",
+      "rate": "medium",
+      "suggestion": "Review Scrum terms and their meanings"
+    },
+    {
+      "question": "Why is it difficult to apply agile methods to legacy system maintenance?",
+      "type": "mcq",
+      "options": [
+        "Lack of flexibility and existing dependencies",
+        "Too many customer change requests",
+        "Lack of automated testing tools",
+        "Over-involvement of original developers"
+      ],
+      "answer": "Lack of flexibility and existing dependencies",
+      "section": "Agile methods and software maintenance",
+      "rate": "hard",
+      "suggestion": "Review challenges in applying agile to maintenance"
+    }
+  ]
+}

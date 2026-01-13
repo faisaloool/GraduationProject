@@ -1,0 +1,245 @@
+{
+  "filename": "Ch5.pptx",
+  "quiz": [
+    {
+      "question": "System modeling is the process of developing abstract models of a system using only textual descriptions.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "System Modeling",
+      "rate": "easy",
+      "suggestion": "Review the definition of system modeling, which typically uses graphical notations like UML."
+    },
+    {
+      "question": "Context models illustrate what lies outside the system boundaries.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Context models",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of context models in system modeling."
+    },
+    {
+      "question": "Use case diagrams are used to model the internal structure and organization of a system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "UML diagram types",
+      "rate": "easy",
+      "suggestion": "Remember that use case diagrams focus on interactions between a system and its environment, not internal structure."
+    },
+    {
+      "question": "Sequence diagrams show the sequence of interactions between actors and objects during a use case.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Sequence diagrams",
+      "rate": "easy",
+      "suggestion": "Review the purpose and typical content of a UML sequence diagram."
+    },
+    {
+      "question": "Class diagrams are a type of behavioral model in UML.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Structural models",
+      "rate": "easy",
+      "suggestion": "Class diagrams are structural models, not behavioral models."
+    },
+    {
+      "question": "Generalization in UML allows lower-level classes to inherit attributes and operations from higher-level classes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Generalization",
+      "rate": "easy",
+      "suggestion": "Recall how generalization and inheritance work in object-oriented modeling."
+    },
+    {
+      "question": "Behavioral models focus on the static organization of system components.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Behavioral models",
+      "rate": "easy",
+      "suggestion": "Behavioral models describe dynamic behavior, not static structure."
+    },
+    {
+      "question": "Activity diagrams can be used to model data processing and business workflows.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Data-driven modeling",
+      "rate": "easy",
+      "suggestion": "Review the use of activity diagrams in modeling processes."
+    },
+    {
+      "question": "State diagrams are used to model how a system responds to internal and external events.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "State machine models",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of state diagrams in behavioral modeling."
+    },
+    {
+      "question": "Model-Driven Engineering (MDE) focuses on writing code manually as the primary development activity.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Model-driven Engineering",
+      "rate": "easy",
+      "suggestion": "MDE emphasizes models as the principal output, with code generated automatically."
+    },
+    {
+      "question": "A Platform-Independent Model (PIM) includes details about specific execution platforms.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Types of model",
+      "rate": "medium",
+      "suggestion": "PIMs are abstract and do not include platform-specific details."
+    },
+    {
+      "question": "In UML, aggregation represents a 'part-of' relationship between classes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Object class aggregation models",
+      "rate": "medium",
+      "suggestion": "Review the meaning of aggregation in class diagrams."
+    },
+    {
+      "question": "Event-driven modeling is most suitable for data-intensive business processing systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Event-driven modeling",
+      "rate": "medium",
+      "suggestion": "Event-driven modeling is typically used for real-time systems, not data-heavy business systems."
+    },
+    {
+      "question": "The position of a system boundary is a purely technical decision with no organizational implications.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "System boundaries",
+      "rate": "medium",
+      "suggestion": "Recall that system boundaries can be influenced by social, organizational, and political factors."
+    },
+    {
+      "question": "Use cases can be represented both diagrammatically and in textual form.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Use case modeling",
+      "rate": "medium",
+      "suggestion": "Review how use cases are documented in UML."
+    },
+    {
+      "question": "MDA (Model-Driven Architecture) is a code-centric approach to software development.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Model driven architecture",
+      "rate": "medium",
+      "suggestion": "MDA is a model-focused approach, not code-centric."
+    },
+    {
+      "question": "A Computation Independent Model (CIM) focuses on how the system will be implemented.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Types of model",
+      "rate": "medium",
+      "suggestion": "CIMs describe the domain without considering system implementation."
+    },
+    {
+      "question": "Sequence diagrams can model interactions between system objects, not just between actors and the system.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Sequence diagrams",
+      "rate": "medium",
+      "suggestion": "Recall that sequence diagrams can show object-to-object interactions internally."
+    },
+    {
+      "question": "Process models show how a system is used within broader business processes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Process perspective",
+      "rate": "medium",
+      "suggestion": "Review the purpose of process models in context modeling."
+    },
+    {
+      "question": "In behavioral modeling, stimuli can only be events; data cannot trigger system processing.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Behavioral models",
+      "rate": "medium",
+      "suggestion": "Stimuli can be either data or events in behavioral modeling."
+    },
+    {
+      "question": "MDE is widely adopted and has replaced traditional coding practices in most software organizations.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Adoption of MDA",
+      "rate": "hard",
+      "suggestion": "Consider the current adoption challenges and limitations of MDE/MDA."
+    },
+    {
+      "question": "A Platform-Specific Model (PSM) is derived by adding platform details to a Platform-Independent Model.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Types of model",
+      "rate": "hard",
+      "suggestion": "Review the transformation process from PIM to PSM in MDA."
+    },
+    {
+      "question": "Aggregation and generalization refer to the same type of relationship in UML class diagrams.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Object class aggregation models",
+      "rate": "hard",
+      "suggestion": "Understand the difference between aggregation ('part-of') and generalization ('is-a')."
+    },
+    {
+      "question": "State diagrams are only useful for modeling real-time systems and cannot be applied to business systems.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "State machine models",
+      "rate": "hard",
+      "suggestion": "While common in real-time systems, state diagrams can also model stateful behavior in business systems."
+    },
+    {
+      "question": "In MDE, the primary goal is to raise the level of abstraction and automatically generate code from models.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Model-driven Engineering",
+      "rate": "hard",
+      "suggestion": "Recall the core philosophy and benefits of Model-Driven Engineering."
+    },
+    {
+      "question": "Activity diagrams and state diagrams are both considered structural models in UML.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Behavioral models",
+      "rate": "hard",
+      "suggestion": "Both activity and state diagrams are behavioral models, not structural."
+    },
+    {
+      "question": "The 'Transfer-data' use case example in the Mentcare system involves interaction between a patient and a doctor.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Transfer-data use case",
+      "rate": "hard",
+      "suggestion": "Review the provided use case description to identify the actors involved."
+    },
+    {
+      "question": "Model-Driven Engineering is fully compatible with agile methods because both emphasize extensive upfront modeling.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile methods and MDA",
+      "rate": "hard",
+      "suggestion": "Consider the potential conflict between MDE's upfront modeling and agile's iterative, lightweight approach."
+    },
+    {
+      "question": "A structural model can be either static (showing design-time organization) or dynamic (showing runtime organization).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Structural models",
+      "rate": "hard",
+      "suggestion": "Recall the two types of structural models mentioned in the chapter."
+    },
+    {
+      "question": "In UML, an association represents a link between objects of the same class only.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Class diagrams",
+      "rate": "hard",
+      "suggestion": "Associations can exist between different classes, not just within the same class."
+    }
+  ]
+}

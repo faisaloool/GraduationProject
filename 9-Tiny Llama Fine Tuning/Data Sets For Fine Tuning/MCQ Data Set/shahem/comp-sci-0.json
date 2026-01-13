@@ -1,0 +1,153 @@
+{
+  "document": "Data Mining Software.pptx",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What type of software is Orange Data Mining?",
+        "options": ["Commercial", "Free and/or open source", "Subscription-based", "Proprietary enterprise"],
+        "answer": "Free and/or open source"
+      },
+      {
+        "question": "Which of the following is a commercial data mining software?",
+        "options": ["R", "Weka", "IBM SPSS Modeler", "Orange Data Mining"],
+        "answer": "IBM SPSS Modeler"
+      },
+      {
+        "question": "What is a key feature of Orange's user interface?",
+        "options": ["Command-line only", "Drag and drop (visual programming)", "Code-only modules", "Telepathic control"],
+        "answer": "Drag and drop (visual programming)"
+      },
+      {
+        "question": "Orange is described as a toolkit for which of the following?",
+        "options": ["Data visualization only", "Machine learning only", "Data visualization, machine learning, and data mining", "Database administration"],
+        "answer": "Data visualization, machine learning, and data mining"
+      },
+      {
+        "question": "What is NOT listed as a requirement for using Orange?",
+        "options": ["Knowledge of maths", "Knowledge of statistics", "Downloading the software", "Using a canvas"],
+        "answer": "Knowledge of maths"
+      },
+      {
+        "question": "In Orange, what is the blank area where you build workflows called?",
+        "options": ["Dashboard", "Canvas", "Widget Board", "Studio"],
+        "answer": "Canvas"
+      },
+      {
+        "question": "What are the computational units in Orange that have inputs and outputs called?",
+        "options": ["Modules", "Functions", "Widgets", "Plugins"],
+        "answer": "Widgets"
+      },
+      {
+        "question": "Which file extension do Orange workflow files have?",
+        "options": [".orn", ".ows", ".wrk", ".flow"],
+        "answer": ".ows"
+      },
+      {
+        "question": "What type of data files can Orange work with?",
+        "options": ["Only .csv files", "Only SQL tables", "Tab, xls, csv files and SQL tables", "Only proprietary Orange files"],
+        "answer": "Tab, xls, csv files and SQL tables"
+      },
+      {
+        "question": "Which of the following is an activity you can perform in Orange?",
+        "options": ["Scrape contents from social media", "Design websites", "Edit videos", "Manage network security"],
+        "answer": "Scrape contents from social media"
+      },
+      {
+        "question": "Which widget add-on category is specifically mentioned for Orange?",
+        "options": ["Financial forecasting", "Social network analysis", "3D animation", "Operating system development"],
+        "answer": "Social network analysis"
+      },
+      {
+        "question": "What does Orange NOT require from its users?",
+        "options": ["Downloading the software", "Placing widgets on canvas", "Knowledge of statistics", "Using a command line"],
+        "answer": "Knowledge of statistics"
+      },
+      {
+        "question": "According to the source cited, which website polls data mining tools?",
+        "options": ["KDNuggets.com", "Orange.biolab.si", "IBM.com", "RapidMiner.com"],
+        "answer": "KDNuggets.com"
+      },
+      {
+        "question": "Orange provides tools for which type of data analysis?",
+        "options": ["Only predictive analysis", "Only statistical analysis", "Explorative and interactive data analysis", "Only database management"],
+        "answer": "Explorative and interactive data analysis"
+      },
+      {
+        "question": "Which of these is listed as a free/open-source data mining tool?",
+        "options": ["SAS Enterprise Miner", "IBM Intelligent Miner", "Statistica Data Miner", "RapidMiner"],
+        "answer": "RapidMiner"
+      },
+      {
+        "question": "What can you think of widgets as in Orange?",
+        "options": ["Open-source code snippets", "Black boxes with defined functionality", "Hardware components", "User manuals"],
+        "answer": "Black boxes with defined functionality"
+      },
+      {
+        "question": "Which is a recommended source for learning Orange?",
+        "options": ["Orange Data Mining YouTube channel", "Coursera exclusive course", "The official paperback manual", "A monthly subscription magazine"],
+        "answer": "Orange Data Mining YouTube channel"
+      },
+      {
+        "question": "What kind of mining is possible with Orange's add-ons?",
+        "options": ["Oil mining", "Text mining", "Bitcoin mining", "Data mining only"],
+        "answer": "Text mining"
+      },
+      {
+        "question": "Orange is particularly suited for users who prefer what kind of programming?",
+        "options": ["Low-level assembly", "Object-oriented", "Visual", "Functional"],
+        "answer": "Visual"
+      },
+      {
+        "question": "What is one of the set of tools provided on the Orange canvas?",
+        "options": ["For compiling code", "For labeling, zooming, or pausing model flow", "For hardware diagnostics", "For writing documentation"],
+        "answer": "For labeling, zooming, or pausing model flow"
+      },
+      {
+        "question": "The 'ows' file extension in Orange stands for what?",
+        "options": ["Orange Workspace", "Orange Widget Set", "Orange Workflow", "Orange Web Service"],
+        "answer": "Orange Workflow"
+      },
+      {
+        "question": "Which data format is NOT explicitly mentioned as compatible with Orange?",
+        "options": ["Text files", "JSON files", "XLS files", "CSV files"],
+        "answer": "JSON files"
+      },
+      {
+        "question": "What is a primary benefit of Orange's drag-and-drop interface?",
+        "options": ["It requires advanced programming skills.", "It makes the software user-friendly.", "It limits functionality to basic tasks.", "It is only for drawing charts."],
+        "answer": "It makes the software user-friendly."
+      },
+      {
+        "question": "Where can you get the Orange software?",
+        "options": ["By purchasing a license from IBM", "From the official Orange website (orange.biolab.si)", "From the Microsoft App Store", "It is pre-installed on all Windows machines"],
+        "answer": "From the official Orange website (orange.biolab.si)"
+      },
+      {
+        "question": "What is the term used for the visual elements you combine to create a process in Orange?",
+        "options": ["Algorithms", "Widgets", "Scripts", "Pipelines"],
+        "answer": "Widgets"
+      },
+      {
+        "question": "Which of these is a capability of Orange mentioned in the document?",
+        "options": ["Perform text analysis", "Develop mobile applications", "Edit photographs", "Simulate weather patterns"],
+        "answer": "Perform text analysis"
+      },
+      {
+        "question": "What does the Orange toolbox refer to?",
+        "options": ["A physical set of tools", "The collection of available widgets and add-ons", "The hardware requirements", "The user manual"],
+        "answer": "The collection of available widgets and add-ons"
+      },
+      {
+        "question": "Which activity is part of data exploration in Orange?",
+        "options": ["Clustering/segmenting data", "Formatting a hard drive", "Writing a research paper", "Designing a logo"],
+        "answer": "Clustering/segmenting data"
+      },
+      {
+        "question": "What does Orange allow you to build on its canvas?",
+        "options": ["Web pages", "Workflows", "3D models", "Electrical circuits"],
+        "answer": "Workflows"
+      }
+    ]
+  }
+}

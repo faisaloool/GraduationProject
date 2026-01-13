@@ -1,0 +1,219 @@
+{
+  "document": "Transaction Processing concepts covering ACID properties, failure types, concurrency problems (lost update, temporary update, inconsistency), log structure, recovery states, and why concurrent execution is beneficial.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best describes a database transaction?",
+        "options": [
+          "A sequence of operations that may be interleaved with other transactions",
+          "An atomic, consistent, isolated and durable unit of work",
+          "Only read-only operations on the database",
+          "A program that runs without accessing the database"
+        ],
+        "answer": "An atomic, consistent, isolated and durable unit of work"
+      },
+      {
+        "question": "What does ACID’s Atomicity property guarantee?",
+        "options": [
+          "All changes made by a transaction are rolled back if any part fails",
+          "The transaction will not be visible to other transactions until it commits",
+          "All database operations happen at the same time",
+          "No updates are ever performed on the database"
+        ],
+        "answer": "All changes made by a transaction are rolled back if any part fails"
+      },
+      {
+        "question": "Consistency in a transaction ensures that:",
+        "options": [
+          "The sum of all balances remains unchanged after transfer operations",
+          "No two transactions update the same record simultaneously",
+          "Each transaction reads only old values from the database",
+          "All updates are immediately written to disk"
+        ],
+        "answer": "The sum of all balances remains unchanged after transfer operations"
+      },
+      {
+        "question": "Isolation requires that each transaction:",
+        "options": [
+          "Reads only its own writes and never reads others’ data",
+          "Executes entirely before any other transaction starts",
+          "Does not see intermediate states of concurrent transactions",
+          "Writes all changes to a log file first"
+        ],
+        "answer": "Does not see intermediate states of concurrent transactions"
+      },
+      {
+        "question": "Durability means that after a commit:",
+        "options": [
+          "All in‑memory buffers are cleared automatically",
+          "The database may be restored from its last backup only",
+          "Changes survive system crashes or failures",
+          "No further updates will occur on the database"
+        ],
+        "answer": "Changes survive system crashes or failures"
+      },
+      {
+        "question": "Which of these is NOT a type of failure that can affect transactions?",
+        "options": [
+          "System failure such as hardware crash",
+          "Transaction failure due to logical error",
+          "User interruption during execution",
+          "Network latency between two servers"
+        ],
+        "answer": "Network latency between two servers"
+      },
+      {
+        "question": "Lost update problem occurs when:",
+        "options": [
+          "Two transactions read the same record and write back a new value without considering each other’s changes",
+          "One transaction performs an update but never commits it",
+          "A transaction reads from a dirty page on disk",
+          "An aggregate function is computed over partially updated records"
+        ],
+        "answer": "Two transactions read the same record and write back a new value without considering each other’s changes"
+      },
+      {
+        "question": "Temporary update (dirty read) problem arises when:",
+        "options": [
+          "A transaction reads a record that has been updated but not yet committed",
+          "Two transactions run serially one after another",
+          "A transaction rolls back and restores old values immediately",
+          "The database writes to log before updating the disk"
+        ],
+        "answer": "A transaction reads a record that has been updated but not yet committed"
+      },
+      {
+        "question": "Inconsistency problem with an aggregate function is caused by:",
+        "options": [
+          "Concurrent updates altering records while sum is being calculated",
+          "A transaction writing only to the log file",
+          "Deadlock between two transactions",
+          "All transactions are serialized"
+        ],
+        "answer": "Concurrent updates altering records while sum is being calculated"
+      },
+      {
+        "question": "The recovery manager keeps track of which of these events?",
+        "options": [
+          "When each transaction starts and ends and whether it commits or aborts",
+          "Only the final commit time for all transactions",
+          "All user passwords for authentication",
+          "Which indexes are most frequently used"
+        ],
+        "answer": "When each transaction starts and ends and whether it commits or aborts"
+      },
+      {
+        "question": "A log record of type (Write_item, T, X, old_value, new_value) represents:",
+        "options": [
+          "The commit point for a transaction",
+          "An update made by transaction T to item X",
+          "A read operation performed by transaction T",
+          "A rollback request for transaction T"
+        ],
+        "answer": "An update made by transaction T to item X"
+      },
+      {
+        "question": "Which statement is true about the commit point in a log?",
+        "options": [
+          "It is when the transaction writes its final write operation to disk",
+          "It is written as a separate record after all other records of that transaction",
+          "It occurs only if the transaction has no update operations",
+          "It is the moment when the system logs the start of the transaction"
+        ],
+        "answer": "It is written as a separate record after all other records of that transaction"
+      },
+      {
+        "question": "An abort operation will:",
+        "options": [
+          "Commit all pending updates to the database",
+          "Undo changes made by the transaction before it commits",
+          "Write a new commit record to disk",
+          "Terminate the system immediately"
+        ],
+        "answer": "Undo changes made by the transaction before it commits"
+      },
+      {
+        "question": "A transaction that has been rolled back is in which state?",
+        "options": [
+          "Active",
+          "Committed",
+          "Aborted",
+          "Partially committed"
+        ],
+        "answer": "Aborted"
+      },
+      {
+        "question": "Concurrent execution of transactions is primarily allowed to:",
+        "options": [
+          "Increase the number of users in the system at all times",
+          "Improve throughput and resource utilisation while reducing response time",
+          "Guarantee that no transaction ever reads dirty data",
+          "Prevent deadlock from occurring"
+        ],
+        "answer": "Improve throughput and resource utilisation while reducing response time"
+      },
+      {
+        "question": "Which concurrency control technique ensures isolation by serializing transactions?",
+        "options": [
+          "Optimistic concurrency control",
+          "Timestamp ordering",
+          "Lock‑based serialisation",
+          "No locking at all"
+        ],
+        "answer": "Lock‑based serialisation"
+      },
+      {
+        "question": "Why is durability important in a database system?",
+        "options": [
+          "To allow the database to be backed up periodically",
+          "So that the transaction’s final changes are persistently stored even after failures",
+          "Because transactions never commit",
+          "It keeps the current page buffers free"
+        ],
+        "answer": "So that the transaction’s final changes are persistently stored even after failures"
+      },
+      {
+        "question": "Which of the following is a direct consequence of an abort?",
+        "options": [
+          "The database remains unchanged from its original state",
+          "All updates of a transaction become visible to others",
+          "A new commit record is written",
+          "The system starts a new transaction automatically"
+        ],
+        "answer": "The database remains unchanged from its original state"
+      },
+      {
+        "question": "Deadlock occurs when:",
+        "options": [
+          "Two transactions each hold a lock that the other needs",
+          "A transaction commits before its partner",
+          "All transactions are executed serially",
+          "Only one user is connected to the database"
+        ],
+        "answer": "Two transactions each hold a lock that the other needs"
+      },
+      {
+        "question": "Which statement best describes the purpose of a system log in recovery?",
+        "options": [
+          "To keep track of all users logged into system",
+          "To record changes made by each transaction for future recovery",
+          "To store database schema only",
+          "To list all tables and indexes"
+        ],
+        "answer": "To record changes made by each transaction for future recovery"
+      },
+      {
+        "question": "In a transaction that we can see the commit point is after:",
+        "options": [
+          "The final write operation of that transaction",
+          "All intermediate writes are stored in memory only",
+          "A large batch of operations before any log record",
+          "No one has scheduled time"
+
+        ],
+        "answer": "The final write operation of that transaction"
+      }
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "document": "The chapter explains relational database design concepts such as functional dependencies, anomalies, spurious tuples, the various normal forms (1NF–5NF, BCNF), multivalued dependencies, candidate keys, superkeys, lossless‑join decomposition and guidelines for avoiding NULLs.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best defines a functional dependency?",
+        "options": [
+          "A rule that states that every tuple must have a unique primary key",
+          "An arrow X → Y indicating that attribute Y is functionally determined by attribute X",
+          "A constraint that prevents null values in a column",
+          "The requirement that all foreign keys reference the primary key"
+        ],
+        "answer": "An arrow X → Y indicating that attribute Y is functionally determined by attribute X"
+      },
+      {
+        "question": "What is an example of a trivial functional dependency?",
+        "options": [
+          "A → B",
+          "AB → A",
+          "A → AB",
+          "B → C"
+        ],
+        "answer": "AB → A"
+      },
+      {
+        "question": "Which term describes an extra tuple that appears only because of a join operation?",
+        "options": [
+          "Null value",
+          "Spurious tuple",
+          "Anomaly",
+          "Redundancy"
+        ],
+        "answer": "Spurious tuple"
+      },
+      {
+        "question": "What anomaly occurs when deleting the department D890 and all employees in that department are lost?",
+        "options": [
+          "Insertion anomaly",
+          "Update anomaly",
+          "Deletion anomaly",
+          "NULL anomaly"
+        ],
+        "answer": "Deletion anomaly"
+      },
+      {
+        "question": "Which normal form eliminates transitive dependencies between non‑key attributes?",
+        "options": [
+          "First Normal Form (1NF)",
+          "Second Normal Form (2NF)",
+          "Third Normal Form (3NF)",
+          "Boyce‑Codd Normal Form (BCNF)"
+        ],
+        "answer": "Third Normal Form (3NF)"
+      },
+      {
+        "question": "In Boyce‑Codd Normal Form, every non‑trivial functional dependency X → Y must satisfy which condition?",
+        "options": [
+          "Y is a subset of X",
+          "X is a superkey for the relation",
+          "The FD is trivial",
+          "Both A and B are prime attributes"
+        ],
+        "answer": "X is a superkey for the relation"
+      },
+      {
+        "question": "Which type of dependency requires at least three attributes to exist?",
+        "options": [
+          "Functional dependency",
+          "Multivalued dependency",
+          "Partial dependency",
+          "Transitive dependency"
+        ],
+        "answer": "Multivalued dependency"
+      },
+      {
+        "question": "What does the closure of an attribute set compute?",
+        "options": [
+          "The list of all tables containing the attributes",
+          "The minimal key for the relation",
+          "All attributes functionally determined by that set",
+          "The number of tuples in a relation"
+        ],
+        "answer": "All attributes functionally determined by that set"
+      },
+      {
+        "question": "A candidate key is:",
+        "options": [
+          "Any superkey containing all attributes",
+          "A minimal superkey with no proper subset that is also a superkey",
+          "The primary key of the table",
+          "An attribute that can never be null"
+        ],
+        "answer": "A minimal superkey with no proper subset that is also a superkey"
+      },
+      {
+        "question": "What is required for a decomposition to be lossless‑join?",
+        "options": [
+          "The join must preserve all foreign keys",
+          "Every attribute appears in at least one subrelation",
+          "The natural join of the parts must equal the original relation",
+          "All subrelations must have the same primary key"
+        ],
+        "answer": "The natural join of the parts must equal the original relation"
+      },
+      {
+        "question": "Which anomaly is caused by updating a value that appears in more than one row?",
+        "options": [
+          "Insertion anomaly",
+          "Update anomaly",
+          "Deletion anomaly",
+          "Null anomaly"
+        ],
+        "answer": "Update anomaly"
+      },
+      {
+        "question": "A partial dependency exists when:",
+        "options": [
+          "An attribute functionally depends on the entire primary key",
+          "An attribute depends on a proper subset of a composite primary key",
+          "An attribute is determined by a non‑key attribute",
+          "All attributes are prime"
+        ],
+        "answer": "An attribute depends on a proper subset of a composite primary key"
+      },
+      {
+        "question": "Which normal form requires that every non‑prime attribute be fully functionally dependent on the candidate key?",
+        "options": [
+          "First Normal Form (1NF)",
+          "Second Normal Form (2NF)",
+          "Third Normal Form (3NF)",
+          "Boyce‑Codd Normal Form (BCNF)"
+        ],
+        "answer": "Second Normal Form (2NF)"
+      },
+      {
+        "question": "Which form is considered the highest level of normalization for most practical databases?",
+        "options": [
+          "First Normal Form (1NF)",
+          "Third Normal Form (3NF)",
+          "Boyce‑Codd Normal Form (BCNF)",
+          "Fifth Normal Form (5NF)"
+        ],
+        "answer": "Boyce‑Codd Normal Form (BCNF)"
+      },
+      {
+        "question": "What is the main purpose of avoiding attributes that frequently contain NULL values?",
+        "options": [
+          "To reduce storage overhead",
+          "To simplify foreign key constraints",
+          "To increase join performance",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "The algorithm for computing attribute closure repeatedly adds which type of information?",
+        "options": [
+          "Primary keys",
+          "Right‑hand side attributes of applicable FDs",
+          "All foreign keys in the schema",
+          "Null values"
+        ],
+        "answer": "Right-hand side attributes of applicable FDs"
+      },
+      {
+        "question": "Which rule suggests breaking up a table when two entities share the same primary key?",
+        "options": [
+          "Decomposition rule",
+          "Trivial dependency rule",
+          "Axiom rule",
+          "Partial dependency rule"
+        ],
+        "answer": "Decomposition rule"
+      }
+    ]
+  }
+}

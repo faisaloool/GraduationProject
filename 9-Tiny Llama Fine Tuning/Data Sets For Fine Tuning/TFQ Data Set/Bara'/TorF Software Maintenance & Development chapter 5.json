@@ -1,0 +1,88 @@
+{
+  "document": "Legacy Information Systems (LIS) are vital, large-scale systems that resist modification. This chapter covers LIS definitions, characteristics (such as being geriatric and poorly documented), and solutions like wrapping and migration. Wrapping techniques include forward/backward database wrappers, system service, application, and function wrappers, across five levels of encapsulation: process, transaction, progress, module, and procedure. [cite: 38, 39, 41, 42, 60, 86, 146]",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The Oxford English Dictionary defines legacy as anything handed down by an ancestor or predecessor. [cite: 34, 37]",
+        "answer": "True"
+      },
+      {
+        "question": "Brodie and Stonebraker define legacy systems as systems that easily adapt to changing business requirements. [cite: 38, 39]",
+        "answer": "False"
+      },
+      {
+        "question": "Bennett defines legacy software systems as large systems that are vital to an organization even if we don't know how to cope with them. [cite: 40, 41]",
+        "answer": "True"
+      },
+      {
+        "question": "A typical feature of a legacy system is that it contains millions of lines of code. [cite: 42, 43]",
+        "answer": "True"
+      },
+      {
+        "question": "Legacy systems are usually written in modern, cutting-edge programming languages. [cite: 42, 45]",
+        "answer": "False"
+      },
+      {
+        "question": "Legacy systems are characterized by a lack of consistent documentation. [cite: 42, 46]",
+        "answer": "True"
+      },
+      {
+       "question": "The data management in legacy systems is often based on flat-file structures. [cite: 42, 47]",
+        "answer": "True"
+      },
+      {
+        "question": "Legacy systems are considered easy to expand or modify. [cite: 42, 49]",
+        "answer": "False"
+      },
+      {
+       "question": "There are exactly six identified categories of solutions for legacy information systems. [cite: 59, 60]",
+        "answer": "True"
+      },
+      {
+        "question": "One solution for a legacy system is to 'Freeze' it. [cite: 60, 62]",
+        "answer": "True"
+      },
+      {
+        "question": "Wrapping a legacy system means rewriting its entire codebase from scratch. [cite: 78]",
+        "answer": "False"
+      },
+      {
+       "question": "A wrapper provides a new interface while hiding the complexity of the old component. [cite: 78]",
+        "answer": "True"
+      },
+      {
+        "question": "Encapsulation layers can communicate with legacy components through sockets or RPCs. [cite: 79]",
+        "answer": "True"
+      },
+      {
+        "question": "The forward wrapper (f-wrapper) approach involves migrating data first before developing new components. [cite: 94, 96]",
+        "answer": "False"
+      },
+      {
+        "question": "In the backward wrapper (b-wrapper) approach, legacy components access new data via wrappers. [cite: 96, 97]",
+        "answer": "True"
+      },
+      {
+        "question": "System service wrappers support customized access to routing, sorting, and printing. [cite: 128, 130]",
+        "answer": "True"
+      },
+      {
+        "question": "Function wrappers provide access to the full program rather than just specific parts. [cite: 135, 137, 138]",
+        "answer": "False"
+      },
+      {
+      "question": "There are five levels of granularity in encapsulation, with procedures at the lowest level. [cite: 146, 153]",
+        "answer": "True"
+      },
+      {
+        "question": "At the process level of encapsulation, a wrapper takes over output files to be forwarded to the client. [cite: 161, 163]",
+        "answer": "True"
+      },
+      {
+        "question": "At the transaction level, the wrapper is a program that simulates a user terminal. [cite: 164, 166]",
+        "answer": "True"
+      }
+    ]
+  }
+}

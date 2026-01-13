@@ -1,0 +1,203 @@
+{
+  "document": "Chapter4-MediumAccessControlSubLayer_part1.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary focus of the Medium Access Control (MAC) Sublayer?",
+        "options": [
+          "Determining the best route for packets through a subnet",
+          "Managing access to a shared communication medium among multiple users",
+          "Providing end-to-end reliable data delivery",
+          "Translating logical addresses into physical signal patterns"
+        ],
+        "answer": "Managing access to a shared communication medium among multiple users"
+      },
+      {
+        "question": "What is the primary challenge addressed by the Channel Allocation Problem?",
+        "options": [
+          "How to encrypt data on a point-to-point link",
+          "How to efficiently allocate a single shared channel among competing users",
+          "How to determine the physical location of a wireless host",
+          "How to synchronize the clocks of all nodes in a network"
+        ],
+        "answer": "How to efficiently allocate a single shared channel among competing users"
+      },
+      {
+        "question": "Which of the following describes the disadvantage of using static channel allocation for bursty traffic?",
+        "options": [
+          "It leads to excessive packet collisions",
+          "A user's assigned bandwidth may go unused while others are blocked",
+          "It requires a complex central controller",
+          "It increases the overhead of the frame header"
+        ],
+        "answer": "A user's assigned bandwidth may go unused while others are blocked"
+      },
+      {
+        "question": "What is the defining characteristic of the Pure ALOHA protocol?",
+        "options": [
+          "Users sense the carrier before transmitting",
+          "Users transmit frames whenever they have data to send",
+          "Users must wait for a specific time slot to transmit",
+          "A central controller assigns transmission rights"
+        ],
+        "answer": "Users transmit frames whenever they have data to send"
+      },
+      {
+        "question": "In Pure ALOHA, why must a station wait a random amount of time before retransmitting after a collision?",
+        "options": [
+          "To allow the receiver time to clear its buffer",
+          "To avoid repeated collisions with the same station",
+          "To give priority to lower-numbered stations",
+          "To synchronize with the start of the next time slot"
+        ],
+        "answer": "To avoid repeated collisions with the same station"
+      },
+      {
+        "question": "How does Slotted ALOHA improve upon the performance of Pure ALOHA?",
+        "options": [
+          "By implementing carrier sensing",
+          "By dividing time into discrete intervals and requiring transmissions to start at slot boundaries",
+          "By reducing the frame size to minimize collision probability",
+          "By using different frequencies for different stations"
+        ],
+        "answer": "By dividing time into discrete intervals and requiring transmissions to start at slot boundaries"
+      },
+      {
+        "question": "What is the fundamental difference between CSMA and the ALOHA protocols?",
+        "options": [
+          "CSMA uses sequence numbers for every frame",
+          "CSMA stations sense the channel (listen) before attempting to transmit",
+          "CSMA eliminates the need for acknowledgments",
+          "CSMA is only applicable to wired networks"
+        ],
+        "answer": "CSMA stations sense the channel (listen) before attempting to transmit"
+      },
+      {
+        "question": "In 1-persistent CSMA, what does a station do if it finds the channel is currently busy?",
+        "options": [
+          "Wait a random time and then sense the channel again",
+          "Continually sense the channel until it becomes idle, then transmit immediately",
+          "Transmit anyway with probability 'p'",
+          "Abort the transmission and notify the network layer"
+        ],
+        "answer": "Continually sense the channel until it becomes idle, then transmit immediately"
+      },
+      {
+        "question": "What is the primary advantage of CSMA with Collision Detection (CSMA/CD) over basic CSMA?",
+        "options": [
+          "It increases the transmission speed of the medium",
+          "Stations can abort transmission immediately upon detecting a collision, saving time and bandwidth",
+          "It allows multiple stations to transmit simultaneously without interference",
+          "It removes the requirement for a random backoff time"
+        ],
+        "answer": "Stations can abort transmission immediately upon detecting a collision, saving time and bandwidth"
+      },
+      {
+        "question": "Which popular networking technology is historically based on the CSMA/CD protocol?",
+        "options": ["Bluetooth", "Token Ring", "Ethernet", "Wi-Fi"],
+        "answer": "Ethernet"
+      },
+      {
+        "question": "In a bit-map protocol, what is the purpose of the contention slots that precede data transmission?",
+        "options": [
+          "To synchronize the bits of the upcoming frame",
+          "To allow stations to announce their intent to send data in a specific order",
+          "To detect and resolve hardware-level collisions",
+          "To exchange encryption keys for the session"
+        ],
+        "answer": "To allow stations to announce their intent to send data in a specific order"
+      },
+      {
+        "question": "What is the role of a 'Token' in a Token Ring network?",
+        "options": [
+          "It acts as a destination address for a frame",
+          "It represents the exclusive right to transmit on the medium",
+          "It is a special bit used for error correction",
+          "It is used to poll the base station for status updates"
+        ],
+        "answer": "It represents the exclusive right to transmit on the medium"
+      },
+      {
+        "question": "In a wireless network, what is the role of a 'Base Station' (e.g., an Access Point)?",
+        "options": [
+          "To provide power to mobile hosts",
+          "To relay packets between the wired infrastructure and wireless hosts",
+          "To encrypt all traffic at the application layer",
+          "To manage the physical movement of mobile devices"
+        ],
+        "answer": "To relay packets between the wired infrastructure and wireless hosts"
+      },
+      {
+        "question": "What is 'Multipath Propagation' in the context of wireless networking?",
+        "options": [
+          "The ability to send data over multiple different frequencies",
+          "Signals reflecting off obstacles and reaching the receiver at slightly different times",
+          "A node moving between multiple different base stations",
+          "Using multiple antennas to increase data rates"
+        ],
+        "answer": "Signals reflecting off obstacles and reaching the receiver at slightly different times"
+      },
+      {
+        "question": "Which problem occurs in wireless networks when a station cannot sense another station that is currently transmitting to the same receiver?",
+        "options": [
+          "Exposed Terminal Problem",
+          "Hidden Terminal Problem",
+          "Multipath Fading",
+          "Capture Effect"
+        ],
+        "answer": "Hidden Terminal Problem"
+      },
+      {
+        "question": "In the IEEE 802.11 (Wi-Fi) standard, which coordination function is contention-based and mandatory for all stations?",
+        "options": [
+          "Point Coordination Function (PCF)",
+          "Distributed Coordination Function (DCF)",
+          "Logical Link Control (LLC)",
+          "Binary Exponential Backoff"
+        ],
+        "answer": "Distributed Coordination Function (DCF)"
+      },
+      {
+        "question": "How do the RTS (Request to Send) and CTS (Clear to Send) frames help solve the hidden terminal problem?",
+        "options": [
+          "They increase the signal strength of the transmitter",
+          "They reserve the channel by notifying all stations within range of both the sender and receiver",
+          "They eliminate the need for acknowledgments (ACKs)",
+          "They encrypt the data so collisions do not matter"
+        ],
+        "answer": "They reserve the channel by notifying all stations within range of both the sender and receiver"
+      },
+      {
+        "question": "What does the Network Allocation Vector (NAV) represent in 802.11?",
+        "options": [
+          "A physical list of all active nodes",
+          "A virtual carrier-sensing mechanism indicating how long the channel will be busy",
+          "The routing table for the wireless subnet",
+          "The unique MAC address of the Access Point"
+        ],
+        "answer": "A virtual carrier-sensing mechanism indicating how long the channel will be busy"
+      },
+      {
+        "question": "Why is fragmentation used in 802.11 wireless networks?",
+        "options": [
+          "To allow packets to fit into smaller switch buffers",
+          "To reduce the probability of a transmission error ruining an entire large packet",
+          "To enable multicast delivery to diverse devices",
+          "To bypass the need for RTS/CTS handshaking"
+        ],
+        "answer": "To reduce the probability of a transmission error ruining an entire large packet"
+      },
+      {
+        "question": "Which Interframe Space (IFS) provides the highest priority for access to the medium in 802.11?",
+        "options": [
+          "SIFS (Short IFS)",
+          "PIFS (PCF IFS)",
+          "DIFS (DCF IFS)",
+          "EIFS (Extended IFS)"
+        ],
+        "answer": "SIFS (Short IFS)"
+      }
+    ]
+  }
+}

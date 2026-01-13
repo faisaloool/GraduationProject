@@ -1,0 +1,318 @@
+{
+  "document": "Chapter_1_Introduction.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "Where did the concept of internetworking originate?",
+        "options": [
+          "US Dept of Defense Advanced Research Project Agency (ARPA)",
+          "Harvard University",
+          "Massachusetts Institute of Technology (MIT)",
+          "Stanford University"
+        ],
+        "answer": "US Dept of Defense Advanced Research Project Agency (ARPA)"
+      },
+      {
+        "question": "What was the primary reason for the development of internetworking?",
+        "options": [
+          "To create social media platforms",
+          "To share information and have remote access to data among researchers and scientists",
+          "To develop online gaming",
+          "To facilitate e-commerce"
+        ],
+        "answer": "To share information and have remote access to data among researchers and scientists"
+      },
+      {
+        "question": "What is a computer network?",
+        "options": [
+          "A collection of devices that can store and manipulate electronic data",
+          "A single computer system",
+          "A type of software application",
+          "A hardware component"
+        ],
+        "answer": "A collection of devices that can store and manipulate electronic data"
+      },
+      {
+        "question": "Which of the following is a benefit of computer networking?",
+        "options": [
+          "Powerful, flexible collaboration",
+          "Increased hardware costs",
+          "Limited resource sharing",
+          "Decreased software availability"
+        ],
+        "answer": "Powerful, flexible collaboration"
+      },
+      {
+        "question": "What type of resources can be shared in a computer network?",
+        "options": [
+          "Physical resources like printers and scanners",
+          "Only software resources",
+          "Only hardware resources",
+          "Neither hardware nor software resources"
+        ],
+        "answer": "Physical resources like printers and scanners"
+      },
+      {
+        "question": "Which of the following is an example of a logical resource in a computer network?",
+        "options": ["Databases", "Printers", "Scanners", "CD-ROM drives"],
+        "answer": "Databases"
+      },
+      {
+        "question": "Which type of computer only provides network resources?",
+        "options": [
+          "Client Computer",
+          "Peer Computer",
+          "Server Computer",
+          "Hybrid Computer"
+        ],
+        "answer": "Server Computer"
+      },
+      {
+        "question": "What role does a Peer Computer perform in a network?",
+        "options": [
+          "Only uses network resources",
+          "Only provides network resources",
+          "Uses and provides network resources",
+          "Manages network security"
+        ],
+        "answer": "Uses and provides network resources"
+      },
+      {
+        "question": "How can networks be classified based on the role of computers?",
+        "options": [
+          "By geographical location",
+          "By the type of resources they manage",
+          "By the speed of the network",
+          "By the operating system used"
+        ],
+        "answer": "By the type of resources they manage"
+      },
+      {
+        "question": "What is a characteristic of Peer-to-Peer Networks?",
+        "options": [
+          "They rely on a central server for communication.",
+          "They allow direct communication between computers without a central server.",
+          "They are more expensive than client-server networks.",
+          "They require specialized server hardware."
+        ],
+        "answer": "They allow direct communication between computers without a central server."
+      },
+      {
+        "question": "Which of the following is an example of a Peer-to-Peer Network?",
+        "options": [
+          "Corporate email servers",
+          "File Sharing Networks",
+          "Cloud storage services",
+          "Online banking systems"
+        ],
+        "answer": "File Sharing Networks"
+      },
+      {
+        "question": "What describes the relationship between two computer programs in a client-server network?",
+        "options": [
+          "Multiple servers connecting to a single client",
+          "Multiple clients connecting to a single server",
+          "Peer-to-peer communication",
+          "Decentralized network"
+        ],
+        "answer": "Multiple clients connecting to a single server"
+      },
+      {
+        "question": "What is an advantage of a client-server network?",
+        "options": [
+          "Lax network security",
+          "Practical for intensive file transfer",
+          "Provides powerful and secure communication",
+          "Easy to increase the number of workstations"
+        ],
+        "answer": "Provides powerful and secure communication"
+      },
+      {
+        "question": "Which type of network is easier to administer compared to a peer-to-peer network?",
+        "options": [
+          "Client-server network",
+          "Peer-to-peer network",
+          "Mesh network",
+          "Ring network"
+        ],
+        "answer": "Client-server network"
+      },
+      {
+        "question": "How are servers typically structured in a network?",
+        "options": [
+          "They perform all network functions without specialization.",
+          "They have specific roles to support the network’s objectives.",
+          "They are identical to workstations in functionality.",
+          "They do not interact with other network devices."
+        ],
+        "answer": "They have specific roles to support the network’s objectives."
+      },
+      {
+        "question": "Which of the following is NOT a type of computer network?",
+        "options": [
+          "Personal Area Network (PAN)",
+          "Local Area Network (LAN)",
+          "Metropolitan Area Network (MAN)",
+          "Personal Computer Network (PCN)"
+        ],
+        "answer": "Personal Computer Network (PCN)"
+      },
+      {
+        "question": "What does PAN stand for in computer networking?",
+        "options": [
+          "Public Access Network",
+          "Personal Area Network",
+          "Private Area Network",
+          "Protocol Area Network"
+        ],
+        "answer": "Personal Area Network"
+      },
+      {
+        "question": "Which technology is an example of a wireless PAN?",
+        "options": ["Ethernet", "Bluetooth", "Wi-Fi", "Fiber Optics"],
+        "answer": "Bluetooth"
+      },
+      {
+        "question": "Which standard is commonly used for Wireless LANs?",
+        "options": ["802.3", "802.11", "802.15", "802.16"],
+        "answer": "802.11"
+      },
+      {
+        "question": "What technology is commonly used for Wired LANs?",
+        "options": ["Bluetooth", "Switched Ethernet", "Wi-Fi", "Fiber Optics"],
+        "answer": "Switched Ethernet"
+      },
+      {
+        "question": "What is the main structuring method used to divide up network functionality?",
+        "options": [
+          "Protocol layering",
+          "Data encapsulation",
+          "Network segmentation",
+          "Packet switching"
+        ],
+        "answer": "Protocol layering"
+      },
+      {
+        "question": "Which model is known for its protocol layering approach?",
+        "options": ["TCP/IP Model", "OSI Model", "Ethernet Model", "FTP Model"],
+        "answer": "OSI Model"
+      },
+      {
+        "question": "In protocol layering, how does each protocol instance communicate with its peer?",
+        "options": [
+          "Directly via physical connection",
+          "Virtually",
+          "Through a central server",
+          "Using shared memory"
+        ],
+        "answer": "Virtually"
+      },
+      {
+        "question": "How do layers communicate with each other in a protocol stack?",
+        "options": [
+          "Each layer communicates directly with all other layers",
+          "Each layer communicates only by using the one below",
+          "Layers communicate via a central hub",
+          "Layers do not communicate with each other"
+        ],
+        "answer": "Each layer communicates only by using the one below"
+      },
+      {
+        "question": "What does each lower layer add to the message before transmission?",
+        "options": [
+          "A footer with control information",
+          "A header with control information",
+          "A checksum for error detection",
+          "A timestamp for synchronization"
+        ],
+        "answer": "A header with control information"
+      },
+      {
+        "question": "Which of the following is an example of protocol layers mentioned in the text?",
+        "options": [
+          "The client-server architecture",
+          "The philosopher-translator-secretary architecture",
+          "The peer-to-peer architecture",
+          "The bus topology architecture"
+        ],
+        "answer": "The philosopher-translator-secretary architecture"
+      },
+      {
+        "question": "What does the term 'open' in Open Systems Interconnection (OSI) denote?",
+        "options": [
+          "The ability to connect any two systems",
+          "The ability to modify the model",
+          "The ability to use proprietary systems",
+          "The ability to restrict access"
+        ],
+        "answer": "The ability to connect any two systems"
+      },
+      {
+        "question": "Which organization established a committee in 1977 to develop an architecture for computer communication?",
+        "options": ["IEEE", "ISO", "ANSI", "ITU"],
+        "answer": "ISO"
+      },
+      {
+        "question": "How many layers does the OSI reference model divide the problem of moving information between computers into?",
+        "options": ["Five", "Six", "Seven", "Eight"],
+        "answer": "Seven"
+      },
+      {
+        "question": "Which layers of the OSI model are primarily concerned with the flow of data?",
+        "options": [
+          "Application, Presentation, Session, Transport",
+          "Transport, Network, Data Link, Physical",
+          "Network, Data Link, Physical, Application",
+          "Session, Transport, Network, Data Link"
+        ],
+        "answer": "Transport, Network, Data Link, Physical"
+      },
+      {
+        "question": "What happens to data as it moves down the OSI layers before network transit?",
+        "options": [
+          "It is decrypted",
+          "It is encapsulated with protocol information",
+          "It is compressed",
+          "It is fragmented"
+        ],
+        "answer": "It is encapsulated with protocol information"
+      },
+      {
+        "question": "What is the purpose of headers in network communication?",
+        "options": [
+          "To encrypt the message",
+          "To provide layer-specific information about the functions carried out",
+          "To compress the data for transmission",
+          "To authenticate the sender"
+        ],
+        "answer": "To provide layer-specific information about the functions carried out"
+      },
+      {
+        "question": "What is a key difference between connection-oriented and connectionless communication?",
+        "options": [
+          "Connection-oriented allows resending data on error, while connectionless does not",
+          "Connectionless has higher overhead than connection-oriented",
+          "Connection-oriented does not require acknowledgment from the receiver",
+          "Connectionless communication is always slower"
+        ],
+        "answer": "Connection-oriented allows resending data on error, while connectionless does not"
+      },
+      {
+        "question": "Which type of communication is more reliable?",
+        "options": [
+          "Connection-oriented communication",
+          "Connectionless communication",
+          "Both are equally reliable",
+          "Neither is reliable"
+        ],
+        "answer": "Connection-oriented communication"
+      },
+      {
+        "question": "Which communication type establishes a dedicated path before data transfer?",
+        "options": ["Connectionless", "Connection-oriented", "Both", "Neither"],
+        "answer": "Connection-oriented"
+      }
+    ]
+  }
+}

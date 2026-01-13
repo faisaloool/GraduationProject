@@ -1,0 +1,612 @@
+{
+  "document": "Ch4_ Intellectual Property.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Intellectual property rights include protections for software.",
+        "answer": "true"
+      },
+      {
+        "question": "Fair use allows unlimited copying of intellectual property.",
+        "answer": "false"
+      },
+      {
+        "question": "Creating the first copy of intellectual property is costly.",
+        "answer": "true"
+      },
+      {
+        "question": "Duplicates of intellectual property cost almost nothing.",
+        "answer": "true"
+      },
+      {
+        "question": "Illegal copying of intellectual property is not pervasive on the internet.",
+        "answer": "false"
+      },
+      {
+        "question": "Open-source software is not protected by intellectual property rights.",
+        "answer": "false"
+      },
+      {
+        "question": "Peer-to-peer networks are always used for illegal copying.",
+        "answer": "false"
+      },
+      {
+        "question": "Intellectual property refers to any unique product of the human intellect that has commercial value.",
+        "answer": "true"
+      },
+      {
+        "question": "Books, songs, and movies are examples of intellectual property.",
+        "answer": "true"
+      },
+      {
+        "question": "Paintings and drawings are not considered intellectual property.",
+        "answer": "false"
+      },
+      {
+        "question": "Inventions and chemical formulas are examples of intellectual property.",
+        "answer": "true"
+      },
+      {
+        "question": "Intellectual property only includes ideas and not their physical manifestations.",
+        "answer": "false"
+      },
+      {
+        "question": "People have a right to property in their own person.",
+        "answer": "true"
+      },
+      {
+        "question": "People have a right to their own labor.",
+        "answer": "true"
+      },
+      {
+        "question": "People have a right to things which they remove from Nature through their labor, such as cutting wood-logs.",
+        "answer": "true"
+      },
+      {
+        "question": "If two people write the same play, both can own it.",
+        "answer": "false"
+      },
+      {
+        "question": "Every intellectual property is one-of-a-kind.",
+        "answer": "true"
+      },
+      {
+        "question": "Copying an intellectual property is the same as stealing a physical object.",
+        "answer": "false"
+      },
+      {
+        "question": "Some people are altruistic; some are not.",
+        "answer": "true"
+      },
+      {
+        "question": "People cannot benefit from having ownership of their ideas.",
+        "answer": "false"
+      },
+      {
+        "question": "Attraction of wealth can be an incentive for work.",
+        "answer": "true"
+      },
+      {
+        "question": "Giving creators rights to their inventions discourages creativity.",
+        "answer": "false"
+      },
+      {
+        "question": "Society benefits most when inventions are in the public domain.",
+        "answer": "true"
+      },
+      {
+        "question": "Congress has not struck a compromise regarding intellectual property protection.",
+        "answer": "false"
+      },
+      {
+        "question": "The authors of the U.S. Constitution recognized the benefits of limited intellectual property protection.",
+        "answer": "true"
+      },
+      {
+        "question": "Trade secrets are public information that companies share to gain a competitive advantage.",
+        "answer": "false"
+      },
+      {
+        "question": "Copyrights provide exclusive rights for novels for a limited period of time.",
+        "answer": "true"
+      },
+      {
+        "question": "Trademarks are not considered a form of intellectual property protection.",
+        "answer": "false"
+      },
+      {
+        "question": "Patents are a type of intellectual property protection.",
+        "answer": "true"
+      },
+      {
+        "question": "Trade secrets can include formulas, customer lists, and strategic plans.",
+        "answer": "true"
+      },
+      {
+        "question": "Trade secrets are suitable for all types of intellectual properties, including movies.",
+        "answer": "false"
+      },
+      {
+        "question": "Reverse engineering a product like Coca-Cola to figure out its formula is illegal.",
+        "answer": "false"
+      },
+      {
+        "question": "Trade secrets may be compromised when employees leave the firm.",
+        "answer": "true"
+      },
+      {
+        "question": "A trademark is given by a government to identify a distinctive product.",
+        "answer": "true"
+      },
+      {
+        "question": "A trademark can only be represented by a word and not by a symbol or picture.",
+        "answer": "false"
+      },
+      {
+        "question": "A service mark identifies products.",
+        "answer": "false"
+      },
+      {
+        "question": "A company can establish a brand name.",
+        "answer": "true"
+      },
+      {
+        "question": "Trademarks expire after a certain period.",
+        "answer": "false"
+      },
+      {
+        "question": "If a brand name becomes a common noun, the trademark may be lost.",
+        "answer": "true"
+      },
+      {
+        "question": "Companies advertise to protect their trademarks by using verbs and nouns.",
+        "answer": "false"
+      },
+      {
+        "question": "Companies protect trademarks by contacting those who misuse them.",
+        "answer": "true"
+      },
+      {
+        "question": "A patent is a secret invention.",
+        "answer": "false"
+      },
+      {
+        "question": "A patent provides the owner with exclusive rights to the invention.",
+        "answer": "true"
+      },
+      {
+        "question": "The exclusive rights granted by a patent last for 10 years.",
+        "answer": "false"
+      },
+      {
+        "question": "After the patent expires, anyone can make use of the idea.",
+        "answer": "true"
+      },
+      {
+        "question": "The Polaroid vs Kodak case is an example related to instant photography.",
+        "answer": "true"
+      },
+      {
+        "question": "Copyright provides the owner of an original work with three rights.",
+        "answer": "false"
+      },
+      {
+        "question": "One of the rights granted by copyright is the right to reproduce the work.",
+        "answer": "true"
+      },
+      {
+        "question": "Distribution of copies of the work to the public is not a right granted by copyright.",
+        "answer": "false"
+      },
+      {
+        "question": "Public display of copies of the work is one of the rights granted by copyright.",
+        "answer": "true"
+      },
+      {
+        "question": "Public performance is an example of copyright protection.",
+        "answer": "true"
+      },
+      {
+        "question": "Production of derivative works does not require permission from the copyright holder.",
+        "answer": "false"
+      },
+      {
+        "question": "Copyright protection has decreased since 1970.",
+        "answer": "false"
+      },
+      {
+        "question": "Fair use allows reproduction of copyrighted works without permission under certain conditions.",
+        "answer": "true"
+      },
+      {
+        "question": "Citing short excerpts for news reporting is considered fair use.",
+        "answer": "true"
+      },
+      {
+        "question": "Educational use is permissible under fair use, but commercial use is not.",
+        "answer": "true"
+      },
+      {
+        "question": "Fiction works are always preferred over nonfiction works under fair use.",
+        "answer": "false"
+      },
+      {
+        "question": "Fair use allows copying brief excerpts of a work but not the entire work.",
+        "answer": "true"
+      },
+      {
+        "question": "Using out-of-print works is not permissible under fair use.",
+        "answer": "false"
+      },
+      {
+        "question": "Copying from vinyl records to cassette tapes introduced distortions in the audio quality.",
+        "answer": "true"
+      },
+      {
+        "question": "The introduction of compact discs (CDs) was cheaper to produce than vinyl records.",
+        "answer": "true"
+      },
+      {
+        "question": "CDs offer lower quality compared to vinyl records.",
+        "answer": "false"
+      },
+      {
+        "question": "Companies charged higher prices for CDs, leading to higher profits.",
+        "answer": "true"
+      },
+      {
+        "question": "It is impossible to make a perfect copy of a CD.",
+        "answer": "false"
+      },
+      {
+        "question": "Digital Rights Management (DRM) includes encrypting digital content.",
+        "answer": "true"
+      },
+      {
+        "question": "Digital marking in DRM prevents devices from recognizing content as copy-protected.",
+        "answer": "false"
+      },
+      {
+        "question": "Criticisms of Digital Rights Management (DRM) focus on its technological limitations.",
+        "answer": "true"
+      },
+      {
+        "question": "DRM reduces fair use.",
+        "answer": "true"
+      },
+      {
+        "question": "DRM could increase competition.",
+        "answer": "false"
+      },
+      {
+        "question": "Some schemes make unknown access impossible.",
+        "answer": "true"
+      },
+      {
+        "question": "Media Player tracks the contents the users view.",
+        "answer": "true"
+      },
+      {
+        "question": "Peer-to-peer networks connect computers running different networking programs.",
+        "answer": "false"
+      },
+      {
+        "question": "Computers in a P2P network can access files stored on each other’s hard drives.",
+        "answer": "true"
+      },
+      {
+        "question": "P2P networks restrict data exchange between users.",
+        "answer": "false"
+      },
+      {
+        "question": "Napster began operation in 1999.",
+        "answer": "true"
+      },
+      {
+        "question": "Napster was sued by the RIAA for copyright violations.",
+        "answer": "true"
+      },
+      {
+        "question": "The courts ruled in favor of Napster in the lawsuit filed by the RIAA.",
+        "answer": "false"
+      },
+      {
+        "question": "Napster is a peer-to-peer music exchange network.",
+        "answer": "true"
+      },
+      {
+        "question": "Napster is still operational today.",
+        "answer": "false"
+      },
+      {
+        "question": "BitTorrent re-emerged in 2003 as a subscription music service.",
+        "answer": "false"
+      },
+      {
+        "question": "BitTorrent speeds up downloading by breaking files into pieces.",
+        "answer": "true"
+      },
+      {
+        "question": "In BitTorrent, all pieces of a file are downloaded from a single computer.",
+        "answer": "false"
+      },
+      {
+        "question": "BitTorrent is commonly used for downloading large files like movies and TV shows.",
+        "answer": "true"
+      },
+      {
+        "question": "Broadband connections typically upload faster than they download.",
+        "answer": "false"
+      },
+      {
+        "question": "BitTorrent is a peer-to-peer file transfer protocol.",
+        "answer": "true"
+      },
+      {
+        "question": "In 2003, the RIAA sued four students for distributing copyrighted music.",
+        "answer": "true"
+      },
+      {
+        "question": "The RIAA settled the lawsuit for $100 billion.",
+        "answer": "false"
+      },
+      {
+        "question": "Universities are hotspots for file sharing.",
+        "answer": "true"
+      },
+      {
+        "question": "High-speed Internet access is not a factor in file sharing at universities.",
+        "answer": "false"
+      },
+      {
+        "question": "The RIAA lawsuit against the students was settled for $50,000.",
+        "answer": "true"
+      },
+      {
+        "question": "Banning file-sharing is one of the methods mentioned to address music piracy.",
+        "answer": "true"
+      },
+      {
+        "question": "Legal music services like Napster offer free downloads without any fees.",
+        "answer": "false"
+      },
+      {
+        "question": "Apple’s iTunes Music Store is mentioned as a leading service for legal music downloads.",
+        "answer": "true"
+      },
+      {
+        "question": "Copyright protection for software began in 1964.",
+        "answer": "true"
+      },
+      {
+        "question": "The expression of an idea is protected by copyright, not the idea itself.",
+        "answer": "true"
+      },
+      {
+        "question": "The implementation of a DBMS is protected by copyright, but the concept of a DBMS is not.",
+        "answer": "true"
+      },
+      {
+        "question": "Source code is typically distributed to the public by software companies.",
+        "answer": "false"
+      },
+      {
+        "question": "Companies usually deliver executable files (.exe) rather than source code to protect trade secrets.",
+        "answer": "true"
+      },
+      {
+        "question": "Copying a program to give or sell to someone else is a violation of software copyright.",
+        "answer": "true"
+      },
+      {
+        "question": "Preloading a program onto the hard disk of a computer being sold is not a copyright violation.",
+        "answer": "false"
+      },
+      {
+        "question": "Distributing a program without permission is a violation of software copyright.",
+        "answer": "true"
+      },
+      {
+        "question": "Reverse engineering is a safe software development practice.",
+        "answer": "false"
+      },
+      {
+        "question": "Companies must protect against unconscious copying of programs.",
+        "answer": "true"
+      },
+      {
+        "question": "The 'clean room' software development strategy involves only one team.",
+        "answer": "false"
+      },
+      {
+        "question": "Team 1 in the 'clean room' strategy writes specifications based on competitors' programs.",
+        "answer": "true"
+      },
+      {
+        "question": "Open-source software is a consequence of proprietary software.",
+        "answer": "false"
+      },
+      {
+        "question": "Copyright laws were created in an era with difficulties in making copies.",
+        "answer": "true"
+      },
+      {
+        "question": "Copyrights currently serve to promote progress effectively.",
+        "answer": "false"
+      },
+      {
+        "question": "Copyrights primarily make authors wealthy.",
+        "answer": "false"
+      },
+      {
+        "question": "It is wrong to allow someone to 'own' a piece of intellectual property.",
+        "answer": "true"
+      },
+      {
+        "question": "Cooperation is more important than copyright.",
+        "answer": "true"
+      },
+      {
+        "question": "Open-source software must always be given away for free.",
+        "answer": "false"
+      },
+      {
+        "question": "Open-source software allows others to modify the source code.",
+        "answer": "true"
+      },
+      {
+        "question": "There are restrictions on how people can use open-source software.",
+        "answer": "false"
+      },
+      {
+        "question": "New versions of open-source programs appear less frequently than proprietary software.",
+        "answer": "false"
+      },
+      {
+        "question": "Open-source software eliminates tension between developers and users.",
+        "answer": "true"
+      },
+      {
+        "question": "Programs belong to entire community.",
+        "answer": "true"
+      },
+      {
+        "question": "Shifts focus from manufacturing to service.",
+        "answer": "true"
+      },
+      {
+        "question": "Buying Open Source SW with easy installation steps.",
+        "answer": "false"
+      },
+      {
+        "question": "Providing great manuals.",
+        "answer": "true"
+      },
+      {
+        "question": "Providing support after sales.",
+        "answer": "true"
+      },
+      {
+        "question": "BIND gives DNS for entire Internet.",
+        "answer": "true"
+      },
+      {
+        "question": "d tools aims to be 100% standards-compliant and is intended to serve as a reference architecture for DNS software.",
+        "answer": "true"
+      },
+      {
+        "question": "Apache runs half of Web servers.",
+        "answer": "true"
+      },
+      {
+        "question": "Send mail refers to moving e-mail via the internet.",
+        "answer": "true"
+      },
+      {
+        "question": "GNU compilers support languages such as C, C++, Objective-C, Fortran, Java, and Ada.",
+        "answer": "true"
+      },
+      {
+        "question": "Zope is a proprietary web application server.",
+        "answer": "false"
+      },
+      {
+        "question": "Zope is written in the Python programming language.",
+        "answer": "true"
+      },
+      {
+        "question": "Linux is an open-source operating system.",
+        "answer": "true"
+      },
+      {
+        "question": "The text discusses the impact of open-source software.",
+        "answer": "true"
+      },
+      {
+        "question": "Linux is putting pressure on companies selling proprietary versions of Unix.",
+        "answer": "true"
+      },
+      {
+        "question": "Linux is putting pressure on Microsoft and Apple desktops.",
+        "answer": "true"
+      },
+      {
+        "question": "The cost for proprietary operating systems is increasing due to Linux.",
+        "answer": "false"
+      },
+      {
+        "question": "Without attracting a critical mass of developers, open-source software quality can be poor.",
+        "answer": "true"
+      },
+      {
+        "question": "Without an 'owner,' incompatible versions of open-source software may arise.",
+        "answer": "true"
+      },
+      {
+        "question": "Independent groups of users make enhancements, leading to many compatible versions.",
+        "answer": "false"
+      },
+      {
+        "question": "Open-source software typically has a strong graphical user interface.",
+        "answer": "false"
+      },
+      {
+        "question": "Poor mechanisms are a common critique of the open-source software movement.",
+        "answer": "true"
+      },
+      {
+        "question": "Companies will spend billions on new programs.",
+        "answer": "false"
+      },
+      {
+        "question": "Software licenses typically prevent you from making copies of software to sell or give away.",
+        "answer": "true"
+      },
+      {
+        "question": "Software licenses are legal agreements.",
+        "answer": "true"
+      },
+      {
+        "question": "The text discusses the morality of breaking the law.",
+        "answer": "false"
+      },
+      {
+        "question": "The text discusses whether society should give intellectual property protection to software.",
+        "answer": "true"
+      },
+      {
+        "question": "Copying software reduces software purchases.",
+        "answer": "true"
+      },
+      {
+        "question": "Copying software leads to more income for software makers.",
+        "answer": "false"
+      },
+      {
+        "question": "The open-source movement demonstrates that many people are willing to give their software-writing skills.",
+        "answer": "true"
+      },
+      {
+        "question": "The hardware industry wants to hinder the software industry.",
+        "answer": "false"
+      },
+      {
+        "question": "All who get free copies of software can afford to buy it.",
+        "answer": "false"
+      },
+      {
+        "question": "Ty would be harmed if certain software packages were not released.",
+        "answer": "true"
+      },
+      {
+        "question": "The number of software packages released determines the harm to Ty.",
+        "answer": "false"
+      },
+      {
+        "question": "The potential uses of software packages are irrelevant to Ty's harm.",
+        "answer": "false"
+      }
+    ]
+  }
+}

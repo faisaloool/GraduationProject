@@ -1,0 +1,432 @@
+{
+  "document": "Ch5_ network.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Networking increases a computer's utility.",
+        "answer": "true"
+      },
+      {
+        "question": "The Internet connects only thousands of computers.",
+        "answer": "false"
+      },
+      {
+        "question": "Email messages are embedded in files transferred between computers.",
+        "answer": "true"
+      },
+      {
+        "question": "An email address uniquely identifies a cyberspace mailbox.",
+        "answer": "true"
+      },
+      {
+        "question": "Email messages are broken into packets.",
+        "answer": "true"
+      },
+      {
+        "question": "Routers transfer packets from the sender’s mail server to the receiver’s mail server.",
+        "answer": "true"
+      },
+      {
+        "question": "The network utility grows as the number of users squared.",
+        "answer": "true"
+      },
+      {
+        "question": "As the number of people grows, the network may suffer overload.",
+        "answer": "true"
+      },
+      {
+        "question": "People may act irresponsibly on the network.",
+        "answer": "true"
+      },
+      {
+        "question": "The amount of email that is spam was 8% in 2001.",
+        "answer": "true"
+      },
+      {
+        "question": "Spam became less effective over the years.",
+        "answer": "false"
+      },
+      {
+        "question": "Sending spam emails is more expensive than traditional junk mail.",
+        "answer": "false"
+      },
+      {
+        "question": "Spam can be profitable even if only 1 in 100,000 recipients buys the product.",
+        "answer": "true"
+      },
+      {
+        "question": "Firms get email addresses only through opt-in lists.",
+        "answer": "false"
+      },
+      {
+        "question": "Viruses gather email addresses from PCs address books.",
+        "answer": "true"
+      },
+      {
+        "question": "Dictionary attacks are not used by spammers.",
+        "answer": "false"
+      },
+      {
+        "question": "Spammers seek privacy using bots and zombies.",
+        "answer": "true"
+      },
+      {
+        "question": "Changing email and IP addresses helps mask the sending machine.",
+        "answer": "true"
+      },
+      {
+        "question": "Spam blockers attempt to screen out spam by blocking suspicious subject lines.",
+        "answer": "true"
+      },
+      {
+        "question": "Capturing another insecure system is not used as a spam launch pad.",
+        "answer": "false"
+      },
+      {
+        "question": "Does Trend Micro maintain a Blackhole List of IP addresses known for sending spam?",
+        "answer": "true"
+      },
+      {
+        "question": "Does Trend Micro provide the Blackhole List for free to all organizations?",
+        "answer": "false"
+      },
+      {
+        "question": "Can unsecured mail servers be mistakenly added to the Blackhole List?",
+        "answer": "true"
+      },
+      {
+        "question": "Is the Blackhole List only used to block email from known spammers?",
+        "answer": "false"
+      },
+      {
+        "question": "Does Trend Micro contact marketers who violate email standards?",
+        "answer": "true"
+      },
+      {
+        "question": "Senders and receivers derive equal benefit from emails.",
+        "answer": "false"
+      },
+      {
+        "question": "Blacklisting will reduce the benefits of internet utility as a whole.",
+        "answer": "true"
+      },
+      {
+        "question": "Innocent users are used as a means for an end in Kantian evaluation.",
+        "answer": "true"
+      },
+      {
+        "question": "Requiring an explicit opt-in of subscribers is a proposed solution to the spam epidemic.",
+        "answer": "true"
+      },
+      {
+        "question": "Requiring labeling of email advertisements is not a proposed solution to the spam epidemic.",
+        "answer": "false"
+      },
+      {
+        "question": "Email messages are practically free.",
+        "answer": "true"
+      },
+      {
+        "question": "Profits decrease with the number of messages sent.",
+        "answer": "false"
+      },
+      {
+        "question": "The internet design allows unfair, one-way communications.",
+        "answer": "true"
+      },
+      {
+        "question": "The Web is centralized.",
+        "answer": "false"
+      },
+      {
+        "question": "Every Web object has a unique address.",
+        "answer": "true"
+      },
+      {
+        "question": "A central authority is needed to control the Web.",
+        "answer": "false"
+      },
+      {
+        "question": "The web is based on the Internet.",
+        "answer": "true"
+      },
+      {
+        "question": "A wiki is a type of website that does not allow editing by multiple users.",
+        "answer": "false"
+      },
+      {
+        "question": "Blogs are typically maintained by individuals with regular entries of commentary.",
+        "answer": "true"
+      },
+      {
+        "question": "The web does not require browsers to access content.",
+        "answer": "false"
+      },
+      {
+        "question": "Shopping is one of the ways people use the web.",
+        "answer": "true"
+      },
+      {
+        "question": "E-commerce is one of the uses of the internet mentioned in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "Everyone in the world has Internet access according to the text.",
+        "answer": "false"
+      },
+      {
+        "question": "Saudi Arabia has a decentralized control center for internet access.",
+        "answer": "false"
+      },
+      {
+        "question": "Germany forbids access to neo-Nazi sites.",
+        "answer": "true"
+      },
+      {
+        "question": "The United States has made no efforts to limit minors' access to pornography.",
+        "answer": "false"
+      },
+      {
+        "question": "Censorship is not mentioned in the text.",
+        "answer": "false"
+      },
+      {
+        "question": "Government domination is a form of direct censorship.",
+        "answer": "true"
+      },
+      {
+        "question": "Prepublication review is not a form of censorship.",
+        "answer": "false"
+      },
+      {
+        "question": "Licensing and registration are used to control media with limited bandwidth.",
+        "answer": "true"
+      },
+      {
+        "question": "Self-censorship is the most common form of censorship.",
+        "answer": "true"
+      },
+      {
+        "question": "Self-censorship involves a group deciding not to publish material.",
+        "answer": "true"
+      },
+      {
+        "question": "Maintaining good relations with government officials is important for journalists to keep their official sources of information.",
+        "answer": "true"
+      },
+      {
+        "question": "Movies, TVs, CDs, and video games are universally accepted on the Web without any warnings.",
+        "answer": "false"
+      },
+      {
+        "question": "The Internet poses challenges due to its many-to-many communication nature.",
+        "answer": "true"
+      },
+      {
+        "question": "It is easier to close a radio station than to shut down an Internet site.",
+        "answer": "true"
+      },
+      {
+        "question": "Millions of PCs are connected to the internet yearly.",
+        "answer": "true"
+      },
+      {
+        "question": "There is a way to monitor all Web sites.",
+        "answer": "false"
+      },
+      {
+        "question": "The internet extends beyond national borders.",
+        "answer": "true"
+      },
+      {
+        "question": "An adult Web site can confirm the age of a user.",
+        "answer": "false"
+      },
+      {
+        "question": "Kant supported censorship.",
+        "answer": "false"
+      },
+      {
+        "question": "Mill opposed censorship.",
+        "answer": "true"
+      },
+      {
+        "question": "The word 'infallible' translates to 'معصوم' in Arabic.",
+        "answer": "true"
+      },
+      {
+        "question": "According to the text, any opinion (not the majority opinion) may contain a kernel of truth.",
+        "answer": "true"
+      },
+      {
+        "question": "Mill’s Principle of Harm states that intervention is justified only to prevent harm to others, not for the individual’s own good.",
+        "answer": "true"
+      },
+      {
+        "question": "The government must intervene when an individual’s act harms others.",
+        "answer": "true"
+      },
+      {
+        "question": "In the 18th century, England and the colonies had prior restrictions on freedom of expression.",
+        "answer": "false"
+      },
+      {
+        "question": "People could be punished for sedition or libel in 18th century England and its colonies.",
+        "answer": "true"
+      },
+      {
+        "question": "American states did not adopt bills of rights including freedom of expression.",
+        "answer": "false"
+      },
+      {
+        "question": "The 1st amendment to the U.S. Constitution addressed freedom of expression to discuss public issues.",
+        "answer": "true"
+      },
+      {
+        "question": "Freedom of Expression is considered an absolute right.",
+        "answer": "false"
+      },
+      {
+        "question": "The Amendment covers only political speech.",
+        "answer": "false"
+      },
+      {
+        "question": "The right to freedom of expression must be balanced against the public good.",
+        "answer": "true"
+      },
+      {
+        "question": "There are no restrictions on freedom of expression for the public good.",
+        "answer": "false"
+      },
+      {
+        "question": "A ban of cigarette advertising on TV is an example of a restriction on freedom of expression.",
+        "answer": "true"
+      },
+      {
+        "question": "Web filters are software that prevents display of certain Web pages.",
+        "answer": "true"
+      },
+      {
+        "question": "Web filters can only be installed on individual PCs.",
+        "answer": "false"
+      },
+      {
+        "question": "ISPs may provide web filtering services.",
+        "answer": "true"
+      },
+      {
+        "question": "An Internet service provider (ISP) is a company that provides web access to both businesses and consumers.",
+        "answer": "true"
+      },
+      {
+        "question": "ISPs only provide web access and no other services.",
+        "answer": "false"
+      },
+      {
+        "question": "Maintaining a 'black list' of objectionable sites is one methodology used by ISPs.",
+        "answer": "true"
+      },
+      {
+        "question": "Child Internet Protection Acts have never been implemented.",
+        "answer": "false"
+      },
+      {
+        "question": "Identity theft is a form of breaking trust on the Internet.",
+        "answer": "true"
+      },
+      {
+        "question": "Identity theft occurs when a person uses another person’s electronic identity.",
+        "answer": "true"
+      },
+      {
+        "question": "More than 1 million Americans were victims of identity theft in 2008 due to their online activities.",
+        "answer": "true"
+      },
+      {
+        "question": "Phishing is the use of email or Web pages to attempt to deceive people into revealing personal information.",
+        "answer": "true"
+      },
+      {
+        "question": "A fake PayPal site asking you to disclose information because your card is about to expire is an example of phishing.",
+        "answer": "true"
+      },
+      {
+        "question": "Chat room predators are individuals who support real-time discussions among many people.",
+        "answer": "false"
+      },
+      {
+        "question": "Some pedophiles meet through chat rooms.",
+        "answer": "true"
+      },
+      {
+        "question": "Police do not conduct sting operations in chat rooms.",
+        "answer": "false"
+      },
+      {
+        "question": "The quality of web-based information is consistent.",
+        "answer": "false"
+      },
+      {
+        "question": "Google maintains a database of 8 million web pages.",
+        "answer": "true"
+      },
+      {
+        "question": "Ranking web pages does not involve any form of voting algorithm.",
+        "answer": "false"
+      },
+      {
+        "question": "If many links point to a page, Google search engine ranks that page higher.",
+        "answer": "true"
+      },
+      {
+        "question": "The traditional definition of addiction includes compulsive use of a harmful substance or drug.",
+        "answer": "true"
+      },
+      {
+        "question": "Kimberly Young created a test for Internet addiction consisting of 8 questions about gambling on the Net.",
+        "answer": "true"
+      },
+      {
+        "question": "Answering 'yes' to 5 questions in Kimberly Young's test means you are addicted to the Internet.",
+        "answer": "true"
+      },
+      {
+        "question": "Kimberly Young's test for Internet addiction is widely accepted and uncontroversial.",
+        "answer": "false"
+      },
+      {
+        "question": "Is peer group a social factor contributing to computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Is stress a situational factor contributing to computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Does lack of social support contribute to computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Is limited opportunities for productive activity an individual factor?",
+        "answer": "false"
+      },
+      {
+        "question": "Does a tendency to follow activities to excess contribute to computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Is lack of achievement an individual factor in computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Does fear of failure contribute to computer addiction?",
+        "answer": "true"
+      },
+      {
+        "question": "Is a feeling of isolation a social factor?",
+        "answer": "false"
+      }
+    ]
+  }
+}

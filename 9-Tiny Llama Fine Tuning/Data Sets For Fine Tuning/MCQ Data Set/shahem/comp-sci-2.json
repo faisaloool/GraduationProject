@@ -1,0 +1,248 @@
+{
+  "document": "FDS Chapter 2: The data science process",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What should be created in the first step of the data science process?",
+        "options": [
+          "The final model",
+          "Data visualizations",
+          "A project charter",
+          "Cleaned data sets"
+        ],
+        "answer": "A project charter"
+      },
+      {
+        "question": "What three questions should be answered in the first phase?",
+        "options": [
+          "Who, what, when",
+          "What, why, how",
+          "Where, when, why",
+          "How, who, when"
+        ],
+        "answer": "What, why, how"
+      },
+      {
+        "question": "What is an essential outcome of the first step?",
+        "options": [
+          "A working machine learning model",
+          "A clear research goal",
+          "A complete data set",
+          "Final project report"
+        ],
+        "answer": "A clear research goal"
+      },
+      {
+        "question": "What is more important than technical prowess in the first phase?",
+        "options": [
+          "Programming skills",
+          "Mathematical ability",
+          "People skills and business acumen",
+          "Statistical knowledge"
+        ],
+        "answer": "People skills and business acumen"
+      },
+      {
+        "question": "What should you continue doing until you grasp business expectations?",
+        "options": [
+          "Writing code",
+          "Asking questions and devising examples",
+          "Collecting more data",
+          "Building models"
+        ],
+        "answer": "Asking questions and devising examples"
+      },
+      {
+        "question": "What does a project charter require?",
+        "options": [
+          "Only technical specifications",
+          "Only budget information",
+          "Teamwork and multiple inputs",
+          "Only management approval"
+        ],
+        "answer": "Teamwork and multiple inputs"
+      },
+      {
+        "question": "What is the second step in the data science process?",
+        "options": [
+          "Cleansing data",
+          "Retrieving data",
+          "Building models",
+          "Presenting findings"
+        ],
+        "answer": "Retrieving data"
+      },
+      {
+        "question": "Where should you first look for data?",
+        "options": [
+          "Outside the company",
+          "Within the company",
+          "Only in public sources",
+          "Only from paid providers"
+        ],
+        "answer": "Within the company"
+      },
+      {
+        "question": "What is the primary goal of a database?",
+        "options": [
+          "Data analysis",
+          "Data storage",
+          "Data visualization",
+          "Data modeling"
+        ],
+        "answer": "Data storage"
+      },
+      {
+        "question": "What is a data warehouse designed for?",
+        "options": [
+          "Only data storage",
+          "Reading and analyzing data",
+          "Only real-time processing",
+          "Only backup purposes"
+        ],
+        "answer": "Reading and analyzing data"
+      },
+      {
+        "question": "What is a data mart?",
+        "options": [
+          "A complete data warehouse",
+          "A subset of data warehouse for specific business units",
+          "A raw data storage system",
+          "A data visualization tool"
+        ],
+        "answer": "A subset of data warehouse for specific business units"
+      },
+      {
+        "question": "What contains data in its natural or raw format?",
+        "options": [
+          "Data warehouse",
+          "Data mart",
+          "Data lake",
+          "Database"
+        ],
+        "answer": "Data lake"
+      },
+      {
+        "question": "Where should you look if data isn't available inside your organization?",
+        "options": [
+          "Nowhere, stop the project",
+          "Only in government sources",
+          "Outside your organization's walls",
+          "Only in academic journals"
+        ],
+        "answer": "Outside your organization's walls"
+      },
+      {
+        "question": "What is the third step in the data science process?",
+        "options": [
+          "Defining research goals",
+          "Retrieving data",
+          "Cleansing, integrating, and transforming data",
+          "Building models"
+        ],
+        "answer": "Cleansing, integrating, and transforming data"
+      },
+      {
+        "question": "Why is data preparation important?",
+        "options": [
+          "It makes reports look better",
+          "Models perform better with clean data",
+          "It reduces storage costs",
+          "It makes programming easier"
+        ],
+        "answer": "Models perform better with clean data"
+      },
+      {
+        "question": "What principle states that poor input leads to poor output?",
+        "options": [
+          "Pareto principle",
+          "Garbage in equals garbage out",
+          "Law of large numbers",
+          "Principle of least astonishment"
+        ],
+        "answer": "Garbage in equals garbage out"
+      },
+      {
+        "question": "What can't certain modeling techniques handle?",
+        "options": [
+          "Large data sets",
+          "Missing values",
+          "Clean data",
+          "Numerical data"
+        ],
+        "answer": "Missing values"
+      },
+      {
+        "question": "What is the fourth step in the data science process?",
+        "options": [
+          "Retrieving data",
+          "Exploratory data analysis",
+          "Presenting findings",
+          "Defining goals"
+        ],
+        "answer": "Exploratory data analysis"
+      },
+      {
+        "question": "What is mainly used during exploratory data analysis?",
+        "options": [
+          "Only statistical tests",
+          "Only machine learning algorithms",
+          "Graphical techniques",
+          "Only database queries"
+        ],
+        "answer": "Graphical techniques"
+      },
+      {
+        "question": "What is the goal of exploratory data analysis?",
+        "options": [
+          "Build final models",
+          "Clean all data perfectly",
+          "Gain understanding of data and variable interactions",
+          "Present to stakeholders"
+        ],
+        "answer": "Gain understanding of data and variable interactions"
+      },
+      {
+        "question": "What is the fifth step in the data science process?",
+        "options": [
+          "Cleansing data",
+          "Building the models",
+          "Retrieving data",
+          "Exploratory analysis"
+        ],
+        "answer": "Building the models"
+      },
+      {
+        "question": "What fields provide techniques for model building?",
+        "options": [
+          "Only computer science",
+          "Machine learning, data mining, and statistics",
+          "Only business management",
+          "Only mathematics"
+        ],
+        "answer": "Machine learning, data mining, and statistics"
+      },
+      {
+        "question": "What is the sixth step in the data science process?",
+        "options": [
+          "Retrieving data",
+          "Cleansing data",
+          "Presenting findings and building applications",
+          "Exploratory analysis"
+        ],
+        "answer": "Presenting findings and building applications"
+      },
+      {
+        "question": "What happens when many people change positions or leave a company?",
+        "options": [
+          "Data becomes more organized",
+          "Knowledge of data may become dispersed",
+          "Data automatically cleans itself",
+          "Data access becomes easier"
+        ],
+        "answer": "Knowledge of data may become dispersed"
+      }
+    ]
+  }
+}

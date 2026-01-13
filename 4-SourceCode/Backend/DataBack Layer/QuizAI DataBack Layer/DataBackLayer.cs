@@ -47,6 +47,47 @@ namespace QuizAIDataBack
             }   
         }
 
+        public static async Task<bool> SaveVerifyEmailTokenAsync(Guid UserID, string Token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveVerifyEmailToken", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@Token", Token);
+                    await con.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                    return true;
+                }
+            }
+        }
+
+        public static async Task<bool> VerifyNewUserEmailAsync(Guid UserID, string Token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_UseVerifyEmailToken", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@Token", Token);
+
+                    await con.OpenAsync();
+
+                    object result = await cmd.ExecuteScalarAsync();
+
+                    if (Convert.ToBoolean(result))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         //public static async Task<int> DeleteAccountAsync(int UserID)
         //{
         //    using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -63,7 +104,6 @@ namespace QuizAIDataBack
         //    return UserID;
         //}
 
-
         public static async Task<UserDTO> LoginAsync(UserLoginRequestDTO loginInfo)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -73,7 +113,6 @@ namespace QuizAIDataBack
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Email", loginInfo.Email);
 
-                    // Get the salt for the email
                     byte[] salt = await GetSaltByEmailAsync(loginInfo.Email);
 
                     if (salt != null)
@@ -83,7 +122,7 @@ namespace QuizAIDataBack
                     }
                     else
                     {
-                        return null; // email not found
+                        return null;
                     }
 
                     await con.OpenAsync();
@@ -92,12 +131,10 @@ namespace QuizAIDataBack
                     {
                         if (await reader.ReadAsync())
                         {
-                            // Read User_Id as GUID now
                             Guid userId = reader.GetGuid(reader.GetOrdinal("User_Id"));
                             string email = reader.GetString(reader.GetOrdinal("Email"));
                             string name = reader.GetString(reader.GetOrdinal("Name"));
 
-                            // Return full user info
                             return new UserDTO(userId, email, name);
                         }
                     }
@@ -147,7 +184,6 @@ namespace QuizAIDataBack
             }
         }
 
-
         public static async Task<bool> CheckEmailExistsAsync(ForgotPasswordRequestDTO ForgotPasswordInfo)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -181,7 +217,6 @@ namespace QuizAIDataBack
             }
         }
 
-
         public static async Task<UserDTO> GetUserByEmailAsync(string Email)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -206,7 +241,6 @@ namespace QuizAIDataBack
             }
             return null;
         }
-
 
         public static async Task<UserDTO> GetUserByUserIDAsync(Guid id)
         {
@@ -233,8 +267,6 @@ namespace QuizAIDataBack
             return null;
         }
 
-
-
         public static async Task MarkForgotPasswordTokenAsUsed(string token)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -248,7 +280,6 @@ namespace QuizAIDataBack
                 }
             }
         }
-
 
         public static async Task<ResetPasswordTokenDTO> GetResetPasswordTokenInfoAsync(string token)
         {
@@ -300,7 +331,6 @@ namespace QuizAIDataBack
                 }
             }
         }
-
 
     }
 
@@ -422,7 +452,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
                     cmd.Parameters.AddWithValue("@Quiz_Name", NewName);
                     await con.OpenAsync();
-                    
+
                     object result = await cmd.ExecuteScalarAsync();
 
                     if (result != null)
@@ -434,36 +464,127 @@ namespace QuizAIDataBack
             }
         }
 
-        public static async Task ShareQuizAsync(Guid RecipientUserID, Guid QuizID)
+        public static async Task CreateShareTokenAsync(Guid QuizID, string Token)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveShareQuizToken", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
+                    cmd.Parameters.AddWithValue("@Token", Token);
+
+                    await con.OpenAsync();
+                    await cmd.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        public static async Task<bool> ShareQuizAsync(Guid RecipientUserID, string Token)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_ShareQuiz", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
+                    cmd.Parameters.AddWithValue("@Token", Token);
                     cmd.Parameters.AddWithValue("@Recipient_User_ID", RecipientUserID);
                     await con.OpenAsync();
-                    await cmd.ExecuteNonQueryAsync();
+                    var result = await cmd.ExecuteScalarAsync();
+
+                    if (Convert.ToBoolean(result))
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+        }
+
+        public static async Task<Quiz> GetQuizBasedOnQuizIDAsync(Guid QuizID, string QuizTitle)
+        {
+            Quiz quizInfo = new Quiz();
+            quizInfo.QuizID = QuizID;
+            quizInfo.Title = QuizTitle;
+            quizInfo.Questions = new List<QuizQuestion>(); // Ensure it's initialized
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                await con.OpenAsync();
+                using (SqlCommand cmd = new SqlCommand("SP_GetQuestionsBasedOnQuizID", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
+
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        Dictionary<string, QuizQuestion> questionsDict = new Dictionary<string, QuizQuestion>();
+
+                        while (await reader.ReadAsync())
+                        {
+                            string questionContent = reader.IsDBNull(reader.GetOrdinal("Question_Content"))
+                                ? ""
+                                : reader.GetString(reader.GetOrdinal("Question_Content"));
+
+                            // Get the Suggested Answer from the reader
+                            string suggestedAnswer = reader.IsDBNull(reader.GetOrdinal("Suggested_Answer"))
+                                ? ""
+                                : reader.GetString(reader.GetOrdinal("Suggested_Answer"));
+
+                            if (!questionsDict.TryGetValue(questionContent, out QuizQuestion question))
+                            {
+                                question = new QuizQuestion
+                                {
+                                    QuestionID = Guid.NewGuid(),
+                                    QuestionContent = questionContent,
+                                    SuggestedAnswer = suggestedAnswer, // ASSIGN IT HERE
+                                    Type = "MCQ",
+                                    choices = new List<MCQChoices>()
+                                };
+                                questionsDict.Add(questionContent, question);
+                                quizInfo.Questions.Add(question);
+                            }
+
+                            // Choice logic remains the same...
+                            int choiceIdCol = reader.GetOrdinal("Choice_ID");
+                            if (!reader.IsDBNull(choiceIdCol))
+                            {
+                                question.choices.Add(new MCQChoices
+                                {
+                                    ChoiceID = reader.GetGuid(choiceIdCol),
+                                    Choice = reader.IsDBNull(reader.GetOrdinal("Choice_Text")) ? "" : reader.GetString(reader.GetOrdinal("Choice_Text")),
+                                    Question_ID = question.QuestionID
+                                });
+                            }
+                        }
+                    }
                 }
             }
 
+            return quizInfo;
+        }
+
+        public static async Task<bool> DeleteQuestionUsingQuestionID(Guid QuestionID, Guid QuizID, Guid UserID)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_DeleteQuestionBasedOnQuestionID", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Question_ID", QuestionID);
+                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
+                    cmd.Parameters.AddWithValue("@User_ID", UserID);
+
+                    await con.OpenAsync();
+                    object result = await cmd.ExecuteScalarAsync();
+                    if (result != null)
+                    {
+                        return Convert.ToBoolean(result);
+                    }
+                    return false;
+                }
+            }
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 3: User Authentication - Computer Security: Principles and Practice, 4th Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "User authentication is defined by NIST SP 800-63-3 as the process of establishing confidence in user identities presented electronically.",
+        "answer": "True"
+      },
+      {
+        "question": "FIPS 199 defines four levels of potential impact for authentication errors: Low, Moderate, High, and Critical.",
+        "answer": "False"
+      },
+      {
+        "question": "A low potential impact means an authentication error could have a severe adverse effect.",
+        "answer": "False"
+      },
+      {
+        "question": "Password-based authentication is the least common form of user authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "A user ID determines whether a user is authorized to access the system and what privileges they have.",
+        "answer": "True"
+      },
+      {
+        "question": "Passwords are stored in plaintext in modern secure systems.",
+        "answer": "False"
+      },
+      {
+        "question": "Password cracking has become less effective over time due to improved security policies.",
+        "answer": "False"
+      },
+      {
+        "question": "Memory cards can process data internally like a small computer.",
+        "answer": "False"
+      },
+      {
+        "question": "A magnetic stripe card is an example of a memory card.",
+        "answer": "True"
+      },
+      {
+        "question": "Smart tokens require a password or PIN to provide adequate security.",
+        "answer": "True"
+      },
+      {
+        "question": "Smart cards contain a microprocessor, memory, and I/O ports.",
+        "answer": "True"
+      },
+      {
+        "question": "Smart cards typically use only one type of memory: RAM.",
+        "answer": "False"
+      },
+      {
+        "question": "EEPROM in a smart card holds temporary data generated during application execution.",
+        "answer": "False"
+      },
+      {
+        "question": "Electronic Identity Cards (eID) are used only for physical access control.",
+        "answer": "False"
+      },
+      {
+        "question": "PACE stands for Password Authenticated Connection Establishment.",
+        "answer": "True"
+      },
+      {
+        "question": "Biometric authentication is generally cheaper and simpler than password-based authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "Facial characteristics and fingerprints are examples of biometric authentication factors.",
+        "answer": "True"
+      },
+      {
+        "question": "Retinal patterns are rarely used in biometric systems because they are not unique.",
+        "answer": "False"
+      },
+      {
+        "question": "Remote user authentication is less complex than local authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "Eavesdropping is a common threat in remote user authentication.",
+        "answer": "True"
+      },
+      {
+        "question": "Challenge-response protocols are used to counter replay attacks in remote authentication.",
+        "answer": "True"
+      },
+      {
+        "question": "ATM security relies only on memory cards without additional authentication factors.",
+        "answer": "False"
+      },
+      {
+        "question": "A proactive password checker prevents users from choosing weak passwords.",
+        "answer": "True"
+      },
+      {
+        "question": "A Bloom filter can be used to check passwords against a dictionary of known weak passwords.",
+        "answer": "True"
+      },
+      {
+        "question": "Moderate impact level means an authentication error could have a limited adverse effect.",
+        "answer": "False"
+      },
+      {
+        "question": "Smart tokens can be categorized as static, dynamic password generator, or challenge-response.",
+        "answer": "True"
+      },
+      {
+        "question": "ROM in a smart card stores data that changes frequently.",
+        "answer": "False"
+      },
+      {
+        "question": "Biometric systems are based on pattern recognition.",
+        "answer": "True"
+      },
+      {
+        "question": "Hand geometry is not a viable biometric characteristic for authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "Password file access control is unnecessary if passwords are hashed.",
+        "answer": "False"
+      },
+      {
+        "question": "Electronic identity cards can store digital certificates and personal data.",
+        "answer": "True"
+      },
+      {
+        "question": "User dissatisfaction is a common drawback of memory card systems.",
+        "answer": "True"
+      },
+      {
+        "question": "Smart cards must always be inserted into a reader to function (contactless versions do not exist).",
+        "answer": "False"
+      },
+      {
+        "question": "Remote authentication threats include capturing and replaying authentication sequences.",
+        "answer": "True"
+      },
+      {
+        "question": "Password selection strategies only involve encouraging users to choose longer passwords.",
+        "answer": "False"
+      },
+      {
+        "question": "A high assurance level corresponds to a low potential impact in NIST guidelines.",
+        "answer": "False"
+      },
+      {
+        "question": "Dynamic biometric protocols are used for remote authentication with changing biometric data.",
+        "answer": "True"
+      },
+      {
+        "question": "ATM security problems often stem from weak token-based authentication alone.",
+        "answer": "False"
+      },
+      {
+        "question": "A model for digital user authentication includes means of authentication and risk assessment.",
+        "answer": "True"
+      },
+      {
+        "question": "Hashed passwords are immune to all forms of password cracking.",
+        "answer": "False"
+      }
+    ]
+  }
+}

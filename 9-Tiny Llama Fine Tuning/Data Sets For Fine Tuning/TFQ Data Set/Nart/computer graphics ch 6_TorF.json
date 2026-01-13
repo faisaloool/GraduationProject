@@ -1,0 +1,362 @@
+{
+  "filename": "Chapter 6 - Two-Dimensional Viewing.ppt",
+  "quiz": [
+    {
+      "question": "A window in computer graphics refers to a world-coordinate area selected for display.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WINDOW VS. VIEWPORT",
+      "rate": "easy"
+    },
+    {
+      "question": "A viewport is the area on the display device where the window's contents are mapped.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WINDOW VS. VIEWPORT",
+      "rate": "easy"
+    },
+    {
+      "question": "Clipping is the process of removing parts of graphical primitives that lie outside the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "Point clipping checks if a point's coordinates lie within the window boundaries.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POINT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "In the Cohen-Sutherland algorithm, a region code of 0000 indicates that a point is completely outside the window.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "LINE CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "The Cohen-Sutherland algorithm divides the area around the window into 8 regions.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "COHEN-SUTHERLAND: WORLD DIVISION",
+      "rate": "medium"
+    },
+    {
+      "question": "If both endpoints of a line have the same non-zero bit in their region codes, the line is completely outside the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "LINE CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "The brute force line clipping algorithm is computationally efficient for scenes with many lines.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRUTE FORCE LINE CLIPPING (CONT…)",
+      "rate": "easy"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm clips a polygon by comparing it against each window boundary one at a time.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM",
+      "rate": "easy"
+    },
+    {
+      "question": "In the Sutherland-Hodgman algorithm, when both vertices of an edge are inside the boundary, only the second vertex is saved.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CASE 2: BOTH V1 & V2 IN",
+      "rate": "medium"
+    },
+    {
+      "question": "The Weiler-Atherton polygon clipping algorithm can handle concave polygons without producing degenerate results.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON POLYGON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "Text clipping can be performed using an all-or-none string clipping approach.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TEXT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "In viewport transformation, the mapping from window to viewport coordinates is linear.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VIEWPORT TRANSFORMATION",
+      "rate": "medium"
+    },
+    {
+      "question": "The region code in Cohen-Sutherland uses 4 bits to represent the position relative to the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COHEN-SUTHERLAND: WORLD DIVISION",
+      "rate": "easy"
+    },
+    {
+      "question": "A line that is completely inside the window will have both endpoints with region code 0000.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "LINE CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm can produce multiple disjoint polygons after clipping.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM (CONT…)",
+      "rate": "hard"
+    },
+    {
+      "question": "In the Weiler-Atherton algorithm, when following the window boundary, you always turn right at intersections.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "Clipping concave polygons is generally simpler than clipping convex polygons.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OTHER AREA CLIPPING CONCERNS",
+      "rate": "medium"
+    },
+    {
+      "question": "The brute force clipping algorithm calculates intersection points for all lines regardless of their position relative to the window.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "BRUTE FORCE LINE CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "In the viewport transformation, if the window and viewport have different aspect ratios, the image may be distorted.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VIEWPORT TRANSFORMATION",
+      "rate": "medium"
+    },
+    {
+      "question": "The Cohen-Sutherland algorithm requires floating-point arithmetic for intersection calculations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COHEN-SUTHERLAND EXAMPLES",
+      "rate": "medium"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm processes each polygon edge against all four window boundaries simultaneously.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "All-or-none character clipping removes entire characters if any part lies outside the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TEXT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "The Weiler-Atherton algorithm is primarily used for line clipping, not polygon clipping.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WEILER-ATHERTON POLYGON CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "A point is considered inside the clip window if its x-coordinate is greater than xwmin and less than xwmax, and similarly for y-coordinate.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POINT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "The region code bit 1 in Cohen-Sutherland indicates that the point is to the right of the window.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "LINE CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm always outputs a convex polygon after clipping.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM (CONT…)",
+      "rate": "hard"
+    },
+    {
+      "question": "Clipping curves, such as circles, requires finding intersection points with the window boundary.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "OTHER AREA CLIPPING CONCERNS",
+      "rate": "medium"
+    },
+    {
+      "question": "The viewport transformation equations preserve the relative positions of points within the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VIEWPORT TRANSFORMATION",
+      "rate": "medium"
+    },
+    {
+      "question": "In Cohen-Sutherland, if the logical AND of the region codes of two endpoints is non-zero, the line is trivially accepted.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "LINE CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm can handle self-intersecting polygons without modification.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM (CONT…)",
+      "rate": "hard"
+    },
+    {
+      "question": "The Weiler-Atherton algorithm uses two polygons: the subject polygon and the clip polygon.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON CLIPPING",
+      "rate": "medium"
+    },
+    {
+      "question": "Text clipping at the character level is also known as all-or-none character clipping.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TEXT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "Clipping is only necessary for lines and polygons, not for text or curves.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "OTHER AREA CLIPPING CONCERNS",
+      "rate": "easy"
+    },
+    {
+      "question": "The region code in Cohen-Sutherland uses the order: bit 1 = top, bit 2 = bottom, bit 3 = right, bit 4 = left.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "LINE CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm processes vertices in the order they appear in the polygon.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM (CONT…)",
+      "rate": "medium"
+    },
+    {
+      "question": "The Weiler-Atherton algorithm may produce multiple separate polygons as output after clipping a concave polygon.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "In the viewport transformation, if the window is larger than the viewport, the image will be scaled down.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VIEWPORT TRANSFORMATION",
+      "rate": "medium"
+    },
+    {
+      "question": "Cohen-Sutherland algorithm is more efficient than brute force because it avoids unnecessary intersection calculations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "BRUTE FORCE LINE CLIPPING (CONT…)",
+      "rate": "easy"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm works by clipping the polygon against one boundary at a time, updating the polygon after each step.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Weiler-Atherton algorithm is suitable for clipping arbitrary polygons, including those with holes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON POLYGON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "Clipping a point requires checking its coordinates against four inequalities.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "POINT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "In Cohen-Sutherland, a line that cannot be trivially accepted or rejected must be split and tested further.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COHEN-SUTHERLAND: OTHER LINES",
+      "rate": "medium"
+    },
+    {
+      "question": "The Sutherland-Hodgman algorithm always produces a single, connected polygon as output.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM (CONT…)",
+      "rate": "hard"
+    },
+    {
+      "question": "Weiler-Atherton algorithm uses a turn-right rule at intersections to follow either the subject polygon or the clip polygon.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WEILER-ATHERTON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "All-or-none string clipping removes an entire string if any part of it lies outside the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "TEXT CLIPPING",
+      "rate": "easy"
+    },
+    {
+      "question": "The viewport transformation maps the window coordinates directly to screen pixel coordinates.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VIEWPORT TRANSFORMATION",
+      "rate": "medium"
+    },
+    {
+      "question": "Cohen-Sutherland algorithm assigns a 4-bit code where each bit corresponds to a half-space relative to the window.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COHEN-SUTHERLAND: WORLD DIVISION",
+      "rate": "medium"
+    },
+    {
+      "question": "Sutherland-Hodgman algorithm can be implemented using a series of clipping passes, one for each window edge.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "SUTHERLAND-HODGMAN AREA CLIPPING ALGORITHM",
+      "rate": "medium"
+    },
+    {
+      "question": "Weiler-Atherton algorithm requires the polygons to be simple (non-self-intersecting) to work correctly.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WEILER-ATHERTON POLYGON CLIPPING",
+      "rate": "hard"
+    },
+    {
+      "question": "Clipping is performed to improve rendering performance by eliminating invisible parts of primitives.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CLIPPING",
+      "rate": "easy"
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "document": "FDS Chapter 1: Data science in a big data world",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is data science primarily considered as?",
+        "options": [
+          "A programming language",
+          "An evolutionary extension of statistics dealing with massive data",
+          "A type of database management system",
+          "A hardware technology"
+        ],
+        "answer": "An evolutionary extension of statistics dealing with massive data"
+      },
+      {
+        "question": "What is big data?",
+        "options": [
+          "Data that is very important",
+          "A blanket term for data sets too large for traditional processing",
+          "Data that is more than 1 terabyte",
+          "Data stored in the cloud"
+        ],
+        "answer": "A blanket term for data sets too large for traditional processing"
+      },
+      {
+        "question": "What are the three Vs that characterize big data?",
+        "options": [
+          "Volume, Variety, Velocity",
+          "Value, Variety, Volume",
+          "Velocity, Veracity, Volume",
+          "Variety, Veracity, Value"
+        ],
+        "answer": "Volume, Variety, Velocity"
+      },
+      {
+        "question": "What does Volume refer to in the three Vs?",
+        "options": [
+          "The speed of data generation",
+          "How diverse different types of data are",
+          "How much data there is",
+          "The accuracy of data"
+        ],
+        "answer": "How much data there is"
+      },
+      {
+        "question": "What does Variety refer to in the three Vs?",
+        "options": [
+          "The speed of data generation",
+          "How diverse different types of data are",
+          "How much data there is",
+          "The accuracy of data"
+        ],
+        "answer": "How diverse different types of data are"
+      },
+      {
+        "question": "What does Velocity refer to in the three Vs?",
+        "options": [
+          "The speed of data generation",
+          "How diverse different types of data are",
+          "How much data there is",
+          "The accuracy of data"
+        ],
+        "answer": "The speed of data generation"
+      },
+      {
+        "question": "Where are data science and big data used?",
+        "options": [
+          "Only in commercial companies",
+          "Only in governmental organizations",
+          "Almost everywhere in both commercial and noncommercial settings",
+          "Only in universities"
+        ],
+        "answer": "Almost everywhere in both commercial and noncommercial settings"
+      },
+      {
+        "question": "What type of data depends on a data model and resides in fixed fields?",
+        "options": [
+          "Structured data",
+          "Unstructured data",
+          "Natural language data",
+          "Streaming data"
+        ],
+        "answer": "Structured data"
+      },
+      {
+        "question": "What is SQL primarily used for?",
+        "options": [
+          "Managing and querying data in databases",
+          "Creating machine learning models",
+          "Processing natural language",
+          "Analyzing streaming data"
+        ],
+        "answer": "Managing and querying data in databases"
+      },
+      {
+        "question": "What type of data is challenging to fit into a data model because content is context-specific?",
+        "options": [
+          "Structured data",
+          "Unstructured data",
+          "Machine-generated data",
+          "Graph-based data"
+        ],
+        "answer": "Unstructured data"
+      },
+      {
+        "question": "What is a special type of unstructured data that requires knowledge of linguistics?",
+        "options": [
+          "Machine-generated data",
+          "Natural language",
+          "Structured data",
+          "Graph-based data"
+        ],
+        "answer": "Natural language"
+      },
+      {
+        "question": "What is machine-generated data?",
+        "options": [
+          "Data created manually by humans",
+          "Information automatically created without human intervention",
+          "Data from social media posts",
+          "Information from surveys"
+        ],
+        "answer": "Information automatically created without human intervention"
+      },
+      {
+        "question": "What are examples of machine-generated data?",
+        "options": [
+          "Email messages and social media posts",
+          "Survey responses and interview transcripts",
+          "Web server logs and call detail records",
+          "Spreadsheets and database tables"
+        ],
+        "answer": "Web server logs and call detail records"
+      },
+      {
+        "question": "What does graph-based data focus on?",
+        "options": [
+          "The content of individual data points",
+          "The relationship or adjacency of objects",
+          "Time-series patterns in data",
+          "Statistical distributions"
+        ],
+        "answer": "The relationship or adjacency of objects"
+      },
+      {
+        "question": "What data types pose specific challenges for object recognition?",
+        "options": [
+          "Structured data and machine-generated data",
+          "Audio, image, and video",
+          "Natural language and streaming data",
+          "Graph-based and structured data"
+        ],
+        "answer": "Audio, image, and video"
+      },
+      {
+        "question": "What is streaming data characterized by?",
+        "options": [
+          "Being stored in traditional databases",
+          "Flowing into systems when events happen",
+          "Always being structured format",
+          "Having predictable arrival patterns"
+        ],
+        "answer": "Flowing into systems when events happen"
+      },
+      {
+        "question": "What are examples of streaming data?",
+        "options": [
+          "Historical sales records",
+          "Archived email messages",
+          "What's trending on Twitter and live sporting events",
+          "Stored customer databases"
+        ],
+        "answer": "What's trending on Twitter and live sporting events"
+      },
+      {
+        "question": "What is the best-known distributed file system?",
+        "options": [
+          "Google File System",
+          "Hadoop File System (HDFS)",
+          "Red Hat Cluster File System",
+          "Tachyon File System"
+        ],
+        "answer": "Hadoop File System (HDFS)"
+      },
+      {
+        "question": "What is a key advantage of distributed file systems?",
+        "options": [
+          "They are simpler than local file systems",
+          "They can store files larger than any single computer disk",
+          "They are always faster for all operations",
+          "They don't require network connectivity"
+        ],
+        "answer": "They can store files larger than any single computer disk"
+      },
+      {
+        "question": "What happens with files in distributed file systems?",
+        "options": [
+          "They cannot be replicated",
+          "They get automatically replicated across multiple servers",
+          "They are always stored on a single server",
+          "They cannot be larger than 1GB"
+        ],
+        "answer": "They get automatically replicated across multiple servers"
+      },
+      {
+        "question": "What is an important aspect of working on distributed systems?",
+        "options": [
+          "You move data to your program",
+          "You move your program to the data",
+          "You cannot run programs on distributed systems",
+          "All data must be centralized"
+        ],
+        "answer": "You move your program to the data"
+      },
+      {
+        "question": "What do data integration frameworks do?",
+        "options": [
+          "Create machine learning models",
+          "Move data from one source to another",
+          "Analyze data patterns",
+          "Store data permanently"
+        ],
+        "answer": "Move data from one source to another"
+      },
+      {
+        "question": "What fields are used to extract insights from data?",
+        "options": [
+          "Only computer science",
+          "Machine learning, statistics, and applied mathematics",
+          "Only business management",
+          "Only database administration"
+        ],
+        "answer": "Machine learning, statistics, and applied mathematics"
+      },
+      {
+        "question": "What does NoSQL stand for?",
+        "options": [
+          "No Structured Query Language",
+          "Not Only SQL",
+          "New Object Structured Query Language",
+          "Non-sequential Query Language"
+        ],
+        "answer": "Not Only SQL"
+      },
+      {
+        "question": "What do NoSQL databases allow?",
+        "options": [
+          "Only fixed schema data storage",
+          "Virtually endless growth of data",
+          "Only small data sets",
+          "Only structured data"
+        ],
+        "answer": "Virtually endless growth of data"
+      },
+      {
+        "question": "What can traditional RDBMS systems not handle well?",
+        "options": [
+          "Structured data",
+          "Small data sets",
+          "Streaming, graph, or unstructured data",
+          "Fixed schema data"
+        ],
+        "answer": "Streaming, graph, or unstructured data"
+      },
+      {
+        "question": "What is an example of machine learning success mentioned?",
+        "options": [
+          "Predicting stock prices perfectly",
+          "Creating an algorithm that learns to play video games",
+          "Solving all natural language processing problems",
+          "Eliminating all data storage needs"
+        ],
+        "answer": "Creating an algorithm that learns to play video games"
+      },
+      {
+        "question": "What company bought DeepMind for AI development?",
+        "options": [
+          "Microsoft",
+          "Google",
+          "Facebook",
+          "Amazon"
+        ],
+        "answer": "Google"
+      },
+      {
+        "question": "What is MLBAM's plan with video capture?",
+        "options": [
+          "To reduce video storage needs",
+          "To increase video capture to 7TB per game for analytics",
+          "To eliminate video recording",
+          "To store only text data"
+        ],
+        "answer": "To increase video capture to 7TB per game for analytics"
+      },
+      {
+        "question": "What do graph structures use to represent data?",
+        "options": [
+          "Only tables and rows",
+          "Nodes, edges, and properties",
+          "Only text documents",
+          "Only numerical values"
+        ],
+        "answer": "Nodes, edges, and properties"
+      },
+      {
+        "question": "What does the big data ecosystem consist of?",
+        "options": [
+          "Only hardware components",
+          "Only software programs",
+          "Technologies with similar goals and functionalities",
+          "Only cloud services"
+        ],
+        "answer": "Technologies with similar goals and functionalities"
+      }
+    ]
+  }
+}

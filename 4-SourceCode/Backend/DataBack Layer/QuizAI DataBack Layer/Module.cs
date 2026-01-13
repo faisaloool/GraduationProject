@@ -92,10 +92,10 @@ namespace QuizAIDataBack
     {
         public bool OverallStatus { get; set; }
 
-        public bool DBConReadiness {  get; set; }
+        public bool DBConReadiness { get; set; }
 
         public bool DiskSpaceReadiness { get; set; }
-        
+
         public bool AIModelReadiness { get; set; }
 
         public HealthResponseDTO(bool overall, bool DBConnectionReadiness, bool DiskSpaceReadiness, bool AIModelReadiness)
@@ -171,6 +171,34 @@ namespace QuizAIDataBack
     {
         public string Name { get; set; }
     }
+
+    public class Quiz
+    {
+        public Guid QuizID { get; set; }
+        public string Title { get; set; }
+        public int TotalMarks { get; set; }
+        public List<QuizQuestion> Questions { get; set; } = new List<QuizQuestion>();
+    }
+
+    public class QuizQuestion
+    {
+        public Guid QuestionID { get; set; }
+        public string Type { get; set; }
+        public string QuestionContent { get; set; }
+        public string SuggestedAnswer { get; set; }
+        public List<MCQChoices> choices { get; set; } = new List<MCQChoices>();
+    }
+
+    public class MCQChoices
+    {
+        public Guid ChoiceID { get; set; }
+        public string Choice { get; set; }
+        public Guid Question_ID { get; set; }
+    }
+
+
+
+
 
 
 
