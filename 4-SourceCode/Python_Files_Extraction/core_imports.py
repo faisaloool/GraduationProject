@@ -1,4 +1,4 @@
-import whisper              # pip install openai-whisper
+#import whisper              # pip install openai-whisper
 import torch                # pip install torch
 # Whisper requires ffmpeg to be installed in the system PATH:
 # Windows: https://ffmpeg.org/download.html
