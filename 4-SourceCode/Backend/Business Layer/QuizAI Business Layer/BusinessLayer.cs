@@ -12,6 +12,7 @@ using System.Net.Mail;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace QuizAI_Business_Layer
@@ -312,6 +313,40 @@ namespace QuizAI_Business_Layer
         {
             return await QuizzesDataBack.DeleteQuestionUsingQuestionID(QuestionID, QuizID, UserID);
         }
+
+
+
+
+        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request)
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri("http://127.0.0.1:8001/");
+
+            // Call the endpoint with query parameters
+            HttpResponseMessage response = await client.GetAsync($"ask_ai_model?mcq_count={request.MCQCount}&tf_count={request.TFCount}");
+
+            response.EnsureSuccessStatusCode();
+
+            string jsonString = await response.Content.ReadAsStringAsync();
+
+            // Deserialize to C# objects
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            
+            
+            
+            
+            QuestionResponse result = JsonSerializer.Deserialize<QuestionResponse>(jsonString, options);
+            if(result == null)
+                throw new Exception("Failed to deserialize the response from AI model.");
+
+            GenerateQuizResponseDTO FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(result);
+
+
+            return FinalResponse;
+        }
+
+
+
     }
 }
 

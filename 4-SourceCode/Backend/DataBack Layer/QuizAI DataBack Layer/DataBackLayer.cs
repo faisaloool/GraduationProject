@@ -586,5 +586,15 @@ namespace QuizAIDataBack
             }
         }
 
+
+        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(QuestionResponse QuizInfo)
+        {
+            GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
+
+
+
+            return result;
+        }
+
     }
 }

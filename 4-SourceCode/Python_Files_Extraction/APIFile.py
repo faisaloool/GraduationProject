@@ -5,6 +5,7 @@ from content_creation_json import generate_mcq_quiz_from_text, generate_tf_quiz_
 import requests
 import httpx
 import asyncio
+import json
 
 app = FastAPI()
 
@@ -82,30 +83,11 @@ async def extract_text_endpoint(file: UploadFile = File(...)):
             os.remove(temp_path)
 
 
-
-
-
-
-# def send_to_lm_studio(prompt: str) -> str:
-#     """Send a prompt to LM Studio and return the AI response."""
-#     url = "http://127.0.0.1:1234/v1/chat/completions"
-#     payload = {
-#         "model": "local-model",
-#         "messages": [{"role": "user", "content": prompt}],
-#         "temperature": 0.5,
-#         "max_tokens": 1200
-#     }
-#     headers = {"Content-Type": "application/json"}
-
-#     try:
-#         response = requests.post(url, json=payload, headers=headers)
-#         response.raise_for_status()
-#         return response.json()["choices"][0]["message"]["content"]
-#     except Exception as e:
-#         return f"Error communicating with LM Studio: {e}"
-
-async def send_to_lm_studio_async(prompt: str) -> str:
-    """Send a prompt to LM Studio asynchronously and return the AI response."""
+async def send_to_lm_studio_async(prompt: str) -> dict:
+    """
+    Send a prompt to LM Studio asynchronously and return the AI response as a Python dict.
+    Parses the AI's JSON string into a dict before returning.
+    """
     url = "http://127.0.0.1:1234/v1/chat/completions"
     payload = {
         "model": "local-model",
@@ -119,11 +101,16 @@ async def send_to_lm_studio_async(prompt: str) -> str:
         resp = await client.post(url, json=payload, headers=headers, timeout=None)
         resp.raise_for_status()
         data = resp.json()
-        return data["choices"][0]["message"]["content"]
 
+    ai_text = data["choices"][0]["message"]["content"]
 
+    # Parse AI response into a real dict
+    try:
+        parsed = json.loads(ai_text)
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=500, detail="AI returned invalid JSON")
 
-
+    return parsed
 
 
 def build_mcq_prompt(text: str, count: int, filename: str) -> str:
@@ -169,9 +156,6 @@ Content:
 """
 
 
-
-
-
 def build_tf_prompt(text: str, count: int, filename: str) -> str:
     return f"""
 Generate exactly {count} True or False Questions.
@@ -203,26 +187,43 @@ Content:
 """
 
 
-
 # @app.post("/ask_ai_model")
 # async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
 #     temp_path = f"temp{os.path.splitext(file.filename)[1]}"
 
+#     # Save uploaded file temporarily
 #     with open(temp_path, "wb") as f:
 #         f.write(await file.read())
 
 #     try:
+#         # Extract text from the file
 #         text = extract_file_text(temp_path, file.filename)
 #         if not text.strip():
 #             raise HTTPException(status_code=400, detail="No text found in file")
 
-#         # Build prompts
-#         mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
-#         tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+#         # Build prompts only if count > 0
+#         tasks = []
+#         if mcq_count != 0:
+#             mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+#             tasks.append(asyncio.create_task(send_to_lm_studio_async(mcq_prompt)))
+#         if tf_count != 0:
+#             tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+#             tasks.append(asyncio.create_task(send_to_lm_studio_async(tf_prompt)))
 
-#         # Send two requests to LM Studio
-#         mcq_result = send_to_lm_studio(mcq_prompt)
-#         tf_result = send_to_lm_studio(tf_prompt)
+#         # Run AI calls concurrently
+#         results = await asyncio.gather(*tasks)
+
+#         # Map results safely, provide empty defaults if count is 0
+#         mcq_result = results[0] if mcq_count != 0 else {
+#             "file_name": file.filename, 
+#             "question_type": "Multiple Choice", 
+#             "questions": []
+#         }
+#         tf_result = results[1] if tf_count != 0 else {
+#             "file_name": file.filename, 
+#             "question_type": "True or False", 
+#             "questions": []
+#         }
 
 #         return {
 #             "filename": file.filename,
@@ -237,38 +238,55 @@ Content:
 
 
 
+
+
 @app.post("/ask_ai_model")
 async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-    temp_path = f"temp{os.path.splitext(file.filename)[1]}"
-
-    # Save uploaded file
-    with open(temp_path, "wb") as f:
-        f.write(await file.read())
-
-    try:
-        text = extract_file_text(temp_path, file.filename)
-        if not text.strip():
-            raise HTTPException(status_code=400, detail="No text found in file")
-
-        mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
-        tf_prompt = build_tf_prompt(text, tf_count, file.filename)
-
-        mcq_task = asyncio.create_task(send_to_lm_studio_async(mcq_prompt))
-        tf_task = asyncio.create_task(send_to_lm_studio_async(tf_prompt))
-        mcq_result, tf_result = await asyncio.gather(mcq_task, tf_task)
-
-        return {
-            "filename": file.filename,
-            "mcq_questions": mcq_result,
-            "true_false_questions": tf_result,
-            "total_questions": mcq_count + tf_count
-        }
-
-    finally:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-
-
+    return {
+        "filename": "Ch1_Introduction.pptx",
+        "mcq_questions": {
+            "file_name": "Ch1_Introduction.pptx",
+            "question_type": "Multiple Choice",
+            "questions": [
+                {
+                    "question": "Which of the following is NOT mentioned as a catalyst for the Information Age?",
+                    "options": [
+                        "A) Low-cost computers",
+                        "B) High-speed communication networks",
+                        "C) Advanced nuclear reactors",
+                        "D) Smartphones"
+                    ],
+                    "answer": "C) Advanced nuclear reactors"
+                },
+                {
+                    "question": "Which issue is highlighted in the text regarding cell phone usage?",
+                    "options": [
+                        "A) Rudeness",
+                        "B) Battery life",
+                        "C) Screen size",
+                        "D) Software updates"
+                    ],
+                    "answer": "A) Rudeness"
+                },
+                {
+                    "question": "Which statement best describes a positive right in ethical theory?",
+                    "options": [
+                        "A) Right to act without interference",
+                        "B) Obligation to provide something to others",
+                        "C) Right to free speech",
+                        "D) Right to privacy"
+                    ],
+                    "answer": "B) Obligation to provide something to others"
+                }
+            ]
+        },
+        "true_false_questions": {
+            "file_name": "Ch1_Introduction.pptx",
+            "question_type": "True or False",
+            "questions": []
+        },
+        "total_questions": 3
+    }
 
 
 

@@ -200,8 +200,54 @@ namespace QuizAIDataBack
 
 
 
+    public class QuestionResponse
+    {
+        public string filename { get; set; }
+        public MCQQuestions mcq_questions { get; set; }
+        public TFQuestions true_false_questions { get; set; }
+        public int total_questions { get; set; }
+    }
+
+    public class MCQQuestions
+    {
+        public string file_name { get; set; }
+        public string question_type { get; } = "Multiple Choice";
+        public QuestionItem[] questions { get; set; }
+    }
+
+    public class TFQuestions
+    {
+        public string file_name { get; set; }
+        public string question_type { get; } = "True/False";
+        public TFQuestionItem[] questions { get; set; }
+    }
+
+    public class QuestionItem
+    {
+        public string question { get; set; }
+        public string[] options { get; set; }
+        public string answer { get; set; }
+    }
+
+    public class TFQuestionItem
+    {
+        public string question { get; set; }
+        public string answer { get; set; }
+    }
+
+    public class GenerateQuizRequestDTO
+    {
+        public int MCQCount { get; set; }
+        public int TFCount { get; set; }
+    }
 
 
+    public class GenerateQuizResponseDTO
+    {
+        public Guid QuizID { get; set; }
+        public string QuizTitle { get; set; }
+        public List<QuizQuestion> Questions { get; set; } = new List<QuizQuestion>();
+    }
 
 
 

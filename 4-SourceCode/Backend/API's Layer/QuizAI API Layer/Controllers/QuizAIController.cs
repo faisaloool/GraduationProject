@@ -633,7 +633,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         }
-        
+
         [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -739,7 +739,52 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
+
+
+        [Authorize]
+        [HttpPost("Generate")]
+        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> GenerateQuiz([FromBody] GenerateQuizRequestDTO request)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                {
+                    return Unauthorized();
+                }
+                Guid UserID = Guid.Parse(userIdClaim!.Value);
+                GenerateQuizResponseDTO generatedQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request);
+                
+                return Ok(new ApiResponse<GenerateQuizResponseDTO>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = generatedQuiz,
+                    Error = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+
+
+        }
     }
+
 }
 
 

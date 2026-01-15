@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuizAI Business Layer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdc143eae26675618eb8d7e6a5bf7706d2599787")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99d199604df71172922b499fbc9c5dfa17177521")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuizAI Business Layer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuizAI Business Layer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
