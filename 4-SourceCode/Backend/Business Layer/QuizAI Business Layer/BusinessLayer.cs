@@ -317,33 +317,30 @@ namespace QuizAI_Business_Layer
 
 
 
-        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request)
+
+        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request, IFormFile file)
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("http://127.0.0.1:8001/");
-
-            // Call the endpoint with query parameters
-            HttpResponseMessage response = await client.GetAsync($"ask_ai_model?mcq_count={request.MCQCount}&tf_count={request.TFCount}");
-
+            using var content = new MultipartFormDataContent();
+            var stream = file.OpenReadStream();
+            var fileContent = new StreamContent(stream);
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(file.ContentType);
+            content.Add(fileContent, "file", file.FileName);
+            string url = $"ask_ai_model?mcq_count={request.MCQCount}&tf_count={request.TFCount}";
+            HttpResponseMessage response = await client.PostAsync(url, content);
             response.EnsureSuccessStatusCode();
-
             string jsonString = await response.Content.ReadAsStringAsync();
-
-            // Deserialize to C# objects
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            
-            
-            
-            
-            QuestionResponse result = JsonSerializer.Deserialize<QuestionResponse>(jsonString, options);
-            if(result == null)
+            QuestionResponse? result = JsonSerializer.Deserialize<QuestionResponse>(jsonString, options);
+            if (result == null)
                 throw new Exception("Failed to deserialize the response from AI model.");
-
-            GenerateQuizResponseDTO FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(result);
-
-
+            GenerateQuizResponseDTO FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result);
             return FinalResponse;
         }
+
+
+
 
 
 

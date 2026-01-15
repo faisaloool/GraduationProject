@@ -741,9 +741,9 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [Authorize]
+        //[Authorize]
         [HttpPost("Generate")]
-        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> GenerateQuiz([FromBody] GenerateQuizRequestDTO request)
+        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> GenerateQuiz([FromForm] GenerateQuizRequestDTO request, IFormFile file)
         {
             try
             {
@@ -753,7 +753,7 @@ namespace QuizAI_API_Layer.Controllers
                     return Unauthorized();
                 }
                 Guid UserID = Guid.Parse(userIdClaim!.Value);
-                GenerateQuizResponseDTO generatedQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request);
+                GenerateQuizResponseDTO generatedQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request, file);
                 
                 return Ok(new ApiResponse<GenerateQuizResponseDTO>
                 {

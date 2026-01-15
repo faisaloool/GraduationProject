@@ -169,6 +169,42 @@
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "GenerateQuiz",
+    "RelativePath": "api/v1/quiz-ai/Generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MCQCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TFCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.GenerateQuizResponseDTO, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "GetHealth",
     "RelativePath": "api/v1/quiz-ai/health",
     "HttpMethod": "GET",

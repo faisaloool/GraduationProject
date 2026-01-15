@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QuizAI DataBack Layer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99d199604df71172922b499fbc9c5dfa17177521")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e98eb8d5c75552f9b83765be022b7cfc059eaff3")]
 [assembly: System.Reflection.AssemblyProductAttribute("QuizAI DataBack Layer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QuizAI DataBack Layer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

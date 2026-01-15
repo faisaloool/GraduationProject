@@ -587,14 +587,76 @@ namespace QuizAIDataBack
         }
 
 
-        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(QuestionResponse QuizInfo)
+
+        /*
+         
+        Quiz Title.
+        User ID.
+
+        File Type: 
+        1. .mp3
+        2. .wav
+        3. .mp4
+        4. .mov
+        5. .mkv
+        6. .avi
+        7. .pdf
+        8. .docx
+        9. .doc
+        10. .pptx
+        11. .ppt
+        12. .txt
+
+        File path.
+
+
+
+         */
+
+        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo)
         {
             GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
 
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveGeneratedQuiz", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    // --- Basic info ---
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    cmd.Parameters.AddWithValue("@QuizTitle", QuizInfo.filename ?? "Generated Quiz");
+
+                    // --- File info ---
+                    cmd.Parameters.AddWithValue("@FileType", System.IO.Path.GetExtension(QuizInfo.filename) ?? ".unknown"); // get extension from filename
+                    cmd.Parameters.AddWithValue("@FilePath", "/path/to/uploaded/file"); // replace with actual path if available
+
+                    // --- Serialize full quiz JSON ---
+                    string jsonBody = System.Text.Json.JsonSerializer.Serialize(QuizInfo);
+                    cmd.Parameters.AddWithValue("@QuestionsJson", jsonBody);
+
+                    await con.OpenAsync();
+
+                    // --- Execute SP and read back generated QuizID ---
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        if (await reader.ReadAsync())
+                        {
+                            // Read the auto-generated QuizID and QuizTitle returned by the SP
+                            result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
+                            result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
+                            result.Questions = new List<QuizQuestion>(); // placeholder, can populate later if needed
+                        }
+                    }
+                }
+            }
 
             return result;
         }
+
+
+
+
 
     }
 }
