@@ -5,6 +5,7 @@ from content_creation_json import generate_mcq_quiz_from_text, generate_tf_quiz_
 import requests
 import httpx
 import asyncio
+from docx import Document
 
 app = FastAPI()
 
@@ -106,7 +107,7 @@ async def extract_text_endpoint(file: UploadFile = File(...)):
 
 async def send_to_lm_studio_async(prompt: str) -> str:
     """Send a prompt to LM Studio asynchronously and return the AI response."""
-    url = "http://127.0.0.1:1234/v1/chat/completions"
+    url = "http://26.152.59.249:1234/v1/chat/completions"
     payload = {
         "model": "local-model",
         "messages": [{"role": "user", "content": prompt}],
