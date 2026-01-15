@@ -88,12 +88,12 @@ async def send_to_lm_studio_async(prompt: str) -> dict:
     Send a prompt to LM Studio asynchronously and return the AI response as a Python dict.
     Parses the AI's JSON string into a dict before returning.
     """
-    url = "http://127.0.0.1:1234/v1/chat/completions"
+    url = "http://26.152.59.249:1234/v1/chat/completions"
     payload = {
         "model": "local-model",
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.5,
-        "max_tokens": 1200
+        "max_tokens": 4096
     }
     headers = {"Content-Type": "application/json"}
 
@@ -242,51 +242,125 @@ Content:
 
 @app.post("/ask_ai_model")
 async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-    return {
-        "filename": "Ch1_Introduction.pptx",
-        "mcq_questions": {
-            "file_name": "Ch1_Introduction.pptx",
-            "question_type": "Multiple Choice",
-            "questions": [
-                {
-                    "question": "Which of the following is NOT mentioned as a catalyst for the Information Age?",
-                    "options": [
-                        "A) Low-cost computers",
-                        "B) High-speed communication networks",
-                        "C) Advanced nuclear reactors",
-                        "D) Smartphones"
-                    ],
-                    "answer": "C) Advanced nuclear reactors"
-                },
-                {
-                    "question": "Which issue is highlighted in the text regarding cell phone usage?",
-                    "options": [
-                        "A) Rudeness",
-                        "B) Battery life",
-                        "C) Screen size",
-                        "D) Software updates"
-                    ],
-                    "answer": "A) Rudeness"
-                },
-                {
-                    "question": "Which statement best describes a positive right in ethical theory?",
-                    "options": [
-                        "A) Right to act without interference",
-                        "B) Obligation to provide something to others",
-                        "C) Right to free speech",
-                        "D) Right to privacy"
-                    ],
-                    "answer": "B) Obligation to provide something to others"
-                }
-            ]
-        },
-        "true_false_questions": {
-            "file_name": "Ch1_Introduction.pptx",
-            "question_type": "True or False",
+    temp_path = f"temp_{file.filename}" # Safer temp naming
+
+    # Save uploaded file
+    content = await file.read()
+    with open(temp_path, "wb") as f:
+        f.write(content)
+
+    try:
+        text = extract_file_text(temp_path, file.filename)
+        if not text.strip():
+            raise HTTPException(status_code=400, detail="No text found in file")
+
+        tasks = []
+        # Keep track of which order tasks are added
+        task_types = []
+
+        if mcq_count > 0:
+            mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+            tasks.append(send_to_lm_studio_async(mcq_prompt))
+            task_types.append("mcq")
+        
+        if tf_count > 0:
+            tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+            tasks.append(send_to_lm_studio_async(tf_prompt))
+            task_types.append("tf")
+
+        # Run concurrently
+        responses = await asyncio.gather(*tasks)
+        
+        # Create a mapping to easily retrieve results
+        results_map = dict(zip(task_types, responses))
+
+        # Build response safely
+        mcq_result = results_map.get("mcq", {
+            "file_name": file.filename, 
+            "question_type": "Multiple Choice", 
             "questions": []
-        },
-        "total_questions": 3
-    }
+        })
+        
+        tf_result = results_map.get("tf", {
+            "file_name": file.filename, 
+            "question_type": "True or False", 
+            "questions": []
+        })
+
+        return {
+            "filename": file.filename,
+            "mcq_questions": mcq_result,
+            "true_false_questions": tf_result,
+            "total_questions": mcq_count + tf_count
+        }
+
+    except Exception as e:
+        # This helps you see the actual error in your console/logs
+        print(f"Error occurred: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+        
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+
+
+
+
+
+
+
+
+
+
+# @app.post("/ask_ai_model")
+# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+#     return {
+#         "filename": "Ch1_Introduction.pptx",
+#         "mcq_questions": {
+#             "file_name": "Ch1_Introduction.pptx",
+#             "question_type": "Multiple Choice",
+#             "questions": [
+#                 {
+#                     "question": "Which of the following is NOT mentioned as a catalyst for the Information Age?",
+#                     "options": [
+#                         "A) Low-cost computers",
+#                         "B) High-speed communication networks",
+#                         "C) Advanced nuclear reactors",
+#                         "D) Smartphones"
+#                     ],
+#                     "answer": "C) Advanced nuclear reactors"
+#                 },
+#                 {
+#                     "question": "Which issue is highlighted in the text regarding cell phone usage?",
+#                     "options": [
+#                         "A) Rudeness",
+#                         "B) Battery life",
+#                         "C) Screen size",
+#                         "D) Software updates"
+#                     ],
+#                     "answer": "A) Rudeness"
+#                 },
+#                 {
+#                     "question": "Which statement best describes a positive right in ethical theory?",
+#                     "options": [
+#                         "A) Right to act without interference",
+#                         "B) Obligation to provide something to others",
+#                         "C) Right to free speech",
+#                         "D) Right to privacy"
+#                     ],
+#                     "answer": "B) Obligation to provide something to others"
+#                 }
+#             ]
+#         },
+#         "true_false_questions": {
+#             "file_name": "Ch1_Introduction.pptx",
+#             "question_type": "True or False",
+#             "questions": []
+#         },
+#         "total_questions": 3
+#     }
 
 
 
@@ -294,3 +368,10 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 
 # Run with:
 # uvicorn APIFile:app --port 8001
+
+
+#python -m pip install PyMuPDF
+#python -m pip install pywin32
+#python -m pip install comtypes
+#python -m pip install aiohttp
+#python -m pip install httpx
