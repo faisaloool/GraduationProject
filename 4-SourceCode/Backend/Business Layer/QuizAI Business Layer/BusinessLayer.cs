@@ -20,7 +20,19 @@ namespace QuizAI_Business_Layer
     {
         public static async Task<CreateNewUserResponseDTO> RegisterNewUser(CreateNewUserRequestDTO NewUser)
         {
-            return await UserDataBack.CreateNewAccountAsync(NewUser);
+            string token = TokensBusinessLayer.GenerateTokenForEmailVerification();
+
+            EmailServicesBusinessLayer.SendEmail(NewUser.Email, EmailServicesBusinessLayer.EmailMessageType.VerifyEmail, token);
+            CreateNewUserResponseDTO user = await UserDataBack.CreateNewAccountAsync(NewUser);
+            
+            await UserDataBack.SaveVerifyEmailTokenAsync(user.user.id, token);
+
+            return user;
+        }
+
+        public static async Task<bool> VerifyNewUser(Guid UserID, string token)
+        {
+            return await UserDataBack.VerifyNewUserEmailAsync(UserID, token);
         }
 
         public static async Task<UserLoginResponseDTO> Login(UserLoginRequestDTO loginInfo)
@@ -45,7 +57,7 @@ namespace QuizAI_Business_Layer
             {
                 try
                 {
-                    string token = EmailServicesBusinessLayer.GenerateTokenForPasswordRecovery();
+                    string token = TokensBusinessLayer.GenerateTokenForPasswordRecovery();
                     var u = await UserDataBack.GetUserByEmailAsync(forgotPasswordInfo.Email);
                     EmailServicesBusinessLayer.SendEmail(forgotPasswordInfo.Email, EmailServicesBusinessLayer.EmailMessageType.ForgotPassword, token);
                     await UserDataBack.SaveForgetPasswordInfoAsync(u.id, token);
@@ -130,7 +142,7 @@ namespace QuizAI_Business_Layer
     //        return await ContentDataBack.SaveContentAsync(ContentInfo);
     //    }
     //}
-
+   
     public class ServerHealthBusinessLayer
     {
         public static async Task<bool> CheckDbConnection()
@@ -159,6 +171,33 @@ namespace QuizAI_Business_Layer
         }
     }
 
+    public class TokensBusinessLayer
+    {
+        const string ResetPasswordTokenChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const string VerifyEmailTokenChars = "1234567890";
+        const string ShareQuizTokenChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+        public static string GenerateTokenForPasswordRecovery(int length = 6)
+        {
+            var random = new Random();
+            return new string(Enumerable.Repeat(ResetPasswordTokenChars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public static string GenerateTokenForEmailVerification(int length = 6)
+        {
+            var random = new Random();
+            return new string(Enumerable.Repeat(VerifyEmailTokenChars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        public static string GenerateTokenForShareQuiz(int length = 6)
+        {
+            var random = new Random();
+            return new string(Enumerable.Repeat(ShareQuizTokenChars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+    }
 
     public class EmailServicesBusinessLayer
     {
@@ -168,15 +207,6 @@ namespace QuizAI_Business_Layer
             VerifyEmail,
             Notification
         }
-
-        public static string GenerateTokenForPasswordRecovery(int length = 6)
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
 
         public static void SendEmail(string emailTo, EmailMessageType messageType, string token = null)
         {
@@ -192,17 +222,34 @@ namespace QuizAI_Business_Layer
                 {
                     case EmailMessageType.ForgotPassword:
                         mail.Subject = "Reset Your Password";
-                        mail.Body =
-                            $"We received a password reset request.\n\n" +
-                            $"Your reset code is: {token}\n\n" +
-                            $"If you didn’t request this, ignore this email.";
-                        break;
+                        var resetPasswordLink = $"http://localhost:5173/change-password/{token}";
 
-                    case EmailMessageType.VerifyEmail:
-                        mail.Subject = "Verify Your Email";
                         mail.Body =
-                            $"Welcome!\n\nYour verification code is: {token}";
-                        break;
+                            "Hello,\n\n" +
+                            "We received a request to reset the password for your Quiz AI account.\n\n" +
+                            "To reset your password, please click the link below:\n\n" +
+                            $"{resetPasswordLink}\n\n" +
+                            "This link is valid for a limited time and can only be used once.\n\n" +
+                            "If you did not request this, please ignore this email and no changes will be made.\n\n" +
+                            "Best regards,\n" +
+                            "Quiz AI Team";
+                    break;
+                        
+                    case EmailMessageType.VerifyEmail:
+                        mail.Subject = "Verify Your Email Address";
+
+                        mail.Body =
+                            "Hello,\n\n" +
+                            "Thank you for registering with Quiz AI.\n\n" +
+                            "To complete your registration, please verify your email address using the verification code below:\n\n" +
+                            $"Verification Code: {token}\n\n" +
+                            "Enter this code on our website to confirm your email address and activate your account.\n\n" +
+                            "If you did not create an account with us, please ignore this email. No further action is required.\n\n" +
+                            "Best regards,\n" +
+                            "Quiz AI Team";
+
+                    break;
+
 
                     case EmailMessageType.Notification:
                         mail.Subject = "Notification";
@@ -243,12 +290,28 @@ namespace QuizAI_Business_Layer
             return await QuizzesDataBack.RenameQuizAsync(QuizID, UserID, NewName);
         }
 
-        public static async Task ShareQuiz(Guid RecipientUserID, Guid QuizID)
+        public static async Task<bool> ShareQuiz(Guid RecipientUserID, string Token)
         {
-            await QuizzesDataBack.ShareQuizAsync(RecipientUserID, QuizID);
+            return await QuizzesDataBack.ShareQuizAsync(RecipientUserID, Token);
+        }
 
+        public static async Task<string> CreateShareQuizToken(Guid QuizID)
+        {
+            string Token = TokensBusinessLayer.GenerateTokenForShareQuiz();
+
+            await QuizzesDataBack.CreateShareTokenAsync(QuizID, Token);
+            return Token;
+        }
+
+        public static async Task<Quiz> GetQuizQuestionsBasedOnQuizID(Guid QuizID, string QuizTitle)
+        {
+            return await QuizzesDataBack.GetQuizBasedOnQuizIDAsync(QuizID, QuizTitle);
+        }
+
+        public static async Task<bool> DeleteQuestionUsingQuestionID(Guid QuestionID, Guid QuizID, Guid UserID)
+        {
+            return await QuizzesDataBack.DeleteQuestionUsingQuestionID(QuestionID, QuizID, UserID);
         }
     }
-
 }
 

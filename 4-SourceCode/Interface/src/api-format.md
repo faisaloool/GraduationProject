@@ -62,7 +62,7 @@ API Specification
 
 ## Quiz AI Endpoints
 
-## 1. server helth status ///////////////////////////////////////////////////////done
+## 1. server helth status //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/helth**  
 **Method:GET**  
@@ -72,7 +72,7 @@ API Specification
 
 none
 
-## 2. Log in ///////////////////////////////////////////////////////done
+## 2. Log in //////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/login**  
 **Method:POST**  
@@ -116,7 +116,7 @@ none
 "data": null
 }
 
-## 3. Sign up ///////////////////////////////////////////////////////done
+## 3. Sign up ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/signup**  
 **Method:POST**  
@@ -161,13 +161,23 @@ none
 "data": null
 }
 
+<<<<<<< HEAD
 ## 4. PassWord recovery ///////////////////////////////////////////////////////done
+=======
+## 4. PassWord recovery  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+>>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/ ? ?**  
 **Method:POST**  
 **Description:reassigning the password after sending an email to the user email and verifiying the code to set the new password**
 
+<<<<<<< HEAD
 ## 5. Quiz Generate
+=======
+
+
+## 5. Quiz Generate\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+>>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/quiz/create**  
 **Method:POST**  
@@ -208,7 +218,11 @@ none
 }
 }
 
+<<<<<<< HEAD
 ## 6. Get exams based on User id ///////////////////////////////////////////////////////done
+=======
+## 6. Get exams based on User id    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+>>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
@@ -239,7 +253,11 @@ none
 }
 }
 
+<<<<<<< HEAD
 ## 7. Quiz delete ///////////////////////////////////////////////////////////////done
+=======
+## 7. Quiz delete    /////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+>>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/quiz/delete**  
 **Method:DEL**  
@@ -251,7 +269,7 @@ none
 "quizId" : "1",
 }
 
-## 7. Rename Quiz /////////////////////////////////////////////////////////////////done
+## 8. Rename Quiz //////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/:quizId/rename**  
 **Method:PUT**  
@@ -275,7 +293,7 @@ none
 }
 }
 
-## 8. Quiz submit
+## 9. Quiz submit \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 **URL:quiz-ai/quiz/submit**  
 **Method:POST**  
@@ -318,7 +336,7 @@ none
 }
 }
 
-## 9. Question regenrate
+## 10. Question regenrate \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 **URL:quiz-ai/quiz/question/regenrate**  
 **Method:POST**  
@@ -348,8 +366,7 @@ none
 }
 }
 
-## 10. Question delete
-
+## 11. Question delete /////////////////////////////////////////////////////////////////////////////////////////////////////done
 **URL:quiz-ai/quiz/question/delete**  
 **Method:DEL**  
 **Description:Deleting question based on the request body**
@@ -361,7 +378,7 @@ none
 "questionId": "4"
 }
 
-## 11. Quiz regenrate
+## 12. Quiz regenrate \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 **URL:quiz-ai/quiz/regenrate**  
 **Method:POST**  
@@ -397,16 +414,20 @@ none
 }
 }
 
+<<<<<<< HEAD
 ## 12. Share quiz (don't know how yet!)
+=======
+## 13. Share quiz (don't know how yet!) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+>>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:**  
 **Method:**  
 **Description:**
 
-## 13. Get quiz based on quiz id
+## 14. Get quiz based on quiz id /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/:id**  
-**Method:GET**  
+**Method:GET**   
 **Description: Getting quiz data from the id**
 
 ### Request Body

@@ -2,7 +2,10 @@ from fastapi import FastAPI, UploadFile, File, HTTPException, Query
 import os
 from Extractors.content_extractor_all import extract_file_text
 from content_creation_json import generate_mcq_quiz_from_text, generate_tf_quiz_from_text
-
+import requests
+import httpx
+import asyncio
+from docx import Document
 
 app = FastAPI()
 
@@ -50,6 +53,227 @@ async def generate_quiz(
     finally:
         if os.path.exists(temp_path):
             os.remove(temp_path)
+
+
+@app.post("/extract_text")
+async def extract_text_endpoint(file: UploadFile = File(...)):
+    file_ext = os.path.splitext(file.filename)[1].lower()
+    temp_path = f"temp{file_ext}"
+
+    # Save uploaded file temporarily
+    with open(temp_path, "wb") as f:
+        f.write(await file.read())
+
+    try:
+        try:
+            text = extract_file_text(temp_path, file.filename)
+        except ValueError as e:
+            raise HTTPException(status_code=400, detail=str(e))
+
+        if not text.strip():
+            raise HTTPException(status_code=400, detail="No text found in file")
+
+        return {
+            "filename": file.filename,
+            "text": text
+        }
+
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+
+
+
+
+# def send_to_lm_studio(prompt: str) -> str:
+#     """Send a prompt to LM Studio and return the AI response."""
+#     url = "http://127.0.0.1:1234/v1/chat/completions"
+#     payload = {
+#         "model": "local-model",
+#         "messages": [{"role": "user", "content": prompt}],
+#         "temperature": 0.5,
+#         "max_tokens": 1200
+#     }
+#     headers = {"Content-Type": "application/json"}
+
+#     try:
+#         response = requests.post(url, json=payload, headers=headers)
+#         response.raise_for_status()
+#         return response.json()["choices"][0]["message"]["content"]
+#     except Exception as e:
+#         return f"Error communicating with LM Studio: {e}"
+
+async def send_to_lm_studio_async(prompt: str) -> str:
+    """Send a prompt to LM Studio asynchronously and return the AI response."""
+    url = "http://26.152.59.249:1234/v1/chat/completions"
+    payload = {
+        "model": "local-model",
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.5,
+        "max_tokens": 1200
+    }
+    headers = {"Content-Type": "application/json"}
+
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(url, json=payload, headers=headers, timeout=None)
+        resp.raise_for_status()
+        data = resp.json()
+        return data["choices"][0]["message"]["content"]
+
+
+
+
+
+
+def build_mcq_prompt(text: str, count: int, filename: str) -> str:
+    return f"""
+Generate exactly {count} Multiple Choice Questions.
+Return JSON ONLY. No explanations. No markdown.
+
+Rules:
+- Answer must contain the FULL correct option text
+- Follow the structure EXACTLY
+
+Expected JSON format (example with 2 questions):
+
+{{
+  "file_name": "{filename}",
+  "question_type": "Multiple Choice",
+  "questions": [
+    {{
+      "question": "What is the main goal of Data Mining?",
+      "options": [
+        "A) Extracting useful knowledge from data",
+        "B) Storing large datasets",
+        "C) Designing databases",
+        "D) Visualizing data only"
+      ],
+      "answer": "A) Extracting useful knowledge from data"
+    }},
+    {{
+      "question": "Which task predicts numerical values?",
+      "options": [
+        "A) Classification",
+        "B) Clustering",
+        "C) Regression",
+        "D) Association Rule Mining"
+      ],
+      "answer": "C) Regression"
+    }}
+  ]
+}}
+
+Content:
+{text}
+"""
+
+
+
+
+
+def build_tf_prompt(text: str, count: int, filename: str) -> str:
+    return f"""
+Generate exactly {count} True or False Questions.
+Return JSON ONLY. No explanations. No markdown.
+
+Rules:
+- Follow the structure EXACTLY
+- Each question has only "question" and "answer" fields
+
+Expected JSON format (example with 2 questions):
+
+{{
+  "file_name": "{filename}",
+  "question_type": "True or False",
+  "questions": [
+    {{
+      "question": "Clustering groups data without predefined labels.",
+      "answer": "True"
+    }},
+    {{
+      "question": "Regression is used for categorical outputs.",
+      "answer": "False"
+    }}
+  ]
+}}
+
+Content:
+{text}
+"""
+
+
+
+# @app.post("/ask_ai_model")
+# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+#     temp_path = f"temp{os.path.splitext(file.filename)[1]}"
+
+#     with open(temp_path, "wb") as f:
+#         f.write(await file.read())
+
+#     try:
+#         text = extract_file_text(temp_path, file.filename)
+#         if not text.strip():
+#             raise HTTPException(status_code=400, detail="No text found in file")
+
+#         # Build prompts
+#         mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+#         tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+
+#         # Send two requests to LM Studio
+#         mcq_result = send_to_lm_studio(mcq_prompt)
+#         tf_result = send_to_lm_studio(tf_prompt)
+
+#         return {
+#             "filename": file.filename,
+#             "mcq_questions": mcq_result,
+#             "true_false_questions": tf_result,
+#             "total_questions": mcq_count + tf_count
+#         }
+
+#     finally:
+#         if os.path.exists(temp_path):
+#             os.remove(temp_path)
+
+
+
+@app.post("/ask_ai_model")
+async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+    temp_path = f"temp{os.path.splitext(file.filename)[1]}"
+
+    # Save uploaded file
+    with open(temp_path, "wb") as f:
+        f.write(await file.read())
+
+    try:
+        text = extract_file_text(temp_path, file.filename)
+        if not text.strip():
+            raise HTTPException(status_code=400, detail="No text found in file")
+
+        mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+        tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+
+        mcq_task = asyncio.create_task(send_to_lm_studio_async(mcq_prompt))
+        tf_task = asyncio.create_task(send_to_lm_studio_async(tf_prompt))
+        mcq_result, tf_result = await asyncio.gather(mcq_task, tf_task)
+
+        return {
+            "filename": file.filename,
+            "mcq_questions": mcq_result,
+            "true_false_questions": tf_result,
+            "total_questions": mcq_count + tf_count
+        }
+
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+
+
+
+
 
 # Run with:
 # uvicorn APIFile:app --port 8001
