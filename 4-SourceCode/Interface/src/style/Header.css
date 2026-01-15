@@ -25,6 +25,10 @@ header {
   letter-spacing: 0.2px;
   margin: 0;
   padding: 0;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header-btns {
@@ -135,15 +139,16 @@ header {
 
 /* موبايل كبير (600px) */
 @media (max-width: 600px) {
-  /* Hide the version label on mobile */
-  .ai-version {
-    display: none;
-  }
-
   header {
     height: 70px;
     padding: 0 12px;
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .ai-version {
+    display: block;
+    font-size: 17px;
+    max-width: 52vw;
   }
 
   .header-btns button {
@@ -177,7 +182,9 @@ header {
   }
 
   .ai-version {
-    display: none;
+    display: block;
+    font-size: 16px;
+    max-width: 50vw;
   }
 }
 
@@ -195,7 +202,9 @@ header {
   }
 
   .ai-version {
-    display: none;
+    display: block;
+    font-size: 16px;
+    max-width: 68vw;
   }
 
   header {

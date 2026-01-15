@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Luckiest+Guy&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Scoped styles for the Error page only.
+   Avoid global resets here to prevent affecting the rest of the app. */
 
-* {
-  margin: 0;
-  padding: 0;
+.error-page,
+.error-page * {
   box-sizing: border-box;
-  font-family: "PT Serif", serif;
 }
 
 .error-page {
@@ -15,6 +14,8 @@
   justify-content: center;
   padding: 20px;
   background: #151515;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
 }
 
 .error-page__card {
@@ -22,8 +23,13 @@
   max-width: 760px;
   border-radius: 20px;
   padding: 22px 22px 18px;
-  background: rgba(15, 15, 15, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(
+      900px circle at 20% 10%,
+      rgba(70, 234, 255, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(180deg, rgba(12, 18, 20, 0.92), rgba(15, 15, 15, 0.9));
+  border: 1px solid rgba(70, 234, 255, 0.22);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
   color: #ffffff;
   position: relative;
@@ -60,12 +66,107 @@
   margin-bottom: 14px;
 }
 
+.error-page__meta {
+  margin: -4px 0 0;
+  font-size: 13px;
+  line-height: 1.35;
+  color: rgba(233, 254, 255, 0.75);
+}
+
+.error-page__metaValue {
+  color: rgba(233, 254, 255, 0.95);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+.error-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 14px;
+}
+
+.error-page__btn {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 44px;
+  border-radius: 12px;
+  padding: 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.05s ease;
+
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(233, 254, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.error-page__btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(70, 234, 255, 0.35);
+}
+
+.error-page__btn:active {
+  transform: translateY(1px);
+}
+
+.error-page__btn:focus-visible {
+  outline: 2px solid #46eaff;
+  outline-offset: 3px;
+}
+
+.error-page__btn--primary {
+  background: #298a97;
+  border-color: #298a97;
+  color: #0f0f0f;
+}
+
+.error-page__btn--primary:hover {
+  background: #46eaff;
+  border-color: #46eaff;
+}
+
+.error-page__btn--ghost {
+  background: transparent;
+}
+
+.error-page__details {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+}
+
+.error-page__summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 12px 14px;
+  color: rgba(233, 254, 255, 0.9);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.error-page__summary::-webkit-details-marker {
+  display: none;
+}
+
+.error-page__summary::after {
+  content: "▾";
+  float: right;
+  opacity: 0.9;
+}
+
+.error-page__details[open] .error-page__summary::after {
+  content: "▴";
+}
+
 .error-page__message {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 0;
   padding: 14px 14px;
-  background: rgba(0, 0, 0, 0.38);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  border: 0;
   color: #ffffff;
   white-space: pre-wrap;
   word-break: break-word;
@@ -75,6 +176,8 @@
   max-height: 44vh;
   overflow: auto;
   outline: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
 }
 
 @media (max-width: 480px) {
@@ -93,6 +196,14 @@
 
   .error-page__subtitle {
     font-size: 14px;
+  }
+
+  .error-page__actions {
+    gap: 8px;
+  }
+
+  .error-page__btn {
+    width: 100%;
   }
 
   .error-page__message {

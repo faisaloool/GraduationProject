@@ -7,6 +7,33 @@
   gap: 10px;
 }
 
+/* Reserve space so showing the file preview does not shift the upload bar */
+.file-preview-slot {
+  width: min(92vw, 760px);
+  min-height: 62px;
+  display: flex;
+  align-items: stretch;
+}
+
+@media (max-width: 420px) {
+  .file-preview-slot {
+    width: 100%;
+  }
+}
+
+/* Hide the native file input without breaking accessibility */
+.inputfile {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===== Unified upload bar (settings + file + submit) ===== */
 .upload-bar {
   width: min(92vw, 760px);
@@ -73,6 +100,11 @@
 .upload-file:hover {
   background-color: rgba(255, 255, 255, 0.09);
   border-color: rgba(255, 255, 255, 0.18);
+}
+
+.upload-file:focus-within {
+  outline: 2px solid #46eaff;
+  outline-offset: 4px;
 }
 
 .upload-file .folder-icon {
@@ -169,6 +201,10 @@
 }
 
 @media (max-width: 420px) {
+  .input-wrapper {
+    padding-inline: 12px;
+  }
+
   .upload-bar {
     width: 100%;
     padding: 8px;
@@ -268,6 +304,8 @@
   color: #f5fbff;
   line-height: 1.45;
   padding: 24px;
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
   animation: modal-pop 180ms ease-out;
 }
 
@@ -358,4 +396,47 @@
 .settings-save:active,
 .settings-cancel:active {
   transform: translateY(1px);
+}
+
+@media (max-width: 520px) {
+  .settings-overlay {
+    padding: 14px;
+  }
+
+  .settings-frame {
+    width: min(520px, 100%);
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  /* Collapse from 4 columns to 2 columns: label + input per row */
+  .settings-row.two-inputs {
+    grid-template-columns: minmax(0, 1fr) 96px;
+    column-gap: 10px;
+  }
+
+  .settings-actions {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .settings-save,
+  .settings-cancel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .settings-title {
+    font-size: 16px;
+  }
+
+  .settings-row label {
+    font-size: 14px;
+  }
+
+  .settings-input.number-input {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
 }

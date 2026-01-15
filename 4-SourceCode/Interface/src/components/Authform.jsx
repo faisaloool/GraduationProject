@@ -7,6 +7,7 @@ import {
   requestPasswordResetEmail,
 } from "../util/service.js";
 import { useAuth } from "../context/AuthContext.jsx";
+import { savePendingVerificationUser } from "../util/pendingVerification.js";
 
 export default function AuthForms({ isLogin, setIsLogin }) {
   const navigate = useNavigate();
@@ -58,6 +59,52 @@ function Form({ isLogin }) {
   const location = useLocation();
   const { login, setUser } = useAuth();
 
+  const NAME_LIMITS = {
+    MIN: 2,
+    MAX: 50,
+  };
+
+  const EMAIL_LIMITS = {
+    MAX: 254,
+  };
+
+  const getNameError = (rawName) => {
+    const clean = String(rawName || "").trim();
+    if (!clean) return "Full name is required.";
+    if (clean.length < NAME_LIMITS.MIN) {
+      return `Full name must be at least ${NAME_LIMITS.MIN} characters.`;
+    }
+    if (clean.length > NAME_LIMITS.MAX) {
+      return `Full name must be ${NAME_LIMITS.MAX} characters or less.`;
+    }
+    return "";
+  };
+
+  const getEmailError = (rawEmail) => {
+    const clean = String(rawEmail || "").trim();
+    if (!clean) return "Email is required.";
+    if (clean.length > EMAIL_LIMITS.MAX) return "Email is too long.";
+
+    // Simple, practical email check (HTML5 type=email is also present).
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(clean)) return "Please enter a valid email address.";
+    return "";
+  };
+
+  const getSignupPasswordError = (pw) => {
+    const password = String(pw || "");
+    const missing = [];
+
+    if (password.length < 8) missing.push("8+ characters");
+    if (!/[A-Z]/.test(password)) missing.push("1 uppercase letter");
+    if (!/[a-z]/.test(password)) missing.push("1 lowercase letter");
+    // Require a non-space non-alphanumeric character
+    if (!/[^A-Za-z0-9\s]/.test(password)) missing.push("1 symbol");
+
+    if (missing.length === 0) return "";
+    return `Password must include: ${missing.join(", ")}.`;
+  };
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -66,18 +113,40 @@ function Form({ isLogin }) {
   const [loading, setLoading] = useState(false);
   const [sendingReset, setSendingReset] = useState(false);
 
+  const signupPasswordError = !isLogin ? getSignupPasswordError(password) : "";
+  const signupNameError = !isLogin ? getNameError(name) : "";
+  const emailError = getEmailError(email);
+
   async function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true);
     setError("");
     setInfo("");
 
+    if (!isLogin && signupNameError) {
+      setError(signupNameError);
+      return;
+    }
+
+    if (emailError) {
+      setError(emailError);
+      return;
+    }
+
+    if (!isLogin && signupPasswordError) {
+      setError(signupPasswordError);
+      return;
+    }
+
+    setLoading(true);
+
     try {
       let data;
+      const cleanEmail = String(email || "").trim();
       if (isLogin) {
-        data = await loginUser(email, password);
+        data = await loginUser(cleanEmail, password);
       } else {
-        data = await registerUser(name, email, password);
+        const cleanName = String(name || "").trim();
+        data = await registerUser(cleanName, cleanEmail, password);
       }
 
       if (data.error) {
@@ -96,6 +165,7 @@ function Form({ isLogin }) {
           }
         } else {
           setUser(data.user);
+          savePendingVerificationUser(data.user);
           navigate("/verifyaccount");
         }
       }
@@ -112,14 +182,17 @@ function Form({ isLogin }) {
     setError("");
     setInfo("");
 
-    if (!email.trim()) {
-      setError("Please enter your email first.");
+    const emailErr = getEmailError(email);
+    if (emailErr) {
+      setError(emailErr);
       return;
     }
 
     setSendingReset(true);
     try {
-      const result = await requestPasswordResetEmail(email);
+      const result = await requestPasswordResetEmail(
+        String(email || "").trim()
+      );
       if (result?.error) {
         setError(result.error);
         return;
@@ -146,7 +219,13 @@ function Form({ isLogin }) {
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
+            maxLength={NAME_LIMITS.MAX}
           />
+          {name && signupNameError ? (
+            <p className="auth-error" role="alert" aria-live="polite">
+              {signupNameError}
+            </p>
+          ) : null}
         </div>
       )}
 
@@ -158,7 +237,13 @@ function Form({ isLogin }) {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          maxLength={EMAIL_LIMITS.MAX}
         />
+        {email && emailError ? (
+          <p className="auth-error" role="alert" aria-live="polite">
+            {emailError}
+          </p>
+        ) : null}
       </div>
 
       <div className="inputs">
@@ -170,6 +255,11 @@ function Form({ isLogin }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        {!isLogin && password && signupPasswordError && (
+          <p className="auth-error" role="alert" aria-live="polite">
+            {signupPasswordError}
+          </p>
+        )}
       </div>
 
       {isLogin && (
@@ -191,7 +281,15 @@ function Form({ isLogin }) {
         </p>
       )}
 
-      <button className="submit_btn" disabled={loading}>
+      <button
+        className="submit_btn"
+        disabled={
+          loading ||
+          (!isLogin && name && Boolean(signupNameError)) ||
+          (email && Boolean(emailError)) ||
+          (!isLogin && password && Boolean(signupPasswordError))
+        }
+      >
         {loading ? "Loading..." : isLogin ? "Log In" : "Sign Up"}
       </button>
 

@@ -14,6 +14,7 @@ import {
   regenerateQuiz,
   regenerateQuestion,
   deleteQuestion,
+  getQuizInfo,
 } from "../util/service.js";
 import { useAuth } from "./AuthContext.jsx";
 
@@ -62,9 +63,59 @@ export function ExamsProvider({ children }) {
   useEffect(() => {
     if (user) {
       loadExams();
+      return;
     }
+
+    // User logged out: clear any in-memory quiz state.
+    setExam({ title: "Main-page", examId: null });
+    setExams([]);
+    setError(null);
+    setFeedback(null);
   }, [user]);
 
+  const getExamData = async (examId, token) => {
+    const targetId = String(examId ?? "").trim();
+    if (!targetId) {
+      setError("Missing exam id.");
+      return false;
+    }
+
+    // 1) Try to use hydrated data from the exams list (if already fetched before)
+    const cached = exams.find(
+      (e) => String(getExamId(e) ?? "") === String(targetId)
+    );
+
+    // Consider it "valid data" when it includes a questions array
+    if (cached && Array.isArray(cached.questions)) {
+      setError(null);
+      setExam(cached);
+      return true;
+    }
+
+    // 2) Otherwise fetch, then hydrate the matching exams[] element
+    try {
+      setError(null);
+      const data = await getQuizInfo(token, targetId);
+      setExam(data);
+
+      // Update the exams list entry as well
+      setExams((prev) => {
+        const idx = prev.findIndex(
+          (e) => String(getExamId(e) ?? "") === String(targetId)
+        );
+        if (idx === -1) return prev; // expected to exist already; keep minimal
+
+        const copy = prev.slice();
+        copy[idx] = { ...copy[idx], ...data };
+        return copy;
+      });
+
+      return true;
+    } catch (error) {
+      setError(error);
+      return false;
+    }
+  };
   // Fetch exams from API
   const loadExams = async () => {
     setLoading(true);
@@ -492,6 +543,7 @@ export function ExamsProvider({ children }) {
       value={{
         exam,
         setExam,
+        getExamData,
         exams,
         loading,
         regeneratingQuiz,

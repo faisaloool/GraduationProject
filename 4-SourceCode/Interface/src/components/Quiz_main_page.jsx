@@ -6,18 +6,23 @@ import { Header } from "./Header";
 
 import { useExams } from "../context/ExamsProvider.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
-import { submitExamAnswers } from "../util/service.js";
+/* import { submitExamAnswers } from "../util/service.js"; */
 
 import { GrRefresh } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 
 import { AntigravityCanvas } from "./AntigravityCanvas";
 import { FeedbackPopup } from "./FeedbackPopup";
+import { ScrollToBottomIndicator } from "./ScrollToBottomIndicator";
+
+// REMOVE the inline ScrollToBottomIndicator component definition here
+// (it now lives in ./ScrollToBottomIndicator.jsx)
 
 export const Quiz_main_page = ({ editing, setEditing }) => {
   const {
     exam,
     setExam,
+    getExamData,
     exams,
     loading,
     regeneratingQuiz,
@@ -40,14 +45,19 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   const [submittedScore, setSubmittedScore] = useState(null);
   const [submitSyncError, setSubmitSyncError] = useState(null);
   const [examStateHydrated, setExamStateHydrated] = useState(false);
-  /* const [RightOrWrong, setRightOrWrong] = useState(new Map()); */
   const [showScrollArrow, setShowScrollArrow] = useState(false);
   const [examTransitioning, setExamTransitioning] = useState(false);
   const [initialLoadStarted, setInitialLoadStarted] = useState(false);
   const [initialLoadFinished, setInitialLoadFinished] = useState(false);
 
-  // stable key for current exam
-  const examKey = exam.examId || exam.quizId;
+  // Track latest transition to avoid stale async/timers causing twitch
+  const transitionSeqRef = useRef(0);
+  const transitionTimerRef = useRef(null);
+
+  // stable key for current exam (normalized to string to avoid 1 vs "1" changes)
+  const examKeyRaw = exam?.examId ?? exam?.quizId;
+  const examKey = examKeyRaw == null ? null : String(examKeyRaw);
+
   const currentScore = submittedScore;
   const isSubmitted = typeof currentScore === "number";
 
@@ -131,10 +141,51 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
   useEffect(() => {
     if (exam.title === "Main-page" || !exam.title) return;
+    if (!examKey) return;
+
+    let cancelled = false;
+    const seq = ++transitionSeqRef.current;
+
+    // cancel any pending "end transition" from previous exam switches
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+
     setExamTransitioning(true);
-    const timer = setTimeout(() => setExamTransitioning(false), 350);
-    return () => clearTimeout(timer);
-  }, [exam.examId, exam.quizId, exam.title]);
+
+    (async () => {
+      const startedAt = Date.now();
+      try {
+        await getExamData(examKey, token);
+      } finally {
+        const elapsed = Date.now() - startedAt;
+        const remaining = Math.max(0, 350 - elapsed);
+
+        const finish = () => {
+          if (cancelled) return;
+          if (transitionSeqRef.current !== seq) return; // a newer transition started
+          setExamTransitioning(false);
+        };
+
+        if (cancelled || transitionSeqRef.current !== seq) return;
+
+        if (remaining) {
+          transitionTimerRef.current = setTimeout(finish, remaining);
+        } else {
+          finish();
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      if (transitionTimerRef.current) {
+        clearTimeout(transitionTimerRef.current);
+        transitionTimerRef.current = null;
+      }
+    };
+  }, [examKey, token]);
 
   useEffect(() => {
     setExamStateHydrated(false);
@@ -429,22 +480,13 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
         selectedOption,
       })
     );
-
-    const result = await submitExamAnswers(
-      {
-        userId: userIdValue,
-        examId: examKey,
-        answers,
-      },
-      token
-    );
-
-    if (result?.error) {
-      setSubmitSyncError(result.error);
-    }
   };
+
   // here we display the exam questions and options
   const getExamResponse = (questions) => {
+    // Guard: only render once we have a valid questions array
+    if (!Array.isArray(questions) || questions.length === 0) return null;
+
     return questions.map(
       ({ id, question, options, type, marks, correctAnswer }) => {
         const qIdKey = String(id);
@@ -788,36 +830,10 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
                   </div>
                 )}
                 {/* fixed bottom-center scroll indicator */}
-                <div
-                  className={`scroll-indicator ${
-                    showScrollArrow ? "" : "hidden"
-                  }`}
-                  role="button"
-                  tabIndex={showScrollArrow ? 0 : -1}
-                  onClick={showScrollArrow ? scrollToBottom : undefined}
-                  onKeyDown={(e) => {
-                    if (!showScrollArrow) return;
-                    if (e.key === "Enter" || e.key === " ") scrollToBottom();
-                  }}
-                  aria-label="Scroll to bottom"
-                  title="Scroll to bottom"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="30"
-                    height="30"
-                    fill="none"
-                    aria-hidden
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                <ScrollToBottomIndicator
+                  visible={showScrollArrow}
+                  onActivate={scrollToBottom}
+                />
               </>
             )}
           </div>

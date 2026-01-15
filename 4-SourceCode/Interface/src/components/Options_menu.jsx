@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -24,25 +24,83 @@ export const Options_menu = ({
 
   const id = quiz?.examId || quiz?.quizId;
   const containerRef = useRef(null);
+
   const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
+
+  // NEW: resolved position + max-height for mobile so menu stays visible
+  const [resolvedPos, setResolvedPos] = useState(
+    () => position || { x: 0, y: 0 }
+  );
+  const [menuMaxHeight, setMenuMaxHeight] = useState(null);
 
   const shareUrl = id
     ? `${window.location.origin}/shared/${encodeURIComponent(String(id))}`
     : "";
 
+  // Reposition after mount/updates (uses actual rendered menu size)
+  useLayoutEffect(() => {
+    if (!position) return;
+
+    const compute = () => {
+      const el = containerRef.current;
+      if (!el) return;
+
+      const rect = el.getBoundingClientRect();
+      const margin = 8;
+
+      const isNarrow =
+        window.matchMedia && window.matchMedia("(max-width: 600px)").matches;
+
+      // In mobile, avoid the account area covering the bottom of the menu.
+      const accountRect = isNarrow
+        ? document.querySelector(".sb-account-area")?.getBoundingClientRect?.()
+        : null;
+
+      const bottomLimit =
+        isNarrow && accountRect?.top
+          ? Math.min(window.innerHeight - margin, accountRect.top - margin)
+          : window.innerHeight - margin;
+
+      let x = Number(position.x) || 0;
+      let y = Number(position.y) || 0;
+
+      // Prefer staying on-screen horizontally
+      x = Math.max(
+        margin,
+        Math.min(x, window.innerWidth - rect.width - margin)
+      );
+
+      // If it overflows the bottom (or would be under account), flip up
+      if (y + rect.height > bottomLimit) {
+        y = y - rect.height;
+      }
+
+      // Clamp vertically into the visible safe area
+      y = Math.max(margin, Math.min(y, bottomLimit - rect.height));
+
+      // If still too tall for the safe area, keep it at top and make it scrollable
+      const availableH = Math.max(60, bottomLimit - margin - y);
+      if (isNarrow && rect.height > availableH) {
+        setMenuMaxHeight(availableH);
+      } else {
+        setMenuMaxHeight(null);
+      }
+
+      setResolvedPos({ x, y });
+    };
+
+    const raf = window.requestAnimationFrame(compute);
+    window.addEventListener("resize", compute);
+    return () => {
+      window.cancelAnimationFrame(raf);
+      window.removeEventListener("resize", compute);
+    };
+  }, [position, shareOpen, confirmDeleteOpen]);
+
   useEffect(() => {
     if (!onClose) return;
-
-    const handleClick = (e) => {
-      // While the confirm dialog is open, clicks happen outside the menu
-      // (because the dialog is portaled). Don't auto-close the menu.
-      if (confirmDeleteOpen || shareOpen) return;
-      if (containerRef.current && !containerRef.current.contains(e.target)) {
-        onClose();
-      }
-    };
 
     const handleKey = (e) => {
       if (e.key !== "Escape") return;
@@ -61,10 +119,9 @@ export const Options_menu = ({
       onClose();
     };
 
-    document.addEventListener("mousedown", handleClick);
+    // NOTE: outside-click closing is handled by the backdrop below (prevents trigger click re-opening).
     window.addEventListener("keydown", handleKey);
     return () => {
-      document.removeEventListener("mousedown", handleClick);
       window.removeEventListener("keydown", handleKey);
     };
   }, [onClose, confirmDeleteOpen, shareOpen]);
@@ -138,17 +195,14 @@ export const Options_menu = ({
       className="options_list"
       style={{
         position: "fixed",
-        top: position.y,
-        left: position.x,
-        zIndex: 9999,
+        top: resolvedPos?.y ?? position?.y,
+        left: resolvedPos?.x ?? position?.x,
+        zIndex: 20000, // ensure it's above sidebar/account on mobile
+        maxHeight: menuMaxHeight ?? undefined,
+        overflowY: menuMaxHeight ? "auto" : undefined,
       }}
     >
-      <p
-        className="option_item"
-        onClick={() => {
-          setShareOpen(true);
-        }}
-      >
+      <p className="option_item" onClick={() => setShareOpen(true)}>
         Share
         <FiShare />
       </p>
@@ -180,9 +234,7 @@ export const Options_menu = ({
       )}
       <p
         className="option_item delete"
-        onClick={() => {
-          setConfirmDeleteOpen(true);
-        }}
+        onClick={() => setConfirmDeleteOpen(true)}
       >
         Delete
         <MdDeleteForever />
@@ -190,9 +242,36 @@ export const Options_menu = ({
     </div>
   );
 
+  const portalContent = (
+    <>
+      {/* Backdrop prevents underlying three-dots click from firing after close (no "close then reopen") */}
+      {!confirmDeleteOpen && !shareOpen && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9998,
+            background: "transparent",
+          }}
+          onPointerDown={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClose?.();
+          }}
+          onMouseDown={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClose?.();
+          }}
+        />
+      )}
+      {menu}
+    </>
+  );
+
   return (
     <>
-      {createPortal(menu, document.body)}
+      {createPortal(portalContent, document.body)}
       {shareOpen &&
         createPortal(
           <div className="modal-overlay" onClick={closeShareDialog}>

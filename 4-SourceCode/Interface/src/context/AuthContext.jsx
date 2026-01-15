@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { verifyCode } from "../util/service.js";
+import Cookies from "js-cookie";
+
+const TOKEN_COOKIE_KEY = "quizai:token";
 
 // Create the context
 const AuthContext = createContext();
@@ -17,8 +20,7 @@ export function AuthProvider({ children }) {
 
     const boot = () => {
       try {
-        const savedToken =
-          localStorage.getItem("token") || sessionStorage.getItem("token");
+        const savedToken = Cookies.get(TOKEN_COOKIE_KEY);
 
         const savedUserStr =
           localStorage.getItem("user") || sessionStorage.getItem("user");
@@ -39,6 +41,9 @@ export function AuthProvider({ children }) {
         if (savedToken && savedUser) {
           setToken(savedToken);
           setUser(savedUser);
+        } else if (!savedToken && savedUser) {
+          // Token cookie missing/expired: log out to clear stale persisted auth.
+          logout({ clearAppData: false });
         }
       } catch (err) {
         setError(err);
@@ -59,10 +64,24 @@ export function AuthProvider({ children }) {
     setUser(userData);
     setToken(tokenData);
 
-    // Save in localStorage or sessionStorage depending on "remember me"
+    // Save user in localStorage or sessionStorage depending on "remember me"
     const storage = remember ? localStorage : sessionStorage;
     storage.setItem("user", JSON.stringify(userData));
-    storage.setItem("token", tokenData);
+
+    // Store token in a secure cookie (not in local/session storage)
+    Cookies.set(TOKEN_COOKIE_KEY, tokenData, {
+      path: "/",
+      secure: true,
+      sameSite: "strict",
+      // Always expire after 7 days
+      expires: 7,
+    });
+
+    try {
+      window.dispatchEvent(new Event("auth:changed"));
+    } catch {
+      // ignore
+    }
   };
 
   const signup = (code) => {
@@ -109,17 +128,72 @@ export function AuthProvider({ children }) {
   };
 
   // Logout function
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  const logout = ({ clearAppData = true } = {}) => {
+    const clearStorage = (storage) => {
+      if (!storage) return;
+      try {
+        storage.removeItem("user");
+
+        // Backward-compat cleanup (token used to be stored here)
+        storage.removeItem("token");
+
+        if (clearAppData) {
+          // Remove any app-cached data (e.g., quiz attempt/submission state).
+          // Stored keys include: quizai:examState:<userId>:<examId>
+          const keysToRemove = [];
+          for (let i = 0; i < storage.length; i++) {
+            const key = storage.key(i);
+            if (!key) continue;
+            if (key.startsWith("quizai:")) keysToRemove.push(key);
+          }
+          keysToRemove.forEach((k) => storage.removeItem(k));
+        }
+      } catch {
+        // ignore storage errors (private mode / quota / blocked)
+      }
+    };
+
+    try {
+      Cookies.remove(TOKEN_COOKIE_KEY, { path: "/" });
+    } catch {
+      // ignore cookie errors
+    }
+
+    clearStorage(localStorage);
+    clearStorage(sessionStorage);
     setUser(null);
     setToken(null);
+
+    try {
+      window.dispatchEvent(new Event("auth:changed"));
+    } catch {
+      // ignore
+    }
   };
 
-  const changeName = () => {};
-  const changePassword = () => {};
+  useEffect(() => {
+    const syncAuthFromCookie = () => {
+      const cookieToken = Cookies.get(TOKEN_COOKIE_KEY);
+      if (!cookieToken && (token || user)) {
+        // Token cookie expired/cleared: log out locally.
+        logout({ clearAppData: false });
+      }
+    };
+
+    // Check immediately + periodically.
+    syncAuthFromCookie();
+    const intervalId = setInterval(syncAuthFromCookie, 60_000);
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") syncAuthFromCookie();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      clearInterval(intervalId);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [token, user, logout]);
 
   return (
     <AuthContext.Provider

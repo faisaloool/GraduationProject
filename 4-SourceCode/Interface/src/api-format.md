@@ -1,7 +1,9 @@
- API Specification
+API Specification
 
 ## Last Update: 2025/12/30
+
 #
+
 ## HTTP Status Codes
 
 | Code | Meaning      |
@@ -159,13 +161,11 @@ none
 "data": null
 }
 
-## 4. PassWord recovery  ///////////////////////////////////////////////////////done
+## 4. PassWord recovery ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/ ? ?**  
 **Method:POST**  
 **Description:reassigning the password after sending an email to the user email and verifiying the code to set the new password**
-
-
 
 ## 5. Quiz Generate
 
@@ -208,7 +208,7 @@ none
 }
 }
 
-## 6. Get exams based on User id    ///////////////////////////////////////////////////////done
+## 6. Get exams based on User id ///////////////////////////////////////////////////////done
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
@@ -239,7 +239,7 @@ none
 }
 }
 
-## 7. Quiz delete    ///////////////////////////////////////////////////////////////done
+## 7. Quiz delete ///////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/delete**  
 **Method:DEL**  
@@ -397,7 +397,7 @@ none
 }
 }
 
-## 12. Share quiz (don't know how yet!) 
+## 12. Share quiz (don't know how yet!)
 
 **URL:**  
 **Method:**  
