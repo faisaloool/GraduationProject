@@ -8,7 +8,7 @@ export default defineConfig({
       // Intercepts anything starting with /api
       "/api": {
         target: "https://armor-prostate-dvds-sphere.trycloudflare.com",
-        changeOrigin: true, // Crucial for Cloudflare to accept the request
+        changeOrigin: true,
         secure: false,
       },
     },
