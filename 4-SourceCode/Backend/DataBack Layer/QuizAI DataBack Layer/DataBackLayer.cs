@@ -37,8 +37,13 @@ namespace QuizAIDataBack
 
                     await con.OpenAsync();
 
-                    object result = await cmd.ExecuteScalarAsync();
-                    Guid newUserId = (result != null) ? Guid.Parse(result.ToString()) : Guid.Empty;
+                    object? result = await cmd.ExecuteScalarAsync();
+                    Guid newUserId = Guid.Empty;
+
+                    if (result != null && Guid.TryParse(result.ToString(), out Guid parsedGuid))
+                    {
+                        newUserId = parsedGuid;
+                    }
 
                     UserDTO u = new UserDTO(newUserId, UserInfo.Email, UserInfo.Name);
                     CreateNewUserResponseDTO User = new CreateNewUserResponseDTO(u);
@@ -76,7 +81,7 @@ namespace QuizAIDataBack
 
                     await con.OpenAsync();
 
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
 
                     if (Convert.ToBoolean(result))
                     {
@@ -155,7 +160,7 @@ namespace QuizAIDataBack
 
                     cmd.Parameters.AddWithValue("@Email", Email);
                     await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return (byte[])result;
 
@@ -174,7 +179,7 @@ namespace QuizAIDataBack
 
                     cmd.Parameters.Add("@User_ID", SqlDbType.UniqueIdentifier).Value = id;
                     await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return (byte[])result;
 
@@ -193,7 +198,7 @@ namespace QuizAIDataBack
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Email", ForgotPasswordInfo.Email);
                     await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return Convert.ToBoolean(result);
                     return false;
@@ -331,64 +336,85 @@ namespace QuizAIDataBack
                 }
             }
         }
-
     }
 
-    //public class ContentDataBack
-    //{
-    //    private static Dictionary<int, string> _cachedExtensions;
-
-    //    public static async Task<Dictionary<int, string>> GetFileTypesAsync()
-    //    {
-    //        if (_cachedExtensions != null)
-    //            return _cachedExtensions;
-
-    //        Dictionary<int, string> ValidExtensions = new Dictionary<int, string>();
-
-    //        using (SqlConnection con = new SqlConnection(Database._connectionString))
-    //        using (SqlCommand cmd = new SqlCommand("SP_GetExtensions", con))
-    //        {
-    //            cmd.CommandType = CommandType.StoredProcedure;
-    //            await con.OpenAsync();
-
-    //            using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
-    //            {
-    //                while (reader.Read())
-    //                {
-    //                    int typeId = reader.GetInt32(reader.GetOrdinal("type_ID"));
-    //                    string typeName = reader.GetString(reader.GetOrdinal("Type_Name"));
-    //                    ValidExtensions.Add(typeId, typeName);
-    //                }
-    //            }
-    //        }
-
-    //        _cachedExtensions = ValidExtensions;
-    //        return ValidExtensions;
-    //    }
-    //    public static async Task<ContentDTO> SaveContentAsync(ContentDTO ContentInfo)
-    //    {
-    //        using (SqlConnection con = new SqlConnection(Database._connectionString))
-    //        {
-    //            using (SqlCommand cmd = new SqlCommand("SP_AddNewContent", con))
-    //            {
-    //                cmd.CommandType = CommandType.StoredProcedure;
-    //                await con.OpenAsync();
-
-    //                cmd.Parameters.AddWithValue("@User_ID", ContentInfo.UserID);
-    //                cmd.Parameters.AddWithValue("@File_Type", ContentInfo.FileType);
-    //                cmd.Parameters.AddWithValue("@File_Path", ContentInfo.FilePath);
-    //                cmd.Parameters.AddWithValue("@Extracted_Text", ContentInfo.ExtractedText);
-
-    //                await cmd.ExecuteNonQueryAsync();
-    //            }
-    //        }
-    //        return ContentInfo;
-    //    }
 
 
 
 
-    //}
+
+
+
+
+
+
+
+    public class ContentDataBack
+    {
+        private static Dictionary<int, string>? _cachedExtensions;
+
+        public static async Task<Dictionary<int, string>> GetFileTypesAsync()
+        {
+            if (_cachedExtensions != null)
+                return _cachedExtensions;
+
+            Dictionary<int, string> ValidExtensions = new Dictionary<int, string>();
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            using (SqlCommand cmd = new SqlCommand("SP_GetExtensions", con))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                await con.OpenAsync();
+
+                using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                {
+                    while (reader.Read())
+                    {
+                        int typeId = reader.GetInt32(reader.GetOrdinal("type_ID"));
+                        string typeName = reader.GetString(reader.GetOrdinal("Type_Name"));
+                        ValidExtensions.Add(typeId, typeName);
+                    }
+                }
+            }
+
+            _cachedExtensions = ValidExtensions;
+            return ValidExtensions;
+        }
+        public static async Task<Guid> SaveContentAsync(ContentDTO ContentInfo)
+        {
+            Guid newContentID = Guid.Empty;
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_AddNewContent", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    await con.OpenAsync();
+
+                    cmd.Parameters.AddWithValue("@User_ID", ContentInfo.UserID);
+                    cmd.Parameters.AddWithValue("@File_Type", ContentInfo.FileTypeID);
+                    cmd.Parameters.AddWithValue("@File_Path", ContentInfo.FilePath);
+
+                    object? result = await cmd.ExecuteScalarAsync();
+
+                    if (result != null)
+                    {
+                        newContentID = (result != null) ? (Guid)result : Guid.Empty;
+                    }
+                }
+            }
+            return newContentID;
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     public class QuizzesDataBack
     {
@@ -418,7 +444,6 @@ namespace QuizAIDataBack
             return QuizzesInfo;
         }
 
-
         public static async Task<bool> DeleteQuizAsync(Guid QuizID, Guid UserID)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -429,7 +454,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
                     cmd.Parameters.AddWithValue("@User_ID", UserID);
                     await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
 
                     if (result != null)
                     {
@@ -439,7 +464,6 @@ namespace QuizAIDataBack
                 }
             }
         }
-
 
         public static async Task<bool> RenameQuizAsync(Guid QuizID, Guid UserID, string NewName)
         {
@@ -453,7 +477,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@Quiz_Name", NewName);
                     await con.OpenAsync();
 
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
 
                     if (result != null)
                     {
@@ -501,12 +525,10 @@ namespace QuizAIDataBack
             }
         }
 
-        public static async Task<Quiz> GetQuizBasedOnQuizIDAsync(Guid QuizID, string QuizTitle)
+        public static async Task<GenerateQuizResponseDTO> GetQuizByIdAsync(Guid quizID)
         {
-            Quiz quizInfo = new Quiz();
-            quizInfo.QuizID = QuizID;
-            quizInfo.Title = QuizTitle;
-            quizInfo.Questions = new List<QuizQuestion>(); // Ensure it's initialized
+            GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
+            result.Questions = new List<QuizQuestion>();
 
             using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
@@ -514,54 +536,81 @@ namespace QuizAIDataBack
                 using (SqlCommand cmd = new SqlCommand("SP_GetQuestionsBasedOnQuizID", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
+                    cmd.Parameters.AddWithValue("@Quiz_ID", quizID);
 
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
-                        Dictionary<string, QuizQuestion> questionsDict = new Dictionary<string, QuizQuestion>();
-
-                        while (await reader.ReadAsync())
+                        if (await reader.ReadAsync())
                         {
-                            string questionContent = reader.IsDBNull(reader.GetOrdinal("Question_Content"))
-                                ? ""
-                                : reader.GetString(reader.GetOrdinal("Question_Content"));
+                            result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
+                            result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
+                            // Optional: store File info if needed
+                        }
 
-                            // Get the Suggested Answer from the reader
-                            string suggestedAnswer = reader.IsDBNull(reader.GetOrdinal("Suggested_Answer"))
-                                ? ""
-                                : reader.GetString(reader.GetOrdinal("Suggested_Answer"));
-
-                            if (!questionsDict.TryGetValue(questionContent, out QuizQuestion question))
+                        if (await reader.NextResultAsync())
+                        {
+                            var questionsDict = new Dictionary<Guid, QuizQuestion>();
+                            while (await reader.ReadAsync())
                             {
-                                question = new QuizQuestion
+                                Guid qId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+                                var question = new QuizQuestion
                                 {
-                                    QuestionID = Guid.NewGuid(),
-                                    QuestionContent = questionContent,
-                                    SuggestedAnswer = suggestedAnswer, // ASSIGN IT HERE
-                                    Type = "MCQ",
-                                    choices = new List<MCQChoices>()
+                                    QuestionID = qId,
+                                    QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                    SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                    Type = null, // Or map Category_ID to type if needed
+                                    choices = new List<MCQChoice>()
                                 };
-                                questionsDict.Add(questionContent, question);
-                                quizInfo.Questions.Add(question);
+                                questionsDict[qId] = question;
+                                result.Questions.Add(question);
                             }
+                        }
 
-                            // Choice logic remains the same...
-                            int choiceIdCol = reader.GetOrdinal("Choice_ID");
-                            if (!reader.IsDBNull(choiceIdCol))
+
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
                             {
-                                question.choices.Add(new MCQChoices
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+                                var question = result.Questions.FirstOrDefault(q => q.QuestionID == questionId);
+                                if (question != null)
                                 {
-                                    ChoiceID = reader.GetGuid(choiceIdCol),
-                                    Choice = reader.IsDBNull(reader.GetOrdinal("Choice_Text")) ? "" : reader.GetString(reader.GetOrdinal("Choice_Text")),
-                                    Question_ID = question.QuestionID
-                                });
+                                    question.choices ??= new List<MCQChoice>();
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
+                            }
+                        }
+
+                        
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+                                string choiceText = reader.GetString(reader.GetOrdinal("Choice_Text"));
+
+                                var question = result.Questions.FirstOrDefault(q => q.QuestionID == questionId);
+                                if (question != null)
+                                {
+                                    question.choices ??= new List<MCQChoice>();
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        Question_ID = questionId,
+                                        Choice = choiceText
+                                    });
+                                }
                             }
                         }
                     }
                 }
             }
 
-            return quizInfo;
+            return result;
         }
 
         public static async Task<bool> DeleteQuestionUsingQuestionID(Guid QuestionID, Guid QuizID, Guid UserID)
@@ -576,7 +625,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@User_ID", UserID);
 
                     await con.OpenAsync();
-                    object result = await cmd.ExecuteScalarAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                     {
                         return Convert.ToBoolean(result);
@@ -585,9 +634,6 @@ namespace QuizAIDataBack
                 }
             }
         }
-
-
-
         /*
          
         Quiz Title.
@@ -613,7 +659,7 @@ namespace QuizAIDataBack
 
          */
 
-        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo)
+        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo, string FilePath)
         {
             GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
 
@@ -628,8 +674,11 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@QuizTitle", QuizInfo.filename ?? "Generated Quiz");
 
                     // --- File info ---
-                    cmd.Parameters.AddWithValue("@FileType", System.IO.Path.GetExtension(QuizInfo.filename) ?? ".unknown"); // get extension from filename
-                    cmd.Parameters.AddWithValue("@FilePath", "/path/to/uploaded/file"); // replace with actual path if available
+                    string extension = System.IO.Path.GetExtension(QuizInfo.filename) ?? ".unknown";
+                    int fileTypeID = Database.SelectFileType(extension);
+
+                    cmd.Parameters.AddWithValue("@FileType", fileTypeID);
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath); // replace with actual path if available
 
                     // --- Serialize full quiz JSON ---
                     string jsonBody = System.Text.Json.JsonSerializer.Serialize(QuizInfo);
@@ -640,14 +689,81 @@ namespace QuizAIDataBack
                     // --- Execute SP and read back generated QuizID ---
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
+                        // 1st result set → Quiz info
                         if (await reader.ReadAsync())
                         {
-                            // Read the auto-generated QuizID and QuizTitle returned by the SP
                             result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
                             result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
-                            result.Questions = new List<QuizQuestion>(); // placeholder, can populate later if needed
                         }
+
+                        // 2nd result set → MCQs
+                        if (await reader.NextResultAsync())
+                        {
+                            result.Questions = new List<QuizQuestion>();
+                            while (await reader.ReadAsync())
+                            {
+                                result.Questions.Add(new QuizQuestion
+                                {
+                                    QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
+                                    QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                    SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                    // you can also add a property for choices later
+                                });
+                            }
+                        }
+
+                        // 3rd result set → MCQ Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                var question = result.Questions
+                                    .FirstOrDefault(q => q.QuestionID == questionId);
+
+                                if (question != null)
+                                {
+                                    question.choices ??= new List<MCQChoice>();
+
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
+                            }
+                        }
+
+
+                        // 4th result set → True/False questions
+                        // 4th result set → True/False OPTIONS (not questions)
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+                                string choiceText = reader.GetString(reader.GetOrdinal("Choice_Text"));
+
+                                var question = result.Questions
+                                    .FirstOrDefault(q => q.QuestionID == questionId);
+
+                                if (question != null)
+                                {
+                                    question.choices ??= new List<MCQChoice>();
+
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        Question_ID = questionId,
+                                        Choice = choiceText
+                                    });
+                                }
+                            }
+                        }
+
                     }
+
                 }
             }
 
@@ -655,8 +771,79 @@ namespace QuizAIDataBack
         }
 
 
+        public static async Task<string> GetQuizFilePathAsync(Guid QuizID)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetContentPathBasedOnQuizID", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    await con.OpenAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
+                    string filePath = result?.ToString() ?? string.Empty;
 
+                    return filePath;
+                }
+            }
+        }
+
+        public static async Task<QuizQuestion> SaveRegeneratedQuestionToDatabaseAsync(Guid quizID, Guid questionID, string questionType, QuestionResponse regeneratedQuestionJson)
+        {
+            QuizQuestion result = null;
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveRegeneratedQuestion", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // --- Required params ---
+                    cmd.Parameters.AddWithValue("@QuizID", quizID);
+                    cmd.Parameters.AddWithValue("@QuestionID", questionID);
+                    cmd.Parameters.AddWithValue("@QuestionType", questionType);
+
+                    // --- Serialize JSON (same format as before) ---
+                    string jsonBody = System.Text.Json.JsonSerializer.Serialize(regeneratedQuestionJson);
+                    cmd.Parameters.AddWithValue("@QuestionJson", jsonBody);
+
+                    await con.OpenAsync();
+
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        // 1️⃣ Inserted Question
+                        if (await reader.ReadAsync())
+                        {
+                            result = new QuizQuestion
+                            {
+                                QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
+                                QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                //CategoryID = reader.GetInt32(reader.GetOrdinal("Category_ID")),
+                                choices = new List<MCQChoice>()
+                            };
+                        }
+
+                        // 2️⃣ MCQ Choices (only if MCQ)
+                        if (questionType == "MCQ" && await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                result?.choices.Add(new MCQChoice
+                                {
+                                    ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                    Question_ID = result.QuestionID,
+                                    Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+
+            return result;
+        }
 
     }
 }

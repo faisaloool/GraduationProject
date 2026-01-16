@@ -1,51 +1,6 @@
 [
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
-    "Method": "GetQuizById",
-    "RelativePath": "api/v1/quiz-ai/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "QuizTitle",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.Quiz, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "RenameQuiz",
     "RelativePath": "api/v1/quiz-ai/{quizId}/rename",
     "HttpMethod": "PUT",
@@ -169,42 +124,6 @@
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
-    "Method": "GenerateQuiz",
-    "RelativePath": "api/v1/quiz-ai/Generate",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "MCQCount",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "TFCount",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "file",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.GenerateQuizResponseDTO, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
     "Method": "GetHealth",
     "RelativePath": "api/v1/quiz-ai/health",
     "HttpMethod": "GET",
@@ -309,6 +228,64 @@
           "application/json",
           "text/json"
         ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "GetQuizById",
+    "RelativePath": "api/v1/quiz-ai/Quiz/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.GenerateQuizResponseDTO, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
         "StatusCode": 404
       },
       {
@@ -366,6 +343,136 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "GenerateQuiz",
+    "RelativePath": "api/v1/quiz-ai/Quiz/Generate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MCQCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "TFCount",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.GenerateQuizResponseDTO, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "RegenerateQuiz",
+    "RelativePath": "api/v1/quiz-ai/Quiz/Regenerate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "QuizID",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "request",
+        "Type": "QuizAIDataBack.GenerateQuizRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.GenerateQuizResponseDTO, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "RegenerateQuestion",
+    "RelativePath": "api/v1/quiz-ai/regenerate-question",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "QuestionID",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "QuizID",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "QuestionType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",

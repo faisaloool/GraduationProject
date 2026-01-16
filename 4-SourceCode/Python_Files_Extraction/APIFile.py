@@ -305,14 +305,7 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 
 
 
-
-
-
-
-
-
-
-
+#the function that returns static 10 questions: 
 
 # @app.post("/ask_ai_model")
 # async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
@@ -323,44 +316,120 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 #             "question_type": "Multiple Choice",
 #             "questions": [
 #                 {
-#                     "question": "Which of the following is NOT mentioned as a catalyst for the Information Age?",
+#                     "question": "What are the identified catalysts that enabled products like Samsung Galaxy A2?",
 #                     "options": [
 #                         "A) Low-cost computers",
 #                         "B) High-speed communication networks",
-#                         "C) Advanced nuclear reactors",
-#                         "D) Smartphones"
+#                         "C) Both A and B",
+#                         "D) None of the above"
 #                     ],
-#                     "answer": "C) Advanced nuclear reactors"
+#                     "answer": "C) Both A and B"
 #                 },
 #                 {
-#                     "question": "Which issue is highlighted in the text regarding cell phone usage?",
+#                     "question": "Which technology has raised privacy concerns due to location tracking and camera use?",
 #                     "options": [
-#                         "A) Rudeness",
-#                         "B) Battery life",
-#                         "C) Screen size",
-#                         "D) Software updates"
+#                         "A) Email",
+#                         "B) Cell phones",
+#                         "C) Social networking sites",
+#                         "D) Voice over IP services"
 #                     ],
-#                     "answer": "A) Rudeness"
+#                     "answer": "B) Cell phones"
 #                 },
 #                 {
-#                     "question": "Which statement best describes a positive right in ethical theory?",
+#                     "question": "According to the text, what is a primary benefit of e-commerce platforms like Amazon.com?",
 #                     "options": [
-#                         "A) Right to act without interference",
-#                         "B) Obligation to provide something to others",
-#                         "C) Right to free speech",
-#                         "D) Right to privacy"
+#                         "A) Increase in physical retail stores",
+#                         "B) Lower overhead and easier price comparison for consumers",
+#                         "C) Reducing online privacy concerns",
+#                         "D) Eliminating need for payment systems"
 #                     ],
-#                     "answer": "B) Obligation to provide something to others"
+#                     "answer": "B) Lower overhead and easier price comparison for consumers"
+#                 },
+#                 {
+#                     "question": "Which ethical theory emphasizes duties and rules independent of consequences?",
+#                     "options": [
+#                         "A) Utilitarianism",
+#                         "B) Deontological theories",
+#                         "C) Positive rights",
+#                         "D) Negative rights"
+#                     ],
+#                     "answer": "B) Deontological theories"
+#                 },
+#                 {
+#                     "question": "In the context of information age, which statement best reflects the dynamic between people and technology?",
+#                     "options": [
+#                         "A) Technology is static and unaffected by society",
+#                         "B) People adopt technology but it does not influence them",
+#                         "C) Using technology can change people physically and psychologically",
+#                         "D) Technological changes are irrelevant to social values"
+#                     ],
+#                     "answer": "C) Using technology can change people physically and psychologically"
 #                 }
 #             ]
 #         },
 #         "true_false_questions": {
 #             "file_name": "Ch1_Introduction.pptx",
 #             "question_type": "True or False",
-#             "questions": []
+#             "questions": [
+#                 {
+#                     "question": "The Information Age was primarily driven by high-cost computers and slow communication networks.",
+#                     "answer": "False"
+#                 },
+#                 {
+#                     "question": "Smartphones such as the Samsung Galaxy A2 can function as a camera, video recorder, and digital compass.",
+#                     "answer": "True"
+#                 },
+#                 {
+#                     "question": "Email messages in the 1980s were typically long and included multimedia attachments.",
+#                     "answer": "False"
+#                 },
+#                 {
+#                     "question": "The World Wide Web was first established by physicists in Europe in 1990 to share research with colleagues worldwide.",
+#                     "answer": "True"
+#                 },
+#                 {
+#                     "question": "Artificial intelligence is a branch of computer science that focuses on making computers perform tasks normally requiring human intelligence.",
+#                     "answer": "True"
+#                 }
+#             ]
 #         },
-#         "total_questions": 3
+#         "total_questions": 10
 #     }
+
+
+
+
+#the version that returns only one static mcq question.
+ 
+
+# @app.post("/ask_ai_model")
+# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+#     return {
+#     "filename": "Ch1_Introduction.pptx",
+#     "mcq_questions": {
+#         "file_name": "Ch1_Introduction.pptx",
+#         "question_type": "Multiple Choice",
+#         "questions": [
+#             {
+#                 "question": "Which ethical theory focuses on the outcomes or consequences of actions to determine what is right or wrong?",
+#                 "options": [
+#                     "A) Deontological theories",
+#                     "B) Negative rights",
+#                     "C) Utilitarianism",
+#                     "D) Professional codes of ethics"
+#                 ],
+#                 "answer": "C) Utilitarianism"
+#             }
+#         ]
+#     },
+#     "true_false_questions": {
+#         "file_name": "Ch1_Introduction.pptx",
+#         "question_type": "True or False",
+#         "questions": []
+#     },
+#     "total_questions": 1
+# }
+
 
 
 
