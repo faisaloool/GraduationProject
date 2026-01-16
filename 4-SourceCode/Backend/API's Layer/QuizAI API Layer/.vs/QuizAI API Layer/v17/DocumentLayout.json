@@ -37,7 +37,7 @@
               "RelativeDocumentMoniker": "..\\..\\DataBack Layer\\QuizAI DataBack Layer\\Module.cs",
               "ToolTip": "C:\\Users\\albab\\OneDrive - Mutah University\\Desktop\\GraduationProject\\4-SourceCode\\Backend\\DataBack Layer\\QuizAI DataBack Layer\\Module.cs",
               "RelativeToolTip": "..\\..\\DataBack Layer\\QuizAI DataBack Layer\\Module.cs",
-              "ViewState": "AgIAANEAAAAAy8zMzMwewNwAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-20T19:30:41.963Z",
               "EditorCaption": ""
@@ -52,8 +52,7 @@
               "RelativeToolTip": "..\\..\\DataBack Layer\\QuizAI DataBack Layer\\DataBackLayer.cs",
               "ViewState": "AgIAAAwDAAAAAAAAAAAAABcDAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T19:30:43.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-20T19:30:43.746Z"
             },
             {
               "$type": "Document",
@@ -65,8 +64,7 @@
               "RelativeToolTip": "..\\..\\Business Layer\\QuizAI Business Layer\\BusinessLayer.cs",
               "ViewState": "AgIAAAYCAAAAAAAAAAAUwBQCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T19:30:46.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-20T19:30:46.744Z"
             },
             {
               "$type": "Document",
@@ -78,8 +76,7 @@
               "RelativeToolTip": "Controllers\\QuizAIController.cs",
               "ViewState": "AgIAADMDAAAALDMzMzMowHwDAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-20T19:30:49.432Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-20T19:30:49.432Z"
             }
           ]
         }
