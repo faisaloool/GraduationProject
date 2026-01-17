@@ -149,9 +149,10 @@
 
 .wellcome-page .input {
   position: static;
-  width: min(92vw, 760px);
-  max-width: none;
+  width: 100%;
+  max-width: 760px;
   margin: 26px auto 0;
+  min-width: 0;
 }
 
 /* .wellcome-page:has(.input)::before {

@@ -1,5 +1,6 @@
 .file-upload-preview {
-  width: min(92vw, 760px);
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;

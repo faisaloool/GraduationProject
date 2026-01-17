@@ -5,11 +5,13 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 /* Reserve space so showing the file preview does not shift the upload bar */
 .file-preview-slot {
-  width: min(92vw, 760px);
+  width: 100%;
+  max-width: 760px;
   min-height: 62px;
   display: flex;
   align-items: stretch;
@@ -36,7 +38,8 @@
 
 /* ===== Unified upload bar (settings + file + submit) ===== */
 .upload-bar {
-  width: min(92vw, 760px);
+  width: 100%;
+  max-width: 760px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 48px minmax(0, 1fr) auto;
@@ -238,7 +241,8 @@
   gap: 8px;
   margin: 0 auto;
   padding: 10px 12px;
-  width: min(92vw, 760px);
+  width: 100%;
+  max-width: 760px;
   color: #ffe5e5;
   background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.45);
