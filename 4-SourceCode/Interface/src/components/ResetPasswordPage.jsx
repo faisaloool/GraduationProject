@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import "../style/ResetPasswordPage_style.css";
 
@@ -12,6 +12,11 @@ export const ResetPasswordPage = () => {
   const [tokenIsValid, setTokenIsValid] = useState(false);
   const { user, setUser } = useAuth();
   const [resetUserId, setResetUserId] = useState(null);
+
+  // React 18 StrictMode/dev can run effects twice.
+  // Some backends treat reset tokens as one-time use, so we cache the verification call per token.
+  // This prevents double requests while still allowing state updates.
+  const verifyCacheRef = useRef(new Map());
 
   const getPasswordComplexityError = (pw) => {
     const password = String(pw || "");
@@ -41,46 +46,60 @@ export const ResetPasswordPage = () => {
 
   const passwordComplexityError = getPasswordComplexityError(password);
 
-  const isTokenMissing = !token;
+  const tokenValue = String(token || "").trim();
+  const isTokenMissing = !tokenValue;
 
   useEffect(() => {
-    if (token && token.trim().length > 0) {
-      async function validateToken() {
-        try {
-          const isValid = await verifyResetToken(token);
-          if (isValid?.success) {
-            setTokenIsValid(true);
-
-            // When the token is valid, backend returns the user id.
-            // Store it locally and also update auth user so resetPassword uses the correct id.
-            const newUserId =
-              isValid?.userId ??
-              isValid?.id ??
-              isValid?.data?.userId ??
-              isValid?.data?.id;
-
-            if (newUserId != null) {
-              setResetUserId(newUserId);
-              setUser((prev) => ({ ...(prev || {}), id: newUserId }));
-            } else {
-              console.warn(
-                "Reset token verified but no user id was returned by verifyResetToken"
-              );
-            }
-          } else {
-            setTokenIsValid(false);
-            console.error("Invalid reset token");
-          }
-        } catch {
-          setTokenIsValid(false);
-          console.error("Failed to verify reset token");
-        }
-      }
-      validateToken();
-    } else {
-      console.error("No token provided");
+    if (!tokenValue) {
+      setTokenIsValid(false);
+      setResetUserId(null);
+      return;
     }
-  }, [token, setUser]);
+
+    const applyResult = (result) => {
+      if (result?.success) {
+        setTokenIsValid(true);
+        const newUserId = result?.data?.userID;
+        if (newUserId != null) {
+          setResetUserId(newUserId);
+          setUser((prev) => ({ ...(prev || {}), id: newUserId }));
+        }
+      } else {
+        setTokenIsValid(false);
+      }
+    };
+
+    const cached = verifyCacheRef.current.get(tokenValue);
+
+    // If we already have a resolved result, apply it.
+    if (cached?.status === "done") {
+      applyResult(cached.result);
+      return;
+    }
+
+    // If there's an in-flight promise, attach to it.
+    if (cached?.promise) {
+      cached.promise.then(applyResult).catch(() => setTokenIsValid(false));
+      return;
+    }
+
+    // Otherwise, start verification and cache the promise.
+    const promise = verifyResetToken(tokenValue);
+    verifyCacheRef.current.set(tokenValue, { promise });
+
+    promise
+      .then((res) => {
+        verifyCacheRef.current.set(tokenValue, { status: "done", result: res });
+        applyResult(res);
+      })
+      .catch(() => {
+        verifyCacheRef.current.set(tokenValue, {
+          status: "done",
+          result: { success: false },
+        });
+        setTokenIsValid(false);
+      });
+  }, [tokenValue, setUser]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (loading) return;
@@ -88,7 +107,7 @@ export const ResetPasswordPage = () => {
     setError("");
     setSuccess("");
 
-    if (!token) {
+    if (!tokenValue) {
       setError("Invalid or missing reset token.");
       return;
     }
