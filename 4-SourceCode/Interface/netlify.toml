@@ -7,3 +7,8 @@
   to = "https://racks-hits-linking-postings.trycloudflare.com/api/:splat"
   status = 200
   force = true
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
