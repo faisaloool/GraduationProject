@@ -37,6 +37,14 @@ header {
   gap: 10px;
 }
 
+.header-btns .label-long {
+  display: inline;
+}
+
+.header-btns .label-short {
+  display: none;
+}
+
 .header-btns button {
   appearance: none;
   -webkit-appearance: none;
@@ -190,9 +198,23 @@ header {
 
 /* موبايل صغير جداً (375px وتحت) */
 @media (max-width: 375px) {
-  /* إخفاء أزرار Login/Signup ووضع Menu فقط */
+  .header-btns {
+    gap: 5px;
+  }
+
   .header-btns button {
+    padding: 5px 6px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .header-btns .label-long {
     display: none;
+  }
+
+  .header-btns .label-short {
+    display: inline;
+    white-space: nowrap;
   }
 
   .menu-btn {
@@ -204,7 +226,7 @@ header {
   .ai-version {
     display: block;
     font-size: 16px;
-    max-width: 68vw;
+    max-width: 44vw;
   }
 
   header {

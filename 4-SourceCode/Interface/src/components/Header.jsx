@@ -68,10 +68,12 @@ export const Header = ({ quiz, setEditing }) => {
         {!loggedIn ? (
           <div className="header-btns">
             <button className="log-in" onClick={handleClick(true)}>
-              Log in
+              <span className="label-long">Log in</span>
+              <span className="label-short">Login</span>
             </button>
             <button className="sign-up" onClick={handleClick(false)}>
-              Create account
+              <span className="label-long">Create account</span>
+              <span className="label-short">Sign up</span>
             </button>
           </div>
         ) : (
