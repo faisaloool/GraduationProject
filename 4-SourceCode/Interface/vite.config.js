@@ -7,7 +7,7 @@ export default defineConfig({
     proxy: {
       // Intercepts anything starting with /api
       "/api": {
-        target: "https://armor-prostate-dvds-sphere.trycloudflare.com",
+        target: "https://racks-hits-linking-postings.trycloudflare.com",
         changeOrigin: true,
         secure: false,
       },

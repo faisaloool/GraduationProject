@@ -76,7 +76,7 @@ export const Input = ({ setExam }) => {
         throw new Error(String(response.error));
       }
 
-      const quiz = response?.data?.quizzes?.[0];
+      const quiz = response?.data;
       if (!quiz) {
         throw new Error(
           String(
@@ -89,7 +89,7 @@ export const Input = ({ setExam }) => {
 
       addExam(quiz);
       setExam(quiz);
-      const id = quiz.quizId || quiz.examId;
+      const id = quiz.quizID ?? quiz.quizId ?? quiz.examId ?? quiz.id;
       navigate(`/exam/${id}`);
     } catch (err) {
       setErrorMessage(String(err?.message || err || "Something went wrong."));

@@ -13,7 +13,7 @@ export const Shared_exam_route = ({ editing, setEditing }) => {
   const location = useLocation();
   const params = useParams();
 
-  const sharedId = params?.id;
+  const sharedToken = params.token;
   const { isLoggedIn, loading: authLoading } = useAuth();
   const { loadSharedExam } = useExams();
 
@@ -22,10 +22,10 @@ export const Shared_exam_route = ({ editing, setEditing }) => {
   const [shareError, setShareError] = useState(null);
 
   useEffect(() => {
-    const cleanSharedId = String(sharedId ?? "").trim();
+    const cleanSharedToken = String(sharedToken ?? "").trim();
     setShareError(null);
-    if (!cleanSharedId) {
-      setShareError("Missing shared quiz id.");
+    if (!cleanSharedToken) {
+      setShareError("Missing shared quiz token.");
       return;
     }
 
@@ -45,11 +45,11 @@ export const Shared_exam_route = ({ editing, setEditing }) => {
     redirectedToLoginRef.current = false;
 
     // Only fetch once per shared id.
-    if (lastRequestedIdRef.current === cleanSharedId) return;
-    lastRequestedIdRef.current = cleanSharedId;
+    if (lastRequestedIdRef.current === cleanSharedToken) return;
+    lastRequestedIdRef.current = cleanSharedToken;
 
     (async () => {
-      const result = await loadSharedExam(cleanSharedId);
+      const result = await loadSharedExam(cleanSharedToken);
       if (result?.error) {
         setShareError(result.error);
       }
@@ -60,7 +60,7 @@ export const Shared_exam_route = ({ editing, setEditing }) => {
     loadSharedExam,
     location.pathname,
     navigate,
-    sharedId,
+    sharedToken,
   ]);
 
   if (shareError) {

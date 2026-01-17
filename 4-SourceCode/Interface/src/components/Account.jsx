@@ -122,7 +122,7 @@ export const Account = ({ collapsed = false }) => {
     logout();
     setMenuOpen(false);
     closeSettings();
-    setExam({ title: "Main-page" });
+    setExam({ quizTitle: "Main-page", quizID: null });
     navigate("/");
   };
 

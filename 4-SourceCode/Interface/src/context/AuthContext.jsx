@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import { verifyCode } from "../util/service.js";
 import Cookies from "js-cookie";
 
@@ -13,6 +19,19 @@ export function AuthProvider({ children }) {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const token = Cookies.get(TOKEN_COOKIE_KEY);
+    // Check both storages just in case
+    const user = localStorage.getItem("user") || sessionStorage.getItem("user");
+
+    // If we have a token but NO user data, something is wrong -> Logout forcefully
+    if (token && !user) {
+      Cookies.remove(TOKEN_COOKIE_KEY);
+      setToken(null);
+      setUser(null);
+    }
+  }, []);
 
   useEffect(() => {
     const BOOT_DELAY = Number(import.meta.env.VITE_MIN_LOADING_MS); /* || 0 */
@@ -73,8 +92,7 @@ export function AuthProvider({ children }) {
       path: "/",
       secure: true,
       sameSite: "strict",
-      // Always expire after 7 days
-      expires: 7,
+      expires: remember ? 7 : undefined,
     });
 
     try {
@@ -128,7 +146,7 @@ export function AuthProvider({ children }) {
   };
 
   // Logout function
-  const logout = ({ clearAppData = true } = {}) => {
+  const logout = useCallback(({ clearAppData = true } = {}) => {
     const clearStorage = (storage) => {
       if (!storage) return;
       try {
@@ -169,15 +187,14 @@ export function AuthProvider({ children }) {
     } catch {
       // ignore
     }
-  };
+  }, []);
 
   useEffect(() => {
     const syncAuthFromCookie = () => {
       const cookieToken = Cookies.get(TOKEN_COOKIE_KEY);
-      if (!cookieToken && (token || user)) {
-        // Token cookie expired/cleared: log out locally.
-        logout({ clearAppData: false });
-      }
+      // Only enforce cookie presence when we actually have an auth token.
+      // During signup/verify flows we may have a user but intentionally no token yet.
+      if (!cookieToken && token) logout({ clearAppData: false });
     };
 
     // Check immediately + periodically.
@@ -193,7 +210,7 @@ export function AuthProvider({ children }) {
       clearInterval(intervalId);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, [token, user, logout]);
+  }, [token, logout]);
 
   return (
     <AuthContext.Provider

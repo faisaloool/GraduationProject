@@ -15,30 +15,27 @@ export const VerifyAccount = () => {
   const [digits, setDigits] = useState(() => Array(CODE_LENGTH).fill(""));
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasCheckedPendingUser, setHasCheckedPendingUser] = useState(false);
   const inputsRef = useRef([]);
   const navigate = useNavigate();
   /*   const { signup, loading } = useAuth(); */
-  const { user, setUser, logout } = useAuth();
+  const { user, setUser, logout, loading } = useAuth();
 
   useEffect(() => {
-    if (user?.id) return;
+    // The context user may be null on first render.
+    // Hydrate from the "pending verification" session storage once.
+    if (user?.id) {
+      setHasCheckedPendingUser(true);
+      return;
+    }
 
     const pendingUser = loadPendingVerificationUser();
     if (pendingUser?.id) {
       setUser(pendingUser);
     }
+
+    setHasCheckedPendingUser(true);
   }, [user?.id, setUser]);
-
-  useEffect(() => {
-    // If the user leaves the verify page (route change), drop pending data.
-    return () => {
-      clearPendingVerificationUser();
-    };
-  }, []);
-
-  /* useEffect(() => {
-    console.log("Current user in VerifyAccount:", user);
-  }, []); */
 
   const code = useMemo(() => digits.join(""), [digits]);
   const isComplete = useMemo(
@@ -129,9 +126,9 @@ export const VerifyAccount = () => {
     try {
       const result = await verifyCode(code, user.id);
 
-      // Extra safety: if signup() ever resolves with a failure payload, handle it.
-      if (result?.success === false || result?.error) {
-        setError(result?.message || result?.error || "The code is wrong.");
+      // `verifyCode` returns the request wrapper from service.js
+      if (!result?.ok) {
+        setError(result?.error || "The code is wrong.");
         return;
       }
 
@@ -145,7 +142,18 @@ export const VerifyAccount = () => {
     }
   };
 
-  if (!user?.id) {
+  if (loading || !hasCheckedPendingUser) {
+    return (
+      <div className="verify-container">
+        <div className="verify_box">
+          <h2 className="verify-title">Verify your account</h2>
+          <p className="verify-subtitle">Loading your verification details…</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
     return (
       <Error_page
         message="No user data found. Please register or log in first."

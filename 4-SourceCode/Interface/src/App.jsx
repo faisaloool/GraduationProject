@@ -29,7 +29,7 @@ function App() {
 
   return (
     <Router>
-      {false ? (
+      {healthError ? (
         <Error_page message={healthError} />
       ) : (
         <Routes>
@@ -61,7 +61,7 @@ function App() {
             }
           />
           <Route
-            path="/shared/:id"
+            path="/shared/:token"
             element={
               <Shared_exam_route editing={editing} setEditing={setEditing} />
             }

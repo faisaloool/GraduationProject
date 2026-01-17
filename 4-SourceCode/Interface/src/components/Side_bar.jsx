@@ -98,8 +98,8 @@ export const Side_bar = ({ editing, setEditing }) => {
 
   const normalizedSearch = searchTerm.trim().toLowerCase();
   const matchingExams = normalizedSearch
-    ? exams.filter(({ title }) =>
-        title?.toLowerCase().includes(normalizedSearch)
+    ? exams.filter(({ quizTitle }) =>
+        quizTitle?.toLowerCase().includes(normalizedSearch)
       )
     : [];
 
@@ -112,7 +112,7 @@ export const Side_bar = ({ editing, setEditing }) => {
   // handleing serach exam sellected option
   const handleSelectExam = (selected) => {
     setExam(selected);
-    navigate(`/exam/${selected.examId || selected.quizId}`);
+    navigate(`/exam/${selected.quizID}`);
     collapseOnMobile();
     closeSearch();
   };
@@ -254,7 +254,8 @@ export const Side_bar = ({ editing, setEditing }) => {
     setMenuOpen(next);
   };
 
-  const closeOptionsMenu = () => {
+  const closeOptionsMenu = (opts) => {
+    const clearQuiz = opts?.clearQuiz !== false;
     // mark close moment + point (so the subsequent click doesn't reopen it)
     lastCloseAtRef.current = Date.now();
     lastClosePointRef.current = lastPointerRef.current
@@ -262,7 +263,7 @@ export const Side_bar = ({ editing, setEditing }) => {
       : null;
 
     setMenuOpen(false);
-    setMenuQuiz(null);
+    if (clearQuiz) setMenuQuiz(null);
   };
 
   const renderQuizzes = () => {
@@ -294,7 +295,7 @@ export const Side_bar = ({ editing, setEditing }) => {
       <div>
         {exams.map((e) => (
           <Quiz_card
-            key={e.examId || e.quizId}
+            key={e.quizID}
             e={e}
             editing={editing}
             setEditing={setEditing}
@@ -376,7 +377,7 @@ export const Side_bar = ({ editing, setEditing }) => {
                 <li
                   onClick={(e) => {
                     e.stopPropagation();
-                    setExam({ title: "Main-page" });
+                    setExam({ quizTitle: "Main-page", quizID: null });
                     navigate("/");
                     collapseOnMobile();
                   }}
@@ -479,12 +480,12 @@ export const Side_bar = ({ editing, setEditing }) => {
 
                 {matchingExams.map((examCard) => (
                   <button
-                    key={examCard.examId || examCard.quizId}
+                    key={examCard.quizID}
                     type="button"
                     className="sidebar-search-result"
                     onClick={() => handleSelectExam(examCard)}
                   >
-                    {examCard.title || "Untitled exam"}
+                    {examCard.quizTitle || "Untitled exam"}
                   </button>
                 ))}
               </div>
@@ -494,8 +495,9 @@ export const Side_bar = ({ editing, setEditing }) => {
         )}
 
       {/* menu option */}
-      {menuOpen && menuQuiz && (
+      {menuQuiz && (
         <Options_menu
+          isOpen={menuOpen}
           position={menuPosition}
           setEditing={setEditing}
           quiz={menuQuiz}

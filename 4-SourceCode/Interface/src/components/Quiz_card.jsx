@@ -22,12 +22,12 @@ export const Quiz_card = ({
 
   const navigate = useNavigate();
   const [hover, setHover] = React.useState(false);
-  const [title, setTitle] = useState(e.title);
+  const [title, setTitle] = useState(e.quizTitle);
 
   const { exam, setExam, exams, loading, loadExams, deleteExam, renameExam } =
     useExams();
-  const id = e.examId || e.quizId;
-  const activeId = exam?.examId || exam?.quizId;
+  const id = e.quizID;
+  const activeId = exam?.quizID;
   const isActive = String(activeId ?? "") === String(id ?? "");
 
   const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
@@ -73,26 +73,26 @@ export const Quiz_card = ({
 
   useEffect(() => {
     // Keep local title in sync, but don't clobber while actively renaming.
-    if (!isRenamingThis) setTitle(e.title);
-  }, [e.title, isRenamingThis]);
+    if (!isRenamingThis) setTitle(e.quizTitle);
+  }, [e.quizTitle, isRenamingThis]);
 
   const commitRename = async () => {
     const nextTitle = String(title ?? "")
       .slice(0, MAX_EXAM_TITLE_LENGTH)
       .trim();
     if (!nextTitle) {
-      setTitle(e.title);
+      setTitle(e.quizTitle);
       setEditing({ id: -999 });
       return;
     }
 
-    if (nextTitle === String(e.title ?? "").trim()) {
+    if (nextTitle === String(e.quizTitle ?? "").trim()) {
       setEditing({ id: -999 });
       return;
     }
 
-    const previousTitle = e.title;
-    const result = await renameExam(e.examId || e.quizId, nextTitle);
+    const previousTitle = e.quizTitle;
+    const result = await renameExam(e.quizID, nextTitle);
     if (result?.error) {
       // Backend rejected or failed: keep the old title.
       console.error("Rename rejected:", result.error);
@@ -112,7 +112,7 @@ export const Quiz_card = ({
         }`}
         onClick={() => {
           setExam(e);
-          navigate(`/exam/${e.examId || e.quizId}`);
+          navigate(`/exam/${e.quizID}`);
           onSelect?.();
         }}
         onMouseEnter={() => setHover(true)}

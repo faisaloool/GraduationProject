@@ -3,6 +3,8 @@ import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
 import { useExams } from "../context/ExamsProvider.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
+import { getShareToken } from "../util/service.js";
 
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
@@ -12,6 +14,7 @@ import { GrRefresh } from "react-icons/gr";
 import "../style/Options_menu_style.css";
 
 export const Options_menu = ({
+  isOpen = true,
   position,
   quiz,
   setEditing,
@@ -19,15 +22,25 @@ export const Options_menu = ({
   onClose,
 }) => {
   const navigate = useNavigate();
+  const { token } = useAuth();
   const { exam, setExam, deleteExam, regenerateWholeExam, regeneratingQuiz } =
     useExams();
 
-  const id = quiz?.examId || quiz?.quizId;
+  const id =
+    quiz?.quizID ??
+    quiz?.quizId ??
+    quiz?.examId ??
+    quiz?.id ??
+    quiz?._id ??
+    null;
   const containerRef = useRef(null);
 
   const [confirmDeleteOpen, setConfirmDeleteOpen] = useState(false);
   const [shareOpen, setShareOpen] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
+  const [shareLoading, setShareLoading] = useState(false);
+  const [shareError, setShareError] = useState("");
+  const [shareCode, setShareCode] = useState("");
 
   // NEW: resolved position + max-height for mobile so menu stays visible
   const [resolvedPos, setResolvedPos] = useState(
@@ -35,8 +48,10 @@ export const Options_menu = ({
   );
   const [menuMaxHeight, setMenuMaxHeight] = useState(null);
 
-  const shareUrl = id
-    ? `${window.location.origin}/shared/${encodeURIComponent(String(id))}`
+  const shareUrl = shareCode
+    ? `${window.location.origin}/shared/${encodeURIComponent(
+        String(shareCode)
+      )}`
     : "";
 
   // Reposition after mount/updates (uses actual rendered menu size)
@@ -126,9 +141,63 @@ export const Options_menu = ({
     };
   }, [onClose, confirmDeleteOpen, shareOpen]);
 
+  const handleShareClick = async () => {
+    // Close the menu list immediately, but keep this component mounted
+    // so the Share modal can stay open.
+    onClose?.({ clearQuiz: false });
+
+    setShareOpen(true);
+    setCopyStatus("");
+    setShareError("");
+    setShareCode("");
+
+    const quizId = String(id ?? "").trim();
+    if (!quizId) {
+      setShareError("Missing quiz id.");
+      return;
+    }
+    if (!token) {
+      setShareError("You must be logged in to share.");
+      return;
+    }
+
+    setShareLoading(true);
+    try {
+      const result = await getShareToken(quizId, token);
+      console.log("getShareToken result:", result);
+      if (result?.error) {
+        setShareError(result.error);
+        return;
+      }
+
+      const code =
+        typeof result === "string"
+          ? result
+          : result?.data ?? result?.shareCode ?? result?.token ?? "";
+
+      const cleaned = String(code ?? "").trim();
+      if (!cleaned) {
+        setShareError("Unexpected server response.");
+        return;
+      }
+
+      setShareCode(cleaned);
+    } catch (err) {
+      setShareError(err?.message || "Failed to generate share link.");
+    } finally {
+      setShareLoading(false);
+    }
+  };
   const runAndClose = (fn) => () => {
     fn?.();
     onClose?.();
+  };
+
+  const openDeleteDialog = () => {
+    // Close the menu list immediately, but keep this component mounted
+    // so the Delete confirmation can stay open.
+    onClose?.({ clearQuiz: false });
+    setConfirmDeleteOpen(true);
   };
 
   const closeDeleteDialog = () => {
@@ -140,6 +209,9 @@ export const Options_menu = ({
   const closeShareDialog = () => {
     setShareOpen(false);
     setCopyStatus("");
+    setShareError("");
+    setShareCode("");
+    setShareLoading(false);
     setEditing?.({ id: -999 });
     onClose?.();
   };
@@ -179,9 +251,9 @@ export const Options_menu = ({
         console.error("Error deleting exam:", response.error);
       }
 
-      const activeId = exam?.examId || exam?.quizId;
+      const activeId = exam?.quizID;
       if (String(activeId ?? "") === String(id ?? "")) {
-        setExam({ title: "Main-page" });
+        setExam({ quizTitle: "Main-page", quizID: null });
         navigate("/");
       }
     } finally {
@@ -202,7 +274,7 @@ export const Options_menu = ({
         overflowY: menuMaxHeight ? "auto" : undefined,
       }}
     >
-      <p className="option_item" onClick={() => setShareOpen(true)}>
+      <p className="option_item" onClick={handleShareClick}>
         Share
         <FiShare />
       </p>
@@ -232,20 +304,20 @@ export const Options_menu = ({
           <GrRefresh />
         </p>
       )}
-      <p
-        className="option_item delete"
-        onClick={() => setConfirmDeleteOpen(true)}
-      >
+      <p className="option_item delete" onClick={openDeleteDialog}>
         Delete
         <MdDeleteForever />
       </p>
     </div>
   );
 
+  const shouldRender = Boolean(isOpen || shareOpen || confirmDeleteOpen);
+  if (!shouldRender) return null;
+
   const portalContent = (
     <>
       {/* Backdrop prevents underlying three-dots click from firing after close (no "close then reopen") */}
-      {!confirmDeleteOpen && !shareOpen && (
+      {isOpen && !confirmDeleteOpen && !shareOpen && (
         <div
           style={{
             position: "fixed",
@@ -265,7 +337,7 @@ export const Options_menu = ({
           }}
         />
       )}
-      {menu}
+      {isOpen && !confirmDeleteOpen && !shareOpen ? menu : null}
     </>
   );
 
@@ -284,7 +356,11 @@ export const Options_menu = ({
               <div className="modal-header">
                 <h3>Share quiz</h3>
               </div>
-              <p className="modal-body">Copy the link and share it.</p>
+              <p className="modal-body">
+                {shareLoading
+                  ? "Generating share link…"
+                  : "Copy the link and share it."}
+              </p>
 
               <div className="share-row">
                 <input
@@ -294,19 +370,27 @@ export const Options_menu = ({
                   readOnly
                   onFocus={(e) => e.target.select()}
                   aria-label="Share link"
+                  placeholder={shareLoading ? "Please wait…" : ""}
                 />
                 <button
                   className="btn btn-copy"
                   type="button"
                   onClick={copyShareLink}
-                  disabled={!shareUrl}
+                  disabled={!shareUrl || shareLoading}
                 >
-                  Copy
+                  {shareLoading ? (
+                    <span className="share-copy-loading">
+                      <span className="share-spinner" aria-hidden="true" />
+                      Loading
+                    </span>
+                  ) : (
+                    "Copy"
+                  )}
                 </button>
               </div>
 
               <div className="share-status" aria-live="polite">
-                {copyStatus}
+                {shareError || copyStatus}
               </div>
 
               <div className="modal-actions">
@@ -335,7 +419,7 @@ export const Options_menu = ({
               <p className="modal-body">
                 Are you sure you want to delete{" "}
                 <span className="modal-quiz-title">
-                  “{quiz?.title || exam?.title || "this quiz"}”
+                  “{quiz?.quizTitle || exam?.quizTitle || "this quiz"}”
                 </span>
                 ? This action cannot be undone.
               </p>

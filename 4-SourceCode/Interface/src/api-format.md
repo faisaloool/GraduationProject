@@ -162,22 +162,28 @@ none
 }
 
 <<<<<<< HEAD
+
 ## 4. PassWord recovery ///////////////////////////////////////////////////////done
+
 =======
-## 4. PassWord recovery  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
->>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
+
+## 4. PassWord recovery /////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+
+> > > > > > > c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/ ? ?**  
 **Method:POST**  
 **Description:reassigning the password after sending an email to the user email and verifiying the code to set the new password**
 
 <<<<<<< HEAD
+
 ## 5. Quiz Generate
+
 =======
 
-
 ## 5. Quiz Generate\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
->>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
+
+> > > > > > > c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/quiz/create**  
 **Method:POST**  
@@ -219,10 +225,14 @@ none
 }
 
 <<<<<<< HEAD
+
 ## 6. Get exams based on User id ///////////////////////////////////////////////////////done
+
 =======
-## 6. Get exams based on User id    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
->>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
+
+## 6. Get exams based on User id ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+
+> > > > > > > c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/user/:id/exams**  
 **Method:GET**  
@@ -254,10 +264,14 @@ none
 }
 
 <<<<<<< HEAD
+
 ## 7. Quiz delete ///////////////////////////////////////////////////////////////done
+
 =======
-## 7. Quiz delete    /////////////////////////////////////////////////////////////////////////////////////////////////////////////done
->>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
+
+## 7. Quiz delete /////////////////////////////////////////////////////////////////////////////////////////////////////////////done
+
+> > > > > > > c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:quiz-ai/quiz/delete**  
 **Method:DEL**  
@@ -304,9 +318,9 @@ none
 {
 "examId": "exam_01",
 "answers": [
-{ "questionId": 101, "selectedOption": "a" },
-{ "questionId": 102, "selectedOption": "c" },
-{ "questionId": 103, "selectedOption": "b" }
+{ "questionId": 101, "selectedOptionId": "123" },
+{ "questionId": 102, "selectedOptionId": "122" },
+{ "questionId": 103, "selectedOptionId": "222" }
 ]
 }
 
@@ -315,25 +329,6 @@ none
 {
 "success": true,
 "status": 200,
-"data": {
-"totalMark": 85,
-"results": [
-{
-"questionId": 101,
-"isCorrect": true,
-"userSelected": "a",
-"correctOption": "a",
-"explanation": null
-},
-{
-"questionId": 102,
-"isCorrect": false,
-"userSelected": "c",
-"correctOption": "d",
-"referenceSection": "Chapter 4: Advanced AI Models"
-}
-]
-}
 }
 
 ## 10. Question regenrate \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -367,6 +362,7 @@ none
 }
 
 ## 11. Question delete /////////////////////////////////////////////////////////////////////////////////////////////////////done
+
 **URL:quiz-ai/quiz/question/delete**  
 **Method:DEL**  
 **Description:Deleting question based on the request body**
@@ -414,11 +410,7 @@ none
 }
 }
 
-<<<<<<< HEAD
 ## 12. Share quiz (don't know how yet!)
-=======
-## 13. Share quiz (don't know how yet!) /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
->>>>>>> c76d00c9ed42982fb204d75adefbba4865f9231a
 
 **URL:**  
 **Method:**  
@@ -427,7 +419,7 @@ none
 ## 14. Get quiz based on quiz id /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////done
 
 **URL:quiz-ai/quiz/:id**  
-**Method:GET**   
+**Method:GET**  
 **Description: Getting quiz data from the id**
 
 ### Request Body

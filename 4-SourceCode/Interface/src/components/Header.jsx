@@ -57,6 +57,10 @@ export const Header = ({ quiz, setEditing }) => {
       navigate(`/Sign-up`);
     }
   };
+
+  const shouldMountMenu = Boolean(
+    loggedIn && exam?.quizTitle && exam?.quizTitle !== "Main-page"
+  );
   return (
     <>
       <header>
@@ -71,8 +75,8 @@ export const Header = ({ quiz, setEditing }) => {
             </button>
           </div>
         ) : (
-          quiz.title !== "Main-page" &&
-          quiz.title && (
+          quiz.quizTitle !== "Main-page" &&
+          quiz.quizTitle && (
             <button
               className="menu-btn"
               aria-label="Menu"
@@ -87,8 +91,9 @@ export const Header = ({ quiz, setEditing }) => {
       </header>
 
       {/* menu option */}
-      {menuOpen && (
+      {shouldMountMenu && (
         <Options_menu
+          isOpen={menuOpen}
           position={menuPosition}
           setEditing={setEditing}
           quiz={exam}
