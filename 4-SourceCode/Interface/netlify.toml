@@ -1,0 +1,9 @@
+[build]
+  publish = "dist" 
+  # Or "build", depending on your output folder. Vite usually defaults to "dist".
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://racks-hits-linking-postings.trycloudflare.com/api/:splat"
+  status = 200
+  force = true
