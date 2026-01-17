@@ -27,9 +27,11 @@ export default function AuthForms({ isLogin, setIsLogin }) {
         </h2>
         <p className="subtitle">Log in to your account to continue</p>
 
-        <div className="buttons">
+        <div className="buttons" aria-label="Authentication mode">
           <button
+            type="button"
             className={isLogin ? "active" : ""}
+            aria-pressed={isLogin}
             onClick={() => {
               setIsLogin(true);
               navigate("/Log-in");
@@ -38,7 +40,9 @@ export default function AuthForms({ isLogin, setIsLogin }) {
             Log In
           </button>
           <button
+            type="button"
             className={!isLogin ? "active" : ""}
+            aria-pressed={!isLogin}
             onClick={() => {
               setIsLogin(false);
               navigate("/Sign-up");
