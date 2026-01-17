@@ -210,7 +210,6 @@ export async function generateQuizFromFile(file, token, settings) {
     }
 
     const data = await res.json();
-    console.log("generateQuizFromFile data:", data);
     return data;
   } catch (error) {
     console.error("Quiz Generation Error:", error);
@@ -309,7 +308,6 @@ export async function fetchSharedExam(sharedId, token, userId) {
       json: uId ? { userId: uId, UUID: uuid } : undefined,
     }
   );
-  console.log("fetchSharedExam result:", result);
 
   if (!result.ok) {
     return { error: result.error || "Failed to fetch shared quiz." };
@@ -369,7 +367,7 @@ export async function regenerateQuiz(quizID, token, counts = {}) {
   }
 
   const quiz = data;
-  console.log("regenerateQuiz data:", quiz);
+
   if (!quiz || typeof quiz !== "object") {
     return { error: "Unexpected server response." };
   }
@@ -478,7 +476,6 @@ export async function getQuizInfo(token, quizID) {
   if (!result.ok)
     return { error: result.error || "Failed to fetch examm info." };
   const data = unwrapApiData(result.payload);
-  console.log("exam info", data);
   return data ?? result.payload;
 }
 
@@ -492,6 +489,5 @@ export async function getShareToken(quizID, token) {
   if (!result.ok)
     return { error: result.error || "Failed to fetch share token." };
   const data = unwrapApiData(result.payload);
-  console.log("share token", data);
   return data ?? result.payload;
 }
