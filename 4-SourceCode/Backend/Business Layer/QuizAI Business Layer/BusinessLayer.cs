@@ -97,7 +97,7 @@ namespace QuizAI_Business_Layer
     {
         private static string secretKey = "17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==";
 
-        public static string GenerateJwt(Guid userId, string email, int expireMinutes = 60)
+        public static string GenerateJwt(Guid userId, string email, int expireMinutes = 60000)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(secretKey);
@@ -127,62 +127,12 @@ namespace QuizAI_Business_Layer
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
     public class ContentBusinessLayer
     {
         public static async Task<Dictionary<int, string>> GetFileTypes()
         {
             return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
         }
-
-        //public static async Task<contentResponseDTO> SaveUploadedFile(IFormFile file, Guid userId, string saveDirectory = "C:\\Users\\albab\\OneDrive - Mutah University\\UploadedContent")
-        //{
-        //    contentResponseDTO contentInfoResponse = new contentResponseDTO();
-
-        //    if (file == null || file.Length == 0)
-        //        throw new ArgumentException("No file uploaded.");
-
-        //    var ext = Path.GetExtension(file.FileName).ToLower();
-
-        //    var allowed = await GetFileTypes();
-        //    if (!allowed.Values.Contains(ext))
-        //        throw new ArgumentException("Unsupported file type.");
-
-        //    // Ensure directory exists
-        //    if (!Directory.Exists(saveDirectory))
-        //        Directory.CreateDirectory(saveDirectory);
-
-        //    var filePath = Path.Combine(saveDirectory, file.FileName);
-
-        //    // Create DTO
-        //    ContentDTO contentInfo = new ContentDTO(
-        //        userId,
-        //        allowed.First(x => x.Value == ext).Key,
-        //        filePath
-        //    );
-
-        //    // Save file to disk and database
-        //    using (var stream = new FileStream(filePath, FileMode.Create))
-        //    {
-        //        await file.CopyToAsync(stream);
-        //    }
-
-        //    Guid contentId = await ContentDataBack.SaveContentAsync(contentInfo);
-        //    contentInfoResponse.ContentID = contentId;
-        //    contentInfoResponse.path = filePath;
-        //    return contentInfoResponse;
-        //}
-
         public static async Task<contentResponseDTO> SaveUploadedFile(IFormFile file, Guid userId, string saveDirectory = "C:\\Users\\albab\\OneDrive - Mutah University\\UploadedContent")
         {
             contentResponseDTO contentInfoResponse = new contentResponseDTO();
@@ -200,7 +150,10 @@ namespace QuizAI_Business_Layer
             if (!Directory.Exists(saveDirectory))
                 Directory.CreateDirectory(saveDirectory);
 
-            var filePath = Path.Combine(saveDirectory, file.FileName);
+            //var filePath = Path.Combine(saveDirectory, file.FileName);
+            var uniqueFileName = $"{Guid.NewGuid()}{ext}";
+            var filePath = Path.Combine(saveDirectory, uniqueFileName);
+
 
             // Save file to disk ONLY
             using (var stream = new FileStream(filePath, FileMode.Create))
@@ -214,25 +167,18 @@ namespace QuizAI_Business_Layer
 
             return contentInfoResponse;
         }
-
-
-
-
+        
+        public static bool DeleteFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                return true;
+            }
+            return false;
+        }
+    
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public class ServerHealthBusinessLayer
     {
@@ -313,7 +259,9 @@ namespace QuizAI_Business_Layer
                 {
                     case EmailMessageType.ForgotPassword:
                         mail.Subject = "Reset Your Password";
-                        var resetPasswordLink = $"http://localhost:5173/change-password/{token}";
+
+                    
+                        var resetPasswordLink = $"https://quiz-ai-01.netlify.app/change-password/{token}";
 
                         mail.Body =
                             "Hello,\n\n" +
@@ -373,6 +321,9 @@ namespace QuizAI_Business_Layer
 
         public static async Task<bool> DeleteQuizUsingQuizID(Guid QuizID, Guid UserID)
         {
+            string FilePath = await GetFilePath(QuizID);
+
+            ContentBusinessLayer.DeleteFile(FilePath);
             return await QuizzesDataBack.DeleteQuizAsync(QuizID, UserID);
         }
 
@@ -405,8 +356,8 @@ namespace QuizAI_Business_Layer
         {
             return await QuizzesDataBack.DeleteQuestionUsingQuestionID(QuestionID, QuizID, UserID);
         }
-
-        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request, IFormFile file, byte GenerateFlag, string existingFilePath = null)
+        //added quiz id.
+        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request, IFormFile file, byte GenerateFlag, string existingFilePath = null, Guid? QuizID = null)
         {
             using var client = new HttpClient();
             client.BaseAddress = new Uri("http://127.0.0.1:8001/");
@@ -474,10 +425,20 @@ namespace QuizAI_Business_Layer
             }
 
             // Save/Update the record in your database
-            GenerateQuizResponseDTO FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result, savedFilePath);
 
+            GenerateQuizResponseDTO FinalResponse;
+            if(GenerateFlag == 0)
+            {
+                FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result, savedFilePath, GenerateFlag, QuizID);
+            }
+            else
+            {
+                FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result, savedFilePath, GenerateFlag);
+            }
+            
             return FinalResponse;
         }
+
 
 
         public static async Task<QuizQuestion?> RegenerateSingleQuestion(Guid QuestionID, string existingFilePath, Guid QuizID, Guid UserID, string QuestionType)
@@ -531,18 +492,39 @@ namespace QuizAI_Business_Layer
             return savedQuestion;
         }
 
-
-
-
-
-
         public static async Task<string> GetFilePath(Guid QuizID)
         {
             return await QuizzesDataBack.GetQuizFilePathAsync(QuizID);
         }
 
+        public static async Task<bool> SubmitQuizAttempt(Guid userId, Guid quizId, List<AnswerDto> answers)
+        {
+            try
+            {
+                // 1. Logic check: Ensure the list isn't empty before hitting the DB
+                if (answers == null || answers.Count == 0)
+                {
+                    return false;
+                }
 
+                // 2. Transform the list into the specific JSON format the SP expects
+                // Format: { "answers": [...] }
+                string serializedAnswers = JsonSerializer.Serialize(answers);
 
+                // 3. Call the Data Access Layer function
+                // (Assuming 'QuizRepository' is where the previous function lives)
+                bool isSuccess = await QuizzesDataBack.HandleSubmit(userId, quizId, serializedAnswers);
+
+                return isSuccess;
+            }
+            catch (Exception)
+            {
+                // Log exception here if needed
+                return false;
+            }
+        }
     }
+
 }
+
 

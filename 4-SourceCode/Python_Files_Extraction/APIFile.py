@@ -240,161 +240,161 @@ Content:
 
 
 
-@app.post("/ask_ai_model")
-async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-    temp_path = f"temp_{file.filename}" # Safer temp naming
+# @app.post("/ask_ai_model")
+# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+#     temp_path = f"temp_{file.filename}" # Safer temp naming
 
-    # Save uploaded file
-    content = await file.read()
-    with open(temp_path, "wb") as f:
-        f.write(content)
+#     # Save uploaded file
+#     content = await file.read()
+#     with open(temp_path, "wb") as f:
+#         f.write(content)
 
-    try:
-        text = extract_file_text(temp_path, file.filename)
-        if not text.strip():
-            raise HTTPException(status_code=400, detail="No text found in file")
+#     try:
+#         text = extract_file_text(temp_path, file.filename)
+#         if not text.strip():
+#             raise HTTPException(status_code=400, detail="No text found in file")
 
-        tasks = []
-        # Keep track of which order tasks are added
-        task_types = []
+#         tasks = []
+#         # Keep track of which order tasks are added
+#         task_types = []
 
-        if mcq_count > 0:
-            mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
-            tasks.append(send_to_lm_studio_async(mcq_prompt))
-            task_types.append("mcq")
+#         if mcq_count > 0:
+#             mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+#             tasks.append(send_to_lm_studio_async(mcq_prompt))
+#             task_types.append("mcq")
         
-        if tf_count > 0:
-            tf_prompt = build_tf_prompt(text, tf_count, file.filename)
-            tasks.append(send_to_lm_studio_async(tf_prompt))
-            task_types.append("tf")
+#         if tf_count > 0:
+#             tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+#             tasks.append(send_to_lm_studio_async(tf_prompt))
+#             task_types.append("tf")
 
-        # Run concurrently
-        responses = await asyncio.gather(*tasks)
+#         # Run concurrently
+#         responses = await asyncio.gather(*tasks)
         
-        # Create a mapping to easily retrieve results
-        results_map = dict(zip(task_types, responses))
+#         # Create a mapping to easily retrieve results
+#         results_map = dict(zip(task_types, responses))
 
-        # Build response safely
-        mcq_result = results_map.get("mcq", {
-            "file_name": file.filename, 
-            "question_type": "Multiple Choice", 
-            "questions": []
-        })
+#         # Build response safely
+#         mcq_result = results_map.get("mcq", {
+#             "file_name": file.filename, 
+#             "question_type": "Multiple Choice", 
+#             "questions": []
+#         })
         
-        tf_result = results_map.get("tf", {
-            "file_name": file.filename, 
-            "question_type": "True or False", 
-            "questions": []
-        })
+#         tf_result = results_map.get("tf", {
+#             "file_name": file.filename, 
+#             "question_type": "True or False", 
+#             "questions": []
+#         })
 
-        return {
-            "filename": file.filename,
-            "mcq_questions": mcq_result,
-            "true_false_questions": tf_result,
-            "total_questions": mcq_count + tf_count
-        }
+#         return {
+#             "filename": file.filename,
+#             "mcq_questions": mcq_result,
+#             "true_false_questions": tf_result,
+#             "total_questions": mcq_count + tf_count
+#         }
 
-    except Exception as e:
-        # This helps you see the actual error in your console/logs
-        print(f"Error occurred: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+#     except Exception as e:
+#         # This helps you see the actual error in your console/logs
+#         print(f"Error occurred: {e}")
+#         raise HTTPException(status_code=500, detail=str(e))
         
-    finally:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
+#     finally:
+#         if os.path.exists(temp_path):
+#             os.remove(temp_path)
 
 
 
 #the function that returns static 10 questions: 
 
-# @app.post("/ask_ai_model")
-# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-#     return {
-#         "filename": "Ch1_Introduction.pptx",
-#         "mcq_questions": {
-#             "file_name": "Ch1_Introduction.pptx",
-#             "question_type": "Multiple Choice",
-#             "questions": [
-#                 {
-#                     "question": "What are the identified catalysts that enabled products like Samsung Galaxy A2?",
-#                     "options": [
-#                         "A) Low-cost computers",
-#                         "B) High-speed communication networks",
-#                         "C) Both A and B",
-#                         "D) None of the above"
-#                     ],
-#                     "answer": "C) Both A and B"
-#                 },
-#                 {
-#                     "question": "Which technology has raised privacy concerns due to location tracking and camera use?",
-#                     "options": [
-#                         "A) Email",
-#                         "B) Cell phones",
-#                         "C) Social networking sites",
-#                         "D) Voice over IP services"
-#                     ],
-#                     "answer": "B) Cell phones"
-#                 },
-#                 {
-#                     "question": "According to the text, what is a primary benefit of e-commerce platforms like Amazon.com?",
-#                     "options": [
-#                         "A) Increase in physical retail stores",
-#                         "B) Lower overhead and easier price comparison for consumers",
-#                         "C) Reducing online privacy concerns",
-#                         "D) Eliminating need for payment systems"
-#                     ],
-#                     "answer": "B) Lower overhead and easier price comparison for consumers"
-#                 },
-#                 {
-#                     "question": "Which ethical theory emphasizes duties and rules independent of consequences?",
-#                     "options": [
-#                         "A) Utilitarianism",
-#                         "B) Deontological theories",
-#                         "C) Positive rights",
-#                         "D) Negative rights"
-#                     ],
-#                     "answer": "B) Deontological theories"
-#                 },
-#                 {
-#                     "question": "In the context of information age, which statement best reflects the dynamic between people and technology?",
-#                     "options": [
-#                         "A) Technology is static and unaffected by society",
-#                         "B) People adopt technology but it does not influence them",
-#                         "C) Using technology can change people physically and psychologically",
-#                         "D) Technological changes are irrelevant to social values"
-#                     ],
-#                     "answer": "C) Using technology can change people physically and psychologically"
-#                 }
-#             ]
-#         },
-#         "true_false_questions": {
-#             "file_name": "Ch1_Introduction.pptx",
-#             "question_type": "True or False",
-#             "questions": [
-#                 {
-#                     "question": "The Information Age was primarily driven by high-cost computers and slow communication networks.",
-#                     "answer": "False"
-#                 },
-#                 {
-#                     "question": "Smartphones such as the Samsung Galaxy A2 can function as a camera, video recorder, and digital compass.",
-#                     "answer": "True"
-#                 },
-#                 {
-#                     "question": "Email messages in the 1980s were typically long and included multimedia attachments.",
-#                     "answer": "False"
-#                 },
-#                 {
-#                     "question": "The World Wide Web was first established by physicists in Europe in 1990 to share research with colleagues worldwide.",
-#                     "answer": "True"
-#                 },
-#                 {
-#                     "question": "Artificial intelligence is a branch of computer science that focuses on making computers perform tasks normally requiring human intelligence.",
-#                     "answer": "True"
-#                 }
-#             ]
-#         },
-#         "total_questions": 10
-#     }
+@app.post("/ask_ai_model")
+async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+    return {
+        "filename": "Ch1_Introduction.pptx",
+        "mcq_questions": {
+            "file_name": "Ch1_Introduction.pptx",
+            "question_type": "Multiple Choice",
+            "questions": [
+                {
+                    "question": "What are the identified catalysts that enabled products like Samsung Galaxy A2?",
+                    "options": [
+                        "A) Low-cost computers",
+                        "B) High-speed communication networks",
+                        "C) Both A and B",
+                        "D) None of the above"
+                    ],
+                    "answer": "C) Both A and B"
+                },
+                {
+                    "question": "Which technology has raised privacy concerns due to location tracking and camera use?",
+                    "options": [
+                        "A) Email",
+                        "B) Cell phones",
+                        "C) Social networking sites",
+                        "D) Voice over IP services"
+                    ],
+                    "answer": "B) Cell phones"
+                },
+                {
+                    "question": "According to the text, what is a primary benefit of e-commerce platforms like Amazon.com?",
+                    "options": [
+                        "A) Increase in physical retail stores",
+                        "B) Lower overhead and easier price comparison for consumers",
+                        "C) Reducing online privacy concerns",
+                        "D) Eliminating need for payment systems"
+                    ],
+                    "answer": "B) Lower overhead and easier price comparison for consumers"
+                },
+                {
+                    "question": "Which ethical theory emphasizes duties and rules independent of consequences?",
+                    "options": [
+                        "A) Utilitarianism",
+                        "B) Deontological theories",
+                        "C) Positive rights",
+                        "D) Negative rights"
+                    ],
+                    "answer": "B) Deontological theories"
+                },
+                {
+                    "question": "In the context of information age, which statement best reflects the dynamic between people and technology?",
+                    "options": [
+                        "A) Technology is static and unaffected by society",
+                        "B) People adopt technology but it does not influence them",
+                        "C) Using technology can change people physically and psychologically",
+                        "D) Technological changes are irrelevant to social values"
+                    ],
+                    "answer": "C) Using technology can change people physically and psychologically"
+                }
+            ]
+        },
+        "true_false_questions": {
+            "file_name": "Ch1_Introduction.pptx",
+            "question_type": "True or False",
+            "questions": [
+                {
+                    "question": "The Information Age was primarily driven by high-cost computers and slow communication networks.",
+                    "answer": "False"
+                },
+                {
+                    "question": "Smartphones such as the Samsung Galaxy A2 can function as a camera, video recorder, and digital compass.",
+                    "answer": "True"
+                },
+                {
+                    "question": "Email messages in the 1980s were typically long and included multimedia attachments.",
+                    "answer": "False"
+                },
+                {
+                    "question": "The World Wide Web was first established by physicists in Europe in 1990 to share research with colleagues worldwide.",
+                    "answer": "True"
+                },
+                {
+                    "question": "Artificial intelligence is a branch of computer science that focuses on making computers perform tasks normally requiring human intelligence.",
+                    "answer": "True"
+                }
+            ]
+        },
+        "total_questions": 10
+    }
 
 
 

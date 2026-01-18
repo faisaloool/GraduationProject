@@ -75,7 +75,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [HttpPost("VerifyNewUser")]
+        [HttpPost("VerifyNewUser")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -129,7 +129,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [HttpPost("Login")]
+        [HttpPost("Login")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -185,7 +185,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [HttpGet("health")]
+        [HttpGet("health")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> GetHealth()
@@ -229,7 +229,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [HttpPost("Forgot-Password")]
+        [HttpPost("Forgot-Password")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //used when the user presses the forgot password button. it generates a token and sends it to his email.
@@ -353,7 +353,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpGet("exams")]
+        [HttpGet("exams")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -419,7 +419,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpDelete("quiz/delete")]
+        [HttpDelete("quiz/delete")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -480,7 +480,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpPut("{quizId}/rename")]
+        [HttpPut("{quizId}/rename")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -644,7 +644,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpGet("Quiz/{id}")]
+        [HttpGet("Quiz/{id}")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -700,7 +700,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpDelete("Questions/delete")]
+        [HttpDelete("Questions/delete")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -764,7 +764,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpPost("Quiz/Generate")]
+        [HttpPost("Quiz/Generate")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -812,7 +812,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpPost("Quiz/Regenerate")]
+        [HttpPost("Quiz/Regenerate")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -852,13 +852,7 @@ namespace QuizAI_API_Layer.Controllers
                     });
                 }
 
-                GenerateQuizResponseDTO newQuiz = await QuizzesBusinessLayer.GenerateQuiz(
-                    UserID,
-                    request,
-                    null,
-                    0,
-                    filePath
-                );
+                GenerateQuizResponseDTO newQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request, null, 0, filePath, QuizID);
 
                 return Ok(new ApiResponse<GenerateQuizResponseDTO>
                 {
@@ -888,8 +882,8 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpPost("regenerate-question")]
-        public async Task<IActionResult> RegenerateQuestion(Guid QuestionID, Guid QuizID, string QuestionType) // questionType: mcq/tf
+        [HttpPost("regenerate-question")] //working
+        public async Task<ActionResult<ApiResponse<QuizQuestion>>> RegenerateQuestion(Guid QuestionID, Guid QuizID, string QuestionType) // questionType: mcq/tf
         {
             try
             {
@@ -905,17 +899,26 @@ namespace QuizAI_API_Layer.Controllers
                 }
 
                 string filePath = await QuizzesBusinessLayer.GetFilePath(QuizID);
-                await QuizzesBusinessLayer.RegenerateSingleQuestion(QuestionID, filePath, QuizID, UserID, QuestionType);
+                QuizQuestion? Question = await QuizzesBusinessLayer.RegenerateSingleQuestion(QuestionID, filePath, QuizID, UserID, QuestionType);
 
+                if(Question != null)
+                    return Ok(new ApiResponse<QuizQuestion>
+                    {
+                        Success = true,
+                        Status = 200,
+                        Message = "Question regenerated successfully.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = Question
+                    });
 
+                return BadRequest(new ApiResponse<bool>
+                {
+                    Success = false,
+                    Status = 400,
+                    Message = "Can't Regenerate Question.",
+                    Timestamp = DateTime.UtcNow
+                });
 
-
-                // The next steps will go here:
-                // 1. Delete from DB
-                // 2. Call AI
-                // 3. Re-save
-
-                return Ok(new { message = "Endpoint hit successfully", id = QuestionID, type = QuestionType });
             }
             catch (Exception ex)
             {
@@ -924,6 +927,47 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
+        [Authorize]
+        [HttpPost("submit")]
+        public async Task<IActionResult> SubmitAnswers([FromBody] SubmissionRequest request)
+        {
+            try
+            {
+                // 1. Get and Parse UserID from Claims
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                    return Unauthorized();
+
+                Guid UserID = Guid.Parse(userIdClaim.Value);
+
+                // 2. Parse the QuizID (ExamId) from the request
+                Guid QuizID = request.examId;
+
+                // 3. Call the Business Layer
+                bool isSuccess = await QuizzesBusinessLayer.SubmitQuizAttempt(UserID, QuizID, request.answers);
+
+                
+                if (isSuccess)
+                {
+                    return Ok(new
+                    {
+                        success = true,
+                        status = 200
+                    });
+                }
+
+                return StatusCode(500, new { success = false, status = 500, message = "Processing failed" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    status = 400,
+                    message = ex.Message
+                });
+            }
+        }
 
     }
 

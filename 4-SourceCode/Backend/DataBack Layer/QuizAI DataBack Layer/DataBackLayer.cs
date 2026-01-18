@@ -443,7 +443,7 @@ namespace QuizAIDataBack
             }
             return QuizzesInfo;
         }
-
+        
         public static async Task<bool> DeleteQuizAsync(Guid QuizID, Guid UserID)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -540,42 +540,44 @@ namespace QuizAIDataBack
 
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
+                        // 1️⃣ Quiz info
                         if (await reader.ReadAsync())
                         {
                             result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
                             result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
-                            // Optional: store File info if needed
                         }
+
+                        // 2️⃣ Questions
+                        var questionsDict = new Dictionary<Guid, QuizQuestion>();
 
                         if (await reader.NextResultAsync())
                         {
-                            var questionsDict = new Dictionary<Guid, QuizQuestion>();
                             while (await reader.ReadAsync())
                             {
                                 Guid qId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
                                 var question = new QuizQuestion
                                 {
                                     QuestionID = qId,
                                     QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
                                     SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
-                                    Type = null, // Or map Category_ID to type if needed
                                     choices = new List<MCQChoice>()
                                 };
+
                                 questionsDict[qId] = question;
                                 result.Questions.Add(question);
                             }
                         }
 
-
+                        // 3️⃣ MCQ Choices
                         if (await reader.NextResultAsync())
                         {
                             while (await reader.ReadAsync())
                             {
                                 Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
-                                var question = result.Questions.FirstOrDefault(q => q.QuestionID == questionId);
-                                if (question != null)
+
+                                if (questionsDict.TryGetValue(questionId, out var question))
                                 {
-                                    question.choices ??= new List<MCQChoice>();
                                     question.choices.Add(new MCQChoice
                                     {
                                         ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
@@ -586,27 +588,26 @@ namespace QuizAIDataBack
                             }
                         }
 
-                        
+                        // 4️⃣ True / False Choices (WITH Choice_ID)
                         if (await reader.NextResultAsync())
                         {
                             while (await reader.ReadAsync())
                             {
                                 Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
-                                string choiceText = reader.GetString(reader.GetOrdinal("Choice_Text"));
 
-                                var question = result.Questions.FirstOrDefault(q => q.QuestionID == questionId);
-                                if (question != null)
+                                if (questionsDict.TryGetValue(questionId, out var question))
                                 {
-                                    question.choices ??= new List<MCQChoice>();
                                     question.choices.Add(new MCQChoice
                                     {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
                                         Question_ID = questionId,
-                                        Choice = choiceText
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
                                     });
                                 }
                             }
                         }
                     }
+
                 }
             }
 
@@ -659,7 +660,7 @@ namespace QuizAIDataBack
 
          */
 
-        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo, string FilePath)
+        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo, string FilePath, byte GenerateFlag, Guid? QuizID = null)
         {
             GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
 
@@ -673,33 +674,45 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@UserID", userID);
                     cmd.Parameters.AddWithValue("@QuizTitle", QuizInfo.filename ?? "Generated Quiz");
 
+
                     // --- File info ---
                     string extension = System.IO.Path.GetExtension(QuizInfo.filename) ?? ".unknown";
                     int fileTypeID = Database.SelectFileType(extension);
 
                     cmd.Parameters.AddWithValue("@FileType", fileTypeID);
-                    cmd.Parameters.AddWithValue("@FilePath", FilePath); // replace with actual path if available
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath);
 
                     // --- Serialize full quiz JSON ---
                     string jsonBody = System.Text.Json.JsonSerializer.Serialize(QuizInfo);
                     cmd.Parameters.AddWithValue("@QuestionsJson", jsonBody);
 
-                    await con.OpenAsync();
+
+                    if (GenerateFlag == 0)
+                    {
+                        cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    }
+                    else if (GenerateFlag == 1)
+                    {
+                        cmd.Parameters.AddWithValue("@QuizID", Guid.NewGuid());
+                    }
+
+                        await con.OpenAsync();
 
                     // --- Execute SP and read back generated QuizID ---
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
-                        // 1st result set → Quiz info
+                        // 1️⃣ Quiz info
                         if (await reader.ReadAsync())
                         {
                             result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
                             result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
                         }
 
-                        // 2nd result set → MCQs
+                        // 2️⃣ Questions (MCQ + TF)
                         if (await reader.NextResultAsync())
                         {
                             result.Questions = new List<QuizQuestion>();
+
                             while (await reader.ReadAsync())
                             {
                                 result.Questions.Add(new QuizQuestion
@@ -707,12 +720,12 @@ namespace QuizAIDataBack
                                     QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
                                     QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
                                     SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
-                                    // you can also add a property for choices later
+                                    choices = new List<MCQChoice>() // always initialize
                                 });
                             }
                         }
 
-                        // 3rd result set → MCQ Choices
+                        // 3️⃣ MCQ Choices
                         if (await reader.NextResultAsync())
                         {
                             while (await reader.ReadAsync())
@@ -724,8 +737,6 @@ namespace QuizAIDataBack
 
                                 if (question != null)
                                 {
-                                    question.choices ??= new List<MCQChoice>();
-
                                     question.choices.Add(new MCQChoice
                                     {
                                         ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
@@ -736,33 +747,29 @@ namespace QuizAIDataBack
                             }
                         }
 
-
-                        // 4th result set → True/False questions
-                        // 4th result set → True/False OPTIONS (not questions)
+                        // 4️⃣ True / False Choices (WITH Choice_ID)
                         if (await reader.NextResultAsync())
                         {
                             while (await reader.ReadAsync())
                             {
                                 Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
-                                string choiceText = reader.GetString(reader.GetOrdinal("Choice_Text"));
 
                                 var question = result.Questions
                                     .FirstOrDefault(q => q.QuestionID == questionId);
 
                                 if (question != null)
                                 {
-                                    question.choices ??= new List<MCQChoice>();
-
                                     question.choices.Add(new MCQChoice
                                     {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
                                         Question_ID = questionId,
-                                        Choice = choiceText
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
                                     });
                                 }
                             }
                         }
-
                     }
+
 
                 }
             }
@@ -812,7 +819,7 @@ namespace QuizAIDataBack
 
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
-                        // 1️⃣ Inserted Question
+                        // 1️⃣ Question
                         if (await reader.ReadAsync())
                         {
                             result = new QuizQuestion
@@ -820,13 +827,26 @@ namespace QuizAIDataBack
                                 QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
                                 QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
                                 SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
-                                //CategoryID = reader.GetInt32(reader.GetOrdinal("Category_ID")),
                                 choices = new List<MCQChoice>()
                             };
                         }
 
-                        // 2️⃣ MCQ Choices (only if MCQ)
-                        if (questionType == "MCQ" && await reader.NextResultAsync())
+                        // 2️⃣ MCQ Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                result?.choices.Add(new MCQChoice
+                                {
+                                    ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                    Question_ID = result.QuestionID,
+                                    Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                });
+                            }
+                        }
+
+                        // 3️⃣ True / False Choices
+                        if (await reader.NextResultAsync())
                         {
                             while (await reader.ReadAsync())
                             {
@@ -839,11 +859,46 @@ namespace QuizAIDataBack
                             }
                         }
                     }
+
                 }
             }
 
             return result;
         }
+
+
+
+        public static async Task<bool> HandleSubmit(Guid UserID, Guid QuizID, string JsonInput)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_HandleQuizSubmit", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Adding parameters matching the SP definition
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    cmd.Parameters.AddWithValue("@JsonInput", JsonInput);
+
+                    await con.OpenAsync();
+
+                    // Using ExecuteScalar to get the 'success' column from the SP's SELECT statement
+                    object? result = await cmd.ExecuteScalarAsync();
+
+                    if (result != null)
+                    {
+                        // In SQL, 1 is true, 0 is false
+                        return Convert.ToBoolean(result);
+                    }
+
+                    return false;
+                }
+            }
+        }
+
+
+
 
     }
 }

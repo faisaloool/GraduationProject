@@ -472,7 +472,17 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "QuizAIDataBack.ApiResponse\u00601[[QuizAIDataBack.QuizQuestion, QuizAI DataBack Layer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
@@ -629,6 +639,22 @@
         "StatusCode": 500
       }
     ]
+  },
+  {
+    "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
+    "Method": "SubmitAnswers",
+    "RelativePath": "api/v1/quiz-ai/submit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "QuizAIDataBack.SubmissionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "QuizAI_API_Layer.Controllers.UserController",
