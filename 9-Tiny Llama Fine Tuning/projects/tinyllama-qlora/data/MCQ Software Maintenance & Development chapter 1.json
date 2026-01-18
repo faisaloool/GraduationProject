@@ -1,0 +1,228 @@
+{
+  "document": "Chapter 1 of *Software Evolution and Maintenance* presents the foundational concepts of how software changes over time, distinguishing between evolution (continuous improvement) and maintenance (defect‑fixing), summarizing Lehman’s laws of evolution, discussing free vs closed source patterns, detailing types of maintenance activities, describing reengineering, legacy system strategies, impact analysis techniques, refactoring practices, program comprehension methods, and principles of reusable software.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary difference between software evolution and software maintenance?",
+        "options": [
+          "Evolution focuses on planned activities, while maintenance concerns unexpected changes.",
+          "Maintenance preserves against failure, whereas evolution continuously improves from a poorer state to a better one.",
+          "Both terms are synonymous with no semantic difference.",
+          "Evolution only applies to open‑source projects, maintenance only to commercial ones."
+        ],
+        "answer": "Maintenance preserves against failure, whereas evolution continuously improves from a poorer state to a better one."
+      },
+      {
+        "question": "According to Lehman’s 1st law of software evolution, what happens if a system is not continually adapted?",
+        "options": [
+          "Its functionality increases automatically.",
+          "It becomes progressively less satisfying to users over time.",
+          "Its complexity decreases with each release.",
+          "The average amount of work per release grows exponentially."
+        ],
+        "answer": "It becomes progressively less satisfying to users over time."
+      },
+      {
+        "question": "Which of the following is NOT one of Lehman’s laws?",
+        "options": [
+          "Continuing growth",
+          "Declining quality",
+          "Rapid acceleration",
+          "Feedback system"
+        ],
+        "answer": "Rapid acceleration"
+      },
+      {
+        "question": "What was a major finding of Godfrey and Tu’s 2000 study on FOSS evolution?",
+        "options": [
+          "FOSS growth trends were linear.",
+          "FOSS follows Lehman’s laws exactly.",
+          "The growth trends from 1994‑99 for Linux were super‑linear.",
+          "Free software never shows a decline in complexity."
+        ],
+        "answer": "The growth trends from 1994‑99 for Linux were super‑linear."
+      },
+      {
+        "question": "Which category of maintenance was added to the ISO/IEC 14764 standard after Swanson’s original three?",
+        "options": [
+          "Corrective",
+          "Adaptive",
+          "Preventive",
+          "Enhancement"
+        ],
+        "answer": "Preventive"
+      },
+      {
+        "question": "In Kitchenham’s hierarchical view of maintenance, which type covers adding a new system requirement that does not change the implementation?",
+        "options": [
+          "Enhancements that add new system requirements",
+          "Enhancements that change existing requirements",
+          "Enhancements that modify code but keep behavior same",
+          "Corrective changes"
+        ],
+        "answer": "Enhancements that add new system requirements"
+      },
+      {
+        "question": "Which option is NOT a typical strategy for managing legacy systems?",
+        "options": [
+          "Freeze",
+          "Wrap",
+          "Re‑implement from scratch",
+          "Introduce immediate refactoring of all modules"
+        ],
+        "answer": "Introduce immediate refactoring of all modules"
+      },
+      {
+        "question": "What is the primary goal of a ripple‑effect analysis?",
+        "options": [
+          "To measure how a change propagates through a system.",
+          "To identify which module should be refactored first.",
+          "To count the number of dependencies in code.",
+          "To find the most frequently used functions."
+        ],
+        "answer": "To measure how a change propagates through a system."
+      },
+      {
+        "question": "Which of these is NOT a characteristic that makes software reusable?",
+        "options": [
+          "Loose coupling",
+          "High cohesion",
+          "Rigid inheritance hierarchy",
+          "Environmental independence"
+        ],
+        "answer": "Rigid inheritance hierarchy"
+      },
+      {
+        "question": "In refactoring, which property must the observable behavior of the program remain unchanged?",
+        "options": [
+          "The internal variable names.",
+          "The runtime performance.",
+          "The external input‑output behavior.",
+          "The memory usage."
+        ],
+        "answer": "The external input‑output behavior."
+      },
+      {
+        "question": "Which of the following best describes program comprehension?",
+        "options": [
+          "Writing code faster by using shortcuts.",
+          "Building mental models of a program at multiple abstraction levels.",
+          "Creating unit tests for new features.",
+          "Running static analysis tools only."
+        ],
+        "answer": "Building mental models of a program at multiple abstraction levels."
+      },
+      {
+        "question": "What is the core function of software configuration management (SCM)?",
+        "options": [
+          "To ensure that all code is written in one language.",
+          "To control and audit changes to software configurations.",
+          "To compile the source into binaries automatically.",
+          "To maintain a list of programming languages used."
+        ],
+        "answer": "To control and audit changes to software configurations."
+      },
+      {
+        "question": "Which type of maintenance is aimed at preserving performance and reliability without changing functionality?",
+        "options": [
+          "Corrective",
+          "Preventive",
+          "Adaptive",
+          "Perfective"
+        ],
+        "answer": "Preventive"
+      },
+      {
+        "question": "In reengineering, the reverse engineering step primarily produces what?",
+        "options": [
+          "A physical copy of the source code.",
+          "An abstract representation easier to understand.",
+          "The final compiled binary.",
+          "Immediate user documentation."
+        ],
+        "answer": "An abstract representation easier to understand."
+      },
+      {
+        "question": "Which statement best captures the essence of a legacy system?",
+        "options": [
+          "A brand‑new application built with modern tools.",
+          "A system that resists modification but remains essential to business.",
+          "A software product only for internal use.",
+          "An open source library."
+        ],
+        "answer": "A system that resists modification but remains essential to business."
+      },
+      {
+        "question": "Which of the following is a typical impact‑analysis technique?",
+        "options": [
+          "Dynamic profiling at runtime.",
+          "Traceability analysis.",
+          "Graphical user interface design.",
+          "Unit test generation."
+        ],
+        "answer": "Traceability analysis."
+      },
+      {
+        "question": "What is a key benefit of reusing program code across projects?",
+        "options": [
+          "Increased execution speed.",
+          "Reduced development time and cost.",
+          "No need for testing.",
+          "Automatic version control."
+        ],
+        "answer": "Reduced development time and cost."
+      },
+      {
+        "question": "Which law of Lehman states that the average amount of work per release remains roughly constant?",
+        "options": [
+          "Conservation of complexity",
+          "Conservation of organizational stability",
+          "Continuing growth",
+          "Feedback system"
+        ],
+        "answer": "Conservation of organizational stability"
+      },
+      {
+        "question": "Which type of refactoring removes duplicate code to improve maintainability?",
+        "options": [
+          "Simplification",
+          "Encapsulation",
+          "Extract Method",
+          "Rename Variable"
+        ],
+        "answer": "Extract Method"
+      },
+      {
+        "question": "What is the purpose of chunking in program comprehension?",
+        "options": [
+          "To rename variables automatically.",
+          "To replace low‑level code blocks with higher‑level labels.",
+          "To generate documentation files.",
+          "To test each module separately."
+        ],
+        "answer": "To replace low‑level code blocks with higher‑level labels."
+      },
+      {
+        "question": "Which of the following is a correct statement about the ISO/IEC 14764 maintenance process?",
+        "options": [
+          "It has six main activities, including analysis and implementation.",
+          "It requires at least twelve phases for each release.",
+          "It contains no review step before deployment.",
+          "It merges development and testing into one phase."
+        ],
+        "answer": "It has six main activities, including analysis and implementation."
+      },
+      {
+        "question": "Which of these is NOT a recognized type of software reuse?",
+        "options": [
+          "Data reuse",
+          "Architectural reuse",
+          "Design reuse",
+          "Systematic reuse"
+        ],
+        "answer": "Systematic reuse"
+      }
+    ]
+  }
+}

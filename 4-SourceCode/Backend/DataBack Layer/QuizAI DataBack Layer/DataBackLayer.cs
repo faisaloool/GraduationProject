@@ -37,13 +37,8 @@ namespace QuizAIDataBack
 
                     await con.OpenAsync();
 
-                    object? result = await cmd.ExecuteScalarAsync();
-                    Guid newUserId = Guid.Empty;
-
-                    if (result != null && Guid.TryParse(result.ToString(), out Guid parsedGuid))
-                    {
-                        newUserId = parsedGuid;
-                    }
+                    object result = await cmd.ExecuteScalarAsync();
+                    Guid newUserId = (result != null) ? Guid.Parse(result.ToString()) : Guid.Empty;
 
                     UserDTO u = new UserDTO(newUserId, UserInfo.Email, UserInfo.Name);
                     CreateNewUserResponseDTO User = new CreateNewUserResponseDTO(u);
@@ -81,7 +76,7 @@ namespace QuizAIDataBack
 
                     await con.OpenAsync();
 
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
 
                     if (Convert.ToBoolean(result))
                     {
@@ -160,7 +155,7 @@ namespace QuizAIDataBack
 
                     cmd.Parameters.AddWithValue("@Email", Email);
                     await con.OpenAsync();
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return (byte[])result;
 
@@ -179,7 +174,7 @@ namespace QuizAIDataBack
 
                     cmd.Parameters.Add("@User_ID", SqlDbType.UniqueIdentifier).Value = id;
                     await con.OpenAsync();
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return (byte[])result;
 
@@ -198,7 +193,7 @@ namespace QuizAIDataBack
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Email", ForgotPasswordInfo.Email);
                     await con.OpenAsync();
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                         return Convert.ToBoolean(result);
                     return false;
@@ -336,85 +331,64 @@ namespace QuizAIDataBack
                 }
             }
         }
+
     }
 
+    //public class ContentDataBack
+    //{
+    //    private static Dictionary<int, string> _cachedExtensions;
+
+    //    public static async Task<Dictionary<int, string>> GetFileTypesAsync()
+    //    {
+    //        if (_cachedExtensions != null)
+    //            return _cachedExtensions;
+
+    //        Dictionary<int, string> ValidExtensions = new Dictionary<int, string>();
+
+    //        using (SqlConnection con = new SqlConnection(Database._connectionString))
+    //        using (SqlCommand cmd = new SqlCommand("SP_GetExtensions", con))
+    //        {
+    //            cmd.CommandType = CommandType.StoredProcedure;
+    //            await con.OpenAsync();
+
+    //            using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+    //            {
+    //                while (reader.Read())
+    //                {
+    //                    int typeId = reader.GetInt32(reader.GetOrdinal("type_ID"));
+    //                    string typeName = reader.GetString(reader.GetOrdinal("Type_Name"));
+    //                    ValidExtensions.Add(typeId, typeName);
+    //                }
+    //            }
+    //        }
+
+    //        _cachedExtensions = ValidExtensions;
+    //        return ValidExtensions;
+    //    }
+    //    public static async Task<ContentDTO> SaveContentAsync(ContentDTO ContentInfo)
+    //    {
+    //        using (SqlConnection con = new SqlConnection(Database._connectionString))
+    //        {
+    //            using (SqlCommand cmd = new SqlCommand("SP_AddNewContent", con))
+    //            {
+    //                cmd.CommandType = CommandType.StoredProcedure;
+    //                await con.OpenAsync();
+
+    //                cmd.Parameters.AddWithValue("@User_ID", ContentInfo.UserID);
+    //                cmd.Parameters.AddWithValue("@File_Type", ContentInfo.FileType);
+    //                cmd.Parameters.AddWithValue("@File_Path", ContentInfo.FilePath);
+    //                cmd.Parameters.AddWithValue("@Extracted_Text", ContentInfo.ExtractedText);
+
+    //                await cmd.ExecuteNonQueryAsync();
+    //            }
+    //        }
+    //        return ContentInfo;
+    //    }
 
 
 
 
-
-
-
-
-
-
-
-    public class ContentDataBack
-    {
-        private static Dictionary<int, string>? _cachedExtensions;
-
-        public static async Task<Dictionary<int, string>> GetFileTypesAsync()
-        {
-            if (_cachedExtensions != null)
-                return _cachedExtensions;
-
-            Dictionary<int, string> ValidExtensions = new Dictionary<int, string>();
-
-            using (SqlConnection con = new SqlConnection(Database._connectionString))
-            using (SqlCommand cmd = new SqlCommand("SP_GetExtensions", con))
-            {
-                cmd.CommandType = CommandType.StoredProcedure;
-                await con.OpenAsync();
-
-                using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
-                {
-                    while (reader.Read())
-                    {
-                        int typeId = reader.GetInt32(reader.GetOrdinal("type_ID"));
-                        string typeName = reader.GetString(reader.GetOrdinal("Type_Name"));
-                        ValidExtensions.Add(typeId, typeName);
-                    }
-                }
-            }
-
-            _cachedExtensions = ValidExtensions;
-            return ValidExtensions;
-        }
-        public static async Task<Guid> SaveContentAsync(ContentDTO ContentInfo)
-        {
-            Guid newContentID = Guid.Empty;
-
-            using (SqlConnection con = new SqlConnection(Database._connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand("SP_AddNewContent", con))
-                {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    await con.OpenAsync();
-
-                    cmd.Parameters.AddWithValue("@User_ID", ContentInfo.UserID);
-                    cmd.Parameters.AddWithValue("@File_Type", ContentInfo.FileTypeID);
-                    cmd.Parameters.AddWithValue("@File_Path", ContentInfo.FilePath);
-
-                    object? result = await cmd.ExecuteScalarAsync();
-
-                    if (result != null)
-                    {
-                        newContentID = (result != null) ? (Guid)result : Guid.Empty;
-                    }
-                }
-            }
-            return newContentID;
-        }
-    }
-
-
-
-
-
-
-
-
-
+    //}
 
     public class QuizzesDataBack
     {
@@ -454,7 +428,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
                     cmd.Parameters.AddWithValue("@User_ID", UserID);
                     await con.OpenAsync();
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
 
                     if (result != null)
                     {
@@ -464,6 +438,7 @@ namespace QuizAIDataBack
                 }
             }
         }
+
 
         public static async Task<bool> RenameQuizAsync(Guid QuizID, Guid UserID, string NewName)
         {
@@ -477,7 +452,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@Quiz_Name", NewName);
                     await con.OpenAsync();
 
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
 
                     if (result != null)
                     {
@@ -525,10 +500,12 @@ namespace QuizAIDataBack
             }
         }
 
-        public static async Task<GenerateQuizResponseDTO> GetQuizByIdAsync(Guid quizID)
+        public static async Task<Quiz> GetQuizBasedOnQuizIDAsync(Guid QuizID, string QuizTitle)
         {
-            GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
-            result.Questions = new List<QuizQuestion>();
+            Quiz quizInfo = new Quiz();
+            quizInfo.QuizID = QuizID;
+            quizInfo.Title = QuizTitle;
+            quizInfo.Questions = new List<QuizQuestion>(); // Ensure it's initialized
 
             using (SqlConnection con = new SqlConnection(Database._connectionString))
             {
@@ -536,7 +513,7 @@ namespace QuizAIDataBack
                 using (SqlCommand cmd = new SqlCommand("SP_GetQuestionsBasedOnQuizID", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Quiz_ID", quizID);
+                    cmd.Parameters.AddWithValue("@Quiz_ID", QuizID);
 
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
@@ -611,7 +588,7 @@ namespace QuizAIDataBack
                 }
             }
 
-            return result;
+            return quizInfo;
         }
 
         public static async Task<bool> DeleteQuestionUsingQuestionID(Guid QuestionID, Guid QuizID, Guid UserID)
@@ -626,7 +603,7 @@ namespace QuizAIDataBack
                     cmd.Parameters.AddWithValue("@User_ID", UserID);
 
                     await con.OpenAsync();
-                    object? result = await cmd.ExecuteScalarAsync();
+                    object result = await cmd.ExecuteScalarAsync();
                     if (result != null)
                     {
                         return Convert.ToBoolean(result);

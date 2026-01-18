@@ -97,7 +97,7 @@ async function requestJson(url, { method = "GET", headers = {}, json } = {}) {
 }
 
 export async function loginUser(email, password) {
-  const result = await requestJson(`${API_URL}/quiz-ai/login`, {
+  const result = await requestJson(`/api/v1/quiz-ai/Login`, {
     method: "POST",
     json: { email, password },
   });
@@ -108,7 +108,7 @@ export async function loginUser(email, password) {
 }
 
 export async function registerUser(name, email, password) {
-  const result = await requestJson(`${API_URL}/quiz-ai/signup`, {
+  const result = await requestJson(`/api/v1/quiz-ai/Signup`, {
     method: "POST",
     json: { name, email, password },
   });
@@ -119,7 +119,7 @@ export async function registerUser(name, email, password) {
 }
 
 export async function fetchUserExams(userId, token) {
-  const result = await requestJson(`${API_URL}/quiz-ai/users/${userId}/exams`, {
+  const result = await requestJson(`/api/v1/quiz-ai/exams`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -135,9 +135,7 @@ export async function requestPasswordResetEmail(email) {
   const cleanEmail = String(email || "").trim();
   if (!cleanEmail) return { error: "Please enter your email first." };
 
-  // This endpoint should trigger the backend to send an email containing
-  // a reset URL with token (e.g. /change-password/:token).
-  const result = await requestJson(`${API_URL}/quiz-ai/change-password`, {
+  const result = await requestJson(`/api/v1/quiz-ai/Forgot-Password`, {
     method: "POST",
     json: { email: cleanEmail },
   });
@@ -153,24 +151,11 @@ export async function requestPasswordResetEmail(email) {
   );
 }
 
-export async function resetPassword(token, password, confirmPassword) {
-  const cleanToken = String(token || "").trim();
-  if (!cleanToken) return { error: "Missing reset token." };
-
-  const url = `${API_URL}/quiz-ai/change-password/${encodeURIComponent(
-    cleanToken
-  )}`;
+export async function resetPassword(password, id) {
+  const url = `/api/v1/quiz-ai/ResetPassword?id=${id}&password=${password}`;
 
   const result = await requestJson(url, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${cleanToken}`,
-    },
-    json: {
-      password,
-      confirmPassword,
-      token: cleanToken,
-    },
   });
 
   if (!result.ok) {
@@ -182,28 +167,35 @@ export async function resetPassword(token, password, confirmPassword) {
   return data || { success: true, message: "Password updated successfully." };
 }
 
+export async function verifyResetToken(token) {
+  try {
+    const result = await requestJson(
+      `/api/v1/quiz-ai/VerifyForgetPasswordToken?token=${token}`,
+      {
+        method: "GET",
+      }
+    );
+    if (!result.payload?.success) {
+      return result.payload || { error: "Wrong or invalid token." };
+    }
+    return result.payload;
+  } catch {
+    return { error: "Token verification failed." };
+  }
+}
+
 export async function generateQuizFromFile(file, token, settings) {
   try {
     const formData = new FormData();
     formData.append("file", file);
 
-    // Optional settings: allow the backend to control question counts.
-    // API spec uses: settings: { mcq: number, tf: number }
-    if (settings && typeof settings === "object") {
-      const mcqCount = Number(settings.mcqCount);
-      const tfCount = Number(settings.tfCount);
-      if (Number.isFinite(mcqCount) || Number.isFinite(tfCount)) {
-        formData.append(
-          "settings",
-          JSON.stringify({
-            mcq: Number.isFinite(mcqCount) ? mcqCount : undefined,
-            tf: Number.isFinite(tfCount) ? tfCount : undefined,
-          })
-        );
-      }
+    // Append settings as individual fields for easier backend parsing
+    if (settings) {
+      if (settings.mcqCount) formData.append("mcqCount", settings.mcqCount);
+      if (settings.tfCount) formData.append("tfCount", settings.tfCount);
     }
 
-    const res = await fetch(`${API_URL2}/quiz-ai/quiz/create`, {
+    const res = await fetch(`/api/v1/quiz-ai/Quiz/Generate`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -211,100 +203,51 @@ export async function generateQuizFromFile(file, token, settings) {
       body: formData,
     });
 
-    // Parse body robustly: some backends return JSON with wrong/missing content-type.
-    let rawText = null;
-    let body = null;
-    try {
-      rawText = await res.text();
-      const trimmed = (rawText || "").trim();
-      if (trimmed) {
-        // Attempt JSON parse even if headers are wrong.
-        if (trimmed.startsWith("{") || trimmed.startsWith("[")) {
-          body = JSON.parse(trimmed);
-        }
-      }
-    } catch {
-      // keep body/rawText as null
-    }
-
-    const headers = Object.fromEntries(res.headers.entries());
-
-    const result = {
-      ok: res.ok,
-      status: res.status,
-      statusText: res.statusText,
-      url: res.url,
-      headers,
-      body,
-      rawText,
-    };
-
+    // Handle 401 Unauthorized or other non-OK status codes immediately
     if (!res.ok) {
-      return {
-        ...result,
-        error:
-          body?.error ||
-          body?.message ||
-          rawText ||
-          `Request failed with status ${res.status}`,
-      };
+      const errorData = await res.json().catch(() => ({}));
+      throw new Error(errorData.message || `Server error: ${res.status}`);
     }
 
-    // Success: return full response object (caller reads result.body)
-    return result;
+    const data = await res.json();
+    return data;
   } catch (error) {
+    console.error("Quiz Generation Error:", error);
     return {
-      ok: false,
-      status: 0,
-      statusText: "",
-      url: "",
-      headers: {},
-      body: null,
-      rawText: null,
-      error: error?.message || "Network error while generating quiz.",
+      success: false,
+      error: error.message || "Network error while generating quiz.",
     };
   }
 }
 
-export async function verifyCode(code, email) {
-  const result = await requestJson(`${API_URL}/verify`, {
-    method: "POST",
-    json: { code, email },
-  });
-
+export async function verifyCode(code, id) {
+  const result = await requestJson(
+    `/api/v1/quiz-ai/VerifyNewUser?UserID=${id}&token=${code}`,
+    {
+      method: "POST",
+    }
+  );
   if (!result.ok) return { error: result.error || "Verification failed." };
-  return result.payload;
+  return result;
 }
 
-export async function renameQuiz(quizId, title, token) {
-  const id = String(quizId ?? "").trim();
-  const nextTitle = String(title ?? "").trim();
+export async function renameQuiz(quizID, quizTitle, token) {
+  const id = String(quizID ?? "").trim();
+  const nextTitle = String(quizTitle ?? "").trim();
 
   if (!id) return { error: "Missing quiz id." };
   if (!nextTitle) return { error: "Title cannot be empty." };
 
-  const result = await requestJson(
-    `${API_URL}/quiz-ai/quiz/${encodeURIComponent(id)}/rename`,
-    {
-      // API doc uses PUT; some backends also accept POST.
-      method: "PUT",
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-      // Send both keys for compatibility across backend implementations.
-      json: { name: nextTitle, title: nextTitle },
-    }
-  );
+  const result = await requestJson(`/api/v1/quiz-ai/${id}/rename`, {
+    method: "PUT",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    json: { name: nextTitle },
+  });
 
   if (!result.ok) {
     return { error: result.error || "Failed to rename quiz." };
   }
 
-  // Expected response:
-  // {
-  //   success: true,
-  //   message: "Quiz renamed successfully.",
-  //   quiz: { id: 1, title: "Updated Quiz Title" }
-  // }
-  // IMPORTANT: do NOT use the title from the response; use user-provided nextTitle.
   const payload = result.payload;
   const success = payload?.success;
   if (success === false) {
@@ -320,19 +263,15 @@ export async function renameQuiz(quizId, title, token) {
   return {
     success: true,
     message: payload?.message || "Quiz renamed successfully.",
-    quiz: {
-      id: normalizedId,
-      title: nextTitle,
-    },
   };
 }
 
-export async function deleteQuiz(quizId, token) {
-  const id = String(quizId ?? "").trim();
+export async function deleteQuizService(quizID, token) {
+  const id = String(quizID ?? "").trim();
   if (!id) return { error: "Missing quiz id." };
 
   const result = await requestJson(
-    `${API_URL}/quiz-ai/quiz/${encodeURIComponent(id)}`,
+    `/api/v1/quiz-ai/quiz/delete?QuizID=${encodeURIComponent(id)}`,
     {
       method: "DELETE",
       headers: token ? { Authorization: `Bearer ${token}` } : {},
@@ -351,23 +290,22 @@ export async function deleteQuiz(quizId, token) {
   return {
     success: true,
     message: payload?.message || "Quiz deleted successfully.",
-    quizId: id,
   };
 }
 
-export async function fetchSharedExam(sharedId, userId, token) {
+export async function fetchSharedExam(sharedId, token, userId) {
   const uuid = String(sharedId ?? "").trim();
-  const uId = String(userId ?? "").trim();
+  const uId = userId == null ? "" : String(userId).trim();
 
   if (!uuid) return { error: "Missing shared quiz id." };
-  if (!uId) return { error: "Missing userId." };
 
   const result = await requestJson(
-    `${API_URL}/quiz-ai/shared/${encodeURIComponent(uuid)}`,
+    `/api/v1/quiz-ai/ShareVerify?Token=${encodeURIComponent(uuid)}`,
     {
       method: "POST",
       headers: token ? { Authorization: `Bearer ${token}` } : {},
-      json: { userId: uId, UUID: uuid },
+      // Some backends may require userId; send it when available.
+      json: uId ? { userId: uId, UUID: uuid } : undefined,
     }
   );
 
@@ -375,7 +313,18 @@ export async function fetchSharedExam(sharedId, userId, token) {
     return { error: result.error || "Failed to fetch shared quiz." };
   }
 
-  const data = unwrapApiData(result.payload);
+  const payload = result.payload;
+  if (payload?.success === false) {
+    return {
+      error:
+        payload?.message ||
+        payload?.error ||
+        result.error ||
+        "Failed to fetch shared quiz (server).",
+    };
+  }
+
+  const data = unwrapApiData(payload);
   const quiz = data?.quiz ?? data?.exam ?? data;
 
   if (!quiz || typeof quiz !== "object") {
@@ -385,15 +334,28 @@ export async function fetchSharedExam(sharedId, userId, token) {
   return quiz;
 }
 
-export async function regenerateQuiz(quizId, token) {
-  const id = String(quizId ?? "").trim();
+export async function regenerateQuiz(quizID, token, counts = {}) {
+  const id = String(quizID ?? "").trim();
   if (!id) return { error: "Missing quiz id." };
 
-  const result = await requestJson(`${API_URL}/quiz-ai/quiz/regenrate`, {
-    method: "POST",
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
-    json: { quizId: id },
-  });
+  const tfCount = Number.isFinite(Number(counts?.tfCount))
+    ? Number(counts.tfCount)
+    : undefined;
+  const mcqCount = Number.isFinite(Number(counts?.mcqCount))
+    ? Number(counts.mcqCount)
+    : undefined;
+
+  const result = await requestJson(
+    `/api/v1/quiz-ai/Quiz/Regenerate?QuizID=${id}`,
+    {
+      method: "POST",
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      json: {
+        ...(tfCount != null ? { tfCount } : null),
+        ...(mcqCount != null ? { mcqCount } : null),
+      },
+    }
+  );
 
   if (!result.ok) {
     return { error: result.error || "Failed to regenerate quiz." };
@@ -404,7 +366,8 @@ export async function regenerateQuiz(quizId, token) {
     return { error: data?.message || "Failed to regenerate quiz (server)." };
   }
 
-  const quiz = data?.quiz ?? data?.exam ?? data;
+  const quiz = data;
+
   if (!quiz || typeof quiz !== "object") {
     return { error: "Unexpected server response." };
   }
@@ -412,31 +375,18 @@ export async function regenerateQuiz(quizId, token) {
   return quiz;
 }
 
-export async function regenerateQuestion(
-  quizId,
-  questionId,
-  questionPayload,
-  token
-) {
-  const qzId = String(quizId ?? "").trim();
+export async function regenerateQuestion(quizID, questionId, type, token) {
+  const qzId = String(quizID ?? "").trim();
   const qId = String(questionId ?? "").trim();
 
   if (!qzId) return { error: "Missing quiz id." };
   if (!qId) return { error: "Missing question id." };
 
   const result = await requestJson(
-    `${API_URL}//quiz-ai/${encodeURIComponent(
-      qzId
-    )}/question/${encodeURIComponent(qId)}/regenerate`,
+    `/api/v1/quiz-ai/regenerate-question?QuizID=${quizID}&QuestionID=${questionId}&QuestionType=${type}`,
     {
       method: "POST",
       headers: token ? { Authorization: `Bearer ${token}` } : {},
-      // Send a few compatible keys; backend expectations may vary.
-      json: {
-        quizId: qzId,
-        questionId: qId,
-        question: questionPayload,
-      },
     }
   );
 
@@ -455,7 +405,9 @@ export async function regenerateQuestion(
     };
   }
 
-  const maybeQuestion =
+  return data;
+
+  /* const maybeQuestion =
     data?.question ||
     data?.regeneratedQuestion ||
     data?.generatedQuestion ||
@@ -466,20 +418,18 @@ export async function regenerateQuestion(
     return { error: "Unexpected server response." };
   }
 
-  return maybeQuestion;
+  return maybeQuestion; */
 }
 
-export async function deleteQuestion(quizId, questionId, token) {
-  const qzId = String(quizId ?? "").trim();
+export async function deleteQuestion(quizID, questionId, token) {
+  const qzId = String(quizID ?? "").trim();
   const qId = String(questionId ?? "").trim();
 
   if (!qzId) return { error: "Missing quiz id." };
   if (!qId) return { error: "Missing question id." };
 
   // TODO: Replace this URL with the real backend endpoint when you have it.
-  const url = `${API_URL}/quiz-ai/${encodeURIComponent(
-    qzId
-  )}/question/${encodeURIComponent(qId)}`;
+  const url = `/api/v1/quiz-ai/Questions/delete?QuizID=${quizID}&QuestionID=${questionId}`;
 
   const result = await requestJson(url, {
     method: "DELETE",
@@ -498,50 +448,46 @@ export async function deleteQuestion(quizId, questionId, token) {
   return {
     success: true,
     message: data?.message || "Question deleted successfully.",
-    quizId: qzId,
-    questionId: qId,
   };
 }
 
-export async function submitExamAnswers(payload, token) {
-  const userId = String(payload?.userId ?? "").trim();
-  const examId = String(payload?.examId ?? payload?.quizId ?? "").trim();
-  const answers = Array.isArray(payload?.answers) ? payload.answers : [];
-
-  if (!userId) return { error: "Missing userId." };
-  if (!examId) return { error: "Missing examId." };
-
-  const cleanedAnswers = answers
-    .map((a) => {
-      const questionId = a?.questionId ?? a?.id ?? a?._id;
-      const selectedOption = String(
-        a?.selectedOption ?? a?.selected ?? a?.answer ?? ""
-      ).trim();
-      return { questionId, selectedOption };
-    })
-    .filter((a) => a.questionId != null && a.selectedOption);
-
-  // TODO: Replace with the real backend URL when available.
-  const url = `${API_URL}/quiz-ai/exams/${encodeURIComponent(examId)}/submit`;
-
-  const result = await requestJson(url, {
-    method: "POST",
-    headers: token ? { Authorization: `Bearer ${token}` } : {},
-    json: {
-      userId,
-      examId,
-      answers: cleanedAnswers,
-    },
+export async function getHealth() {
+  const result = await requestJson(`/api/v1/quiz-ai/health`, {
+    method: "GET",
   });
 
   if (!result.ok) {
-    return { error: result.error || "Failed to submit exam." };
+    return {
+      error: result.error || "Health check failed. Server may be down.",
+    };
   }
 
+  return result;
+}
+
+export async function getQuizInfo(token, quizID) {
+  const result = await requestJson(`/api/v1/quiz-ai/Quiz/${quizID}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (!result.ok)
+    return { error: result.error || "Failed to fetch examm info." };
   const data = unwrapApiData(result.payload);
-  if (data?.success === false) {
-    return { error: data?.message || "Failed to submit exam (server)." };
-  }
+  return data ?? result.payload;
+}
 
-  return data || { success: true, message: "Submitted successfully." };
+export async function getShareToken(quizID, token) {
+  const result = await requestJson(`/api/v1/quiz-ai/Share?QuizID=${quizID}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (!result.ok)
+    return { error: result.error || "Failed to fetch share token." };
+  const data = unwrapApiData(result.payload);
+  return data ?? result.payload;
 }

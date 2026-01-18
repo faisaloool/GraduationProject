@@ -1,0 +1,198 @@
+{
+  "document": "Algorithms, Asymptotic Analysis, and Sorting Algorithms from the provided lecture notes.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which sorting algorithm repeatedly compares adjacent elements and swaps them if they are out of order?",
+        "options": [
+          "Insertion sort",
+          "Selection sort",
+          "Bubble sort",
+          "Merge sort"
+        ],
+        "answer": "Bubble sort"
+      },
+      {
+        "question": "What is the worst‑case time complexity of Bubble Sort on an array of n elements?",
+        "options": [
+          "O(n)",
+          "O(n log n)",
+          "O(n²)",
+          "O(2ⁿ)"
+        ],
+        "answer": "O(n²)"
+      },
+      {
+        "question": "In the worst case, how many passes does Bubble Sort perform on an array of size n?",
+        "options": [
+          "n",
+          "n-1",
+          "n/2",
+          "log₂ n"
+        ],
+        "answer": "n-1"
+      },
+      {
+        "question": "Which sorting algorithm repeatedly selects the minimum element from an unsorted sub‑array and swaps it with the first element of that sub‑array?",
+        "options": [
+          "Insertion sort",
+          "Selection sort",
+          "Bubble sort",
+          "Quick sort"
+        ],
+        "answer": "Selection sort"
+      },
+      {
+        "question": "What is the best‑case time complexity of Selection Sort when the array is already sorted?",
+        "options": [
+          "O(n)",
+          "O(n log n)",
+          "O(n²)",
+          "O(1)"
+        ],
+        "answer": "O(n²)"
+      },
+      {
+        "question": "Which algorithm has a best‑case runtime of O(n) when the input array is sorted?",
+        "options": [
+          "Insertion sort",
+          "Selection sort",
+          "Bubble sort",
+          "Merge sort"
+        ],
+        "answer": "Insertion sort"
+      },
+      {
+        "question": "Which function represents linear growth in asymptotic notation?",
+        "options": [
+          "f(n) = n log n",
+          "f(n) = n²",
+          "f(n) = n",
+          "f(n) = 2ⁿ"
+        ],
+        "answer": "f(n) = n"
+      },
+      {
+        "question": "Which function represents logarithmic growth?",
+        "options": [
+          "f(n) = log n",
+          "f(n) = n log n",
+          "f(n) = n²",
+          "f(n) = 2ⁿ"
+        ],
+        "answer": "f(n) = log n"
+      },
+      {
+        "question": "Which function represents polynomial growth of degree three?",
+        "options": [
+          "f(n) = n³",
+          "f(n) = n²",
+          "f(n) = n",
+          "f(n) = 2ⁿ"
+        ],
+        "answer": "f(n) = n³"
+      },
+      {
+        "question": "Which function represents exponential growth base 2?",
+        "options": [
+          "f(n) = 2ⁿ",
+          "f(n) = n²",
+          "f(n) = n log n",
+          "f(n) = n"
+        ],
+        "answer": "f(n) = 2ⁿ"
+      },
+      {
+        "question": "During a sequential search, if the searched item is at the first position of an array of size n, what is the time complexity?",
+        "options": [
+          "O(1)",
+          "O(n)",
+          "O(log n)",
+          "O(n log n)"
+        ],
+        "answer": "O(1)"
+      },
+      {
+        "question": "During a sequential search, if the searched item is not present in an array of size n, what is the time complexity?",
+        "options": [
+          "O(1)",
+          "O(log n)",
+          "O(n)",
+          "O(n log n)"
+        ],
+        "answer": "O(n)"
+      },
+      {
+        "question": "What does the symbol c₁ represent in a recurrence for algorithm analysis?",
+        "options": [
+          "Number of comparisons",
+          "Number of swaps",
+          "A constant time cost",
+          "The array size"
+        ],
+        "answer": "A constant time cost"
+      },
+      {
+        "question": "Which sorting technique requires O(n log n) comparisons in the average case?",
+        "options": [
+          "Merge sort",
+          "Selection sort",
+          "Insertion sort",
+          "Bubble sort"
+        ],
+        "answer": "Merge sort"
+      },
+      {
+        "question": "If an array contains a sequence of 10 integers, how many times will the inner loop of Bubble Sort run in total?",
+        "options": [
+          "45",
+          "55",
+          "90",
+          "100"
+        ],
+        "answer": "45"
+      },
+      {
+        "question": "Which algorithm’s worst‑case runtime is described by T(n) = n + c₁ + c₂n + c₃n + 1?",
+        "options": [
+          "Selection sort",
+          "Insertion sort",
+          "Bubble sort",
+          "Merge sort"
+        ],
+        "answer": "Selection sort"
+      },
+      {
+        "question": "What is the typical runtime of Insertion Sort when the array is reversed (worst‑case)?",
+        "options": [
+          "O(n)",
+          "O(n log n)",
+          "O(n²)",
+          "O(2ⁿ)"
+        ],
+        "answer": "O(n²)"
+      },
+      {
+        "question": "Which function best describes the growth of a linear search algorithm?",
+        "options": [
+          "f(n) = 2ⁿ",
+          "f(n) = n log n",
+          "f(n) = n",
+          "f(n) = n³"
+        ],
+        "answer": "f(n) = n"
+      },
+      {
+        "question": "What does the notation O(1) represent in algorithm analysis?",
+        "options": [
+          "Constant time complexity",
+          "Linear time complexity",
+          "Quadratic time complexity",
+          "Exponential time complexity"
+        ],
+        "answer": "Constant time complexity"
+      }
+    ]
+  }
+}

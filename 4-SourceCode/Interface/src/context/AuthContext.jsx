@@ -1,5 +1,14 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import { verifyCode } from "../util/service.js";
+import Cookies from "js-cookie";
+
+const TOKEN_COOKIE_KEY = "quizai:token";
 
 // Create the context
 const AuthContext = createContext();
@@ -12,13 +21,25 @@ export function AuthProvider({ children }) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const token = Cookies.get(TOKEN_COOKIE_KEY);
+    // Check both storages just in case
+    const user = localStorage.getItem("user") || sessionStorage.getItem("user");
+
+    // If we have a token but NO user data, something is wrong -> Logout forcefully
+    if (token && !user) {
+      Cookies.remove(TOKEN_COOKIE_KEY);
+      setToken(null);
+      setUser(null);
+    }
+  }, []);
+
+  useEffect(() => {
     const BOOT_DELAY = Number(import.meta.env.VITE_MIN_LOADING_MS); /* || 0 */
     let timeoutId;
 
     const boot = () => {
       try {
-        const savedToken =
-          localStorage.getItem("token") || sessionStorage.getItem("token");
+        const savedToken = Cookies.get(TOKEN_COOKIE_KEY);
 
         const savedUserStr =
           localStorage.getItem("user") || sessionStorage.getItem("user");
@@ -39,6 +60,9 @@ export function AuthProvider({ children }) {
         if (savedToken && savedUser) {
           setToken(savedToken);
           setUser(savedUser);
+        } else if (!savedToken && savedUser) {
+          // Token cookie missing/expired: log out to clear stale persisted auth.
+          logout({ clearAppData: false });
         }
       } catch (err) {
         setError(err);
@@ -59,10 +83,23 @@ export function AuthProvider({ children }) {
     setUser(userData);
     setToken(tokenData);
 
-    // Save in localStorage or sessionStorage depending on "remember me"
+    // Save user in localStorage or sessionStorage depending on "remember me"
     const storage = remember ? localStorage : sessionStorage;
     storage.setItem("user", JSON.stringify(userData));
-    storage.setItem("token", tokenData);
+
+    // Store token in a secure cookie (not in local/session storage)
+    Cookies.set(TOKEN_COOKIE_KEY, tokenData, {
+      path: "/",
+      secure: true,
+      sameSite: "strict",
+      expires: remember ? 7 : undefined,
+    });
+
+    try {
+      window.dispatchEvent(new Event("auth:changed"));
+    } catch {
+      // ignore
+    }
   };
 
   const signup = (code) => {
@@ -109,17 +146,71 @@ export function AuthProvider({ children }) {
   };
 
   // Logout function
-  const logout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+  const logout = useCallback(({ clearAppData = true } = {}) => {
+    const clearStorage = (storage) => {
+      if (!storage) return;
+      try {
+        storage.removeItem("user");
+
+        // Backward-compat cleanup (token used to be stored here)
+        storage.removeItem("token");
+
+        if (clearAppData) {
+          // Remove any app-cached data (e.g., quiz attempt/submission state).
+          // Stored keys include: quizai:examState:<userId>:<examId>
+          const keysToRemove = [];
+          for (let i = 0; i < storage.length; i++) {
+            const key = storage.key(i);
+            if (!key) continue;
+            if (key.startsWith("quizai:")) keysToRemove.push(key);
+          }
+          keysToRemove.forEach((k) => storage.removeItem(k));
+        }
+      } catch {
+        // ignore storage errors (private mode / quota / blocked)
+      }
+    };
+
+    try {
+      Cookies.remove(TOKEN_COOKIE_KEY, { path: "/" });
+    } catch {
+      // ignore cookie errors
+    }
+
+    clearStorage(localStorage);
+    clearStorage(sessionStorage);
     setUser(null);
     setToken(null);
-  };
 
-  const changeName = () => {};
-  const changePassword = () => {};
+    try {
+      window.dispatchEvent(new Event("auth:changed"));
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  useEffect(() => {
+    const syncAuthFromCookie = () => {
+      const cookieToken = Cookies.get(TOKEN_COOKIE_KEY);
+      // Only enforce cookie presence when we actually have an auth token.
+      // During signup/verify flows we may have a user but intentionally no token yet.
+      if (!cookieToken && token) logout({ clearAppData: false });
+    };
+
+    // Check immediately + periodically.
+    syncAuthFromCookie();
+    const intervalId = setInterval(syncAuthFromCookie, 60_000);
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") syncAuthFromCookie();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
+    return () => {
+      clearInterval(intervalId);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, [token, logout]);
 
   return (
     <AuthContext.Provider

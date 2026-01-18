@@ -5,6 +5,7 @@ import "../style/Header.css";
 
 import { useAuth } from "../context/AuthContext.jsx";
 import { useExams } from "../context/ExamsProvider.jsx";
+import Cookies from "js-cookie";
 
 import { BsThreeDots } from "react-icons/bs";
 import { Options_menu } from "./Options_menu.jsx";
@@ -26,9 +27,7 @@ export const Header = ({ quiz, setEditing }) => {
 
   const hasStoredAuth = () => {
     try {
-      return Boolean(
-        localStorage.getItem("token") || sessionStorage.getItem("token")
-      );
+      return Boolean(Cookies.get("quizai:token"));
     } catch {
       return false;
     }
@@ -41,7 +40,7 @@ export const Header = ({ quiz, setEditing }) => {
   }, [isLoggedIn]);
 
   useEffect(() => {
-    const handleAuthChanged = () => setLoggedIn(true);
+    const handleAuthChanged = () => setLoggedIn(hasStoredAuth());
     const handleStorage = () => setLoggedIn(hasStoredAuth()); // cross-tab support
     window.addEventListener("auth:changed", handleAuthChanged);
     window.addEventListener("storage", handleStorage);
@@ -58,6 +57,10 @@ export const Header = ({ quiz, setEditing }) => {
       navigate(`/Sign-up`);
     }
   };
+
+  const shouldMountMenu = Boolean(
+    loggedIn && exam?.quizTitle && exam?.quizTitle !== "Main-page"
+  );
   return (
     <>
       <header>
@@ -65,15 +68,17 @@ export const Header = ({ quiz, setEditing }) => {
         {!loggedIn ? (
           <div className="header-btns">
             <button className="log-in" onClick={handleClick(true)}>
-              Log in
+              <span className="label-long">Log in</span>
+              <span className="label-short">Login</span>
             </button>
             <button className="sign-up" onClick={handleClick(false)}>
-              Create account
+              <span className="label-long">Create account</span>
+              <span className="label-short">Sign up</span>
             </button>
           </div>
         ) : (
-          quiz.title !== "Main-page" &&
-          quiz.title && (
+          quiz.quizTitle !== "Main-page" &&
+          quiz.quizTitle && (
             <button
               className="menu-btn"
               aria-label="Menu"
@@ -88,8 +93,9 @@ export const Header = ({ quiz, setEditing }) => {
       </header>
 
       {/* menu option */}
-      {menuOpen && (
+      {shouldMountMenu && (
         <Options_menu
+          isOpen={menuOpen}
           position={menuPosition}
           setEditing={setEditing}
           quiz={exam}

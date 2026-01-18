@@ -1,0 +1,88 @@
+{
+  "document": "Software Evolution and Maintenance - Chapter 4: Reengineering by Tripathy & Naik",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Reengineering involves the examination, analysis, and restructuring of an existing software system to reconstitute it in a new form.",
+        "answer": "True"
+      },
+      {
+        "question": "The primary goal of reengineering is to ignore existing software system artifacts like specifications and design.",
+        "answer": "False"
+      },
+      {
+        "question": "One of the general objectives of reengineering is to improve maintainability.",
+        "answer": "True"
+      },
+      {
+        "question": "Migrating to a new technology is not considered an objective of software reengineering.",
+        "answer": "False"
+      },
+      {
+        "question": "Abstraction and refinement are key concepts used in software reengineering.",
+        "answer": "True"
+      },
+      {
+        "question": "Abstraction helps maintenance personnel reduce complexity by focusing on significant information and hiding irrelevant details.",
+        "answer": "True"
+      },
+      {
+        "question": "Refinement is the process of increasing the level of abstraction of a system representation.",
+        "answer": "False"
+      },
+      {
+        "question": "Forward engineering is the downward movement from the highest level of abstraction to the lowest level of implementation.",
+        "answer": "True"
+      },
+      {
+        "question": "Reverse engineering involves an upward movement through the layers of abstractions.",
+        "answer": "True"
+      },
+      {
+        "question": "Decompilation is an example of forward engineering where high-level program code is translated into object code.",
+        "answer": "False"
+      },
+      {
+        "question": "The four levels of abstraction and refinement are Conceptual, Requirements, Design, and Implementation.",
+        "answer": "True"
+      },
+      {
+        "question": "The reengineering process produces the code of the renovated system as an output.",
+        "answer": "True"
+      },
+      {
+        "question": "Translating a program from BASIC to C is an example of a reengineering process.",
+        "answer": "True"
+      },
+      {
+        "question": "The model proposed by Eric J. Byrne suggests that reengineering consists of reverse engineering, re-design, and forward engineering.",
+        "answer": "True"
+      },
+      {
+        "question": "The Horseshoe model was developed by Kazman et al. to describe a three-step architectural reengineering process.",
+        "answer": "True"
+      },
+      {
+        "question": "In the Horseshoe model, the left side represents Architecture Based Development.",
+        "answer": "False"
+      },
+      {
+        "question": "Rehosting involves adding new features to the transformed targeted source code.",
+        "answer": "False"
+      },
+      {
+        "question": "Rehosting is effective when a user is satisfied with the system's functionality but wants better execution efficiency.",
+        "answer": "True"
+      },
+      {
+        "question": "Syntactic analysis and Program Slicing are techniques used for reverse engineering.",
+        "answer": "True"
+      },
+      {
+        "question": "Data reverse engineering includes the extraction and conceptualization of data structures.",
+        "answer": "True"
+      }
+    ]
+  }
+}

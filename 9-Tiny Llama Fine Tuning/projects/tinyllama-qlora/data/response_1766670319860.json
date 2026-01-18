@@ -1,0 +1,164 @@
+{
+  "document": "ch5_Basic_Computer_Organization_Lect2_2.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "A computer should have a set of instructions so that the user can construct machine language programs to evaluate any function that is known to be computable.",
+        "answer": "true"
+      },
+      {
+        "question": "Instruction set completeness is not important for a computer system.",
+        "answer": "false"
+      },
+      {
+        "question": "Arithmetic, logic, and shift instructions are part of functional instructions.",
+        "answer": "true"
+      },
+      {
+        "question": "Inputs to the control unit come from the Instruction Register (IR).",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction cycle includes fetching, decoding, reading the effective address, and executing the instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "A HALT instruction stops the instruction cycle.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction cycle does not involve decoding the instruction.",
+        "answer": "false"
+      },
+      {
+        "question": "The effective address is read from memory only if the instruction has a direct address.",
+        "answer": "false"
+      },
+      {
+        "question": "The interrupt cycle occurs when interrupts are enabled.",
+        "answer": "true"
+      },
+      {
+        "question": "The HALT instruction stops the instruction fetch cycle indefinitely.",
+        "answer": "true"
+      },
+      {
+        "question": "Interrupts Disabled means the interrupt cycle cannot occur.",
+        "answer": "true"
+      },
+      {
+        "question": "The instruction cycle includes Fetch, Decode, Indirect, and Execute phases.",
+        "answer": "true"
+      },
+      {
+        "question": "The content of memory is placed in IR.",
+        "answer": "true"
+      },
+      {
+        "question": "The content of the bus is transferred to IR by enabling the LD input to IR.",
+        "answer": "true"
+      },
+      {
+        "question": "PC is incremented by enabling the INR input of PC.",
+        "answer": "true"
+      }, 
+      {
+        "question": "The memory unit is directly connected to the ALU for processing data.",
+        "answer": "false"
+      },
+      {
+        "question": "The fetch of an instruction involves microoperations during time periods T0-T2.",
+        "answer": "true"
+      },
+      {
+        "question": "The Accumulator (AC) takes input directly from the memory unit.",
+        "answer": "false"
+      },
+      {
+        "question": "The ALU can perform operations like ADD and AND using inputs from DR and AC.",
+        "answer": "true"
+      },
+      {
+        "question": "The input register (INPR) is connected directly to the bus system.",
+        "answer": "false"
+      },
+      {
+        "question": "The ADD to AC operation involves an arithmetic addition between AC and the memory word specified by AR.",
+        "answer": "true"
+      },
+      {
+        "question": "The SC in the context of computer registers stands for 'start counter'.",
+        "answer": "true"
+      },
+      {
+        "question": "The AND to AC operation requires only one additional cycle after the fetch cycle.",
+        "answer": "false"
+      },
+      {
+        "question": "In the ISZ operation, the programmer typically stores a positive number in the memory word.",
+        "answer": "false"
+      },
+      {
+        "question": "When the negative number in ISZ reaches zero, the PC is incremented by one to skip the next instruction.",
+        "answer": "true"
+      },
+      {
+        "question": "The ISZ instruction is used to implement a loop.",
+        "answer": "true"
+      },
+      {
+        "question": "Input-output operations involve only serial communication.",
+        "answer": "false"
+      },
+      {
+        "question": "Computer registers and flip-flops are not part of input-output configuration.",
+        "answer": "false"
+      },
+      {
+        "question": "Printer and keyboard are examples of input-output devices.",
+        "answer": "true"
+      },
+      {
+        "question": "Receiver interface and transmitter interface are part of serial communication.",
+        "answer": "true"
+      },
+      {
+        "question": "FGO and FGI are registers used in input-output operations.",
+        "answer": "true"
+      },
+      {
+        "question": "OUTR and INPR are registers used for parallel communication.",
+        "answer": "false"
+      },
+      {
+        "question": "AC is a register used in memory-reference instructions.",
+        "answer": "true"
+      },
+      {
+        "question": "The communication interface operates serially with the AC.",
+        "answer": "false"
+      },
+      {
+        "question": "Each quantity of information consists of eight bits of an alphanumeric code.",
+        "answer": "true"
+      },
+      {
+        "question": "There are three I/O Transfer Modes.",
+        "answer": "false"
+      },
+      {
+        "question": "Programmed I/O is one of the I/O Transfer Modes.",
+        "answer": "true"
+      },
+      {
+        "question": "Interrupt-initiated I/O is not an I/O Transfer Mode.",
+        "answer": "false"
+      },
+      {
+        "question": "Is RTL a type of computer architecture?",
+        "answer": "true"
+      }
+    ]
+  }
+}

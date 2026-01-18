@@ -1,0 +1,84 @@
+{
+  "document": "Greedy algorithms solve a variety of optimization problems by making locally optimal decisions, such as the change‑making problem, fractional knapsack, minimum spanning tree construction (Prim and Kruskal), and Dijkstra’s shortest path algorithm.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "The greedy algorithm for change‑making always produces an optimal solution regardless of coin denominations.",
+        "answer": "False"
+      },
+      {
+        "question": "For the normal US coin denominations (25c, 10c, 5c, 1c) the greedy algorithm gives the minimum number of coins for any amount.",
+        "answer": "True"
+      },
+      {
+        "question": "In a fractional knapsack problem, items can be taken in whole numbers only.",
+        "answer": "False"
+      },
+      {
+        "question": "The fractional knapsack problem is solvable exactly by sorting items by profit‑to‑weight ratio and taking as many as possible of the highest ratio item first.",
+        "answer": "True"
+      },
+      {
+        "question": "In a 0/1 knapsack, an item may be split into fractions to maximize profit.",
+        "answer": "False"
+      },
+      {
+        "question": "The decision version of the 0/1 knapsack asks whether there exists a subset of items with total profit at least K.",
+        "answer": "True"
+      },
+      {
+        "question": "Prim’s algorithm starts from an arbitrary vertex and grows a minimum spanning tree by repeatedly adding the nearest vertex not yet in the tree.",
+        "answer": "True"
+      },
+      {
+        "question": "Kruskal’s algorithm builds a forest of trees and never needs to check whether adding an edge creates a cycle.",
+        "answer": "False"
+      },
+      {
+        "question": "Both Prim’s and Kruskal’s algorithms always produce the same minimum spanning tree if the graph is weighted uniquely.",
+        "answer": "True"
+      },
+      {
+        "question": "Dijkstra’s algorithm works only on undirected graphs.",
+        "answer": "False"
+      },
+      {
+        "question": "In Dijkstra’s algorithm, every vertex gets its final shortest‑distance value after it has been visited.",
+        "answer": "True"
+      },
+      {
+        "question": "The time complexity of Dijkstra’s algorithm with adjacency‑list representation and a binary heap priority queue is O(|V|^2).",
+        "answer": "False"
+      },
+      {
+        "question": "When using Prim’s algorithm on an adjacency‑list graph, the overall running time can be reduced to O(|E| log |V|) by using a Fibonacci heap.",
+        "answer": "True"
+      },
+      {
+        "question": "The greedy choice in Dijkstra’s algorithm is to pick the vertex with the smallest tentative distance from the source.",
+        "answer": "True"
+      },
+      {
+        "question": "A minimum spanning tree always has exactly |V| − 1 edges, where |V| is the number of vertices in a connected graph.",
+        "answer": "True"
+      },
+      {
+        "question": "Kruskal’s algorithm requires sorting all edges by weight before it starts adding any edge to the forest.",
+        "answer": "True"
+      },
+      {
+        "question": "The greedy strategy for change‑making may produce a suboptimal solution when the coin denominations are not 'normal'.",
+        "answer": "True"
+      },
+      {
+        "question": "In Dijkstra’s algorithm, if two vertices have equal tentative distances, one of them will always be chosen first.",
+        "answer": "False"
+      },
+      {
+        "question": "The fractional knapsack problem can be solved in linear time after sorting the items by profit/weight ratio.",
+        "answer": "True"
+      }
+    ]
+  }
+}

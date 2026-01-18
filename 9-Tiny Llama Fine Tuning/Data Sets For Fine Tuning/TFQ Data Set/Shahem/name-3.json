@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 4: Processing Crime and Incident Scenes - Guide to Computer Forensics and Investigations, Fifth Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Digital evidence can be any information stored or transmitted in digital form.",
+        "answer": "True"
+      },
+      {
+        "question": "Courts do not accept digital evidence as physical evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "SWGDE sets standards for recovering, preserving, and examining digital evidence.",
+        "answer": "True"
+      },
+      {
+        "question": "Consistent practices help verify work and enhance credibility in evidence handling.",
+        "answer": "True"
+      },
+      {
+        "question": "Digital evidence is easier to detect changes in than other physical evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "Most federal courts consider computer records as direct evidence rather than hearsay.",
+        "answer": "False"
+      },
+      {
+        "question": "The business-record exception allows certain business records to be admissible in court.",
+        "answer": "True"
+      },
+      {
+        "question": "Computer-generated records are considered authentic if the creating program is functioning correctly.",
+        "answer": "True"
+      },
+      {
+        "question": "The best evidence rule requires original documents, recordings, or photographs.",
+        "answer": "True"
+      },
+      {
+        "question": "Bit-stream copies can never be admitted in court as evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "Private-sector organizations include businesses and non-law enforcement government agencies.",
+        "answer": "True"
+      },
+      {
+        "question": "FOIA allows citizens to request copies of private corporate documents.",
+        "answer": "False"
+      },
+      {
+        "question": "ISPs can investigate computer abuse by their customers without restrictions.",
+        "answer": "False"
+      },
+      {
+        "question": "Corporate policy statements allow covert surveillance with little or no cause.",
+        "answer": "True"
+      },
+      {
+        "question": "Warning banners reserve the right to inspect computing assets at will.",
+        "answer": "True"
+      },
+      {
+        "question": "Corporate investigators are primarily concerned with prosecuting employees.",
+        "answer": "False"
+      },
+      {
+        "question": "If evidence of a crime is found during a company policy investigation, you should continue investigating without informing management.",
+        "answer": "False"
+      },
+      {
+        "question": "Probable cause is required for law enforcement to obtain a search warrant.",
+        "answer": "True"
+      },
+      {
+        "question": "The Fourth Amendment requires warrants to specifically describe places to be searched and items to be seized.",
+        "answer": "True"
+      },
+      {
+        "question": "Innocent information is always excluded from search warrants.",
+        "answer": "False"
+      },
+      {
+        "question": "The plain view doctrine is fully acceptable in digital forensics.",
+        "answer": "False"
+      },
+      {
+        "question": "Plain view doctrine requires that any discovery must be by chance.",
+        "answer": "True"
+      },
+      {
+        "question": "Preparing for a computer search and seizure is the least important step in computing investigations.",
+        "answer": "False"
+      },
+      {
+        "question": "The nature of the case dictates how you proceed in an investigation.",
+        "answer": "True"
+      },
+      {
+        "question": "For law enforcement, identifying the OS or device at a crime scene is always easy.",
+        "answer": "False"
+      },
+      {
+        "question": "Law enforcement investigators always need a warrant to remove computers from a crime scene.",
+        "answer": "True"
+      },
+      {
+        "question": "Cloud storage can be physically located and seized easily.",
+        "answer": "False"
+      },
+      {
+        "question": "HAZMAT guidelines recommend putting target drives in special bags for decontamination.",
+        "answer": "True"
+      },
+      {
+        "question": "Corporate computing investigations usually require multiple people to respond to an incident.",
+        "answer": "False"
+      },
+      {
+        "question": "Technical expertise is never needed for processing incident or crime scenes.",
+        "answer": "False"
+      },
+      {
+        "question": "An initial-response field kit should include all possible tools.",
+        "answer": "False"
+      },
+      {
+        "question": "The goal of scene processing is to collect and secure digital evidence.",
+        "answer": "True"
+      },
+      {
+        "question": "Digital evidence is non-volatile and remains unchanged over time.",
+        "answer": "False"
+      },
+      {
+        "question": "Yellow barrier tape is used to define a secure perimeter.",
+        "answer": "True"
+      },
+      {
+        "question": "AFIS is used to identify fingerprints connected to a central database.",
+        "answer": "True"
+      },
+      {
+        "question": "Corporate investigators always need a warrant to seize evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "Civil investigations require more documentation than criminal investigations.",
+        "answer": "False"
+      },
+      {
+        "question": "When arriving at a scene, you should always cut electrical power to a running system immediately.",
+        "answer": "False"
+      },
+      {
+        "question": "Sparse acquisition extracts only data related to evidence from allocated files.",
+        "answer": "True"
+      },
+      {
+        "question": "A journal is unnecessary for documenting activities during evidence processing.",
+        "answer": "False"
+      }
+    ]
+  }
+}

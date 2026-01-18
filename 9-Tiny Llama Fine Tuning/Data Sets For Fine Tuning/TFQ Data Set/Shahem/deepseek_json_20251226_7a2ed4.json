@@ -1,0 +1,88 @@
+{
+  "document": "Chapter 1: Overview - Computer Security: Principles and Practice, 4th Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Computer security is defined by NISTIR 7298 as measures that ensure confidentiality, integrity, and availability.",
+        "answer": "True"
+      },
+      {
+        "question": "A threat is a weakness in an information system that can be exploited.",
+        "answer": "False"
+      },
+      {
+        "question": "An adversary is also known as a threat agent.",
+        "answer": "True"
+      },
+      {
+        "question": "Passive attacks alter system resources or affect their operation.",
+        "answer": "False"
+      },
+      {
+        "question": "Active attacks include eavesdropping and traffic analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "A vulnerability is any circumstance with the potential to adversely impact organizational operations.",
+        "answer": "False"
+      },
+      {
+        "question": "NIST is a United Nations agency responsible for global telecom standards.",
+        "answer": "False"
+      },
+      {
+        "question": "ISO is a nongovernmental organization that publishes International Standards.",
+        "answer": "True"
+      },
+      {
+        "question": "A security policy defines and constrains activities to maintain security for systems and data.",
+        "answer": "True"
+      },
+      {
+        "question": "Assets of a computer system include only hardware and software.",
+        "answer": "False"
+      },
+      {
+        "question": "An insider attack is initiated from outside the security perimeter.",
+        "answer": "False"
+      },
+      {
+        "question": "RFC 2828 provides a glossary of internet security terms.",
+        "answer": "True"
+      },
+      {
+        "question": "Attack surface categories are part of fundamental security design principles.",
+        "answer": "True"
+      },
+      {
+        "question": "ITU-T is a professional membership society for Internet infrastructure standards.",
+        "answer": "False"
+      },
+      {
+        "question": "Risk is a function of adverse impacts and likelihood of occurrence.",
+        "answer": "True"
+      },
+      {
+        "question": "A countermeasure aims to enhance the effectiveness of adversarial activities.",
+        "answer": "False"
+      },
+      {
+        "question": "Traffic analysis is a type of active attack.",
+        "answer": "False"
+      },
+      {
+        "question": "FIPS 200 lists security requirements for federal information systems.",
+        "answer": "True"
+      },
+      {
+        "question": "Loss of integrity means information is leaked to unauthorized parties.",
+        "answer": "False"
+      },
+      {
+        "question": "The Internet Society (ISOC) is the home for groups responsible for Internet infrastructure standards.",
+        "answer": "True"
+      }
+    ]
+  }
+}

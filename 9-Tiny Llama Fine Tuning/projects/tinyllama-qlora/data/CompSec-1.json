@@ -1,0 +1,158 @@
+{
+  "document": "CH01-CompSec4e.pptx - Chapter 1: Overview",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Computer security ensures which three specific properties of information system assets?",
+        "options": [
+          "Confidentiality, Integrity, and Availability",
+          "Authentication, Authorization, and Accounting",
+          "Prevention, Detection, and Response",
+          "Hardware, Software, and Firmware security"
+        ],
+        "answer": "Confidentiality, Integrity, and Availability"
+      },
+      {
+        "question": "What is the alternate term for 'adversary'?",
+        "options": [
+          "Countermeasure",
+          "Threat agent",
+          "Vulnerability exploiter",
+          "Risk factor"
+        ],
+        "answer": "Threat agent"
+      },
+      {
+        "question": "What describes a weakness that could be exploited by a threat source?",
+        "options": [
+          "Adversary",
+          "Attack",
+          "Vulnerability",
+          "Countermeasure"
+        ],
+        "answer": "Vulnerability"
+      },
+      {
+        "question": "Vulnerabilities are categorized into three types based on security impact. Which of these is NOT one of those categories?",
+        "options": [
+          "Corrupted (loss of integrity)",
+          "Leaky (loss of confidentiality)",
+          "Unavailable (loss of availability)",
+          "Unauthorized (loss of access control)"
+        ],
+        "answer": "Unauthorized (loss of access control)"
+      },
+      {
+        "question": "Which type of attack is characterized by eavesdropping on or monitoring transmissions without affecting system resources?",
+        "options": [
+          "Active attack",
+          "Passive attack",
+          "Insider attack",
+          "Denial of service attack"
+        ],
+        "answer": "Passive attack"
+      },
+      {
+        "question": "Which of the following is NOT a category of active attack?",
+        "options": [
+          "Replay",
+          "Masquerade",
+          "Traffic analysis",
+          "Modification of messages"
+        ],
+        "answer": "Traffic analysis"
+      },
+      {
+        "question": "Which security requirement specifically ensures that users cannot deny their actions?",
+        "options": [
+          "Accountability",
+          "Authenticity",
+          "Non-repudiation",
+          "Availability"
+        ],
+        "answer": "Non-repudiation"
+      },
+      {
+        "question": "Which organization is a U.S. federal agency dealing with measurement science, standards, and technology?",
+        "options": [
+          "Internet Society (ISOC)",
+          "International Telecommunication Union (ITU-T)",
+          "National Institute of Standards and Technology (NIST)",
+          "International Organization for Standardization (ISO)"
+        ],
+        "answer": "National Institute of Standards and Technology (NIST)"
+      },
+      {
+        "question": "Which two factors does risk typically depend on?",
+        "options": [
+          "Asset value and threat frequency",
+          "Adverse impacts and likelihood of occurrence",
+          "Vulnerability count and attack sophistication",
+          "Security budget and compliance requirements"
+        ],
+        "answer": "Adverse impacts and likelihood of occurrence"
+      },
+      {
+        "question": "What distinguishes an insider attack from an outsider attack?",
+        "options": [
+          "Insider attacks are always passive, outsider attacks are always active",
+          "Insider attacks originate inside the security perimeter, outsider attacks originate outside",
+          "Insider attacks target confidentiality, outsider attacks target availability",
+          "There is no meaningful distinction"
+        ],
+        "answer": "Insider attacks originate inside the security perimeter, outsider attacks originate outside"
+      },
+      {
+        "question": "What is the primary function of a security policy?",
+        "options": [
+          "To provide technical specifications for firewalls",
+          "To document all past security breaches",
+          "To define criteria for security services and constrain system activities",
+          "To allocate budget for security purchases"
+        ],
+        "answer": "To define criteria for security services and constrain system activities"
+      },
+      {
+        "question": "Which of these is an example of a system resource or asset?",
+        "options": [
+          "Only network bandwidth",
+          "Only user passwords",
+          "Major applications, physical plants, and personnel",
+          "Only encryption algorithms"
+        ],
+        "answer": "Major applications, physical plants, and personnel"
+      },
+      {
+        "question": "What is the relationship between threats and attacks?",
+        "options": [
+          "Threats are theoretical concepts, attacks are always successful",
+          "Threats are the potential for harm, attacks are the execution of threats",
+          "Threats only come from humans, attacks can be automated",
+          "Threats target hardware, attacks target software"
+        ],
+        "answer": "Threats are the potential for harm, attacks are the execution of threats"
+      },
+      {
+        "question": "Which organization is a nongovernmental organization that publishes International Standards?",
+        "options": [
+          "National Institute of Standards and Technology (NIST)",
+          "Internet Society (ISOC)",
+          "International Telecommunication Union (ITU-T)",
+          "International Organization for Standardization (ISO)"
+        ],
+        "answer": "International Organization for Standardization (ISO)"
+      },
+      {
+        "question": "What specific type of attack involves creating a false data stream?",
+        "options": [
+          "Passive attack",
+          "Traffic analysis",
+          "Active attack",
+          "Release of message contents"
+        ],
+        "answer": "Active attack"
+      }
+    ]
+  }
+}

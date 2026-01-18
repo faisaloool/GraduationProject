@@ -1,0 +1,208 @@
+{
+  "document": "Lecture 9 covers NP‑Completeness, dynamic programming, greedy algorithms, complexity classes P and NP, the Hamiltonian‑cycle problem and the concept of reductions.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which characteristic is essential for a problem to be solved by dynamic programming?",
+        "options": [
+          "The solution can be built in a single pass",
+          "Overlapping subproblems and optimal substructure",
+          "A greedy choice at each step leads to global optimum",
+          "All solutions are equally good"
+        ],
+        "answer": "Overlapping subproblems and optimal substructure"
+      },
+      {
+        "question": "What is a typical advantage of greedy algorithms over dynamic programming?",
+        "options": [
+          "They always produce optimal solutions for all problems",
+          "They are easier to code and run faster in practice",
+          "They guarantee polynomial‑time solutions for NP‑complete problems",
+          "They eliminate the need for any verification step"
+        ],
+        "answer": "They are easier to code and run faster in practice"
+      },
+      {
+        "question": "In computational complexity theory, what does the class P represent?",
+        "options": [
+          "Problems solvable by nondeterministic machines",
+          "Problems verifiable in polynomial time",
+          "Problems solvable in polynomial time on a deterministic machine",
+          "The set of all halting problems"
+        ],
+        "answer": "Problems solvable in polynomial time on a deterministic machine"
+      },
+      {
+        "question": "What does the class NP stand for?",
+        "options": [
+          "Non‑polynomial problems",
+          "Nondeterministic polynomial‑time verifiable problems",
+          "Natural polynomial algorithms",
+          "Never‑provable tasks"
+        ],
+        "answer": "Nondeterministic polynomial‑time verifiable problems"
+      },
+      {
+        "question": "Which problem is known to be NP‑complete?",
+        "options": [
+          "Travelling Salesman Problem (TSP)",
+          "Sorting a list of numbers",
+          "Finding the shortest path in a graph",
+          "Computing the determinant of a matrix"
+        ],
+        "answer": "Travelling Salesman Problem (TSP)"
+      },
+      {
+        "question": "If any NP‑complete problem can be solved in polynomial time, what consequence follows?",
+        "options": [
+          "P equals NP and all problems are easy",
+          "NP becomes a subset of P only for trivial cases",
+          "The halting problem would be solvable in finite time",
+          "Complexity classes would collapse but remain distinct"
+        ],
+        "answer": "P equals NP and all problems are easy"
+      },
+      {
+        "question": "What does a reduction from problem P to problem Q mean?",
+        "options": [
+          "Every solution of P is also a solution of Q",
+          "Any instance of P can be transformed in polynomial time into an equivalent instance of Q",
+          "Problem P is harder than problem Q",
+          "Both problems have identical sets of solutions"
+        ],
+        "answer": "Any instance of P can be transformed in polynomial time into an equivalent instance of Q"
+      },
+      {
+        "question": "In a nondeterministic computer model, what does the machine do?",
+        "options": [
+          "It guesses a solution and verifies it in polynomial time",
+          "It deterministically explores all possibilities sequentially",
+          "It never stops unless the input is trivial",
+          "It solves every problem instantly"
+        ],
+        "answer": "It guesses a solution and verifies it in polynomial time"
+      },
+      {
+        "question": "Why can problems in NP be verified efficiently?",
+        "options": [
+          "Because they have small, unique solutions",
+          "Because the verification algorithm runs in polynomial time",
+          "Because they are all equivalent to P problems",
+          "Because a nondeterministic machine always finds the correct answer"
+        ],
+        "answer": "Because the verification algorithm runs in polynomial time"
+      },
+      {
+        "question": "Which of these is NOT a typical example of an NP‑complete problem?",
+        "options": [
+          "Graph coloring",
+          "Hamiltonian path",
+          "Maximum flow in a network",
+          "Knapsack problem"
+        ],
+        "answer": "Maximum flow in a network"
+      },
+      {
+        "question": "What is the worst‑case running time of an algorithm with time complexity O(2^n)?",
+        "options": [
+          "Polynomial in n",
+          "Exponential in n",
+          "Logarithmic in n",
+          "Linear in n"
+        ],
+        "answer": "Exponential in n"
+      },
+      {
+        "question": "Which statement best describes the relationship between P and NP?",
+        "options": [
+          "P is a subset of NP, but equality is unknown",
+          "NP contains only trivial problems",
+          "Both classes are identical by definition",
+          "NP is always larger than P for large inputs"
+        ],
+        "answer": "P is a subset of NP, but equality is unknown"
+      },
+      {
+        "question": "Why might a greedy algorithm fail on the Travelling Salesman Problem?",
+        "options": [
+          "Because it explores all permutations",
+          "Because local optimal choices can lead to a globally suboptimal tour",
+          "Because it requires exponential space",
+          "Because it runs in polynomial time"
+        ],
+        "answer": "Because local optimal choices can lead to a globally suboptimal tour"
+      },
+      {
+        "question": "What does the term \"optimal substructure\" refer to?",
+        "options": [
+          "The solution contains no gaps",
+          "A global optimum is built from locally optimum solutions of subproblems",
+          "All subproblems have equal size",
+          "Every step is independent of previous choices"
+        ],
+        "answer": "A global optimum is built from locally optimum solutions of subproblems"
+      },
+      {
+        "question": "Which property ensures that a dynamic programming solution can reuse results of smaller subproblems?",
+        "options": [
+          "Optimal substructure",
+          "Greedy choice",
+          "Overlapping subproblems",
+          "Deterministic computation"
+        ],
+        "answer": "Overlapping subproblems"
+      },
+      {
+        "question": "Which class contains problems solvable in polynomial time on a deterministic Turing machine?",
+        "options": [
+          "P",
+          "NP",
+          "PSPACE",
+          "EXPTIME"
+        ],
+        "answer": "P"
+      },
+      {
+        "question": "What is the halting problem an example of?",
+        "options": [
+          "A decidable problem",
+          "An undecidable problem",
+          "A polynomial‑time problem",
+          "A deterministic problem with infinite loops"
+        ],
+        "answer": "An undecidable problem"
+      },
+      {
+        "question": "What does the phrase 'reduction' imply about the difficulty of a problem?",
+        "options": [
+          "The problems are equally hard",
+          "Reduces complexity by one exponential factor",
+          "A problem is harder or equal to another if it reduces to it",
+          "It guarantees polynomial‑time solutions"
+        ],
+        "answer": "A problem is harder or equal to another if it reduces to it"
+      },
+      {
+        "question": "If a solution for the Hamiltonian cycle exists, how long does the verification take?",
+        "options": [
+          "O(1)",
+          "O(n^2)",
+          "O(log n)",
+          "Polynomial time"
+        ],
+        "answer": "Polynomial time"
+      },
+      {
+        "question": "Which of the following is a typical characteristic of NP‑complete problems?",
+        "options": [
+          "They can only be solved by nondeterministic machines",
+          "Their solutions are easily verified in polynomial time",
+          "They have no optimal substructure",
+          "In all cases they work with greedy algorithms"
+        ],
+        "answer": "Their solutions are easily verified in polynomial time"
+      }
+    ]
+  }
+}

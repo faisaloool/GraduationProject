@@ -38,7 +38,7 @@
   height: 40px;
   width: 100%;
   background-color: #067e8b5e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   cursor: pointer;
 }
 
@@ -173,7 +173,7 @@ input {
 
 .active-card {
   background-color: #067e8b5e;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 .quiz-card.editing,
 .active-card.editing {

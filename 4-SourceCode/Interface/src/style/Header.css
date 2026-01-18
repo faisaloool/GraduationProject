@@ -25,12 +25,24 @@ header {
   letter-spacing: 0.2px;
   margin: 0;
   padding: 0;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .header-btns {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.header-btns .label-long {
+  display: inline;
+}
+
+.header-btns .label-short {
+  display: none;
 }
 
 .header-btns button {
@@ -135,15 +147,16 @@ header {
 
 /* موبايل كبير (600px) */
 @media (max-width: 600px) {
-  /* Hide the version label on mobile */
-  .ai-version {
-    display: none;
-  }
-
   header {
     height: 70px;
     padding: 0 12px;
-    justify-content: flex-end;
+    justify-content: space-between;
+  }
+
+  .ai-version {
+    display: block;
+    font-size: 17px;
+    max-width: 52vw;
   }
 
   .header-btns button {
@@ -177,15 +190,31 @@ header {
   }
 
   .ai-version {
-    display: none;
+    display: block;
+    font-size: 16px;
+    max-width: 50vw;
   }
 }
 
 /* موبايل صغير جداً (375px وتحت) */
 @media (max-width: 375px) {
-  /* إخفاء أزرار Login/Signup ووضع Menu فقط */
+  .header-btns {
+    gap: 5px;
+  }
+
   .header-btns button {
+    padding: 5px 6px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .header-btns .label-long {
     display: none;
+  }
+
+  .header-btns .label-short {
+    display: inline;
+    white-space: nowrap;
   }
 
   .menu-btn {
@@ -195,7 +224,9 @@ header {
   }
 
   .ai-version {
-    display: none;
+    display: block;
+    font-size: 16px;
+    max-width: 44vw;
   }
 
   header {

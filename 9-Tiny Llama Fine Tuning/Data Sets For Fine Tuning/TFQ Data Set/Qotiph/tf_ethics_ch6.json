@@ -1,0 +1,372 @@
+{
+  "document": "Ch6_ Network Security.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "A virus is a piece of self-replicating code embedded within another program.",
+        "answer": "true"
+      },
+      {
+        "question": "Phreaks and hackers are terms used to describe individuals who protect computer networks.",
+        "answer": "false"
+      },
+      {
+        "question": "Denial-of-service attacks are a type of network security threat.",
+        "answer": "true"
+      },
+      {
+        "question": "Online voting is not related to network security.",
+        "answer": "false"
+      },
+      {
+        "question": "The increasing use of computers has led to a decrease in the importance of computer security.",
+        "answer": "false"
+      },
+      {
+        "question": "Email and web surfing are examples of computer utilities.",
+        "answer": "true"
+      },
+      {
+        "question": "Hard disks can be associated with program files.",
+        "answer": "true"
+      },
+      {
+        "question": "Email attachments are not a common way for viruses to spread.",
+        "answer": "false"
+      },
+      {
+        "question": "Diskettes or CDs are not used to spread viruses.",
+        "answer": "false"
+      },
+      {
+        "question": "Files downloaded from the Internet can spread viruses.",
+        "answer": "true"
+      },
+      {
+        "question": "Commercial antivirus software is not effective against viruses.",
+        "answer": "false"
+      },
+      {
+        "question": "Few people keep their antivirus software up-to-date.",
+        "answer": "true"
+      },
+      {
+        "question": "Worms are self-contained programs that spread through computer networks.",
+        "answer": "true"
+      },
+      {
+        "question": "Worms do not exploit security holes in networked computers.",
+        "answer": "false"
+      },
+      {
+        "question": "Code Red is a famous worm.",
+        "answer": "true"
+      },
+      {
+        "question": "Robert Tappan Morris, Jr. created the Internet Worm.",
+        "answer": "true"
+      },
+      {
+        "question": "The graduate student released the worm from a Cornell computer.",
+        "answer": "false"
+      },
+      {
+        "question": "Infected computers became unresponsive or kept crashing.",
+        "answer": "true"
+      },
+      {
+        "question": "Morris was expelled from Cornell.",
+        "answer": "false"
+      },
+      {
+        "question": "Morris received 3 years' probation and 400 hours of community service.",
+        "answer": "true"
+      },
+      {
+        "question": "Morris had to pay $150,000 in legal fees and fines.",
+        "answer": "true"
+      },
+      {
+        "question": "Morris violated property rights of organizations.",
+        "answer": "true"
+      },
+      {
+        "question": "Morris was wrong to have released the Internet worm.",
+        "answer": "true"
+      },
+      {
+        "question": "Trojan horse is a program with benign capabilities.",
+        "answer": "true"
+      },
+      {
+        "question": "Morris did not gain access to others' computers without permission.",
+        "answer": "false"
+      },
+      {
+        "question": "Organizations did not learn of security errors from Morris's actions.",
+        "answer": "false"
+      },
+      {
+        "question": "A Trojan horse replicates itself.",
+        "answer": "false"
+      },
+      {
+        "question": "A Remote Access Trojan (RAT) gives attackers access to a victim’s computer.",
+        "answer": "true"
+      },
+      {
+        "question": "RAT servers are typically found in files downloaded from Usenet sites.",
+        "answer": "true"
+      },
+      {
+        "question": "Attackers usually hide Trojan horses in games and small programs.",
+        "answer": "true"
+      },
+      {
+        "question": "A bot is a software program that responds to commands from a user.",
+        "answer": "false"
+      },
+      {
+        "question": "Some bots support legitimate activities.",
+        "answer": "true"
+      },
+      {
+        "question": "All bots support illegitimate activities.",
+        "answer": "false"
+      },
+      {
+        "question": "Distributing spam is a legitimate activity supported by bots.",
+        "answer": "false"
+      },
+      {
+        "question": "System administrators play a key role in defensive measures.",
+        "answer": "true"
+      },
+      {
+        "question": "Authentication is determining that a user has permission to perform a particular action.",
+        "answer": "false"
+      },
+      {
+        "question": "A firewall monitors packets entering and leaving a local area network.",
+        "answer": "true"
+      },
+      {
+        "question": "A packet filter accepts packets from any computer on the Internet.",
+        "answer": "false"
+      },
+      {
+        "question": "The original meaning of 'hacker' dates back to the 1950s.",
+        "answer": "true"
+      },
+      {
+        "question": "Hackers are often described as risk-takers.",
+        "answer": "true"
+      },
+      {
+        "question": "The hacker ethic promotes the mistrust of authority.",
+        "answer": "true"
+      },
+      {
+        "question": "The hacker ethic discourages the free exchange of information.",
+        "answer": "false"
+      },
+      {
+        "question": "Hackers value decentralization.",
+        "answer": "true"
+      },
+      {
+        "question": "Hackers aim to make systems do something never done before.",
+        "answer": "true"
+      },
+      {
+        "question": "The text emphasizes skills over degrees and positions.",
+        "answer": "true"
+      },
+      {
+        "question": "The text suggests a pessimistic view of technology.",
+        "answer": "false"
+      },
+      {
+        "question": "The meaning of 'hacker' has remained the same over time.",
+        "answer": "false"
+      },
+      {
+        "question": "Dumpster diving refers to looking through garbage for information.",
+        "answer": "true"
+      },
+      {
+        "question": "Social engineering involves manipulating people to gain confidential information.",
+        "answer": "true"
+      },
+      {
+        "question": "Social engineering involves manipulating someone within an organization to access confidential information.",
+        "answer": "true"
+      },
+      {
+        "question": "Modern use of hacking is always for beneficial purposes.",
+        "answer": "false"
+      },
+      {
+        "question": "Computer break-ins refer to unauthorized access to computer systems.",
+        "answer": "true"
+      },
+      {
+        "question": "Destroying databases is not considered a malicious activity.",
+        "answer": "false"
+      },
+      {
+        "question": "Stealing confidential personal information is a form of cybercrime.",
+        "answer": "true"
+      },
+      {
+        "question": "Phone phreaking is the practice of manipulating the phone system to make free calls.",
+        "answer": "true"
+      },
+      {
+        "question": "A phone phreak is someone who pays for all their phone calls.",
+        "answer": "false"
+      },
+      {
+        "question": "One popular method of phone phreaking is stealing long-distance telephone access codes.",
+        "answer": "true"
+      },
+      {
+        "question": "Guessing long-distance telephone access codes is not a method used in phone phreaking.",
+        "answer": "false"
+      },
+      {
+        "question": "A 'blue box' is used to get free access to long-distance calls.",
+        "answer": "true"
+      },
+      {
+        "question": "Access codes are posted on pirate boards by phreaks to share codes and credit card numbers.",
+        "answer": "true"
+      },
+      {
+        "question": "Accessing an Internet computer without authorization is an example of a legal activity.",
+        "answer": "false"
+      },
+      {
+        "question": "Transmitting a virus or worm is considered an illegal activity.",
+        "answer": "true"
+      },
+      {
+        "question": "Trafficking in computer passwords is a legal activity.",
+        "answer": "false"
+      },
+      {
+        "question": "Intercepting a telephone conversation, email, or any other data transmission is illegal.",
+        "answer": "true"
+      },
+      {
+        "question": "Accessing stored email messages without authorization is considered unauthorized access.",
+        "answer": "true"
+      },
+      {
+        "question": "Adopting another identity to carry out a legal activity is considered unethical.",
+        "answer": "false"
+      },
+      {
+        "question": "Denial-of-service attacks aim to improve a server's ability to respond to clients.",
+        "answer": "false"
+      },
+      {
+        "question": "Denial-of-service attacks disrupt a server's ability to respond to legitimate users.",
+        "answer": "true"
+      },
+      {
+        "question": "About 4,000 Web sites are attacked each week by denial-of-service attacks.",
+        "answer": "true"
+      },
+      {
+        "question": "A single person can harm a huge organization through a trical attack.",
+        "answer": "false"
+      },
+      {
+        "question": "Asymmetrical attacks may prove popular with terrorists.",
+        "answer": "true"
+      },
+      {
+        "question": "Mafia boy2000 targeted companies like Amazon, Yahoo, CNN, eBay, and Dell.",
+        "answer": "true"
+      },
+      {
+        "question": "The 2000 U.S. Presidential election was closely contested.",
+        "answer": "true"
+      },
+      {
+        "question": "Florida was not a pivotal state in the 2000 U.S. Presidential election.",
+        "answer": "false"
+      },
+      {
+        "question": "Most Florida counties used keypunch voting machines in the 2000 U.S. Presidential election.",
+        "answer": "true"
+      },
+      {
+        "question": "Two voting irregularities in the 2000 U.S. Presidential election were traced to keypunch voting machines.",
+        "answer": "true"
+      },
+      {
+        "question": "Benefits of Online Voting include more people voting",
+        "answer": "true"
+      },
+      {
+        "question": "Online voting would result in votes being counted more slowly",
+        "answer": "false"
+      },
+      {
+        "question": "Electronic votes eliminate ambiguity",
+        "answer": "true"
+      },
+      {
+        "question": "Online voting costs more money",
+        "answer": "false"
+      },
+      {
+        "question": "Online voting can eliminate ballot box tampering",
+        "answer": "true"
+      },
+      {
+        "question": "Software can prevent accidental over-voting",
+        "answer": "true"
+      },
+      {
+        "question": "Software cannot prevent under-voting caused by poor ballot design",
+        "answer": "false"
+      },
+      {
+        "question": "Online voting gives an unfair advantage to those with home computers.",
+        "answer": "true"
+      },
+      {
+        "question": "It is easier to keep voter privacy in online voting systems.",
+        "answer": "false"
+      },
+      {
+        "question": "The system records the ballot but not the identity of the voter.",
+        "answer": "false"
+      },
+      {
+        "question": "Online voting reduces opportunities for vote-selling.",
+        "answer": "false"
+      },
+      {
+        "question": "Online voting systems are not susceptible to DDoS attacks.",
+        "answer": "false"
+      },
+      {
+        "question": "The security of an election depends on the security of home computers in online voting.",
+        "answer": "true"
+      },
+      {
+        "question": "Online voting systems are susceptible to redirection to fake vote servers.",
+        "answer": "true"
+      },
+      {
+        "question": "You are redirected to a fake server to obtain credentials and vote on your behalf from the actual site.",
+        "answer": "true"
+      }
+    ]
+  }
+}

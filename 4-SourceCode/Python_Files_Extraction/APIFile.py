@@ -5,7 +5,7 @@ from content_creation_json import generate_mcq_quiz_from_text, generate_tf_quiz_
 import requests
 import httpx
 import asyncio
-import json
+from docx import Document
 
 app = FastAPI()
 
@@ -83,17 +83,36 @@ async def extract_text_endpoint(file: UploadFile = File(...)):
             os.remove(temp_path)
 
 
-async def send_to_lm_studio_async(prompt: str) -> dict:
-    """
-    Send a prompt to LM Studio asynchronously and return the AI response as a Python dict.
-    Parses the AI's JSON string into a dict before returning.
-    """
+
+
+
+
+# def send_to_lm_studio(prompt: str) -> str:
+#     """Send a prompt to LM Studio and return the AI response."""
+#     url = "http://127.0.0.1:1234/v1/chat/completions"
+#     payload = {
+#         "model": "local-model",
+#         "messages": [{"role": "user", "content": prompt}],
+#         "temperature": 0.5,
+#         "max_tokens": 1200
+#     }
+#     headers = {"Content-Type": "application/json"}
+
+#     try:
+#         response = requests.post(url, json=payload, headers=headers)
+#         response.raise_for_status()
+#         return response.json()["choices"][0]["message"]["content"]
+#     except Exception as e:
+#         return f"Error communicating with LM Studio: {e}"
+
+async def send_to_lm_studio_async(prompt: str) -> str:
+    """Send a prompt to LM Studio asynchronously and return the AI response."""
     url = "http://26.152.59.249:1234/v1/chat/completions"
     payload = {
         "model": "local-model",
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.5,
-        "max_tokens": 4096
+        "max_tokens": 1200
     }
     headers = {"Content-Type": "application/json"}
 
@@ -101,16 +120,11 @@ async def send_to_lm_studio_async(prompt: str) -> dict:
         resp = await client.post(url, json=payload, headers=headers, timeout=None)
         resp.raise_for_status()
         data = resp.json()
+        return data["choices"][0]["message"]["content"]
 
-    ai_text = data["choices"][0]["message"]["content"]
 
-    # Parse AI response into a real dict
-    try:
-        parsed = json.loads(ai_text)
-    except json.JSONDecodeError:
-        raise HTTPException(status_code=500, detail="AI returned invalid JSON")
 
-    return parsed
+
 
 
 def build_mcq_prompt(text: str, count: int, filename: str) -> str:
@@ -156,6 +170,9 @@ Content:
 """
 
 
+
+
+
 def build_tf_prompt(text: str, count: int, filename: str) -> str:
     return f"""
 Generate exactly {count} True or False Questions.
@@ -187,43 +204,26 @@ Content:
 """
 
 
+
 # @app.post("/ask_ai_model")
 # async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
 #     temp_path = f"temp{os.path.splitext(file.filename)[1]}"
 
-#     # Save uploaded file temporarily
 #     with open(temp_path, "wb") as f:
 #         f.write(await file.read())
 
 #     try:
-#         # Extract text from the file
 #         text = extract_file_text(temp_path, file.filename)
 #         if not text.strip():
 #             raise HTTPException(status_code=400, detail="No text found in file")
 
-#         # Build prompts only if count > 0
-#         tasks = []
-#         if mcq_count != 0:
-#             mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
-#             tasks.append(asyncio.create_task(send_to_lm_studio_async(mcq_prompt)))
-#         if tf_count != 0:
-#             tf_prompt = build_tf_prompt(text, tf_count, file.filename)
-#             tasks.append(asyncio.create_task(send_to_lm_studio_async(tf_prompt)))
+#         # Build prompts
+#         mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+#         tf_prompt = build_tf_prompt(text, tf_count, file.filename)
 
-#         # Run AI calls concurrently
-#         results = await asyncio.gather(*tasks)
-
-#         # Map results safely, provide empty defaults if count is 0
-#         mcq_result = results[0] if mcq_count != 0 else {
-#             "file_name": file.filename, 
-#             "question_type": "Multiple Choice", 
-#             "questions": []
-#         }
-#         tf_result = results[1] if tf_count != 0 else {
-#             "file_name": file.filename, 
-#             "question_type": "True or False", 
-#             "questions": []
-#         }
+#         # Send two requests to LM Studio
+#         mcq_result = send_to_lm_studio(mcq_prompt)
+#         tf_result = send_to_lm_studio(tf_prompt)
 
 #         return {
 #             "filename": file.filename,
@@ -238,6 +238,7 @@ Content:
 
 
 
+<<<<<<< HEAD
 
 
 # @app.post("/ask_ai_model")
@@ -248,12 +249,22 @@ Content:
 #     content = await file.read()
 #     with open(temp_path, "wb") as f:
 #         f.write(content)
+=======
+@app.post("/ask_ai_model")
+async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
+    temp_path = f"temp{os.path.splitext(file.filename)[1]}"
+
+    # Save uploaded file
+    with open(temp_path, "wb") as f:
+        f.write(await file.read())
+>>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 #     try:
 #         text = extract_file_text(temp_path, file.filename)
 #         if not text.strip():
 #             raise HTTPException(status_code=400, detail="No text found in file")
 
+<<<<<<< HEAD
 #         tasks = []
 #         # Keep track of which order tasks are added
 #         task_types = []
@@ -286,6 +297,14 @@ Content:
 #             "question_type": "True or False", 
 #             "questions": []
 #         })
+=======
+        mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
+        tf_prompt = build_tf_prompt(text, tf_count, file.filename)
+
+        mcq_task = asyncio.create_task(send_to_lm_studio_async(mcq_prompt))
+        tf_task = asyncio.create_task(send_to_lm_studio_async(tf_prompt))
+        mcq_result, tf_result = await asyncio.gather(mcq_task, tf_task)
+>>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 #         return {
 #             "filename": file.filename,
@@ -294,6 +313,7 @@ Content:
 #             "total_questions": mcq_count + tf_count
 #         }
 
+<<<<<<< HEAD
 #     except Exception as e:
 #         # This helps you see the actual error in your console/logs
 #         print(f"Error occurred: {e}")
@@ -431,16 +451,17 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 # }
 
 
+=======
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+
+>>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 
 
 
 # Run with:
 # uvicorn APIFile:app --port 8001
-
-
-#python -m pip install PyMuPDF
-#python -m pip install pywin32
-#python -m pip install comtypes
-#python -m pip install aiohttp
-#python -m pip install httpx

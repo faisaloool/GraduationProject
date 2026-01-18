@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 1: Understanding The Digital Forensics Profession and Investigations - Guide to Computer Forensics and Investigations, Fifth Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Digital forensics is the application of computer science and investigative procedures for a legal purpose.",
+        "answer": "True"
+      },
+      {
+        "question": "ISO 27037 is a standard for digital forensics that was ratified in 2010.",
+        "answer": "False"
+      },
+      {
+        "question": "Data recovery and digital forensics are the same discipline.",
+        "answer": "False"
+      },
+      {
+        "question": "The investigations triad includes vulnerability assessment, network intrusion detection, and digital investigations.",
+        "answer": "True"
+      },
+      {
+        "question": "IACIS introduced training on digital forensics software in the early 2000s.",
+        "answer": "False"
+      },
+      {
+        "question": "Case law is used when existing statutes don't keep up with technological change.",
+        "answer": "True"
+      },
+      {
+        "question": "Public-sector investigations focus on policy violations, while private-sector investigations involve criminal prosecution.",
+        "answer": "False"
+      },
+      {
+        "question": "The Computer Fraud and Abuse Act was passed in 1996.",
+        "answer": "False"
+      },
+      {
+        "question": "A Digital Evidence First Responder (DEFR) has the skill to analyze data and determine when specialists should be called.",
+        "answer": "False"
+      },
+      {
+        "question": "An affidavit is a sworn statement of support of facts about or evidence of a crime.",
+        "answer": "True"
+      },
+      {
+        "question": "Private-sector investigations can involve email harassment and industrial espionage.",
+        "answer": "True"
+      },
+      {
+        "question": "An acceptable use policy defines rules for using a company's computers and networks.",
+        "answer": "True"
+      },
+      {
+        "question": "Warning banners on computer screens can help businesses avoid litigation.",
+        "answer": "True"
+      },
+      {
+        "question": "In a BYOD environment, personal devices are never subject to company rules.",
+        "answer": "False"
+      },
+      {
+        "question": "Professional conduct for investigators includes maintaining objectivity and confidentiality.",
+        "answer": "True"
+      },
+      {
+        "question": "Chain of custody refers to the route evidence takes from discovery until case closure.",
+        "answer": "True"
+      },
+      {
+        "question": "Computers cannot contain information that helps determine the chain of events leading to a crime.",
+        "answer": "False"
+      },
+      {
+        "question": "Employee misuse of company resources can cost millions of dollars.",
+        "answer": "True"
+      },
+      {
+        "question": "An evidence custody form is also called a chain-of-evidence form.",
+        "answer": "True"
+      },
+      {
+        "question": "Evidence bags should be used to secure and catalog digital evidence.",
+        "answer": "True"
+      },
+      {
+        "question": "When securing computer evidence, antistatic bags are not necessary.",
+        "answer": "False"
+      },
+      {
+        "question": "Initials on evidence tape prove that evidence has not been tampered with.",
+        "answer": "True"
+      },
+      {
+        "question": "The first step in problem solving for digital forensics is to analyze and recover digital evidence.",
+        "answer": "False"
+      },
+      {
+        "question": "Employee termination cases rarely involve abuse of corporate assets.",
+        "answer": "False"
+      },
+      {
+        "question": "For internet abuse investigations, you need the organization's proxy server logs.",
+        "answer": "True"
+      },
+      {
+        "question": "Email abuse investigations require access to the suspect's computer for forensic analysis.",
+        "answer": "True"
+      },
+      {
+        "question": "Attorney-client privilege rules require investigators to keep all findings public.",
+        "answer": "False"
+      },
+      {
+        "question": "A computer forensics workstation is a specially configured PC loaded with additional bays and software.",
+        "answer": "True"
+      },
+      {
+        "question": "Write-blockers are unnecessary for digital forensics workstations.",
+        "answer": "False"
+      },
+      {
+        "question": "A basic digital forensics workstation requires a write-blocker device and acquisition tools.",
+        "answer": "True"
+      },
+      {
+        "question": "When gathering evidence, you should meet the IT manager and have them sign the evidence form.",
+        "answer": "True"
+      },
+      {
+        "question": "A bit-stream copy is the same as a simple backup copy.",
+        "answer": "False"
+      },
+      {
+        "question": "Backup software can copy deleted files and email messages.",
+        "answer": "False"
+      },
+      {
+        "question": "The first rule of computer forensics is to analyze the original evidence directly.",
+        "answer": "False"
+      },
+      {
+        "question": "Deleted files remain on disk until new data overwrites the same physical location.",
+        "answer": "True"
+      },
+      {
+        "question": "Public-sector investigations typically require search warrants before seizing digital evidence.",
+        "answer": "True"
+      },
+      {
+        "question": "A systematic approach is unnecessary for digital forensics investigations.",
+        "answer": "False"
+      },
+      {
+        "question": "Corporate-policy violations cannot go to court.",
+        "answer": "False"
+      },
+      {
+        "question": "Internet abuse investigations do not require examining server log data.",
+        "answer": "False"
+      },
+      {
+        "question": "You should always critique your own work in digital forensics.",
+        "answer": "True"
+      }
+    ]
+  }
+}

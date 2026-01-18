@@ -1,0 +1,140 @@
+{
+  "document": "Chapter 5: Data Visualization to the End User - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Data scientists must deliver their insights to end users through various communication methods.",
+        "answer": "True"
+      },
+      {
+        "question": "A one-time presentation is suitable for research questions that are one-shot deals.",
+        "answer": "True"
+      },
+      {
+        "question": "Customer segmentation cannot be fed back to a database as a new dimension.",
+        "answer": "False"
+      },
+      {
+        "question": "Real-time dashboards are never useful for data science results.",
+        "answer": "False"
+      },
+      {
+        "question": "Strategic decisions often require only one-time analysis and reporting.",
+        "answer": "True"
+      },
+      {
+        "question": "Operational decisions require reports to be refreshed regularly.",
+        "answer": "True"
+      },
+      {
+        "question": "In large organizations, data scientists typically handle the entire cycle from data gathering to reporting.",
+        "answer": "False"
+      },
+      {
+        "question": "A report is any communication artifact prepared to convey specific information.",
+        "answer": "True"
+      },
+      {
+        "question": "Reports cannot persuade others to act; they only provide information.",
+        "answer": "False"
+      },
+      {
+        "question": "A business report is a written document containing information regarding business matters.",
+        "answer": "True"
+      },
+      {
+        "question": "The purpose of a business report is to worsen managerial decisions.",
+        "answer": "False"
+      },
+      {
+        "question": "Business reports can use data from inside and outside the organization.",
+        "answer": "True"
+      },
+      {
+        "question": "Business reports should be unclear to allow for interpretation.",
+        "answer": "False"
+      },
+      {
+        "question": "Brevity is not important in business reporting.",
+        "answer": "False"
+      },
+      {
+        "question": "Formal reports can be 10-100 pages with a cover, summary, and text.",
+        "answer": "True"
+      },
+      {
+        "question": "Data visualization is the use of visual representations to explore and communicate data.",
+        "answer": "True"
+      },
+      {
+        "question": "Information visualization involves aggregation, summarization, and contextualization of data.",
+        "answer": "True"
+      },
+      {
+        "question": "Data visualization and information visualization are completely unrelated.",
+        "answer": "False"
+      },
+      {
+        "question": "Line charts are not useful for showing trends over time.",
+        "answer": "False"
+      },
+      {
+        "question": "Bar charts are effective for comparing categorical data.",
+        "answer": "True"
+      },
+      {
+        "question": "Pie charts should be used when you have more than 7 categories.",
+        "answer": "False"
+      },
+      {
+        "question": "Scatter plots show relationships between two continuous variables.",
+        "answer": "True"
+      },
+      {
+        "question": "Bubble charts add a third dimension using bubble size.",
+        "answer": "True"
+      },
+      {
+        "question": "Histograms display the distribution of a continuous variable.",
+        "answer": "True"
+      },
+      {
+        "question": "Gantt charts are used for project scheduling.",
+        "answer": "True"
+      },
+      {
+        "question": "PERT stands for Program Evaluation Review Technique.",
+        "answer": "True"
+      },
+      {
+        "question": "Geographic maps cannot be used in data visualization.",
+        "answer": "False"
+      },
+      {
+        "question": "Bullet graphs are not useful for comparing performance against targets.",
+        "answer": "False"
+      },
+      {
+        "question": "Heat maps use color intensity to represent data values.",
+        "answer": "True"
+      },
+      {
+        "question": "Tree maps display hierarchical data as nested rectangles.",
+        "answer": "True"
+      },
+      {
+        "question": "Highlight tables are not effective for comparing values across categories.",
+        "answer": "False"
+      },
+      {
+        "question": "The choice of chart depends on what you want to communicate.",
+        "answer": "True"
+      },
+      {
+        "question": "All charts are equally effective for all types of data.",
+        "answer": "False"
+      },
+      {
+        "question": "Data visualization should not be used in business reports.",
+        "answer":

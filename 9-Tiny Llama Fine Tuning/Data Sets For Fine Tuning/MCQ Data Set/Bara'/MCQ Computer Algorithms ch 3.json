@@ -1,0 +1,208 @@
+{
+"document": "This document covers the fundamentals of algorithm analysis, including asymptotic performance, running time models, worst/average/best case behavior, and practical examples such as bubble sort, insertion sort, selection sort, and linear search.",
+"question_type": "MCQ",
+"output": {
+"questions": [
+{
+"question": "What does the term "asymptotic performance" refer to?",
+"options": [
+"The exact number of operations for a specific input size",
+"How an algorithm behaves as the problem size grows large",
+"The memory usage of an algorithm at runtime",
+"The constant factors hidden in Big-O notation"
+],
+"answer": "How an algorithm behaves as the problem size grows large"
+},
+{
+"question": "Which assumption is made by the RAM model of computation?",
+"options": [
+"Only memory accesses take unit time",
+"All instructions require a variable number of cycles",
+"Function calls are counted in constant time",
+"Memory addresses are not uniformly accessible"
+],
+"answer": "Only memory accesses take unit time"
+},
+{
+"question": "In the bubble‑sort code snippet, what condition triggers a swap between A[j] and A[j+1]?",
+"options": [
+"A[j] < A[j+1]",
+"A[j] > A[j+1]",
+"A[j] == A[j+1]",
+"A[j] <= A[j+1]"
+],
+"answer": "A[j] > A[j+1]"
+},
+{
+"question": "What is the worst‑case time complexity of bubble sort?",
+"options": [
+"O(n)",
+"O(n log n)",
+"O(n^2)",
+"O(log n)"
+],
+"answer": "O(n^2)"
+},
+{
+"question": "Which sorting algorithm is known to have an average case time complexity of Θ(n log n)?",
+"options": [
+"Bubble sort",
+"Insertion sort",
+"Selection sort",
+"Merge sort"
+],
+"answer": "Merge sort"
+},
+{
+"question": "In insertion sort, how many comparisons are performed in the worst case?",
+"options": [
+"Θ(n)",
+"Θ(n log n)",
+"Θ(n^2)",
+"Θ(1)"
+],
+"answer": "Θ(n^2)"
+},
+{
+"question": "What is the best‑case time for a linear search if the sought item is at the first position?",
+"options": [
+"O(n)",
+"O(log n)",
+"O(1)",
+"O(n log n)"
+],
+"answer": "O(1)"
+},
+{
+"question": "What is the purpose of calling srand(time(NULL)) in the sorting program?",
+"options": [
+"To seed the random number generator for array initialization",
+"To measure the elapsed clock time",
+"To allocate memory dynamically",
+"To sort the array"
+],
+"answer": "To seed the random number generator for array initialization"
+},
+{
+"question": "Which of the following is NOT counted as a primitive step when analyzing algorithm running time?",
+"options": [
+"Assignment statements",
+"Comparisons",
+"Function calls",
+"Loop increments"
+],
+"answer": "Function calls"
+},
+{
+"question": ""Average case" in algorithm analysis refers to what?",
+"options": [
+"The best input arrangement for a given problem size",
+"The worst possible input arrangement",
+"The expected running time over all equally likely inputs",
+"A fixed number of iterations regardless of input"
+],
+"answer": "The expected running time over all equally likely inputs"
+},
+{
+"question": "How many passes does bubble sort perform on an array of length n?",
+"options": [
+"1",
+"n",
+"n − 1",
+"2n"
+],
+"answer": "n − 1"
+},
+{
+"question": "In selection sort, what operation is used to find the minimum element of the unsorted portion?",
+"options": [
+"Swapping elements directly",
+"Comparing each pair of elements",
+"Scanning for the smallest value and updating an index",
+"Reversing the array"
+],
+"answer": "Scanning for the smallest value and updating an index"
+},
+{
+"question": "What is the best‑case complexity of insertion sort when the input is already sorted?",
+"options": [
+"Θ(n^2)",
+"Θ(n log n)",
+"Θ(n)",
+"Θ(1)"
+],
+"answer": "Θ(n)"
+},
+{
+"question": "In the sorting program, what does clock() measure?",
+"options": [
+"Memory usage",
+"CPU time elapsed between two points in code",
+"Number of comparisons made",
+"The size of the array"
+],
+"answer": "CPU time elapsed between two points in code"
+},
+{
+"question": "What is the worst‑case number of swaps performed by bubble sort?",
+"options": [
+"≈n",
+"≈n log n",
+"≈(n^2)/2",
+"≈n^3"
+],
+"answer": "≈(n^2)/2"
+},
+{
+"question": "Which of the following statements about Big‑O notation is correct?",
+"options": [
+"It gives an upper bound asymptotically",
+"It always equals the exact running time",
+"It counts only primitive steps",
+"It ignores constants completely"
+],
+"answer": "It gives an upper bound asymptotically"
+},
+{
+"question": "Why is a dynamic array allocated with new int[n] in the sorting program?",
+"options": [
+"To allocate memory for a fixed size known at compile time",
+"Because the desired array length is only known at runtime",
+"To store the largest possible integer values",
+"To avoid using vectors"
+],
+"answer": "Because the desired array length is only known at runtime"
+},
+{
+"question": "In linear search, what does the function return when the searched item is not found?",
+"options": [
+"-1",
+"0",
+"n",
+"None"
+],
+"answer": "-1"
+},
+{
+"question": "Which algorithm repeatedly swaps adjacent elements to sort a list?",
+"options": [
+"Selection sort",
+"Insertion sort",
+"Bubble sort",
+"Merge sort"
+],
+"answer": "Bubble sort"
+},
+{
+"question": "What is the main output of the sorting program after it has finished sorting?",
+"options": [
+"The original unsorted array printed again",
+"A list of random integers from 1 to n",
+"An ascending ordered array of numbers",
+"All elements are printed in reverse order"
+],
+"answer": "An ascending ordered array of numbers"
+}
+]
+}
+}

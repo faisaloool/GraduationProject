@@ -1,0 +1,209 @@
+{
+  "document": "The provided text covers the fundamentals of software reuse and domain engineering, including the benefits of reuse, types of reusable artifacts (data, architectural, design, program), essential properties of reusable components, and various reuse models such as proactive, reactive, and extractive approaches.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Who is credited with first introducing formal software reuse using off-the-shelf components?",
+        "options": [
+          "Tripathy and Naik",
+          "Dough McIlroy",
+          "Wiley Publishers",
+          "The University of Waterloo"
+        ],
+        "answer": "Dough McIlroy"
+      },
+      {
+        "question": "What is a 'program family' in the context of software reuse?",
+        "options": [
+          "A group of developers working on the same project",
+          "A set of programs with several common attributes and features",
+          "A collection of software licenses owned by one organization",
+          "A database of reusable data formats"
+        ],
+        "answer": "A set of programs with several common attributes and features"
+      },
+      {
+        "question": "According to the document, what are the two main activities involved in software reuse?",
+        "options": [
+          "Software testing and software maintenance",
+          "Requirement analysis and system design",
+          "Software development with reuse and software development for reuse",
+          "Data standardization and architectural modeling"
+        ],
+        "answer": "Software development with reuse and software development for reuse"
+      },
+      {
+        "question": "Which type of reuse involves the standardization of data formats and standard data interchange formats?",
+        "options": [
+          "Architectural reuse",
+          "Design reuse",
+          "Program reuse",
+          "Data reuse"
+        ],
+        "answer": "Data reuse"
+      },
+      {
+        "question": "What does architectural reuse involve?",
+        "options": [
+          "Developing a set of generic design styles and functional elements",
+          "Standardizing data formats for interchange",
+          "Reusing executable code like pattern-matching systems",
+          "Custom implementing an abstract design"
+        ],
+        "answer": "Developing a set of generic design styles and functional elements"
+      },
+      {
+        "question": "Which level of reuse deals specifically with the reuse of 'abstract design'?",
+        "options": [
+          "Data reuse",
+          "Architectural reuse",
+          "Design reuse",
+          "Program reuse"
+        ],
+        "answer": "Design reuse"
+      },
+      {
+        "question": "What is an example of program reuse mentioned in the text?",
+        "options": [
+          "Using a standard data interchange format",
+          "Reusing a pattern-matching system from a text tool in a database system",
+          "Creating a generic design style for logical structure",
+          "Implementing a specific abstract design"
+        ],
+        "answer": "Reusing a pattern-matching system from a text tool in a database system"
+      },
+      {
+        "question": "What does the 'reusability property' of a software asset indicate?",
+        "options": [
+          "The cost of the software asset",
+          "The degree to which the asset can be reused in another project",
+          "The number of lines of code in the asset",
+          "The speed at which the asset can be executed"
+        ],
+        "answer": "The degree to which the asset can be reused in another project"
+      },
+      {
+        "question": "Which of the following is a property that encourages software component reusability?",
+        "options": [
+          "Environmental dependence",
+          "High coupling",
+          "Low cohesion",
+          "Adaptability"
+        ],
+        "answer": "Adaptability"
+      },
+      {
+        "question": "According to the text, which of these is a benefit of software reuse?",
+        "options": [
+          "Increased process risk",
+          "Accelerated development",
+          "Reduced reliability",
+          "Increased maintenance effort"
+        ],
+        "answer": "Accelerated development"
+      },
+      {
+        "question": "Which is considered the most 'obvious' advantage of software reuse?",
+        "options": [
+          "Economic benefit",
+          "Compliance with standards",
+          "Improved maintainability",
+          "Understandability"
+        ],
+        "answer": "Economic benefit"
+      },
+      {
+        "question": "What are the three classifications of reuse models mentioned?",
+        "options": [
+          "Waterfall, Agile, Spiral",
+          "Proactive, Reactive, Extractive",
+          "Developmental, Maintenance, Evolution",
+          "Functional, Logical, Physical"
+        ],
+        "answer": "Proactive, Reactive, Extractive"
+      },
+      {
+        "question": "In a proactive approach, how is the system designed?",
+        "options": [
+          "Only for the current user's immediate needs",
+          "For all conceivable variations, including design of reusable assets",
+          "By extracting code from existing legacy systems",
+          "Only when a reuse opportunity arises during development"
+        ],
+        "answer": "For all conceivable variations, including design of reusable assets"
+      },
+      {
+        "question": "Which reuse approach is compared to the 'Waterfall model' regarding product lines?",
+        "options": [
+          "Proactive",
+          "Reactive",
+          "Extractive",
+          "Standardized"
+"
+        ],
+        "answer": "Proactive"
+      },
+      {
+        "question": "What is a major risk associated with the proactive reuse approach?",
+        "options": [
+          "Immediate lack of resources",
+          "Investment risk if future requirements do not align with projections",
+          "Inability to standardize data formats",
+          "High coupling between components"
+        ],
+        "answer": "Investment risk if future requirements do not align with projections"
+      },
+      {
+        "question": "When are reusable assets developed in a reactive approach?",
+        "options": [
+          "Before the project begins",
+          "Only if a reuse opportunity arises during product development",
+          "After the product is fully decommissioned",
+          "By analyzing old operational software products"
+        ],
+        "answer": "Only if a reuse opportunity arises during product development"
+      },
+      {
+        "question": "Which approach is suitable for organizations that cannot perform long-term prediction of requirements?",
+        "options": [
+          "Proactive",
+          "Reactive",
+          "Structured",
+          "Predictive"
+        ],
+        "answer": "Reactive"
+      },
+      {
+        "question": "Where does the extractive approach fall in the classification of reuse models?",
+        "options": [
+          "It is identical to the proactive approach",
+          "It is the first step of the reactive approach",
+          "It falls in between the proactive and reactive approaches",
+          "It is completely unrelated to domain engineering"
+        ],
+        "answer": "It falls in between the proactive and reactive approaches"
+      },
+      {
+        "question": "How does an extractive approach create an initial baseline for domain engineering?",
+        "options": [
+          "By predicting all future variations",
+          "By reusing some operational software products",
+          "By ignoring existing artifacts",
+          "By focusing solely on data standardization"
+        ],
+        "answer": "By reusing some operational software products"
+      },
+      {
+        "question": "Which organization type is most likely to use an extractive approach?",
+        "options": [
+          "A brand new startup with no previous projects",
+          "Organizations that have accumulated both artifacts and experiences in a domain",
+          "Organizations with no interest in domain engineering",
+          "Organizations that only follow the Waterfall model"
+        ],
+        "answer": "Organizations that have accumulated both artifacts and experiences in a domain"
+      }
+    ]
+  }
+}

@@ -751,7 +751,7 @@
         }
       }
     },
-    "/api/v1/quiz-ai/Quiz/{id}": {
+    "/api/v1/quiz-ai/{id}": {
       "get": {
         "tags": [
           "User"
@@ -765,6 +765,13 @@
               "type": "string",
               "format": "uuid"
             }
+          },
+          {
+            "name": "QuizTitle",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -773,37 +780,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/GenerateQuizResponseDTOApiResponse"
+                  "$ref": "#/components/schemas/QuizApiResponse"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GenerateQuizResponseDTOApiResponse"
+                  "$ref": "#/components/schemas/QuizApiResponse"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GenerateQuizResponseDTOApiResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
+                  "$ref": "#/components/schemas/QuizApiResponse"
                 }
               }
             }
@@ -898,26 +885,6 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
           "404": {
             "description": "Not Found",
             "content": {
@@ -943,6 +910,7 @@
           }
         }
       }
+<<<<<<< HEAD
     },
     "/api/v1/quiz-ai/Quiz/Generate": {
       "post": {
@@ -1215,6 +1183,8 @@
           }
         }
       }
+=======
+>>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
     }
   },
   "components": {
@@ -1354,69 +1324,7 @@
         },
         "additionalProperties": false
       },
-      "GenerateQuizRequestDTO": {
-        "type": "object",
-        "properties": {
-          "mcqCount": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "tfCount": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GenerateQuizResponseDTO": {
-        "type": "object",
-        "properties": {
-          "quizID": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "quizTitle": {
-            "type": "string",
-            "nullable": true
-          },
-          "questions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/QuizQuestion"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "GenerateQuizResponseDTOApiResponse": {
-        "type": "object",
-        "properties": {
-          "success": {
-            "type": "boolean"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "timestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "data": {
-            "$ref": "#/components/schemas/GenerateQuizResponseDTO"
-          },
-          "error": {
-            "$ref": "#/components/schemas/ApiError"
-          }
-        },
-        "additionalProperties": false
-      },
-      "MCQChoice": {
+      "MCQChoices": {
         "type": "object",
         "properties": {
           "choiceID": {
@@ -1461,6 +1369,58 @@
         },
         "additionalProperties": { }
       },
+      "Quiz": {
+        "type": "object",
+        "properties": {
+          "quizID": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "totalMarks": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuizQuestion"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "QuizApiResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "$ref": "#/components/schemas/Quiz"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ApiError"
+          }
+        },
+        "additionalProperties": false
+      },
       "QuizDTO": {
         "type": "object",
         "properties": {
@@ -1497,7 +1457,7 @@
           "choices": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/MCQChoice"
+              "$ref": "#/components/schemas/MCQChoices"
             },
             "nullable": true
           }
@@ -1622,7 +1582,6 @@
         "properties": {
           "email": {
             "type": "string",
-            "format": "email",
             "nullable": true
           },
           "password": {

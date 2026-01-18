@@ -1,0 +1,198 @@
+{
+  "document": "Greedy algorithms make locally optimal choices to find globally optimal solutions for certain problems such as change-making with normal coin denominations, minimum spanning trees using Prim's and Kruskal's methods, shortest paths via Dijkstra’s algorithm, and provide approximations for knapsack or traveling salesman problems.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best describes a greedy choice in an algorithm?",
+        "options": [
+          "Choosing a globally optimal step at each iteration",
+          "Choosing the most expensive element first",
+          "Making a locally optimal decision that may lead to a global optimum",
+          "Randomly picking any available option"
+        ],
+        "answer": "Making a locally optimal decision that may lead to a global optimum"
+      },
+      {
+        "question": "In the change-making problem, what condition guarantees an optimal solution for all amounts?",
+        "options": [
+          "Any arbitrary set of coin denominations",
+          "Normal coin denominations where each is divisible by the next lower one",
+          "Using only two coin types",
+          "All coin values are prime numbers"
+        ],
+        "answer": "Normal coin denominations where each is divisible by the next lower one"
+      },
+      {
+        "question": "What greedy strategy is used for the fractional knapsack problem?",
+        "options": [
+          "Add items with smallest weight first",
+          "Add items with highest profit-to-weight ratio first",
+          "Add items with largest profit first",
+          "Add items with lowest profit-to-weight ratio first"
+        ],
+        "answer": "Add items with highest profit-to-weight ratio first"
+      },
+      {
+        "question": "In the 0/1 knapsack problem, what is the decision version?",
+        "options": [
+          "Determine if total weight can be exactly M",
+          "Determine if there exists a subset of items with profit at least K",
+          "Determine if all items fit within capacity M",
+          "Determine if profit equals K"
+        ],
+        "answer": "Determine if there exists a subset of items with profit at least K"
+      },
+      {
+        "question": "Which algorithm constructs an MST by adding the nearest vertex not yet in the tree?",
+        "options": [
+          "Prim's algorithm",
+          "Kruskal's algorithm",
+          "Dijkstra's algorithm",
+          "Bellman-Ford algorithm"
+        ],
+        "answer": "Prim's algorithm"
+      },
+      {
+        "question": "During Kruskal's algorithm, when should an edge be skipped?",
+        "options": [
+          "When it connects two vertices in the same component",
+          "When its weight is zero",
+          "When both endpoints are already visited",
+          "When it has the largest weight"
+        ],
+        "answer": "When it connects two vertices in the same component"
+      },
+      {
+        "question": "What data structure is commonly used for priority queues in Dijkstra's algorithm?",
+        "options": [
+          "Adjacency list",
+          "Stack",
+          "Min-heap or binary heap",
+          "Hash table"
+        ],
+        "answer": "Min-heap or binary heap"
+      },
+      {
+        "question": "Which of the following is an example where a greedy nearest neighbor gives a suboptimal TSP solution?",
+        "options": [
+          "All cities on a line spaced evenly",
+          "Cities arranged in a circle",
+          "A set of cities in a random layout causing local minima",
+          "The classic 4-city rectangle"
+        ],
+        "answer": "A set of cities in a random layout causing local minima"
+      },
+      {
+        "question": "In the change-making example with coins {25c,10c,5c,1c} and amount 48c, how many coins does the greedy algorithm use?",
+        "options": [
+          "4",
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "6"
+      },
+      {
+        "question": "In the same example, what is the optimal number of coins needed for 48c?",
+        "options": [
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
+        "answer": "5"
+      },
+      {
+        "question": "During Dijkstra's algorithm, which vertex is selected next if multiple have equal minimal tentative distance?",
+        "options": [
+          "The one with the smallest index number",
+          "Any of those vertices arbitrarily",
+          "Always the first encountered in adjacency list",
+          "Only the one with highest remaining degree"
+        ],
+        "answer": "Any of those vertices arbitrarily"
+      },
+      {
+        "question": "What is the time complexity of Prim's algorithm using an adjacency list and a binary heap?",
+        "options": [
+          "O(|V|^2)",
+          "O(|E| + |V| log |V|)",
+          "O(|E| log |V|)",
+          "O(|V| log |V|)"
+        ],
+        "answer": "O(|E| log |V|)"
+      },
+      {
+        "question": "What is the time complexity of Kruskal's algorithm after sorting edges?",
+        "options": [
+          "O(|E|)",
+          "O(|E| log |E|)",
+          "O(|V|^2)",
+          "O(|E| + |V|)"
+        ],
+        "answer": "O(|E| log |E|)"
+      },
+      {
+        "question": "In Dijkstra's algorithm, what does the label d[v] represent?",
+        "options": [
+          "Number of edges in shortest path",
+          "Length of shortest path from source to v",
+          "Total number of visited nodes",
+          "Weight of the edge leading to v"
+        ],
+        "answer": "Length of shortest path from source to v"
+      },
+      {
+        "question": "Which greedy algorithm is known for generating optimal Huffman codes?",
+        "options": [
+          "Prim's algorithm",
+          "Kruskal's algorithm",
+          "Dijkstra’s algorithm",
+          "The Huffman coding algorithm itself"
+        ],
+        "answer": "The Huffman coding algorithm itself"
+      },
+      {
+        "question": "What is the main disadvantage of greedy algorithms?",
+        "options": [
+          "They always give a correct solution",
+          "They run faster than other methods",
+          "They may not produce optimal solutions for all instances",
+          "All of the above"
+        ],
+        "answer": "They may not produce optimal solutions for all instances"
+      },
+      {
+        "question": "In the change-making problem, if coin denominations are {1,3,6} and amount is 10, what does the greedy algorithm use?",
+        "options": [
+          "Using 6+3+1",
+          "Using 6+2×5",
+          "Using 4×2+3",
+          "Using 5×2"
+        ],
+        "answer": "Using 6+3+1"
+      },
+      {
+        "question": "Which step of Dijkstra's algorithm updates the distance to a neighbor?",
+        "options": [
+          "Marking all vertex as unvisited",
+          "The assignment step where new distance is compared and possibly updated",
+          "Setting initial distances to infinity",
+          "Selecting current node"
+        ],
+        "answer": "The assignment step where new distance is compared and possibly updated"
+      },
+      {
+        "question": "What kind of graph does Dijkstra's algorithm require?",
+        "options": [
+          "Undirected graphs only",
+          "Directed graphs with non‑negative weights",
+          "Weighted undirected graphs only",
+          "Graphs with negative edge weights allowed"
+        ],
+        "answer": "Directed graphs with non‑negative weights"
+      }
+    ]
+  }
+}

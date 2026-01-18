@@ -1,0 +1,200 @@
+{
+  "document": "Chapter4-MediumAccessControlSubLayer_part1.ppt",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "In 1-persistent CSMA, a station transmits data as soon as it senses that the channel is idle.",
+        "answer": "true"
+      },
+      {
+        "question": "Non-persistent CSMA waits for a fixed, constant time interval before attempting to transmit again if the channel is busy.",
+        "answer": "false"
+      },
+      {
+        "question": "In p-persistent CSMA, a station sends data with a probability 'p' once the channel is sensed to be idle.",
+        "answer": "true"
+      },
+      {
+        "question": "CSMA/CD stands for Carrier Sense Multiple Access with Collision Detection.",
+        "answer": "true"
+      },
+      {
+        "question": "Persistent and non-persistent CSMA protocols generally provide lower performance than the original ALOHA protocol.",
+        "answer": "false"
+      },
+      {
+        "question": "Stations utilizing the CSMA/CD protocol abort their current transmissions as soon as a collision is detected.",
+        "answer": "true"
+      },
+      {
+        "question": "The CSMA/CD protocol is primarily used to detect and handle collisions in shared-media LANs.",
+        "answer": "true"
+      },
+      {
+        "question": "In a CSMA/CD environment, stations should continue transmitting their remaining frame data even after a collision has been detected.",
+        "answer": "false"
+      },
+      {
+        "question": "CSMA/CD is a widely implemented protocol within the Medium Access Control (MAC) sublayer of local area networks.",
+        "answer": "true"
+      },
+      {
+        "question": "Traditional Ethernet LANs are not based on the CSMA/CD medium access protocol.",
+        "answer": "false"
+      },
+      {
+        "question": "Quickly terminating damaged frames during a collision helps save time and bandwidth in CSMA/CD networks.",
+        "answer": "true"
+      },
+      {
+        "question": "In the basic bit-map protocol, senders indicate their intent to transmit by setting a bit in a contention slot.",
+        "answer": "true"
+      },
+      {
+        "question": "In the Token Ring protocol, the possession of the token determines the sending order of the stations.",
+        "answer": "true"
+      },
+      {
+        "question": "In the Token Ring protocol, a station that receives the token must pass it immediately without sending any pending data.",
+        "answer": "false"
+      },
+      {
+        "question": "The 'Token' mechanism for medium access can only be implemented on a physical ring topology.",
+        "answer": "false"
+      },
+      {
+        "question": "The proliferation of laptop computers and mobile devices significantly increased the demand for wireless local area networking standards.",
+        "answer": "true"
+      },
+      {
+        "question": "The IEEE 802 committee is the primary body responsible for standardizing both wired and wireless LAN protocols.",
+        "answer": "true"
+      },
+      {
+        "question": "Personal Digital Assistants (PDAs) and cellular phones are typical examples of mobile nodes in a wireless network.",
+        "answer": "true"
+      },
+      {
+        "question": "Bandwidth efficiency in a MAC protocol is defined as the ratio of bandwidth used for data transmission to the total available bandwidth.",
+        "answer": "true"
+      },
+      {
+        "question": "A well-designed MAC protocol for ad-hoc networks should aim to minimize bandwidth efficiency.",
+        "answer": "false"
+      },
+      {
+        "question": "Quality of Service (QoS) support is a fundamental requirement for time-critical network applications.",
+        "answer": "true"
+      },
+      {
+        "question": "The design of MAC protocols for ad-hoc networks does not need to consider Quality of Service (QoS).",
+        "answer": "false"
+      },
+      {
+        "question": "Synchronization among nodes in an ad-hoc network can be established through the exchange of control packets.",
+        "answer": "true"
+      },
+      {
+        "question": "The term 'hidden nodes' in ad-hoc networks refers to stations that are always detectable via standard carrier sensing.",
+        "answer": "false"
+      },
+      {
+        "question": "Fading is a wireless phenomenon where the strength of a radio signal diminishes rapidly as the distance from the transmitter increases.",
+        "answer": "true"
+      },
+      {
+        "question": "Exposed nodes in ad-hoc networks are stations that are prevented from transmitting because carrier sensing detects an ongoing transmission from another station.",
+        "answer": "true"
+      },
+      {
+        "question": "The hidden terminal problem occurs when two stations are unable to detect each other's signals but interfere at a common receiver.",
+        "answer": "true"
+      },
+      {
+        "question": "Collision masking occurs in wireless environments when a local signal is strong enough to drown out a remote transmission.",
+        "answer": "true"
+      },
+      {
+        "question": "Wireless LANs typically rely on a centralized coordination system for all medium access.",
+        "answer": "false"
+      },
+      {
+        "question": "Nodes in most wireless network environments are assumed to be stationary at all times.",
+        "answer": "false"
+      },
+      {
+        "question": "Hidden terminals are transmitting nodes that are out of range of each other and cannot sense a conflict.",
+        "answer": "true"
+      },
+      {
+        "question": "Exposed terminals are senders who can sense each other's signals but could otherwise transmit safely to different, non-interfering receivers.",
+        "answer": "true"
+      },
+      {
+        "question": "Increasing concurrency—allowing multiple safe transmissions to occur at once—generally improves network performance.",
+        "answer": "true"
+      },
+      {
+        "question": "The IEEE 802.11 MAC Sublayer Protocol includes specific mechanisms to address the hidden and exposed terminal problems.",
+        "answer": "true"
+      },
+      {
+        "question": "Exposed terminals are defined by the fact that their transmissions always collide at their respective intended receivers.",
+        "answer": "false"
+      },
+      {
+        "question": "Carrier Sense Multiple Access with Collision Avoidance (CSMA/CA) is the standard method for channel access in wireless networks.",
+        "answer": "true"
+      },
+      {
+        "question": "Collision avoidance in wireless networks is primarily achieved through a binary exponential back-off mechanism.",
+        "answer": "true"
+      },
+      {
+        "question": "Acknowledgement (ACK) packets are used in wireless networks to confirm the successful receipt of a data frame.",
+        "answer": "true"
+      },
+      {
+        "question": "The Point Coordination Function (PCF) is a contention-based access method used by all 802.11 stations.",
+        "answer": "false"
+      },
+      {
+        "question": "The Point Coordination Function (PCF) provides a contention-free access method for wireless stations.",
+        "answer": "true"
+      },
+      {
+        "question": "In PCF mode, the wireless Access Point polls stations according to a predefined list to grant them access to the medium.",
+        "answer": "true"
+      },
+      {
+        "question": "The PCF mode in 802.11 is specifically designed to support delay-sensitive applications like voice and video.",
+        "answer": "true"
+      },
+      {
+        "question": "The MACA (Multiple Access with Collision Avoidance) protocol uses RTS and CTS frames to solve the hidden and exposed terminal problems.",
+        "answer": "true"
+      },
+      {
+        "question": "The Distributed Inter-Frame Space (DIFS) is mathematically calculated as the SIFS plus twice the slot time.",
+        "answer": "true"
+      },
+      {
+        "question": "The Short Inter-Frame Space (SIFS) has the highest priority among all inter-frame spaces in 802.11.",
+        "answer": "true"
+      },
+      {
+        "question": "The DIFS interval is used to ensure the highest priority service access to the wireless medium.",
+        "answer": "false"
+      },
+      {
+        "question": "The PCF Inter-Frame Space (PIFS) has a higher priority (shorter duration) than the SIFS.",
+        "answer": "false"
+      },
+      {
+        "question": "The DIFS interval is primarily used for standard asynchronous data services in a wireless LAN.",
+        "answer": "true"
+      }
+    ]
+  }
+}

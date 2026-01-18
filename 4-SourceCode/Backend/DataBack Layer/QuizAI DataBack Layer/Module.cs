@@ -48,6 +48,7 @@ namespace QuizAIDataBack
         public string Name { get; set; }
         [EmailAddress]
         public string Email { get; set; }
+
         public string Password { get; set; }
 
         public CreateNewUserRequestDTO() { }
@@ -61,7 +62,6 @@ namespace QuizAIDataBack
 
     public class UserLoginRequestDTO
     {
-        [EmailAddress]
         public string Email { get; set; }
         public string Password { get; set; }
 
@@ -150,41 +150,6 @@ namespace QuizAIDataBack
     }
 
 
-
-    public class ContentDTO
-    {
-        public ContentDTO(Guid userID, int fileTypeID, string filePath, string? extractedText = null)
-        {
-            UserID = userID;
-            FileTypeID = fileTypeID;
-            FilePath = filePath;
-            ExtractedText = extractedText;
-            UploadedTime = DateTime.UtcNow;
-            ContentID = Guid.NewGuid();
-        }
-        public Guid ContentID { get; set; }
-        public Guid UserID { get; set; }
-        public int FileTypeID { get; set; }
-        public string FilePath { get; set; }
-        public string? ExtractedText { get; set; }
-        public DateTime UploadedTime { get; set; }
-    }
-
-    public class contentResponseDTO 
-    {
-        public Guid ContentID { get; set; }
-        public string path { get; set; }
-    }
-
-
-
-
-
-
-
-
-
-
     public class QuizDTO
     {
         public Guid QuizID { get; set; }
@@ -221,44 +186,19 @@ namespace QuizAIDataBack
         public string Type { get; set; }
         public string QuestionContent { get; set; }
         public string SuggestedAnswer { get; set; }
-        public List<MCQChoice> choices { get; set; } = new List<MCQChoice>();
+        public List<MCQChoices> choices { get; set; } = new List<MCQChoices>();
     }
 
-    public class MCQChoice
+    public class MCQChoices
     {
         public Guid ChoiceID { get; set; }
         public string Choice { get; set; }
         public Guid Question_ID { get; set; }
     }
 
-    public class QuestionResponse
-    {
-        public string filename { get; set; }
-        public MCQQuestions mcq_questions { get; set; }
-        public TFQuestions true_false_questions { get; set; }
-        public int total_questions { get; set; }
-    }
 
-    public class MCQQuestions
-    {
-        public string file_name { get; set; }
-        public string question_type { get; } = "Multiple Choice";
-        public QuestionItem[] questions { get; set; }
-    }
 
-    public class TFQuestions
-    {
-        public string file_name { get; set; }
-        public string question_type { get; } = "True/False";
-        public TFQuestionItem[] questions { get; set; }
-    }
 
-    public class QuestionItem
-    {
-        public string question { get; set; }
-        public string[] options { get; set; }
-        public string answer { get; set; }
-    }
 
     public class TFQuestionItem
     {
@@ -335,26 +275,7 @@ namespace QuizAIDataBack
                 Console.WriteLine($"DB Connection Failed: {ex.Message}");
                 return false;
             }
-        }
 
-        public static int SelectFileType(string extension)
-        {
-            Dictionary<string, int> files = new Dictionary<string, int>()
-            {
-                {".mp3", 1},
-                {".wav", 2},
-                {".mp4", 3},
-                {".mov", 4},
-                {".mkv", 5},
-                {".avi", 6},
-                {".pdf", 7},
-                {".docx", 8},
-                {".doc", 9},
-                {".pptx", 10},
-                {".ppt", 11},
-                {".txt", 12}
-            };
-            return files.ContainsKey(extension.ToLower()) ? files[extension.ToLower()] : 0;
         }
     }
 

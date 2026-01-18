@@ -1,0 +1,261 @@
+{
+  "document": "Ch3_Fredom of Speech-new.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "The First Amendment provides protection for freedom of speech.",
+        "answer": "true"
+      },
+      {
+        "question": "Anonymity means revealing one's identity online.",
+        "answer": "false"
+      },
+      {
+        "question": "Net Neutrality refers to regulations that ensure fair access to the internet.",
+        "answer": "true"
+      },
+      {
+        "question": "Posting sensitive material online is always allowed without consequences.",
+        "answer": "false"
+      },
+      {
+        "question": "The Global Net is free from censorship and political influence.",
+        "answer": "false"
+      },
+      {
+        "question": "Print media includes newspapers, magazines, and books.",
+        "answer": "true"
+      },
+      {
+        "question": "Broadcast media includes telephones and postal systems.",
+        "answer": "false"
+      },
+      {
+        "question": "Common carriers include telephones and the postal system.",
+        "answer": "true"
+      },
+      {
+        "question": "The Telecommunication Act of 1996 removed restrictions on services that telephone companies can provide.",
+        "answer": "true"
+      },
+      {
+        "question": "The Telecommunication Act of 1996 introduced artificial legal divisions of service areas.",
+        "answer": "false"
+      },
+      {
+        "question": "No provider or user of interactive computer services shall be treated as a publisher of any information provided by another information-content provider.",
+        "answer": "true"
+      },
+      {
+        "question": "The Communications Decency Act of 1996 was the first major Internet censorship law.",
+        "answer": "true"
+      },
+      {
+        "question": "All parts of the Communications Decency Act of 1996 were ruled constitutional.",
+        "answer": "false"
+      },
+      {
+        "question": "Is the restriction on free speech applied to both government and private businesses equally?",
+        "answer": "false"
+      },
+      {
+        "question": "Anonymous speech is protected.",
+        "answer": "true"
+      },
+      {
+        "question": "Some restrictions are allowed on advertising.",
+        "answer": "true"
+      },
+      {
+        "question": "Libel and direct, specific threats are protected.",
+        "answer": "false"
+      },
+      {
+        "question": "Inciting violence is legal.",
+        "answer": "false"
+      },
+      {
+        "question": "Most efforts to censor the Internet focus on pornographic and other sexually explicit material.",
+        "answer": "true"
+      },
+      {
+        "question": "Obscenity depicts acts in a manner that appeals to prurient interest as judged by a reasonable person using community standards.",
+        "answer": "true"
+      },
+      {
+        "question": "Obscenity lacks literary, artistic, or social value.",
+        "answer": "true"
+      },
+      {
+        "question": "Advocating illegal acts is usually legal.",
+        "answer": "true"
+      },
+      {
+        "question": "Laws must chill expression of legal speech.",
+        "answer": "false"
+      },
+      {
+        "question": "Adults should be reduced to reading only what is fit for children.",
+        "answer": "false"
+      },
+
+      {
+        "question": "The Child Online Protection Act of 1998 (COPA) was more limited than the Communications Decency Act (CDA).",
+        "answer": "true"
+      },
+      {
+        "question": "COPA made it a federal crime for commercial websites to make material harmful to minors available, as judged by community standards.",
+        "answer": "true"
+      },
+      {
+        "question": "The Children's Internet Protection Act of 2000 (CIPA) requires schools and libraries to install filtering software.",
+        "answer": "true"
+      },
+      {
+        "question": "A California law banning the sale or rental of violent video games to minors was upheld by the Supreme Court of California in 2011.",
+        "answer": "false"
+      },
+      {
+        "question": "A law in California banned the sale or rental of violent video games to minors.",
+        "answer": "true"
+      },
+      {
+        "question": "In 2011, the Supreme Court ruled that the California law violated the Second Amendment.",
+        "answer": "false"
+      },
+      {
+        "question": "Filters are an alternative to censorship that block sites with specific words, phrases, or images.",
+        "answer": "true"
+      },
+      {
+        "question": "Parental control filters are updated frequently but may still screen out too much or too little.",
+        "answer": "true"
+      },
+      {
+        "question": "It is possible to eliminate all unwanted content using filters.",
+        "answer": "false"
+      },
+      {
+        "question": "Commercial services, online communities, and social networking sites develop policies to protect members.",
+        "answer": "true"
+      },
+      {
+        "question": "The video game industry developed a rating system that provides an indication for parents about the amount of profanity and violence in a game.",
+        "answer": "true"
+      },
+      {
+        "question": "Congress extended the law against child pornography.",
+        "answer": "true"
+      },
+      {
+        "question": "Did the law include virtual child pornography?",
+        "answer": "true"
+      },
+      {
+        "question": "Did the Court reject the later law providing harsh penalties for computer-generated and cartoon-type images?",
+        "answer": "false"
+      },
+      {
+        "question": "Is spam mostly commercial advertisement?",
+        "answer": "true"
+      },
+      {
+        "question": "Does spam violate free speech issues?",
+        "answer": "false"
+      },
+      {
+        "question": "Spam filters violate free speech.",
+        "answer": "false"
+      },
+      {
+        "question": "Anti-spam laws target commercial spam.",
+        "answer": "true"
+      },
+      {
+        "question": "Anti-spam laws have been criticized for banning all spam.",
+        "answer": "false"
+      },
+      {
+        "question": "Spam filters are designed to control the assault of non-solicited pornography and marketing.",
+        "answer": "true"
+      },
+      {
+        "question": "WikiLeaks is an example of a website that leaks sensitive material.",
+        "answer": "true"
+      },
+      {
+        "question": "Climategate is unrelated to leaks of sensitive information.",
+        "answer": "false"
+      },
+      {
+        "question": "Releasing a large number of documents can be potentially dangerous.",
+        "answer": "true"
+      },
+      {
+        "question": "Web site operators have no responsibilities regarding leaks.",
+        "answer": "false"
+      },
+      {
+        "question": "Anonymity can be used to protect criminal and antisocial activities.",
+        "answer": "true"
+      },
+      {
+        "question": "Anonymity on the Internet protects criminal and anti-social activities.",
+        "answer": "true"
+      },
+      {
+        "question": "Anonymity aids in fraud, harassment, extortion, distribution of child pornography, theft, and copyright infringement.",
+        "answer": "true"
+      },
+      {
+        "question": "Anonymity masks illegal surveillance by government agencies.",
+        "answer": "true"
+      },
+      {
+        "question": "Anonymity is never appropriate on the Internet.",
+        "answer": "false"
+      },
+      {
+        "question": "Should laws forbid anonymity on the Internet?",
+        "answer": "true"
+      },
+      {
+        "question": "Do some countries block specific sites and content at the border?",
+        "answer": "true"
+      },
+      {
+        "question": "Is anonymity always allowed on the Internet?",
+        "answer": "false"
+      },
+      {
+        "question": "Do all countries ban certain types of access to the Internet?",
+        "answer": "false"
+      },
+      {
+        "question": "Are attempts to limit the flow of information on the Internet new?",
+        "answer": "false"
+      },
+      {
+        "question": "The global nature of the Net allows restrictions in one country to be avoided by using networks in other, less restrictive countries.",
+        "answer": "true"
+      },
+      {
+        "question": "The global nature of the Net makes it harder for one nation to execute restrictive standards on others.",
+        "answer": "false"
+      },
+      {
+        "question": "The global nature of the Net facilitates one nation imposing restrictive standards on others.",
+        "answer": "true"
+      },
+      {
+        "question": "The global net has an impact on free speech.",
+        "answer": "true"
+      },
+      {
+        "question": "Free speech in 'free countries' does not impact more restrictive countries.",
+        "answer": "false"
+      }
+    ]
+  }
+}

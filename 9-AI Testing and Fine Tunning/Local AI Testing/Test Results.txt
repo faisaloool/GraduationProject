@@ -2,45 +2,45 @@
 
 Local AI Model Identifier and Quantization Level: nemotron-3-nano 30B Q_4_K_M
 
-average reasoning speed for 15 T or F Prompt: 31.89 seconds
+reasoning speed for 15 T or F Prompt: 31.89 seconds
 
-average reasoning speed for 15 MCQ Prompt: 59.35 seconds
+reasoning speed for 15 MCQ Prompt: 59.35 seconds
 
-average LM Studio API Response speed: 12 seconds
+LM Studio API Response speed: 12 seconds
 
-Format Correctness: ≈ 90%
+Format Correctness: 2/2
 ##############################################################
 
 Local AI Model Identifier and Quantization Level: gpt-oss-20b Q_4_K_S
 
-average reasoning speed for 15 T or F Prompt: 34.55 seconds
+reasoning speed for 15 T or F Prompt: 34.55 seconds
 
-average reasoning speed for 15 MCQ Prompt: 26.31 seconds
+reasoning speed for 15 MCQ Prompt: 26.31 seconds
 
-average LM Studio API Response speed: 12 seconds
+LM Studio API Response speed: 12 seconds
 
-Format Correctness: ≈ 100%
+Format Correctness: 2/2
 ##############################################################
 
 Local AI Model Identifier and Quantization Level: deepseek-r1-0528-qwen3-8b Q_4_K_M
 
-average reasoning speed for 15 T or F Prompt: 23.76 seconds
+reasoning speed for 15 T or F Prompt: 23.76 seconds
 
-average reasoning speed for 15 MCQ Prompt: 1 minutes and 48 seconds
+reasoning speed for 15 MCQ Prompt: 1 minutes and 48 seconds
 
-average LM Studio API Response speed: 10 seconds
+LM Studio API Response speed: 10 seconds
 
-Format Correctness: ≈ 50%
+Format Correctness: 1/2
 ##############################################################
 Local AI Model Identifier and Quantization Level: ministral-3-14b-reasoning Q_4_K_M
 
-average reasoning speed for 15 T or F Prompt: 2 minutes and 31 seconds
+reasoning speed for 15 T or F Prompt: 2 minutes and 31 seconds
 
-average reasoning speed for 15 MCQ Prompt: over 5 minutes
+reasoning speed for 15 MCQ Prompt: over 5 minutes
 
-average LM Studio API Response speed: 8 seconds
+LM Studio API Response speed: 8 seconds
 
-Format Correctness: ≈ 20%
+Format Correctness: /2
 ##############################################################
 Improtant info:
 

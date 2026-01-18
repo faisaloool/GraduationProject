@@ -1,0 +1,828 @@
+{
+  "document": "Lect1_Combinational_Logic_revison_1.ppt",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What defines the outputs of a combinational circuit at any given time?",
+        "options": [
+          "Previous inputs",
+          "Present combination of inputs",
+          "Future inputs",
+          "Clock signal"
+        ],
+        "answer": "Present combination of inputs"
+      },
+      {
+        "question": "Which of the following is NOT a component discussed in combinational logic?",
+        "options": [
+          "Adder-Subtractor",
+          "Multiplier",
+          "Flip-Flop",
+          "Multiplexers"
+        ],
+        "answer": "Flip-Flop"
+      },
+      {
+        "question": "What is the primary difference between combinational and sequential circuits?",
+        "options": [
+          "Combinational circuits use memory elements",
+          "Sequential circuits do not use memory elements",
+          "Combinational circuits' outputs depend only on the current inputs",
+          "Sequential circuits' outputs depend only on the current inputs"
+        ],
+        "answer": "Combinational circuits' outputs depend only on the current inputs"
+      },
+      {
+        "question": "Which operation can be specified logically by a set of Boolean functions?",
+        "options": [
+          "Sequential circuit operation",
+          "Combinational circuit operation",
+          "Analog circuit operation",
+          "None of the above"
+        ],
+        "answer": "Combinational circuit operation"
+      },
+      {
+        "question": "Which of the following is a type of combinational logic circuit?",
+        "options": [
+          "Decoder",
+          "Latch",
+          "Register",
+          "Counter"
+        ],
+        "answer": "Decoder"
+      },
+      {
+        "question": "What are the components of a combinational circuit?",
+        "options": [
+          "Input variables, logic gates, output variables",
+          "Input variables, storage elements, output variables",
+          "Logic gates, storage elements, output variables",
+          "Input variables, logic gates, storage elements"
+        ],
+        "answer": "Input variables, logic gates, output variables"
+      },
+      {
+        "question": "What determines the output value in a circuit based on timing sequences?",
+        "options": [
+          "Only the current input values",
+          "Only the previous input values",
+          "Both the current and previous input values",
+          "Neither the current nor the previous input values"
+        ],
+        "answer": "Both the current and previous input values"
+      },
+      {
+        "question": "What type of signals do input and output variables in a combinational circuit represent?",
+        "options": [
+          "Analog signals",
+          "Binary signals",
+          "Digital signals",
+          "Continuous signals"
+        ],
+        "answer": "Binary signals"
+      },
+      {
+        "question": "What is the primary function of logic gates in a combinational circuit?",
+        "options": [
+          "Store input values",
+          "Generate signals to the outputs",
+          "Modify previous input values",
+          "Control timing sequences"
+        ],
+        "answer": "Generate signals to the outputs"
+      },
+      {
+        "question": "What does 't' represent in the context of combinational circuits?",
+        "options": [
+          "Logic-1 and Logic-0",
+          "Input variables",
+          "Output variables",
+          "Integrated circuits"
+        ],
+        "answer": "Logic-1 and Logic-0"
+      },
+      {
+        "question": "For n input variables, how many possible binary input combinations are there?",
+        "options": [
+          "n",
+          "2n",
+          "n^2",
+          "2^n"
+        ],
+        "answer": "2^n"
+      },
+      {
+        "question": "How many output values are there for each combination of inputs in a combinational circuit?",
+        "options": [
+          "One",
+          "Two",
+          "Depends on the number of inputs",
+          "None"
+        ],
+        "answer": "One"
+      },
+      {
+        "question": "Which of the following can specify a combinational circuit?",
+        "options": [
+          "A single truth table",
+          "m Boolean functions, one for each output variable",
+          "Both a single truth table and m Boolean functions",
+          "Neither a truth table nor Boolean functions"
+        ],
+        "answer": "Both a single truth table and m Boolean functions"
+      },
+      {
+        "question": "What are combinational circuits often used in?",
+        "options": [
+          "Analog systems",
+          "Digital systems",
+          "Mechanical systems",
+          "Biological systems"
+        ],
+        "answer": "Digital systems"
+      },
+      {
+        "question": "Which of the following is NOT a standard combinational circuit?",
+        "options": [
+          "Adders",
+          "Subtractors",
+          "Flip-flops",
+          "Multiplexers"
+        ],
+        "answer": "Flip-flops"
+      },
+      {
+        "question": "What is the first step in analyzing a combinational circuit?",
+        "options": [
+          "Determine the Boolean function",
+          "Ensure the circuit is combinational and not sequential",
+          "Identify feedback paths",
+          "Check for memory elements"
+        ],
+        "answer": "Ensure the circuit is combinational and not sequential"
+      },
+      {
+        "question": "Which feature distinguishes combinational circuits from sequential circuits?",
+        "options": [
+          "Presence of memory elements",
+          "Use of feedback paths",
+          "No memory elements and no feedback paths",
+          "Ability to perform arithmetic operations"
+        ],
+        "answer": "No memory elements and no feedback paths"
+      },
+      {
+        "question": "Which of the following is a standard combinational circuit used for arithmetic operations?",
+        "options": [
+          "Decoders",
+          "Encoders",
+          "Adders",
+          "Multiplexers"
+        ],
+        "answer": "Adders"
+      },
+      {
+        "question": "What is the purpose of a decoder in combinational circuits?",
+        "options": [
+          "To perform arithmetic addition",
+          "To convert binary information into a set of output signals",
+          "To select one of many input signals",
+          "To compare two binary numbers"
+        ],
+        "answer": "To convert binary information into a set of output signals"
+      },
+      {
+        "question": "What is the first step in obtaining the output Boolean functions from a circuit diagram?",
+        "options": [
+          "Label all gate outputs that are a function of input variables with arbitrary symbols",
+          "Determine the Boolean functions for each gate output",
+          "Label the gates that are a function of input variables and previously labeled gates",
+          "Find the Boolean functions for the outputs of the circuit"
+        ],
+        "answer": "Label all gate outputs that are a function of input variables with arbitrary symbols"
+      },
+      {
+        "question": "What should you do after labeling gate outputs with arbitrary symbols?",
+        "options": [
+          "Determine the Boolean functions for each gate output",
+          "Label the gates that are a function of input variables and previously labeled gates",
+          "Find the Boolean functions for the outputs of the circuit",
+          "Repeat the process until the outputs of the circuit are obtained"
+        ],
+        "answer": "Determine the Boolean functions for each gate output"
+      },
+      {
+        "question": "Which gates should be labeled in the second step of obtaining Boolean functions?",
+        "options": [
+          "Gates that are a function of input variables only",
+          "Gates that are a function of input variables and previously labeled gates",
+          "Only the final output gates",
+          "All gates in the circuit"
+        ],
+        "answer": "Gates that are a function of input variables and previously labeled gates"
+      },
+      {
+        "question": "What is the final step in obtaining Boolean functions from a circuit diagram?",
+        "options": [
+          "Label all gate outputs",
+          "Determine the Boolean functions for each gate output",
+          "Repeat the process until the outputs of the circuit are obtained",
+          "Find the Boolean functions for the outputs of the circuit"
+        ],
+        "answer": "Repeat the process until the outputs of the circuit are obtained"
+      },
+      {
+        "question": "What is the purpose of labeling gate outputs with arbitrary symbols?",
+        "options": [
+          "To simplify the circuit diagram",
+          "To determine the Boolean functions for each gate output",
+          "To identify the inputs of the circuit",
+          "To reduce the number of gates in the circuit"
+        ],
+        "answer": "To determine the Boolean functions for each gate output"
+      },
+      {
+        "question": "What is the first step in determining a truth table from a circuit diagram?",
+        "options": [
+          "Determine the number of input variables in the circuit.",
+          "Label the outputs of selected gates with arbitrary symbols.",
+          "Obtain the truth table for the outputs of those gates that are a function of the input variables only.",
+          "Proceed to obtain the truth table for the outputs of those gates that are a function of previously defined values."
+        ],
+        "answer": "Determine the number of input variables in the circuit."
+      },
+      {
+        "question": "Which of the following is NOT a step in obtaining a truth table from a circuit diagram?",
+        "options": [
+          "Determine the number of input variables in the circuit.",
+          "Label the outputs of selected gates with arbitrary symbols.",
+          "Calculate the voltage across each component.",
+          "Proceed to obtain the truth table for the outputs of those gates that are a function of previously defined values."
+        ],
+        "answer": "Calculate the voltage across each component."
+      },
+      {
+        "question": "What is the purpose of labeling the outputs of selected gates with arbitrary symbols when determining a truth table?",
+        "options": [
+          "To simplify the circuit diagram.",
+          "To keep track of intermediate outputs in the truth table.",
+          "To reduce the number of input variables.",
+          "To eliminate the need for a truth table."
+        ],
+        "answer": "To keep track of intermediate outputs in the truth table."
+      },
+      {
+        "question": "What is the first step in the design procedure of combinational circuits?",
+        "options": [
+          "Derive the truth table",
+          "Determine the required number of inputs and outputs",
+          "Obtain the simplified Boolean functions",
+          "Draw the logic diagram"
+        ],
+        "answer": "Determine the required number of inputs and outputs"
+      },
+      {
+        "question": "What does the truth table define in combinational circuit design?",
+        "options": [
+          "The logic diagram",
+          "The Boolean functions",
+          "The relationship between inputs and outputs",
+          "The specification of the problem"
+        ],
+        "answer": "The relationship between inputs and outputs"
+      },
+      {
+        "question": "What is the final step in the design procedure of combinational circuits?",
+        "options": [
+          "Derive the truth table",
+          "Determine the required number of inputs and outputs",
+          "Obtain the simplified Boolean functions",
+          "Draw the logic diagram"
+        ],
+        "answer": "Draw the logic diagram"
+      },
+      {
+        "question": "What is obtained as a function of the input variables in combinational circuit design?",
+        "options": [
+          "The truth table",
+          "The logic diagram",
+          "The Boolean functions",
+          "The specification"
+        ],
+        "answer": "The Boolean functions"
+      },
+      {
+        "question": "Which of the following methods can be used for simplification of output functions in logic design?",
+        "options": [
+          "Algebraic manipulation",
+          "Map method",
+          "Computer-based simplification",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What is a key consideration when simplifying logic circuits?",
+        "options": [
+          "Number of gates",
+          "Number of inputs to a gate",
+          "Propagation time through the gates",
+          "All of the above"
+        ],
+        "answer": "All of the above"
+      },
+      {
+        "question": "What type of circuit is designed to check if an input is greater than or equal to a certain value?",
+        "options": [
+          "Sequential circuit",
+          "Combinational circuit",
+          "Analog circuit",
+          "Digital circuit"
+        ],
+        "answer": "Combinational circuit"
+      },
+      {
+        "question": "What is the most significant bit in the 3-bit binary input?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "Z"
+        ],
+        "answer": "A"
+      },
+      {
+        "question": "What is the least significant bit in the 3-bit binary input?",
+        "options": [
+          "A",
+          "B",
+          "C",
+          "Z"
+        ],
+        "answer": "C"
+      },
+      {
+        "question": "What is the output of a combinational circuit with three inputs when the binary value of the inputs is less than 3?",
+        "options": [
+          "0",
+          "1",
+          "Depends on the inputs",
+          "Undefined"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "Which of the following is a basic arithmetic operation performed by digital computers?",
+        "options": [
+          "0 + 0 = 0",
+          "1 + 1 = 10",
+          "0 - 1 = -1",
+          "All of the above"
+        ],
+        "answer": "0 + 0 = 0"
+      },
+      {
+        "question": "What is the correct sum for 1 + 0 in binary arithmetic?",
+        "options": [
+          "0",
+          "1",
+          "10",
+          "11"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "Which of the following is a 3-variable K-map mentioned in the text?",
+        "options": [
+          "A, B, C",
+          "A, B, C, D",
+          "A, C, D",
+          "B, C, D"
+        ],
+        "answer": "A, B, C"
+      },
+      {
+        "question": "What is a combinational circuit that performs addition for two bits called?",
+        "options": [
+          "Full Adder",
+          "Half Adder",
+          "Binary Adder-Subtractor",
+          "Multiplier"
+        ],
+        "answer": "Half Adder"
+      },
+      {
+        "question": "How many binary inputs does a half adder require?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2"
+      },
+      {
+        "question": "What is the output 'S' of a half adder given inputs 'x' and 'y'?",
+        "options": [
+          "x'y + xy'",
+          "xy",
+          "x + y",
+          "x' + y'"
+        ],
+        "answer": "x'y + xy'"
+      },
+      {
+        "question": "What is the output 'C' of a half adder given inputs 'x' and 'y'?",
+        "options": [
+          "x'y + xy'",
+          "xy",
+          "x + y",
+          "x' + y'"
+        ],
+        "answer": "xy"
+      },
+      {
+        "question": "Which combinational circuit performs addition of three bits?",
+        "options": [
+          "Half Adder",
+          "Full Adder",
+          "Binary Adder-Subtractor",
+          "Decoder"
+        ],
+        "answer": "Full Adder"
+      },
+      {
+        "question": "How can a full adder be constructed using half adders?",
+        "options": [
+          "By combining one half adder",
+          "By combining two half adders",
+          "By combining three half adders",
+          "A full adder cannot be constructed using half adders"
+        ],
+        "answer": "By combining two half adders"
+      },
+      {
+        "question": "What operation does a binary adder-subtractor perform?",
+        "options": [
+          "Only addition",
+          "Only subtraction",
+          "Both addition and subtraction",
+          "Multiplication"
+        ],
+        "answer": "Both addition and subtraction"
+      },
+      {
+        "question": "What is the expression for S in a full adder?",
+        "options": [
+          "S = xy’ + x’y",
+          "S = x’y’z + x’yz’ + xy’z’ + xyz",
+          "S = x ⊕ y",
+          "S = xy + xz + yz"
+        ],
+        "answer": "S = x’y’z + x’yz’ + xy’z’ + xyz"
+      },
+      {
+        "question": "What is the expression for C in a full adder?",
+        "options": [
+          "C = xy’ + x’y",
+          "C = x’y’z + x’yz’ + xy’z’ + xyz",
+          "C = xy + xz + yz",
+          "C = x ⊕ y"
+        ],
+        "answer": "C = xy + xz + yz"
+      },
+      {
+        "question": "What does a full adder sum?",
+        "options": [
+          "Two bits",
+          "Three bits",
+          "Four bits",
+          "One bit"
+        ],
+        "answer": "Three bits"
+      },
+      {
+        "question": "What is the third input (z) in a full adder?",
+        "options": [
+          "The sum of two bits",
+          "The carry from the previous lower significant position",
+          "The output of the adder",
+          "The first significant bit"
+        ],
+        "answer": "The carry from the previous lower significant position"
+      },
+      {
+        "question": "What is a binary adder?",
+        "options": [
+          "A circuit that sums two binary numbers",
+          "A circuit that multiplies two binary numbers",
+          "A circuit that subtracts two binary numbers",
+          "A circuit that divides two binary numbers"
+        ],
+        "answer": "A circuit that sums two binary numbers"
+      },
+      {
+        "question": "What is the primary function of a full adder in a binary adder circuit?",
+        "options": [
+          "To add two binary digits and a carry input",
+          "To subtract two binary digits",
+          "To multiply two binary digits",
+          "To divide two binary digits"
+        ],
+        "answer": "To add two binary digits and a carry input"
+      },
+      {
+        "question": "How is subtraction of unsigned binary numbers typically performed?",
+        "options": [
+          "Using direct subtraction",
+          "Using complements",
+          "Using multiplication",
+          "Using division"
+        ],
+        "answer": "Using complements"
+      },
+      {
+        "question": "What must be the input carry (C0) when performing subtraction using a binary adder?",
+        "options": [
+          "0",
+          "1",
+          "Depends on the operands",
+          "Not applicable"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "What operation does the circuit perform when subtracting A - B using a binary adder with inverters?",
+        "options": [
+          "A plus the 1’s complement of B plus 1",
+          "A plus B",
+          "A minus B directly",
+          "A multiplied by B"
+        ],
+        "answer": "A plus the 1’s complement of B plus 1"
+      },
+      {
+        "question": "What is placed between each data input B and the corresponding input of the full adder in a binary subtractor circuit?",
+        "options": [
+          "AND gates",
+          "OR gates",
+          "Inverters",
+          "XOR gates"
+        ],
+        "answer": "Inverters"
+      },
+      {
+        "question": "What happens if A >= B in the context of binary subtraction?",
+        "options": [
+          "A - B is performed",
+          "B - A is performed",
+          "The result is always zero",
+          "An overflow occurs"
+        ],
+        "answer": "A - B is performed"
+      },
+      {
+        "question": "What is the operation performed if A < B in the context of binary subtraction?",
+        "options": [
+          "A - B is performed",
+          "2’s complement of (B - A) is performed",
+          "The result is always zero",
+          "An overflow occurs"
+        ],
+        "answer": "2’s complement of (B - A) is performed"
+      },
+      {
+        "question": "What is required to combine addition and subtraction operations into one circuit?",
+        "options": [
+          "An exclusive-OR gate with each full adder",
+          "A separate circuit for each operation",
+          "A multiplexer",
+          "A decoder"
+        ],
+        "answer": "An exclusive-OR gate with each full adder"
+      },
+      {
+        "question": "When does overflow occur in binary addition?",
+        "options": [
+          "When two numbers of n digits each are added and the sum occupies n + 1 digits",
+          "When two numbers of different digits are added",
+          "When one of the numbers is zero",
+          "When the sum is less than the individual numbers"
+        ],
+        "answer": "When two numbers of n digits each are added and the sum occupies n + 1 digits"
+      },
+      {
+        "question": "What limits the size of numbers in digital computers?",
+        "options": [
+          "The number of digits (n)",
+          "The speed of the processor",
+          "The amount of memory",
+          "The power supply"
+        ],
+        "answer": "The number of digits (n)"
+      },
+      {
+        "question": "How is an overflow detected when adding two unsigned binary numbers?",
+        "options": [
+          "From the end carry out of the least significant position",
+          "From the end carry out of the most significant position",
+          "By checking the sign bit",
+          "By comparing the numbers before addition"
+        ],
+        "answer": "From the end carry out of the most significant position"
+      },
+      {
+        "question": "What is the significance of the leftmost bit when adding two signed binary numbers?",
+        "options": [
+          "It indicates the magnitude of the number",
+          "It represents the sign of the number",
+          "It is ignored during addition",
+          "It is always set to zero"
+        ],
+        "answer": "It represents the sign of the number"
+      },
+      {
+        "question": "How are negative numbers represented in signed binary addition?",
+        "options": [
+          "In 1's complement form",
+          "In 2's complement form",
+          "In sign-magnitude form",
+          "In excess-3 form"
+        ],
+        "answer": "In 2's complement form"
+      },
+      {
+        "question": "Does the end carry indicate an overflow when adding two signed binary numbers?",
+        "options": [
+          "Yes, always",
+          "No, never",
+          "Only if both numbers are positive",
+          "Only if both numbers are negative"
+        ],
+        "answer": "No, never"
+      },
+      {
+        "question": "What is the primary function of a decoder?",
+        "options": [
+          "To convert analog signals to digital signals",
+          "To convert binary information from n input lines to a maximum of 2n unique output lines",
+          "To perform arithmetic operations",
+          "To store binary information"
+        ],
+        "answer": "To convert binary information from n input lines to a maximum of 2n unique output lines"
+      },
+      {
+        "question": "How many unique output lines can a decoder with n input lines have?",
+        "options": [
+          "n",
+          "2n",
+          "2^n",
+          "n^2"
+        ],
+        "answer": "2^n"
+      },
+      {
+        "question": "What is a 3-to-8 line decoder?",
+        "options": [
+          "A decoder with 3 input lines and 8 output lines",
+          "A decoder with 8 input lines and 3 output lines",
+          "A decoder that converts 3-bit binary to 8-bit binary",
+          "A decoder that performs arithmetic operations"
+        ],
+        "answer": "A decoder with 3 input lines and 8 output lines"
+      },
+      {
+        "question": "What is the purpose of implementing a 4x16 decoder?",
+        "options": [
+          "To convert 4-bit binary to 16-bit binary",
+          "To decode 4 input lines to 16 unique output lines",
+          "To perform arithmetic operations",
+          "To store 16-bit binary information"
+        ],
+        "answer": "To decode 4 input lines to 16 unique output lines"
+      },
+      {
+        "question": "How can a decoder be used in combinational logic implementation?",
+        "options": [
+          "By converting analog signals to digital signals",
+          "By performing arithmetic operations",
+          "By representing minterms and using external OR gates to form logical sums",
+          "By storing binary information"
+        ],
+        "answer": "By representing minterms and using external OR gates to form logical sums"
+      },
+      {
+        "question": "How many outputs does a full adder have?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2"
+      },
+      {
+        "question": "What is the primary function of an encoder?",
+        "options": [
+          "To decode binary data",
+          "To perform arithmetic operations",
+          "To generate binary code corresponding to the input value",
+          "To store data temporarily"
+        ],
+        "answer": "To generate binary code corresponding to the input value"
+      },
+      {
+        "question": "How many input lines does a 4 to 2 encoder have?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "answer": "4"
+      },
+      {
+        "question": "What is the maximum number of inputs that can be '1' at any given time in the encoder?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "How many outputs does the encoder have?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2"
+      },
+      {
+        "question": "What is the primary function of a multiplexer?",
+        "options": [
+          "To encode binary information",
+          "To select binary information from one of many input lines and direct it to a single output line",
+          "To decode binary information",
+          "To amplify binary signals"
+        ],
+        "answer": "To select binary information from one of many input lines and direct it to a single output line"
+      },
+      {
+        "question": "What controls the selection of a particular input line in a multiplexer?",
+        "options": [
+          "The encoder",
+          "The decoder",
+          "The control signals",
+          "The output signals"
+        ],
+        "answer": "The control signals"
+      },
+      {
+        "question": "What is the typical number of input lines in a multiplexer with n selection lines?",
+        "options": [
+          "n",
+          "2n",
+          "n^2",
+          "n+1"
+        ],
+        "answer": "2n"
+      },
+      {
+        "question": "How many selection lines are required for a 4-to-1 line multiplexer?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "2"
+      },
+      {
+        "question": "What determines which input is selected in a multiplexer?",
+        "options": [
+          "The number of input lines",
+          "The bit combinations of the selection lines",
+          "The output line",
+          "The clock signal"
+        ],
+        "answer": "The bit combinations of the selection lines"
+      },
+      {
+        "question": "In a 4-to-1 line multiplexer, how many input lines are there?",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "answer": "4"
+      }
+    ]
+  }
+}

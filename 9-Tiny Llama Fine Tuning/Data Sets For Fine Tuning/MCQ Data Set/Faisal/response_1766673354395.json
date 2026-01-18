@@ -1,0 +1,68 @@
+{
+  "document": "Examplees_MicroInstruction_2.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What does the instruction 'CLRAC' typically do in assembly language?",
+        "options": [
+          "Clear the Accumulator",
+          "Clear the Address Counter",
+          "Clear the Data Register",
+          "Clear the Instruction Register"
+        ],
+        "answer": "Clear the Accumulator"
+      },
+      {
+        "question": "What is the purpose of the 'INCDR' instruction?",
+        "options": [
+          "Increment the Data Register",
+          "Increment the Address Counter",
+          "Increment the Accumulator",
+          "Increment the Instruction Pointer"
+        ],
+        "answer": "Increment the Data Register"
+      },
+      {
+        "question": "What is the function of the 'JMP' instruction?",
+        "options": [
+          "Jump to a specified address",
+          "Jump if the Accumulator is zero",
+          "Jump to subroutine",
+          "Jump if the Data Register is full"
+        ],
+        "answer": "Jump to a specified address"
+      },
+      {
+        "question": "What does the 'CALL' instruction typically do?",
+        "options": [
+          "Call a subroutine",
+          "Call an interrupt",
+          "Call a function in high-level language",
+          "Call the operating system"
+        ],
+        "answer": "Call a subroutine"
+      },
+      {
+        "question": "What is the purpose of the 'RET' instruction?",
+        "options": [
+          "Return from subroutine",
+          "Reset the program counter",
+          "Read external timer",
+          "Restore the Accumulator"
+        ],
+        "answer": "Return from subroutine"
+      },
+      {
+        "question": "What does 'MAP' typically refer to in assembly language?",
+        "options": [
+          "Memory Address Pointer",
+          "Memory Allocation Process",
+          "Memory Access Protocol",
+          "Memory Assignment Procedure"
+        ],
+        "answer": "Memory Address Pointer"
+      }
+    ]
+  }
+}

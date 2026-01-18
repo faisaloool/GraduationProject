@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { generateQuizFromFile } from "../util/service.js";
 import { useExams } from "../context/ExamsProvider.jsx";
@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import "../style/Input.css";
 
+import FileUploadPreview from "./FileUploadPreview.jsx";
 import { LuSettings2 } from "react-icons/lu";
 import { GoFileSubmodule } from "react-icons/go";
 
@@ -17,14 +18,16 @@ export const Input = ({ setExam }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [settingsError, setSettingsError] = useState("");
+  const [selectedFile, setSelectedFile] = useState(null);
+  const fileInputRef = useRef(null);
   const [settings, setSettings] = useState({
     mcqCount: 8,
     tfCount: 2,
   });
 
   const TOTAL_LIMITS = {
-    MIN_TOTAL: 10,
-    MAX_TOTAL: 50,
+    MIN_TOTAL: 1,
+    MAX_TOTAL: 20,
   };
 
   useEffect(() => {
@@ -45,8 +48,7 @@ export const Input = ({ setExam }) => {
       return;
     }
 
-    const input = document.querySelector(".inputfile");
-    const file = input && input.files[0];
+    const file = selectedFile;
     if (!file) {
       setErrorMessage("No file selected.");
       return;
@@ -74,11 +76,11 @@ export const Input = ({ setExam }) => {
         throw new Error(String(response.error));
       }
 
-      const quiz = response?.body?.quizzes?.[0];
+      const quiz = response?.data;
       if (!quiz) {
         throw new Error(
           String(
-            response?.body?.message ||
+            response?.data?.message ||
               response?.rawText ||
               "No quiz returned from server."
           )
@@ -87,12 +89,38 @@ export const Input = ({ setExam }) => {
 
       addExam(quiz);
       setExam(quiz);
-      const id = quiz.quizId || quiz.examId;
+      const id = quiz.quizID ?? quiz.quizId ?? quiz.examId ?? quiz.id;
       navigate(`/exam/${id}`);
     } catch (err) {
       setErrorMessage(String(err?.message || err || "Something went wrong."));
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleFileChange = (e) => {
+    const files = e?.target?.files;
+    if (!files || files.length === 0) {
+      setSelectedFile(null);
+      return;
+    }
+
+    if (files.length > 1) {
+      setErrorMessage("You can upload only one file.");
+    } else {
+      setErrorMessage("");
+    }
+
+    setSelectedFile(files[0]);
+  };
+
+  const handleRemoveFile = () => {
+    if (isSubmitting) return;
+    setSelectedFile(null);
+    setErrorMessage("");
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
     }
   };
 
@@ -151,11 +179,19 @@ export const Input = ({ setExam }) => {
             <LuSettings2 aria-hidden="true" />
           </div>
           <label className="upload-file">
-            <input type="file" className="inputfile" disabled={isSubmitting} />
+            <input
+              ref={fileInputRef}
+              type="file"
+              className="inputfile"
+              disabled={isSubmitting}
+              onChange={handleFileChange}
+            />
             <span className="folder-icon">
               <GoFileSubmodule />
             </span>
-            <span className="text">Add File</span>
+            <span className="text">
+              {selectedFile ? "Change File" : "Add File"}
+            </span>
             <span className="sound-wave">
               <span></span>
               <span></span>
@@ -178,6 +214,16 @@ export const Input = ({ setExam }) => {
             )}
           </button>
         </form>
+
+        <div className="file-preview-slot" aria-hidden={!selectedFile}>
+          {selectedFile ? (
+            <FileUploadPreview
+              file={selectedFile}
+              onRemove={handleRemoveFile}
+              disabled={isSubmitting}
+            />
+          ) : null}
+        </div>
       </div>
       {showSettings &&
         createPortal(

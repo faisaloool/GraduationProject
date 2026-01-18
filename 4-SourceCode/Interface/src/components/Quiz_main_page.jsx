@@ -6,18 +6,23 @@ import { Header } from "./Header";
 
 import { useExams } from "../context/ExamsProvider.jsx";
 import { useAuth } from "../context/AuthContext.jsx";
-import { submitExamAnswers } from "../util/service.js";
+/* import { submitExamAnswers } from "../util/service.js"; */
 
 import { GrRefresh } from "react-icons/gr";
 import { MdDeleteForever } from "react-icons/md";
 
 import { AntigravityCanvas } from "./AntigravityCanvas";
 import { FeedbackPopup } from "./FeedbackPopup";
+import { ScrollToBottomIndicator } from "./ScrollToBottomIndicator";
+
+// REMOVE the inline ScrollToBottomIndicator component definition here
+// (it now lives in ./ScrollToBottomIndicator.jsx)
 
 export const Quiz_main_page = ({ editing, setEditing }) => {
   const {
     exam,
     setExam,
+    getExamData,
     exams,
     loading,
     regeneratingQuiz,
@@ -40,14 +45,19 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   const [submittedScore, setSubmittedScore] = useState(null);
   const [submitSyncError, setSubmitSyncError] = useState(null);
   const [examStateHydrated, setExamStateHydrated] = useState(false);
-  /* const [RightOrWrong, setRightOrWrong] = useState(new Map()); */
   const [showScrollArrow, setShowScrollArrow] = useState(false);
   const [examTransitioning, setExamTransitioning] = useState(false);
   const [initialLoadStarted, setInitialLoadStarted] = useState(false);
   const [initialLoadFinished, setInitialLoadFinished] = useState(false);
 
-  // stable key for current exam
-  const examKey = exam.examId || exam.quizId;
+  // Track latest transition to avoid stale async/timers causing twitch
+  const transitionSeqRef = useRef(0);
+  const transitionTimerRef = useRef(null);
+
+  // stable key for current exam (normalized to string to avoid 1 vs "1" changes)
+  const examKeyRaw = exam?.quizID;
+  const examKey = examKeyRaw == null ? null : String(examKeyRaw);
+
   const currentScore = submittedScore;
   const isSubmitted = typeof currentScore === "number";
 
@@ -71,11 +81,11 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   };
 
   const saveExamState = (nextMap, nextSubmittedScore, nextSubmitSyncError) => {
-    const examId = examKey;
-    if (!examId) return;
+    const quizID = examKey;
+    if (!quizID) return;
 
     const userIdValue = getCurrentUserId();
-    const key = getExamStorageKey(userIdValue, examId);
+    const key = getExamStorageKey(userIdValue, quizID);
 
     try {
       const payload = {
@@ -92,12 +102,12 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   };
 
   const loadExamState = () => {
-    const examId = examKey;
-    if (!examId)
+    const quizID = examKey;
+    if (!quizID)
       return { answers: new Map(), score: null, submitSyncError: null };
 
     const userIdValue = getCurrentUserId();
-    const key = getExamStorageKey(userIdValue, examId);
+    const key = getExamStorageKey(userIdValue, quizID);
 
     try {
       const raw = localStorage.getItem(key);
@@ -130,11 +140,52 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   }, [loading, initialLoadStarted, initialLoadFinished]);
 
   useEffect(() => {
-    if (exam.title === "Main-page" || !exam.title) return;
+    if (exam.quizTitle === "Main-page" || !exam.quizTitle) return;
+    if (!examKey) return;
+
+    let cancelled = false;
+    const seq = ++transitionSeqRef.current;
+
+    // cancel any pending "end transition" from previous exam switches
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+
     setExamTransitioning(true);
-    const timer = setTimeout(() => setExamTransitioning(false), 350);
-    return () => clearTimeout(timer);
-  }, [exam.examId, exam.quizId, exam.title]);
+
+    (async () => {
+      const startedAt = Date.now();
+      try {
+        await getExamData(examKey, token);
+      } finally {
+        const elapsed = Date.now() - startedAt;
+        const remaining = Math.max(0, 350 - elapsed);
+
+        const finish = () => {
+          if (cancelled) return;
+          if (transitionSeqRef.current !== seq) return; // a newer transition started
+          setExamTransitioning(false);
+        };
+
+        if (cancelled || transitionSeqRef.current !== seq) return;
+
+        if (remaining) {
+          transitionTimerRef.current = setTimeout(finish, remaining);
+        } else {
+          finish();
+        }
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+      if (transitionTimerRef.current) {
+        clearTimeout(transitionTimerRef.current);
+        transitionTimerRef.current = null;
+      }
+    };
+  }, [examKey, token]);
 
   useEffect(() => {
     setExamStateHydrated(false);
@@ -163,18 +214,18 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
   useEffect(() => {
     // calculating total marks of the exam (can change without changing examKey)
-    let marks = 0;
+    /* let marks = 0;
     exam.questions?.forEach(({ marks: m }) => {
       marks += m;
-    });
-    setTotalMarks(marks);
+    }); */
+    setTotalMarks(exam.questions?.length * 1 || 0);
   }, [examKey, exam.questions]);
 
   const handleRegenerateQuestion = async (questionId, questionPayload) => {
-    const quizId = examKey;
+    const quizID = examKey;
     const qIdKey = String(questionId);
 
-    if (!quizId) {
+    if (!quizID) {
       setRegenerateErrorById((prev) => ({
         ...prev,
         [qIdKey]: "Missing quiz id.",
@@ -190,7 +241,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     });
 
     const result = await regenerateExamQuestion(
-      quizId,
+      quizID,
       questionId,
       questionPayload
     );
@@ -221,10 +272,10 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
   };
 
   const handleDeleteQuestion = async (questionId) => {
-    const quizId = examKey;
+    const quizID = examKey;
     const qIdKey = String(questionId);
 
-    if (!quizId) {
+    if (!quizID) {
       setDeleteErrorById((prev) => ({
         ...prev,
         [qIdKey]: "Missing quiz id.",
@@ -239,7 +290,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
       return next;
     });
 
-    const result = await deleteExamQuestion(quizId, questionId);
+    const result = await deleteExamQuestion(quizID, questionId);
 
     if (result?.error) {
       setDeleteErrorById((prev) => ({
@@ -311,11 +362,11 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
   // Reset current exam submission and answers
   const handleRetry = () => {
-    const examId = examKey;
+    const quizID = examKey;
     const userIdValue = getCurrentUserId();
-    if (examId) {
+    if (quizID) {
       try {
-        localStorage.removeItem(getExamStorageKey(userIdValue, examId));
+        localStorage.removeItem(getExamStorageKey(userIdValue, quizID));
       } catch {
         // ignore
       }
@@ -334,39 +385,104 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
       .trim()
       .toLowerCase();
 
+  const stripOptionLabel = (v) =>
+    String(v ?? "")
+      .replace(/^\s*([a-dA-D]|\d{1,2})\s*[\)\.\:\-]\s+/, "")
+      .replace(/^\s*[•\-–—]\s+/, "")
+      .trim();
+
+  const optionLooksLabeled = (v) =>
+    /^\s*([a-dA-D]|\d{1,2})\s*[\)\.\:\-]\s+/.test(String(v ?? "")) ||
+    /^\s*[•\-–—]\s+/.test(String(v ?? ""));
+
   const parseNumericIndex = (v) => {
     const n = Number.parseInt(String(v ?? ""), 10);
     return Number.isFinite(n) ? n : null;
   };
 
-  const getCorrectOptionLetter = (q) => {
-    const type = normalizeString(q?.type);
-    const rawCorrect = q?.correctAnswer;
+  const letterToIndex = (v) => {
+    const s = normalizeString(v);
+    if (s.length === 1 && s >= "a" && s <= "z") {
+      return s.charCodeAt(0) - 97;
+    }
+    return null;
+  };
+
+  const coerceSelectionIndex = (v) => {
+    if (typeof v === "number" && Number.isFinite(v)) return v;
+    const fromLetter = letterToIndex(v);
+    if (fromLetter != null) return fromLetter;
+    const numeric = parseNumericIndex(v);
+    return numeric != null ? numeric : null;
+  };
+
+  const getQuestionKey = (q) =>
+    q?.questionID ?? q?.id ?? q?.questionId ?? q?._id ?? null;
+
+  const normalizeChoicesToOptions = (q) => {
+    const raw = Array.isArray(q?.options)
+      ? q.options
+      : Array.isArray(q?.choices)
+      ? q.choices
+      : [];
+
+    const options = raw
+      .map((item) => {
+        if (typeof item === "string") return item;
+        if (!item || typeof item !== "object") return null;
+        return item.choice ?? item.text ?? item.value ?? null;
+      })
+      .filter((v) => typeof v === "string" && v.trim());
+
+    return options;
+  };
+
+  const getCorrectOptionIndex = (q) => {
+    const options = normalizeChoicesToOptions(q);
+
+    // New format may omit `type`; infer True/False when possible.
+    let type = normalizeString(q?.type);
+    if (!type) {
+      const o0 = normalizeString(options?.[0]);
+      const o1 = normalizeString(options?.[1]);
+      const suggested = normalizeString(q?.suggestedAnswer);
+      const inferredTrueFalse =
+        (options?.length === 2 &&
+          ((o0 === "true" && o1 === "false") ||
+            (o0 === "false" && o1 === "true"))) ||
+        suggested === "true" ||
+        suggested === "false" ||
+        suggested === "t" ||
+        suggested === "f";
+      if (inferredTrueFalse) type = "truefalse";
+    }
+
+    const rawCorrect = q?.correctAnswer ?? q?.suggestedAnswer;
     const correct = normalizeString(rawCorrect);
 
     if (!correct) return null;
 
     if (type === "truefalse") {
-      if (correct === "a" || correct === "b") return correct;
-      if (correct === "true" || correct === "t" || correct === "yes")
-        return "a";
-      if (correct === "false" || correct === "f" || correct === "no")
-        return "b";
+      if (correct === "a") return 0;
+      if (correct === "b") return 1;
+      if (correct === "true" || correct === "t" || correct === "yes") return 0;
+      if (correct === "false" || correct === "f" || correct === "no") return 1;
 
       const numeric = parseNumericIndex(rawCorrect);
-      if (numeric === 1) return "a";
-      if (numeric === 0) return "b";
+      if (numeric === 1) return 0;
+      if (numeric === 0) return 1;
       return null;
     }
 
-    // MCQ
-    if (correct.length === 1 && correct >= "a" && correct <= "d") {
-      return correct;
+    // MCQ: letter form
+    {
+      const idx = letterToIndex(rawCorrect);
+      if (idx != null) return idx;
     }
 
     // Sometimes backends send index (0..)
     if (typeof q?.correctAnswer === "number" && q.correctAnswer >= 0) {
-      return String.fromCharCode(97 + q.correctAnswer);
+      return q.correctAnswer;
     }
 
     // Sometimes backends send numeric strings (0.. or 1..)
@@ -376,28 +492,27 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
         if (numeric >= 0 && numeric <= 10) {
           // accept either 0-based or 1-based
           const zeroBased = numeric <= 3 ? numeric : numeric - 1;
-          if (zeroBased >= 0 && zeroBased <= 3) {
-            return String.fromCharCode(97 + zeroBased);
-          }
+          if (zeroBased >= 0 && zeroBased <= 10) return zeroBased;
         }
       }
     }
 
     // Sometimes backends send option text
-    const options = Array.isArray(q?.options) ? q.options : [];
     const idx = options.findIndex(
-      (opt) => normalizeString(opt) === normalizeString(q?.correctAnswer)
+      (opt) =>
+        normalizeString(stripOptionLabel(opt)) ===
+        normalizeString(stripOptionLabel(rawCorrect))
     );
-    if (idx >= 0) return String.fromCharCode(97 + idx);
+    if (idx >= 0) return idx;
 
     return null;
   };
 
-  const isAnswerCorrect = (q, selectedLetter) => {
-    const selected = normalizeString(selectedLetter);
-    if (!selected) return false;
-    const correctLetter = getCorrectOptionLetter(q);
-    return !!correctLetter && selected === correctLetter;
+  const isAnswerCorrect = (q, selectedIndexValue) => {
+    const selectedIndex = coerceSelectionIndex(selectedIndexValue);
+    if (selectedIndex == null) return false;
+    const correctIndex = getCorrectOptionIndex(q);
+    return correctIndex != null && selectedIndex === correctIndex;
   };
 
   const handleSubmitExam = async () => {
@@ -409,9 +524,10 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     let score = 0;
     const questions = Array.isArray(exam?.questions) ? exam.questions : [];
     for (const q of questions) {
-      const selected = myMap.get(String(q.id));
-      if (isAnswerCorrect(q, selected)) {
-        score += Number(q.marks) || 0;
+      const qKey = getQuestionKey(q);
+      const selectedIndexValue = myMap.get(String(qKey));
+      if (isAnswerCorrect(q, selectedIndexValue)) {
+        score += Number(1) || 0;
       }
     }
 
@@ -429,262 +545,140 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
         selectedOption,
       })
     );
-
-    const result = await submitExamAnswers(
-      {
-        userId: userIdValue,
-        examId: examKey,
-        answers,
-      },
-      token
-    );
-
-    if (result?.error) {
-      setSubmitSyncError(result.error);
-    }
   };
+
   // here we display the exam questions and options
   const getExamResponse = (questions) => {
-    return questions.map(
-      ({ id, question, options, type, marks, correctAnswer }) => {
-        const qIdKey = String(id);
-        const isRegenerating = !!regeneratingById[qIdKey];
-        const regenerateError = regenerateErrorById[qIdKey];
-        const isDeleting = !!deletingById[qIdKey];
-        const deleteError = deleteErrorById[qIdKey];
-        const isBusy = isRegenerating || isDeleting;
-        const actionError = deleteError || regenerateError;
-        const correctLetter = getCorrectOptionLetter({
-          id,
-          question,
-          options,
-          type,
-          marks,
-          correctAnswer,
-        });
-        const selectedLetter = myMap.get(String(id));
+    // Guard: only render once we have a valid questions array
+    if (!Array.isArray(questions) || questions.length === 0) return null;
 
-        switch (String(type).toLowerCase()) {
-          case "mcq":
-            return (
-              <div className="exam-response" key={id}>
-                <h1 className="QuestionTitle Question">
-                  {questionNumber + id}.{question}
-                </h1>
-                <div className="Option-list">
-                  {options?.map((option, index) => {
-                    const letter = String.fromCharCode(97 + index);
-                    const isSelected = letter == selectedLetter;
-                    const isCorrect = isSubmitted && correctLetter === letter;
-                    const isWrong =
-                      isSubmitted &&
-                      isSelected &&
-                      correctLetter &&
-                      correctLetter !== letter;
+    return questions.map((q, index) => {
+      const id = getQuestionKey(q);
+      const question = q?.questionContent ?? q?.question ?? "";
+      const options = normalizeChoicesToOptions(q);
+      const type = q?.type;
+      const marks = q?.marks;
+      const correctAnswer = q?.correctAnswer ?? q?.suggestedAnswer;
 
-                    return (
-                      <p
-                        className={`Option ${
-                          isSelected ? "selected-option" : ""
-                        } ${isSubmitted ? "locked" : ""} ${
-                          isCorrect ? "correct-option" : ""
-                        } ${isWrong ? "wrong-option" : ""}`}
-                        onClick={() => {
-                          if (isSubmitted) return;
-                          const newMap = new Map(myMap);
-                          newMap.set(String(id), letter);
-                          setMyMap(newMap);
-                        }}
-                        key={index}
-                      >
-                        {letter}. {option}
-                      </p>
-                    );
-                  })}
-                </div>
-                <div className="options">
-                  <button
-                    type="button"
-                    className={`option-item ${
-                      isRegenerating ? "is-loading" : ""
-                    }`}
-                    aria-label="Regenerate question"
-                    data-tooltip="Regenerate question"
-                    aria-busy={isRegenerating}
-                    disabled={isBusy}
-                    onClick={() =>
-                      handleRegenerateQuestion(id, {
-                        id,
-                        question,
-                        options,
-                        type,
-                        marks,
-                      })
-                    }
-                  >
-                    {isRegenerating ? (
-                      <span className="option-spinner" aria-hidden />
-                    ) : (
-                      <GrRefresh aria-hidden />
-                    )}
-                  </button>
-                  <button
-                    type="button"
-                    className={`option-item delete-option ${
-                      isDeleting ? "is-loading" : ""
-                    }`}
-                    aria-label="Delete question"
-                    data-tooltip="Delete question"
-                    aria-busy={isDeleting}
-                    disabled={isBusy}
-                    onClick={() => handleDeleteQuestion(id)}
-                  >
-                    {isDeleting ? (
-                      <span className="option-spinner" aria-hidden />
-                    ) : (
-                      <MdDeleteForever aria-hidden />
-                    )}
-                  </button>
-                </div>
+      const qIdKey = String(id);
+      const isRegenerating = !!regeneratingById[qIdKey];
+      const regenerateError = regenerateErrorById[qIdKey];
+      const isDeleting = !!deletingById[qIdKey];
+      const deleteError = deleteErrorById[qIdKey];
+      const isBusy = isRegenerating || isDeleting;
+      const actionError = deleteError || regenerateError;
 
-                {actionError && (
-                  <p className="question-action-error" role="alert">
-                    {actionError}
-                  </p>
-                )}
-              </div>
-            );
-
-          case "truefalse":
-            return (
-              <div className="exam-response" key={id}>
-                <h1 className="QuestionTitle Question">{question}</h1>
-                <div className="Option-list">
-                  {(() => {
-                    const letter = "a";
-                    const isSelected = letter === selectedLetter;
-                    const isCorrect = isSubmitted && correctLetter === letter;
-                    const isWrong =
-                      isSubmitted &&
-                      isSelected &&
-                      correctLetter &&
-                      correctLetter !== letter;
-
-                    return (
-                      <p
-                        className={`Option ${
-                          isSelected ? "selected-option" : ""
-                        } ${isSubmitted ? "locked" : ""} ${
-                          isCorrect ? "correct-option" : ""
-                        } ${isWrong ? "wrong-option" : ""}`}
-                        onClick={() => {
-                          if (isSubmitted) return;
-                          const newMap = new Map(myMap);
-                          newMap.set(String(id), String.fromCharCode(97 + 0));
-                          setMyMap(newMap);
-                        }}
-                        key={0}
-                      >
-                        {String.fromCharCode(97 + 0)}. True
-                      </p>
-                    );
-                  })()}
-
-                  {(() => {
-                    const letter = "b";
-                    const isSelected = letter === selectedLetter;
-                    const isCorrect = isSubmitted && correctLetter === letter;
-                    const isWrong =
-                      isSubmitted &&
-                      isSelected &&
-                      correctLetter &&
-                      correctLetter !== letter;
-
-                    return (
-                      <p
-                        className={`Option ${
-                          isSelected ? "selected-option" : ""
-                        } ${isSubmitted ? "locked" : ""} ${
-                          isCorrect ? "correct-option" : ""
-                        } ${isWrong ? "wrong-option" : ""}`}
-                        onClick={() => {
-                          if (isSubmitted) return;
-                          const newMap = new Map(myMap);
-                          newMap.set(String(id), String.fromCharCode(97 + 1));
-                          setMyMap(newMap);
-                        }}
-                        key={1}
-                      >
-                        {String.fromCharCode(97 + 1)}. False
-                      </p>
-                    );
-                  })()}
-                </div>
-                <div className="options">
-                  <button
-                    type="button"
-                    className={`option-item ${
-                      isRegenerating ? "is-loading" : ""
-                    }`}
-                    aria-label="Regenerate question"
-                    data-tooltip="Regenerate question"
-                    aria-busy={isRegenerating}
-                    disabled={isBusy}
-                    onClick={() =>
-                      handleRegenerateQuestion(id, {
-                        id,
-                        question,
-                        options,
-                        type,
-                        marks,
-                      })
-                    }
-                  >
-                    {isRegenerating ? (
-                      <span className="option-spinner" aria-hidden />
-                    ) : (
-                      <GrRefresh aria-hidden />
-                    )}
-                  </button>
-                  <button
-                    type="button"
-                    className={`option-item delete-option ${
-                      isDeleting ? "is-loading" : ""
-                    }`}
-                    aria-label="Delete question"
-                    data-tooltip="Delete question"
-                    aria-busy={isDeleting}
-                    disabled={isBusy}
-                    onClick={() => handleDeleteQuestion(id)}
-                  >
-                    {isDeleting ? (
-                      <span className="option-spinner" aria-hidden />
-                    ) : (
-                      <MdDeleteForever aria-hidden />
-                    )}
-                  </button>
-                </div>
-
-                {actionError && (
-                  <p className="question-action-error" role="alert">
-                    {actionError}
-                  </p>
-                )}
-              </div>
-            );
-
-          default:
-            return (
-              <div className="exam-response" key={id}>
-                <h1>Unknown question type</h1>
-              </div>
-            );
-        }
+      if (id == null) {
+        return (
+          <div className="exam-response" key={`missing-id-${index}`}>
+            <h1>Invalid question (missing id)</h1>
+          </div>
+        );
       }
-    );
+
+      const correctIndex = getCorrectOptionIndex({
+        id,
+        question,
+        options,
+        type,
+        marks,
+        correctAnswer,
+      });
+      const selectedIndex = coerceSelectionIndex(myMap.get(String(id)));
+
+      return (
+        <div className="exam-response" key={id}>
+          <h1 className="QuestionTitle Question">
+            {questionNumber + index + 1}. {question}
+          </h1>
+
+          <div className="Option-list">
+            {Array.isArray(options) && options.length > 0 ? (
+              options.map((option, optIndex) => {
+                const letter = String.fromCharCode(97 + optIndex);
+                const isSelected = optIndex === selectedIndex;
+                const isCorrect = isSubmitted && correctIndex === optIndex;
+                const isWrong =
+                  isSubmitted &&
+                  isSelected &&
+                  correctIndex != null &&
+                  correctIndex !== optIndex;
+
+                const optionText = optionLooksLabeled(option)
+                  ? String(option)
+                  : `${letter}. ${option}`;
+
+                return (
+                  <p
+                    className={`Option ${isSelected ? "selected-option" : ""} ${
+                      isSubmitted ? "locked" : ""
+                    } ${isCorrect ? "correct-option" : ""} ${
+                      isWrong ? "wrong-option" : ""
+                    }`}
+                    onClick={() => {
+                      if (isSubmitted) return;
+                      const newMap = new Map(myMap);
+                      newMap.set(String(id), optIndex);
+                      setMyMap(newMap);
+                    }}
+                    key={optIndex}
+                  >
+                    {optionText}
+                  </p>
+                );
+              })
+            ) : (
+              <p className="Option locked">No choices available.</p>
+            )}
+          </div>
+
+          <div className="options">
+            <button
+              type="button"
+              className={`option-item ${isRegenerating ? "is-loading" : ""}`}
+              aria-label="Regenerate question"
+              data-tooltip="Regenerate question"
+              aria-busy={isRegenerating}
+              disabled={isBusy}
+              onClick={() => handleRegenerateQuestion(id, q)}
+            >
+              {isRegenerating ? (
+                <span className="option-spinner" aria-hidden />
+              ) : (
+                <GrRefresh aria-hidden />
+              )}
+            </button>
+
+            <button
+              type="button"
+              className={`option-item delete-option ${
+                isDeleting ? "is-loading" : ""
+              }`}
+              aria-label="Delete question"
+              data-tooltip="Delete question"
+              aria-busy={isDeleting}
+              disabled={isBusy}
+              onClick={() => handleDeleteQuestion(id)}
+            >
+              {isDeleting ? (
+                <span className="option-spinner" aria-hidden />
+              ) : (
+                <MdDeleteForever aria-hidden />
+              )}
+            </button>
+          </div>
+
+          {actionError && (
+            <p className="question-action-error" role="alert">
+              {actionError}
+            </p>
+          )}
+        </div>
+      );
+    });
   };
 
-  const isWelcomePage = exam.title === "Main-page" || !exam.title;
+  const isWelcomePage = exam.quizTitle === "Main-page" || !exam.quizTitle;
   const showInitialLoader =
     regeneratingQuiz || (loading && !initialLoadFinished);
   const showExamSkeleton = !showInitialLoader && examTransitioning;
@@ -696,7 +690,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
       <FeedbackPopup feedback={feedback} onClose={clearFeedback} />
       <div className="header">
         <Header
-          quiz={error ? { title: "Main-page" } : exam}
+          quiz={error ? { quizTitle: "Main-page" } : exam}
           setEditing={setEditing}
         />
       </div>
@@ -762,7 +756,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
               <>
                 <div className="userMessage">
                   <div className="message">
-                    generate an exam for {exam.title}
+                    generate an exam for {exam.quizTitle}
                   </div>
                 </div>
                 {getExamResponse(exam.questions)}
@@ -788,36 +782,10 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
                   </div>
                 )}
                 {/* fixed bottom-center scroll indicator */}
-                <div
-                  className={`scroll-indicator ${
-                    showScrollArrow ? "" : "hidden"
-                  }`}
-                  role="button"
-                  tabIndex={showScrollArrow ? 0 : -1}
-                  onClick={showScrollArrow ? scrollToBottom : undefined}
-                  onKeyDown={(e) => {
-                    if (!showScrollArrow) return;
-                    if (e.key === "Enter" || e.key === " ") scrollToBottom();
-                  }}
-                  aria-label="Scroll to bottom"
-                  title="Scroll to bottom"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="30"
-                    height="30"
-                    fill="none"
-                    aria-hidden
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
+                <ScrollToBottomIndicator
+                  visible={showScrollArrow}
+                  onActivate={scrollToBottom}
+                />
               </>
             )}
           </div>

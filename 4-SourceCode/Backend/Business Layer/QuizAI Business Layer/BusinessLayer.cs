@@ -12,7 +12,6 @@ using System.Net.Mail;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace QuizAI_Business_Layer
@@ -345,11 +344,9 @@ namespace QuizAI_Business_Layer
             return Token;
         }
 
-        public static async Task<GenerateQuizResponseDTO> GetQuizById(Guid quizID)
+        public static async Task<Quiz> GetQuizQuestionsBasedOnQuizID(Guid QuizID, string QuizTitle)
         {
-            GenerateQuizResponseDTO quizData = await QuizzesDataBack.GetQuizByIdAsync(quizID);
-
-            return quizData;
+            return await QuizzesDataBack.GetQuizBasedOnQuizIDAsync(QuizID, QuizTitle);
         }
 
         public static async Task<bool> DeleteQuestionUsingQuestionID(Guid QuestionID, Guid QuizID, Guid UserID)

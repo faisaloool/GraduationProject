@@ -1,9 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../style/Error_page_style.css";
 
 export const Error_page = ({ error, message }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const state = location?.state;
 
   const safeStringify = (value) => {
@@ -60,14 +61,54 @@ export const Error_page = ({ error, message }) => {
   const displayMessage =
     propMessage || propErrorMessage || stateMessage || "Unknown error.";
 
+  const pathLabel = location?.pathname ? String(location.pathname) : null;
+  const isTechnical =
+    typeof displayMessage === "string" &&
+    /\b(stack|trace|exception|error:|status\s*\d{3})\b/i.test(displayMessage);
+
   return (
     <div className="error-page">
       <div className="error-page__card" role="alert" aria-live="polite">
-        <h1 className="error-page__title">Something went wrong</h1>
-        <p className="error-page__subtitle">
-          We couldn’t load this page. Please try again.
-        </p>
-        <pre className="error-page__message">{String(displayMessage)}</pre>
+        <div className="error-page__header">
+          <h1 className="error-page__title">Something went wrong</h1>
+          <p className="error-page__subtitle">
+            We couldn’t load this page. You can try again or return home.
+          </p>
+          {pathLabel ? (
+            <p className="error-page__meta">
+              Path: <span className="error-page__metaValue">{pathLabel}</span>
+            </p>
+          ) : null}
+        </div>
+
+        <div className="error-page__actions">
+          <button
+            type="button"
+            className="error-page__btn error-page__btn--secondary"
+            onClick={() => navigate(-1)}
+          >
+            Go back
+          </button>
+          <button
+            type="button"
+            className="error-page__btn error-page__btn--primary"
+            onClick={() => navigate("/")}
+          >
+            Go home
+          </button>
+          <button
+            type="button"
+            className="error-page__btn error-page__btn--ghost"
+            onClick={() => window.location.reload()}
+          >
+            Reload
+          </button>
+        </div>
+
+        <details className="error-page__details" open={!isTechnical}>
+          <summary className="error-page__summary">Technical details</summary>
+          <pre className="error-page__message">{String(displayMessage)}</pre>
+        </details>
       </div>
     </div>
   );

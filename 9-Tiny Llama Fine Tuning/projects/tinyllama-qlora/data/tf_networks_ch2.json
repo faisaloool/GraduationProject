@@ -1,0 +1,344 @@
+{
+  "document": "Chapter2-PhysicalLayer (1).pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "The Physical Layer is the foundation on which other layers build.",
+        "answer": "true"
+      },
+      {
+        "question": "Guided Transmission Media includes wireless transmission.",
+        "answer": "false"
+      },
+      {
+        "question": "Communication Satellites are part of the Physical Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "Digital Modulation and Multiplexing are core components related to the Physical Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "The Mobile Telephone System operates independently of the Physical Layer.",
+        "answer": "false"
+      },
+      {
+        "question": "Properties of wires, fiber, and wireless propagation are discussed at the Physical Layer.",
+        "answer": "true"
+      },
+      {
+        "question": "The key problem in sending digital bits is utilizing analog signals to represent discrete values.",
+        "answer": "true"
+      },
+      {
+        "question": "Modulation is the process of sending analog signals using digital bits.",
+        "answer": "false"
+      },
+      {
+        "question": "Guided transmission media includes physical conduits like wires and fiber optics.",
+        "answer": "true"
+      },
+      {
+        "question": "All transmission media share the same physical properties and performance metrics.",
+        "answer": "false"
+      },
+      {
+        "question": "Twisted pairs, coaxial cable, and power lines are examples of guided transmission media.",
+        "answer": "true"
+      },
+      {
+        "question": "Fiber optic cables are considered a type of guided transmission media.",
+        "answer": "true"
+      },
+      {
+        "question": "Sending data physically on media like tapes or disks can provide a very high bandwidth link but poor latency.",
+        "answer": "true"
+      },
+      {
+        "question": "The throughput of physically transporting storage media (like 1000 800GB tapes) is generally slower than modern long-distance networks.",
+        "answer": "false"
+      },
+      {
+        "question": "The propagation delay or message delay when physically sending tapes is very high.",
+        "answer": "true"
+      },
+      {
+        "question": "Twists in twisted pair wires are designed to increase radiated signal and interference.",
+        "answer": "false"
+      },
+      {
+        "question": "Category 5 Unshielded Twisted Pair (UTP) cable typically contains four pairs of wires.",
+        "answer": "true"
+      },
+      {
+        "question": "A full-duplex link is used for simultaneous transmission in both directions.",
+        "answer": "true"
+      },
+      {
+        "question": "A half-duplex link allows transmission in both directions at the same time.",
+        "answer": "false"
+      },
+      {
+        "question": "A simplex link supports transmission in both directions.",
+        "answer": "false"
+      },
+      {
+        "question": "Twisted pair cables generally have better shielding and more bandwidth for longer distances than fiber cables.",
+        "answer": "false"
+      },
+      {
+        "question": "Fiber optic cables transmit light through very long, thin strands of glass.",
+        "answer": "true"
+      },
+      {
+        "question": "Fiber-to-the-Home (FTTH) is a common implementation for high-speed fiber cables.",
+        "answer": "true"
+      },
+      {
+        "question": "Fiber optic cables utilize total internal reflection to keep light trapped within the core.",
+        "answer": "true"
+      },
+      {
+        "question": "Light-emitting diodes (LEDs) and lasers are the primary light sources used in fiber optic transmission.",
+        "answer": "true"
+      },
+      {
+        "question": "Single-mode fiber features a core narrow enough (approx. 10 microns) that light propagates in a single path.",
+        "answer": "true"
+      },
+      {
+        "question": "Single-mode fiber is typically paired with LEDs for long-distance transmissions.",
+        "answer": "false"
+      },
+      {
+        "question": "Multi-mode fiber typically has a larger core (approx. 50 microns) allowing light to bounce in multiple paths.",
+        "answer": "true"
+      },
+      {
+        "question": "Multi-mode fiber is commonly used with lasers for high-speed, long-distance backbone links.",
+        "answer": "false"
+      },
+      {
+        "question": "The electromagnetic spectrum used for networking includes radio wave transmission.",
+        "answer": "true"
+      },
+      {
+        "question": "Microwave transmission is part of the electromagnetic spectrum used in wireless communications.",
+        "answer": "true"
+      },
+      {
+        "question": "Wireless transmission characteristics are identical to those of wired or fiber transmission.",
+        "answer": "false"
+      },
+      {
+        "question": "Radio waves in the High Frequency (HF) band have the ability to bounce off the ionosphere.",
+        "answer": "true"
+      },
+      {
+        "question": "VLF, LF, and MF radio bands have the characteristic of following the curvature of the earth.",
+        "answer": "true"
+      },
+      {
+        "question": "Microwave transmission is the primary medium used for modern WiFi and 3G/4G networks.",
+        "answer": "true"
+      },
+      {
+        "question": "Infrared and light transmission are the preferred choices for wide-area broadcast systems.",
+        "answer": "false"
+      },
+      {
+        "question": "Wireless signal strength can be significantly attenuated or reflected by everyday physical objects.",
+        "answer": "true"
+      },
+      {
+        "question": "Multipath fading describes variations in signal strength caused by mobility and signal reflection.",
+        "answer": "true"
+      },
+      {
+        "question": "Point-to-point light transmission can be used for network links without using fiber optic cable.",
+        "answer": "true"
+      },
+      {
+        "question": "Light transmission is highly directional and provides substantial bandwidth.",
+        "answer": "true"
+      },
+      {
+        "question": "Wireless networks are generally easier and less expensive to deploy than physical cable infrastructure.",
+        "answer": "true"
+      },
+      {
+        "question": "Wireless networks naturally support device mobility.",
+        "answer": "true"
+      },
+      {
+        "question": "Wireless transmissions are immune to interference from other simultaneous transmitters.",
+        "answer": "false"
+      },
+      {
+        "question": "Signal strength in wireless environments varies greatly based on distance and obstacles.",
+        "answer": "true"
+      },
+      {
+        "question": "Wired networks easily support mobile users moving between locations.",
+        "answer": "false"
+      },
+      {
+        "question": "Wireless networks naturally support broadcast, allowing one transmitter to reach multiple receivers.",
+        "answer": "true"
+      },
+      {
+        "question": "Wired networks are easier to engineer for a fixed, reliable data rate over point-to-point links.",
+        "answer": "true"
+      },
+      {
+        "question": "Satellites are effective for broadcast distribution and establishing connectivity in remote areas.",
+        "answer": "true"
+      },
+      {
+        "question": "Geostationary (GEO) satellites are the only type of satellite used for data communications.",
+        "answer": "false"
+      },
+      {
+        "question": "Low-Earth Orbit (LEO) satellites are frequently used for low-latency communication systems.",
+        "answer": "true"
+      },
+      {
+        "question": "Communication satellites vary in properties such as latency and coverage based on their altitude.",
+        "answer": "true"
+      },
+      {
+        "question": "GEO satellites are placed in orbit approximately 35,000 km above a fixed location on the equator.",
+        "answer": "true"
+      },
+      {
+        "question": "VSAT (Very Small Aperture Terminal) systems typically require a hub station for communication.",
+        "answer": "true"
+      },
+      {
+        "question": "Low-Earth Orbit (LEO) satellites are located at higher altitudes than GEO satellites.",
+        "answer": "false"
+      },
+      {
+        "question": "Iridium-style satellite systems utilize a constellation of LEO satellites to provide global coverage.",
+        "answer": "true"
+      },
+      {
+        "question": "Satellite communications are susceptible to bandwidth limitations and interference that must be managed.",
+        "answer": "true"
+      },
+      {
+        "question": "Fiber optic technology can be instantly deployed anywhere without existing physical infrastructure.",
+        "answer": "false"
+      },
+      {
+        "question": "Frequency Division Multiplexing (FDM) divides a channel by assigning users to different frequency bands.",
+        "answer": "true"
+      },
+      {
+        "question": "In FDM, all users transmit on the same frequency but at different, alternating times.",
+        "answer": "false"
+      },
+      {
+        "question": "Frequency Division Multiplexing assigns overlapping frequency ranges to each user to maximize space.",
+        "answer": "false"
+      },
+      {
+        "question": "In FDM systems, a multiplexor is used to combine multiple input signals for a single high-speed line.",
+        "answer": "true"
+      },
+      {
+        "question": "A demultiplexor is used at the receiving end to separate multiplexed frequency signals.",
+        "answer": "true"
+      },
+      {
+        "question": "Frequency Division Multiplexing is one of the oldest multiplexing techniques used in radio and television.",
+        "answer": "true"
+      },
+      {
+        "question": "Frequency Division Multiplexing is entirely immune to external electronic noise.",
+        "answer": "false"
+      },
+      {
+        "question": "Time Division Multiplexing (TDM) shares a medium by dividing the available transmission time into slots.",
+        "answer": "true"
+      },
+      {
+        "question": "Synchronous Time Division Multiplexing allocates an equal and fixed amount of time to every connected device.",
+        "answer": "true"
+      },
+      {
+        "question": "Statistical Time Division Multiplexing allocates time slots dynamically, only when a device has data to send.",
+        "answer": "true"
+      },
+      {
+        "question": "Synchronous TDM allocates time slices even if a specific device has no data to transmit, which can be inefficient.",
+        "answer": "true"
+      },
+      {
+        "question": "Space is wasted in the multiplexed stream of a statistical multiplexor if a workstation is inactive.",
+        "answer": "false"
+      },
+      {
+        "question": "Statistical Time Division Multiplexing frames often include addresses to identify the source of each data group.",
+        "answer": "true"
+      },
+      {
+        "question": "Wavelength Division Multiplexing (WDM) is a multiplexing technique designed for copper-based networks.",
+        "answer": "false"
+      },
+      {
+        "question": "Wavelength Division Multiplexing allows multiple data streams using different 'colors' of light to share one fiber.",
+        "answer": "true"
+      },
+      {
+        "question": "Discrete Multitone (DMT) is a multiplexing technique commonly found in DSL systems.",
+        "answer": "true"
+      },
+      {
+        "question": "In DMT, subchannels are modulated using Quadrature Amplitude Modulation (QAM).",
+        "answer": "true"
+      },
+      {
+        "question": "Code Division Multiplexing (CDM/CDMA) allows multiple devices to transmit on the same frequency at the same time using unique codes.",
+        "answer": "true"
+      },
+      {
+        "question": "In CDMA, the spreading codes used for data transmission must be independent of the data itself.",
+        "answer": "true"
+      },
+      {
+        "question": "The receiver must know the unique spreading code to decipher the transmitted data in a CDMA system.",
+        "answer": "true"
+      },
+      {
+        "question": "In CDMA, a mobile device typically transmits its unique code to represent a binary 1.",
+        "answer": "true"
+      },
+      {
+        "question": "In CDMA, a mobile device transmits the inverse of its code to represent a binary 0.",
+        "answer": "true"
+      },
+      {
+        "question": "In CDMA, to send 'nothing' (no data), a mobile device transmits a continuous stream of binary ones.",
+        "answer": "false"
+      },
+      {
+        "question": "A CDMA receiver decodes a signal by multiplying the summed input by the target device's unique code.",
+        "answer": "true"
+      },
+      {
+        "question": "In CDMA decoding, if the mathematical sum is near its maximum positive value, the receiver interprets the bit as a binary 1.",
+        "answer": "true"
+      },
+      {
+        "question": "Compression is a Physical Layer technique used to reduce the size of data for faster transmission.",
+        "answer": "true"
+      },
+      {
+        "question": "Squeezing more data over a communications line via compression results in a reduction of total transfer time.",
+        "answer": "true"
+      }
+    ]
+  }
+}

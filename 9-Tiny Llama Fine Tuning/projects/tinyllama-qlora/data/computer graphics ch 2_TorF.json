@@ -1,0 +1,348 @@
+{
+  "filename": "Chapter 2- Computer Graphics Hardware (1).ppt",
+  "quiz": [
+    {
+      "question": "CRT stands for Cathode Ray Tube and is used in traditional computer monitors and televisions.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy"
+    },
+    {
+      "question": "A color CRT monitor uses only one electron gun to display all colors.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy"
+    },
+    {
+      "question": "In raster scan displays, the electron beam is swept across the screen one row at a time from top to bottom.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy"
+    },
+    {
+      "question": "Vector graphics are created with pixel-based programs.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "CRTS - DISPLAY MODELS",
+      "rate": "easy"
+    },
+    {
+      "question": "The refresh rate is measured in Hertz (Hz).",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "REFRESH RATE",
+      "rate": "easy"
+    },
+    {
+      "question": "Pixel depth refers to the number of pixels on a screen.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "PIXEL DEPTH",
+      "rate": "medium"
+    },
+    {
+      "question": "A pixel depth of 8 bits per pixel can produce 256 levels.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "PIXEL DEPTH",
+      "rate": "medium"
+    },
+    {
+      "question": "Frame buffer is used to store the pixel values of an image to be displayed.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "FRAME BUFFER",
+      "rate": "easy"
+    },
+    {
+      "question": "Random scan displays direct the electron beam only to parts of the screen where an image is to be drawn.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "easy"
+    },
+    {
+      "question": "Vector images are resolution dependent.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "medium"
+    },
+    {
+      "question": "Raster images are best for creating logos and technical drawings.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy"
+    },
+    {
+      "question": "Raster images can be enlarged without any loss of quality.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy"
+    },
+    {
+      "question": "Vector graphics can be scaled to any size without losing quality.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy"
+    },
+    {
+      "question": "Common raster file formats include JPG, PNG, and BMP.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy"
+    },
+    {
+      "question": "Vector file formats include SVG, AI, and EPS.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "WHICH IS PREFERRED? RASTER/VECTOR",
+      "rate": "easy"
+    },
+    {
+      "question": "Photoshop is primarily a vector graphics editing program.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER VS. VECTOR GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "Grayscale images are also known as intensity images.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER TYPES – INTENSITY IMAGES",
+      "rate": "medium"
+    },
+    {
+      "question": "RGB images are also called true-color images.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER TYPES – RGB IMAGES",
+      "rate": "easy"
+    },
+    {
+      "question": "Binary images can have more than two color values per pixel.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER TYPES – BINARY IMAGES",
+      "rate": "easy"
+    },
+    {
+      "question": "The two main types of display models are raster and vector.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "CRTS - DISPLAY MODELS",
+      "rate": "easy"
+    },
+    {
+      "question": "Horizontal retracing refers to the electron beam returning to the leftmost position one line down.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER SCAN",
+      "rate": "medium"
+    },
+    {
+      "question": "Vertical retracing occurs when the beam returns from the bottom right to the top left of the screen.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER SCAN",
+      "rate": "medium"
+    },
+    {
+      "question": "The aspect ratio is the ratio of the number of X pixels to the number of Y pixels.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium"
+    },
+    {
+      "question": "A monochrome CRT uses three electron guns.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy"
+    },
+    {
+      "question": "Plasma panels and LEDs are examples of hard-copy devices.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy"
+    },
+    {
+      "question": "Ink-jet printers and laser printers are examples of hard-copy devices.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy"
+    },
+    {
+      "question": "The electron gun in a CRT includes a heating filament and a cathode.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Component of CRT",
+      "rate": "medium"
+    },
+    {
+      "question": "Focusing and accelerating anodes are used to broaden the electron beam.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Component of CRT",
+      "rate": "medium"
+    },
+    {
+      "question": "The phosphorus-coated screen glows when struck by the electron beam.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Component of CRT",
+      "rate": "easy"
+    },
+    {
+      "question": "Raster scan displays are also known as bitmap displays.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy"
+    },
+    {
+      "question": "Vector graphics are based on mathematical equations.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "easy"
+    },
+    {
+      "question": "The refresh buffer is also known as the frame buffer.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium"
+    },
+    {
+      "question": "Raster images are resolution independent.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium"
+    },
+    {
+      "question": "Vector images are stored as a sequence of drawing commands.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VECTORS",
+      "rate": "medium"
+    },
+    {
+      "question": "Indexed images consist of a data matrix and a colormap matrix.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER TYPES - INDEXED IMAGES",
+      "rate": "hard"
+    },
+    {
+      "question": "RGB images use an m-by-n-by-3 data array.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER TYPES – RGB IMAGES",
+      "rate": "medium"
+    },
+    {
+      "question": "Binary images have only two possible values per pixel: on and off.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER TYPES – BINARY IMAGES",
+      "rate": "easy"
+    },
+    {
+      "question": "The Beam-Penetration Method and Shadow-Mask Method are used to produce color in CRT monitors.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "COLOR CRT MONITOR",
+      "rate": "medium"
+    },
+    {
+      "question": "LCD stands for Liquid Crystal Display and is a type of video display device.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy"
+    },
+    {
+      "question": "LED stands for Light-Emitting Diode and is not used in display hardware.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy"
+    },
+    {
+      "question": "Pen plotters are an example of a hard-copy device.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "DISPLAY HARDWARE",
+      "rate": "easy"
+    },
+    {
+      "question": "Raster scan systems refresh the screen 60 to 80 times per second.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER (BITMAP)",
+      "rate": "medium"
+    },
+    {
+      "question": "Vector displays are commonly used in televisions and computer monitors.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER VS. VECTOR GRAPHICS",
+      "rate": "easy"
+    },
+    {
+      "question": "Adobe Illustrator is a vector graphics program.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "VECTORS",
+      "rate": "easy"
+    },
+    {
+      "question": "The video controller is a special-purpose processor that controls the display device.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RASTER-SCAN DISPLAY PROCESSOR",
+      "rate": "medium"
+    },
+    {
+      "question": "The purpose of the display processor is to increase the workload of the CPU.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER-SCAN DISPLAY PROCESSOR",
+      "rate": "medium"
+    },
+    {
+      "question": "Random scan displays are also called vector displays.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "RANDOM –SCAN DISPLAY (VECTOR)",
+      "rate": "easy"
+    },
+    {
+      "question": "CRT monitors are characterized by an evacuated glass bottle and extremely high voltage.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Cathode Ray Tube (CRT)",
+      "rate": "easy"
+    },
+    {
+      "question": "In raster graphics, the image is stored as a set of mathematical equations.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "RASTER (BITMAP)",
+      "rate": "easy"
+    }
+  ]
+}

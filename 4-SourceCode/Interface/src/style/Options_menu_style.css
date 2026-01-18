@@ -290,6 +290,30 @@
   cursor: not-allowed;
 }
 
+.share-copy-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-spinner {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(233, 254, 255, 0.35);
+  border-top-color: rgba(70, 234, 255, 1);
+  animation: share-spin 0.8s linear infinite;
+}
+
+@keyframes share-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .share-status {
   margin-top: 10px;
   min-height: 18px;

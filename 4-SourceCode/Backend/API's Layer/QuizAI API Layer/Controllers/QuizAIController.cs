@@ -19,6 +19,7 @@ namespace QuizAI_API_Layer.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        //Don't forget to enable the user to login immediately when he signs up. [VII]
         [HttpPost("Signup")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -74,7 +75,6 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
-
         [HttpPost("VerifyNewUser")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -127,7 +127,6 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
-
 
         [HttpPost("Login")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -184,7 +183,6 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
-
         [HttpGet("health")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -232,7 +230,7 @@ namespace QuizAI_API_Layer.Controllers
         [HttpPost("Forgot-Password")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        //used when the user presses the forgot password button. it generates a token and sends it to his email.
+        //used when the user presses the forgot password button. it generates a token and sends it to his email. //working
         public async Task<ActionResult<ApiResponse<ForgotPasswordResponseDTO>>> ForgotPassword(ForgotPasswordRequestDTO ForgotPasswordInfo)
         {
             try
@@ -263,7 +261,6 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
-
 
         [HttpGet("VerifyForgetPasswordToken")] //this function is used when the user clicks the link in his email. it verifies the token. //working
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -314,7 +311,6 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
-
 
         [HttpPost("ResetPassword")] //Used when the user resets his password (screen) //working
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -417,7 +413,6 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
-
         [Authorize]
         [HttpDelete("quiz/delete")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -478,7 +473,6 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
-
         [Authorize]
         [HttpPut("{quizId}/rename")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -538,7 +532,6 @@ namespace QuizAI_API_Layer.Controllers
             }
         }
 
-
         [Authorize]
         [HttpPost("Share")] //Sender side endpoint
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -575,7 +568,6 @@ namespace QuizAI_API_Layer.Controllers
             }
 
         }
-
 
         [Authorize] //(Recipient side endpoint)
         [HttpPost("ShareVerify")]
@@ -642,42 +634,35 @@ namespace QuizAI_API_Layer.Controllers
 
         }
 
-
         [Authorize]
         [HttpGet("Quiz/{id}")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> GetQuizById([FromRoute] Guid id)
+        public async Task<ActionResult<ApiResponse<Quiz>>> GetQuizById([FromRoute] Guid id, [FromQuery] string QuizTitle)
         {
             try
             {
-                // Call business layer
-                var quizData = await QuizzesBusinessLayer.GetQuizById(id);
+                var quiz = await QuizzesBusinessLayer.GetQuizQuestionsBasedOnQuizID(id, QuizTitle);
 
-                if (quizData == null || quizData.Questions == null || quizData.Questions.Count == 0)
+                if (quiz == null || quiz.Questions.Count == 0)
                 {
-                    return NotFound(new ApiResponse<GenerateQuizResponseDTO>
+                    return NotFound(new ApiResponse<Quiz>
                     {
                         Success = false,
                         Status = 404,
                         Message = "Quiz not found",
-                        Timestamp = DateTime.UtcNow,
-                        Data = null,
-                        Error = null
+                        Timestamp = DateTime.UtcNow
                     });
                 }
 
-                // Wrap in the exact same envelope as Generate
-                return Ok(new ApiResponse<GenerateQuizResponseDTO>
+                return Ok(new ApiResponse<Quiz>
                 {
                     Success = true,
                     Status = 200,
                     Message = "Request completed successfully.",
                     Timestamp = DateTime.UtcNow,
-                    Data = quizData,
-                    Error = null
+                    Data = quiz
                 });
             }
             catch (Exception ex)
@@ -688,22 +673,15 @@ namespace QuizAI_API_Layer.Controllers
                     Status = 500,
                     Message = "Internal server error",
                     Timestamp = DateTime.UtcNow,
-                    Data = null,
-                    Error = new ApiError
-                    {
-                        Code = "SERVER_ERROR",
-                        Details = ex.Message
-                    }
+                    Error = new ApiError { Code = "SERVER_ERROR", Details = ex.Message }
                 });
             }
         }
-
 
         [Authorize]
         [HttpDelete("Questions/delete")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<ApiResponse<bool>>> DeleteQuestion(Guid QuestionID, Guid QuizID)
@@ -780,7 +758,7 @@ namespace QuizAI_API_Layer.Controllers
                 Guid UserID = Guid.Parse(userIdClaim!.Value);
 
                 GenerateQuizResponseDTO generatedQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request, file, 1);
-                
+
                 return Ok(new ApiResponse<GenerateQuizResponseDTO>
                 {
                     Success = true,
@@ -806,9 +784,8 @@ namespace QuizAI_API_Layer.Controllers
                     }
                 });
             }
-
-
         }
+
 
 
         [Authorize]
@@ -901,7 +878,7 @@ namespace QuizAI_API_Layer.Controllers
                 string filePath = await QuizzesBusinessLayer.GetFilePath(QuizID);
                 QuizQuestion? Question = await QuizzesBusinessLayer.RegenerateSingleQuestion(QuestionID, filePath, QuizID, UserID, QuestionType);
 
-                if(Question != null)
+                if (Question != null)
                     return Ok(new ApiResponse<QuizQuestion>
                     {
                         Success = true,
@@ -946,7 +923,7 @@ namespace QuizAI_API_Layer.Controllers
                 // 3. Call the Business Layer
                 bool isSuccess = await QuizzesBusinessLayer.SubmitQuizAttempt(UserID, QuizID, request.answers);
 
-                
+
                 if (isSuccess)
                 {
                     return Ok(new
@@ -968,11 +945,22 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
-
     }
-
 }
 
 
+//        //the id should be given by the jwt.
+//        ContentDTO ContentInfo = new ContentDTO(1, allowed.First(x => x.Value == ext).Key, path, "123");//instead of "123", replace the api of the text extractor.
+//        await ContentBusinessLayer.SaveContent(ContentInfo, file);
 
 
+
+
+
+//        return Ok("File uploaded!");
+//    }
+//    catch (Exception ex)
+//    {
+//        return StatusCode(500, $"Internal server error: {ex.Message}");
+//    }
+//}

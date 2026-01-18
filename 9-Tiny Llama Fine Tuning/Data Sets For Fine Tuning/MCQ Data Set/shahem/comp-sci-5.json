@@ -1,0 +1,248 @@
+{
+  "document": "FDS_CH5.pptx",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is one way data scientists can deliver new insights to end users?",
+        "options": [
+          "A one-time presentation",
+          "By keeping the insights secret",
+          "By deleting the raw data",
+          "Sending an encrypted file"
+        ],
+        "answer": "A one-time presentation"
+      },
+      {
+        "question": "What is an example of 'a new viewport on your data'?",
+        "options": [
+          "Buying a new monitor",
+          "Customer segmentation fed back to the database as a new dimension",
+          "A new software license",
+          "A printed report"
+        ],
+        "answer": "Customer segmentation fed back to the database as a new dimension"
+      },
+      {
+        "question": "Why might delivering a prototype dashboard be beneficial even in large organizations with reporting teams?",
+        "options": [
+          "It presents an example and can shorten delivery time.",
+          "It replaces the need for the reporting team.",
+          "It is always cheaper.",
+          "It is required by company policy."
+        ],
+        "answer": "It presents an example and can shorten delivery time."
+      },
+      {
+        "question": "What kind of decisions often require only a one-time analysis and report?",
+        "options": ["Operational decisions", "Strategic decisions", "Daily decisions", "Tactical decisions"],
+        "answer": "Strategic decisions"
+      },
+      {
+        "question": "What is the ultimate purpose of a business report?",
+        "options": [
+          "To increase the number of meetings",
+          "To improve managerial decisions",
+          "To fill up filing cabinets",
+          "To demonstrate technical skill"
+        ],
+        "answer": "To improve managerial decisions"
+      },
+      {
+        "question": "What is a report?",
+        "options": [
+          "Any communication artifact prepared to convey specific information",
+          "Always a 100-page document",
+          "A type of computer hardware",
+          "A financial transaction"
+        ],
+        "answer": "Any communication artifact prepared to convey specific information"
+      },
+      {
+        "question": "Which of these is a key characteristic of a successful report?",
+        "options": [
+          "Length and complexity",
+          "Clarity and brevity",
+          "Using as many technical terms as possible",
+          "Being handwritten"
+        ],
+        "answer": "Clarity and brevity"
+      },
+      {
+        "question": "What is data visualization defined as?",
+        "options": [
+          "The use of databases to store numbers",
+          "The use of visual representations to explore, make sense of, and communicate data",
+          "The process of cleaning raw data",
+          "The act of writing a report"
+        ],
+        "answer": "The use of visual representations to explore, make sense of, and communicate data"
+      },
+      {
+        "question": "How is information different from data in the context of visualization?",
+        "options": [
+          "Information is raw numbers, data is processed.",
+          "Information is the aggregation, summarization, and contextualization of data.",
+          "They are exactly the same thing.",
+          "Data is visual, information is textual."
+        ],
+        "answer": "Information is the aggregation, summarization, and contextualization of data."
+      },
+      {
+        "question": "Which of these is a 'Basic Chart or Graph'?",
+        "options": ["Heat Map", "Gantt Chart", "Line Chart", "Bullet Graph"],
+        "answer": "Line Chart"
+      },
+      {
+        "question": "Which of these is a 'Specialized Chart or Graph'?",
+        "options": ["Pie Chart", "Bar Chart", "Histogram", "Scatter Plot"],
+        "answer": "Histogram"
+      },
+      {
+        "question": "What does a PERT Chart stand for?",
+        "options": [
+          "Program Evaluation Review Technique",
+          "Project Efficiency Rating Tool",
+          "Performance Evaluation and Reporting Template",
+          "Process Execution and Review Track"
+        ],
+        "answer": "Program Evaluation Review Technique"
+      },
+      {
+        "question": "Which chart is specifically designed to show progress towards a goal in the context of other measures?",
+        "options": ["Line Chart", "Bullet Graph", "Pie Chart", "Geographic Map"],
+        "answer": "Bullet Graph"
+      },
+      {
+        "question": "What type of chart is best for showing the relationship between two variables?",
+        "options": ["Pie Chart", "Scatter Plot", "Bar Chart", "Gantt Chart"],
+        "answer": "Scatter Plot"
+      },
+      {
+        "question": "What is a Geographic Map used for in data visualization?",
+        "options": [
+          "To show hierarchical data",
+          "To display data related to specific locations",
+          "To track project timelines",
+          "To compare parts of a whole"
+        ],
+        "answer": "To display data related to specific locations"
+      },
+      {
+        "question": "A Heat Map or Tree Map is useful for showing what?",
+        "options": [
+          "Changes over time",
+          "Relationships between two variables",
+          "The magnitude of values across two categories using color",
+          "The exact numerical value of every data point"
+        ],
+        "answer": "The magnitude of values across two categories using color"
+      },
+      {
+        "question": "Which chart type uses slices to represent proportions of a whole?",
+        "options": ["Line Chart", "Bar Chart", "Pie Chart", "Scatter Plot"],
+        "answer": "Pie Chart"
+      },
+      {
+        "question": "What might a real-time dashboard help prevent?",
+        "options": [
+          "Hardware failures",
+          "Other people misinterpreting newly discovered information in reports",
+          "Data from being collected",
+          "Software updates"
+        ],
+        "answer": "Other people misinterpreting newly discovered information in reports"
+      },
+      {
+        "question": "What is the source of data for a business report?",
+        "options": [
+          "Only data from inside the organization",
+          "Data from inside and outside the organization (via ETL)",
+          "Only the CEO's opinions",
+          "Only financial statements"
+        ],
+        "answer": "Data from inside and outside the organization (via ETL)"
+      },
+      {
+        "question": "What is NOT listed as a function of a report?",
+        "options": [
+          "To ensure proper departmental functioning",
+          "To create an organizational memory",
+          "To replace all face-to-face communication",
+          "To persuade others to act"
+        ],
+        "answer": "To replace all face-to-face communication"
+      },
+      {
+        "question": "In a smaller organization, who is often in charge of the entire data cycle from gathering to reporting?",
+        "options": ["Only the CEO", "A dedicated reporting team", "The data scientist/analyst", "The IT department"],
+        "answer": "The data scientist/analyst"
+      },
+      {
+        "question": "What is a Highlight Table?",
+        "options": [
+          "A table with emphasized (e.g., colored) cells to draw attention",
+          "The title page of a report",
+          "A table of contents",
+          "A summary of highlights"
+        ],
+        "answer": "A table with emphasized (e.g., colored) cells to draw attention"
+      },
+      {
+        "question": "What is a Gantt Chart typically used for?",
+        "options": [
+          "Project scheduling and tracking tasks over time",
+          "Showing geographical distributions",
+          "Comparing sales figures between products",
+          "Displaying statistical distributions"
+        ],
+        "answer": "Project scheduling and tracking tasks over time"
+      },
+      {
+        "question": "Which chart adds a third dimension of data through the size of its points?",
+        "options": ["Line Chart", "Bar Chart", "Bubble Chart", "Histogram"],
+        "answer": "Bubble Chart"
+      },
+      {
+        "question": "What is the sequence of the management process supported by reporting?",
+        "options": [
+          "Data acquisition -> Information generation -> Decision making -> Process management",
+          "Decision making -> Data acquisition -> Process management -> Information generation",
+          "Process management -> Decision making -> Information generation -> Data acquisition",
+          "Information generation -> Process management -> Data acquisition -> Decision making"
+        ],
+        "answer": "Data acquisition -> Information generation -> Decision making -> Process management"
+      },
+      {
+        "question": "What does the 'Correctness' of a report refer to?",
+        "options": [
+          "Its length",
+          "Its visual appeal",
+          "The accuracy of its information and calculations",
+          "The font style used"
+        ],
+        "answer": "The accuracy of its information and calculations"
+      },
+      {
+        "question": "Operational decisions typically require reports to be what?",
+        "options": ["Refreshed regularly", "Done only once by an external consultant", "At least 50 pages long", "Presented in person only"],
+        "answer": "Refreshed regularly"
+      },
+      {
+        "question": "What is a formal report's typical length?",
+        "options": ["1-2 pages", "3-5 pages", "10-100 pages", "Over 200 pages"],
+        "answer": "10-100 pages"
+      },
+      {
+        "question": "Information visualization is related to which of the following?",
+        "options": [
+          "Information graphics, scientific visualization, and statistical graphics",
+          "Database administration and network security",
+          "Hardware design and manufacturing",
+          "Creative writing and poetry"
+        ],
+        "answer": "Information graphics, scientific visualization, and statistical graphics"
+      }
+    ]
+  }
+}

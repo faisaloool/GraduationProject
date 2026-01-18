@@ -1,8 +1,12 @@
-import React, { useMemo, useRef, useState } from "react";
+import React, { useMemo, useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import { useAuth } from "../context/AuthContext.jsx";
-
+import { verifyCode } from "../util/service.js";
+import {
+  clearPendingVerificationUser,
+  loadPendingVerificationUser,
+} from "../util/pendingVerification.js";
+import { Error_page } from "./Error_page.jsx";
 import "../style/Verifyaccount_style.css";
 
 const CODE_LENGTH = 6;
@@ -11,9 +15,27 @@ export const VerifyAccount = () => {
   const [digits, setDigits] = useState(() => Array(CODE_LENGTH).fill(""));
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [hasCheckedPendingUser, setHasCheckedPendingUser] = useState(false);
   const inputsRef = useRef([]);
   const navigate = useNavigate();
-  const { signup, loading } = useAuth();
+  /*   const { signup, loading } = useAuth(); */
+  const { user, setUser, logout, loading } = useAuth();
+
+  useEffect(() => {
+    // The context user may be null on first render.
+    // Hydrate from the "pending verification" session storage once.
+    if (user?.id) {
+      setHasCheckedPendingUser(true);
+      return;
+    }
+
+    const pendingUser = loadPendingVerificationUser();
+    if (pendingUser?.id) {
+      setUser(pendingUser);
+    }
+
+    setHasCheckedPendingUser(true);
+  }, [user?.id, setUser]);
 
   const code = useMemo(() => digits.join(""), [digits]);
   const isComplete = useMemo(
@@ -92,19 +114,26 @@ export const VerifyAccount = () => {
   const handleVerifySubmit = async (e) => {
     e.preventDefault();
 
+    if (!user?.id) {
+      setError("No user data found. Please register or log in first.");
+      return;
+    }
+
     if (!isComplete || isSubmitting) return;
     setError("");
     setIsSubmitting(true);
 
     try {
-      const result = await signup(code);
+      const result = await verifyCode(code, user.id);
 
-      // Extra safety: if signup() ever resolves with a failure payload, handle it.
-      if (result?.success === false || result?.error) {
-        setError(result?.message || result?.error || "The code is wrong.");
+      // `verifyCode` returns the request wrapper from service.js
+      if (!result?.ok) {
+        setError(result?.error || "The code is wrong.");
         return;
       }
 
+      clearPendingVerificationUser();
+      logout({ clearAppData: false });
       navigate("/Log-in", { replace: true });
     } catch (err) {
       setError(err?.message || "The code is wrong.");
@@ -113,55 +142,75 @@ export const VerifyAccount = () => {
     }
   };
 
-  return (
-    <div className="verify-container">
-      <div className="verify_box">
-        <h2 className="verify-title">Verify your account</h2>
-        <p className="verify-subtitle">
-          Enter the 6-digit code sent to your email.
-        </p>
-
-        <form className="verify-form" onSubmit={handleVerifySubmit}>
-          <div className="verify-code" role="group" aria-label="6-digit code">
-            {digits.map((digit, index) => (
-              <input
-                key={index}
-                ref={(el) => {
-                  inputsRef.current[index] = el;
-                }}
-                className="code-input"
-                inputMode="numeric"
-                autoComplete={index === 0 ? "one-time-code" : "off"}
-                pattern="[0-9]*"
-                maxLength={CODE_LENGTH}
-                value={digit}
-                aria-label={`Digit ${index + 1}`}
-                onChange={(e) => handleDigitChange(index, e.target.value)}
-                onKeyDown={(e) => handleKeyDown(index, e)}
-                onPaste={(e) => handlePaste(index, e)}
-                onFocus={(e) => e.target.select()}
-              />
-            ))}
-          </div>
-
-          {error ? (
-            <p className="verify-error" role="alert">
-              {error}
-            </p>
-          ) : null}
-
-          <button
-            className="verify-submit"
-            disabled={!isComplete || isSubmitting}
-          >
-            {isSubmitting ? "Verifying..." : "Verify"}
-          </button>
-
-          <p className="verify-hint">
-            Didn’t receive a code? Check spam or try again.
-          </p>
-        </form>
+  if (loading || !hasCheckedPendingUser) {
+    return (
+      <div className="verify-container">
+        <div className="verify_box">
+          <h2 className="verify-title">Verify your account</h2>
+          <p className="verify-subtitle">Loading your verification details…</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+  if (!user) {
+    return (
+      <Error_page
+        message="No user data found. Please register or log in first."
+        error="404 - User not found"
+      />
+    );
+  } else {
+    return (
+      <div className="verify-container">
+        <div className="verify_box">
+          <h2 className="verify-title">Verify your account</h2>
+          <p className="verify-subtitle">
+            Enter the 6-digit code sent to your email.
+          </p>
+
+          <form className="verify-form" onSubmit={handleVerifySubmit}>
+            <div className="verify-code" role="group" aria-label="6-digit code">
+              {digits.map((digit, index) => (
+                <input
+                  key={index}
+                  ref={(el) => {
+                    inputsRef.current[index] = el;
+                  }}
+                  className="code-input"
+                  inputMode="numeric"
+                  autoComplete={index === 0 ? "one-time-code" : "off"}
+                  pattern="[0-9]*"
+                  maxLength={CODE_LENGTH}
+                  value={digit}
+                  aria-label={`Digit ${index + 1}`}
+                  onChange={(e) => handleDigitChange(index, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(index, e)}
+                  onPaste={(e) => handlePaste(index, e)}
+                  onFocus={(e) => e.target.select()}
+                />
+              ))}
+            </div>
+
+            {error ? (
+              <p className="verify-error" role="alert">
+                {error}
+              </p>
+            ) : null}
+
+            <button
+              className="verify-submit"
+              disabled={!isComplete || isSubmitting}
+            >
+              {isSubmitting ? "Verifying..." : "Verify"}
+            </button>
+
+            <p className="verify-hint">
+              Didn’t receive a code? Check spam or try again.
+            </p>
+          </form>
+        </div>
+      </div>
+    );
+  }
 };
