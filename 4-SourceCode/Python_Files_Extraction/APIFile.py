@@ -238,7 +238,6 @@ Content:
 
 
 
-<<<<<<< HEAD
 
 
 # @app.post("/ask_ai_model")
@@ -249,22 +248,12 @@ Content:
 #     content = await file.read()
 #     with open(temp_path, "wb") as f:
 #         f.write(content)
-=======
-@app.post("/ask_ai_model")
-async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-    temp_path = f"temp{os.path.splitext(file.filename)[1]}"
-
-    # Save uploaded file
-    with open(temp_path, "wb") as f:
-        f.write(await file.read())
->>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 #     try:
 #         text = extract_file_text(temp_path, file.filename)
 #         if not text.strip():
 #             raise HTTPException(status_code=400, detail="No text found in file")
 
-<<<<<<< HEAD
 #         tasks = []
 #         # Keep track of which order tasks are added
 #         task_types = []
@@ -297,14 +286,6 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 #             "question_type": "True or False", 
 #             "questions": []
 #         })
-=======
-        mcq_prompt = build_mcq_prompt(text, mcq_count, file.filename)
-        tf_prompt = build_tf_prompt(text, tf_count, file.filename)
-
-        mcq_task = asyncio.create_task(send_to_lm_studio_async(mcq_prompt))
-        tf_task = asyncio.create_task(send_to_lm_studio_async(tf_prompt))
-        mcq_result, tf_result = await asyncio.gather(mcq_task, tf_task)
->>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 #         return {
 #             "filename": file.filename,
@@ -313,7 +294,6 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 #             "total_questions": mcq_count + tf_count
 #         }
 
-<<<<<<< HEAD
 #     except Exception as e:
 #         # This helps you see the actual error in your console/logs
 #         print(f"Error occurred: {e}")
@@ -451,14 +431,6 @@ async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_cou
 # }
 
 
-=======
-    finally:
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
-
-
-
->>>>>>> 4f72654b4e1683747bc5814bc19e3cce63cde07c
 
 
 
