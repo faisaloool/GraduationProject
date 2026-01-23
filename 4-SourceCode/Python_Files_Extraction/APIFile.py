@@ -105,24 +105,45 @@ async def extract_text_endpoint(file: UploadFile = File(...)):
 #     except Exception as e:
 #         return f"Error communicating with LM Studio: {e}"
 
-async def send_to_lm_studio_async(prompt: str) -> str:
-    """Send a prompt to LM Studio asynchronously and return the AI response."""
-    url = "http://26.152.59.249:1234/v1/chat/completions"
+# async def send_to_lm_studio_async(prompt: str) -> str:
+#     """Send a prompt to LM Studio asynchronously and return the AI response."""
+#     url = "http://26.152.59.249:1234/v1/chat/completions"
+#     payload = {
+#         "model": "local-model",
+#         "messages": [{"role": "user", "content": prompt}],
+#         "temperature": 0.5,
+#         "max_tokens": 1200
+#     }
+#     headers = {"Content-Type": "application/json"}
+
+#     async with httpx.AsyncClient() as client:
+#         resp = await client.post(url, json=payload, headers=headers, timeout=None)
+#         resp.raise_for_status()
+#         data = resp.json()
+#         return data["choices"][0]["message"]["content"]
+
+
+LM_STUDIO_URL = "http://26.152.59.249:1234/v1/chat/completions"
+LM_TIMEOUT = httpx.Timeout(240.0)
+
+async def send_to_lm_studio(prompt: str) -> str:
     payload = {
         "model": "local-model",
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.5,
         "max_tokens": 1200
     }
-    headers = {"Content-Type": "application/json"}
 
-    async with httpx.AsyncClient() as client:
-        resp = await client.post(url, json=payload, headers=headers, timeout=None)
-        resp.raise_for_status()
-        data = resp.json()
-        return data["choices"][0]["message"]["content"]
-
-
+    async with httpx.AsyncClient(timeout=LM_TIMEOUT) as client:
+        try:
+            resp = await client.post(LM_STUDIO_URL, json=payload)
+            resp.raise_for_status()
+            data = resp.json()
+            return data["choices"][0]["message"]["content"]
+        except httpx.RequestError as e:
+            raise HTTPException(status_code=503, detail=f"LM Studio unreachable: {e}")
+        except KeyError:
+            raise HTTPException(status_code=500, detail="Invalid response from AI model")
 
 
 
@@ -222,8 +243,8 @@ Content:
 #         tf_prompt = build_tf_prompt(text, tf_count, file.filename)
 
 #         # Send two requests to LM Studio
-#         mcq_result = send_to_lm_studio(mcq_prompt)
-#         tf_result = send_to_lm_studio(tf_prompt)
+#         mcq_result = send_to_lm_studio_async(mcq_prompt)
+#         tf_result = send_to_lm_studio_async(tf_prompt)
 
 #         return {
 #             "filename": file.filename,
@@ -305,130 +326,160 @@ Content:
 
 
 
-#the function that returns static 10 questions: 
+# @app.post("/ask_ai_model")
+# async def ask_ai_model(
+#     file: UploadFile = File(...),
+#     mcq_count: int = 20,
+#     tf_count: int = 20
+# ):
+#     temp_path = f"temp_{file.filename}"
+
+#     try:
+#         # Save uploaded file
+#         with open(temp_path, "wb") as f:
+#             f.write(await file.read())
+
+#         # Extract text
+#         text = extract_file_text(temp_path, file.filename)
+#         if not text.strip():
+#             raise HTTPException(status_code=400, detail="No text found in file")
+
+#         tasks = []
+#         task_keys = []
+
+#         if mcq_count > 0:
+#             tasks.append(send_to_lm_studio(build_mcq_prompt(text, mcq_count, file.filename)))
+#             task_keys.append("mcq")
+
+#         if tf_count > 0:
+#             tasks.append(send_to_lm_studio(build_tf_prompt(text, tf_count, file.filename)))
+#             task_keys.append("tf")
+
+#         # Run AI calls concurrently
+#         responses = await asyncio.gather(*tasks)
+
+#         results = dict(zip(task_keys, responses))
+#         print(results)
+#         return {
+#             "filename": file.filename,
+#             "mcq_questions": results.get("mcq", {}),
+#             "true_false_questions": results.get("tf", {}),
+#             "total_questions": mcq_count + tf_count
+#         }
+
+#     except HTTPException:
+#         raise
+#     except Exception as e:
+#         print(f"SERVER ERROR: {e}")
+#         raise HTTPException(status_code=500, detail="Internal server error")
+
+#     finally:
+#         if os.path.exists(temp_path):
+#             os.remove(temp_path)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import os
+import json
+import asyncio
+from fastapi import FastAPI, UploadFile, File, HTTPException
+
+app = FastAPI()
 
 @app.post("/ask_ai_model")
-async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-    return {
-        "filename": "Ch1_Introduction.pptx",
-        "mcq_questions": {
-            "file_name": "Ch1_Introduction.pptx",
-            "question_type": "Multiple Choice",
-            "questions": [
-                {
-                    "question": "What are the identified catalysts that enabled products like Samsung Galaxy A2?",
-                    "options": [
-                        "A) Low-cost computers",
-                        "B) High-speed communication networks",
-                        "C) Both A and B",
-                        "D) None of the above"
-                    ],
-                    "answer": "C) Both A and B"
-                },
-                {
-                    "question": "Which technology has raised privacy concerns due to location tracking and camera use?",
-                    "options": [
-                        "A) Email",
-                        "B) Cell phones",
-                        "C) Social networking sites",
-                        "D) Voice over IP services"
-                    ],
-                    "answer": "B) Cell phones"
-                },
-                {
-                    "question": "According to the text, what is a primary benefit of e-commerce platforms like Amazon.com?",
-                    "options": [
-                        "A) Increase in physical retail stores",
-                        "B) Lower overhead and easier price comparison for consumers",
-                        "C) Reducing online privacy concerns",
-                        "D) Eliminating need for payment systems"
-                    ],
-                    "answer": "B) Lower overhead and easier price comparison for consumers"
-                },
-                {
-                    "question": "Which ethical theory emphasizes duties and rules independent of consequences?",
-                    "options": [
-                        "A) Utilitarianism",
-                        "B) Deontological theories",
-                        "C) Positive rights",
-                        "D) Negative rights"
-                    ],
-                    "answer": "B) Deontological theories"
-                },
-                {
-                    "question": "In the context of information age, which statement best reflects the dynamic between people and technology?",
-                    "options": [
-                        "A) Technology is static and unaffected by society",
-                        "B) People adopt technology but it does not influence them",
-                        "C) Using technology can change people physically and psychologically",
-                        "D) Technological changes are irrelevant to social values"
-                    ],
-                    "answer": "C) Using technology can change people physically and psychologically"
-                }
-            ]
-        },
-        "true_false_questions": {
-            "file_name": "Ch1_Introduction.pptx",
-            "question_type": "True or False",
-            "questions": [
-                {
-                    "question": "The Information Age was primarily driven by high-cost computers and slow communication networks.",
-                    "answer": "False"
-                },
-                {
-                    "question": "Smartphones such as the Samsung Galaxy A2 can function as a camera, video recorder, and digital compass.",
-                    "answer": "True"
-                },
-                {
-                    "question": "Email messages in the 1980s were typically long and included multimedia attachments.",
-                    "answer": "False"
-                },
-                {
-                    "question": "The World Wide Web was first established by physicists in Europe in 1990 to share research with colleagues worldwide.",
-                    "answer": "True"
-                },
-                {
-                    "question": "Artificial intelligence is a branch of computer science that focuses on making computers perform tasks normally requiring human intelligence.",
-                    "answer": "True"
-                }
-            ]
-        },
-        "total_questions": 10
-    }
+async def ask_ai_model(
+    file: UploadFile = File(...),
+    mcq_count: int = 20,
+    tf_count: int = 20
+):
+    temp_path = f"temp_{file.filename}"
+
+    try:
+        # Save uploaded file
+        with open(temp_path, "wb") as f:
+            f.write(await file.read())
+
+        # Extract text from file
+        text = extract_file_text(temp_path, file.filename)
+        if not text.strip():
+            raise HTTPException(status_code=400, detail="No text found in file")
+
+        tasks = []
+        task_keys = []
+
+        if mcq_count > 0:
+            tasks.append(send_to_lm_studio(build_mcq_prompt(text, mcq_count, file.filename)))
+            task_keys.append("mcq")
+
+        if tf_count > 0:
+            tasks.append(send_to_lm_studio(build_tf_prompt(text, tf_count, file.filename)))
+            task_keys.append("tf")
+
+        # Run AI calls concurrently
+        responses = await asyncio.gather(*tasks)
+
+        # Parse and merge into one JSON
+        final_json = {
+            "filename": file.filename,
+            "questions": {
+                "multiple_choice": [],
+                "true_false": []
+            },
+            "summary": {
+                "mcq_count": mcq_count,
+                "tf_count": tf_count,
+                "total_questions": mcq_count + tf_count
+            }
+        }
+
+        for key, response in zip(task_keys, responses):
+            try:
+                parsed = json.loads(response)
+            except json.JSONDecodeError:
+                raise HTTPException(status_code=500, detail=f"AI returned invalid JSON for {key}")
+
+            if key == "mcq":
+                final_json["questions"]["multiple_choice"] = parsed.get("questions", [])
+            elif key == "tf":
+                final_json["questions"]["true_false"] = parsed.get("questions", [])
+
+        print(final_json)
+        return final_json
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"SERVER ERROR: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+    finally:
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
 
 
 
-#the version that returns only one static mcq question.
- 
-
-# @app.post("/ask_ai_model")
-# async def ask_ai_model(file: UploadFile = File(...), mcq_count: int = 20, tf_count: int = 20):
-#     return {
-#     "filename": "Ch1_Introduction.pptx",
-#     "mcq_questions": {
-#         "file_name": "Ch1_Introduction.pptx",
-#         "question_type": "Multiple Choice",
-#         "questions": [
-#             {
-#                 "question": "Which ethical theory focuses on the outcomes or consequences of actions to determine what is right or wrong?",
-#                 "options": [
-#                     "A) Deontological theories",
-#                     "B) Negative rights",
-#                     "C) Utilitarianism",
-#                     "D) Professional codes of ethics"
-#                 ],
-#                 "answer": "C) Utilitarianism"
-#             }
-#         ]
-#     },
-#     "true_false_questions": {
-#         "file_name": "Ch1_Introduction.pptx",
-#         "question_type": "True or False",
-#         "questions": []
-#     },
-#     "total_questions": 1
-# }
 
 
 
