@@ -7,7 +7,7 @@ export default defineConfig({
     proxy: {
       // Intercepts anything starting with /api
       "/api": {
-        target: "https://racks-hits-linking-postings.trycloudflare.com",
+        target: "https://variety-urban-attempts-grew.trycloudflare.com",
         changeOrigin: true,
         secure: false,
       },
