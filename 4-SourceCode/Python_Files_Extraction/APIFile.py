@@ -124,7 +124,7 @@ async def extract_text_endpoint(file: UploadFile = File(...)):
 
 
 LM_STUDIO_URL = "http://26.152.59.249:1234/v1/chat/completions"
-LM_TIMEOUT = httpx.Timeout(240.0)
+LM_TIMEOUT = httpx.Timeout(300.0)
 
 async def send_to_lm_studio(prompt: str) -> str:
     payload = {
