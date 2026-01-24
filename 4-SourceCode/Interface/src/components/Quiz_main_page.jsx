@@ -33,6 +33,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     deleteExam,
     regenerateExamQuestion,
     deleteExamQuestion,
+    submitExamAnswers,
     error,
   } = useExams();
 
@@ -374,7 +375,12 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
     setSubmittedScore(null);
     setSubmitSyncError(null);
+    setQuestionNumber(0);
     setMyMap(new Map());
+    setRegeneratingById({});
+    setRegenerateErrorById({});
+    setDeletingById({});
+    setDeleteErrorById({});
     if (quizRef.current) {
       quizRef.current.scrollTo({ top: 0, behavior: "instant" });
     }
@@ -515,14 +521,58 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
     return correctIndex != null && selectedIndex === correctIndex;
   };
 
+  const getSelectedOptionIdForQuestion = (q, selectedIndexValue) => {
+    // Prefer real option ids if the backend provides them.
+    const selectedIndex = coerceSelectionIndex(selectedIndexValue);
+
+    if (selectedIndex == null) {
+      // Could already be an optionId-like value.
+      const v = selectedIndexValue;
+      return v == null ? null : String(v);
+    }
+
+    const raw = Array.isArray(q?.options)
+      ? q.options
+      : Array.isArray(q?.choices)
+      ? q.choices
+      : [];
+    const selected = raw?.[selectedIndex];
+
+    if (selected && typeof selected === "object") {
+      const maybeId =
+        selected.optionId ??
+        selected.id ??
+        selected.choiceId ??
+        selected.choiceID ??
+        selected._id ??
+        null;
+      if (maybeId != null) return String(maybeId);
+    }
+
+    // Fallback: send letter (a/b/c/...) to keep compatibility with older APIs.
+    return String.fromCharCode(97 + selectedIndex);
+  };
+
   const handleSubmitExam = async () => {
     if (!examKey) return;
     if (isSubmitted) return;
 
     setSubmitSyncError(null);
 
-    let score = 0;
     const questions = Array.isArray(exam?.questions) ? exam.questions : [];
+    const missing = questions.filter((q) => {
+      const qKey = getQuestionKey(q);
+      if (qKey == null) return true;
+      return !myMap.has(String(qKey));
+    });
+
+    if (questions.length > 0 && missing.length > 0) {
+      const msg = `Please answer all questions before submitting. (${missing.length} remaining)`;
+      setSubmitSyncError(msg);
+      return;
+    }
+
+    let score = 0;
     for (const q of questions) {
       const qKey = getQuestionKey(q);
       const selectedIndexValue = myMap.get(String(qKey));
@@ -533,18 +583,40 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
 
     setSubmittedScore(score);
 
+    const submissionPayload = {
+      examId: String(examKey),
+      answers: questions
+        .map((q) => {
+          const qKey = getQuestionKey(q);
+          const selectedIndexValue = myMap.get(String(qKey));
+          const selectedOptionId = getSelectedOptionIdForQuestion(
+            q,
+            selectedIndexValue
+          );
+          return qKey == null || selectedOptionId == null
+            ? null
+            : {
+                questionId: String(qKey),
+                selectedOptionId: String(selectedOptionId),
+              };
+        })
+        .filter(Boolean),
+    };
+
+    // Fire-and-forget backend submit (keep normal submit flow).
+    try {
+      if (typeof submitExamAnswers === "function") {
+        submitExamAnswers(submissionPayload);
+      }
+    } catch {
+      // ignore
+    }
+
     const userIdValue = getCurrentUserId();
     if (!userIdValue) {
       setSubmitSyncError("Not logged in. Saved locally only.");
       return;
     }
-
-    const answers = Array.from(myMap.entries()).map(
-      ([questionId, selectedOption]) => ({
-        questionId,
-        selectedOption,
-      })
-    );
   };
 
   // here we display the exam questions and options
@@ -776,7 +848,7 @@ export const Quiz_main_page = ({ editing, setEditing }) => {
                   </div>
                 )}
 
-                {isSubmitted && submitSyncError && (
+                {submitSyncError && (
                   <div className="exam-sync-error" role="alert">
                     {String(submitSyncError)}
                   </div>

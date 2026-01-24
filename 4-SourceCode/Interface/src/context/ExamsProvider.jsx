@@ -15,6 +15,7 @@ import {
   regenerateQuestion,
   deleteQuestion,
   getQuizInfo,
+  submitExamAnswers,
 } from "../util/service.js";
 import { useAuth } from "./AuthContext.jsx";
 
@@ -160,7 +161,20 @@ export function ExamsProvider({ children }) {
         (Array.isArray(data?.quizzesInfo) && data.quizzesInfo) ||
         (Array.isArray(data?.quizzes) && data.quizzes) ||
         [];
-      setExams(list.map(normalizeExam));
+      const normalizedList = list.map(normalizeExam);
+      setExams(normalizedList);
+
+      // If a shared exam was just saved into the user's exams, we redirect to '/'
+      // and set this flag so the main page auto-selects the newest/last exam.
+      try {
+        const flag = sessionStorage.getItem("quizai:selectLastExamOnLoad");
+        if (flag && normalizedList.length) {
+          sessionStorage.removeItem("quizai:selectLastExamOnLoad");
+          setExam(normalizedList[normalizedList.length - 1]);
+        }
+      } catch {
+        // ignore storage errors
+      }
       return data;
     } catch (error) {
       setError(error);
@@ -255,7 +269,17 @@ export function ExamsProvider({ children }) {
           return { error: result.error };
         }
 
-        const sharedQuiz = result && typeof result === "object" ? result : null;
+        // New backend behavior: success response with no quiz payload,
+        // because the shared exam is persisted into the user's exams list.
+        if (result?.saved === true) {
+          pushFeedback(
+            "success",
+            result?.message || "Shared quiz saved successfully."
+          );
+          return { success: true, saved: true };
+        }
+
+        /* const sharedQuiz = result && typeof result === "object" ? result : null;
         if (!sharedQuiz) {
           const msg = "Unexpected server response.";
           setError(msg);
@@ -264,10 +288,8 @@ export function ExamsProvider({ children }) {
 
         const normalizedSharedQuiz = normalizeExam(sharedQuiz);
 
-        // Set the active exam so Quiz_main_page renders it.
         setExam(normalizedSharedQuiz);
 
-        // Optionally add it to the sidebar list if it's not already present.
         const sharedExamId = getExamId(normalizedSharedQuiz);
         if (sharedExamId != null) {
           setExams((prev) => {
@@ -279,14 +301,14 @@ export function ExamsProvider({ children }) {
           });
         }
 
-        return { success: true, quiz: normalizedSharedQuiz };
+        return { success: true, quiz: normalizedSharedQuiz }; */
       } catch (err) {
         const msg = err?.message || "Failed to load shared quiz.";
         setError(msg);
         return { error: msg };
       }
     },
-    [token, user]
+    [token, user, pushFeedback]
   );
   const getQuestionCounts = useCallback((exam) => {
     let mcqCount = 0;
@@ -604,6 +626,51 @@ export function ExamsProvider({ children }) {
     return { success: true, ...result };
   };
 
+  const submitExamAnswersToBackend = useCallback(
+    (submissionPayload) => {
+      const examIdValue = String(submissionPayload?.examId ?? "").trim();
+      if (!examIdValue) {
+        pushFeedback("error", "Missing exam id.");
+        return;
+      }
+
+      const normalizedAnswers = Array.isArray(submissionPayload?.answers)
+        ? submissionPayload.answers
+            .map((a) => {
+              const questionId = String(a?.questionId ?? "").trim();
+              const selectedOptionId = String(a?.selectedOptionId ?? "").trim();
+              if (!questionId || !selectedOptionId) return null;
+              return { questionId, selectedOptionId };
+            })
+            .filter(Boolean)
+        : [];
+
+      const normalizedPayload = {
+        examId: examIdValue,
+        answers: normalizedAnswers,
+      };
+
+      if (!token) {
+        pushFeedback("error", "Not logged in.");
+        return;
+      }
+
+      // Fire-and-forget: keep the normal submit flow on the UI.
+      void (async () => {
+        const result = await submitExamAnswers(normalizedPayload, token);
+        if (result?.error) {
+          pushFeedback("error", result.error);
+          return;
+        }
+        // Optional: only show success if backend explicitly returns it.
+        if (result?.success === true || result?.ok === true) {
+          pushFeedback("success", "Exam submitted successfully.");
+        }
+      })();
+    },
+    [token, pushFeedback]
+  );
+
   return (
     <ExamsContext.Provider
       value={{
@@ -625,6 +692,7 @@ export function ExamsProvider({ children }) {
         regenerateWholeExam,
         regenerateExamQuestion,
         deleteExamQuestion,
+        submitExamAnswers: submitExamAnswersToBackend,
         error,
       }}
     >
