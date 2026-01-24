@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 4: Text Mining and Text Analytics - Fundamentals of Data Science",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Text mining combines language science, computer science, statistics, and machine learning.",
+        "answer": "True"
+      },
+      {
+        "question": "Text mining turns unstructured text into a more structured form.",
+        "answer": "True"
+      },
+      {
+        "question": "Facebook's autocomplete feature does not use named entity recognition.",
+        "answer": "False"
+      },
+      {
+        "question": "Google uses text mining only for answering search queries, not for other purposes.",
+        "answer": "False"
+      },
+      {
+        "question": "About 85-90% of all corporate data is in some kind of unstructured form.",
+        "answer": "True"
+      },
+      {
+        "question": "Unstructured corporate data doubles in size every 5 years.",
+        "answer": "False"
+      },
+      {
+        "question": "Text mining is also known as knowledge discovery in textual databases.",
+        "answer": "True"
+      },
+      {
+        "question": "Data mining and text mining both seek novel and useful patterns.",
+        "answer": "True"
+      },
+      {
+        "question": "The main difference between data mining and text mining is that data mining works with unstructured data.",
+        "answer": "False"
+      },
+      {
+        "question": "Text mining first imposes structure on data, then mines the structured data.",
+        "answer": "True"
+      },
+      {
+        "question": "Text mining has applications in law, medicine, finance, and marketing.",
+        "answer": "True"
+      },
+      {
+        "question": "Spam filtering is not an application of text mining.",
+        "answer": "False"
+      },
+      {
+        "question": "Natural Language Processing (NLP) is a subfield of artificial intelligence.",
+        "answer": "True"
+      },
+      {
+        "question": "The 'bag of words' approach considers the order and structure of words.",
+        "answer": "False"
+      },
+      {
+        "question": "Syntax refers to the arrangement of words to form a sentence.",
+        "answer": "True"
+      },
+      {
+        "question": "Semantics refers to the study of meaning.",
+        "answer": "True"
+      },
+      {
+        "question": "WordNet is an automatically generated database of English words.",
+        "answer": "False"
+      },
+      {
+        "question": "Sentiment analysis detects favorable and unfavorable opinions toward products.",
+        "answer": "True"
+      },
+      {
+        "question": "SentiWordNet is not related to sentiment analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "The text mining process consists of three steps.",
+        "answer": "True"
+      },
+      {
+        "question": "Step 1 of text mining is to create the Term-by-Document Matrix.",
+        "answer": "False"
+      },
+      {
+        "question": "The corpus includes all relevant unstructured data like documents, emails, and web pages.",
+        "answer": "True"
+      },
+      {
+        "question": "Stop words should always be included in text analysis.",
+        "answer": "False"
+      },
+      {
+        "question": "Stemming reduces words to their root form.",
+        "answer": "True"
+      },
+      {
+        "question": "Binary frequencies count how many times a term appears in a document.",
+        "answer": "False"
+      },
+      {
+        "question": "Inverse document frequency gives more weight to terms that appear in many documents.",
+        "answer": "False"
+      },
+      {
+        "question": "Term-by-Document Matrix has terms as rows and documents as columns.",
+        "answer": "True"
+      },
+      {
+        "question": "Classification and clustering are techniques for extracting patterns in text mining.",
+        "answer": "True"
+      },
+      {
+        "question": "Text mining cannot improve search recall or precision.",
+        "answer": "False"
+      },
+      {
+        "question": "Query-specific clustering is not a text mining application.",
+        "answer": "False"
+      },
+      {
+        "question": "Trend analysis can be performed using text mining.",
+        "answer": "True"
+      },
+      {
+        "question": "Plagiarism detection is an application of text mining.",
+        "answer": "True"
+      },
+      {
+        "question": "Automatic text summarization is not possible with text mining.",
+        "answer": "False"
+      },
+      {
+        "question": "Text mining is only useful for English language text.",
+        "answer": "False"
+      },
+      {
+        "question": "NLP studies the understanding of natural human language.",
+        "answer": "True"
+      },
+      {
+        "question": "The 'bag of words' approach is a new method in text mining.",
+        "answer": "False"
+      },
+      {
+        "question": "WordNet includes definitions, synonyms, and semantic relations between words.",
+        "answer": "True"
+      },
+      {
+        "question": "Email prioritization and categorization use text mining techniques.",
+        "answer": "True"
+      },
+      {
+        "question": "Text mining cannot be used for fraud detection.",
+        "answer": "False"
+      },
+      {
+        "question": "The three-step text mining process ends with establishing the corpus.",
+        "answer": "False"
+      }
+    ]
+  }
+}

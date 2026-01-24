@@ -1,0 +1,285 @@
+{
+  "filename": "Ch2.pptx",
+  "quiz": [
+    {
+      "question": "A software process model is a detailed, step-by-step implementation guide for a specific project.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "The software process",
+      "rate": "easy",
+      "suggestion": "Review the definition of a software process model as an abstract representation."
+    },
+    {
+      "question": "All software processes involve the activities of specification, design and implementation, validation, and evolution.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "The software process",
+      "rate": "easy",
+      "suggestion": "Refer to the four fundamental activities common to all software processes."
+    },
+    {
+      "question": "Process descriptions only include the sequence of activities and never include roles or pre- and post-conditions.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software process descriptions",
+      "rate": "easy",
+      "suggestion": "Review what elements a process description may contain."
+    },
+    {
+      "question": "Plan-driven processes require that all process activities are planned in advance, while agile processes use incremental planning.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Plan-driven and agile processes",
+      "rate": "easy",
+      "suggestion": "Compare the core characteristics of plan-driven and agile processes."
+    },
+    {
+      "question": "The waterfall model is best suited for projects with highly volatile and changing requirements.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Waterfall model problems",
+      "rate": "easy",
+      "suggestion": "Consider the inflexibility of the waterfall model in accommodating change."
+    },
+    {
+      "question": "Incremental development interleaves the activities of specification, development, and validation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software process models",
+      "rate": "easy",
+      "suggestion": "Review how incremental development differs from the sequential waterfall model."
+    },
+    {
+      "question": "A major advantage of incremental development is the high visibility of progress for management.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Incremental development problems",
+      "rate": "easy",
+      "suggestion": "Consider the stated drawbacks related to process visibility."
+    },
+    {
+      "question": "Integration and configuration is a process model based on assembling systems from existing reusable components.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Integration and configuration",
+      "rate": "easy",
+      "suggestion": "Review the definition of the integration and configuration model."
+    },
+    {
+      "question": "A key disadvantage of the reuse-oriented approach is that it often increases development costs and risks.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Advantages and disadvantages",
+      "rate": "easy",
+      "suggestion": "Check the listed advantages of the integration and configuration model."
+    },
+    {
+      "question": "Software specification involves the activities of requirements elicitation, specification, and validation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software specification",
+      "rate": "easy",
+      "suggestion": "Review the three main activities of requirements engineering."
+    },
+    {
+      "question": "Software design and implementation are always two completely separate and sequential phases.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software design and implementation",
+      "rate": "easy",
+      "suggestion": "Note that design and implementation are often interleaved activities."
+    },
+    {
+      "question": "Architectural design, database design, interface design, and component selection are all key design activities.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Design activities",
+      "rate": "easy",
+      "suggestion": "Review the list of design activities within the software design process."
+    },
+    {
+      "question": "Verification answers the question 'Are we building the right system?'",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Software validation",
+      "rate": "easy",
+      "suggestion": "Distinguish between the definitions of verification and validation."
+    },
+    {
+      "question": "System testing involves testing the integrated system as a whole, focusing on emergent properties.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Testing stages",
+      "rate": "easy",
+      "suggestion": "Review the purpose and focus of system testing."
+    },
+    {
+      "question": "The V-model of testing is primarily associated with agile development processes.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Testing phases in a plan-driven software process (V-model)",
+      "rate": "easy",
+      "suggestion": "Note that the V-model is linked to plan-driven, waterfall-like processes."
+    },
+    {
+      "question": "Software evolution is the process of changing software after delivery to correct faults or improve performance.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software evolution",
+      "rate": "easy",
+      "suggestion": "Review the definition and purpose of software evolution."
+    },
+    {
+      "question": "Change anticipation aims to make the software process resistant to any changes in requirements.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Reducing the costs of rework",
+      "rate": "medium",
+      "suggestion": "Understand that change anticipation involves preparing for possible changes, not resisting them."
+    },
+    {
+      "question": "System prototyping can be used to help elicit and validate requirements.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Software prototyping",
+      "rate": "medium",
+      "suggestion": "Review the various uses of a prototype in the software process."
+    },
+    {
+      "question": "A throw-away prototype is intended to be refined into the final production system.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Throw-away prototypes",
+      "rate": "medium",
+      "suggestion": "Understand the fundamental purpose of a throw-away prototype."
+    },
+    {
+      "question": "Incremental delivery involves deploying completed parts of the system for end-user use and feedback.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Incremental delivery",
+      "rate": "medium",
+      "suggestion": "Review the definition and goal of incremental delivery."
+    },
+    {
+      "question": "A key problem with incremental delivery is that it eliminates the risk of overall project failure.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Incremental delivery problems",
+      "rate": "medium",
+      "suggestion": "Consider the challenges, not just the advantages, of incremental delivery."
+    },
+    {
+      "question": "Process improvement activities include process measurement, analysis, and change.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Process improvement activities",
+      "rate": "medium",
+      "suggestion": "Review the cyclical activities involved in process improvement."
+    },
+    {
+      "question": "The SEI Capability Maturity Model's 'Initial' level is characterized by well-defined and optimized processes.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "The (Software Engineering Institute) SEI capability maturity model",
+      "rate": "medium",
+      "suggestion": "Review the description of the 'Initial' maturity level."
+    },
+    {
+      "question": "The agile approach to process improvement focuses on iterative development and reducing process overheads.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Approaches to improvement",
+      "rate": "medium",
+      "suggestion": "Review the characteristics of the agile approach to improvement."
+    },
+    {
+      "question": "Process metrics can include the time taken, resources required, and number of defects discovered.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Process metrics",
+      "rate": "medium",
+      "suggestion": "Review the examples of common process metrics."
+    },
+    {
+      "question": "In the waterfall model, it is easy to go back and modify a phase once it is completed.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Waterfall model phases",
+      "rate": "hard",
+      "suggestion": "Consider the sequential and phase-locked nature of the classic waterfall model."
+    },
+    {
+      "question": "The primary goal of process improvement is always to accelerate development, regardless of quality or cost.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Process improvement",
+      "rate": "hard",
+      "suggestion": "Review the multiple objectives of process improvement (quality, cost, time)."
+    },
+    {
+      "question": "Component testing is also known as unit testing and focuses on testing individual parts of the system in isolation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Testing stages",
+      "rate": "hard",
+      "suggestion": "Review the definition and scope of component/unit testing."
+    },
+    {
+      "question": "The 'Optimizing' level in the SEI CMM is the lowest level, indicating an ad-hoc and chaotic process.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Capability maturity levels …",
+      "rate": "hard",
+      "suggestion": "Review the hierarchy of the SEI CMM maturity levels."
+    },
+    {
+      "question": "Evolutionary prototyping involves building a prototype that is intended to be evolved into the final system.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Difference Between Evolutionary Prototyping and Throw-away Prototyping",
+      "rate": "hard",
+      "suggestion": "Distinguish between evolutionary and throw-away prototyping strategies."
+    },
+    {
+      "question": "A key benefit of prototyping is that it ensures the final system will have perfect error handling and recovery.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Prototype development",
+      "rate": "hard",
+      "suggestion": "Consider what aspects a prototype typically focuses on and what it may omit."
+    },
+    {
+      "question": "In integration and configuration, 'requirements refinement' occurs after the application system is configured.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Key process stages",
+      "rate": "hard",
+      "suggestion": "Review the typical sequence of stages in the integration and configuration model."
+    },
+    {
+      "question": "Process change is the final, one-time activity in the process improvement cycle.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Process improvement activities",
+      "rate": "hard",
+      "suggestion": "Understand that process improvement is a continuous, cyclical activity."
+    },
+    {
+      "question": "Debugging is the process of executing a program with test cases to find faults.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "System implementation",
+      "rate": "hard",
+      "suggestion": "Distinguish between the activities of testing (finding faults) and debugging (correcting faults)."
+    },
+    {
+      "question": "The 'Defined' level in the SEI CMM focuses on organizational standardization and deployment of processes.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Capability maturity levels …",
+      "rate": "hard",
+      "suggestion": "Review the characteristics of the 'Defined' maturity level."
+    }
+  ]
+}

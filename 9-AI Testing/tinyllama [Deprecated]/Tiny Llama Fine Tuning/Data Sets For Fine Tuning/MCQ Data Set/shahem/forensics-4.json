@@ -1,0 +1,258 @@
+{
+  "document": "Chapter 05 - Working with Windows and CLI Systems.ppt",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the purpose of a file system?",
+        "options": [
+          "To encrypt data on a disk",
+          "To give the OS a road map to data on a disk",
+          "To prevent data fragmentation",
+          "To compress files automatically"
+        ],
+        "answer": "To give the OS a road map to data on a disk"
+      },
+      {
+        "question": "What information does CMOS store?",
+        "options": [
+          "Only the operating system files",
+          "Only the boot sequence",
+          "System configuration and date and time information",
+          "Only user passwords"
+        ],
+        "answer": "System configuration and date and time information"
+      },
+      {
+        "question": "What does BIOS contain?",
+        "options": [
+          "Application software",
+          "Programs that perform input and output at the hardware level",
+          "User documents and files",
+          "Network configuration settings"
+        ],
+        "answer": "Programs that perform input and output at the hardware level"
+      },
+      {
+        "question": "What is the bootstrap process?",
+        "options": [
+          "The process of compressing files",
+          "The process contained in ROM that tells the computer how to proceed during startup",
+          "The process of defragmenting a hard drive",
+          "The process of backing up data"
+        ],
+        "answer": "The process contained in ROM that tells the computer how to proceed during startup"
+      },
+      {
+        "question": "What is wear-leveling in solid-state storage devices?",
+        "options": [
+          "A feature that slows down the device over time",
+          "An internal firmware feature that ensures even wear of read/writes for all memory cells",
+          "A method of encrypting data",
+          "A way to increase storage capacity"
+        ],
+        "answer": "An internal firmware feature that ensures even wear of read/writes for all memory cells"
+      },
+      {
+        "question": "What are clusters in Microsoft file structures?",
+        "options": [
+          "Individual sectors on a disk",
+          "Storage allocation units of one or more sectors",
+          "Encrypted file containers",
+          "Backup copies of files"
+        ],
+        "answer": "Storage allocation units of one or more sectors"
+      },
+      {
+        "question": "What is the Master Boot Record (MBR)?",
+        "options": [
+          "A backup of the operating system",
+          "A critical data structure on the first sector containing partition information",
+          "A log of all deleted files",
+          "An encrypted system file"
+        ],
+        "answer": "A critical data structure on the first sector containing partition information"
+      },
+      {
+        "question": "What replaces the Master Boot Record in modern systems?",
+        "options": [
+          "FAT table",
+          "GUID Partition Table (GPT)",
+          "NTFS Master File Table",
+          "BIOS configuration"
+        ],
+        "answer": "GUID Partition Table (GPT)"
+      },
+      {
+        "question": "What is drive slack?",
+        "options": [
+          "The space used by the operating system",
+          "Unused space in a cluster between the end of an active file and the end of the cluster",
+          "Extra space added during disk formatting",
+          "Space reserved for system recovery"
+        ],
+        "answer": "Unused space in a cluster between the end of an active file and the end of the cluster"
+      },
+      {
+        "question": "What happens when a file is deleted in a FAT system?",
+        "options": [
+          "It is immediately overwritten with zeros",
+          "The directory entry is marked with HEX E5 and FAT chain is set to 0",
+          "It is moved to a hidden system folder",
+          "It is compressed automatically"
+        ],
+        "answer": "The directory entry is marked with HEX E5 and FAT chain is set to 0"
+      },
+      {
+        "question": "What is the primary file system for Windows 8?",
+        "options": [
+          "FAT32",
+          "exFAT",
+          "NTFS",
+          "ReFS"
+        ],
+        "answer": "NTFS"
+      },
+      {
+        "question": "What contains information about all files on an NTFS disk?",
+        "options": [
+          "BIOS",
+          "CMOS",
+          "Master File Table (MFT)",
+          "Partition Boot Sector"
+        ],
+        "answer": "Master File Table (MFT)"
+      },
+      {
+        "question": "How large is each record in the NTFS MFT?",
+        "options": [
+          "512 bytes",
+          "1024 bytes",
+          "2048 bytes",
+          "4096 bytes"
+        ],
+        "answer": "1024 bytes"
+      },
+      {
+        "question": "What are data runs in NTFS?",
+        "options": [
+          "Programs that automatically back up data",
+          "Cluster addresses where nonresident files are stored",
+          "Encryption algorithms",
+          "System recovery processes"
+        ],
+        "answer": "Cluster addresses where nonresident files are stored"
+      },
+      {
+        "question": "What are alternate data streams in NTFS?",
+        "options": [
+          "Backup copies of system files",
+          "Ways data can be appended to existing files as additional attributes",
+          "Temporary files created by applications",
+          "Encrypted system files"
+        ],
+        "answer": "Ways data can be appended to existing files as additional attributes"
+      },
+      {
+        "question": "What does EFS stand for?",
+        "options": [
+          "Extended File System",
+          "Encrypting File System",
+          "External File Storage",
+          "Enhanced File Security"
+        ],
+        "answer": "Encrypting File System"
+      },
+      {
+        "question": "How does EFS encrypt files?",
+        "options": [
+          "Using only symmetric encryption",
+          "Using public key and private key methods",
+          "Using only hardware encryption",
+          "Using simple password protection"
+        ],
+        "answer": "Using public key and private key methods"
+      },
+      {
+        "question": "What is the Windows Registry?",
+        "options": [
+          "A program for editing text files",
+          "A database storing hardware/software configuration and user preferences",
+          "A backup utility for system files",
+          "A network configuration tool"
+        ],
+        "answer": "A database storing hardware/software configuration and user preferences"
+      },
+      {
+        "question": "What can be used to view the Windows Registry?",
+        "options": [
+          "Registry Editor (Regedit or Regedt32)",
+          "Windows Explorer",
+          "Command Prompt only",
+          "Control Panel only"
+        ],
+        "answer": "Registry Editor (Regedit or Regedt32)"
+      },
+      {
+        "question": "What is a virtual machine?",
+        "options": [
+          "A physical computer with multiple operating systems",
+          "A representation of another computer on an existing physical computer",
+          "A cloud storage service",
+          "A type of external hard drive"
+        ],
+        "answer": "A representation of another computer on an existing physical computer"
+      },
+      {
+        "question": "What is one benefit of virtual machines in digital forensics?",
+        "options": [
+          "They make computers run faster",
+          "They allow restoring suspect drives and running nonstandard software",
+          "They automatically encrypt all data",
+          "They prevent network attacks"
+        ],
+        "answer": "They allow restoring suspect drives and running nonstandard software"
+      },
+      {
+        "question": "What does whole disk encryption help prevent?",
+        "options": [
+          "Only virus infections",
+          "Only hardware failures",
+          "Loss of personal identity information and trade secrets from computer theft",
+          "Only unauthorized software installation"
+        ],
+        "answer": "Loss of personal identity information and trade secrets from computer theft"
+      },
+      {
+        "question": "What feature is common in whole disk encryption tools?",
+        "options": [
+          "Automatic file deletion",
+          "Preboot authentication",
+          "Free cloud storage",
+          "Automatic software updates"
+        ],
+        "answer": "Preboot authentication"
+      },
+      {
+        "question": "What does BitLocker require for hardware?",
+        "options": [
+          "A specific brand of hard drive",
+          "TPM (Trusted Platform Module) microchip version 1.2 or newer",
+          "Minimum 16GB RAM",
+          "Dedicated graphics card"
+        ],
+        "answer": "TPM (Trusted Platform Module) microchip version 1.2 or newer"
+      },
+      {
+        "question": "What does LCN stand for in NTFS?",
+        "options": [
+          "Local Computer Network",
+          "Logical Cluster Number",
+          "Last Created Node",
+          "Linked Configuration Name"
+        ],
+        "answer": "Logical Cluster Number"
+      }
+    ]
+  }
+}

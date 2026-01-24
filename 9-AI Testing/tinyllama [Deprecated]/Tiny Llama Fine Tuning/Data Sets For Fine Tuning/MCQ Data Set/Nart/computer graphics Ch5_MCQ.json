@@ -1,0 +1,747 @@
+{
+  "filename": "Chapter 5 - Geometric Transformations (1).ppt",
+  "quiz": [
+    {
+      "question": "Which of the following is NOT a basic 2D geometric transformation?",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Rotation",
+        "Scaling",
+        "Blurring"
+      ],
+      "answer": "Blurring",
+      "section": "Geometric Transformations",
+      "rate": "easy",
+      "suggestion": "Review the list of basic 2D transformations."
+    },
+    {
+      "question": "In 2D graphics, translation moves an object by:",
+      "type": "mcq",
+      "options": [
+        "Changing its size",
+        "Changing its orientation",
+        "Shifting its position",
+        "Distorting its shape"
+      ],
+      "answer": "Shifting its position",
+      "section": "2D Translation",
+      "rate": "easy",
+      "suggestion": "Recall the definition of translation."
+    },
+    {
+      "question": "What is the homogeneous coordinate representation of a 2D point (x, y)?",
+      "type": "mcq",
+      "options": [
+        "(x, y, 0)",
+        "(x, y, 1)",
+        "(x, y, w)",
+        "(x, y, z)"
+      ],
+      "answer": "(x, y, 1)",
+      "section": "Homogeneous Coordinates",
+      "rate": "easy",
+      "suggestion": "Review the standard homogeneous coordinate representation for 2D points."
+    },
+    {
+      "question": "Why are homogeneous coordinates used in geometric transformations?",
+      "type": "mcq",
+      "options": [
+        "To reduce computation time",
+        "To make translation a linear operation",
+        "To increase color depth",
+        "To handle 3D objects only"
+      ],
+      "answer": "To make translation a linear operation",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Recall the advantage of using homogeneous coordinates."
+    },
+    {
+      "question": "A 2D rotation matrix for an angle θ is given by:",
+      "type": "mcq",
+      "options": [
+        "[[cosθ, -sinθ], [sinθ, cosθ]]",
+        "[[sinθ, cosθ], [cosθ, -sinθ]]",
+        "[[cosθ, sinθ], [-sinθ, cosθ]]",
+        "[[1, 0], [0, 1]]"
+      ],
+      "answer": "[[cosθ, -sinθ], [sinθ, cosθ]]",
+      "section": "2D Rotation",
+      "rate": "medium",
+      "suggestion": "Review the standard 2D rotation matrix."
+    },
+    {
+      "question": "If you apply scaling factors (sx, sy) = (2, 0.5) to an object, what happens?",
+      "type": "mcq",
+      "options": [
+        "It doubles in width and halves in height",
+        "It halves in width and doubles in height",
+        "It moves right and up",
+        "It rotates 45 degrees"
+      ],
+      "answer": "It doubles in width and halves in height",
+      "section": "2D Scaling",
+      "rate": "easy",
+      "suggestion": "Recall how scaling factors affect width (x) and height (y)."
+    },
+    {
+      "question": "The transformation matrix for reflection about the x-axis is:",
+      "type": "mcq",
+      "options": [
+        "[[1, 0], [0, -1]]",
+        "[[-1, 0], [0, 1]]",
+        "[[0, 1], [1, 0]]",
+        "[[-1, 0], [0, -1]]"
+      ],
+      "answer": "[[1, 0], [0, -1]]",
+      "section": "Reflection",
+      "rate": "medium",
+      "suggestion": "Review reflection matrices about coordinate axes."
+    },
+    {
+      "question": "Shearing transformation is used to:",
+      "type": "mcq",
+      "options": [
+        "Rotate an object",
+        "Translate an object",
+        "Distort the shape of an object",
+        "Scale an object uniformly"
+      ],
+      "answer": "Distort the shape of an object",
+      "section": "Shearing",
+      "rate": "easy",
+      "suggestion": "Recall the definition of shearing."
+    },
+    {
+      "question": "When combining transformations, matrix multiplication is:",
+      "type": "mcq",
+      "options": [
+        "Commutative",
+        "Associative",
+        "Distributive only",
+        "None of the above"
+      ],
+      "answer": "Associative",
+      "section": "Matrix Composition",
+      "rate": "medium",
+      "suggestion": "Recall the properties of matrix multiplication in transformation composition."
+    },
+    {
+      "question": "To rotate a point about a fixed point (a, b), the correct sequence is:",
+      "type": "mcq",
+      "options": [
+        "Translate, Rotate, Translate back",
+        "Rotate, Translate, Rotate back",
+        "Scale, Rotate, Translate",
+        "Translate, Scale, Rotate"
+      ],
+      "answer": "Translate, Rotate, Translate back",
+      "section": "Fixed Point Transformation",
+      "rate": "medium",
+      "suggestion": "Review the steps for rotation about a fixed point."
+    },
+    {
+      "question": "The inverse of a translation by (tx, ty) is:",
+      "type": "mcq",
+      "options": [
+        "Translation by (-tx, -ty)",
+        "Translation by (ty, tx)",
+        "Rotation by 180 degrees",
+        "Scaling by (1/tx, 1/ty)"
+      ],
+      "answer": "Translation by (-tx, -ty)",
+      "section": "Inverse Transformations",
+      "rate": "easy",
+      "suggestion": "Recall how to reverse a translation."
+    },
+    {
+      "question": "A 3D translation matrix in homogeneous coordinates is of size:",
+      "type": "mcq",
+      "options": [
+        "3×3",
+        "4×4",
+        "2×2",
+        "3×4"
+      ],
+      "answer": "4×4",
+      "section": "3D Translation",
+      "rate": "easy",
+      "suggestion": "Recall the dimension of transformation matrices in 3D homogeneous coordinates."
+    },
+    {
+      "question": "Rotation about the z-axis in 3D affects which coordinates?",
+      "type": "mcq",
+      "options": [
+        "x and y",
+        "y and z",
+        "x and z",
+        "x, y, and z"
+      ],
+      "answer": "x and y",
+      "section": "3D Rotation",
+      "rate": "medium",
+      "suggestion": "Recall which coordinates change during rotation about each axis."
+    },
+    {
+      "question": "What is the result of applying scaling factors (sx, sy, sz) = (1, 1, -1) in 3D?",
+      "type": "mcq",
+      "options": [
+        "Uniform scaling",
+        "Reflection about the xy-plane",
+        "Rotation about the x-axis",
+        "Translation along z"
+      ],
+      "answer": "Reflection about the xy-plane",
+      "section": "3D Reflection",
+      "rate": "hard",
+      "suggestion": "Consider the effect of negative scaling factors on reflection."
+    },
+    {
+      "question": "In 3D, the order of rotations:",
+      "type": "mcq",
+      "options": [
+        "Does not matter",
+        "Always produces the same result",
+        "Affects the final position",
+        "Is commutative"
+      ],
+      "answer": "Affects the final position",
+      "section": "Order of Rotations",
+      "rate": "medium",
+      "suggestion": "Recall that 3D rotations are not commutative."
+    },
+    {
+      "question": "Which transformation is used to change the size of an object?",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Rotation",
+        "Scaling",
+        "Shearing"
+      ],
+      "answer": "Scaling",
+      "section": "2D Scaling",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of scaling."
+    },
+    {
+      "question": "The matrix for 2D scaling with factors (sx, sy) is:",
+      "type": "mcq",
+      "options": [
+        "[[sx, 0], [0, sy]]",
+        "[[1, sx], [sy, 1]]",
+        "[[0, sx], [sy, 0]]",
+        "[[sx, sy], [0, 0]]"
+      ],
+      "answer": "[[sx, 0], [0, sy]]",
+      "section": "2D Scaling",
+      "rate": "easy",
+      "suggestion": "Review the scaling matrix in 2D."
+    },
+    {
+      "question": "Transformation that flips an object over a line or plane is called:",
+      "type": "mcq",
+      "options": [
+        "Rotation",
+        "Scaling",
+        "Reflection",
+        "Shearing"
+      ],
+      "answer": "Reflection",
+      "section": "Reflection",
+      "rate": "easy",
+      "suggestion": "Recall the definition of reflection."
+    },
+    {
+      "question": "If you rotate an object by 90° and then by 30°, the total rotation is:",
+      "type": "mcq",
+      "options": [
+        "60°",
+        "90°",
+        "120°",
+        "The sum of the angles"
+      ],
+      "answer": "The sum of the angles",
+      "section": "Successive Transformations",
+      "rate": "easy",
+      "suggestion": "Recall that successive rotations are additive."
+    },
+    {
+      "question": "The transformation that shifts every point of an object by the same distance is:",
+      "type": "mcq",
+      "options": [
+        "Rotation",
+        "Scaling",
+        "Translation",
+        "Reflection"
+      ],
+      "answer": "Translation",
+      "section": "2D Translation",
+      "rate": "easy",
+      "suggestion": "Recall the definition of translation."
+    },
+    {
+      "question": "In homogeneous coordinates, a 2D point is represented as:",
+      "type": "mcq",
+      "options": [
+        "(x, y, z)",
+        "(x, y, w)",
+        "(x, y, 0)",
+        "(x, y)"
+      ],
+      "answer": "(x, y, w)",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Recall the general homogeneous coordinate form."
+    },
+    {
+      "question": "The inverse of a rotation matrix R(θ) is:",
+      "type": "mcq",
+      "options": [
+        "R(-θ)",
+        "R(180-θ)",
+        "R(θ)",
+        "R(90-θ)"
+      ],
+      "answer": "R(-θ)",
+      "section": "Inverse Transformations",
+      "rate": "medium",
+      "suggestion": "Recall that the inverse rotation is rotation by the negative angle."
+    },
+    {
+      "question": "Which transformation can be represented by a diagonal matrix?",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Rotation",
+        "Scaling",
+        "Shearing"
+      ],
+      "answer": "Scaling",
+      "section": "2D Scaling",
+      "rate": "medium",
+      "suggestion": "Recall the structure of scaling matrices."
+    },
+    {
+      "question": "To scale an object about a fixed point (a, b), you must first:",
+      "type": "mcq",
+      "options": [
+        "Translate the point to the origin",
+        "Rotate the object",
+        "Apply shearing",
+        "Reflect about the axis"
+      ],
+      "answer": "Translate the point to the origin",
+      "section": "Fixed Point Transformation",
+      "rate": "medium",
+      "suggestion": "Recall the sequence for scaling about a fixed point."
+    },
+    {
+      "question": "Which of the following is true about matrix multiplication for transformations?",
+      "type": "mcq",
+      "options": [
+        "It is commutative",
+        "It is associative",
+        "Order does not matter",
+        "It is only for 2D"
+      ],
+      "answer": "It is associative",
+      "section": "Matrix Composition",
+      "rate": "medium",
+      "suggestion": "Recall properties of matrix multiplication in transformations."
+    },
+    {
+      "question": "A 3×3 transformation matrix in homogeneous coordinates can represent:",
+      "type": "mcq",
+      "options": [
+        "Only translation",
+        "Only rotation",
+        "Only scaling",
+        "All basic 2D transformations"
+      ],
+      "answer": "All basic 2D transformations",
+      "section": "Homogeneous Coordinates",
+      "rate": "easy",
+      "suggestion": "Recall the advantage of homogeneous coordinates for 2D."
+    },
+    {
+      "question": "The transformation that tilts an object is called:",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Rotation",
+        "Shearing",
+        "Scaling"
+      ],
+      "answer": "Shearing",
+      "section": "Shearing",
+      "rate": "easy",
+      "suggestion": "Recall the definition of shearing."
+    },
+    {
+      "question": "If you translate an object by (2, 3) and then by (4, -1), the net translation is:",
+      "type": "mcq",
+      "options": [
+        "(6, 2)",
+        "(2, 4)",
+        "(4, 3)",
+        "(-2, 4)"
+      ],
+      "answer": "(6, 2)",
+      "section": "Successive Transformations",
+      "rate": "easy",
+      "suggestion": "Recall that translations are additive."
+    },
+    {
+      "question": "Reflection about the line y = x is represented by the matrix:",
+      "type": "mcq",
+      "options": [
+        "[[0, 1], [1, 0]]",
+        "[[1, 0], [0, -1]]",
+        "[[-1, 0], [0, 1]]",
+        "[[0, -1], [1, 0]]"
+      ],
+      "answer": "[[0, 1], [1, 0]]",
+      "section": "Reflection",
+      "rate": "medium",
+      "suggestion": "Review the reflection matrix for the line y = x."
+    },
+    {
+      "question": "In 3D, rotation about the y-axis uses which matrix?",
+      "type": "mcq",
+      "options": [
+        "[[cosθ, 0, sinθ], [0, 1, 0], [-sinθ, 0, cosθ]]",
+        "[[1, 0, 0], [0, cosθ, -sinθ], [0, sinθ, cosθ]]",
+        "[[cosθ, -sinθ, 0], [sinθ, cosθ, 0], [0, 0, 1]]",
+        "[[cosθ, 0, -sinθ], [0, 1, 0], [sinθ, 0, cosθ]]"
+      ],
+      "answer": "[[cosθ, 0, sinθ], [0, 1, 0], [-sinθ, 0, cosθ]]",
+      "section": "3D Rotation",
+      "rate": "hard",
+      "suggestion": "Recall the standard 3D rotation matrices for each axis."
+    },
+    {
+      "question": "The transformation that changes the orientation of an object is:",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Scaling",
+        "Rotation",
+        "Shearing"
+      ],
+      "answer": "Rotation",
+      "section": "2D Rotation",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of rotation."
+    },
+    {
+      "question": "In homogeneous coordinates, the translation matrix includes:",
+      "type": "mcq",
+      "options": [
+        "Only rotation terms",
+        "Only scaling factors",
+        "Translation vector in the last column",
+        "Only identity elements"
+      ],
+      "answer": "Translation vector in the last column",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Review the structure of translation matrices in homogeneous form."
+    },
+    {
+      "question": "If you scale an object by (2, 2) and then by (0.5, 0.5), the net effect is:",
+      "type": "mcq",
+      "options": [
+        "No change",
+        "Double in size",
+        "Half in size",
+        "Quarter in size"
+      ],
+      "answer": "No change",
+      "section": "Successive Transformations",
+      "rate": "medium",
+      "suggestion": "Recall that scalings are multiplicative."
+    },
+    {
+      "question": "Which transformation is not linear without homogeneous coordinates?",
+      "type": "mcq",
+      "options": [
+        "Rotation",
+        "Scaling",
+        "Translation",
+        "Reflection"
+      ],
+      "answer": "Translation",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Recall which transformation requires homogeneous coordinates to be linear."
+    },
+    {
+      "question": "The matrix representation of a 2D transformation allows:",
+      "type": "mcq",
+      "options": [
+        "Only one transformation at a time",
+        "Combining transformations by multiplication",
+        "Only translation and rotation",
+        "No inverse operations"
+      ],
+      "answer": "Combining transformations by multiplication",
+      "section": "Matrix Representation",
+      "rate": "easy",
+      "suggestion": "Recall the advantage of matrix representation."
+    },
+    {
+      "question": "A point (3, 4) is translated by (1, -2). Its new coordinates are:",
+      "type": "mcq",
+      "options": [
+        "(4, 2)",
+        "(2, 6)",
+        "(4, 6)",
+        "(2, 2)"
+      ],
+      "answer": "(4, 2)",
+      "section": "2D Translation",
+      "rate": "easy",
+      "suggestion": "Apply the translation vector to the point."
+    },
+    {
+      "question": "In 3D, scaling about a fixed point involves:",
+      "type": "mcq",
+      "options": [
+        "Only scaling matrix",
+        "Translation, scaling, inverse translation",
+        "Rotation and scaling",
+        "Shearing and translation"
+      ],
+      "answer": "Translation, scaling, inverse translation",
+      "section": "3D Scaling About a Fixed Point",
+      "rate": "medium",
+      "suggestion": "Recall the sequence for scaling about a fixed point in 3D."
+    },
+    {
+      "question": "The transformation that produces a mirror image is:",
+      "type": "mcq",
+      "options": [
+        "Rotation",
+        "Scaling",
+        "Reflection",
+        "Shearing"
+      ],
+      "answer": "Reflection",
+      "section": "Reflection",
+      "rate": "easy",
+      "suggestion": "Recall the definition of reflection."
+    },
+    {
+      "question": "If you rotate a point (1, 0) by 90° counterclockwise, the new point is:",
+      "type": "mcq",
+      "options": [
+        "(0, 1)",
+        "(0, -1)",
+        "(-1, 0)",
+        "(1, 1)"
+      ],
+      "answer": "(0, 1)",
+      "section": "2D Rotation",
+      "rate": "easy",
+      "suggestion": "Apply the rotation matrix for 90° to (1, 0)."
+    },
+    {
+      "question": "Which of the following transformations will change the object's shape?",
+      "type": "mcq",
+      "options": [
+        "Uniform scaling",
+        "Rotation",
+        "Shearing",
+        "Translation"
+      ],
+      "answer": "Shearing",
+      "section": "Shearing",
+      "rate": "easy",
+      "suggestion": "Recall which transformation distorts shape."
+    },
+    {
+      "question": "The inverse of scaling by (sx, sy) is scaling by:",
+      "type": "mcq",
+      "options": [
+        "(-sx, -sy)",
+        "(sy, sx)",
+        "(1/sx, 1/sy)",
+        "(sx, sy)"
+      ],
+      "answer": "(1/sx, 1/sy)",
+      "section": "Inverse Transformations",
+      "rate": "medium",
+      "suggestion": "Recall how to reverse scaling."
+    },
+    {
+      "question": "In 3D, reflection about the xy-plane changes the sign of which coordinate?",
+      "type": "mcq",
+      "options": [
+        "x",
+        "y",
+        "z",
+        "x and y"
+      ],
+      "answer": "z",
+      "section": "3D Reflection",
+      "rate": "medium",
+      "suggestion": "Recall the effect of reflection on each coordinate."
+    },
+    {
+      "question": "The transformation matrix for shearing along the x-axis is:",
+      "type": "mcq",
+      "options": [
+        "[[1, shx], [0, 1]]",
+        "[[1, 0], [shy, 1]]",
+        "[[shx, 0], [0, shy]]",
+        "[[0, 1], [1, 0]]"
+      ],
+      "answer": "[[1, shx], [0, 1]]",
+      "section": "Shearing",
+      "rate": "medium",
+      "suggestion": "Review the shearing matrices for x and y directions."
+    },
+    {
+      "question": "To apply multiple transformations, you:",
+      "type": "mcq",
+      "options": [
+        "Add their matrices",
+        "Multiply their matrices in order",
+        "Average their matrices",
+        "Apply them separately only"
+      ],
+      "answer": "Multiply their matrices in order",
+      "section": "Matrix Composition",
+      "rate": "easy",
+      "suggestion": "Recall how to combine transformations using matrices."
+    },
+    {
+      "question": "A 2D point in homogeneous coordinates (x, y, w) corresponds to Cartesian coordinates:",
+      "type": "mcq",
+      "options": [
+        "(x/w, y/w)",
+        "(x, y)",
+        "(w/x, w/y)",
+        "(x*w, y*w)"
+      ],
+      "answer": "(x/w, y/w)",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Recall the conversion from homogeneous to Cartesian coordinates."
+    },
+    {
+      "question": "The transformation that moves an object without rotating or scaling is:",
+      "type": "mcq",
+      "options": [
+        "Rotation",
+        "Translation",
+        "Scaling",
+        "Shearing"
+      ],
+      "answer": "Translation",
+      "section": "2D Translation",
+      "rate": "easy",
+      "suggestion": "Recall the definition of translation."
+    },
+    {
+      "question": "If you reflect a point (2, 3) about the x-axis, the new point is:",
+      "type": "mcq",
+      "options": [
+        "(2, -3)",
+        "(-2, 3)",
+        "(-2, -3)",
+        "(3, 2)"
+      ],
+      "answer": "(2, -3)",
+      "section": "Reflection",
+      "rate": "easy",
+      "suggestion": "Apply the reflection matrix about the x-axis."
+    },
+    {
+      "question": "The matrix for 2D rotation about the origin is orthogonal. What does this imply?",
+      "type": "mcq",
+      "options": [
+        "Its determinant is 0",
+        "Its inverse is its transpose",
+        "It is diagonal",
+        "It is symmetric"
+      ],
+      "answer": "Its inverse is its transpose",
+      "section": "2D Rotation",
+      "rate": "hard",
+      "suggestion": "Recall properties of rotation matrices."
+    },
+    {
+      "question": "In 3D, which rotation matrix is identical to the 2D rotation matrix?",
+      "type": "mcq",
+      "options": [
+        "Rotation about x-axis",
+        "Rotation about y-axis",
+        "Rotation about z-axis",
+        "None of the above"
+      ],
+      "answer": "Rotation about z-axis",
+      "section": "3D Rotation",
+      "rate": "medium",
+      "suggestion": "Recall that rotation about z-axis affects only x and y coordinates."
+    },
+    {
+      "question": "The transformation that can enlarge or reduce an object is:",
+      "type": "mcq",
+      "options": [
+        "Translation",
+        "Rotation",
+        "Scaling",
+        "Reflection"
+      ],
+      "answer": "Scaling",
+      "section": "2D Scaling",
+      "rate": "easy",
+      "suggestion": "Recall the purpose of scaling."
+    },
+    {
+      "question": "Which of the following transformations preserves angles and lengths?",
+      "type": "mcq",
+      "options": [
+        "Uniform scaling",
+        "Rotation",
+        "Shearing",
+        "Non-uniform scaling"
+      ],
+      "answer": "Rotation",
+      "section": "2D Rotation",
+      "rate": "medium",
+      "suggestion": "Recall which transformations are rigid (preserve shape and size)."
+    },
+    {
+      "question": "The composition of transformations T1 followed by T2 is represented by:",
+      "type": "mcq",
+      "options": [
+        "T1 * T2",
+        "T2 * T1",
+        "T1 + T2",
+        "T1 - T2"
+      ],
+      "answer": "T2 * T1",
+      "section": "Matrix Composition",
+      "rate": "hard",
+      "suggestion": "Recall the order of multiplication when applying transformations in sequence."
+    },
+    {
+      "question": "A transformation that can be represented by a 3×3 matrix in 2D homogeneous coordinates is:",
+      "type": "mcq",
+      "options": [
+        "Only linear transformations",
+        "Only affine transformations",
+        "All 2D geometric transformations",
+        "Only projective transformations"
+      ],
+      "answer": "All 2D geometric transformations",
+      "section": "Homogeneous Coordinates",
+      "rate": "medium",
+      "suggestion": "Recall the capability of homogeneous coordinates for 2D transformations."
+    }
+  ]
+}

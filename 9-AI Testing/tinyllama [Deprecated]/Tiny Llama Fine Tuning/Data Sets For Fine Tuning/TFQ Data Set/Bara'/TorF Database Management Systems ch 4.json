@@ -1,0 +1,88 @@
+{
+  "document": "This document discusses database normal forms (1NF, 2NF, 3NF, BCNF, 4NF), functional dependencies, anomalies, spurious tuples, and related concepts.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A relation is in First Normal Form if it contains only single‑valued attributes.",
+        "answer": "True"
+      },
+      {
+        "question": "Spurious tuples occur when a join of decomposed relations returns fewer rows than the original relation.",
+        "answer": "False"
+      },
+      {
+        "question": "A functional dependency X → Y is trivial if Y ⊆ X.",
+        "answer": "True"
+      },
+      {
+        "question": "The Boyce‑Codd normal form requires that for every non‑trivial FD, the left side must be a superkey.",
+        "answer": "True"
+      },
+      {
+        "question": "A table in 2NF can still have partial dependencies on composite primary keys.",
+        "answer": "False"
+      },
+      {
+        "question": "Null values are acceptable in normalized tables if they do not cause redundancy.",
+        "answer": "True"
+      },
+      {
+        "question": "Lossless‑join decomposition ensures that joining decomposed relations yields the original relation without loss of any tuples.",
+        "answer": "True"
+      },
+      {
+        "question": "A multivalued dependency a --> --> b indicates that for each value of a there is at most one value of b.",
+        "answer": "False"
+      },
+      {
+        "question": "Every candidate key must be a subset of some superkey.",
+        "answer": "True"
+      },
+      {
+        "question": "Transitive dependency A → B and B → C implies A → C.",
+        "answer": "True"
+      },
+      {
+        "question": "If a relation violates 3NF because of a transitive dependency, decomposing removes non‑key attributes that depend on other non‑key attributes.",
+        "answer": "True"
+      },
+      {
+        "question": "In BCNF, if X → Y holds where Y is not a superkey, the decomposition into R1(X,Y) and R2(R–Y) preserves dependencies.",
+        "answer": "True"
+      },
+      {
+        "question": "A relation can be in 3NF but not in BCNF.",
+        "answer": "True"
+      },
+      {
+        "question": "The presence of NULL values always indicates an anomaly in database design.",
+        "answer": "False"
+      },
+      {
+        "question": "Functional dependency AB → C means that attributes C is functionally dependent on both A and B together.",
+        "answer": "True"
+      },
+      {
+        "question": "Lossless join decomposition requires that the intersection of decomposed relations equals the determinant of one of them.",
+        "answer": "True"
+      },
+      {
+        "question": "Anomalies can arise when data are not normalized.",
+        "answer": "True"
+      },
+      {
+        "question": "If a relation has a composite key, it automatically satisfies 2NF.",
+        "answer": "False"
+      },
+      {
+        "question": "The term \"spurious tuple\" refers to an extra row that appears in the result of a join due to incorrect decomposition.",
+        "answer": "True"
+      },
+      {
+        "question": "In normal forms, a primary key must be unique for each tuple.",
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "document": "Chapter_8_Security_simplified.pptx - Chapter 8: Network Security",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "In network security terminology, what role does Trudy typically play?",
+        "options": [
+          "The legitimate sender",
+          "The legitimate receiver",
+          "The intruder or attacker",
+          "The network administrator"
+        ],
+        "answer": "The intruder or attacker"
+      },
+      {
+        "question": "What can Trudy do as a network attacker?",
+        "options": [
+          "Only read messages",
+          "Eavesdrop, insert messages, impersonate, hijack connections, and cause denial of service",
+          "Only fix network problems",
+          "Only send legitimate messages"
+        ],
+        "answer": "Eavesdrop, insert messages, impersonate, hijack connections, and cause denial of service"
+      },
+      {
+        "question": "What does SSL/TLS provide for secure web communication?",
+        "options": [
+          "Only web-server authentication",
+          "Only encryption of data in transit",
+          "Encryption, authentication, and data integrity for web transactions",
+          "Only protection against physical theft"
+        ],
+        "answer": "Encryption, authentication, and data integrity for web transactions"
+      },
+      {
+        "question": "What does a firewall primarily do?",
+        "options": [
+          "Encrypts all network traffic automatically",
+          "Monitors and controls incoming/outgoing network traffic based on security rules",
+          "Only authenticates users by their IP address",
+          "Prevents viruses from infecting individual computers"
+        ],
+        "answer": "Monitors and controls incoming/outgoing network traffic based on security rules"
+      },
+      {
+        "question": "What is the main difference between SSL and its successor TLS?",
+        "options": [
+          "SSL is for email, TLS is for web browsing",
+          "TLS is more secure with improved cryptographic protocols",
+          "SSL uses public-key crypto, TLS uses only symmetric crypto",
+          "There is no difference; they are the same protocol"
+        ],
+        "answer": "TLS is more secure with improved cryptographic protocols"
+      },
+      {
+        "question": "Which protocol suite provides security at the IP layer for VPNs?",
+        "options": [
+          "SSL/TLS",
+          "SSH",
+          "IPSec",
+          "HTTPS"
+        ],
+        "answer": "IPSec"
+      },
+      {
+        "question": "What does a DMZ (Demilitarized Zone) accomplish in network architecture?",
+        "options": [
+          "It encrypts all internal network traffic",
+          "It places public-facing servers in a separate, isolated network segment",
+          "It prevents all inbound internet traffic",
+          "It replaces the need for a firewall"
+        ],
+        "answer": "It places public-facing servers in a separate, isolated network segment"
+      },
+      {
+        "question": "What is the primary purpose of an Intrusion Detection System (IDS)?",
+        "options": [
+          "To block all malicious traffic automatically",
+          "To monitor network traffic for suspicious activity and generate alerts",
+          "To encrypt sensitive data at rest",
+          "To authenticate all users before network access"
+        ],
+        "answer": "To monitor network traffic for suspicious activity and generate alerts"
+      },
+      {
+        "question": "Which network attack involves flooding a target with excessive requests to disrupt service?",
+        "options": [
+          "Man-in-the-middle attack",
+          "DNS spoofing",
+          "Denial-of-Service (DoS) attack",
+          "ARP poisoning"
+        ],
+        "answer": "Denial-of-Service (DoS) attack"
+      },
+      {
+        "question": "What security protocol is commonly used for secure remote command-line access?",
+        "options": [
+          "FTP",
+          "Telnet",
+          "SSH (Secure Shell)",
+          "HTTP"
+        ],
+        "answer": "SSH (Secure Shell)"
+      },
+      {
+        "question": "What type of firewall keeps track of network connections and allows return traffic for established sessions?",
+        "options": [
+          "Packet-filtering firewall",
+          "Stateful inspection firewall",
+          "Proxy firewall",
+          "Application-level gateway"
+        ],
+        "answer": "Stateful inspection firewall"
+      },
+      {
+        "question": "What does VPN stand for and what is its primary purpose?",
+        "options": [
+          "Virtual Private Network - to create a secure, encrypted tunnel over a public network",
+          "Verified Packet Network - to verify all network packets",
+          "Virtual Protocol Number - to assign protocol numbers",
+          "Very Private Network - to hide network existence"
+        ],
+        "answer": "Virtual Private Network - to create a secure, encrypted tunnel over a public network"
+      },
+      {
+        "question": "Which of these is NOT a typical component of a cipher suite in TLS?",
+        "options": [
+          "Key exchange algorithm",
+          "Symmetric encryption algorithm",
+          "MAC (Message Authentication Code) algorithm",
+          "Firewall rule set"
+        ],
+        "answer": "Firewall rule set"
+      },
+      {
+        "question": "What network attack redirects traffic by corrupting the ARP table of a device on the LAN?",
+        "options": [
+          "DNS cache poisoning",
+          "ARP spoofing/poisoning",
+          "SYN flood attack",
+          "Cross-site scripting"
+        ],
+        "answer": "ARP spoofing/poisoning"
+      },
+      {
+        "question": "What is the main advantage of using a proxy firewall?",
+        "options": [
+          "It is the fastest type of firewall",
+          "It terminates connections and inspects application-layer traffic",
+          "It requires no configuration",
+          "It works only at the physical layer"
+        ],
+        "answer": "It terminates connections and inspects application-layer traffic"
+      }
+    ]
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "document": "Lecture 6 discusses divide‑and‑conquer strategies for sorting and searching, covering algorithms such as mergesort, quicksort, binary search, and the closest‑pair problem in computational geometry.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following is NOT one of the basic steps of a divide‑and‑conquer algorithm?",
+        "options": [
+          "Split the instance into smaller subproblems",
+          "Solve each subproblem recursively",
+          "Combine the solutions to solve the original problem",
+          "Enumerate all possible solutions"
+        ],
+        "answer": "Enumerate all possible solutions"
+      },
+      {
+        "question": "What is the cost of merging two sorted lists in mergesort?",
+        "options": [
+          "Θ(1)",
+          "Θ(n)",
+          "Θ(log n)",
+          "Θ(n log n)"
+        ],
+        "answer": "Θ(n)"
+      },
+      {
+        "question": "When does quicksort have a worst‑case running time of Θ(n²)?",
+        "options": [
+          "When the input array is already sorted",
+          "When the pivot divides the array evenly",
+          "When using insertion sort for small subarrays",
+          "When the array contains duplicate keys"
+        ],
+        "answer": "When the input array is already sorted"
+      },
+      {
+        "question": "Which improvement can reduce quicksort’s average‑case cost?",
+        "options": [
+          "Always select the first element as pivot",
+          "Eliminate recursion entirely",
+          "Use median‑of‑three pivot selection",
+          "Sort only even indices"
+        ],
+        "answer": "Use median‑of‑three pivot selection"
+      },
+      {
+        "question": "What is the time complexity of binary search in the worst case?",
+        "options": [
+          "O(log n)",
+          "O(n)",
+          "O(1)",
+          "O(n log n)"
+        ],
+        "answer": "O(log n)"
+      },
+      {
+        "question": "In the closest‑pair divide‑and‑conquer algorithm, why can we limit our attention to a vertical strip of width 2d?",
+        "options": [
+          "Because any closer pair must lie on opposite sides of the split line",
+          "Because points farther than d from the split cannot be part of a closer pair",
+          "Both A and B are correct",
+          "The algorithm always uses a strip of width n"
+        ],
+        "answer": "Both A and B are correct"
+      },
+      {
+        "question": "Why does repeated allocation of temporary arrays in mergesort become costly?",
+        "options": [
+          "It increases the constant factor of Θ(n log n)",
+          "It changes the asymptotic complexity to Θ(n²)",
+          "It reduces the number of comparisons",
+          "It eliminates recursion"
+        ],
+        "answer": "It increases the constant factor of Θ(n log n)"
+      },
+      {
+        "question": "At what subarray size does mergesort or quicksort typically switch to insertion sort?",
+        "options": [
+          "When the subarray has 10 elements",
+          "When the subarray has 50 elements",
+          "Always, regardless of size",
+          "Never"
+        ],
+        "answer": "When the subarray has 50 elements"
+      },
+      {
+        "question": "Which algorithm is optimal for searching a sorted array?",
+        "options": [
+          "Binary search",
+          "Linear search",
+          "Bubble sort",
+          "Interpolation search"
+        ],
+        "answer": "Binary search"
+      },
+      {
+        "question": "The recurrence T(n)=T(n‑1)+O(n) describes which classic algorithm?",
+        "options": [
+          "Quicksort",
+          "Insertion sort",
+          "Mergesort",
+          "Binary search"
+        ],
+        "answer": "Insertion sort"
+      },
+      {
+        "question": "In the closest‑pair problem, why can at most six points be inspected for each point in the strip?",
+        "options": [
+          "Because of a geometric packing argument",
+          "It is an implementation detail",
+          "Because the input is sorted by y",
+          "There is no bound; any number may be checked"
+        ],
+        "answer": "Because of a geometric packing argument"
+      },
+      {
+        "question": "Which algorithm uses a pivot for partitioning?",
+        "options": [
+          "Mergesort",
+          "Quicksort",
+          "Binary search",
+          "Closest‑pair"
+        ],
+        "answer": "Quicksort"
+      },
+      {
+        "question": "What is the purpose of the combine step in divide‑and‑conquer?",
+        "options": [
+          "To merge sorted subarrays",
+          "To compute the final answer from subproblem solutions",
+          "To eliminate recursion overhead",
+          "To sort the input array"
+        ],
+        "answer": "To compute the final answer from subproblem solutions"
+      },
+      {
+        "question": "Why is insertion sort preferred for small subarrays in quicksort?",
+        "options": [
+          "It reduces constant‑time overhead of recursive calls",
+          "It guarantees better worst‑case behavior",
+          "It simplifies the algorithm",
+          "All of the above"
+        ],
+        "answer": "It reduces constant‑time overhead of recursive calls"
+      },
+      {
+        "question": "In binary search, what condition ends the while loop?",
+        "options": [
+          "l > r",
+          "l == r",
+          "r < 0",
+          "m = (l+r)/2"
+        ],
+        "answer": "l > r"
+      },
+      {
+        "question": "Which algorithm requires a sorted input array before searching?",
+        "options": [
+          "Binary search",
+          "Linear search",
+          "Quicksort",
+          "Mergesort"
+        ],
+        "answer": "Binary search"
+      },
+      {
+        "question": "What is the recurrence for mergesort ignoring temporary array allocation costs?",
+        "options": [
+          "T(n)=2 T(n/2)+Θ(n)",
+          "T(n)=T(n‑1)+O(n)",
+          "T(n)=n²",
+          "T(n)=log n"
+        ],
+        "answer": "T(n)=2 T(n/2)+Θ(n)"
+      },
+      {
+        "question": "Why are the points in the strip sorted by y‑coordinate in the closest‑pair algorithm?",
+        "options": [
+          "To limit the number of comparisons",
+          "To maintain a stable sort order",
+          "For bookkeeping only",
+          "No particular reason"
+        ],
+        "answer": "To limit the number of comparisons"
+      },
+      {
+        "question": "Which technique eliminates recursion in quicksort?",
+        "options": [
+          "Using an explicit stack to simulate recursion",
+          "Always using a pivot that splits evenly",
+          "Switching to insertion sort for small subarrays",
+          "None of the above"
+        ],
+        "answer": "Using an explicit stack to simulate recursion"
+      }
+    ]
+  }
+}

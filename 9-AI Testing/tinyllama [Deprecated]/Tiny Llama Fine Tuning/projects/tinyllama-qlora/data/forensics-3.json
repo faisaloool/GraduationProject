@@ -1,0 +1,258 @@
+{
+  "document": "Chapter 04 - Processing Crime and Incident Scenes.ppt",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is digital evidence considered by courts?",
+        "options": [
+          "Only as circumstantial evidence",
+          "Only as documentary evidence",
+          "As physical evidence, treated as a tangible object",
+          "Only as secondary evidence"
+        ],
+        "answer": "As physical evidence, treated as a tangible object"
+      },
+      {
+        "question": "What organization sets standards for recovering, preserving, and examining digital evidence?",
+        "options": [
+          "FBI Digital Forensics Unit",
+          "Scientific Working Group on Digital Evidence (SWGDE)",
+          "International Association of Computer Investigative Specialists (IACIS)",
+          "National Institute of Standards and Technology (NIST)"
+        ],
+        "answer": "Scientific Working Group on Digital Evidence (SWGDE)"
+      },
+      {
+        "question": "How are computer records typically divided for evidence purposes?",
+        "options": [
+          "Primary and secondary records",
+          "Computer-generated records and computer-stored records",
+          "Physical and logical records",
+          "Active and archived records"
+        ],
+        "answer": "Computer-generated records and computer-stored records"
+      },
+      {
+        "question": "What is the business-record exception?",
+        "options": [
+          "An exception that allows private companies to avoid evidence rules",
+          "An exception that allows 'records of regularly conducted activity' as admissible evidence",
+          "An exception for small businesses to use simplified evidence procedures",
+          "An exception that eliminates the need for search warrants in corporate investigations"
+        ],
+        "answer": "An exception that allows 'records of regularly conducted activity' as admissible evidence"
+      },
+      {
+        "question": "What is the best evidence rule?",
+        "options": [
+          "The rule that digital evidence is always superior to physical evidence",
+          "The rule that requires the original writing, recording, or photograph to prove content",
+          "The rule that allows any copy of evidence to be used in court",
+          "The rule that prioritizes witness testimony over documentary evidence"
+        ],
+        "answer": "The rule that requires the original writing, recording, or photograph to prove content"
+      },
+      {
+        "question": "What can ISPs investigate without legal restrictions?",
+        "options": [
+          "Any customer activity they suspect",
+          "Only criminal activities by customers",
+          "Computer abuse committed by their employees",
+          "All network traffic passing through their systems"
+        ],
+        "answer": "Computer abuse committed by their employees"
+      },
+      {
+        "question": "What should companies display to reserve the right to inspect computing assets?",
+        "options": [
+          "A privacy policy notice",
+          "A warning banner and published policy",
+          "An encryption notice",
+          "A data retention policy"
+        ],
+        "answer": "A warning banner and published policy"
+      },
+      {
+        "question": "What is required for law enforcement to search for and seize criminal evidence?",
+        "options": [
+          "Reasonable suspicion",
+          "Probable cause",
+          "Administrative approval",
+          "Corporate authorization"
+        ],
+        "answer": "Probable cause"
+      },
+      {
+        "question": "What does the Fourth Amendment require for search warrants?",
+        "options": [
+          "Warrants must be approved by multiple judges",
+          "Warrants must particularly describe the place to be searched and things to be seized",
+          "Warrants are not required for digital evidence",
+          "Warrants must be executed within 24 hours"
+        ],
+        "answer": "Warrants must particularly describe the place to be searched and things to be seized"
+      },
+      {
+        "question": "What is a limiting phrase in a search warrant?",
+        "options": [
+          "A phrase that limits the time allowed for the search",
+          "A phrase that allows police to separate innocent information from evidence",
+          "A phrase that restricts the tools that can be used",
+          "A phrase that limits the number of officers on scene"
+        ],
+        "answer": "A phrase that allows police to separate innocent information from evidence"
+      },
+      {
+        "question": "What is the plain view doctrine's status in digital forensics?",
+        "options": [
+          "It is fully accepted and commonly used",
+          "It is being rejected and not acceptable",
+          "It only applies to network traffic",
+          "It applies only to corporate investigations"
+        ],
+        "answer": "It is being rejected and not acceptable"
+      },
+      {
+        "question": "What should investigators create before going to a scene?",
+        "options": [
+          "An initial-response field kit",
+          "A complete lab analysis",
+          "A final report",
+          "A witness list"
+        ],
+        "answer": "An initial-response field kit"
+      },
+      {
+        "question": "What is AFIS used for at crime scenes?",
+        "options": [
+          "Analyzing digital evidence",
+          "Identifying fingerprints connected to a central database",
+          "Documenting evidence collection",
+          "Securing the perimeter"
+        ],
+        "answer": "Identifying fingerprints connected to a central database"
+      },
+      {
+        "question": "What is professional curiosity at a crime scene?",
+        "options": [
+          "When professionals ask too many questions",
+          "When unauthorized personnel examine evidence, potentially destroying it",
+          "When investigators research similar cases",
+          "When technical experts share knowledge"
+        ],
+        "answer": "When unauthorized personnel examine evidence, potentially destroying it"
+      },
+      {
+        "question": "When should you cut electrical power to a running computer system?",
+        "options": [
+          "Always as the first step",
+          "Only on older Windows 9x or MS-DOS systems",
+          "Never under any circumstances",
+          "Only when instructed by a supervisor"
+        ],
+        "answer": "Only on older Windows 9x or MS-DOS systems"
+      },
+      {
+        "question": "What information should be tagged on collected evidence?",
+        "options": [
+          "Only the date and collector's name",
+          "Date, time, serial numbers, make/model, and collector's name",
+          "Only the case number",
+          "Only the location found"
+        ],
+        "answer": "Date, time, serial numbers, make/model, and collector's name"
+      },
+      {
+        "question": "What is sparse acquisition used for?",
+        "options": [
+          "Making complete bit-stream copies",
+          "Extracting only data related to evidence from large systems",
+          "Recovering deleted files from free space",
+          "Analyzing network traffic"
+        ],
+        "answer": "Extracting only data related to evidence from large systems"
+      },
+      {
+        "question": "What is a drawback of sparse acquisition?",
+        "options": [
+          "It takes too long to perform",
+          "It doesn't recover data in free or slack space",
+          "It requires specialized hardware",
+          "It cannot be used in court"
+        ],
+        "answer": "It doesn't recover data in free or slack space"
+      },
+      {
+        "question": "What media has a typical lifespan of 30 years for evidence storage?",
+        "options": [
+          "CDs and DVDs",
+          "4-mm DAT magnetic tapes",
+          "USB flash drives",
+          "External hard drives"
+        ],
+        "answer": "4-mm DAT magnetic tapes"
+      },
+      {
+        "question": "What is Super Digital Linear Tape (SDLT) designed for?",
+        "options": [
+          "Small personal backups",
+          "Large RAID data backups",
+          "Temporary evidence storage",
+          "Network traffic capture"
+        ],
+        "answer": "Large RAID data backups"
+      },
+      {
+        "question": "How many copies of every image should be made to prevent data loss?",
+        "options": [
+          "One copy is sufficient",
+          "Two copies",
+          "Three copies",
+          "Four copies"
+        ],
+        "answer": "Two copies"
+      },
+      {
+        "question": "What does CRC stand for in digital forensics?",
+        "options": [
+          "Computer Recovery Check",
+          "Cyclic Redundancy Check",
+          "Comprehensive Reliability Check",
+          "Cryptographic Review Certificate"
+        ],
+        "answer": "Cyclic Redundancy Check"
+      },
+      {
+        "question": "What are the three rules for forensic hashes?",
+        "options": [
+          "Predictable, unique, and changeable",
+          "Unpredictable, unique, and changeable when data changes",
+          "Fast, small, and compatible",
+          "Encrypted, compressed, and authenticated"
+        ],
+        "answer": "Unpredictable, unique, and changeable when data changes"
+      },
+      {
+        "question": "What organization developed the SHA-1 hashing algorithm?",
+        "options": [
+          "Federal Bureau of Investigation (FBI)",
+          "International Association of Computer Investigative Specialists (IACIS)",
+          "National Institute of Standards and Technology (NIST)",
+          "Internet Engineering Task Force (IETF)"
+        ],
+        "answer": "National Institute of Standards and Technology (NIST)"
+      },
+      {
+        "question": "What is a keyed hash set?",
+        "options": [
+          "A hash created by an encryption utility's secret key",
+          "A hash that only works with specific software",
+          "A hash that changes based on the time of day",
+          "A hash that requires physical keys to generate"
+        ],
+        "answer": "A hash created by an encryption utility's secret key"
+      }
+    ]
+  }
+}

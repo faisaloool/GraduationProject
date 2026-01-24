@@ -1,0 +1,88 @@
+{
+  "document": "Introduction to Database Management Systems (DBMS), including concepts such as data models, data independence, transactions, concurrency control, and DBMS architecture.",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "A Database Management System is a software package used to store and manage databases.",
+        "answer": "True"
+      },
+      {
+        "question": "A DBMS is designed to manage only small amounts of data efficiently.",
+        "answer": "False"
+      },
+      {
+        "question": "DBMS supports concurrent access to data by multiple users.",
+        "answer": "True"
+      },
+      {
+        "question": "In file-based systems, handling concurrency is simple and error-free.",
+        "answer": "False"
+      },
+      {
+        "question": "An online bookseller database may contain customer data, order history, and book information.",
+        "answer": "True"
+      },
+      {
+        "question": "Persistent data exists only while a program is running.",
+        "answer": "False"
+      },
+      {
+        "question": "Relational databases organize data in the form of tables.",
+        "answer": "True"
+      },
+      {
+        "question": "Oracle, IBM, and Microsoft are examples of DBMS vendors.",
+        "answer": "True"
+      },
+      {
+        "question": "SQL is considered a data definition and data manipulation language.",
+        "answer": "True"
+      },
+      {
+        "question": "The external level of abstraction describes how data is physically stored.",
+        "answer": "False"
+      },
+      {
+        "question": "Data independence allows schema changes at one level without affecting other levels.",
+        "answer": "True"
+      },
+      {
+        "question": "Physical data independence allows changes to storage structures without changing logical schemas.",
+        "answer": "True"
+      },
+      {
+        "question": "Logical data independence deals with changes in physical storage devices.",
+        "answer": "False"
+      },
+      {
+        "question": "Concurrency control is needed to prevent data inconsistency in multi-user environments.",
+        "answer": "True"
+      },
+      {
+        "question": "A transaction is an atomic sequence of database operations.",
+        "answer": "True"
+      },
+      {
+        "question": "A transaction can leave the database in an inconsistent state if it completes successfully.",
+        "answer": "False"
+      },
+      {
+        "question": "Write-Ahead Logging helps ensure atomicity and recovery after system crashes.",
+        "answer": "True"
+      },
+      {
+        "question": "A Database Administrator is responsible for security, schema design, and recovery.",
+        "answer": "True"
+      },
+      {
+        "question": "A DBMS layered architecture includes components such as buffer management and query execution.",
+        "answer": "True"
+      },
+      {
+        "question": "One major benefit of a DBMS is reduced data integrity and security.",
+        "answer": "False"
+      }
+    ]
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "document": "Software Evolution and Maintenance (Chapter 2) discusses the taxonomy of software maintenance, evolution, categories of concepts, and challenges of maintaining component‑based systems.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary purpose of corrective maintenance?",
+        "options": [
+          "To fix bugs in the system",
+          "To add new features to the product",
+          "To improve overall performance",
+          "To provide user training"
+        ],
+        "answer": "To fix bugs in the system"
+      },
+      {
+        "question": "Which type of maintenance is focused on adapting a system to changes in its data or processing environment?",
+        "options": [
+          "Corrective maintenance",
+          "Adaptive maintenance",
+          "Perfective maintenance",
+          "Preventive maintenance"
+        ],
+        "answer": "Adaptive maintenance"
+      },
+      {
+        "question": "In intention‑based classification, perfective maintenance aims to:",
+        "options": [
+          "Fixing defects that cause failures",
+          "Enabling the system to adapt to a new environment",
+          "Making improvements such as better user experience or efficiency",
+          "Preventing problems from occurring by modifying the product"
+        ],
+        "answer": "Making improvements such as better user experience or efficiency"
+      },
+      {
+        "question": "Activity‑based classification divides maintenance activities into which two broad categories?",
+        "options": [
+          "Corrections and Enhancements",
+          "Prevention and Improvement",
+          "Investigation and Modification",
+          "Testing and Debugging"
+        ],
+        "answer": "Corrections and Enhancements"
+      },
+      {
+        "question": "Evidence‑based classification groups maintenance types based on changes to all of the following except:",
+        "options": [
+          "The whole software product",
+          "External documentation",
+          "Properties of the program code",
+          "Hardware components used by the system"
+        ],
+        "answer": "Hardware components used by the system"
+      },
+      {
+        "question": "Which of the following is NOT one of the four maintenance types defined in Chapter 2?",
+        "options": [
+          "Investigation activity",
+          "Modification activity",
+          "Management activity",
+          "Testing activity"
+        ],
+        "answer": "Testing activity"
+      },
+      {
+        "question": "The abbreviation SPE in the taxonomy stands for:",
+        "options": [
+          "Specified, Problem, Evolving",
+          "Specialized, Planned, Executed",
+          "Software, Process, Evolution",
+          "Systematic, Predictive, Engineering"
+        ],
+        "answer": "Specified, Problem, Evolving"
+      },
+      {
+        "question": "Which of the following is a classic example of a P‑type program?",
+        "options": [
+          "A matrix multiplication utility",
+          "An automated chess‐playing application",
+          "A weather forecasting model",
+          "An inventory management system"
+        ],
+        "answer": "An automated chess‐playing application"
+      },
+      {
+        "question": "Acceptance of an E‑type program is primarily based on:",
+        "options": [
+          "Formal specification and proof",
+          "Stakeholder judgement and opinion",
+          "Statistical performance metrics",
+          "Automated testing results"
+        ],
+        "answer": "Stakeholder judgement and opinion"
+      },
+      {
+        "question": "How many laws of software evolution were originally formulated by Lehman in 1974?",
+        "options": [
+          "Three",
+          "Five",
+          "Eight",
+          "Ten"
+        ],
+        "answer": "Three"
+      },
+      {
+        "question": "The seventh law of software evolution deals with:",
+        "options": [
+          "Rapid code growth due to modularization",
+          "Declining quality caused by lack of maintenance",
+          "Increased security vulnerabilities over time",
+          "Unanticipated feature expansion"
+        ],
+        "answer": "Declining quality caused by lack of maintenance"
+      },
+      {
+        "question": "Software process execution aging manifests as:",
+        "options": [
+          "Degradation in performance or transient failures",
+          "Loss of documentation clarity",
+          "Coupling increases among modules",
+          "Poor naming conventions"
+        ],
+        "answer": "Degradation in performance or transient failures"
+      },
+      {
+        "question": "Which characteristic is NOT part of code decay as defined in the chapter?",
+        "options": [
+          "High cost of change for developers",
+          "Long calendar time to make changes",
+          "Improved readability of changed code",
+          "Decreased quality of changed software"
+        ],
+        "answer": "Improved readability of changed code"
+      },
+      {
+        "question": "A commercial off‑the‑shelf (COTS) component is defined as:",
+        "options": [
+          "A reusable library with no interfaces",
+          "An independent unit with contractually specified interfaces",
+          "A system that can be modified freely by integrators",
+          "A black‑box module with unlimited dependencies"
+        ],
+        "answer": "An independent unit with contractually specified interfaces"
+      },
+      {
+        "question": "When integrating COTS components, the primary code written by integrators is:",
+        "options": [
+          "Tailoring the component's source",
+          "Glue code that connects components",
+          "Full reimplementation of functionality",
+          "Documentation only"
+        ],
+        "answer": "Glue code that connects components"
+      },
+      {
+        "question": "Which attribute most influences maintainability of a component‑based system?",
+        "options": [
+          "Openness of the component",
+          "Number of functions in each module",
+          "Size of the entire system",
+          "Use of legacy languages"
+        ],
+        "answer": "Openness of the component"
+      },
+      {
+        "question": "What is the role of the change‑control board in a maintenance organization?",
+        "options": [
+          "Schedule releases only",
+          "Approve proposed changes after investigation",
+          "Maintain documentation of defects",
+          "Train end users on new features"
+        ],
+        "answer": "Approve proposed changes after investigation"
+      },
+      {
+        "question": "Level 1 support in a maintenance organization primarily does:",
+        "options": [
+          "File problem reports and assign technical staff",
+          "Develop patch releases for the system",
+          "Conduct user training sessions",
+          "Analyze root causes of defects"
+        ],
+        "answer": "File problem reports and assign technical staff"
+      },
+      {
+        "question": "Preventive maintenance is intended to:",
+        "options": [
+          "Fix all bugs after they appear",
+          "Prevent problems from occurring by modifying the product",
+          "Add new features for customers",
+          "Test performance of the system"
+        ],
+        "answer": "Prevent problems from occurring by modifying the product"
+      },
+      {
+        "question": "Which statement best describes Lehman’s Laws of Software Evolution?",
+        "options": [
+          "They are precise mathematical formulas governing code size",
+          "They are empirical observations about how software changes over time",
+          "They predict the exact number of future bugs",
+          "They dictate design patterns for maintainability"
+        ],
+        "answer": "They are empirical observations about how software changes over time"
+      }
+    ]
+  }
+}

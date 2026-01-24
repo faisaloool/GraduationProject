@@ -200,6 +200,46 @@ namespace QuizAIDataBack
 
 
 
+    public class TFQuestionItem
+    {
+        public string question { get; set; }
+        public string answer { get; set; }
+    }
+    public class GenerateQuizRequestDTO
+    {
+        public int MCQCount { get; set; }
+        public int TFCount { get; set; }
+    }
+
+
+    public class GenerateQuizResponseDTO
+    {
+        public Guid QuizID { get; set; }
+        public string QuizTitle { get; set; }
+        public List<QuizQuestion> Questions { get; set; } = new List<QuizQuestion>();
+    }
+
+    public class SubmissionRequest
+    {
+        public Guid examId { get; set; }
+        public List<AnswerDto> answers { get; set; }
+    }
+
+    public class AnswerDto
+    {
+        // Changed from int to Guid
+        public Guid questionId { get; set; }
+        public Guid selectedOptionId { get; set; }
+    }
+
+
+
+
+
+
+
+
+
 
 
 

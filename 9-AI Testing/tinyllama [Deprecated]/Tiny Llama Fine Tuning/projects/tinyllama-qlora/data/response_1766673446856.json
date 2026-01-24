@@ -1,0 +1,32 @@
+{
+  "document": "Examplees_MicroInstruction_2.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Does the text contain the instruction 'CLRAC'?",
+        "answer": "True"
+      },
+      {
+        "question": "Is 'INCDR' mentioned in the text?",
+        "answer": "True"
+      },
+      {
+        "question": "Does the text mention 'JMP'?",
+        "answer": "True"
+      },
+      {
+        "question": "Does the text include 'CALL'?",
+        "answer": "True"
+      },
+      {
+        "question": "Does the text contain 'RET'?",
+        "answer": "True"
+      },
+      {
+        "question": "Is 'MAP' mentioned in the text?",
+        "answer": "True"
+      }
+    ]
+  }
+}

@@ -1,0 +1,245 @@
+{
+  "filename": "Ch3.pptx",
+  "quiz": [
+    {
+      "question": "Agile development methods emerged in the late 1990s with the aim of radically reducing delivery time for working software.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Rapid software development",
+      "rate": "easy",
+      "suggestion": "Review the historical context and primary goal of agile methods."
+    },
+    {
+      "question": "In agile development, program specification, design, and implementation are strictly sequential phases.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile development",
+      "rate": "easy",
+      "suggestion": "Recall that agile methods interleave specification, design, and implementation."
+    },
+    {
+      "question": "The Agile Manifesto values processes and tools over individuals and interactions.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile manifesto",
+      "rate": "easy",
+      "suggestion": "Review the four core values stated in the Agile Manifesto."
+    },
+    {
+      "question": "Extreme Programming (XP) recommends delivering increments to customers every 2 weeks.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Extreme programming",
+      "rate": "easy",
+      "suggestion": "Recall the incremental delivery frequency in XP."
+    },
+    {
+      "question": "In XP, user requirements are expressed as detailed formal specifications before any coding begins.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "User stories for requirements",
+      "rate": "easy",
+      "suggestion": "Understand how XP uses user stories for requirements instead of formal specs."
+    },
+    {
+      "question": "Refactoring is the process of rewriting code from scratch to implement new features.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Refactoring",
+      "rate": "easy",
+      "suggestion": "Review the definition of refactoring as improving code structure without changing its behavior."
+    },
+    {
+      "question": "Test-first development involves writing tests after the code is implemented.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Test-first development ..",
+      "rate": "easy",
+      "suggestion": "Recall that in test-first development, tests are written before the implementation code."
+    },
+    {
+      "question": "Pair programming involves two programmers working together at one computer.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Pair programming",
+      "rate": "easy",
+      "suggestion": "Review the practice of pair programming in agile teams."
+    },
+    {
+      "question": "Scrum sprints are typically 2–4 weeks long.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "The Scrum sprint cycle",
+      "rate": "easy",
+      "suggestion": "Recall the standard duration of a Scrum sprint."
+    },
+    {
+      "question": "The Scrum Master's role is to assign daily tasks to each team member.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Teamwork in Scrum",
+      "rate": "easy",
+      "suggestion": "Review the Scrum Master's role as a facilitator and protector, not a task assigner."
+    },
+    {
+      "question": "Scaling up agile methods refers to using them for large projects with multiple teams.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Scaling out and scaling up",
+      "rate": "easy",
+      "suggestion": "Distinguish between 'scaling up' (large projects) and 'scaling out' (across organizations)."
+    },
+    {
+      "question": "Agile methods are best suited for projects where requirements are stable and well-understood from the start.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile method applicability",
+      "rate": "medium",
+      "suggestion": "Consider the types of projects where agile methods are most effective."
+    },
+    {
+      "question": "In XP, all tests must pass for a build to be accepted.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Extreme programming",
+      "rate": "medium",
+      "suggestion": "Recall the XP practice regarding test execution and build acceptance."
+    },
+    {
+      "question": "The Product Backlog in Scrum contains all features and functionalities to be developed in the project.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "The Scrum sprint cycle",
+      "rate": "medium",
+      "suggestion": "Review the purpose and content of the Product Backlog."
+    },
+    {
+      "question": "Agile development emphasizes comprehensive documentation over working software.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile manifesto",
+      "rate": "medium",
+      "suggestion": "Recall the Agile Manifesto's preference for working software over comprehensive documentation."
+    },
+    {
+      "question": "Test automation in agile methods means tests are written as executable components before implementation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Test automation",
+      "rate": "medium",
+      "suggestion": "Review how test automation is implemented in agile practices like test-first development."
+    },
+    {
+      "question": "In Scrum, the development team is isolated from the customer during a sprint, with communication channeled through the Scrum Master.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "The Scrum sprint cycle",
+      "rate": "medium",
+      "suggestion": "Recall the communication structure during a Scrum sprint."
+    },
+    {
+      "question": "Agile methods are only applicable to new software development and cannot be used for software maintenance.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Practical problems with agile methods",
+      "rate": "medium",
+      "suggestion": "Consider the challenges and adaptations needed to use agile methods for maintenance."
+    },
+    {
+      "question": "The 'Scrum of Scrums' is a meeting where representatives from multiple teams coordinate in large-scale agile projects.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Multi-team Scrum",
+      "rate": "medium",
+      "suggestion": "Review the scaling practice used in multi-team Scrum environments."
+    },
+    {
+      "question": "In agile development, contracts are typically based on a fixed, detailed specification of deliverables.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Contractual issues",
+      "rate": "medium",
+      "suggestion": "Understand the conflict between traditional contracts and agile's iterative nature."
+    },
+    {
+      "question": "Continuous integration is easily achievable in large-scale agile projects with multiple distributed teams.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Scaling up to large systems",
+      "rate": "hard",
+      "suggestion": "Consider the challenges of continuous integration in large, complex systems."
+    },
+    {
+      "question": "Agile methods require that all team members, including the customer representative, be co-located.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Practical problems with agile methods",
+      "rate": "hard",
+      "suggestion": "While co-location is ideal, distributed agile practices (like Distributed Scrum) exist."
+    },
+    {
+      "question": "Refactoring can sometimes require architecture-level changes, which are more expensive than code-level refactoring.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Refactoring",
+      "rate": "hard",
+      "suggestion": "Recall the distinction between code refactoring and architectural refactoring."
+    },
+    {
+      "question": "In test-driven development, the completeness of a test set is easy to judge and ensures 100% coverage.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Problems with test-first development",
+      "rate": "hard",
+      "suggestion": "Review the challenges associated with judging test completeness in TDD."
+    },
+    {
+      "question": "The initial phase in Scrum involves detailed planning and design of the entire system architecture.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Scrum",
+      "rate": "hard",
+      "suggestion": "Recall that Scrum starts with outline planning, not detailed upfront design."
+    },
+    {
+      "question": "Pair programming is considered inefficient because it doubles the manpower required for coding.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Pair programming",
+      "rate": "hard",
+      "suggestion": "Review the evidence and arguments regarding the efficiency of pair programming."
+    },
+    {
+      "question": "Large systems developed with agile methods often require some upfront design and documentation.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "Agile methods for large systems",
+      "rate": "hard",
+      "suggestion": "Understand the adaptations needed when scaling agile to large systems."
+    },
+    {
+      "question": "The Scrum Master is responsible for prioritizing the Product Backlog.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Teamwork in Scrum",
+      "rate": "hard",
+      "suggestion": "Recall that the Product Owner prioritizes the backlog; the Scrum Master facilitates the process."
+    },
+    {
+      "question": "Agile methods are incompatible with any form of plan-driven project management.",
+      "type": "truefalse",
+      "answer": "False",
+      "section": "Agile and plan-driven methods",
+      "rate": "hard",
+      "suggestion": "Review how many projects blend agile and plan-driven approaches."
+    },
+    {
+      "question": "In XP, the practice of 'collective ownership' means any programmer can modify any part of the code.",
+      "type": "truefalse",
+      "answer": "True",
+      "section": "XP and agile principles",
+      "rate": "hard",
+      "suggestion": "Recall the XP practice of collective code ownership."
+    }
+  ]
+}

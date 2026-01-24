@@ -417,8 +417,7 @@ namespace QuizAIDataBack
             }
             return QuizzesInfo;
         }
-
-
+        
         public static async Task<bool> DeleteQuizAsync(Guid QuizID, Guid UserID)
         {
             using (SqlConnection con = new SqlConnection(Database._connectionString))
@@ -518,46 +517,74 @@ namespace QuizAIDataBack
 
                     using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
-                        Dictionary<string, QuizQuestion> questionsDict = new Dictionary<string, QuizQuestion>();
-
-                        while (await reader.ReadAsync())
+                        // 1️⃣ Quiz info
+                        if (await reader.ReadAsync())
                         {
-                            string questionContent = reader.IsDBNull(reader.GetOrdinal("Question_Content"))
-                                ? ""
-                                : reader.GetString(reader.GetOrdinal("Question_Content"));
+                            result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
+                            result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
+                        }
 
-                            // Get the Suggested Answer from the reader
-                            string suggestedAnswer = reader.IsDBNull(reader.GetOrdinal("Suggested_Answer"))
-                                ? ""
-                                : reader.GetString(reader.GetOrdinal("Suggested_Answer"));
+                        // 2️⃣ Questions
+                        var questionsDict = new Dictionary<Guid, QuizQuestion>();
 
-                            if (!questionsDict.TryGetValue(questionContent, out QuizQuestion question))
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
                             {
-                                question = new QuizQuestion
+                                Guid qId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                var question = new QuizQuestion
                                 {
-                                    QuestionID = Guid.NewGuid(),
-                                    QuestionContent = questionContent,
-                                    SuggestedAnswer = suggestedAnswer, // ASSIGN IT HERE
-                                    Type = "MCQ",
-                                    choices = new List<MCQChoices>()
+                                    QuestionID = qId,
+                                    QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                    SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                    choices = new List<MCQChoice>()
                                 };
-                                questionsDict.Add(questionContent, question);
-                                quizInfo.Questions.Add(question);
-                            }
 
-                            // Choice logic remains the same...
-                            int choiceIdCol = reader.GetOrdinal("Choice_ID");
-                            if (!reader.IsDBNull(choiceIdCol))
+                                questionsDict[qId] = question;
+                                result.Questions.Add(question);
+                            }
+                        }
+
+                        // 3️⃣ MCQ Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
                             {
-                                question.choices.Add(new MCQChoices
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                if (questionsDict.TryGetValue(questionId, out var question))
                                 {
-                                    ChoiceID = reader.GetGuid(choiceIdCol),
-                                    Choice = reader.IsDBNull(reader.GetOrdinal("Choice_Text")) ? "" : reader.GetString(reader.GetOrdinal("Choice_Text")),
-                                    Question_ID = question.QuestionID
-                                });
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
+                            }
+                        }
+
+                        // 4️⃣ True / False Choices (WITH Choice_ID)
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                if (questionsDict.TryGetValue(questionId, out var question))
+                                {
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
                             }
                         }
                     }
+
                 }
             }
 
@@ -585,6 +612,270 @@ namespace QuizAIDataBack
                 }
             }
         }
+        /*
+         
+        Quiz Title.
+        User ID.
+
+        File Type: 
+        1. .mp3
+        2. .wav
+        3. .mp4
+        4. .mov
+        5. .mkv
+        6. .avi
+        7. .pdf
+        8. .docx
+        9. .doc
+        10. .pptx
+        11. .ppt
+        12. .txt
+
+        File path.
+
+
+
+         */
+
+        public static async Task<GenerateQuizResponseDTO> SaveQuizInfoToDataBaseAsync(Guid userID, QuestionResponse QuizInfo, string FilePath, byte GenerateFlag, Guid? QuizID = null)
+        {
+            GenerateQuizResponseDTO result = new GenerateQuizResponseDTO();
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveGeneratedQuiz", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // --- Basic info ---
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    cmd.Parameters.AddWithValue("@QuizTitle", QuizInfo.filename ?? "Generated Quiz");
+
+
+                    // --- File info ---
+                    string extension = System.IO.Path.GetExtension(QuizInfo.filename) ?? ".unknown";
+                    int fileTypeID = Database.SelectFileType(extension);
+
+                    cmd.Parameters.AddWithValue("@FileType", fileTypeID);
+                    cmd.Parameters.AddWithValue("@FilePath", FilePath);
+
+                    // --- Serialize full quiz JSON ---
+                    string jsonBody = System.Text.Json.JsonSerializer.Serialize(QuizInfo);
+                    cmd.Parameters.AddWithValue("@QuestionsJson", jsonBody);
+
+
+                    if (GenerateFlag == 0)
+                    {
+                        cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    }
+                    else if (GenerateFlag == 1)
+                    {
+                        cmd.Parameters.AddWithValue("@QuizID", Guid.NewGuid());
+                    }
+
+                        await con.OpenAsync();
+
+                    // --- Execute SP and read back generated QuizID ---
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        // 1️⃣ Quiz info
+                        if (await reader.ReadAsync())
+                        {
+                            result.QuizID = reader.GetGuid(reader.GetOrdinal("Quiz_ID"));
+                            result.QuizTitle = reader.GetString(reader.GetOrdinal("Quiz_Title"));
+                        }
+
+                        // 2️⃣ Questions (MCQ + TF)
+                        if (await reader.NextResultAsync())
+                        {
+                            result.Questions = new List<QuizQuestion>();
+
+                            while (await reader.ReadAsync())
+                            {
+                                result.Questions.Add(new QuizQuestion
+                                {
+                                    QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
+                                    QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                    SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                    choices = new List<MCQChoice>() // always initialize
+                                });
+                            }
+                        }
+
+                        // 3️⃣ MCQ Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                var question = result.Questions
+                                    .FirstOrDefault(q => q.QuestionID == questionId);
+
+                                if (question != null)
+                                {
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
+                            }
+                        }
+
+                        // 4️⃣ True / False Choices (WITH Choice_ID)
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                Guid questionId = reader.GetGuid(reader.GetOrdinal("Question_ID"));
+
+                                var question = result.Questions
+                                    .FirstOrDefault(q => q.QuestionID == questionId);
+
+                                if (question != null)
+                                {
+                                    question.choices.Add(new MCQChoice
+                                    {
+                                        ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                        Question_ID = questionId,
+                                        Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                    });
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+            return result;
+        }
+
+
+        public static async Task<string> GetQuizFilePathAsync(Guid QuizID)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_GetContentPathBasedOnQuizID", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    await con.OpenAsync();
+                    object? result = await cmd.ExecuteScalarAsync();
+                    string filePath = result?.ToString() ?? string.Empty;
+
+                    return filePath;
+                }
+            }
+        }
+
+        public static async Task<QuizQuestion> SaveRegeneratedQuestionToDatabaseAsync(Guid quizID, Guid questionID, string questionType, QuestionResponse regeneratedQuestionJson)
+        {
+            QuizQuestion result = null;
+
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_SaveRegeneratedQuestion", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // --- Required params ---
+                    cmd.Parameters.AddWithValue("@QuizID", quizID);
+                    cmd.Parameters.AddWithValue("@QuestionID", questionID);
+                    cmd.Parameters.AddWithValue("@QuestionType", questionType);
+
+                    // --- Serialize JSON (same format as before) ---
+                    string jsonBody = System.Text.Json.JsonSerializer.Serialize(regeneratedQuestionJson);
+                    cmd.Parameters.AddWithValue("@QuestionJson", jsonBody);
+
+                    await con.OpenAsync();
+
+                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    {
+                        // 1️⃣ Question
+                        if (await reader.ReadAsync())
+                        {
+                            result = new QuizQuestion
+                            {
+                                QuestionID = reader.GetGuid(reader.GetOrdinal("Question_ID")),
+                                QuestionContent = reader.GetString(reader.GetOrdinal("Question_Content")),
+                                SuggestedAnswer = reader.GetString(reader.GetOrdinal("Suggested_Answer")),
+                                choices = new List<MCQChoice>()
+                            };
+                        }
+
+                        // 2️⃣ MCQ Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                result?.choices.Add(new MCQChoice
+                                {
+                                    ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                    Question_ID = result.QuestionID,
+                                    Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                });
+                            }
+                        }
+
+                        // 3️⃣ True / False Choices
+                        if (await reader.NextResultAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                result?.choices.Add(new MCQChoice
+                                {
+                                    ChoiceID = reader.GetGuid(reader.GetOrdinal("Choice_ID")),
+                                    Question_ID = result.QuestionID,
+                                    Choice = reader.GetString(reader.GetOrdinal("Choice_Text"))
+                                });
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            return result;
+        }
+
+
+
+        public static async Task<bool> HandleSubmit(Guid UserID, Guid QuizID, string JsonInput)
+        {
+            using (SqlConnection con = new SqlConnection(Database._connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_HandleQuizSubmit", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Adding parameters matching the SP definition
+                    cmd.Parameters.AddWithValue("@UserID", UserID);
+                    cmd.Parameters.AddWithValue("@QuizID", QuizID);
+                    cmd.Parameters.AddWithValue("@JsonInput", JsonInput);
+
+                    await con.OpenAsync();
+
+                    // Using ExecuteScalar to get the 'success' column from the SP's SELECT statement
+                    object? result = await cmd.ExecuteScalarAsync();
+
+                    if (result != null)
+                    {
+                        // In SQL, 1 is true, 0 is false
+                        return Convert.ToBoolean(result);
+                    }
+
+                    return false;
+                }
+            }
+        }
+
+
+
 
     }
 }

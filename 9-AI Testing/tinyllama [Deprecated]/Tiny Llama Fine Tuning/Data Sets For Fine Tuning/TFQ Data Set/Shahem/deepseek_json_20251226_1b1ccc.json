@@ -1,0 +1,168 @@
+{
+  "document": "Chapter 2: Cryptographic Tools - Computer Security: Principles and Practice, 4th Edition",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Symmetric encryption is also known as single-key encryption.",
+        "answer": "True"
+      },
+      {
+        "question": "Plaintext is the original message before encryption.",
+        "answer": "True"
+      },
+      {
+        "question": "Cryptanalysis is the study of encryption principles and methods.",
+        "answer": "False"
+      },
+      {
+        "question": "In symmetric encryption, the same key is used for both encryption and decryption.",
+        "answer": "True"
+      },
+      {
+        "question": "A brute-force attack tries all possible keys until the correct one is found.",
+        "answer": "True"
+      },
+      {
+        "question": "The Caesar cipher is a type of transposition cipher.",
+        "answer": "False"
+      },
+      {
+        "question": "In the Caesar cipher, each letter is shifted by the same number of positions in the alphabet.",
+        "answer": "True"
+      },
+      {
+        "question": "Monoalphabetic substitution ciphers change the relative letter frequencies of the plaintext.",
+        "answer": "False"
+      },
+      {
+        "question": "The Playfair cipher encrypts two letters at a time.",
+        "answer": "True"
+      },
+      {
+        "question": "DES uses a 128-bit key length.",
+        "answer": "False"
+      },
+      {
+        "question": "Triple DES uses three independent keys to encrypt data three times.",
+        "answer": "True"
+      },
+      {
+        "question": "AES was developed to replace DES and 3DES.",
+        "answer": "True"
+      },
+      {
+        "question": "ECB mode is the most secure mode of operation for symmetric block ciphers.",
+        "answer": "False"
+      },
+      {
+        "question": "Message authentication always requires message encryption.",
+        "answer": "False"
+      },
+      {
+        "question": "A hash function must be reversible to be useful for authentication.",
+        "answer": "False"
+      },
+      {
+        "question": "Public-key encryption uses two different keys: one public and one private.",
+        "answer": "True"
+      },
+      {
+        "question": "In public-key cryptography, the private key is used for encryption and the public key for decryption.",
+        "answer": "False"
+      },
+      {
+        "question": "Digital signatures provide data integrity and non-repudiation.",
+        "answer": "True"
+      },
+      {
+        "question": "FIPS 186-4 specifies the use of DSA, RSA, and ECDSA for digital signatures.",
+        "answer": "True"
+      },
+      {
+        "question": "Random numbers are only used for generating encryption keys.",
+        "answer": "False"
+      },
+      {
+        "question": "Pseudorandom numbers are truly random and unpredictable.",
+        "answer": "False"
+      },
+      {
+        "question": "A digital envelope combines symmetric and asymmetric encryption.",
+        "answer": "True"
+      },
+      {
+        "question": "Stream ciphers encrypt data one bit or byte at a time.",
+        "answer": "True"
+      },
+      {
+        "question": "Cryptology includes both cryptography and cryptanalysis.",
+        "answer": "True"
+      },
+      {
+        "question": "The Playfair cipher uses a 6x6 matrix for encryption.",
+        "answer": "False"
+      },
+      {
+        "question": "In a substitution cipher, plaintext letters are replaced with other letters, numbers, or symbols.",
+        "answer": "True"
+      },
+      {
+        "question": "The Advanced Encryption Standard (AES) supports key lengths of 128, 192, and 256 bits.",
+        "answer": "True"
+      },
+      {
+        "question": "Public-key encryption is generally faster than symmetric encryption for large amounts of data.",
+        "answer": "False"
+      },
+      {
+        "question": "A digital certificate binds a public key to an entity's identity.",
+        "answer": "True"
+      },
+      {
+        "question": "The Data Encryption Standard (DES) is still considered secure for modern applications.",
+        "answer": "False"
+      },
+      {
+        "question": "Traffic analysis is a type of passive attack.",
+        "answer": "True"
+      },
+      {
+        "question": "In public-key encryption, anyone can encrypt a message using the recipient's private key.",
+        "answer": "False"
+      },
+      {
+        "question": "Message authentication codes (MACs) require the use of a secret key.",
+        "answer": "True"
+      },
+      {
+        "question": "A one-time pad is vulnerable to brute-force attacks if the key is reused.",
+        "answer": "True"
+      },
+      {
+        "question": "The Caesar cipher has 25 possible keys (shifts).",
+        "answer": "False"
+      },
+      {
+        "question": "Hash functions produce outputs of fixed length regardless of input size.",
+        "answer": "True"
+      },
+      {
+        "question": "RSA is a symmetric encryption algorithm.",
+        "answer": "False"
+      },
+      {
+        "question": "Diffie-Hellman key exchange is used for secure symmetric key distribution.",
+        "answer": "True"
+      },
+      {
+        "question": "A digital signature is created by encrypting a message hash with the sender's public key.",
+        "answer": "False"
+      },
+      {
+        "question": "Electronic Codebook (ECB) mode is recommended for encrypting large, structured data.",
+        "answer": "False"
+      }
+    ]
+  }
+}

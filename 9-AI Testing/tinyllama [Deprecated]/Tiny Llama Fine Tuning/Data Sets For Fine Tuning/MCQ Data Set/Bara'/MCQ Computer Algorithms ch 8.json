@@ -1,0 +1,208 @@
+{
+  "document": "Lecture 8 covers dynamic programming, including memoization, bottom‑up techniques for factorials and Fibonacci numbers, computing binomial coefficients by DP, and the Levenshtein edit distance.",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "Which of the following best describes dynamic programming?",
+        "options": [
+          "Solving subproblems independently",
+          "Solving subproblems with overlapping solutions",
+          "Only using top‑down recursion",
+          "Using divide and conquer exclusively"
+        ],
+        "answer": "Solving subproblems with overlapping solutions"
+      },
+      {
+        "question": "What is the main advantage of memoization over plain recursion?",
+        "options": [
+          "It reduces time complexity to O(1)",
+          "It eliminates the need for recursion",
+          "It stores intermediate results for reuse",
+          "It guarantees linear space usage"
+        ],
+        "answer": "It stores intermediate results for reuse"
+      },
+      {
+        "question": "In factorial memoization, what is stored in the lookup table?",
+        "options": [
+          "The value of n itself",
+          "All previously computed factorials up to n",
+          "Only the final factorial of n",
+          "A pointer to the recursive call"
+        ],
+        "answer": "All previously computed factorials up to n"
+      },
+      {
+        "question": "What is the time complexity of the plain recursive Fibonacci algorithm?",
+        "options": [
+          "O(n)",
+          "O(n²)",
+          "O(2ⁿ)",
+          "O(log n)"
+        ],
+        "answer": "O(2ⁿ)"
+      },
+      {
+        "question": "What is the time complexity of the bottom‑up Fibonacci algorithm?",
+        "options": [
+          "O(n²)",
+          "O(n log n)",
+          "O(n)",
+          "O(log n)"
+        ],
+        "answer": "O(n)"
+      },
+      {
+        "question": "Which recurrence defines the binomial coefficient C(n,k)?",
+        "options": [
+          "C(n,k) = n! / (k!(n-k)!)",
+          "C(n,k) = C(n-1,k) + C(n-1,k-1)",
+          "C(n,k) = k * C(n-1,k)",
+          "C(n,k) = 2·C(n-1,k)"
+        ],
+        "answer": "C(n,k) = C(n-1,k) + C(n-1,k-1)"
+      },
+      {
+        "question": "What is the time complexity of computing a binomial coefficient by DP?",
+        "options": [
+          "O(k)",
+          "O(nk)",
+          "O(n²)",
+          "O(2ⁿ)"
+        ],
+        "answer": "O(nk)"
+      },
+      {
+        "question": "Which statement about space usage in the bottom‑up Fibonacci algorithm is true?",
+        "options": [
+          "It requires O(1) extra space",
+          "It uses an array of size n+1",
+          "It stores only two previous values",
+          "It needs O(n²) space"
+        ],
+        "answer": "It stores only two previous values"
+      },
+      {
+        "question": "What is the primary purpose of the Levenshtein distance?",
+        "options": [
+          "To count the number of insertions in a string",
+          "To measure how many deletions are needed to transform one string into another",
+          "To find the minimal edit operations between two strings",
+          "To compute the longest common substring"
+        ],
+        "answer": "To find the minimal edit operations between two strings"
+      },
+      {
+        "question": "Which operation is NOT part of the Levenshtein distance calculation?",
+        "options": [
+          "Insertion",
+          "Deletion",
+          "Substitution",
+          "Reversal"
+        ],
+        "answer": "Reversal"
+      },
+      {
+        "question": "In dynamic programming, what does 'bottom‑up' refer to?",
+        "options": [
+          "Starting from the base cases and building up",
+          "Recursively solving subproblems first",
+          "Using only memoized values",
+          "Ignoring overlapping subproblems"
+        ],
+        "answer": "Starting from the base cases and building up"
+      },
+      {
+        "question": "Which of these is a correct recurrence for factorial?",
+        "options": [
+          "F(n) = n × F(n‑1)",
+          "F(n) = n + F(n‑2)",
+          "F(n) = 2 × F(n‑1)",
+          "F(n) = F(n‑1) – 1"
+        ],
+        "answer": "F(n) = n × F(n‑1)"
+      },
+      {
+        "question": "What does memoization primarily help to avoid?",
+        "options": [
+          "Large stack depth",
+          "Repeated computation of the same subproblem",
+          "The need for iterative loops",
+          "The creation of lookup tables"
+        ],
+        "answer": "Repeated computation of the same subproblem"
+      },
+      {
+        "question": "Which of these is a valid base case for Fibonacci?",
+        "options": [
+          "F(0) = 0",
+          "F(1) = 2",
+          "F(2) = 3",
+          "F(1) = 5"
+        ],
+        "answer": "F(0) = 0"
+      },
+      {
+        "question": "In the DP for binomial coefficients, what is stored in the table entry C(n,k)?",
+        "options": [
+          "n choose k value",
+          "The sum of all previous rows",
+          "The product n·k",
+          "A pointer to C(n‑1,k)"
+        ],
+        "answer": "n choose k value"
+      },
+      {
+        "question": "Which of the following best describes a top‑down DP approach?",
+        "options": [
+          "Iteratively filling a table from bottom to top",
+          "Recursively computing values and storing them in a table",
+          "Solving all subproblems first",
+          "Using only global variables"
+        ],
+        "answer": "Recursively computing values and storing them in a table"
+      },
+      {
+        "question": "What is the space complexity of the standard bottom‑up Fibonacci algorithm that keeps an array of size n+1?",
+        "options": [
+          "O(1)",
+          "O(n)",
+          "O(log n)",
+          "O(n²)"
+        ],
+        "answer": "O(n)"
+      },
+      {
+        "question": "Which is a property of the Levenshtein distance between two strings s and t?",
+        "options": [
+          "It equals 0 iff s = t",
+          "It is always odd",
+          "It never exceeds |s| + |t|",
+          "It depends on the length of the shortest string"
+        ],
+        "answer": "It equals 0 iff s = t"
+      },
+      {
+        "question": "In DP, what does 'overlap' refer to?",
+        "options": [
+          "Overlapping subproblems sharing solutions",
+          "Subproblems with identical inputs",
+          "The use of overlapping arrays",
+          "None of the above"
+        ],
+        "answer": "Overlapping subproblems sharing solutions"
+      },
+      {
+        "question": "Which statement is true about the time complexity of computing C(n,k) using DP?",
+        "options": [
+          "It is exponential in n",
+          "It is linear in k",
+          "It is quadratic in n and k",
+          "It is O(nk)"
+        ],
+        "answer": "It is O(nk)"
+      }
+    ]
+  }
+}

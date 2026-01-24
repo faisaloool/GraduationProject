@@ -1,0 +1,88 @@
+{
+  "document": "DBMS Concurrency Control",
+  "question_type": "TF",
+  "output": {
+    "questions": [
+      {
+        "question": "Concurrency Control is required to manage simultaneous operations in a multi-user database system.",
+        "answer": "True"
+      },
+      {
+        "question": "In a multi-user system, only one user can access the database at any given time.",
+        "answer": "False"
+      },
+      {
+        "question": "Concurrent execution should be performed in an interleaved manner to maintain consistency.",
+        "answer": "True"
+      },
+      {
+        "question": "The two main operations in a database transaction are READ and WRITE.",
+        "answer": "True"
+      },
+      {
+        "question": "A Lost Update problem is categorized as a W-R (Write-Read) Conflict.",
+        "answer": "False"
+      },
+      {
+        "question": "The Dirty Read Problem is also known as the Temporary Update Problem.",
+        "answer": "True"
+      },
+      {
+        "question": "The Inconsistency Problem is related to the Unrepeatable Read Problem.",
+        "answer": "True"
+      },
+      {
+        "question": "A Lost Update occurs when a record is updated by two different transactions at the same time.",
+        "answer": "True"
+      },
+      {
+        "question": "In the Lost Update example, transaction Tx reads the value of A as $250 at time t1.",
+        "answer": "False"
+      },
+      {
+        "question": "In the Lost Update example, transaction Ty reads $300 at time t3 because Tx has not yet updated the value.",
+        "answer": "True"
+      },
+      {
+        "question": "A Dirty Read occurs when a transaction accesses updated data before the original transaction rollbacks.",
+        "answer": "True"
+      },
+      {
+        "question": "In the Dirty Read example, transaction Tx adds $100 to account A.",
+        "answer": "False"
+      },
+      {
+        "question": "In the Dirty Read example, the value for Ty remains $350 even though Tx rolled back to $300.",
+        "answer": "True"
+      },
+      {
+        "question": "Timestamp-Based Protocols are a method used for Concurrency Control.",
+        "answer": "True"
+      },
+      {
+        "question": "Validation-Based Protocols are NOT used in DBMS Concurrency Control.",
+        "answer": "False"
+      },
+      {
+        "question": "Concurrency control is only necessary for single-user systems.",
+        "answer": "False"
+      },
+      {
+        "question": "The Lost Update problem leads to incorrect data and an inconsistent database.",
+        "answer": "True"
+      },
+      {
+        "question": "Multi-version schemes are one way to handle concurrency control.",
+        "answer": "True"
+      },
+      {
+        "question": "Concurrency control management is also applicable to index structures.",
+        "answer": "True"
+      },
+      {
+        "question": "A 'Write-Write Conflict' is associated with the Dirty Read Problem.",
+        "answer": "False"
+      }
+    ]
+  }
+}

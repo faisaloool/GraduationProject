@@ -96,7 +96,7 @@ namespace QuizAI_Business_Layer
     {
         private static string secretKey = "17+phKRQVRYD6uQRDj9nTmOQ4p003m3AfifPpbU3Fdn02eC6cW7miX4LV1/AJEc57u8wRK36XU27VxEqdO6OpQ==";
 
-        public static string GenerateJwt(Guid userId, string email, int expireMinutes = 60)
+        public static string GenerateJwt(Guid userId, string email, int expireMinutes = 60000)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.UTF8.GetBytes(secretKey);
@@ -126,23 +126,59 @@ namespace QuizAI_Business_Layer
         }
 
     }
+    public class ContentBusinessLayer
+    {
+        public static async Task<Dictionary<int, string>> GetFileTypes()
+        {
+            return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
+        }
+        public static async Task<contentResponseDTO> SaveUploadedFile(IFormFile file, Guid userId, string saveDirectory = "C:\\Users\\albab\\OneDrive - Mutah University\\UploadedContent")
+        {
+            contentResponseDTO contentInfoResponse = new contentResponseDTO();
 
-    //public class ContentBusinessLayer
-    //{
-    //    public static async Task<Dictionary<int, string>> GetFileTypes()
-    //    {
-    //        return await QuizAIDataBack.ContentDataBack.GetFileTypesAsync();
-    //    }
+            if (file == null || file.Length == 0)
+                throw new ArgumentException("No file uploaded.");
 
-    //    public static async Task<ContentDTO> SaveContent(ContentDTO ContentInfo, IFormFile file)
-    //    {
-    //        using (var stream = new FileStream(ContentInfo.FilePath, FileMode.Create))
-    //            await file.CopyToAsync(stream);
+            var ext = Path.GetExtension(file.FileName).ToLower();
 
-    //        return await ContentDataBack.SaveContentAsync(ContentInfo);
-    //    }
-    //}
-   
+            var allowed = await GetFileTypes();
+            if (!allowed.Values.Contains(ext))
+                throw new ArgumentException("Unsupported file type.");
+
+            // Ensure directory exists
+            if (!Directory.Exists(saveDirectory))
+                Directory.CreateDirectory(saveDirectory);
+
+            //var filePath = Path.Combine(saveDirectory, file.FileName);
+            var uniqueFileName = $"{Guid.NewGuid()}{ext}";
+            var filePath = Path.Combine(saveDirectory, uniqueFileName);
+
+
+            // Save file to disk ONLY
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            // Return info without saving to DB
+            contentInfoResponse.path = filePath;
+            contentInfoResponse.ContentID = Guid.NewGuid(); // optional placeholder ID if needed
+
+            return contentInfoResponse;
+        }
+        
+        public static bool DeleteFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                return true;
+            }
+            return false;
+        }
+    
+    }
+
     public class ServerHealthBusinessLayer
     {
         public static async Task<bool> CheckDbConnection()
@@ -222,7 +258,9 @@ namespace QuizAI_Business_Layer
                 {
                     case EmailMessageType.ForgotPassword:
                         mail.Subject = "Reset Your Password";
-                        var resetPasswordLink = $"http://localhost:5173/change-password/{token}";
+
+                    
+                        var resetPasswordLink = $"https://quiz-ai-01.netlify.app/change-password/{token}";
 
                         mail.Body =
                             "Hello,\n\n" +
@@ -282,6 +320,9 @@ namespace QuizAI_Business_Layer
 
         public static async Task<bool> DeleteQuizUsingQuizID(Guid QuizID, Guid UserID)
         {
+            string FilePath = await GetFilePath(QuizID);
+
+            ContentBusinessLayer.DeleteFile(FilePath);
             return await QuizzesDataBack.DeleteQuizAsync(QuizID, UserID);
         }
 
@@ -312,6 +353,175 @@ namespace QuizAI_Business_Layer
         {
             return await QuizzesDataBack.DeleteQuestionUsingQuestionID(QuestionID, QuizID, UserID);
         }
+        //added quiz id.
+        public static async Task<GenerateQuizResponseDTO> GenerateQuiz(Guid UserID, GenerateQuizRequestDTO request, IFormFile file, byte GenerateFlag, string existingFilePath = null, Guid? QuizID = null)
+        {
+            using var client = new HttpClient();
+            client.BaseAddress = new Uri("http://127.0.0.1:8001/");
+
+            using var content = new MultipartFormDataContent();
+
+            // --- STEP 1: Attach the File ---
+            if (GenerateFlag == 1 && file != null && file.Length > 0)
+            {
+                // Path A: New upload from the user
+                var stream = file.OpenReadStream();
+                var fileContent = new StreamContent(stream);
+                var contentType = string.IsNullOrEmpty(file.ContentType) ? "application/octet-stream" : file.ContentType;
+                fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(contentType);
+                content.Add(fileContent, "file", file.FileName);
+            }
+            else if (GenerateFlag == 0 && !string.IsNullOrEmpty(existingFilePath))
+            {
+                // Path B: Regeneration - Load existing file from disk
+                if (File.Exists(existingFilePath))
+                {
+                    var fileBytes = await File.ReadAllBytesAsync(existingFilePath);
+                    var fileContent = new ByteArrayContent(fileBytes);
+
+                    // Set Content-Type (AI models usually expect application/pdf or text/plain)
+                    string mimeType = "application/octet-stream";
+                    if (existingFilePath.EndsWith(".pdf")) mimeType = "application/pdf";
+                    else if (existingFilePath.EndsWith(".txt")) mimeType = "text/plain";
+
+                    fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(mimeType);
+                    content.Add(fileContent, "file", Path.GetFileName(existingFilePath));
+                }
+                else
+                {
+                    throw new FileNotFoundException($"Could not find the original file at {existingFilePath} for regeneration.");
+                }
+            }
+
+            // --- STEP 2: Call AI Model ---
+            string url = $"ask_ai_model?mcq_count={request.MCQCount}&tf_count={request.TFCount}";
+            HttpResponseMessage response = await client.PostAsync(url, content);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                // Capture the error message from the AI API for easier debugging
+                string errorDetails = await response.Content.ReadAsStringAsync();
+                throw new Exception($"AI Model Error ({response.StatusCode}): {errorDetails}");
+            }
+
+            string jsonString = await response.Content.ReadAsStringAsync();
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            QuestionResponse? result = JsonSerializer.Deserialize<QuestionResponse>(jsonString, options);
+
+            if (result == null)
+                throw new Exception("Failed to deserialize the response from AI model.");
+
+            // --- STEP 3: Handle Database & Disk Persistence ---
+            string savedFilePath = existingFilePath; // Default to existing path if regenerating
+
+            if (GenerateFlag == 1 && file != null && file.Length > 0)
+            {
+                // Only save to disk if this is a brand new generation
+                contentResponseDTO uploadedContent = await ContentBusinessLayer.SaveUploadedFile(file, UserID);
+                savedFilePath = uploadedContent.path;
+            }
+
+            // Save/Update the record in your database
+
+            GenerateQuizResponseDTO FinalResponse;
+            if(GenerateFlag == 0)
+            {
+                FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result, savedFilePath, GenerateFlag, QuizID);
+            }
+            else
+            {
+                FinalResponse = await QuizzesDataBack.SaveQuizInfoToDataBaseAsync(UserID, result, savedFilePath, GenerateFlag);
+            }
+            
+            return FinalResponse;
+        }
+
+
+
+        public static async Task<QuizQuestion?> RegenerateSingleQuestion(Guid QuestionID, string existingFilePath, Guid QuizID, Guid UserID, string QuestionType)
+        {
+            bool isDeleted = await QuizzesBusinessLayer.DeleteQuestionUsingQuestionID(QuestionID, QuizID, UserID);
+
+            if (!isDeleted)
+                return null;
+
+            using var client = new HttpClient
+            {
+                BaseAddress = new Uri("http://127.0.0.1:8001/")
+            };
+
+            using var content = new MultipartFormDataContent();
+
+            var fileBytes = await File.ReadAllBytesAsync(existingFilePath);
+            var fileContent = new ByteArrayContent(fileBytes);
+
+            string mimeType = existingFilePath.EndsWith(".pdf")
+                ? "application/pdf"
+                : "text/plain";
+
+            fileContent.Headers.ContentType =
+                new System.Net.Http.Headers.MediaTypeHeaderValue(mimeType);
+
+            content.Add(fileContent, "file", Path.GetFileName(existingFilePath));
+
+            int mcq = QuestionType.ToLower() == "mcq" ? 1 : 0;
+            int tf = QuestionType.ToLower() == "tf" ? 1 : 0;
+
+            string url = $"ask_ai_model?mcq_count={mcq}&tf_count={tf}";
+            HttpResponseMessage response = await client.PostAsync(url, content);
+
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            string jsonString = await response.Content.ReadAsStringAsync();
+            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
+            QuestionResponse? regeneratedQuestion =
+                JsonSerializer.Deserialize<QuestionResponse>(jsonString, options);
+
+            if (regeneratedQuestion == null)
+                return null;
+
+            Guid newQuestionID = Guid.NewGuid();
+
+            QuizQuestion savedQuestion = await QuizzesDataBack.SaveRegeneratedQuestionToDatabaseAsync(QuizID, newQuestionID, QuestionType.ToUpper(), regeneratedQuestion);
+
+            return savedQuestion;
+        }
+
+        public static async Task<string> GetFilePath(Guid QuizID)
+        {
+            return await QuizzesDataBack.GetQuizFilePathAsync(QuizID);
+        }
+
+        public static async Task<bool> SubmitQuizAttempt(Guid userId, Guid quizId, List<AnswerDto> answers)
+        {
+            try
+            {
+                // 1. Logic check: Ensure the list isn't empty before hitting the DB
+                if (answers == null || answers.Count == 0)
+                {
+                    return false;
+                }
+
+                // 2. Transform the list into the specific JSON format the SP expects
+                // Format: { "answers": [...] }
+                string serializedAnswers = JsonSerializer.Serialize(answers);
+
+                // 3. Call the Data Access Layer function
+                // (Assuming 'QuizRepository' is where the previous function lives)
+                bool isSuccess = await QuizzesDataBack.HandleSubmit(userId, quizId, serializedAnswers);
+
+                return isSuccess;
+            }
+            catch (Exception)
+            {
+                // Log exception here if needed
+                return false;
+            }
+        }
     }
+
 }
+
 

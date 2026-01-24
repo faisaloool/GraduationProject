@@ -1,0 +1,698 @@
+{
+  "document": "Ch7_Professional Ethics.pptx",
+  "question_type": "mcq",
+  "output": {
+    "questions": [
+      {
+        "question": "What is one of the characteristics of a profession?",
+        "options": [
+          "Initial professional education",
+          "Marketing strategies",
+          "Casual networking",
+          "Personal hobbies"
+        ],
+        "answer": "Initial professional education"
+      },
+      {
+        "question": "Which of the following is NOT typically a characteristic of a profession?",
+        "options": [
+          "Licensing",
+          "Certification",
+          "Casual networking",
+          "Code of ethics"
+        ],
+        "answer": "Casual networking"
+      },
+      {
+        "question": "What does 'Accreditation' refer to in the context of professional ethics?",
+        "options": [
+          "Academic recognition",
+          "Marketing approval",
+          "Casual endorsement",
+          "Personal recommendation"
+        ],
+        "answer": "Academic recognition"
+      },
+      {
+        "question": "Which of the following is a key component of professional development?",
+        "options": [
+          "Skills development",
+          "Casual learning",
+          "Personal hobbies",
+          "Social media"
+        ],
+        "answer": "Skills development"
+      },
+      {
+        "question": "What is the purpose of a 'Code of ethics' in a profession?",
+        "options": [
+          "To guide professional behavior",
+          "To market services",
+          "To network casually",
+          "To pursue personal interests"
+        ],
+        "answer": "To guide professional behavior"
+      },
+      {
+        "question": "What is 'Whistleblowing' in the context of professional ethics?",
+        "options": [
+          "Exposing unethical practices",
+          "Marketing services",
+          "Casual networking",
+          "Pursuing personal interests"
+        ],
+        "answer": "Exposing unethical practices"
+      },
+      {
+        "question": "Which of the following is a characteristic of a profession?",
+        "options": [
+          "Professional society",
+          "Casual networking",
+          "Personal hobbies",
+          "Social media"
+        ],
+        "answer": "Professional society"
+      },
+      {
+        "question": "What is required for a CPA to retain their certification?",
+        "options": [
+          "Passing an annual exam",
+          "Continuing education",
+          "Writing a thesis",
+          "Teaching accounting classes"
+        ],
+        "answer": "Continuing education"
+      },
+      {
+        "question": "What is expected from professionals like doctors and lawyers?",
+        "options": [
+          "To maximize profits",
+          "To act for public good",
+          "To work only for private clients",
+          "To avoid public exposure"
+        ],
+        "answer": "To act for public good"
+      },
+      {
+        "question": "What is one of the primary responsibilities of a software engineer?",
+        "options": [
+          "Analyze user requirements",
+          "Design graphic art",
+          "Manage sales and marketing",
+          "Develop hardware components"
+        ],
+        "answer": "Analyze user requirements"
+      },
+      {
+        "question": "Which task is NOT typically performed by a software engineer?",
+        "options": [
+          "Write and test code",
+          "Design computer operating systems",
+          "Manage project budgets",
+          "Communicate with other programmers"
+        ],
+        "answer": "Manage project budgets"
+      },
+      {
+        "question": "What is a key activity in software engineering?",
+        "options": [
+          "Refining and rewriting code",
+          "Creating marketing campaigns",
+          "Designing hardware components",
+          "Managing financial accounts"
+        ],
+        "answer": "Refining and rewriting code"
+      },
+      {
+        "question": "Who does a software engineer typically work closely with?",
+        "options": [
+          "Project managers and graphic artists",
+          "Financial analysts and accountants",
+          "Sales representatives only",
+          "Hardware engineers exclusively"
+        ],
+        "answer": "Project managers and graphic artists"
+      },
+      {
+        "question": "What is a challenge software engineers might face?",
+        "options": [
+          "Making incompatible platforms work together",
+          "Designing physical hardware",
+          "Managing sales teams",
+          "Creating marketing strategies"
+        ],
+        "answer": "Making incompatible platforms work together"
+      },
+      {
+        "question": "What is one of the key activities in software engineering?",
+        "options": [
+          "Creating technical specifications",
+          "Designing marketing strategies",
+          "Managing human resources",
+          "Conducting financial audits"
+        ],
+        "answer": "Creating technical specifications"
+      },
+      {
+        "question": "What is included in operational documentation?",
+        "options": [
+          "Technical specifications",
+          "User manuals",
+          "Marketing plans",
+          "Financial reports"
+        ],
+        "answer": "User manuals"
+      },
+      {
+        "question": "How can software defects be addressed?",
+        "options": [
+          "By ignoring them",
+          "By monitoring and correcting them",
+          "By blaming the users",
+          "By rewriting the entire software"
+        ],
+        "answer": "By monitoring and correcting them"
+      },
+      {
+        "question": "What is a key ethical relationship in software engineering?",
+        "options": [
+          "Client and employer",
+          "Vendor and competitor",
+          "Employee and family",
+          "Government and media"
+        ],
+        "answer": "Client and employer"
+      },
+      {
+        "question": "What does the Software Engineering Code emphasize regarding products?",
+        "options": ["Quantity", "Quality", "Price", "Availability"],
+        "answer": "Quality"
+      },
+      {
+        "question": "What is a principle related to judgment in software engineering?",
+        "options": ["Bias", "Fairness", "Haste", "Indifference"],
+        "answer": "Fairness"
+      },
+      {
+        "question": "What is a management requirement in software engineering?",
+        "options": ["Flexibility", "Rigidity", "Transparency", "Secrecy"],
+        "answer": "Transparency"
+      },
+      {
+        "question": "What should not be the approach when determining if an action is right or wrong according to the text?",
+        "options": [
+          "Mechanical process",
+          "Ethical analysis",
+          "Legalistic view",
+          "Moral reasoning"
+        ],
+        "answer": "Mechanical process"
+      },
+      {
+        "question": "What does the text suggest about actions not forbidden by the Code?",
+        "options": [
+          "They are morally acceptable",
+          "They are legally acceptable",
+          "They are not necessarily morally acceptable",
+          "They are encouraged"
+        ],
+        "answer": "They are not necessarily morally acceptable"
+      },
+      {
+        "question": "From whom does the origin of Virtue Ethics trace back to according to the text?",
+        "options": ["Plato", "Socrates", "Aristotle", "Kant"],
+        "answer": "Aristotle"
+      },
+      {
+        "question": "What does the Code reflect according to the text?",
+        "options": [
+          "Legal principles",
+          "Ethical theories",
+          "Mechanical processes",
+          "Moral absolutes"
+        ],
+        "answer": "Ethical theories"
+      },
+      {
+        "question": "How is intellectual virtue developed?",
+        "options": [
+          "Through physical exercise",
+          "Through education",
+          "Through meditation",
+          "Through social interactions"
+        ],
+        "answer": "Through education"
+      },
+      {
+        "question": "How is moral virtue developed?",
+        "options": [
+          "By avoiding all acts",
+          "By repeating appropriate acts",
+          "By seeking pleasure",
+          "By isolating oneself"
+        ],
+        "answer": "By repeating appropriate acts"
+      },
+      {
+        "question": "What is a sign that a virtue has been acquired?",
+        "options": [
+          "Feeling indifferent",
+          "Deriving pleasure from a virtuous act",
+          "Avoiding virtuous acts",
+          "Experiencing pain"
+        ],
+        "answer": "Deriving pleasure from a virtuous act"
+      },
+      {
+        "question": "Which of the following is NOT listed as a virtue in the text?",
+        "options": ["Benevolence", "Courage", "Fairness", "Deceit"],
+        "answer": "Deceit"
+      },
+      {
+        "question": "What is a characteristic of a person with strong moral character?",
+        "options": [
+          "They possess many virtues",
+          "They avoid all moral dilemmas",
+          "They always follow strict rules",
+          "They prioritize personal gain"
+        ],
+        "answer": "They possess many virtues"
+      },
+      {
+        "question": "What is one strength of Virtue Ethics?",
+        "options": [
+          "It provides a motivation for good behavior",
+          "It offers a strict set of rules",
+          "It eliminates all moral conflicts",
+          "It focuses solely on impartiality"
+        ],
+        "answer": "It provides a motivation for good behavior"
+      },
+      {
+        "question": "Which of the following is a partial virtue according to Virtue Ethics?",
+        "options": ["Generosity", "Honesty", "Justice", "Courage"],
+        "answer": "Generosity"
+      },
+      {
+        "question": "What is a weakness of Virtue Ethics?",
+        "options": [
+          "No methodology for answering moral problems",
+          "It is too rigid in its approach",
+          "It ignores the concept of virtues",
+          "It focuses only on impartial virtues"
+        ],
+        "answer": "No methodology for answering moral problems"
+      },
+      {
+        "question": "Which of the following must be an impartial virtue?",
+        "options": ["Honesty", "Generosity", "Loyalty", "Kindness"],
+        "answer": "Honesty"
+      },
+      {
+        "question": "What is one of the fundamental principles of professional ethics mentioned?",
+        "options": [
+          "Be impartial",
+          "Ignore conflicts",
+          "Avoid responsibility",
+          "Withhold information"
+        ],
+        "answer": "Be impartial"
+      },
+      {
+        "question": "How should you treat others according to the principles?",
+        "options": ["Unjustly", "With bias", "Justly", "Indifferently"],
+        "answer": "Justly"
+      },
+      {
+        "question": "What should you do with information that others ought to know?",
+        "options": ["Hide it", "Disclose it", "Ignore it", "Manipulate it"],
+        "answer": "Disclose it"
+      },
+      {
+        "question": "What is a key responsibility mentioned in the principles?",
+        "options": [
+          "Avoiding improvement",
+          "Taking responsibility for your actions",
+          "Blaming others",
+          "Neglecting supervision"
+        ],
+        "answer": "Taking responsibility for your actions"
+      },
+      {
+        "question": "What should you continually do according to the principles?",
+        "options": [
+          "Stagnate",
+          "Regress",
+          "Improve your abilities",
+          "Ignore feedback"
+        ],
+        "answer": "Improve your abilities"
+      },
+      {
+        "question": "What did Prof. Smith fail to disclose when recommending the top-ranked package?",
+        "options": [
+          "Her financial interest in the company producing the package",
+          "Her lack of expertise in LAN security",
+          "The availability of cheaper packages",
+          "The 'best buy' rating of another package"
+        ],
+        "answer": "Her financial interest in the company producing the package"
+      },
+      {
+        "question": "Which principle was most relevant in analyzing Prof. Smith's actions?",
+        "options": [
+          "Be impartial",
+          "Be transparent",
+          "Be knowledgeable",
+          "Be ethical"
+        ],
+        "answer": "Be impartial"
+      },
+      {
+        "question": "What was the key issue with Prof. Smith's recommendation?",
+        "options": [
+          "She recommended a low-ranked package",
+          "She did not disclose her financial interest",
+          "She ignored the 'best buy' rating",
+          "She provided free advice"
+        ],
+        "answer": "She did not disclose her financial interest"
+      },
+      {
+        "question": "What happens when a whistleblower is rebuffed by the organization?",
+        "options": [
+          "The organization promotes the whistleblower",
+          "The organization ignores the report",
+          "The organization takes legal action against the whistleblower",
+          "The organization rewards the whistleblower"
+        ],
+        "answer": "The organization ignores the report"
+      },
+      {
+        "question": "What did Prof. Smith fail to disclose?",
+        "options": [
+          "His academic qualifications",
+          "His conflict of interest",
+          "His research findings",
+          "His teaching methods"
+        ],
+        "answer": "His conflict of interest"
+      },
+      {
+        "question": "What is one ethical obligation mentioned in the text?",
+        "options": [
+          "Hide information from others",
+          "Disclose information others ought to know",
+          "Avoid sharing expertise",
+          "Ignore conflicts of interest"
+        ],
+        "answer": "Disclose information others ought to know"
+      },
+      {
+        "question": "How is Prof. Smith described in one of the statements?",
+        "options": [
+          "Honest and transparent",
+          "Deceptive",
+          "Uninterested in sharing knowledge",
+          "Avoiding all conflicts"
+        ],
+        "answer": "Deceptive"
+      },
+      {
+        "question": "What is the term for disclosing information through unauthorized channels?",
+        "options": [
+          "Whistleblowing",
+          "Unauthorized disclosure",
+          "Leaking",
+          "Confidential reporting"
+        ],
+        "answer": "Unauthorized disclosure"
+      },
+      {
+        "question": "What can happen to whistleblowers as a result of their actions?",
+        "options": [
+          "They receive promotions",
+          "They lose their job or chances of advancement",
+          "They are given financial rewards",
+          "They face no consequences"
+        ],
+        "answer": "They lose their job or chances of advancement"
+      },
+      {
+        "question": "What are some hardships whistleblowers may face?",
+        "options": [
+          "Only financial problems",
+          "Only emotional problems",
+          "Both financial and emotional hardships",
+          "No hardships at all"
+        ],
+        "answer": "Both financial and emotional hardships"
+      },
+      {
+        "question": "What is the name of the law that protects whistleblowers?",
+        "options": [
+          "False Claims Act",
+          "Whistleblower Protection Act",
+          "Confidentiality Act",
+          "Disclosure Protection Act"
+        ],
+        "answer": "Whistleblower Protection Act"
+      },
+      {
+        "question": "Which event is associated with the case study of Morton Thiokol/NASA?",
+        "options": [
+          "Apollo 11 landing",
+          "Challenger explosion",
+          "Hubble Telescope launch",
+          "Columbia disaster"
+        ],
+        "answer": "Challenger explosion"
+      },
+      {
+        "question": "What did Morton Thiokol executives and NASA officials do regarding concerns about the temperature launches?",
+        "options": [
+          "They addressed the concerns publicly",
+          "They overrode and hid the concerns",
+          "They canceled the launches",
+          "They consulted external experts"
+        ],
+        "answer": "They overrode and hid the concerns"
+      },
+      {
+        "question": "What did Roger do with the information he had?",
+        "options": [
+          "He kept it to himself",
+          "He shared it with the Presidential Commission",
+          "He sold it to the media",
+          "He destroyed the information"
+        ],
+        "answer": "He shared it with the Presidential Commission"
+      },
+      {
+        "question": "Why did Roger take medical leave?",
+        "options": [
+          "Due to a physical injury",
+          "Because of stress",
+          "For a planned surgery",
+          "To take care of a family member"
+        ],
+        "answer": "Because of stress"
+      },
+      {
+        "question": "What job did Roger find two years after quitting?",
+        "options": ["A teacher", "A consultant", "An engineer", "A manager"],
+        "answer": "A consultant"
+      },
+      {
+        "question": "What are the motives of whistleblowers according to the text?",
+        "options": [
+          "They always act for financial gain",
+          "They have different reasons for their actions",
+          "They are forced by law to report",
+          "They act out of revenge"
+        ],
+        "answer": "They have different reasons for their actions"
+      },
+      {
+        "question": "What may the morality of a whistleblower's action depend on?",
+        "options": [
+          "The time of the action",
+          "The location of the action",
+          "The motives behind the action",
+          "The number of people involved"
+        ],
+        "answer": "The motives behind the action"
+      },
+      {
+        "question": "Which of the following is NOT a motive for whistleblowing?",
+        "options": [
+          "Desire to help the public",
+          "Retaliation",
+          "Avoiding punishment",
+          "Seeking personal gain"
+        ],
+        "answer": "Seeking personal gain"
+      },
+      {
+        "question": "How do corporations often view whistleblowers?",
+        "options": [
+          "As loyal employees",
+          "As disloyal individuals",
+          "As public heroes",
+          "As neutral parties"
+        ],
+        "answer": "As disloyal individuals"
+      },
+      {
+        "question": "What can the public do if a company causes harm?",
+        "options": [
+          "Use legal remedies to seek damages",
+          "Ignore the issue",
+          "Praise the company",
+          "Boycott all products"
+        ],
+        "answer": "Use legal remedies to seek damages"
+      },
+      {
+        "question": "What is one consequence of whistleblowing on the organization?",
+        "options": [
+          "Improved reputation",
+          "Ruined careers",
+          "Increased profits",
+          "Higher employee morale"
+        ],
+        "answer": "Ruined careers"
+      },
+      {
+        "question": "Whistleblowing is often seen as a sign of what?",
+        "options": [
+          "Organizational success",
+          "Organizational failure",
+          "Employee satisfaction",
+          "Market growth"
+        ],
+        "answer": "Organizational failure"
+      },
+      {
+        "question": "What is the term used to describe the disruption of an organization's social fabric?",
+        "options": [
+          "Publicity",
+          "Whistleblowing",
+          "Retaliation",
+          "Disruption of organization’s social fabric"
+        ],
+        "answer": "Disruption of organization’s social fabric"
+      },
+      {
+        "question": "What does whistleblowing harm according to the text?",
+        "options": [
+          "The organization",
+          "The whistleblower",
+          "The team spirit",
+          "The social fabric"
+        ],
+        "answer": "The whistleblower"
+      },
+      {
+        "question": "What is the term used to describe the act of making it hard for people to work as a team?",
+        "options": [
+          "Publicity",
+          "Disruption of organization’s social fabric",
+          "Killing team spirit",
+          "Retaliation"
+        ],
+        "answer": "Killing team spirit"
+      },
+      {
+        "question": "What should organizations improve according to the text?",
+        "options": [
+          "Publicity",
+          "Communication",
+          "Retaliation",
+          "Whistleblowing"
+        ],
+        "answer": "Communication"
+      },
+      {
+        "question": "What principle should organizations return to according to Robert Spitzer?",
+        "options": [
+          "Publicity-based ethics",
+          "Principle-based ethics",
+          "Retaliation-based ethics",
+          "Whistleblowing-based ethics"
+        ],
+        "answer": "Principle-based ethics"
+      },
+      {
+        "question": "What is an example of unethical practice mentioned in the text?",
+        "options": [
+          "Price fixing",
+          "Whistleblowing",
+          "Safety concerns",
+          "Educational certifications"
+        ],
+        "answer": "Price fixing"
+      },
+      {
+        "question": "What is the term used for billing for services not performed?",
+        "options": [
+          "Price fixing",
+          "Over-billing",
+          "Safety concerns",
+          "False certifications"
+        ],
+        "answer": "Over-billing"
+      },
+      {
+        "question": "What is the ethical duty mentioned in the text?",
+        "options": [
+          "Price fixing",
+          "Whistleblowing",
+          "Concealing safety concerns",
+          "False certifications"
+        ],
+        "answer": "Whistleblowing"
+      },
+      {
+        "question": "What is one of Richard DeGeorge’s questions for whistleblowing?",
+        "options": [
+          "Is the company profitable?",
+          "Is serious harm to the public at stake?",
+          "Have you increased sales?",
+          "Have you met your manager?"
+        ],
+        "answer": "Is serious harm to the public at stake?"
+      },
+      {
+        "question": "What is required for whistleblowing according to DeGeorge?",
+        "options": [
+          "If all five conditions are met",
+          "If conditions 1-3 are met",
+          "Whistleblowing is never morally required",
+          "No conditions are necessary"
+        ],
+        "answer": "If all five conditions are met"
+      },
+      {
+        "question": "What do others believe about whistleblowing?",
+        "options": [
+          "If all five conditions are met",
+          "If conditions 1-3 are met",
+          "Whistleblowing is never morally required",
+          "No conditions are necessary"
+        ],
+        "answer": "If conditions 1-3 are met"
+      },
+      {
+        "question": "What is the stance of some individuals on whistleblowing?",
+        "options": [
+          "If all five conditions are met",
+          "If conditions 1-3 are met",
+          "Whistleblowing is never morally required",
+          "No conditions are necessary"
+        ],
+        "answer": "Whistleblowing is never morally required"
+      }
+    ]
+  }
+}

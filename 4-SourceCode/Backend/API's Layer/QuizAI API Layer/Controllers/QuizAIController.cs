@@ -227,7 +227,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
 
-        [HttpPost("Forgot-Password")]
+        [HttpPost("Forgot-Password")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         //used when the user presses the forgot password button. it generates a token and sends it to his email. //working
@@ -349,7 +349,7 @@ namespace QuizAI_API_Layer.Controllers
 
 
         [Authorize]
-        [HttpGet("exams")]
+        [HttpGet("exams")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -414,7 +414,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
         [Authorize]
-        [HttpDelete("quiz/delete")]
+        [HttpDelete("quiz/delete")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -474,7 +474,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
         [Authorize]
-        [HttpPut("{quizId}/rename")]
+        [HttpPut("{quizId}/rename")] //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -633,9 +633,9 @@ namespace QuizAI_API_Layer.Controllers
 
 
         }
-        
+
         [Authorize]
-        [HttpGet("{id}")]
+        [HttpGet("Quiz/{id}")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -679,7 +679,7 @@ namespace QuizAI_API_Layer.Controllers
         }
 
         [Authorize]
-        [HttpDelete("Questions/delete")]
+        [HttpDelete("Questions/delete")]  //working
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -739,32 +739,215 @@ namespace QuizAI_API_Layer.Controllers
                 });
             }
         }
+
+
+        [Authorize]
+        [HttpPost("Quiz/Generate")] //working
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> GenerateQuiz([FromForm] GenerateQuizRequestDTO request, IFormFile file)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                {
+                    return Unauthorized();
+                }
+                Guid UserID = Guid.Parse(userIdClaim!.Value);
+
+                GenerateQuizResponseDTO generatedQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request, file, 1);
+
+                return Ok(new ApiResponse<GenerateQuizResponseDTO>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Request completed successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = generatedQuiz,
+                    Error = null
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Data = null,
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+
+
+        [Authorize]
+        [HttpPost("Quiz/Regenerate")] //working
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<ApiResponse<GenerateQuizResponseDTO>>> RegenerateQuiz(Guid QuizID, GenerateQuizRequestDTO request)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                    return Unauthorized();
+
+                Guid UserID = Guid.Parse(userIdClaim.Value);
+
+                string filePath = await QuizzesBusinessLayer.GetFilePath(QuizID);
+
+                if (string.IsNullOrEmpty(filePath) || !System.IO.File.Exists(filePath))
+                {
+                    return NotFound(new ApiResponse<object>
+                    {
+                        Success = false,
+                        Status = 404,
+                        Message = "Original quiz file not found on disk.",
+                        Timestamp = DateTime.UtcNow
+                    });
+                }
+
+                bool deleted = await QuizzesBusinessLayer.DeleteQuizUsingQuizID(QuizID, UserID);
+                if (!deleted)
+                {
+                    return BadRequest(new ApiResponse<bool>
+                    {
+                        Success = false,
+                        Status = 400,
+                        Message = "Quiz not found or not owned by user.",
+                        Timestamp = DateTime.UtcNow
+                    });
+                }
+
+                GenerateQuizResponseDTO newQuiz = await QuizzesBusinessLayer.GenerateQuiz(UserID, request, null, 0, filePath, QuizID);
+
+                return Ok(new ApiResponse<GenerateQuizResponseDTO>
+                {
+                    Success = true,
+                    Status = 200,
+                    Message = "Quiz regenerated successfully.",
+                    Timestamp = DateTime.UtcNow,
+                    Data = newQuiz
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ApiResponse<object>
+                {
+                    Success = false,
+                    Status = 500,
+                    Message = "Internal server error",
+                    Error = new ApiError
+                    {
+                        Code = "SERVER_ERROR",
+                        Details = ex.Message
+                    }
+                });
+            }
+        }
+
+
+
+        [Authorize]
+        [HttpPost("regenerate-question")] //working
+        public async Task<ActionResult<ApiResponse<QuizQuestion>>> RegenerateQuestion(Guid QuestionID, Guid QuizID, string QuestionType) // questionType: mcq/tf
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                    return Unauthorized();
+
+                Guid UserID = Guid.Parse(userIdClaim.Value);
+
+                if (QuestionID == Guid.Empty || string.IsNullOrEmpty(QuestionType))
+                {
+                    return BadRequest("QuestionID and QuestionType are required.");
+                }
+
+                string filePath = await QuizzesBusinessLayer.GetFilePath(QuizID);
+                QuizQuestion? Question = await QuizzesBusinessLayer.RegenerateSingleQuestion(QuestionID, filePath, QuizID, UserID, QuestionType);
+
+                if (Question != null)
+                    return Ok(new ApiResponse<QuizQuestion>
+                    {
+                        Success = true,
+                        Status = 200,
+                        Message = "Question regenerated successfully.",
+                        Timestamp = DateTime.UtcNow,
+                        Data = Question
+                    });
+
+                return BadRequest(new ApiResponse<bool>
+                {
+                    Success = false,
+                    Status = 400,
+                    Message = "Can't Regenerate Question.",
+                    Timestamp = DateTime.UtcNow
+                });
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+        [Authorize]
+        [HttpPost("submit")]
+        public async Task<IActionResult> SubmitAnswers([FromBody] SubmissionRequest request)
+        {
+            try
+            {
+                // 1. Get and Parse UserID from Claims
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim == null)
+                    return Unauthorized();
+
+                Guid UserID = Guid.Parse(userIdClaim.Value);
+
+                // 2. Parse the QuizID (ExamId) from the request
+                Guid QuizID = request.examId;
+
+                // 3. Call the Business Layer
+                bool isSuccess = await QuizzesBusinessLayer.SubmitQuizAttempt(UserID, QuizID, request.answers);
+
+
+                if (isSuccess)
+                {
+                    return Ok(new
+                    {
+                        success = true,
+                        status = 200
+                    });
+                }
+
+                return StatusCode(500, new { success = false, status = 500, message = "Processing failed" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    success = false,
+                    status = 400,
+                    message = ex.Message
+                });
+            }
+        }
     }
 }
 
-
-
-
-//[HttpPost("Upload")]
-//[ProducesResponseType(StatusCodes.Status400BadRequest)]
-//[ProducesResponseType(StatusCodes.Status200OK)]
-//[ProducesResponseType(StatusCodes.Status500InternalServerError)]
-//public async Task<ActionResult<string>> UploadFile(IFormFile file)
-//{
-//    try
-//    {
-//        if (file == null || file.Length == 0)
-//            return BadRequest("No file uploaded.");
-
-//        var ext = Path.GetExtension(file.FileName).ToLower();
-
-//        var allowed = await ContentBusinessLayer.GetFileTypes();
-
-//        if (!allowed.Values.Contains(ext))
-//            return BadRequest("Unsupported file type.");
-
-//        //this should be saved in a safer place.
-//        var path = Path.Combine("C:\\Users\\albab\\OneDrive - Mutah University\\Desktop\\Files", file.FileName);
 
 //        //the id should be given by the jwt.
 //        ContentDTO ContentInfo = new ContentDTO(1, allowed.First(x => x.Value == ext).Key, path, "123");//instead of "123", replace the api of the text extractor.

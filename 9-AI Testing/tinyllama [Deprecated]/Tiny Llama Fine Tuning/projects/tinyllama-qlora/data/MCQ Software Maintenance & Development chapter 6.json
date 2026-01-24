@@ -1,0 +1,208 @@
+{
+  "document": "Software Evolution and Maintenance: Chapter 6 - Impact Analysis",
+  "question_type": "MCQ",
+  "output": {
+    "questions": [
+      {
+        "question": "What is the primary purpose of impact analysis in the maintenance process?",
+        "options": [
+          "To rewrite the entire source code",
+          "To identify components impacted by a Change Request (CR)",
+          "To eliminate the need for regression testing",
+          "To replace design documentation"
+        ],
+        "answer": "To identify components impacted by a Change Request (CR)"
+      },
+      {
+        "question": "Which of the following is a reason for performing impact analysis?",
+        "options": [
+          "To estimate the cost of executing the change request",
+          "To avoid recording history of changes",
+          "To ensure no regression testing is performed",
+          "To decrease the transparency of software structure"
+        ],
+        "answer": "To estimate the cost of executing the change request"
+      },
+      {
+        "question": "What is defined as the ability to describe and follow the life of an artifact in both forward and backward directions?",
+        "options": [
+          "Evolution",
+          "Maintenance",
+          "Traceability",
+          "Impact Set"
+        ],
+        "answer": "Traceability"
+      },
+      {
+        "question": "What is 'external traceability' in the context of software artifacts?",
+        "options": [
+          "Tracing dependent artifacts within the same model",
+          "Tracing artifacts between different models",
+          "Tracing hardware components only",
+          "Tracing user feedback only"
+        ],
+        "answer": "Tracing artifacts between different models"
+      },
+      {
+        "question": "What does the term 'Starting Impact Set (SIS)' refer to?",
+        "options": [
+          "The set of objects actually changed after implementation",
+          "The initial set of objects presumed to be impacted by a CR",
+          "The set of objects that were incorrectly identified as impacted",
+          "The set of objects discovered during coding"
+        ],
+        "answer": "The initial set of objects presumed to be impacted by a CR"
+      },
+      {
+        "question": "Which impact set contains objects estimated to be impacted according to a specific analysis approach?",
+        "options": [
+          "Actual Impact Set (AIS)",
+          "Candidate Impact Set (CIS)",
+          "Discovered Impact Set (DIS)",
+          "False Positive Impact Set (FPIS)"
+        ],
+        "answer": "Candidate Impact Set (CIS)"
+      },
+      {
+        "question": "The 'Actual Impact Set (AIS)' is defined as:",
+        "options": [
+          "The set of objects estimated by the tool",
+          "The set of objects actually changed as a result of performing a CR",
+          "The set of objects that remained unchanged",
+          "The initial set identified from documentation"
+        ],
+        "answer": "The set of objects actually changed as a result of performing a CR"
+      },
+      {
+        "question": "What is the 'Discovered Impact Set (DIS)'?",
+        "options": [
+          "New impacted objects found during implementation not contained in CIS",
+          "Objects identified during the initial analysis of the CR",
+          "Objects that were removed from the project",
+          "The final set of all code artifacts"
+        ],
+        "answer": "New impacted objects found during implementation not contained in CIS"
+      },
+      {
+        "question": "How is the False Positive Impact Set (FPIS) mathematically represented?",
+        "options": [
+          "FPIS = AIS ∩ CIS",
+          "FPIS = (CIS U DIS) \\ AIS",
+          "FPIS = SIS + AIS",
+          "FPIS = DIS \\ CIS"
+        ],
+        "answer": "FPIS = (CIS U DIS) \\ AIS"
+      },
+      {
+        "question": "In the impact analysis process, what is the goal regarding AIS and CIS?",
+        "options": [
+          "Maximize the difference between AIS and CIS",
+          "Minimize the difference by eliminating false positives and identifying true impacts",
+          "Ensure CIS is always larger than AIS",
+          "Ensure AIS is always empty"
+        ],
+        "answer": "Minimize the difference by eliminating false positives and identifying true impacts"
+      },
+      {
+        "question": "Which metric represents the fraction of actual impacts contained in the Candidate Impact Set (CIS)?",
+        "options": [
+          "Precision",
+          "Recall",
+          "Sharpness",
+          "Adherence"
+        ],
+        "answer": "Recall"
+      },
+      {
+        "question": "The value of recall is 1 when:",
+        "options": [
+          "The FPIS is empty",
+          "The DIS is empty",
+          "The SIS is empty",
+          "The AIS is empty"
+        ],
+        "answer": "The DIS is empty"
+      },
+      {
+        "question": "Which metric represents the fraction of candidate impacts that are actually impacted?",
+        "options": [
+          "Inclusiveness",
+          "Precision",
+          "Ripple-sensitivity",
+          "Traceability"
+        ],
+        "answer": "Precision"
+      },
+      {
+        "question": "What is the value of precision if the False Positive Impact Set (FPIS) is empty?",
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "Infinite"
+        ],
+        "answer": "1"
+      },
+      {
+        "question": "What does 'Adequacy' of an impact analysis approach refer to?",
+        "options": [
+          "The speed of the analysis",
+          "The ability to identify all affected elements to be modified",
+          "The cost-effectiveness of the tool",
+          "The ability to generate a call graph"
+        ],
+        "answer": "The ability to identify all affected elements to be modified"
+      },
+      {
+        "question": "In the context of adequacy, 'Inclusiveness' is 1 if:",
+        "options": [
+          "AIS is a subset of CIS",
+          "CIS is empty",
+          "AIS is larger than CIS",
+          "FPIS is greater than 0"
+        ],
+        "answer": "AIS is a subset of CIS"
+      },
+      {
+        "question": "The ability of an approach to avoid including unnecessary objects in the CIS is known as:",
+        "options": [
+          "Ripple-sensitivity",
+          "Adherence",
+          "Sharpness",
+          "Recall"
+        ],
+        "answer": "Sharpness"
+      },
+      {
+        "question": "What is 'Adherence' in impact analysis?",
+        "options": [
+          "The ability to produce a CIS as close to AIS as possible",
+          "The ability to follow coding standards",
+          "The relationship between requirements and tests",
+          "The number of changes per month"
+        ],
+        "answer": "The ability to produce a CIS as close to AIS as possible"
+      },
+      {
+        "question": "Why is it difficult to fully automate the identification of the SIS (concept assignment problem)?",
+        "options": [
+          "Because computers cannot read source code",
+          "Because programs and concepts occur at different levels of abstraction",
+          "Because maintenance is too expensive",
+          "Because traceability graphs are always horizontal"
+        ],
+        "answer": "Because programs and concepts occur at different levels of abstraction"
+      },
+      {
+        "question": "According to the traceability graph, which artifacts can be linked to show the relationships among work products?",
+        "options": [
+          "Requirements, Design, Code, and Test scenarios",
+          "Only Source Code and Call Graphs",
+          "Only Requirements and User Manuals",
+          "Hardware specifications and Power requirements"
+        ],
+        "answer": "Requirements, Design, Code, and Test scenarios"
+      }
+    ]
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "document": "Ch2_Privacy-new.pptx",
+  "question_type": "tf",
+  "output": {
+    "questions": [
+      {
+        "question": "Computer technologies like databases and smartphones have not impacted privacy.",
+        "answer": "false"
+      },
+      {
+        "question": "Protecting privacy involves technology, markets, rights, and laws.",
+        "answer": "true"
+      },
+      {
+        "question": "Surveillance technologies are not discussed in the context of privacy.",
+        "answer": "false"
+      },
+      {
+        "question": "The text mentions GPS devices as a technology that has changed what people can know about privacy.",
+        "answer": "true"
+      },
+      {
+        "question": "Understanding the risks and problems is a first step toward protecting privacy.",
+        "answer": "true"
+      },
+      {
+        "question": "For computer professionals, understanding the risks and problems is a step toward designing systems with built-in privacy protections and less risk.",
+        "answer": "true"
+      },
+      {
+        "question": "Freedom from intrusion means being constantly monitored.",
+        "answer": "false"
+      },
+      {
+        "question": "Control of information about oneself is not a key aspect of privacy.",
+        "answer": "false"
+      },
+      {
+        "question": "Freedom from surveillance means being tracked, followed, or watched.",
+        "answer": "false"
+      },
+      {
+        "question": "Concern for privacy may be regarded with a suspicious 'What do you have to hide?'",
+        "answer": "true"
+      },
+      {
+        "question": "We might wish to keep health, relationship, and family issues private.",
+        "answer": "true"
+      },
+      {
+        "question": "Privacy of some kinds of information can be important to safety and security as well.",
+        "answer": "true"
+      },
+      {
+        "question": "Privacy threats come in only one category.",
+        "answer": "false"
+      },
+      {
+        "question": "Unauthorized use or release by 'insiders' is a privacy risk.",
+        "answer": "true"
+      },
+      {
+        "question": "Theft of information is not considered a privacy risk.",
+        "answer": "false"
+      },
+      {
+        "question": "Inadvertent leakage of information can pose a privacy risk.",
+        "answer": "true"
+      },
+      {
+        "question": "Our own actions cannot contribute to privacy risks.",
+        "answer": "false"
+      },
+      {
+        "question": "Government and private databases are examples of new technology risks.",
+        "answer": "true"
+      },
+      {
+        "question": "Sophisticated tools for surveillance and data analysis do not pose privacy risks.",
+        "answer": "false"
+      },
+      {
+        "question": "Weakness of data is a concern in privacy risks.",
+        "answer": "true"
+      },
+      {
+        "question": "Search engines do not collect large amounts of data daily.",
+        "answer": "false"
+      },
+      {
+        "question": "Search query data is analyzed to target advertising.",
+        "answer": "true"
+      },
+      {
+        "question": "New technology does not introduce new privacy risks.",
+        "answer": "false"
+      },
+      {
+        "question": "Smartphones can store and send data without the user's knowledge.",
+        "answer": "true"
+      },
+      {
+        "question": "People are always aware when their data is being collected.",
+        "answer": "false"
+      },
+      {
+        "question": "Anything we do in cyberspace is recorded.",
+        "answer": "true"
+      },
+      {
+        "question": "Huge amounts of data are not stored in cyberspace.",
+        "answer": "false"
+      },
+      {
+        "question": "Software complexity can lead to data leaks.",
+        "answer": "true"
+      },
+      {
+        "question": "A collection of small items can provide a detailed picture.",
+        "answer": "true"
+      },
+      {
+        "question": "Re-identification has become much harder due to the quantity of information and power of data search and analysis tools.",
+        "answer": "false"
+      },
+      {
+        "question": "If information is on a public Web site, it is available to everyone.",
+        "answer": "true"
+      },
+      {
+        "question": "Information on the Internet seems to last forever.",
+        "answer": "true"
+      },
+      {
+        "question": "Data collected for one purpose will find its way to other uses.",
+        "answer": "true"
+      },
+      {
+        "question": "Government can request sensitive personal data held by businesses or organizations.",
+        "answer": "true"
+      },
+      {
+        "question": "We can directly protect information about ourselves without depending on businesses or organizations.",
+        "answer": "false"
+      },
+      {
+        "question": "Personal information refers to any information relating to an individual person.",
+        "answer": "true"
+      },
+      {
+        "question": "Informed consent means users are unaware of what information is collected and how it is used.",
+        "answer": "false"
+      },
+      {
+        "question": "Invisible information gathering involves the collection of personal information without the user's knowledge.",
+        "answer": "true"
+      },
+      {
+        "question": "Cookies are files stored on a visitor's computer by a website.",
+        "answer": "true"
+      },
+      {
+        "question": "Secondary use refers to using personal information for the same purpose it was provided.",
+        "answer": "false"
+      },
+      {
+        "question": "Data mining involves searching and analyzing large amounts of data to find patterns.",
+        "answer": "true"
+      },
+      {
+        "question": "Computer matching involves combining and comparing information from different sources.",
+        "answer": "true"
+      },
+      {
+        "question": "Computer profiling involves analyzing data to determine characteristics of people most likely to engage in a certain behavior.",
+        "answer": "true"
+      },
+      {
+        "question": "Opt-out requires a person to request that an organization not use their information.",
+        "answer": "true"
+      },
+      {
+        "question": "Opt-in means the collector of the information may use the information only if the person explicitly agrees.",
+        "answer": "true"
+      },
+      {
+        "question": "Social security numbers are not used to match records in databases.",
+        "answer": "false"
+      },
+      {
+        "question": "Fair information principles include informing people when you collect information.",
+        "answer": "true"
+      },
+      {
+        "question": "Fair information principles require collecting as much data as possible.",
+        "answer": "false"
+      },
+      {
+        "question": "Offering a way for people to opt out is part of fair information principles.",
+        "answer": "true"
+      },
+      {
+        "question": "Fair information principles suggest keeping data indefinitely.",
+        "answer": "false"
+      },
+      {
+        "question": "Maintaining accuracy of data is not a part of fair information principles.",
+        "answer": "false"
+      },
+      {
+        "question": "Protecting the security of data is a fair information principle.",
+        "answer": "true"
+      },
+      {
+        "question": "Developing policies for law enforcement requests is not included in fair information principles.",
+        "answer": "false"
+      },
+      {
+        "question": "Particle sniffers, imaging systems, and location trackers are mentioned in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "The 'Do Not Track' button in browsers is turned on by default.",
+        "answer": "false"
+      },
+      {
+        "question": "Government agencies always need a search warrant to use new technologies.",
+        "answer": "false"
+      },
+      {
+        "question": "Data mining is mentioned as a new technology related to the Fourth Amendment.",
+        "answer": "true"
+      },
+      {
+        "question": "Targeted ads require informed consent from users.",
+        "answer": "false"
+      },
+      {
+        "question": "Paying for consumer information is a practice discussed in the context of new technologies.",
+        "answer": "true"
+      },
+      {
+        "question": "Websites collect browsing data to improve security and provide content.",
+        "answer": "true"
+      },
+      {
+        "question": "GPS services are used to track a person's location at a specific time.",
+        "answer": "true"
+      },
+      {
+        "question": "Cell phones are not used for location tracking.",
+        "answer": "false"
+      },
+      {
+        "question": "Browsing data is only used for generating reporting statistics.",
+        "answer": "false"
+      },
+      {
+        "question": "Marketing and personalization are part of the business and social sectors.",
+        "answer": "true"
+      },
+      {
+        "question": "GPS tracking via cell phones or RFID is a tool for parents.",
+        "answer": "true"
+      },
+      {
+        "question": "The Government Accountability Office (GAO) monitors the government's privacy policies.",
+        "answer": "true"
+      },
+      {
+        "question": "Data mining and computer matching are used to fight terrorism.",
+        "answer": "true"
+      },
+      {
+        "question": "Public records include bankruptcy, property, and arrest records.",
+        "answer": "true"
+      },
+      {
+        "question": "Location tracking is not used in the business and social sectors.",
+        "answer": "false"
+      },
+      {
+        "question": "Identity theft can arise when public records are accessed.",
+        "answer": "true"
+      },
+      {
+        "question": "Social Security Numbers are difficult to falsify.",
+        "answer": "false"
+      },
+      {
+        "question": "New proposals for identification may require biometric information.",
+        "answer": "true"
+      },
+      {
+        "question": "Government Systems do not handle sensitive public records.",
+        "answer": "false"
+      },
+      {
+        "question": "A new national ID system would require carrying only one card.",
+        "answer": "true"
+      },
+      {
+        "question": "A new national ID system poses no threat to freedom and privacy.",
+        "answer": "false"
+      },
+      {
+        "question": "Public-key cryptography is a privacy-enhancing technology for consumers.",
+        "answer": "true"
+      },
+      {
+        "question": "Increased potential for misuse is a pro of a new national ID system.",
+        "answer": "false"
+      },
+      {
+        "question": "Encryption is a business tool for protecting data.",
+        "answer": "true"
+      },
+      {
+        "question": "Freedom of consumers to make voluntary agreements is a principle discussed in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "The text suggests that individual tastes and values are uniform across all consumers.",
+        "answer": "false"
+      },
+      {
+        "question": "The market's response to consumer preferences is highlighted as a key point.",
+        "answer": "true"
+      },
+      {
+        "question": "Contracts are described as useless in the text.",
+        "answer": "false"
+      },
+      {
+        "question": "Regulatory solutions are presented as flawless in the text.",
+        "answer": "false"
+      },
+      {
+        "question": "Protecting privacy is discussed in the context of rights and law.",
+        "answer": "true"
+      },
+      {
+        "question": "The text presents a single, unified viewpoint on consumer protection.",
+        "answer": "false"
+      },
+      {
+        "question": "Uses of personal information are not mentioned in the text.",
+        "answer": "false"
+      },
+      {
+        "question": "Errors in databases are described as having costly and disruptive results.",
+        "answer": "true"
+      },
+      {
+        "question": "The text states that personal information rarely leaks out.",
+        "answer": "false"
+      },
+      {
+        "question": "Consumers are described as always knowledgeable and interested in protecting their personal information.",
+        "answer": "false"
+      },
+      {
+        "question": "The 1934 Communications Act prohibited the interception of messages.",
+        "answer": "true"
+      },
+      {
+        "question": "The 1968 Omnibus Crime Control and Safe Streets Act allowed wiretapping without a court order.",
+        "answer": "false"
+      },
+      {
+        "question": "The Electronic Communications Privacy Act of 1986 (ECPA) extended wiretapping laws to include electronic communications.",
+        "answer": "true"
+      },
+      {
+        "question": "The 1968 Omnibus Crime Control and Safe Streets Act applied to email communications.",
+        "answer": "false"
+      },
+      {
+        "question": "Access to email is mentioned in the text.",
+        "answer": "true"
+      },
+      {
+        "question": "Communications is a topic covered in the text.",
+        "answer": "true"
+      }
+    ]
+  }
+}
