@@ -309,6 +309,8 @@ export async function fetchSharedExam(sharedId, token, userId) {
     }
   );
 
+  console.log("fetchSharedExam result:", result);
+
   if (!result.ok) {
     return { error: result.error || "Failed to fetch shared quiz." };
   }
@@ -325,10 +327,27 @@ export async function fetchSharedExam(sharedId, token, userId) {
   }
 
   const data = unwrapApiData(payload);
+
+  // New backend behavior: success response with no quiz payload (e.g. data === true)
+  // because the shared exam is persisted into the user's exams list.
+  if (data === true || payload?.data === true) {
+    return {
+      success: true,
+      saved: true,
+      message: payload?.message || "Shared quiz saved successfully.",
+    };
+  }
+
   const quiz = data?.quiz ?? data?.exam ?? data;
 
   if (!quiz || typeof quiz !== "object") {
-    return { error: "Unexpected server response." };
+    return {
+      error:
+        payload?.message ||
+        payload?.error ||
+        result.error ||
+        "Unexpected server response.",
+    };
   }
 
   return quiz;
@@ -449,6 +468,39 @@ export async function deleteQuestion(quizID, questionId, token) {
     success: true,
     message: data?.message || "Question deleted successfully.",
   };
+}
+
+export async function submitExamAnswers(examSubmission, token) {
+  const examId = String(examSubmission?.examId ?? "").trim();
+  const answers = Array.isArray(examSubmission?.answers)
+    ? examSubmission.answers
+    : null;
+
+  if (!examId) return { error: "Missing examId." };
+  if (!answers || answers.length === 0) return { error: "Missing answers." };
+
+  // Body format must be exactly:
+  // {
+  //   "examId": "...",
+  //   "answers": [{ "questionId": "...", "selectedOptionId": "..." }]
+  // }
+  const payloadToSend = { examId, answers };
+  console.log(
+    `Submitting exam answers: ${JSON.stringify(payloadToSend, null, 2)}`
+  );
+  const result = await requestJson(`/api/v1/quiz-ai/submit`, {
+    method: "POST",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    json: payloadToSend,
+  });
+
+  console.log("submitExamAnswers result:", result);
+  if (!result.ok) {
+    return { error: result.error || "Failed to submit exam answers." };
+  }
+
+  const data = unwrapApiData(result.payload);
+  return data ?? result.payload ?? { success: true };
 }
 
 export async function getHealth() {

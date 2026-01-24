@@ -52,6 +52,18 @@ export const Shared_exam_route = ({ editing, setEditing }) => {
       const result = await loadSharedExam(cleanSharedToken);
       if (result?.error) {
         setShareError(result.error);
+        return;
+      }
+
+      // If backend saved the shared exam into the user's exams, switch to normal route
+      // and force a full reload so state is guaranteed to be fresh.
+      if (result?.saved) {
+        try {
+          sessionStorage.setItem("quizai:selectLastExamOnLoad", "1");
+        } catch {
+          // ignore storage errors
+        }
+        window.location.assign("/");
       }
     })();
   }, [
